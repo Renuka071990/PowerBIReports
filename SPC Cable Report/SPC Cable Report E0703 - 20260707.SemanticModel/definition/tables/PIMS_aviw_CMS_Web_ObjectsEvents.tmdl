@@ -1,0 +1,172 @@
+table PIMS_aviw_CMS_Web_ObjectsEvents
+	lineageTag: 6b13a302-23f2-407f-90c4-9ef19b5530f5
+
+	measure 'Pipe Closed%' = IFERROR(Sum(PIMS_aviw_CMS_Web_ObjectsEvents[Pipe ITR Closed])/Sum(PIMS_aviw_CMS_Web_ObjectsEvents[Pipe ITR Total]),0)
+		formatString: 0%;-0%;0%
+		lineageTag: 3a847a75-d064-4caa-9701-23fe54a685a6
+
+	measure 'Mech Closed%' = IFERROR(Sum(PIMS_aviw_CMS_Web_ObjectsEvents[Mech ITR Closed])/Sum(PIMS_aviw_CMS_Web_ObjectsEvents[Mech ITR Total]),0)
+		formatString: 0%;-0%;0%
+		lineageTag: 38cfef3a-2600-4175-bb98-face7f509b35
+
+	measure 'Safety Closed%' = IFERROR(Sum(PIMS_aviw_CMS_Web_ObjectsEvents[Safety ITR Closed])/Sum(PIMS_aviw_CMS_Web_ObjectsEvents[Safety ITR Total]),0)
+		lineageTag: b468e6ec-2804-40ac-bfdc-1083d3ef760a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'HVAC Closed%' = IFERROR(Sum(PIMS_aviw_CMS_Web_ObjectsEvents[HVAC ITR Closed])/Sum(PIMS_aviw_CMS_Web_ObjectsEvents[HVAC ITR Total]),0)
+		formatString: 0%;-0%;0%
+		lineageTag: 394832d5-52c7-4b80-80e4-8d245c6e6bc0
+
+	column TagNo
+		dataType: string
+		lineageTag: a8c56d2c-22d2-45c7-a529-696c26baec82
+		summarizeBy: none
+		sourceColumn: TagNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystem
+		dataType: string
+		lineageTag: 5c2f0593-49d6-4e46-bcc3-8fa4b835fb80
+		summarizeBy: none
+		sourceColumn: SubSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column CertID
+		dataType: string
+		lineageTag: 94a2b36f-ffea-4443-b3a8-bca39ee7864b
+		summarizeBy: none
+		sourceColumn: CertID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual
+		dataType: string
+		lineageTag: 471e764e-58c8-48ad-8d55-4b95d2355976
+		summarizeBy: none
+		sourceColumn: Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobCard
+		dataType: string
+		lineageTag: 22b10483-6665-471a-96fc-1d7ddf2ac292
+		summarizeBy: none
+		sourceColumn: JobCard
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domain
+		dataType: string
+		lineageTag: e4cc548f-0d39-44e5-b1d7-ba7dd27da75d
+		summarizeBy: none
+		sourceColumn: Domain
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: 22ea7886-dd1d-4b68-9564-f4d2ed8e00dc
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discipline = If(Mid(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4,1) = "E","Electrical",If(Mid(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4,1) = "I","Instrumentation",If(Mid(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4,1)= "L","Piping",If(Mid(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4,1)= "T","Telecom",If(Mid(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4,1)= "R","Mechanical",If(Mid(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4,1)= "H","HVAC",If(Mid(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4,1)= "A","Architectural",If(Mid(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4,1)= "S","Safety",If(Mid(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4,1)= "N","Structural","")))))))))
+		lineageTag: 863935ab-e7e3-41f9-ada4-69fdc0f76a7f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipe ITR Total' = If(PIMS_aviw_CMS_Web_ObjectsEvents[Discipline] = "Piping",1,0)
+		formatString: 0
+		lineageTag: 2cef3f33-e3b4-490a-91e3-2440d53c773f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipe ITR Closed' = If(PIMS_aviw_CMS_Web_ObjectsEvents[Discipline] = "Piping" && PIMS_aviw_CMS_Web_ObjectsEvents[Actual] <> "", 1,0)
+		formatString: 0
+		lineageTag: 39828ad7-177e-4af8-a09a-d20a4201a9c7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mech ITR Total' = If(PIMS_aviw_CMS_Web_ObjectsEvents[Discipline] = "Mechanical",1,0)
+		formatString: 0
+		lineageTag: 705fb282-dbb9-4c34-bb60-a1f6b76ad4f2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mech ITR Closed' = If(PIMS_aviw_CMS_Web_ObjectsEvents[Discipline] = "Mechanical" && PIMS_aviw_CMS_Web_ObjectsEvents[Actual] <> "", 1,0)
+		formatString: 0
+		lineageTag: c90ed941-cc7a-4a50-988c-9890038a2cff
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Safety ITR Total' = If(PIMS_aviw_CMS_Web_ObjectsEvents[Discipline] = "Safety",1,0)
+		formatString: 0
+		lineageTag: 37ee3d6c-fe13-4276-9d91-891c78cbe94d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Safety ITR Closed' = If(PIMS_aviw_CMS_Web_ObjectsEvents[Discipline] = "Safety" && PIMS_aviw_CMS_Web_ObjectsEvents[Actual] <> "", 1,0)
+		formatString: 0
+		lineageTag: cabf0daa-4bfc-4d53-baa6-c64fb587dac2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 599d4f77-bfd6-4adf-90ca-926aa2c550f5
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column System
+		dataType: string
+		lineageTag: c404b401-e2a6-4c1e-86cf-369bf2e4d851
+		summarizeBy: none
+		sourceColumn: System
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HVAC ITR Total' = ```
+			If(PIMS_aviw_CMS_Web_ObjectsEvents[System] = "BW61-XA01" && (left(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4)="CC-H" || PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-008"
+			|| PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-010" || PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-011" || PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-025" || PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-034"),1,0) 
+			```
+		formatString: #,0
+		lineageTag: 2f3f94c5-7d36-40bd-a743-2d2510842b8f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HVAC ITR Closed' = If(PIMS_aviw_CMS_Web_ObjectsEvents[System] = "BW61-XA01" && PIMS_aviw_CMS_Web_ObjectsEvents[Actual] <> "" && (left(PIMS_aviw_CMS_Web_ObjectsEvents[CertID],4)="CC-H" ||( PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-008"|| PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-010" || PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-011" || PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-025" || PIMS_aviw_CMS_Web_ObjectsEvents[CertID]="CC-I-034")), 1,0)
+		formatString: 0
+		lineageTag: 202bfae8-548c-4d6c-ab50-66aa6053ba6a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PIMS_aviw_CMS_Web_ObjectsEvents = m
+		mode: import
+		source =
+				let
+				    Source = PimsDataApi.Contents("https://mcdermott.pimshosting.com/"),
+				    CMSKey = Source{[Key="CMSKey"]}[Data],
+				    aviw_CMS_Web_ObjectsEventsKey = CMSKey{[Key="aviw_CMS_Web_ObjectsEventsKey"]}[Data],
+				    #"Invoked Functionaviw_CMS_Web_ObjectsEventsKey1" = aviw_CMS_Web_ObjectsEventsKey("Project,Domain,TagNo,SubSystem,status,System,CertID,Actual,JobCard", "Max Records", "-1", null, null, null)
+				in
+				    #"Invoked Functionaviw_CMS_Web_ObjectsEventsKey1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

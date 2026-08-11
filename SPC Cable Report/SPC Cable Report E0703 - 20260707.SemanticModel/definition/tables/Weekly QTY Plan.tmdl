@@ -1,0 +1,144 @@
+table 'Weekly QTY Plan'
+	excludeFromModelRefresh
+	lineageTag: aa7423a7-4192-4420-accf-796e6d454a1e
+
+	column Item
+		dataType: string
+		lineageTag: c7d25bb3-bbfb-4977-aa85-b75d5ebdf474
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Facility
+		dataType: string
+		lineageTag: e2d320f2-276c-4764-a1c6-05a51be1804a
+		summarizeBy: none
+		sourceColumn: Facility
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub System'
+		dataType: string
+		lineageTag: ee74420c-4cd6-40f3-8c70-d03168a53e0e
+		summarizeBy: none
+		sourceColumn: Sub System
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: a90e60c2-a289-4baf-a004-93bb6a1bebb6
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column UOM
+		dataType: string
+		lineageTag: dc995c67-d47c-485d-b028-4dcaaffed412
+		summarizeBy: none
+		sourceColumn: UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Scope'
+		dataType: int64
+		formatString: 0
+		lineageTag: cd597b1f-e933-4480-909d-de6b8cc91b4e
+		summarizeBy: sum
+		sourceColumn: Total Scope
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Remaining Scope'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bf9d095-80e1-4393-b1c6-e570327bb4f3
+		summarizeBy: sum
+		sourceColumn: Remaining Scope
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: ea167156-3f5c-4c51-87bf-89a5b1197069
+		summarizeBy: none
+		sourceColumn: Start
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Finish
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 999deed5-ab17-401a-a5d9-c81d00473d3f
+		summarizeBy: none
+		sourceColumn: Finish
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Total
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e301e3a-3bd5-4593-884c-733e75232520
+		summarizeBy: sum
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekly Plan Date'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 2e25af0d-b7cc-4e8d-a654-3f19a0d98a15
+		summarizeBy: none
+		sourceColumn: Weekly Plan Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Weekly Quantity'
+		dataType: double
+		lineageTag: 85344ed6-6551-49eb-9bfe-e769f32469ca
+		summarizeBy: sum
+		sourceColumn: Weekly Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Weekly QTY Plan-64cdd903-3f3e-4505-baa3-f14e88283597' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\D7072\100-Power Bi\Cable Report\D7072 Marjan Package 4 PGTT Plan template.xlsx"), null, true),
+				    #"Qty Plan_Sheet" = Source{[Item="Qty Plan",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Qty Plan_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type date}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}, {"Column21", type any}, {"Column22", type any}, {"Column23", type any}, {"Column24", type any}, {"Column25", type any}, {"Column26", type any}, {"Column27", type any}, {"Column28", type any}, {"Column29", type any}, {"Column30", type any}, {"Column31", type any}, {"Column32", type any}, {"Column33", type any}, {"Column34", type any}, {"Column35", type any}, {"Column36", type any}, {"Column37", type any}, {"Column38", type any}, {"Column39", type any}, {"Column40", type any}, {"Column41", type any}, {"Column42", type any}, {"Column43", type any}, {"Column44", type any}, {"Column45", type any}, {"Column46", type any}, {"Column47", type any}, {"Column48", type any}, {"Column49", type any}, {"Column50", type any}, {"Column51", type any}, {"Column52", type any}, {"Column53", type any}, {"Column54", type any}, {"Column55", type any}, {"Column56", type any}, {"Column57", type any}, {"Column58", type any}, {"Column59", type any}, {"Column60", type any}, {"Column61", type any}, {"Column62", type any}, {"Column63", type any}, {"Column64", type any}, {"Column65", type any}, {"Column66", type any}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Item", type text}, {"Facility", type text}, {"Sub System", type text}, {"Description", type text}, {"UOM", type text}, {"Total Scope", Int64.Type}, {"Remaining Scope", Int64.Type}, {"Start", type date}, {"Finish", type date}, {"Total", Int64.Type}, {"5/26/2022", type date}, {"6/2/2022", type number}, {"6/9/2022", type number}, {"6/16/2022", type number}, {"6/23/2022", type number}, {"6/30/2022", type number}, {"7/7/2022", type number}, {"7/14/2022", type number}, {"7/21/2022", type number}, {"7/28/2022", type number}, {"8/4/2022", type number}, {"8/11/2022", type number}, {"8/18/2022", type number}, {"8/25/2022", type number}, {"9/1/2022", type number}, {"9/8/2022", type number}, {"9/15/2022", type number}, {"9/22/2022", type number}, {"9/29/2022", type number}, {"10/6/2022", type number}, {"10/13/2022", type number}, {"10/20/2022", type number}, {"10/27/2022", type number}, {"11/3/2022", type number}, {"11/10/2022", type number}, {"11/17/2022", type number}, {"11/24/2022", type number}, {"12/1/2022", type number}, {"12/8/2022", type number}, {"12/15/2022", type number}, {"12/22/2022", type number}, {"12/29/2022", type number}, {"1/5/2023", type number}, {"1/12/2023", type number}, {"1/19/2023", type number}, {"1/26/2023", type number}, {"2/2/2023", type number}, {"2/9/2023", Int64.Type}, {"2/16/2023", Int64.Type}, {"2/23/2023", Int64.Type}, {"3/2/2023", Int64.Type}, {"3/9/2023", Int64.Type}, {"3/16/2023", Int64.Type}, {"3/23/2023", Int64.Type}, {"3/30/2023", Int64.Type}, {"4/6/2023", Int64.Type}, {"4/13/2023", Int64.Type}, {"4/20/2023", Int64.Type}, {"4/27/2023", Int64.Type}, {"5/4/2023", Int64.Type}, {"5/11/2023", Int64.Type}, {"5/18/2023", Int64.Type}, {"5/25/2023", Int64.Type}, {"6/1/2023", Int64.Type}, {"6/8/2023", Int64.Type}, {"6/15/2023", Int64.Type}}),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Changed Type1", {"Total", "Finish", "Start", "Remaining Scope", "Total Scope", "UOM", "Description", "Sub System", "Facility", "Item"}, "Attribute", "Value"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Unpivoted Other Columns",{{"Attribute", "Weekly Plan Date"}, {"Value", "Weekly Quantity"}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns",{{"Weekly Plan Date", type date}, {"Weekly Quantity", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type2", each Date.IsInCurrentWeek([Weekly Plan Date]))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+

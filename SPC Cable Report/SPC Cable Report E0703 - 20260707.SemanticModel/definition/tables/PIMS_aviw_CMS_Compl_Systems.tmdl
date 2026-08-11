@@ -1,0 +1,170 @@
+table PIMS_aviw_CMS_Compl_Systems
+	lineageTag: 5a97b5d9-7ab7-4768-8d1a-43f93b657c59
+
+	column PrimKey
+		dataType: string
+		lineageTag: 6f80aba1-1f11-4caa-9dcb-227116815365
+		summarizeBy: none
+		sourceColumn: PrimKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domain
+		dataType: string
+		lineageTag: a917df70-957b-41e5-8691-25525794cf73
+		summarizeBy: none
+		sourceColumn: Domain
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: fc4be06b-763a-48d8-adf2-b68e63afde19
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column System
+		dataType: string
+		lineageTag: 740dfe59-f4ce-450b-9926-fcc3358f4c3a
+		summarizeBy: none
+		sourceColumn: System
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 47f23d24-6557-4dfa-82a9-1e4bbf71c877
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comments
+		dataType: string
+		lineageTag: ec63a5b9-24a9-4566-bd36-6899d8c0e9af
+		summarizeBy: none
+		sourceColumn: Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column Milestone
+		dataType: string
+		lineageTag: ab096b0b-1b97-43b0-be7d-32e8e7e66c44
+		summarizeBy: none
+		sourceColumn: Milestone
+
+		annotation SummarizationSetBy = Automatic
+
+	column SACPlanned
+		dataType: string
+		lineageTag: a8a8ac2b-7ca2-41fc-8039-f7b981aa26c2
+		summarizeBy: none
+		sourceColumn: SACPlanned
+
+		annotation SummarizationSetBy = Automatic
+
+	column SACIssued
+		dataType: string
+		lineageTag: 4db5a3c4-7d87-4c9b-b0c7-e688027a018b
+		summarizeBy: none
+		sourceColumn: SACIssued
+
+		annotation SummarizationSetBy = Automatic
+
+	column SACIssuedBy
+		dataType: string
+		lineageTag: b0ee3e9f-a0c0-4339-97f3-94e6d725b6ef
+		summarizeBy: none
+		sourceColumn: SACIssuedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column SACForecast
+		dataType: string
+		lineageTag: d65a5520-6be5-48f2-9854-f26ae109cc37
+		summarizeBy: none
+		sourceColumn: SACForecast
+
+		annotation SummarizationSetBy = Automatic
+
+	column SACAccepted
+		dataType: string
+		lineageTag: fb87ed34-e68b-464a-a1bd-278accd10808
+		summarizeBy: none
+		sourceColumn: SACAccepted
+
+		annotation SummarizationSetBy = Automatic
+
+	column SystemGroupSort1
+		dataType: string
+		lineageTag: eb402372-004a-43ed-8e6e-250918f59b19
+		summarizeBy: none
+		sourceColumn: SystemGroupSort1
+
+		annotation SummarizationSetBy = Automatic
+
+	column SystemGroupSort2
+		dataType: string
+		lineageTag: 070dd922-5ced-460f-b834-9cc366eb8815
+		summarizeBy: none
+		sourceColumn: SystemGroupSort2
+
+		annotation SummarizationSetBy = Automatic
+
+	column SystemGroupSort3
+		dataType: string
+		lineageTag: 9e80436d-f17b-4f6b-b07d-2f03c823a954
+		summarizeBy: none
+		sourceColumn: SystemGroupSort3
+
+		annotation SummarizationSetBy = Automatic
+
+	column SystemGroupSort4
+		dataType: string
+		lineageTag: 57bbf66d-d401-407f-a554-57edade4f879
+		summarizeBy: none
+		sourceColumn: SystemGroupSort4
+
+		annotation SummarizationSetBy = Automatic
+
+	column MyResponsibility
+		dataType: string
+		lineageTag: 558fb259-fd34-46c8-b098-df58f454bbeb
+		summarizeBy: none
+		sourceColumn: MyResponsibility
+
+		annotation SummarizationSetBy = Automatic
+
+	column SearchColumn
+		dataType: string
+		lineageTag: 1797975b-1d34-4de1-b057-8c67865c5941
+		summarizeBy: none
+		sourceColumn: SearchColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SPlant
+		dataType: string
+		lineageTag: 15fc9fb2-cdaa-49f5-b66c-3836ba37a31e
+		summarizeBy: none
+		sourceColumn: SPlant
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PIMS_aviw_CMS_Compl_Systems = m
+		mode: import
+		source =
+				let
+				    Source = PimsDataApi.Contents("https://mcdermott.pimshosting.com/"),
+				    CMSKey = Source{[Key="CMSKey"]}[Data],
+				    aviw_CMS_Compl_SystemsKey = CMSKey{[Key="aviw_CMS_Compl_SystemsKey"]}[Data],
+				    #"Invoked Functionaviw_CMS_Compl_SystemsKey1" = aviw_CMS_Compl_SystemsKey("PrimKey,#(tab)Domain,#(tab)Project,#(tab)System,#(tab)Description,#(tab)Comments,#(tab)Milestone,#(tab)SACPlanned,#(tab)SACIssued,#(tab)SACIssuedBy,#(tab)SACForecast,#(tab)SACAccepted,#(tab)SystemGroupSort1,#(tab)SystemGroupSort2,#(tab)SystemGroupSort3,#(tab)SystemGroupSort4,#(tab)MyResponsibility,#(tab)SearchColumn,#(tab)SPlant", "Max Records", "-1", null, null, null)
+				in
+				    #"Invoked Functionaviw_CMS_Compl_SystemsKey1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

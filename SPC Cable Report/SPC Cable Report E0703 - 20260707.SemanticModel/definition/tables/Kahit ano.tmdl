@@ -1,0 +1,109 @@
+table 'Kahit ano'
+	lineageTag: ad6e9c94-bc95-41f4-9aaa-405b386119f5
+
+	column DECKNAME
+		lineageTag: 5974ac1e-d016-4a77-b282-a13fc91f14f5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Query1[DECKNAME]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCOPE
+		lineageTag: d6457da8-2b1c-48b1-b54e-e1dff12c3be8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Query1[SCOPE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromEquipment
+		lineageTag: 2bb302ef-36a6-41be-a1f5-a4afea70f157
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Query1[FromEquipment]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_eqp_from_iwp
+		lineageTag: 98bb735f-4aea-4206-8a53-cb9936f0ab11
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Query1[fx_eqp_from_iwp]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToEquipment
+		lineageTag: e79cf14d-d219-432f-948a-7f43191de002
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Query1[ToEquipment]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_eqp_to_iwp
+		lineageTag: 829be7ee-b40a-4372-bfba-f36896a626d7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Query1[fx_eqp_to_iwp]
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAGID
+		lineageTag: 85c3f0d2-418b-4147-8ac3-eb6580c05566
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Query1[TAGID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PULLING IWP NO'
+		lineageTag: 74bbb816-6a4f-4fbd-84b2-6f2b42d1eaeb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Query1[PULLING IWP NO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNITS
+		lineageTag: 3cd1114e-dbba-4542-84e0-b6b03d8ba299
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Query1[UNITS]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pulled Comp Date'
+		formatString: General Date
+		lineageTag: aa2f34d4-b191-42b1-b4bf-9f7ce9b58e9c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Query1[Pulled Comp Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column PURPOSE
+		lineageTag: 71d970a4-362a-4452-8c82-e06981fee18d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PURPOSE]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Kahit ano' = calculated
+		mode: import
+		source =
+				
+				VAR Pull = SUMMARIZE(Query1,[DECKNAME],[SCOPE],[FromEquipment],[fx_eqp_from_iwp],[ToEquipment],[fx_eqp_to_iwp],[TAGID],[PULLING IWP NO],[UNITS],[Pulled Comp Date],"PURPOSE","PULLING")
+				VAR GlandFrom = SUMMARIZE(Query1,[DECKNAME],[SCOPE],[FromEquipment],[fx_eqp_from_iwp],[ToEquipment],[fx_eqp_to_iwp],[TAGID],[GLANDING FROM IWP NO],[UNITS],[Glanding From Comp Date],"PURPOSE","GLAND FROM")
+				VAR GlandTo = SUMMARIZE(Query1,[DECKNAME],[SCOPE],[FromEquipment],[fx_eqp_from_iwp],[ToEquipment],[fx_eqp_to_iwp],[TAGID],[GLANDING TO IWP NO],[UNITS],[Glanding To Comp Date],"PURPOSE","GLAND TO")
+				VAR TermFrom = SUMMARIZE(Query1,[DECKNAME],[SCOPE],[FromEquipment],[fx_eqp_from_iwp],[ToEquipment],[fx_eqp_to_iwp],[TAGID],[Termination From IWP No],[UNITS],[Termination From Comp Date],"PURPOSE","TERM FROM")
+				VAR TermTo = SUMMARIZE(Query1,[DECKNAME],[SCOPE],[FromEquipment],[fx_eqp_from_iwp],[ToEquipment],[fx_eqp_to_iwp],[TAGID],[Termination To IWP No],[UNITS],[Termination To Comp Date],"PURPOSE","TERM TO")
+				VAR Test = SUMMARIZE(Query1,[DECKNAME],[SCOPE],[FromEquipment],[fx_eqp_from_iwp],[ToEquipment],[fx_eqp_to_iwp],[TAGID],[Testing IWP No],[UNITS],[Testing Comp Date],"PURPOSE","TEST")
+				RETURN
+				UNION(PULL,GlandFrom,GlandTo,TermFrom,TermTo,Test)
+
+	annotation PBI_Id = 5660528166f34b9f9c2bbe72bebc755a
+

@@ -1,0 +1,251 @@
+table 'Hydro Reinst Test Progress'
+	lineageTag: 390d5cd4-d29e-49bd-9d7c-17ba71f3614b
+
+	measure 'Hydrotest Complted%' = Sum('Hydro Reinst Test Progress'[Hydrotest_Prog_Completed])/Count('Hydro Reinst Test Progress'[HYDROTESTWPNO])
+		formatString: 0%;-0%;0%
+		lineageTag: a78d6bde-dce1-4bd0-b03c-16fa0fe995e3
+
+	measure 'Reinstatement Completed%' = Count('Hydro Reinst Test Progress'[REINSTATEMENTPROGRESS]) / Count('Hydro Reinst Test Progress'[REINSTATEMENTWPNO])
+		formatString: 0%;-0%;0%
+		lineageTag: 16292736-13f7-421a-b764-a6e3d31e5448
+
+	column 'PLANT NAME'
+		dataType: string
+		lineageTag: d744e0d7-ba50-45f9-b846-638fd8b40a8d
+		summarizeBy: none
+		sourceColumn: PLANT NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAG
+		dataType: string
+		lineageTag: 3498cbf9-a3e8-4e89-8c99-7d70954a8475
+		summarizeBy: none
+		sourceColumn: TAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column HYDROTESTWPNO
+		dataType: string
+		lineageTag: 0f815641-42f6-4fd0-8c5f-82faa2900ba6
+		summarizeBy: none
+		sourceColumn: HYDROTESTWPNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column HYDROTESTPLANHRS
+		dataType: double
+		lineageTag: e26cfb43-e5d1-48e0-99c5-047bd141ee0b
+		summarizeBy: sum
+		sourceColumn: HYDROTESTPLANHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HYDROTESTEARNEDHRS
+		dataType: double
+		lineageTag: 890c7b50-0423-4435-8475-029e87d2ae70
+		summarizeBy: sum
+		sourceColumn: HYDROTESTEARNEDHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREPATATION
+		dataType: string
+		lineageTag: b6bab4e6-eb4e-44de-ae4a-fff9ea454a95
+		summarizeBy: none
+		sourceColumn: PREPATATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column FLUSH_FILL
+		dataType: string
+		lineageTag: f98c0a7b-eff7-49bc-843a-7da38b52cccb
+		summarizeBy: none
+		sourceColumn: FLUSH_FILL
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRESSURE_TEST
+		dataType: string
+		lineageTag: e58f4caa-e012-4c22-afa3-65c80cb26e87
+		summarizeBy: none
+		sourceColumn: PRESSURE_TEST
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEWATER_DRY
+		dataType: string
+		lineageTag: d499bf9c-1d9d-460f-a761-c262a5b203bf
+		summarizeBy: none
+		sourceColumn: DEWATER_DRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column REINSTATEMENT
+		dataType: string
+		lineageTag: 8aa48656-4fc9-4683-8c9d-cb6312d0601e
+		summarizeBy: none
+		sourceColumn: REINSTATEMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCEPTANCE
+		dataType: string
+		lineageTag: 96a164f7-b876-49d5-95cd-b7dd0730f812
+		summarizeBy: none
+		sourceColumn: ACCEPTANCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column HYDROTESTPROGRESS
+		dataType: double
+		lineageTag: 388d9cd2-c426-43df-9cf0-6932bcf080e7
+		summarizeBy: sum
+		sourceColumn: HYDROTESTPROGRESS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REINSTATEMENTWPNO
+		dataType: string
+		lineageTag: 41c57af6-00b0-416a-80a6-3957a92f73a2
+		summarizeBy: none
+		sourceColumn: REINSTATEMENTWPNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column REINSTATEMENTPLANHRS
+		dataType: double
+		lineageTag: 5f657723-7fdc-43da-83c3-a2c6c617bd00
+		summarizeBy: sum
+		sourceColumn: REINSTATEMENTPLANHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REINSTATEMENTNEARNEDHRS
+		dataType: double
+		lineageTag: 16302cbd-2536-42c5-8db1-1dad3dba5f8e
+		summarizeBy: sum
+		sourceColumn: REINSTATEMENTNEARNEDHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HUNG
+		dataType: string
+		lineageTag: b555eecd-f002-4221-903b-8edded9ac9b1
+		summarizeBy: none
+		sourceColumn: HUNG
+
+		annotation SummarizationSetBy = Automatic
+
+	column FITUP
+		dataType: string
+		lineageTag: 2525dc61-71bf-4875-a26a-a48797997953
+		summarizeBy: none
+		sourceColumn: FITUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column WELD
+		dataType: string
+		lineageTag: 128d6be5-d709-4609-82fb-a2b71326a302
+		summarizeBy: none
+		sourceColumn: WELD
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSTALL
+		dataType: string
+		lineageTag: cca89f78-e2a0-45fe-8378-c8c24506b089
+		summarizeBy: none
+		sourceColumn: INSTALL
+
+		annotation SummarizationSetBy = Automatic
+
+	column NDT
+		dataType: string
+		lineageTag: c8c73447-7723-4d01-ab3c-61ca2832ec1c
+		summarizeBy: none
+		sourceColumn: NDT
+
+		annotation SummarizationSetBy = Automatic
+
+	column REINSTATEMENTPROGRESS
+		dataType: double
+		lineageTag: 3ea37a2c-d477-4a8c-b539-8016fd6bae0d
+		summarizeBy: sum
+		sourceColumn: REINSTATEMENTPROGRESS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SHORTDESC
+		dataType: string
+		lineageTag: 9a2d8202-9f6d-4902-a7e7-21729a7510b4
+		summarizeBy: none
+		sourceColumn: SHORTDESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column MATERIAL
+		dataType: string
+		lineageTag: ba0f2d72-6a80-466b-b9a7-2ada9fa3a531
+		summarizeBy: none
+		sourceColumn: MATERIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNITS
+		dataType: string
+		lineageTag: b02ce8a3-04a9-4659-8358-de9b890e5f0b
+		summarizeBy: none
+		sourceColumn: UNITS
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystem =
+			Var A = LOOKUPVALUE('BW6 HT'[Subsystem],'BW6 HT'[Test Pack],'Hydro Reinst Test Progress'[TAG])
+			Var B = LOOKUPVALUE('BW6 HT'[Subsystem],'BW6 HT'[Test Pack],'Hydro Reinst Test Progress'[Reinst_TPname])
+			Var Output = If( A <> "",A,If (B <> "",B ,"NO System"))
+			RETURN
+			Output
+		lineageTag: 6edcf162-adab-46e2-92d9-b60938587f3f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reinst_TPname = Left(Mid('Hydro Reinst Test Progress'[SHORTDESC],18,len('Hydro Reinst Test Progress'[SHORTDESC])),Find("_",Mid('Hydro Reinst Test Progress'[SHORTDESC],19,len('Hydro Reinst Test Progress'[SHORTDESC])),1,BLANK()))
+		lineageTag: 3dc8ba8f-5ccb-4df4-b0cb-7e354311adff
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hydrotest_Prog_Completed = If('Hydro Reinst Test Progress'[PREPATATION] <> "" && 'Hydro Reinst Test Progress'[FLUSH_FILL] <> "" && 'Hydro Reinst Test Progress'[PRESSURE_TEST] <> "",1,0)
+		formatString: 0
+		lineageTag: dd317645-e084-4758-a6ae-433bb447a5b5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Hydro Reinst Test Progress' = m
+		mode: import
+		source =
+				let
+				    Source = Oracle.Database("SPFC5DUP.world", [HierarchicalNavigation=true, Query="WITH SPCRPT_WORKSTEP_IOBJ_PROP_TMP as #(lf)(#(lf)  #(lf)SELECT#(lf)            COMPWORKSTEP.OBID AS ""COMPWORKSTEPOBID"",#(lf)            COMPWORKSTEP.OBJUID AS ""COMPWORKSTEPUID"",#(tab)  #(lf)            COMPWORKSTEP.CONFIG AS ""PROJECT"",#(lf)            COMPWORKSTEP.LASTUPDATED AS ""LASTUPDATED"",#(lf)            COMPWORKSTEP.CREATIONUSER AS ""LASTUPDATEDBY""#(lf)FROM DATAOBJ COMPWORKSTEP WHERE COMPWORKSTEP.OBJDEFUID = 'SPC_ComponentWorkTypeStep' AND COMPWORKSTEP.TERMINATIONDATE = '9999/12/31-23:59:59:999'),#(lf)#(lf)SPCRPT_WORKSTEP_DIR_PROP_TMP as #(lf)(#(tab)#(lf)SELECT#(lf)            COMPWORKSTEP.COMPWORKSTEPOBID AS ""COMPWORKSTEPOBID"",#(lf)            CASE WHEN COMPWORKSTEP_QUANTITYCOMPLETE.STRVALUE>0 then  COMPWORKSTEP_QUANTITYCOMPLETE.CREATIONDATE ELSE COMPWORKSTEP_QUANTITYCOMPLETE.CREATIONDATE  END as ""LASTUPDATED"",#(lf)            COMPWORKSTEP_NAME.STRVALUE AS ""NAME"", #(lf)            COMPWORKSTEP_DESCRIPTION.STRVALUE AS ""DESCRIPTION"",#(lf)            CAST(COMPWORKSTEP_SEQUENCE.STRVALUE AS INT) AS ""SEQUENCE"",#(lf)            CAST(COMPWORKSTEP_PLANNEDMANHOURS.STRVALUE AS FLOAT) AS ""PLANNEDMANHOURS"",#(lf)            CAST(COMPWORKSTEP_ACTUALMANHOURS.STRVALUE AS FLOAT) AS ""ACTUALMANHOURS"",#(lf)            COMPWORKSTEP_DATECOMPLETE.STRVALUE AS ""ACTUALDATECOMPLETE"",#(lf)            CAST(COMPWORKSTEP_QUANTITYCOMPLETE.STRVALUE AS FLOAT) AS ""QUANTITYCOMPLETE"",#(lf)            CASE WHEN COMPWORKSTEP_QUANTITYCOMPLETE.STRVALUE>0 then  COMPWORKSTEP_QUANTITYCOMPLETE.CREATIONUSER ELSE COMPWORKSTEP_QUANTITYCOMPLETE.CREATIONUSER  END as  ""LASTUPDATEDBY""#(lf)          #(lf)FROM SPCRPT_WORKSTEP_IOBJ_PROP_TMP COMPWORKSTEP#(lf)#(tab)#(lf)#(tab)--Name#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_NAME ON COMPWORKSTEP_NAME.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_NAME.PROPERTYDEFUID = 'Name' AND COMPWORKSTEP_NAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--Description#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_DESCRIPTION ON COMPWORKSTEP_DESCRIPTION.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_DESCRIPTION.PROPERTYDEFUID = 'Description' AND COMPWORKSTEP_DESCRIPTION.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--Sequence#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_SEQUENCE ON COMPWORKSTEP_SEQUENCE.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_SEQUENCE.PROPERTYDEFUID = 'ComponentWorkTypeStep_Sequence' AND COMPWORKSTEP_SEQUENCE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--PlannedManHours#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_PLANNEDMANHOURS ON COMPWORKSTEP_PLANNEDMANHOURS.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_PLANNEDMANHOURS.PROPERTYDEFUID = 'ComponentWorkTypeStep_ManHours' AND COMPWORKSTEP_PLANNEDMANHOURS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)--ActualManHours#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_ACTUALMANHOURS ON COMPWORKSTEP_ACTUALMANHOURS.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_ACTUALMANHOURS.PROPERTYDEFUID = 'ComponentWorkTypeStep_ActualHours' AND COMPWORKSTEP_ACTUALMANHOURS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  LEFT JOIN DATAOBJPR COMPWORKSTEP_DATECOMPLETE ON COMPWORKSTEP_DATECOMPLETE.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_DATECOMPLETE.PROPERTYDEFUID = 'ComponentWorkTypeStep_ActualDateComplete' AND COMPWORKSTEP_DATECOMPLETE.CREATIONUSER<>'superuser' AND COMPWORKSTEP_DATECOMPLETE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_QUANTITYCOMPLETE ON COMPWORKSTEP_QUANTITYCOMPLETE.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_QUANTITYCOMPLETE.PROPERTYDEFUID = 'ComponentWorkTypeStep_QuantityComplete' AND COMPWORKSTEP_QUANTITYCOMPLETE.CREATIONUSER<>'superuser' AND  COMPWORKSTEP_QUANTITYCOMPLETE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)),#(lf)#(lf)SPCRPT_WORKSTEP_REL_PROP_TMP as #(lf)(#(tab)#(lf)#(tab)#(lf)SELECT#(lf)            COMPWORKSTEP.COMPWORKSTEPOBID AS ""COMPWORKSTEPOBID"",            #(lf)            COMPWORKSTEP_WORKTYPE_COSTCODE.STRVALUE AS ""COSTCODE"",#(lf)            COMPWORKSTEP_FIWP.OBID AS ""FIWPOBID"",#(tab)  #(lf)            COMPWORKSTEP_WORKTYPE.OBID AS ""WORKTYPEOBID"",#(lf)            COMPWORKSTEP_COMP.OBID AS ""COMPOBID"",#(lf)            CAST(COMPONENTITEM_QUANTITYPLANNED.STRVALUE AS FLOAT) AS ""QUANTITYPLANNED"",#(lf)            FIWP_PURPOSE.OBJNAME AS ""PURPOSE""#(lf)FROM SPCRPT_WORKSTEP_IOBJ_PROP_TMP COMPWORKSTEP#(lf)#(tab)#(lf)#(tab)--IWP#(lf)#(tab)LEFT JOIN DATAREL COMPWORKSTEP_FIWP_REL ON COMPWORKSTEP_FIWP_REL.UID2 = COMPWORKSTEP.COMPWORKSTEPUID  AND COMPWORKSTEP_FIWP_REL.DEFUID = 'SPC_Package_ComponentWorkTypeStep' AND COMPWORKSTEP_FIWP_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ COMPWORKSTEP_FIWP ON COMPWORKSTEP_FIWP.OBJUID = COMPWORKSTEP_FIWP_REL.UID1 AND COMPWORKSTEP_FIWP.CONFIG = COMPWORKSTEP.PROJECT AND COMPWORKSTEP_FIWP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--WorkType#(lf)#(tab)LEFT JOIN DATAREL COMPWORKSTEP_WORKTYPE_REL ON COMPWORKSTEP_WORKTYPE_REL.UID2 = COMPWORKSTEP.COMPWORKSTEPUID AND COMPWORKSTEP_WORKTYPE_REL.DEFUID = 'SPC_ComponentWorkType_ComponentWorkTypeSteps' AND COMPWORKSTEP_WORKTYPE_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ COMPWORKSTEP_WORKTYPE ON COMPWORKSTEP_WORKTYPE.OBJUID = COMPWORKSTEP_WORKTYPE_REL.UID1 AND COMPWORKSTEP_WORKTYPE.CONFIG = COMPWORKSTEP.PROJECT AND COMPWORKSTEP_WORKTYPE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)--Cost Code#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_WORKTYPE_COSTCODE ON COMPWORKSTEP_WORKTYPE_COSTCODE.OBJOBID = COMPWORKSTEP_WORKTYPE.OBID AND COMPWORKSTEP_WORKTYPE_COSTCODE.PROPERTYDEFUID = 'ComponentWorkType_CostCode' AND COMPWORKSTEP_WORKTYPE_COSTCODE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)--Component#(lf)#(tab)LEFT JOIN DATAREL COMPWORKSTEP_COMP_REL ON COMPWORKSTEP_COMP_REL.UID2 = COMPWORKSTEP_WORKTYPE.OBJUID AND COMPWORKSTEP_COMP_REL.DEFUID = 'SPC_ComponentItem_ComponentWorkType' AND COMPWORKSTEP_COMP_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ COMPWORKSTEP_COMP ON COMPWORKSTEP_COMP.OBJUID = COMPWORKSTEP_COMP_REL.UID1 AND COMPWORKSTEP_COMP.CONFIG = COMPWORKSTEP.PROJECT AND COMPWORKSTEP_COMP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--Quantity Planned#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_QUANTITYPLANNED ON COMPONENTITEM_QUANTITYPLANNED.OBJOBID = COMPWORKSTEP_COMP.OBID AND COMPONENTITEM_QUANTITYPLANNED.PROPERTYDEFUID = 'SPC_ComponentItem_Units' AND COMPONENTITEM_QUANTITYPLANNED.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  #(lf)  LEFT JOIN DATAOBJPR FIWP_PURPOSE_PR ON FIWP_PURPOSE_PR.OBJOBID = COMPWORKSTEP_FIWP.OBID AND FIWP_PURPOSE_PR.PROPERTYDEFUID = 'FIWP_Purpose' AND FIWP_PURPOSE_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_PURPOSE ON FIWP_PURPOSE.OBJUID = FIWP_PURPOSE_PR.STRVALUE AND FIWP_PURPOSE.TERMINATIONDATE = '9999/12/31-23:59:59:999'),#(lf)#(tab)#(lf)SPCRPT_COMPONENTWORKSTEP  as#(lf)(   #(lf)  SELECT#(lf)  -- Section #5a: IObject properties#(lf)        t1.COMPWORKSTEPOBID, COMPWORKSTEPUID, PROJECT, NAME as ""EVENTS"", SEQUENCE,  --DESCRIPTION, UNITRATE, RATEUOM, NOTES, #(lf)        PLANNEDMANHOURS, ACTUALMANHOURS, ACTUALDATECOMPLETE, QUANTITYCOMPLETE, -- sample: Prop2Column,#(lf)            COSTCODE, FIWPOBID, WORKTYPEOBID, COMPOBID, QUANTITYPLANNED , t2.LASTUPDATED, t2.DESCRIPTION, t3.PURPOSE, t2.LASTUPDATEDBY -- sample: ,Prop3Column#(tab)  #(lf)  FROM SPCRPT_WORKSTEP_IOBJ_PROP_TMP t1#(lf)  LEFT JOIN SPCRPT_WORKSTEP_DIR_PROP_TMP t2 ON t2.COMPWORKSTEPOBID = t1.COMPWORKSTEPOBID#(lf)  LEFT JOIN SPCRPT_WORKSTEP_REL_PROP_TMP t3 ON t3.COMPWORKSTEPOBID = t1.COMPWORKSTEPOBID#(lf)),#(lf)#(lf)DETAILBYTAG as#(lf)(#(lf)SELECT #(lf)            COMPONENTITEM.COMPWORKSTEPOBID,#(lf)            COMPONENTITEM.COMPOBID AS ""COMPOBID"",#(lf)            COMPONENTITEM.FIWPOBID,#(lf)            COMPONENTITEM.DESCRIPTION,#(lf)            COMPONENTITEM.PROJECT, COMPONENTITEM.PURPOSE,#(lf)            COMPONENTITEM_NAME.STRVALUE AS ""NAME"",#(lf)            #(lf)            COMPONENTITEM.SEQUENCE,            #(lf)           CAST(COMPONENTITEM.PLANNEDMANHOURS AS FLOAT) AS ""FABHRS"",#(lf)          CAST(COMPONENTITEM.ACTUALMANHOURS AS FLOAT) AS ""ACTUALHRS"", #(lf)          CASE WHEN COMPONENTITEM.PLANNEDMANHOURS>0 THEN COMPONENTITEM.ACTUALMANHOURS / COMPONENTITEM.PLANNEDMANHOURS ELSE 0 END as ""PROGRESS"",#(lf)          FIWP_NAME.STRVALUE AS ""WPNO"",#(lf)          FIWP_DISCIPLINE.OBJNAME AS ""DISCIPLINE"",#(lf)          SUBSTR(COMPONENTITEM.ACTUALDATECOMPLETE, 1,10)  as ""DATEPROGRESS"",#(lf)#(tab)       SUBSTR(COMPONENTITEM.LASTUPDATED, 1,10)  as ""DATEPROGRESS1"",#(lf)          COMPONENTITEM.LASTUPDATEDBY,#(lf)          SHORTDESC.STRVALUE AS ""SHORTDESC"",#(lf)#(tab)  IDENTCODE.STRVALUE AS ""IDENTCODE"",#(lf)#(tab)  DRAWINGNO.STRVALUE AS ""DRAWINGNO"",#(lf)          RECAP.STRVALUE AS ""RECAP"",#(lf)#(tab)  LOCATIONDESC.STRVALUE AS ""LOCATIONDESC"",#(lf)#(tab)  COMPONENT_SIZE.STRVALUE AS ""COMPONENT_SIZE"",#(lf)#(tab)  MATERIAL.STRVALUE AS ""MATERIAL"",#(lf)#(tab)  UNITS.STRVALUE AS ""UNITS"",#(lf)    ClassDesignation.STRVALUE As ""CLASSDESIG""#(lf)#(lf)  FROM SPCRPT_COMPONENTWORKSTEP COMPONENTITEM#(lf)#(tab)--Name#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_NAME ON COMPONENTITEM_NAME.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_NAME.PROPERTYDEFUID = 'Name' AND COMPONENTITEM_NAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--Description#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_DESCRIPTION ON COMPONENTITEM_DESCRIPTION.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_DESCRIPTION.PROPERTYDEFUID = 'SPC_ComponentItem_ShortDescription' AND COMPONENTITEM_DESCRIPTION.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  #(tab)--Short Description #(lf)  LEFT JOIN DATAOBJPR SHORTDESC ON SHORTDESC.OBJOBID = COMPONENTITEM.COMPOBID AND SHORTDESC.PROPERTYDEFUID = 'SPC_ComponentItem_ShortDescription' AND SHORTDESC.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--Identcode #(lf)  LEFT JOIN DATAOBJPR IDENTCODE ON IDENTCODE.OBJOBID = COMPONENTITEM.COMPOBID AND IDENTCODE.PROPERTYDEFUID = 'SPC_ComponentItem_IdentCode' AND IDENTCODE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--DrawingNo#(lf)  LEFT JOIN DATAOBJPR DRAWINGNO ON DRAWINGNO.OBJOBID = COMPONENTITEM.COMPOBID AND DRAWINGNO.PROPERTYDEFUID = 'SPC_CustomSpoolDrawing' AND DRAWINGNO.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--Recap Name#(lf)  LEFT JOIN DATAOBJPR RECAP ON RECAP.OBJOBID = COMPONENTITEM.COMPOBID AND RECAP.PROPERTYDEFUID = 'MDR_SpoolName' AND RECAP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--LocationDescription#(lf)  LEFT JOIN DATAOBJPR LOCATIONDESC ON LOCATIONDESC.OBJOBID = COMPONENTITEM.COMPOBID AND LOCATIONDESC.PROPERTYDEFUID = 'SPC_ComponentItem_LocationDescription' AND LOCATIONDESC.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  #(tab)--Size#(lf)  LEFT JOIN DATAOBJPR COMPONENT_SIZE ON COMPONENT_SIZE.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENT_SIZE.PROPERTYDEFUID = 'SPC_ComponentItem_Size' AND COMPONENT_SIZE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--Material#(lf)  LEFT JOIN DATAOBJPR MATERIAL ON MATERIAL.OBJOBID = COMPONENTITEM.COMPOBID AND MATERIAL.PROPERTYDEFUID = 'SPC_ComponentItem_Material' AND MATERIAL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--Units#(lf)  LEFT JOIN DATAOBJPR UNITS ON UNITS.OBJOBID = COMPONENTITEM.COMPOBID AND UNITS.PROPERTYDEFUID = 'SPC_ComponentItem_Units' AND UNITS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--Class#(lf) LEFT JOIN DATAOBJPR ClassDesignation ON ClassDesignation.OBJOBID = COMPONENTITEM.COMPOBID AND ClassDesignation.PROPERTYDEFUID = 'SpcNonPublishedClassDesignation' AND  ClassDesignation.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  LEFT JOIN DATAOBJPR FABHRS ON FABHRS.OBJOBID = COMPONENTITEM.COMPOBID AND FABHRS.PROPERTYDEFUID = 'ComponentWorkTypeStep_ManHours' AND FABHRS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  LEFT JOIN DATAOBJPR FIWP_NAME ON FIWP_NAME.OBJOBID = COMPONENTITEM.FIWPOBID AND FIWP_NAME.PROPERTYDEFUID = 'Name' AND FIWP_NAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  LEFT JOIN DATAOBJPR COMPWORKSTEP_DATECOMPLETE ON COMPWORKSTEP_DATECOMPLETE.OBJOBID = COMPONENTITEM.COMPWORKSTEPOBID AND COMPWORKSTEP_DATECOMPLETE.PROPERTYDEFUID = 'ComponentWorkTypeStep_ActualDateComplete'-- AND COMPWORKSTEP_DATECOMPLETE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  #(tab)--IWP DISCIPLINE#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_DISCIPLINE_PR ON FIWP_DISCIPLINE_PR.OBJOBID = COMPONENTITEM.FIWPOBID AND FIWP_DISCIPLINE_PR.PROPERTYDEFUID = 'FIWP_Discipline' AND FIWP_DISCIPLINE_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_DISCIPLINE ON FIWP_DISCIPLINE.OBJUID = FIWP_DISCIPLINE_PR.STRVALUE AND FIWP_DISCIPLINE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  #(lf)   #(lf)  WHERE #(lf) #(lf)  FIWP_DISCIPLINE.OBJNAME IN('Piping')#(lf)#(lf)),#(lf)#(lf)DUMP AS#(lf)( #(lf)    SELECT ax.COMPWORKSTEPOBID, ax.FIWPOBID,#(lf)    ax.Project, #(lf)    ax.Name,    #(lf)    ax.PURPOSE,#(lf)    ax.DISCIPLINE,#(lf)    ax.WPNO, ax.SEQUENCE,ax.ACTUALHRS ,     #(lf) #(lf)--For Hydro Test#(lf)    CASE WHEN ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then ax.WPNO else null end as HydroTestWPNo,#(lf)    CASE WHEN ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then ax.FABHRS else null end as HydroTestPlanHrs,#(lf)    CASE WHEN ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then ax.ACTUALHRS else null end as HydroTestEarnedHrs,#(lf)    #(lf)    CASE WHEN ax.SEQUENCE = 1 AND ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as PREPATATION,#(lf)    CASE WHEN ax.SEQUENCE = 2 AND ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as FLUSH_FILL, #(lf)    CASE WHEN ax.SEQUENCE = 3 AND ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as PRESSURE_TEST,#(lf)   CASE WHEN ax.SEQUENCE =  4 AND ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as DEWATER_DRY,#(lf)   CASE WHEN ax.SEQUENCE =  5 AND ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as REINSTATEMENT,#(lf)   CASE WHEN ax.SEQUENCE =  6 AND ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as Acceptance,#(lf)#(lf)--Progress#(lf)  Case When ax.PURPOSE = 'Testing' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN (ax.ACTUALHRS/ax.FABHRS)*100 ELSE null END ELSE NULL END as HydrotestProgress, #(lf)#(lf)--For Reinsta Installation #(lf)    CASE WHEN ax.PURPOSE = 'Installation' AND ax.Discipline='Piping' then ax.WPNO else null end as ReinstatementWPNo,#(lf)    CASE WHEN ax.PURPOSE = 'Installation' AND ax.Discipline='Piping' then ax.FABHRS else null end as ReinstatementPlanHrs,#(lf)    CASE WHEN ax.PURPOSE = 'Installation' AND ax.Discipline='Piping' then ax.ACTUALHRS else null end as ReinstatementEarnedHrs,#(lf)    #(lf)    CASE WHEN ax.SEQUENCE = 1 AND ax.PURPOSE = 'Installation' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as HUNG,#(lf)    CASE WHEN ax.SEQUENCE = 2 AND ax.PURPOSE = 'Installation' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as FITUP, #(lf)    CASE WHEN ax.SEQUENCE = 3 AND ax.PURPOSE = 'Installation' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as WELD,#(lf)   CASE WHEN ax.SEQUENCE =  4 AND ax.PURPOSE = 'Installation' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as INSTALL,#(lf)   CASE WHEN ax.SEQUENCE =  5 AND ax.PURPOSE = 'Installation' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN ax.DATEPROGRESS1 ELSE null END ELSE NULL END as NDT,#(lf)#(lf)--Progress#(lf)  Case When ax.PURPOSE = 'Installation' AND ax.Discipline='Piping' then CASE WHEN ax.FABHRS= ax.ACTUALHRS THEN (ax.ACTUALHRS/ax.FABHRS)*100 ELSE null END ELSE NULL END as ReinstatementProgress, #(lf)  #(lf)    CASE WHEN ax.Discipline in ('Piping') then ax.DATEPROGRESS else null end as LASTPROGRESSDATE, ax.LASTUPDATEDBY,#(lf)    ax.SHORTDESC,ax.IDENTCODE,ax.DRAWINGNO,ax.RECAP,ax.LOCATIONDESC,ax.COMPONENT_SIZE,ax.MATERIAL,ax.UNITS,ax.CLASSDESIG#(lf)    #(lf) #(lf)    FROM DETAILBYTAG ax     #(lf)  -- where ax.NAME='HM4ABMB195' #(lf)     order by WPNO, SEQUENCE#(lf)),#(lf)#(lf)FINAL as (#(lf)#(lf) #(lf)SELECT #(lf) #(lf)    ax.Project as ""PLANT NAME"", #(lf)    ax.Name as ""TAG"", #(lf)    --ax.DISCIPLINE,#(lf)    --ax.PURPOSE,#(lf) #(lf)  MAX(ax.HydroTestWPNo) as HydroTestWPNo,#(lf)  SUM(ax.HydroTestPlanHrs) as HydroTestPlanHrs,#(lf)  SUM(ax.HydroTestEarnedHrs) as HydroTestEarnedHrs,#(lf)#(lf)  MAX(ax.PREPATATION) as PREPATATION,#(lf)  MAX(ax.FLUSH_FILL) as FLUSH_FILL,#(lf)  MAX(ax.PRESSURE_TEST) as PRESSURE_TEST,#(lf)  MAX(ax.DEWATER_DRY) as DEWATER_DRY,#(lf)  MAX(ax.REINSTATEMENT) as REINSTATEMENT,#(lf)  MAX(ax.Acceptance) as ACCEPTANCE,#(lf)  MAX(ax.HydrotestProgress) As HydrotestProgress,#(lf)  #(lf)  MAX(ax.ReinstatementWPNo) as ReinstatementWPNo,#(lf)  SUM(ax.ReinstatementPlanHrs) as ReinstatementPlanHrs,#(lf)  SUM(ax.ReinstatementEarnedHrs) as ReinstatementnEarnedHrs,#(lf)#(lf)  MAX(ax.HUNG) as HUNG,#(lf)  MAX(ax.FITUP) as FITUP,#(lf)  MAX(ax.WELD) as WELD,#(lf)  MAX(ax.INSTALL) as INSTALL,#(lf)  MAX(ax.NDT) as NDT,#(lf)#(lf)  MAX(ax.ReinstatementProgress) as ReinstatementProgress,#(lf)#(lf)  ax.SHORTDESC,#(lf)  --ax.IDENTCODE,ax.DRAWINGNO,ax.RECAP,ax.LOCATIONDESC,ax.COMPONENT_SIZE,#(lf)  ax.MATERIAL,ax.UNITS#(lf)#(lf)  #(lf)#(lf)#(lf)FROM DUMP ax#(lf)WHERE  ax.CLASSDESIG in('Non_Published_Hydrotest','Non_Published_Reinstatement') And ax.DISCIPLINE = 'Piping' And ax.PURPOSE IN('Testing','Installation')#(lf)GROUP BY      ax.Project,     ax.Name,ax.SHORTDESC,ax.IDENTCODE,ax.DRAWINGNO,ax.RECAP,ax.LOCATIONDESC,ax.COMPONENT_SIZE,ax.MATERIAL,ax.UNITS#(lf) )#(lf) #(lf) select * from FINAL"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

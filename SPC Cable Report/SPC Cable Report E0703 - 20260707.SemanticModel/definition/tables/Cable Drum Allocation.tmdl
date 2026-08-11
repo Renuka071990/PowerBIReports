@@ -1,0 +1,638 @@
+table 'Cable Drum Allocation'
+	lineageTag: b404f122-65f1-4911-9e43-100bc0bdc53c
+
+	measure 'Count of Pulled Comp Date minus Count of TAGID' =
+			
+			COUNTA('Query1'[Pulled Comp Date]) - COUNTA('Query1'[TAGID])
+		formatString: 0
+		lineageTag: 7aafa154-7faa-48ea-98a3-863015cf2378
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Count of TAGID minus Count of Pulled Comp Date 2' =
+			
+			COUNTA('PGTT Plan'[TAGID]) - COUNTA('Query1'[Pulled Comp Date])
+		formatString: 0
+		lineageTag: e3c73f6b-e687-404e-99a1-e4fd5fe467db
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Count of Pulled Comp Date minus Count of TAGID 2' =
+			
+			COUNTA('Query1'[Pulled Comp Date]) - COUNTA('Query1'[TAGID])
+		formatString: #,0
+		lineageTag: 2e281576-a678-4329-a05a-46f333e0fe65
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Count of TAGID minus Count of Pulled Comp Date 3' =
+			
+			COUNTA('Query1'[TAGID]) - COUNTA('Query1'[Pulled Comp Date])
+		formatString: 0
+		lineageTag: 0f3b9d5f-ca5b-496d-9c41-441e681b931b
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Count of Pulled Comp Date minus Count of TAGID 3' =
+			
+			COUNTA('Query1'[Pulled Comp Date]) - COUNTA('Query1'[TAGID])
+		formatString: 0
+		lineageTag: 8087dde3-64dc-47da-87e4-09a82ab6ce55
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'PULLING MANHOURS divided by UNITS' =
+			
+			DIVIDE(SUM('Query1'[PULLING MANHOURS]), SUM('Query1'[UNITS])/60)
+		lineageTag: 29d17124-8a0b-4b2e-bd22-3fd1e5ed4bde
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'UNITS divided by PULLING MANHOURS' =
+			
+			DIVIDE(SUM('Query1'[UNITS]), SUM('Query1'[PULLING MANHOURS])*60)
+		formatString: #,0
+		lineageTag: 774507f7-466e-42a2-b252-13f498f54356
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Cable Tray progress %' =
+			
+			DIVIDE(
+				SUM('Cable Tray'[NEW MDR TRAY%]),
+				SUM('Cable Tray'[NEW MDR TRAY])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: fff71d4f-eb08-4365-96a8-bcbf6c760b48
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Fitting progress %' = ```
+			
+			DIVIDE(
+				SUM('Cable Tray'[NEW MDR FITTING%]),
+				SUM('Cable Tray'[NEW MDR FITTING])
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 6f36df81-df70-48d9-a3c2-fd76b202628d
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Tray Overall %' =
+			
+			DIVIDE(COUNTA('Cable Tray'[INSTALLED2]), COUNTA('Cable Tray'[WPNO]))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0953879c-24b2-4b59-92d5-60e4c3f1b07c
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'cable drum progress %' = ```
+			
+			VAR A=(COUNTA('Query1'[Pulled Comp Date])/COUNTA('Query1'[TAGID]))*100
+			VAR B=COUNTA('Query1'[Pulled Comp Date])
+			RETURN
+			A
+			
+			```
+		formatString: 0
+		lineageTag: 37919ac0-c572-45c6-8225-b118b437181d
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Gland Scope Total' =
+			
+			SUM('Query1'[GlandedfromScope]) + COUNTA('Query1'[GlandedToScope])
+		formatString: #,0
+		lineageTag: 241c1dd0-33be-4d7b-889f-72e799d93aa5
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalAddition"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Gland Total Actual %' =
+			
+			DIVIDE([Gland Scope Total], [Glanding Total actual]*100)
+		lineageTag: 86fd8641-4bce-49c7-822e-0c702f09373b
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Glanding Total actual divided by Gland Scope Total' =
+			
+			DIVIDE([Glanding Total actual], [Gland Scope Total]*100)
+		formatString: 0
+		lineageTag: 5ab935ec-1c36-44e8-8a8c-28d8395753d9
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Gland ScopeActual Total %' =
+			
+			DIVIDE(SUM('Query1'[fx_Glanding Completed Qty]), [Gland Scope Total])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 76e22058-31c5-429f-97c5-d78a5c3a4284
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Termination Total Scope' =
+			
+			COUNTA('Query1'[TERMINATIONFromScope]) + COUNTA('Query1'[TerminationToScope])
+		formatString: 0
+		lineageTag: 8c6c9250-1455-4af8-a8a1-e10347c9853f
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure TerminationScopeTotal =
+			
+			COUNTA('Query1'[TermToScope]) + COUNTA('Query1'[TermfromScope])
+		formatString: #,0
+		lineageTag: 3d98b985-9e4f-4194-a102-0b9f505fae97
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalAddition"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Termination Total (Actual)' =
+			
+			COUNTA('Query1'[Termination From Comp Date]) + COUNTA('Query1'[Termination To Comp Date])
+		formatString: 0
+		lineageTag: df5a1898-1d34-4dbf-a090-a39e4de0781b
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalAddition"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Termination Actual %' =
+			
+			DIVIDE([Termination Total (Actual)], [Termination Total Scope])
+		formatString: 0
+		lineageTag: fdd996b4-51ef-4b0f-8fc0-38c8232bda28
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Termination Total %' =
+			
+			DIVIDE([Termination Total (Actual)], [TerminationScopeTotal]*100)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ffbfb6e8-1702-4317-8145-b712785d0c16
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Total overall cable tray count' =
+			
+			SUM('Cable Tray'[NEW MDR TRAY%]) + SUM('Cable Tray'[NEW MDR FITTING%])
+		formatString: #,0
+		lineageTag: ec20102f-d87a-453f-bf3b-fe356bc7a075
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalAddition"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'OVERALL GLANDWPandGLANDED' =
+			
+			COUNTA('EqptGland'[EQUIPMENT PROGRESS INSTALLED]) - COUNTA('EqptGland'[GLANDC])
+		formatString: 0
+		lineageTag: f1ababfc-ee19-4ba7-bb84-faf8b574ceca
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'OVERALL TERMWPandTERMINATED' =
+			
+			COUNTA('EqptGland'[GLANDC]) - COUNTA('EqptGland'[TERMC])
+		formatString: 0
+		lineageTag: 618c7a54-f290-4d38-a79f-b28b403025e4
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure testtt =
+			
+			COUNTA('EqptGland'[EQUIPMENT PROGRESS INSTALLED]) - COUNTA('EqptGland'[GLANDC])
+		formatString: 0
+		lineageTag: ebf4fc39-349b-43ca-b70b-05e46c267b20
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'WP OverallCountIssued/ WPISSUED(m)' =
+			
+			COUNTA('Cable Tray'[WPCountIssued]) + SUM('Cable Tray'[WPISSUED(m)])
+		lineageTag: b1d255d2-d69d-439a-8dcb-d914bf77c903
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalAddition"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'BalanceNEW MDR TRAYWPISSUED(m)' =
+			
+			SUM('Cable Tray'[NEW MDR TRAY]) - SUM('Cable Tray'[NEW MDR TRAY%])
+		formatString: #,0
+		lineageTag: d97d3954-3ebb-4cb6-a8e0-c736a2a9ff79
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Drum #'
+		dataType: string
+		lineageTag: dbf55888-5471-4ea1-b941-8050c139dbab
+		summarizeBy: none
+		sourceColumn: Drum #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LINE ITEM DESCRIPTION'
+		dataType: string
+		lineageTag: c1e2c308-7718-4f9c-8d5f-df0dc9d9afe5
+		summarizeBy: none
+		sourceColumn: LINE ITEM DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'IDENT NUMBER'
+		dataType: string
+		lineageTag: d1f1f559-f33b-435d-a62b-041754fca1b1
+		summarizeBy: none
+		sourceColumn: IDENT NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Length in Drum (LM)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 11bb7187-c6e9-4440-b393-8f7f2c0b2011
+		summarizeBy: none
+		sourceColumn: Length in Drum (LM)
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocatedfor '
+		dataType: string
+		lineageTag: d535754b-f78b-47da-b16c-91fb3c9e3da7
+		summarizeBy: none
+		sourceColumn: "Allocatedfor "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ISS #'
+		dataType: string
+		lineageTag: 614fb598-57fb-4865-99de-1ea4b762e3f1
+		summarizeBy: none
+		sourceColumn: ISS #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Drum #'
+		dataType: string
+		lineageTag: 3253b58a-ae1c-4d54-a6dc-0b5565d63c69
+		summarizeBy: none
+		sourceColumn: Vendor Drum #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MTN #'
+		dataType: string
+		lineageTag: fc0604b7-1a4f-48f6-85c7-562c7ff93d67
+		summarizeBy: none
+		sourceColumn: MTN #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WH MTN #'
+		dataType: string
+		lineageTag: 003b8b33-d0cf-4d77-96a3-e1ecbf97b0fb
+		summarizeBy: none
+		sourceColumn: WH MTN #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Packing List #'
+		dataType: string
+		lineageTag: f0c6d87c-b471-4597-aac8-145d23c9ae33
+		summarizeBy: none
+		sourceColumn: Packing List #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Packing list Date'
+		dataType: string
+		lineageTag: 332bd855-eadb-49e5-b9fc-9f3367364195
+		summarizeBy: none
+		sourceColumn: Packing list Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disc
+		dataType: string
+		lineageTag: e3f3813c-8787-48fa-995d-c03fb87e5659
+		summarizeBy: none
+		sourceColumn: Disc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Qty'
+		dataType: string
+		lineageTag: 4bb3ad7c-fb1d-419d-a845-2af2b0d349ac
+		summarizeBy: none
+		sourceColumn: PO Qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# of drums(Estimate)'
+		dataType: string
+		lineageTag: 8cd86916-a322-47da-b1f9-b29b4199548e
+		summarizeBy: none
+		sourceColumn: # of drums(Estimate)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO LI#'
+		dataType: string
+		lineageTag: 4299fd6d-07aa-416e-b502-34e27789309a
+		summarizeBy: none
+		sourceColumn: PO LI#
+
+		annotation SummarizationSetBy = Automatic
+
+	column po
+		dataType: string
+		lineageTag: 3692e18e-3e6c-422b-a640-bbb49534a560
+		summarizeBy: none
+		sourceColumn: po
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Ident UID'
+		dataType: string
+		lineageTag: c68f634a-b1c7-499c-bb96-c8ddecf1a400
+		summarizeBy: none
+		sourceColumn: PO Ident UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VENDOR NAME'
+		dataType: string
+		lineageTag: 2ac16181-684c-4960-b0b1-877caa7a70eb
+		summarizeBy: none
+		sourceColumn: VENDOR NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'UID (Pre allocation)'
+		dataType: string
+		lineageTag: f7069fc3-b343-46ef-8bf8-7fcee699fc5d
+		summarizeBy: none
+		sourceColumn: UID (Pre allocation)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seq
+		dataType: string
+		lineageTag: c02d708e-c349-460d-986e-9e9f886e788d
+		summarizeBy: none
+		sourceColumn: Seq
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'UID (Allocated)'
+		dataType: string
+		lineageTag: dcc85ed4-7b52-42ca-aef4-022417be3602
+		summarizeBy: none
+		sourceColumn: UID (Allocated)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Seq #'
+		dataType: string
+		lineageTag: dbba5619-5abd-4233-ace9-683e39858d0f
+		summarizeBy: none
+		sourceColumn: Seq #
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lot#
+		dataType: string
+		lineageTag: ed54fdd4-0230-4c83-98af-8bf5c891a8f5
+		summarizeBy: none
+		sourceColumn: Lot#
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'UNIQUEID NO. OF DRUM'
+		dataType: string
+		lineageTag: 75a5bfcf-fa92-49eb-8224-f4833041e6e0
+		summarizeBy: none
+		sourceColumn: UNIQUEID NO. OF DRUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTITY(M)
+		dataType: string
+		lineageTag: f2e3446a-a7e8-4afb-8d12-f9cec823e44c
+		summarizeBy: none
+		sourceColumn: QUANTITY(M)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scope
+		dataType: string
+		lineageTag: e98c9159-6bc0-4fdd-a17a-a5918b98ce41
+		summarizeBy: none
+		sourceColumn: Scope
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Construction Pad 10%'
+		dataType: string
+		lineageTag: fdc30e0e-5e35-41cd-b4b3-addb341dfbf2
+		summarizeBy: none
+		sourceColumn: Construction Pad 10%
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ident UID'
+		dataType: string
+		lineageTag: 0b8def7c-d8d1-4069-b81f-cdcb5b2b4328
+		summarizeBy: none
+		sourceColumn: Ident UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Short Desc'
+		dataType: string
+		lineageTag: c42b702d-2ec8-4413-8e3b-9221c12bc709
+		summarizeBy: none
+		sourceColumn: Short Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cable Drum Allocation' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\E0703\Borwin6\14 - PBI Report\EandI\Cable Drum Allotment.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Short Desc", type text}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed Type1",{{"Length in Drum (LM)", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

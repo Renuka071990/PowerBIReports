@@ -1,0 +1,42 @@
+table 'xrefdate_Last Refreshed Date'
+	lineageTag: be1a5723-1c8e-4f93-8a97-3ee881218eef
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0c546bbc-e65f-4228-87cc-980c4f677b81
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Adjust = "4:00:00"
+		lineageTag: 2abaa7a3-513d-433d-a939-0b32c6a7e74d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_UTC_Adjust = 'xrefdate_Last Refreshed Date'[Refresh Date]+'xrefdate_Last Refreshed Date'[FX_Adjust]
+		formatString: dd-mmm-yy h:nn AM/PM
+		lineageTag: 7d134360-45f6-4859-acd0-fdd49d1d154a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition 'xrefdate_Last Refreshed Date' = m
+		mode: import
+		source =
+				let
+				    Source = DateTime.LocalNow(),
+				    #"Converted to Table" = #table(1, {{Source}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Converted to Table",{{"Column1", type datetime}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Refresh Date"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

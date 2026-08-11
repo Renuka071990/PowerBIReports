@@ -1,0 +1,222 @@
+table 'Calendar Weekly'
+	lineageTag: cd753ea2-c2d0-4a16-b64e-5cae9c9450fe
+
+	column Date
+		formatString: dd-mmm-yy
+		lineageTag: bc9b54ce-7ab2-446d-b44b-f8fb153ecedd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Week_Ending = (if(WEEKDAY('Calendar Weekly'[Date]) < 6,('Calendar Weekly'[Date]+5) - WEEKDAY('Calendar Weekly'[Date]),(('Calendar Weekly'[Date]+5) - WEEKDAY('Calendar Weekly'[Date]))+7))
+		formatString: dd-mmm-yy
+		lineageTag: 98945fc1-0b65-4b4e-bde9-0c08c8ecdbd5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'FX_ACT_WK_Pull Chart' =
+			calculate (sum(Query1[ACTUALLENGTH]),
+			filter(Query1,Query1[FX_PulledtoComp_WeekEnding] = [FX_Week_Ending]
+			))
+		lineageTag: 812cd836-8d18-4dbc-90a2-b01b21f2a0ba
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'FX_PULL_WEEKLY_PLAN CHART' =
+			CALCULATE(
+			    sum ('PGTT Plan'[ESTLENGTH]),
+			    filter('PGTT Plan','PGTT Plan'[Item]="Pulling" && 'PGTT Plan'[FX_Week_Ending]='Calendar Weekly'[FX_Week_Ending] )
+			)
+		lineageTag: 1314930d-bd4c-4746-bb9d-0f284c04fe36
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'FX_GLAND_WEEKLY_PLAN CHART' =
+			CALCULATE(
+			    count ('PGTT Plan'[TAGID]),
+			    filter('PGTT Plan','PGTT Plan'[Item]="Glanding" && 'PGTT Plan'[FX_Week_Ending]=[FX_Week_Ending])
+			)*2
+		formatString: 0
+		lineageTag: 1b843861-be66-492e-b8f3-6fd7b568614d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_ACT_WK_GLAND CHART' =
+			calculate(
+			    count(Query1[Glanding From Comp Date]),
+			    filter(Query1,Query1[FX_GlanFromComp_WeekEnding]  = [FX_Week_Ending]))+
+			    calculate(
+			    count(Query1[Glanding To Comp Date]),
+			    filter(Query1,Query1[FX_GlanToComp_WeekEnding]  = [FX_Week_Ending]))
+		formatString: 0
+		lineageTag: b6eee6b3-6a09-4f0f-8509-65655daf9478
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_TERM_WEEKLY_PLAN CHART' =
+			CALCULATE(
+			    count ('PGTT Plan'[TAGID]),filter('PGTT Plan','PGTT Plan'[Item]="Termination" && 'PGTT Plan'[FX_Week_Ending]=[FX_Week_Ending])
+			)*2
+		formatString: 0
+		lineageTag: aad20f7d-8744-4059-bec8-cc0a8b17ae82
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_ACT_WK_TERM CHART' =
+			calculate(
+			    count(Query1[Termination From Comp Date]),
+			    filter(Query1,Query1[FX_TermFromComp_WeekEnding]  = [FX_Week_Ending]))
+			    + calculate(
+			    count(Query1[Termination To Comp Date]),
+			    filter(Query1,Query1[FX_TermToComp_WeekEnding]  = [FX_Week_Ending]))
+		formatString: 0
+		lineageTag: 8838a235-99a8-4c7d-8154-65e9dbdba103
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_TEST_WEEKLY_PLAN CHART' =
+			CALCULATE(
+			    count ('PGTT Plan'[TAGID]),filter('PGTT Plan','PGTT Plan'[Item]="Testing" && 'PGTT Plan'[FX_Week_Ending]=[FX_Week_Ending])
+			)
+		formatString: 0
+		lineageTag: 04c1a938-22a5-462b-8c84-d2501a41f3e6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_ACT_WK_TEST CHART' =
+			calculate(
+			    count(Query1[Testing Comp Date]),
+			    filter(Query1,Query1[FX_TestToComp_WeekEnding]  = [FX_Week_Ending]))
+		formatString: 0
+		lineageTag: eb747b46-9f6a-48c0-a051-edacb87e41db
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_PULL_DAILY_PLAN CHART' =
+			CALCULATE(
+			    sum ('PGTT Plan'[ESTLENGTH]),
+			    filter('PGTT Plan','PGTT Plan'[Item]="Pulling" && 'PGTT Plan'[Plan Date]='Calendar Weekly'[Date] ))
+		lineageTag: 3ce45274-548a-4043-833c-cab5eaea4bc8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'FX_ACT_DAILY_Pull Chart' =
+			calculate (sum(Query1[ACTUALLENGTH]),
+			filter(Query1,Query1[Pulled Comp Date] = [Date]
+			))
+		lineageTag: 5d3c13b2-7e34-4b09-8275-942f4681562b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'FX_GLAND_DAILY_PLAN CHART' =
+			CALCULATE(
+			    count ('PGTT Plan'[TAGID]),
+			    filter('PGTT Plan','PGTT Plan'[Item]="Glanding" && 'PGTT Plan'[Plan Date]=[Date])
+			)*2
+		formatString: 0
+		lineageTag: 2a8b6874-d375-4476-9670-e2092543398c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_ACT_DAILY_GLAND CHART' =
+			calculate(
+			    count(Query1[Glanding From Comp Date]),
+			    filter(Query1,Query1[Glanding From Comp Date]  = [Date]))+
+			    calculate(
+			    count(Query1[Glanding To Comp Date]),
+			    filter(Query1,Query1[Glanding To Comp Date]  = [Date]))
+		lineageTag: be4f185f-f9fc-42c4-9ccf-f7c19d654ef4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_TERM_DAILY_PLAN CHART' =
+			CALCULATE(
+			    count ('PGTT Plan'[TAGID]),filter('PGTT Plan','PGTT Plan'[Item]="Termination" && 'PGTT Plan'[Plan Date]=[Date])
+			)*2
+		formatString: 0
+		lineageTag: bdd29f2f-ba13-4f67-8335-954c5df1a13c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_ACT_DAILY_TERM CHART' =
+			calculate(
+			    count(Query1[Termination From Comp Date]),
+			    filter(Query1,Query1[Termination From Comp Date]  = [Date]))
+			    + calculate(
+			    count(Query1[Termination To Comp Date]),
+			    filter(Query1,Query1[Termination To Comp Date]  = [Date]))
+		formatString: 0
+		lineageTag: 7921746d-abb3-40e5-b8f1-f7f433d691f0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_TEST_DAILY_PLAN CHART' =
+			CALCULATE(
+			    count ('PGTT Plan'[TAGID]),filter('PGTT Plan','PGTT Plan'[Item]="Testing" && 'PGTT Plan'[Plan Date]=[Date])
+			)
+		formatString: 0
+		lineageTag: 2e29c941-a7fc-41d8-a05b-ace6dd7efd12
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_ACT_DAILY_TEST CHART' =
+			calculate(
+			    count(Query1[Testing Comp Date]),
+			    filter(Query1,Query1[Testing Comp Date]  = [Date]))
+		formatString: 0
+		lineageTag: 881f06b6-3352-4858-9398-80aceeea00e5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Day = DAY('Calendar Weekly'[Date])
+		formatString: 0
+		lineageTag: 1820fab1-e660-4c37-b4f4-4cb54178a172
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Month = YEAR('Calendar Weekly'[Date])
+		dataType: int64
+		formatString: 0
+		lineageTag: 41ed8d66-fdc0-4025-9a50-ffb6b391fad9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Calendar Weekly' = calculated
+		mode: import
+		source = CALENDAR([MIN DATE],[MAX DATE])
+
+	annotation PBI_Id = 86c4f6e412f34f5aa9b2d4157155599d
+

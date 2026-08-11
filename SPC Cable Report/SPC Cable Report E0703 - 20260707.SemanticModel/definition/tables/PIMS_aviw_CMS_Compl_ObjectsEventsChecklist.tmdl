@@ -1,0 +1,598 @@
+table PIMS_aviw_CMS_Compl_ObjectsEventsChecklist
+	lineageTag: 83afd9ba-d17d-488f-890d-6a99d7f76c6f
+
+	column Cable_01 = IF(CONTAINSSTRING([OEngRegView],"Cable"),1,0)
+		formatString: #,0
+		lineageTag: 8baf7a9c-1fe3-405d-a729-a9b4f1dc2343
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Equipment_01 = IF(CONTAINSSTRING([OEngRegView],"equipment"),1,0)
+		formatString: #,0
+		lineageTag: 03b17023-43a0-469d-90d7-e49ec21ea760
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column SystemDesc_01 = LOOKUPVALUE(PIMS_aviw_CMS_Compl_SubSystems[SubSystem])
+		lineageTag: d36e6a95-cc99-4430-9287-a430689b5720
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimKey
+		dataType: string
+		lineageTag: ae3b12e2-1755-4906-99e0-5c8daa0695ac
+		summarizeBy: none
+		sourceColumn: PrimKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: string
+		lineageTag: da59d5d9-7596-4f17-ba1a-38f77a6ccf49
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CheckedOutBy
+		dataType: string
+		lineageTag: f6d78c93-9a5c-406b-8a03-c8cebf2f0b64
+		summarizeBy: none
+		sourceColumn: CheckedOutBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReasonForResetSigning
+		dataType: string
+		lineageTag: 46a65921-37c0-432c-a0eb-208bf0df09d6
+		summarizeBy: none
+		sourceColumn: ReasonForResetSigning
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reset
+		dataType: string
+		lineageTag: b27884a0-619b-42e7-8414-4e38097dad66
+		summarizeBy: none
+		sourceColumn: Reset
+
+		annotation SummarizationSetBy = Automatic
+
+	column ResetBy
+		dataType: string
+		lineageTag: 7367c36f-0fe1-42db-9348-9dd131e2800f
+		summarizeBy: none
+		sourceColumn: ResetBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comments
+		dataType: string
+		lineageTag: c00f6873-069f-407e-938f-9ef367a19e2f
+		summarizeBy: none
+		sourceColumn: Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column CheckItemsComplete
+		dataType: string
+		lineageTag: 9e7af20d-5145-4ab9-8969-ecedccf17233
+		summarizeBy: none
+		sourceColumn: CheckItemsComplete
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignedBy1
+		dataType: string
+		lineageTag: bc1e4e8f-5c34-4e82-8f2f-c25278dc3a28
+		summarizeBy: none
+		sourceColumn: SignedBy1
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignedBy2
+		dataType: string
+		lineageTag: cf7597ff-ed40-469c-abb9-9b985425fc82
+		summarizeBy: none
+		sourceColumn: SignedBy2
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignedBy3
+		dataType: string
+		lineageTag: cf10148c-60c3-44a1-83d9-4d3a6e81db8f
+		summarizeBy: none
+		sourceColumn: SignedBy3
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignedBy4
+		dataType: string
+		lineageTag: bc1bb00e-1d8c-4f41-9ff9-e3763261cad8
+		summarizeBy: none
+		sourceColumn: SignedBy4
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignedBy5
+		dataType: string
+		lineageTag: f886f0d6-5aab-4881-9a2d-8d9488861961
+		summarizeBy: none
+		sourceColumn: SignedBy5
+
+		annotation SummarizationSetBy = Automatic
+
+	column OptionalSign1
+		dataType: string
+		lineageTag: 8dbc5683-bd36-4871-843f-63b5f95a14e2
+		summarizeBy: none
+		sourceColumn: OptionalSign1
+
+		annotation SummarizationSetBy = Automatic
+
+	column OptionalSign2
+		dataType: string
+		lineageTag: a502fcdf-6fb8-4132-a226-426e0b429ca4
+		summarizeBy: none
+		sourceColumn: OptionalSign2
+
+		annotation SummarizationSetBy = Automatic
+
+	column OptionalSign3
+		dataType: string
+		lineageTag: 32bfabd5-324d-4e62-ae5f-bfa42c6a2048
+		summarizeBy: none
+		sourceColumn: OptionalSign3
+
+		annotation SummarizationSetBy = Automatic
+
+	column OptionalSign4
+		dataType: string
+		lineageTag: 29b7cb5c-9a69-4d70-bf01-908986da1497
+		summarizeBy: none
+		sourceColumn: OptionalSign4
+
+		annotation SummarizationSetBy = Automatic
+
+	column OptionalSign5
+		dataType: string
+		lineageTag: 543b491d-caf3-4bc1-9511-17c36f75bff6
+		summarizeBy: none
+		sourceColumn: OptionalSign5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Signed1
+		dataType: string
+		lineageTag: 900ecb8b-e457-4fda-8b06-002d1bce9d74
+		summarizeBy: none
+		sourceColumn: Signed1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Signed2
+		dataType: string
+		lineageTag: 31e201ec-7629-4ab5-af68-d620e5f01224
+		summarizeBy: none
+		sourceColumn: Signed2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Signed3
+		dataType: string
+		lineageTag: 08c54497-d013-4acb-8c99-5d4c8e065239
+		summarizeBy: none
+		sourceColumn: Signed3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Signed4
+		dataType: string
+		lineageTag: 610d794c-9a9b-4302-85a6-59b8db84eff7
+		summarizeBy: none
+		sourceColumn: Signed4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Signed5
+		dataType: string
+		lineageTag: 5c922f21-692a-44ff-8348-9bb9e6128ce0
+		summarizeBy: none
+		sourceColumn: Signed5
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup1
+		dataType: string
+		lineageTag: e180cefa-7462-458c-9d0c-a524a5f0d59a
+		summarizeBy: none
+		sourceColumn: SignGroup1
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup2
+		dataType: string
+		lineageTag: e8374877-760a-4bec-8ee5-38b6dcedcbfd
+		summarizeBy: none
+		sourceColumn: SignGroup2
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup3
+		dataType: string
+		lineageTag: 61c6708d-4df0-41fb-b05f-67c6b3d7ddd5
+		summarizeBy: none
+		sourceColumn: SignGroup3
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup4
+		dataType: string
+		lineageTag: b0f1e6aa-6f3e-4a5c-bf48-3759941765e9
+		summarizeBy: none
+		sourceColumn: SignGroup4
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup5
+		dataType: string
+		lineageTag: 1b71b71b-c00f-453c-bcf2-1cd4bf5f466a
+		summarizeBy: none
+		sourceColumn: SignGroup5
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup1NA
+		dataType: string
+		lineageTag: 5f77cefb-b1e7-4d10-8b12-2ef8b4fb4fd6
+		summarizeBy: none
+		sourceColumn: SignGroup1NA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup2NA
+		dataType: string
+		lineageTag: c116ef5d-627f-464e-8530-abc39f8fdc05
+		summarizeBy: none
+		sourceColumn: SignGroup2NA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup3NA
+		dataType: string
+		lineageTag: 32c795bf-f170-4de9-be03-894f51d50d65
+		summarizeBy: none
+		sourceColumn: SignGroup3NA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup4NA
+		dataType: string
+		lineageTag: 59a5139d-0f62-4582-aa0f-d666d73089fe
+		summarizeBy: none
+		sourceColumn: SignGroup4NA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignGroup5NA
+		dataType: string
+		lineageTag: 0bde272d-ff40-4859-861b-c249193f0dd1
+		summarizeBy: none
+		sourceColumn: SignGroup5NA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommentsImage
+		dataType: string
+		lineageTag: a50936b6-83ae-4fae-a9e1-dbd30d2c7629
+		summarizeBy: none
+		sourceColumn: CommentsImage
+
+		annotation SummarizationSetBy = Automatic
+
+	column EventIDNo
+		dataType: string
+		lineageTag: 262d121a-68e4-4180-bcfa-1e9bdbae7e80
+		summarizeBy: none
+		sourceColumn: EventIDNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column RespID
+		dataType: string
+		lineageTag: 4d3d20c7-a4f4-4c2d-9a71-3af574ec9652
+		summarizeBy: none
+		sourceColumn: RespID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CertID
+		dataType: string
+		lineageTag: 607a0757-d926-4de0-84ac-fbbd27617302
+		summarizeBy: none
+		sourceColumn: CertID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plant
+		dataType: string
+		lineageTag: c654b934-9bd1-4966-b8b8-326218e486cc
+		summarizeBy: none
+		sourceColumn: Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column TagNo
+		dataType: string
+		lineageTag: 06f5a65d-cfee-4fa9-ad0d-df4f20508911
+		summarizeBy: none
+		sourceColumn: TagNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Package
+		dataType: string
+		lineageTag: 6c86ce0d-b782-4c27-8bd6-5cf8877bbb05
+		summarizeBy: none
+		sourceColumn: Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: e3a0037d-dc3f-4ddf-a14d-a848162bf4fb
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystem
+		dataType: string
+		lineageTag: fb773013-a340-49c1-8860-2a903f467863
+		summarizeBy: none
+		sourceColumn: SubSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: b4044140-1dac-4e18-b480-efe364a2664d
+		summarizeBy: none
+		sourceColumn: Site
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revision
+		dataType: string
+		lineageTag: f3584ed5-1434-4d6c-b2ed-d33125f7d70b
+		summarizeBy: none
+		sourceColumn: Revision
+
+		annotation SummarizationSetBy = Automatic
+
+	column NA
+		dataType: string
+		lineageTag: 65c52590-7c99-4d26-ba9a-ab46c1a30443
+		summarizeBy: none
+		sourceColumn: NA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual
+		dataType: string
+		lineageTag: 090a28f0-9b08-4226-b5f1-63283b907f4a
+		summarizeBy: none
+		sourceColumn: Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column Barcode
+		dataType: string
+		lineageTag: 204ef198-d61b-4404-8248-75c07fdb30cd
+		summarizeBy: none
+		sourceColumn: Barcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column FileRef
+		dataType: string
+		lineageTag: ac68bb98-9396-4297-965f-1d6d70808a7e
+		summarizeBy: none
+		sourceColumn: FileRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column OEPrimKey
+		dataType: string
+		lineageTag: efabbbda-8f61-4d98-a5a3-d83b6d0b79ba
+		summarizeBy: none
+		sourceColumn: OEPrimKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column TagRef
+		dataType: string
+		lineageTag: 08546166-1659-4230-b9cb-f121cda3accb
+		summarizeBy: none
+		sourceColumn: TagRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column OEngRegView
+		dataType: string
+		lineageTag: 0da30309-93b2-4180-992b-0be83b751e56
+		summarizeBy: none
+		sourceColumn: OEngRegView
+
+		annotation SummarizationSetBy = Automatic
+
+	column EngTagNo
+		dataType: string
+		lineageTag: 213aba5c-ce94-43be-9e70-6c787aeb38c4
+		summarizeBy: none
+		sourceColumn: EngTagNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column1
+		dataType: string
+		lineageTag: d10bd0ec-040d-4823-a380-5bcaf3488e85
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: d9abe63c-7a4b-4660-aeed-7ee36c113f7c
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 06e80921-c341-4e99-9105-02b1ce99bf4c
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 5c65d136-9edb-4aae-a004-bdd3025ef6a8
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 77526e74-927e-4cbd-98d0-5fd5431d1921
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column CheckItemHeader1
+		dataType: string
+		lineageTag: 0186e3a0-ec6c-4828-9dfe-dca1840a3b7c
+		summarizeBy: none
+		sourceColumn: CheckItemHeader1
+
+		annotation SummarizationSetBy = Automatic
+
+	column CheckItemHeader2
+		dataType: string
+		lineageTag: 9c3aeb1a-7c8f-4555-967c-30f4c6632818
+		summarizeBy: none
+		sourceColumn: CheckItemHeader2
+
+		annotation SummarizationSetBy = Automatic
+
+	column CheckItemHeader3
+		dataType: string
+		lineageTag: 686fc620-ed1f-43a5-b90e-9b2f6fca6c8c
+		summarizeBy: none
+		sourceColumn: CheckItemHeader3
+
+		annotation SummarizationSetBy = Automatic
+
+	column CheckItemHeader4
+		dataType: string
+		lineageTag: 71f47985-d7c8-4600-b60b-b452f6833ecc
+		summarizeBy: none
+		sourceColumn: CheckItemHeader4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disc
+		dataType: string
+		lineageTag: 4bfc6144-c3ca-4578-b6cf-6c0edba68fa9
+		summarizeBy: none
+		sourceColumn: Disc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phase
+		dataType: string
+		lineageTag: 46284112-f9b5-40ea-b2b8-35b15ef2b0bf
+		summarizeBy: none
+		sourceColumn: Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChecklistInfo
+		dataType: string
+		lineageTag: 29e7a395-3431-4140-ae9a-91b7f439c8b1
+		summarizeBy: none
+		sourceColumn: ChecklistInfo
+
+		annotation SummarizationSetBy = Automatic
+
+	column CertLevel
+		dataType: string
+		lineageTag: c83c107a-21b0-46e2-8052-67f9e9a99651
+		summarizeBy: none
+		sourceColumn: CertLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReportID
+		dataType: string
+		lineageTag: 48399765-0b8a-42cb-a41a-c2ecca6ac75d
+		summarizeBy: none
+		sourceColumn: ReportID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChecklistID
+		dataType: string
+		lineageTag: ea003c4c-e34f-48e0-83d9-028af273f2cc
+		summarizeBy: none
+		sourceColumn: ChecklistID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RevUp
+		dataType: string
+		lineageTag: d469529f-4d79-4f79-8547-89333cc9ecdd
+		summarizeBy: none
+		sourceColumn: RevUp
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPackageChecklist
+		dataType: string
+		lineageTag: 2fa97a45-60e7-406e-878a-4f1099128b1e
+		summarizeBy: none
+		sourceColumn: IsPackageChecklist
+
+		annotation SummarizationSetBy = Automatic
+
+	column RespIDAndDesc
+		dataType: string
+		lineageTag: b8bc554d-7831-45b1-b2dc-f579657bf302
+		summarizeBy: none
+		sourceColumn: RespIDAndDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PIMS_aviw_CMS_Compl_ObjectsEventsChecklist = m
+		mode: import
+		source =
+				let
+				    Source = PimsDataApi.Contents("https://mcdermott.pimshosting.com/"),
+				    CMSKey = Source{[Key="CMSKey"]}[Data],
+				    aviw_CMS_Compl_ObjectsEventsChecklistKey = CMSKey{[Key="aviw_CMS_Compl_ObjectsEventsChecklistKey"]}[Data],
+				    #"Invoked Functionaviw_CMS_Compl_ObjectsEventsChecklistKey1" = aviw_CMS_Compl_ObjectsEventsChecklistKey("PrimKey,#(tab)ID,#(tab)CheckedOutBy,#(tab)ReasonForResetSigning,#(tab)Reset,#(tab)ResetBy,#(tab)Comments,#(tab)CheckItemsComplete,#(tab)SignedBy1,#(tab)SignedBy2,#(tab)SignedBy3,#(tab)SignedBy4,#(tab)SignedBy5,#(tab)OptionalSign1,#(tab)OptionalSign2,#(tab)OptionalSign3,#(tab)OptionalSign4,#(tab)OptionalSign5,#(tab)Signed1,#(tab)Signed2,#(tab)Signed3,#(tab)Signed4,#(tab)Signed5,#(tab)SignGroup1,#(tab)SignGroup2,#(tab)SignGroup3,#(tab)SignGroup4,#(tab)SignGroup5,#(tab)SignGroup1NA,#(tab)SignGroup2NA,#(tab)SignGroup3NA,#(tab)SignGroup4NA,#(tab)SignGroup5NA,#(tab)CommentsImage,#(tab)EventIDNo,#(tab)RespID,#(tab)CertID,#(tab)Plant,#(tab)TagNo,#(tab)Package,#(tab)Project,#(tab)SubSystem,#(tab)Site,#(tab)Revision,#(tab)NA,#(tab)Actual,#(tab)Barcode,#(tab)FileRef,#(tab)OEPrimKey,#(tab)TagRef,#(tab)OEngRegView,#(tab)EngTagNo,#(tab)Column1,#(tab)Column2,#(tab)Column3,#(tab)Column4,#(tab)Column5,#(tab)CheckItemHeader1,#(tab)CheckItemHeader2,#(tab)CheckItemHeader3,#(tab)CheckItemHeader4,#(tab)Disc,#(tab)Phase,#(tab)ChecklistInfo,#(tab)CertLevel,#(tab)ReportID,#(tab)ChecklistID,#(tab)RevUp,#(tab)IsPackageChecklist, RespIDAndDesc", "Max Records", "-1", null, null, null)
+				in
+				    #"Invoked Functionaviw_CMS_Compl_ObjectsEventsChecklistKey1"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

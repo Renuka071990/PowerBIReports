@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "f36bbf0e0023bb3ce47d",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 1000,
+    "height": 289.2387940598299,
+    "width": 600.15181299752817,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                    }
+                  },
+                  "Property": "SystemDesc_01"
+                }
+              },
+              "queryRef": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.SystemDesc_01",
+              "nativeQueryRef": "Description",
+              "displayName": "Description"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                  }
+                },
+                "Property": "SystemDesc_01"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "301.4776084981944D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.SystemDesc_01"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,22 @@
+table Calendar
+	lineageTag: e7ebaed7-f16f-474f-b5a0-6fe02a008e3b
+
+	column Date
+		formatString: dd-mmm-yy
+		lineageTag: 3817cfc0-725b-423b-8507-8fac38a4be77
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition Calendar-1416460a-9818-438a-94d1-c25366ec8c3d = calculated
+		mode: import
+		source = CALENDAR(DATE(2020,01,01),DATE(2030,01,01))
+
+	annotation PBI_Id = 3c9776e2411c4648937eb5e6b8e86da4
+

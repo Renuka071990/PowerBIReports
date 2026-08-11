@@ -1,0 +1,135 @@
+table 'PGTT Plan (Borwin)'
+	lineageTag: ae2519b9-504b-4e30-ab4c-921d38014922
+
+	column 'Weekly Date'
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: c2988316-ae4f-4b14-9594-7c77c0acde53
+		summarizeBy: none
+		sourceColumn: Weekly Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Weekly Plan'
+		dataType: double
+		formatString: 0.00
+		lineageTag: 682cb43c-1d79-4b59-a865-9deb0aac8de1
+		summarizeBy: sum
+		sourceColumn: Weekly Plan
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column CummPlan
+		dataType: double
+		formatString: #,0
+		lineageTag: 421cd598-a46c-4316-b88d-83d048184796
+		summarizeBy: sum
+		sourceColumn: CummPlan
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Item
+		dataType: string
+		lineageTag: 14e165e4-c267-4045-96a5-5a5f03ae293f
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column CummActual =
+			VAR a = SUMX(FILTER('Previous Week Cable Report','Previous Week Cable Report'[Week Ending]='PGTT Plan (Borwin)'[Weekly Date]),'Previous Week Cable Report'[Est length])
+			VAR B = SUM(Query1[Est Length])
+			RETURN
+			IF('PGTT Plan (Borwin)'[Weekly Date]='PGTT Plan (Borwin)'[Current Week Ending],B,a)
+		lineageTag: b5d44cf1-2177-4bc6-b9b2-4b91e1cd9daa
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Week Actual' = ```
+			VAR a ='PGTT Plan (Borwin)'[CummActual]-sumx(FILTER('PGTT Plan (Borwin)','PGTT Plan (Borwin)'[Weekly Date]=EARLIER('PGTT Plan (Borwin)'[Weekly Date])-7),'PGTT Plan (Borwin)'[CummActual])
+			
+			RETURN 
+			IF('PGTT Plan (Borwin)'[Weekly Date]>'PGTT Plan (Borwin)'[Current Week Ending],0,a)
+			```
+		lineageTag: 449f18e3-556f-486b-94b2-b8b634f0d34e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Current Week Ending' = (if(WEEKDAY(today()) < 6,(today()+5) - WEEKDAY(today()),((today()+5) - WEEKDAY(today()))+7))
+		formatString: General Date
+		lineageTag: ba891262-590e-4644-ab34-e199f3f08b83
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Week' = if('PGTT Plan (Borwin)'[Weekly Date]='PGTT Plan (Borwin)'[Current Week Ending],1,0)
+		formatString: 0
+		lineageTag: e4af22d2-ebe5-4cb3-801d-e4a72ce9c080
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prev Week' = if('PGTT Plan (Borwin)'[Weekly Date]='PGTT Plan (Borwin)'[Current Week Ending]-7,1,0)
+		lineageTag: 32c3d508-882d-4d75-9aea-9d0edddb4503
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cumm Actual LM to KM' = 'PGTT Plan (Borwin)'[CummActual]/1000
+		lineageTag: e37961b8-8aab-4d58-b1c0-655229e32203
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Week Actual LM to KM' = 'PGTT Plan (Borwin)'[Week Actual]/1000
+		lineageTag: 7e3145f6-8446-4fbf-b58f-2df2a7e4ce36
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cumm plan total' = MAX('PGTT Plan (Borwin)'[CummPlan])
+		lineageTag: 79cb6844-1714-4cff-9aa3-74c5ed908c17
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'PGTT Plan (Borwin)' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Cable Report\PGTT Plan\PGTT Plan.xlsx"), null, true),
+				    #"PGTT Plan_Sheet" = Source{[Item="PGTT Plan",Kind="Sheet"]}[Data],
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"PGTT Plan_Sheet", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

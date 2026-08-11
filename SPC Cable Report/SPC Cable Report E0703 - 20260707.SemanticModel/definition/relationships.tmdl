@@ -1,0 +1,162 @@
+relationship 29b7f1d1-23d7-4065-ac85-6eaec880ffa4
+	crossFilteringBehavior: bothDirections
+	fromColumn: Query1.Prefix
+	toColumn: Discipline.Prefix
+
+relationship dec1bf86-f858-4312-ab0c-5cdfb6af03e3
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Query1.SYSTEM
+	toColumn: 'Weekly QTY Plan'.'Sub System'
+
+relationship 32d126f0-7b57-4181-bc19-ba5560b03d6e
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Weekly QTY Plan'.'Weekly Plan Date'
+	toColumn: Calendar.Date
+
+relationship ffccafbc-d7d3-4c75-9877-e7615f97484b
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Query1.FX_DeckName-System
+	toColumn: Subsystem-ItemType.FX_DeckName-System
+
+relationship 874b3a0b-4398-4532-a990-e410561eac37
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Calendar Weekly'.FX_Week_Ending
+	toColumn: 'PGTT Plan'.FX_Week_Ending
+
+relationship AutoDetected_37638718-7eca-425f-9dab-64f2d9dfe7bf
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: qry_eqp_progress.COMPOBID
+	toColumn: qry_eqp_detail.COMPOBID
+
+relationship AutoDetected_e7d954d9-591b-4a61-9e26-76c21898344a
+	fromColumn: 'Cable Tray (Progress)'.COMPONENT
+	toColumn: qry_eqp_progress.COMPONENT
+
+relationship 1c52de09-6fb9-f657-f60e-832822e8273b
+	crossFilteringBehavior: bothDirections
+	fromColumn: PIMS_aviw_CMS_Compl_PunchItems_CrossDomain.TagNo
+	toColumn: Query1.TAGID
+
+relationship a0dacc1a-fb27-9fd8-5000-bd66065ec2da
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromColumn: PIMS_aviw_CMS_Web_ObjectsEvents.TagNo
+	toColumn: Query1.TAGID
+
+relationship 53db96c6-f212-513e-f4eb-dad67e63f17a
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: qry_eqp_detail.COMPONENT
+	toColumn: 'Kahit ano'.FromEquipment
+
+relationship ad4d1521-bf03-447f-87eb-1fe9ef6fb3ed
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: qry_eqp_detail.COMPONENT
+	toColumn: 'Kahit ano'.ToEquipment
+
+relationship AutoDetected_cc2dfd04-71da-4ba2-8034-fe5f8b234d8f
+	isActive: false
+	fromColumn: PIMS_aviw_CMS_Web_ObjectsEvents.TagNo
+	toColumn: aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.tagno
+
+relationship AutoDetected_4257e5dd-b7ba-4088-a380-ba7364861f54
+	isActive: false
+	fromColumn: PIMS_aviw_CMS_Compl_PunchItems_CrossDomain.TagNo
+	toColumn: aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.tagno
+
+relationship 0b9f129f-1c0c-d330-ce69-11c8f21f602a
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.tagno
+	toColumn: Query1.TAGID
+
+relationship c71f9835-9cc5-ca60-671e-dae180293fcd
+	fromColumn: Query1.'PULLING ACTUALDRUMNO_WS'
+	toColumn: 'Cable Drum Allocation'.'Drum #'
+
+relationship d0e76e61-9b4b-5d63-b7f8-aaa15a70ef6d
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'WP Level4 Report'.Column
+	toColumn: Query1.CableAssociatedTo
+
+relationship ac09193a-c05a-4b18-8f16-ef0eb7bd18f7
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Cable Grounding'.COMPLOCATION
+	toColumn: Query1.CableAssociatedTo
+
+relationship AutoDetected_99deb99b-517e-41f1-9b54-2fc8db5def75
+	fromColumn: 'Previous Week Cable Report'.TAGID
+	toColumn: 'Query1(for duplicate)'.TAGID
+
+relationship AutoDetected_0ef19469-e6a9-44e2-b6f4-7cc86867f344
+	fromColumn: 'Previous Week Cable Report'.TAGID
+	toColumn: aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.tagno
+
+relationship AutoDetected_c0f1500b-e796-48cf-9a93-2de17bd338c5
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Sub-System Target Date'.'Subsystem No.'
+	toColumn: 'Shared MC Target Dates by Susbsytem'.'Subsystem No.'
+
+relationship AutoDetected_339ac217-93d2-47cc-bfb0-80cc3d5319ea
+	fromColumn: PIMS_aviw_CMS_Compl_ObjectsEventsChecklist.TagNo
+	toColumn: aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.tagno
+
+relationship AutoDetected_cffe1525-8747-4b47-b6b1-9207fe9c0852
+	fromColumn: PIMS_aviw_CMS_Compl_PunchItems_CrossDomain.System
+	toColumn: PIMS_aviw_CMS_Compl_Systems.System
+
+relationship AutoDetected_890028a2-4eb5-4ebe-b09d-20e55a91d7ca
+	fromColumn: PIMS_aviw_CMS_Compl_SubSystems.System
+	toColumn: PIMS_aviw_CMS_Compl_Systems.System
+
+relationship AutoDetected_d0893313-b95f-4760-ae95-d96017a855d0
+	fromColumn: PIMS_aviw_CMS_Web_ObjectsEvents.SubSystem
+	toColumn: PIMS_aviw_CMS_Compl_SubSystems.SubSystem
+
+relationship AutoDetected_7909d86f-e091-470c-b70b-9bf6d027f838
+	isActive: false
+	fromColumn: PIMS_aviw_CMS_Compl_PunchItems_CrossDomain.SubSystem
+	toColumn: PIMS_aviw_CMS_Compl_SubSystems.SubSystem
+
+relationship AutoDetected_7b7032c9-dd9a-42c0-b1d2-ec1ec955b54c
+	fromColumn: PIMS_aviw_CMS_Compl_ObjectsEventsChecklist.SubSystem
+	toColumn: PIMS_aviw_CMS_Compl_SubSystems.SubSystem
+
+relationship AutoDetected_2e2971fd-5805-4fd5-be0d-5e06adbff986
+	isActive: false
+	fromColumn: aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.subsystem
+	toColumn: PIMS_aviw_CMS_Compl_SubSystems.SubSystem
+
+relationship 9289330b-5b10-aeb7-90b0-7263af66b362
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: PIMS_aviw_CMS_Web_ObjectsEvents.SubSystem
+	toColumn: 'BW6 HT'.Subsystem
+
+relationship faabe3d7-b0ac-4203-1f0c-49c11f845a18
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.subsystem
+	toColumn: 'BW6 HT'.Subsystem
+
+relationship ac7da933-0a4f-909c-116f-94680219e93e
+	toCardinality: many
+	fromColumn: 'Hydro Reinst Test Progress'.SubSystem
+	toColumn: aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.subsystem
+
+relationship AutoDetected_ebc2b8f1-0e58-4877-a810-eff4dde3b114
+	isActive: false
+	fromColumn: PIMS_aviw_CMS_Web_ObjectsEvents.System
+	toColumn: PIMS_aviw_CMS_Compl_Systems.System
+

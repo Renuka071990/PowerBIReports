@@ -1,0 +1,177 @@
+table 'Sub-System Target Date'
+	lineageTag: c871238e-9169-4144-92c5-4172a2cd3a58
+
+	column 'System No.'
+		dataType: string
+		lineageTag: 9451183f-d4fd-463d-9798-89fdf964f21c
+		summarizeBy: none
+		sourceColumn: System No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'System Name'
+		dataType: string
+		lineageTag: 341168e8-2260-4cea-8bd6-f7d3ced9bdc1
+		summarizeBy: none
+		sourceColumn: System Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Subsystem No.'
+		dataType: string
+		lineageTag: 8dbf22d0-d4b5-4acb-951d-5030b2c78fe6
+		summarizeBy: none
+		sourceColumn: Subsystem No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Subsystem Name'
+		dataType: string
+		lineageTag: d676d5e3-17b6-4e45-9603-4754bbda77c7
+		summarizeBy: none
+		sourceColumn: Subsystem Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discipline
+		dataType: string
+		lineageTag: 7326d9c6-c5fd-475b-9911-379f451e7dc3
+		summarizeBy: none
+		sourceColumn: Discipline
+
+		annotation SummarizationSetBy = Automatic
+
+	column Drawing
+		dataType: string
+		lineageTag: 18974e13-c86d-40f4-a293-960d5a8834db
+		summarizeBy: none
+		sourceColumn: Drawing
+
+		annotation SummarizationSetBy = Automatic
+
+	column Yard
+		dataType: string
+		lineageTag: d8c55260-219a-4613-adbd-e5e9eefca95a
+		summarizeBy: none
+		sourceColumn: Yard
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offshore '
+		dataType: string
+		lineageTag: 1163421c-e491-42fb-9cc5-e66c1cdc2f9f
+		summarizeBy: none
+		sourceColumn: "Offshore "
+
+		annotation SummarizationSetBy = Automatic
+
+	column Remarks
+		dataType: string
+		lineageTag: a931d54a-11ee-47cc-a107-afe52f6ecd15
+		summarizeBy: none
+		sourceColumn: Remarks
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offshore Priority'
+		dataType: string
+		lineageTag: ad720876-aea6-48bb-a9d6-41fdff685216
+		summarizeBy: none
+		sourceColumn: Offshore Priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sequence
+		dataType: string
+		lineageTag: 8abe8196-519b-4327-8ce2-2e3bcdc49a69
+		summarizeBy: none
+		sourceColumn: Sequence
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days offshore'
+		dataType: string
+		lineageTag: e04a59e8-f2be-4ffe-afb0-0bfae9999ce6
+		summarizeBy: none
+		sourceColumn: Days offshore
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manpower
+		dataType: string
+		lineageTag: be3c2528-2a33-4952-b7b1-f7cb678af69a
+		summarizeBy: none
+		sourceColumn: Manpower
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rebaseline MC Finish Dates'
+		dataType: string
+		lineageTag: e47857f0-4bd4-47d9-9af8-853622150415
+		summarizeBy: none
+		sourceColumn: Rebaseline MC Finish Dates
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target MC start '
+		dataType: string
+		lineageTag: ac3ab07d-9a62-4484-9643-ef998a82949c
+		summarizeBy: none
+		sourceColumn: "Target MC start "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target MC Finish'
+		dataType: string
+		lineageTag: ec2df11a-6db3-4bcc-9464-70820214d51c
+		summarizeBy: none
+		sourceColumn: Target MC Finish
+
+		annotation SummarizationSetBy = Automatic
+
+	column Priority
+		dataType: string
+		lineageTag: 34638dff-f041-4982-96a6-10bc82c34a46
+		summarizeBy: none
+		sourceColumn: Priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discipline_1
+		dataType: string
+		lineageTag: b1c38306-7245-46cf-938c-0da44f13c2dc
+		summarizeBy: none
+		sourceColumn: Discipline_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'System Owner'
+		dataType: string
+		lineageTag: eebbe42f-0913-4e37-8f78-44bd6bd38def
+		summarizeBy: none
+		sourceColumn: System Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FAB Focus'
+		dataType: string
+		lineageTag: 3a3761f1-4414-4225-bc8a-8dae2564d64f
+		summarizeBy: none
+		sourceColumn: FAB Focus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sub-System Target Date' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Cable Report\PGTT Plan\BW61 System-Subsystem-Topside Rev.00b - Offshore 2_share to SPC.xlsx"), null, true),
+				    #"Auxiliaries - PIL NEW_Sheet" = Source{[Item="Auxiliaries - PIL NEW",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Auxiliaries - PIL NEW_Sheet", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

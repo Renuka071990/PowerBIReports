@@ -1,0 +1,178 @@
+table 'FX_COMPU Table'
+	lineageTag: 2cdde0a3-8728-4151-b94f-8550b8da45b3
+
+	measure MX_ACT_CUMM_GLAND = count(Query1[Glanding From Comp Date])+count(Query1[Glanding To Comp Date])
+		formatString: 0
+		lineageTag: 8ddd8105-433f-466a-a258-dcfdccb01171
+
+	measure MX_ACT_CUMM_GLAND% = (sum(Query1[Glanded From %])+SUM(Query1[Glanded To %]))/2
+		lineageTag: 9ad3f76e-a70b-4c40-a73c-162649242b5a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_ACT_CUMM_PULL = sum(Query1[ACTUALLENGTH])
+		lineageTag: 4f935b93-4742-47d1-8bfb-25612eafeaaf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_ACT_CUMM_PULL% = sum(Query1[ACTUALLENGTH])
+		lineageTag: 34ab4c65-6600-4c30-8100-bc16f766257f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_ACT_CUMM_TERM = count(Query1[Termination To Comp Date])+count(Query1[Termination From Comp Date])
+		formatString: 0
+		lineageTag: 5ada0082-9bd2-4d66-ae40-b2de1f0853e7
+
+	measure MX_ACT_CUMM_TERM% = (sum(Query1[Termination From %])+sum(Query1[Termination To %]))/2
+		lineageTag: e97c6560-4fee-405f-853c-4a2730635049
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_ACT_CUMM_TEST = count(Query1[Testing Comp Date])
+		formatString: 0
+		lineageTag: 105beda7-582b-45de-bf6c-27c39b5f10d2
+
+	measure MX_ACT_CUMM_TEST% = count(Query1[Testing Comp Date])
+		formatString: 0
+		lineageTag: 41db4310-74bf-4d6f-80f3-0c846efaa7c5
+
+	measure MX_ACT_WK_GLAND =
+			calculate(
+			    count(Query1[Glanding From Comp Date]),
+			    filter(Query1,Query1[FX_GlanFromComp_WeekEnding]  = [MX_Week_Ending]))+
+			    calculate(
+			    count(Query1[Glanding To Comp Date]),
+			    filter(Query1,Query1[FX_GlanToComp_WeekEnding]  = [MX_Week_Ending]))
+		formatString: 0
+		lineageTag: 4dc2ed64-2348-46e4-bb2d-cbda65caef6a
+
+	measure MX_ACT_WK_Pull =
+			calculate (sum(Query1[ACTUALLENGTH]),
+			filter(Query1,Query1[FX_PulledtoComp_WeekEnding] = [MX_Week_Ending]
+			))
+		lineageTag: 13d235c6-05be-42bb-99a8-f90a1c96e2e4
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_ACT_WK_TERM =
+			calculate(
+			    count(Query1[Termination From Comp Date]),
+			    filter(Query1,Query1[FX_TermFromComp_WeekEnding]  = [MX_Week_Ending]))
+			    + calculate(
+			    count(Query1[Termination To Comp Date]),
+			    filter(Query1,Query1[FX_TermToComp_WeekEnding]  = [MX_Week_Ending]))
+		formatString: 0
+		lineageTag: cec1ddc5-8ebc-4563-9b1d-caae1e8dffff
+
+	measure MX_ACT_WK_TEST =
+			calculate(
+			    count(Query1[Testing Comp Date]),
+			    filter(Query1,Query1[FX_TestToComp_WeekEnding]  = [MX_Week_Ending]))
+		formatString: 0
+		lineageTag: 1261ebc5-2c03-48eb-93f5-aeec9cc3960b
+
+	measure MX_Count_Weeks = count('FX_COMPU Table'[Week Ending])
+		formatString: 0
+		lineageTag: 2a5d8949-8cbd-4a28-a026-0d803bb31dd8
+
+	measure 'MX_Cumm Actual' = sum('Subsystem-ItemType'[FX_ACT_CUMM])
+		formatString: #,0
+		lineageTag: abee5027-0b8b-4afd-b49a-ccc93a851274
+
+		changedProperty = FormatString
+
+	measure 'MX_Cumm Plan' =
+			
+			(CALCULATE(
+			    sum('Qty Plan'[Value]),
+			        FILTER(
+			            ('Qty Plan'),'Qty Plan'[Week Ending]<=[WEEK ENDING NOW])))
+		lineageTag: f64773b4-6a2a-445d-8749-dc50d9040ce4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MX_Cummulative Actual %' = ((sum('Subsystem-ItemType'[FX_ACT_CUMM])/[MX_Estimate]))
+		formatString: 0%;-0%;0%
+		lineageTag: dda32482-5071-45b4-b9e0-72bea34bcaa2
+
+		changedProperty = FormatString
+
+	measure 'MX_Cummulative Plan %' = 'FX_COMPU Table'[MX_Cumm Plan]/'FX_COMPU Table'[MX_Estimate]
+		lineageTag: f0fc6e41-7911-4e92-b84f-5b847ac9cf8c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_EST_GLAND = count(Query1[GlandedToScope])+count(Query1[GlandedfromScope])
+		formatString: 0
+		lineageTag: fa1b2cd1-a3f1-4930-a3ee-6e04bc57d17a
+
+	measure MX_EST_PULL = sum(Query1[UNITS])
+		lineageTag: a7c19eea-ce36-4507-9aa8-4b5c813252e7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_EST_TERM = count(Query1[termfromScope])+count(Query1[termtoScope])
+		formatString: 0
+		lineageTag: 7851c730-a238-4dab-ae7c-512803a9caac
+
+	measure MX_EST_TEST = count(Query1[TestingScope])
+		formatString: 0
+		lineageTag: baa77f5d-bf3a-4a68-a8e8-3f6dd6e041b9
+
+	measure MX_Estimate = sum('Subsystem-ItemType'[FX_Sum_Est_Item])
+		formatString: #,0
+		lineageTag: be851246-5786-444e-b4dc-82d4f882ce36
+
+		changedProperty = FormatString
+
+	measure 'MX_Weekly Actual' = sum('Subsystem-ItemType'[FX_ACT_WK])
+		lineageTag: 4c489c18-b2d3-48ea-8fc7-99494e158aa6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MX_Weekly Actual %' = sum('Subsystem-ItemType'[FX_ACT_WK])/'FX_COMPU Table'[MX_Estimate]
+		formatString: 0%;-0%;0%
+		lineageTag: 1abf18d5-57d2-47cc-9ce4-66fa198ccb07
+
+		changedProperty = FormatString
+
+	measure 'MX_Weekly Plan' = sum('Subsystem-ItemType'[FX_PLAN_WK])
+		formatString: 0
+		lineageTag: 34e33220-cbab-48cd-9dd2-e5de3113befc
+
+	measure 'MX_Weekly Plan %' =
+			
+			[MX_Weekly Plan]/[MX_Estimate]
+		lineageTag: 68963f34-5854-4ec1-b5c6-4fabf157fb59
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MX_Cumm Actual_DEL' = (sum('Qty Plan'[FX_ACT_CUMM])/'FX_COMPU Table'[MX_Count_Weeks])
+		lineageTag: 7f51fcd6-df7c-4a01-a558-5d750a096165
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Week_Ending = (if(WEEKDAY(today()) < 6,(today()+5) - WEEKDAY(today()),((today()+5) - WEEKDAY(today()))+7))
+		formatString: General Date
+		lineageTag: d858e963-e936-4571-ab2a-4828687055fd
+
+	column 'Week Ending'
+		formatString: Short Date
+		lineageTag: 17b7a5eb-100c-43a7-9bab-6260ca39c7df
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qty Plan[Week Ending]
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FX_COMPU Table-f0a3dfc9-0641-414a-ad3f-4b9c26267a9b' = calculated
+		mode: import
+		source = SUMMARIZE('Qty Plan','Qty Plan'[Week Ending])
+
+	annotation PBI_Id = 6aafc65a22c24c598e89ff188b3f0704
+

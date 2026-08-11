@@ -1,0 +1,400 @@
+table PIMS_aviw_CMS_Compl_PunchItems_CrossDomain
+	lineageTag: beaf8a8e-9db1-48a0-80f6-f47b73a9a9f1
+
+	measure 'Punch Total Closed' =
+			
+			SUM('PIMS_aviw_CMS_Compl_PunchItems_CrossDomain'[Punch A Closed]) + SUM('PIMS_aviw_CMS_Compl_PunchItems_CrossDomain'[Punch B Closed])+ SUM('PIMS_aviw_CMS_Compl_PunchItems_CrossDomain'[Punch C Closed])
+		formatString: #,0
+		lineageTag: df258653-cd8e-4645-8c43-6a10ae8cb4d8
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalAddition"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Punch Total Open' =
+			
+			SUM('PIMS_aviw_CMS_Compl_PunchItems_CrossDomain'[Punch A Open]) + SUM('PIMS_aviw_CMS_Compl_PunchItems_CrossDomain'[Punch B Open])+ SUM('PIMS_aviw_CMS_Compl_PunchItems_CrossDomain'[Punch C Open])
+		formatString: 0
+		lineageTag: 8ba82640-9842-43aa-b6cc-5e59c1a0c586
+
+	column TagNo
+		dataType: string
+		lineageTag: cb94e24c-dd90-4e6f-9864-a371c5864749
+		summarizeBy: none
+		sourceColumn: TagNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystem
+		dataType: string
+		lineageTag: 2d7d988f-9e06-45ab-9598-08d8c50aae52
+		summarizeBy: none
+		sourceColumn: SubSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column System
+		dataType: string
+		lineageTag: 79368c53-27bd-475f-82d5-2ac0eeacbda0
+		summarizeBy: none
+		sourceColumn: System
+
+		annotation SummarizationSetBy = Automatic
+
+	column TagDescription
+		dataType: string
+		lineageTag: 336aa4d0-cae4-4727-b815-a36f268ae5c7
+		summarizeBy: none
+		sourceColumn: TagDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domain
+		dataType: string
+		lineageTag: c64ce234-17ce-4cc0-9d25-d5b1471894fb
+		summarizeBy: none
+		sourceColumn: Domain
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalPunchID
+		dataType: string
+		lineageTag: 9481ec95-2f86-491a-9880-07beccf42d8b
+		summarizeBy: none
+		sourceColumn: ExternalPunchID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity
+		dataType: string
+		lineageTag: 4a5bfac6-355c-478b-9393-15982842fa66
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 5194a506-dad9-4cdb-b7de-60777c6570a9
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Package
+		dataType: string
+		lineageTag: cd26c286-29a5-4e9e-9cf6-7783278fea71
+		summarizeBy: none
+		sourceColumn: Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompleteDate1
+		dataType: string
+		lineageTag: 52d438cb-da0c-4d5a-8b34-59882a52ec57
+		summarizeBy: none
+		sourceColumn: CompleteDate1
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompleteDate2
+		dataType: string
+		lineageTag: bf47d6bd-e973-4828-b5cd-09559f728f59
+		summarizeBy: none
+		sourceColumn: CompleteDate2
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompleteDate3
+		dataType: string
+		lineageTag: ce4164ee-6a6b-49aa-a35b-de9e916b931c
+		summarizeBy: none
+		sourceColumn: CompleteDate3
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompleteDate4
+		dataType: string
+		lineageTag: 8ca0e405-2b67-4b9f-855c-00a725378dd9
+		summarizeBy: none
+		sourceColumn: CompleteDate4
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompleteDate5
+		dataType: string
+		lineageTag: 972774c4-f3aa-400a-98bc-5d86ce330642
+		summarizeBy: none
+		sourceColumn: CompleteDate5
+
+		annotation SummarizationSetBy = Automatic
+
+	column cat
+		dataType: string
+		lineageTag: dfd0b54c-4011-45c4-87a5-0059416f4056
+		summarizeBy: none
+		sourceColumn: cat
+
+		annotation SummarizationSetBy = Automatic
+
+	column Priority
+		dataType: string
+		lineageTag: d3d38a56-1377-4209-84a2-45c1b2a0cfa5
+		summarizeBy: none
+		sourceColumn: Priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: 5c680142-5db3-49be-b5d7-02cb437e737e
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column PunchStatus
+		dataType: string
+		lineageTag: 73d1ceea-98ff-4031-b13b-7d4d34dbbd82
+		summarizeBy: none
+		sourceColumn: PunchStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column remarks
+		dataType: string
+		lineageTag: 6188c2f5-25bf-4f09-a117-c5109ad1008f
+		summarizeBy: none
+		sourceColumn: remarks
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subcat
+		dataType: string
+		lineageTag: fe4dee1e-7458-4361-84c1-c38bafe388ba
+		summarizeBy: none
+		sourceColumn: Subcat
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusMessage
+		dataType: string
+		lineageTag: 43e4cc44-0282-4d34-ab21-9c28702d656c
+		summarizeBy: none
+		sourceColumn: StatusMessage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: 3293200a-631e-489e-bef2-c6325d9950cb
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disc
+		dataType: string
+		lineageTag: 5391972b-e519-4a25-90ff-6d01e27ecc29
+		summarizeBy: none
+		sourceColumn: Disc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cleared
+		dataType: string
+		lineageTag: dfafe230-9bb2-4951-9aa8-ce05f574a9ba
+		summarizeBy: none
+		sourceColumn: Cleared
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch A Closed' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "A", 1,0)
+		formatString: #,0
+		lineageTag: 59d11625-ebe6-45d1-8a0f-32ac1c5a1515
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch A Open' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "A", 1,0)
+		formatString: #,0
+		lineageTag: 936f351b-7d40-4bb0-b458-9fadde6d5c5e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch B Closed' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "B", 1,0)
+		formatString: #,0
+		lineageTag: c8f4365b-cb58-442f-b07f-9fc215842ff8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch B Open' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "B", 1,0)
+		formatString: #,0
+		lineageTag: 746dddfa-0832-4f36-b79f-7f25ce7f5d43
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch C Closed' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "C", 1,0)
+		formatString: #,0
+		lineageTag: a8dc7888-0b01-467e-b5a0-07e81673accf
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch C Open' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "C", 1,0)
+		formatString: #,0
+		lineageTag: 1ee76911-3d41-4d48-aad6-446257af9c9b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch A Open ELE' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "A" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "E", 1,0)
+		formatString: 0
+		lineageTag: 89cfc09a-c268-4fb2-b7c2-bd41b04bd9b0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch A Close ELE' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "A" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "E", 1,0)
+		formatString: 0
+		lineageTag: 67358a74-45c7-4ee4-878a-522f7bb5cf53
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch B Open ELE' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "B" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "E", 1,0)
+		formatString: 0
+		lineageTag: 67602c82-ef51-4546-a4d1-26d756c06786
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch B Close ELE' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "B" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "E", 1,0)
+		formatString: 0
+		lineageTag: d7a08de7-7f4d-49b9-90ed-a53813c36490
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch C Open ELE' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "C" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "E", 1,0)
+		formatString: 0
+		lineageTag: 0665c01c-df43-4953-b58d-ed83012a9c84
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch C Close ELE' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "C" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "E", 1,0)
+		formatString: 0
+		lineageTag: 5fcee85d-0ae8-4b18-8a03-c7879c424ef7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch A Open INS' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "A" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "I", 1,0)
+		formatString: 0
+		lineageTag: 093f9657-201b-49ae-830e-4344c7897b4b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch A Close INS' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "A" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "I", 1,0)
+		formatString: 0
+		lineageTag: 67915e9a-4304-4f51-b45c-98e925aecef9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch B Open INS' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "B" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "I", 1,0)
+		formatString: 0
+		lineageTag: a10e3a29-d206-42a4-b85d-77a74f65df17
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch B Close INS' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "B" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "I", 1,0)
+		formatString: 0
+		lineageTag: 4de7a9f4-86ec-4cbc-b8c3-55c0b4934222
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch C Open INS' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "C" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "I", 1,0)
+		formatString: 0
+		lineageTag: 2f81dfb7-3aa5-4359-b4f1-aac451a525cd
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch C Close INS' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "C" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "I", 1,0)
+		formatString: 0
+		lineageTag: e82d720c-9d47-442d-ad6c-2fcbe3a9d42a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch A Open PIP' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "A" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "P", 1,0)
+		formatString: 0
+		lineageTag: d8a8baab-ac3a-44dc-afdd-dbbdbc1d8762
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch A Close PIP' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "A" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "P", 1,0)
+		formatString: 0
+		lineageTag: cf8ca1ad-39cb-475e-9893-deb7ab40fa7b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch B Open PIP' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "B" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "P", 1,0)
+		formatString: 0
+		lineageTag: b46da546-e92d-4e9d-877a-6699efaa2499
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch B Close PIP' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "B" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "P", 1,0)
+		formatString: 0
+		lineageTag: bb8ffea6-09c1-4dcc-b955-c5614e7ddff2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch C Open PIP' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Outstanding" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "C" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "P", 1,0)
+		formatString: 0
+		lineageTag: 74a7d904-c289-447d-bb3c-b14e1713ac58
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Punch C Close PIP' = If(PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[PunchStatus] = "Verified" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[cat] = "C" && PIMS_aviw_CMS_Compl_PunchItems_CrossDomain[Disc] = "P", 1,0)
+		formatString: 0
+		lineageTag: fc390db7-1a24-4d84-8d30-85c3118b4f09
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PIMS_aviw_CMS_Compl_PunchItems_CrossDomain = m
+		mode: import
+		source =
+				let
+				    Source = PimsDataApi.Contents("https://mcdermott.pimshosting.com/"),
+				    CMSKey = Source{[Key="CMSKey"]}[Data],
+				    aviw_CMS_Compl_PunchItems_CrossDomainKey = CMSKey{[Key="aviw_CMS_Compl_PunchItems_CrossDomainKey"]}[Data],
+				    #"Invoked Functionaviw_CMS_Compl_PunchItems_CrossDomainKey1" = aviw_CMS_Compl_PunchItems_CrossDomainKey("Domain,ExternalPunchID,Priority,Project
+				,TagNo,TagDescription,SubSystem,System,cat,PunchStatus,remarks,Subcat,StatusMessage,Area,Disc,Activity,Location,Package,Cleared
+				,CompleteDate1,CompleteDate2,CompleteDate3,CompleteDate4,CompleteDate5", "Max Records", "-1", null, null, null)
+				in
+				    #"Invoked Functionaviw_CMS_Compl_PunchItems_CrossDomainKey1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,4198 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "cb16c24f9a1943ba11de",
+  "position": {
+    "x": 15.144609991235759,
+    "y": 448.02804557405784,
+    "z": 16000,
+    "height": 281.43733567046451,
+    "width": 1424.8553900087643,
+    "tabOrder": 16000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                    }
+                  },
+                  "Property": "subsystem"
+                }
+              },
+              "queryRef": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.subsystem",
+              "nativeQueryRef": "SUB-SYSTEM",
+              "active": true,
+              "displayName": "SUB-SYSTEM"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "TAGID"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.TAGID)",
+              "nativeQueryRef": "CABLE SCOPE (RUNS)",
+              "displayName": "CABLE SCOPE (RUNS)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "Pulled Comp Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.Pulled Comp Date)",
+              "nativeQueryRef": "CABLE COMP. (RUNS)",
+              "displayName": "CABLE COMP. (RUNS)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Query1"
+                    }
+                  },
+                  "Property": "Pulled LM progress %"
+                }
+              },
+              "queryRef": "Query1.Pulled LM progress %",
+              "nativeQueryRef": "CABLE PULL COMP. %",
+              "displayName": "CABLE PULL COMP. %"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "UNITS"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Query1.UNITS)",
+              "nativeQueryRef": "CABLE SCOPE (LM)1",
+              "displayName": "CABLE SCOPE (LM)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "ACTUALLENGTH"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Query1.ACTUALLENGTH)",
+              "nativeQueryRef": "ACTUALLENGTH",
+              "displayName": "CABLE COMP. (LM)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "GlandedfromScope"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Sum(Query1.GlandedfromScope)",
+              "nativeQueryRef": "GLAND FROM SCOPE",
+              "displayName": "GLAND FROM SCOPE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "Glanding From Comp Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.Glanding From Comp Date)",
+              "nativeQueryRef": "GLAND FROM COMP.",
+              "displayName": "GLAND FROM COMP."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Query1"
+                    }
+                  },
+                  "Property": "Gland From progress %"
+                }
+              },
+              "queryRef": "Query1.Gland From progress %",
+              "nativeQueryRef": "GLAND FROM %",
+              "displayName": "GLAND FROM %"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "GlandedToScope"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.GlandedToScope)",
+              "nativeQueryRef": "GLAND TO SCOPE",
+              "displayName": "GLAND TO SCOPE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "Glanding To Comp Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.Glanding To Comp Date)",
+              "nativeQueryRef": "GLAND TO COMP.",
+              "displayName": "GLAND TO COMP."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Query1"
+                    }
+                  },
+                  "Property": "Gland To progress %"
+                }
+              },
+              "queryRef": "Query1.Gland To progress %",
+              "nativeQueryRef": "GLAND TO %",
+              "displayName": "GLAND TO %"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "TermfromScope"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.TermfromScope)",
+              "nativeQueryRef": "TERM FROM SCOPE",
+              "displayName": "TERM FROM SCOPE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "Termination From Comp Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.Termination From Comp Date)",
+              "nativeQueryRef": "TERM FROM COMP.",
+              "displayName": "TERM FROM COMP."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Query1"
+                    }
+                  },
+                  "Property": "Term From progress %"
+                }
+              },
+              "queryRef": "Query1.Term From progress %",
+              "nativeQueryRef": "TERM FROM %",
+              "displayName": "TERM FROM %"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "TermToScope"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.TermToScope)",
+              "nativeQueryRef": "Count of TermToScope",
+              "displayName": "TERM TO SCOPE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "Termination To Comp Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.Termination To Comp Date)",
+              "nativeQueryRef": "TERM TO COMP.",
+              "displayName": "TERM TO COMP."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Query1"
+                    }
+                  },
+                  "Property": "Term To progress %"
+                }
+              },
+              "queryRef": "Query1.Term To progress %",
+              "nativeQueryRef": "TERM TO %",
+              "displayName": "TERM TO %"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "TestingScope"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Query1.TestingScope)",
+              "nativeQueryRef": "Count of TestingScope",
+              "displayName": "TEST SCOPE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Query1"
+                        }
+                      },
+                      "Property": "Testing Comp Date"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Query1.Testing Comp Date)",
+              "nativeQueryRef": "TEST COMP.",
+              "displayName": "TEST COMP."
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Query1"
+                    }
+                  },
+                  "Property": "Test progress %"
+                }
+              },
+              "queryRef": "Query1.Test progress %",
+              "nativeQueryRef": "TEST %",
+              "displayName": "TEST %"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                        }
+                      },
+                      "Property": "Cable_01"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Cable)",
+              "nativeQueryRef": "ITR CABLE SCOPE",
+              "displayName": "ITR CABLE SCOPE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                        }
+                      },
+                      "Property": "Equipment_01"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Equipment)",
+              "nativeQueryRef": "NON-CABLE ITR SCOPE",
+              "displayName": "NON-CABLE ITR SCOPE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                        }
+                      },
+                      "Property": "Actual CertID_01"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Actual CertID)",
+              "nativeQueryRef": "ITR COMP.",
+              "displayName": "ITR COMP."
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                        }
+                      },
+                      "Property": "Rebaseline MC Finish Dates_01"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Rebaseline MC Finish Dates)",
+              "nativeQueryRef": "Rebaseline MC Finish Dates",
+              "displayName": "Rebaseline MC Finish Dates"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                        }
+                      },
+                      "Property": "Target MC start"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Target MC start)",
+              "nativeQueryRef": "Target MC start",
+              "displayName": "Target MC start"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                        }
+                      },
+                      "Property": "Target MC Finish"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Target MC Finish)",
+              "nativeQueryRef": "Target MC Finish",
+              "displayName": "Target MC Finish"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                        }
+                      },
+                      "Property": "Priority_01"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Priority)",
+              "nativeQueryRef": "Priority",
+              "displayName": "Priority"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                        }
+                      },
+                      "Property": "Constraints_01"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Constraints)",
+              "nativeQueryRef": "Constraints",
+              "displayName": "Constraints"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                      }
+                    },
+                    "Property": "Priority_01"
+                  }
+                },
+                "Function": 3
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.subsystem"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                    }
+                  },
+                  "Property": "subsystem"
+                }
+              }
+            ],
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "232.84565916398714D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Cable PGTT Plan"
+                          }
+                        },
+                        "Property": "Pulled"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "10L"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.37078527165431D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_ITR_CABLE_SCOPE)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.35918582207405D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_ITR_CABLE_Comp)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.62805697118854D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_BAL_ITR_CABLE)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "87.20623193358023D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_ITR_EQP_SCOPE)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "80.41826359195058D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_ITR_EQP_Comp)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.25371025387649D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_BAL_ITR_EQUIPMENT)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.59441637960492D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_PGTT_CABLE_Cnt)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "80.04747832029626D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_PGTT_CABLE_Comp)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.92527435642373D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_BAL_PGTT_CABLE)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "71.23162318891983D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_PGTT_GLAND_Scope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "80.17748142368193D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_PGTT_GLAND_Comp)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.87701502066005D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_BAL_PGTT_GLAND)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "69.55180975012857D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_PGTT_TERM_Scope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.49766798489068D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_PGTT_TERM_Comp)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.29078366348047D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_BAL_PGTT_TERM)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "68.87199631133731D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_PGTT_TEST_Scope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.36464558690525D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_PGTT_TEST_Comp)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61.36464558690525D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_BAL_PGTT_TEST)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54.90684023154061D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_SCOPE_ITR_TOTAL)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "64.36535587140256D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_BAL_ITR_TOTAL)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.37748548341803D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_COMPLETED_ITR_TOTAL)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.70455230630088D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FX_SUBSYSTEM_QRY1.FX_PGTT_TEST_READY)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "149D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Priority System.Priority Number)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(aviw_CMS_Web_ObjectsEvents.CertID)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54.927159063131306D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.Pulled Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61.88749235285826D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.Termination To Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "60.0321340286563D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.Testing Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "53.711417552183946D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Cable)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.0938985263005D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Equipment)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "51.45382042683834D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Actual CertID)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54.3578679873561D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.TAGID)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "55.52525731312039D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Query1.GlandedfromScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "55.794975002776624D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.GlandedToScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "242D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.TERMINATIONFromScope)1"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "59.20613752046829D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.TermfromScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "52.63051144026879D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.TermToScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "50.3430102576557D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.TestingScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "118.92125949677545D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.subsystem"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54.27777763767528D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Query1.ACTUALLENGTH)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "64.55480299303888D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Pulled LM progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "55.12303216064123D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Gland From progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "55.47528728974095D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Gland To progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49.211991983599056D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Term From progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "47.340385118659825D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Term To progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "42.2089703788611D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Test progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104.6484075173946D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Rebaseline MC Finish Dates)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "90.6280157812069D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Target MC start)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "88.74490514579946D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Target MC Finish)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "71.84385633140445D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Priority)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.51766519890072D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.Glanding From Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "69.51124484965655D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.Glanding To Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "70.78458562825293D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.Termination From Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Constraints)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "138D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.TAGID)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "138D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.Pulled Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "139D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Query1.Pulled LM progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "123D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Sum(Query1.ACTUALLENGTH)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "137D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Sum(Query1.GlandedfromScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "137D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.Glanding From Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Query1.Gland From progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "116D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.GlandedToScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.Glanding To Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "88D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Query1.Gland To progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.TermfromScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "130D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.Termination From Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "101D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Query1.Term From progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.TermToScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.Termination To Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "80D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Query1.Term To progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.TestingScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "83D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.Testing Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Query1.Test progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Cable)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "147D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Equipment)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Actual CertID)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "175D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Rebaseline MC Finish Dates)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Target MC start)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Target MC Finish)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "56D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Priority)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'_'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Constraints)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "138D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'BW61-AA01-01_Superordinate Control System'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.TAGID)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "138D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                          }
+                        },
+                        "Property": "SubsystemandDesc_01"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'BW61-AA01-01_Superordinate Control System'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Min(Query1.Pulled Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.11557839467744D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Query1.UNITS)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.TAGID)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "173D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.Pulled Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "181D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.GlandedfromScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "223D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.Glanding From Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "166D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.GlandedToScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "206D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.Glanding To Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "161D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.TermfromScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "242D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.Termination From Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "146D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.TermToScope)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "225D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.Termination To Comp Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(Query1.TestingScope)"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Calibri'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Calibri'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Min(Query1.Pulled Comp Date)"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Sum(Query1.ACTUALLENGTH)"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Query1"
+                            }
+                          },
+                          "Property": "Pulled EA progress %"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#EBB7B5'"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#F7E9B5'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#C7E2C0'"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'specificColor'"
+                              }
+                            },
+                            "color": {
+                              "Literal": {
+                                "Value": "'#EBB7B5'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Query1.Pulled LM progress %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Query1"
+                            }
+                          },
+                          "Property": "Term To Runs Color Balance"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#EBB7B5'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#F7E9B5'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "70D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#C7E2C0'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "100D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Query1.Term To progress %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Query1"
+                            }
+                          },
+                          "Property": "Term From Runs Color Balance"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#EBB7B5'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#F7E9B5'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "70D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#C7E2C0'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "100D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Query1.Term From progress %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Query1"
+                            }
+                          },
+                          "Property": "Gland From Runs Color Balance"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#EBB7B5'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#F7E9B5'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "70D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#C7E2C0'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "100D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Query1.Gland From progress %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Query1"
+                            }
+                          },
+                          "Property": "Gland To Runs Color Balance"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#EBB7B5'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#F7E9B5'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "70D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#C7E2C0'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "100D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Query1.Gland To progress %"
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "perColumnLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "perRowLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "rowSubtotalsLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "'TOTAL'"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "applyToHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Column"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Row"
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Cable)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.TAGID)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Query1.GlandedfromScope)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.GlandedToScope)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.TermfromScope)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.TermToScope)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(Query1.TestingScope)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain.Priority)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Query1.UNITS)"
+          }
+        }
+      ],
+      "columnTotal": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowTotal": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "applyToHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#a38600'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "showDrillRoleSelector": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3049ad'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Inner'"
+                }
+              }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BottomLeft'"
+                }
+              }
+            },
+            "angle": {
+              "expr": {
+                "Literal": {
+                  "Value": "45L"
+                }
+              }
+            },
+            "shadowDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
+                }
+              }
+            },
+            "shadowBlur": {
+              "expr": {
+                "Literal": {
+                  "Value": "15L"
+                }
+              }
+            },
+            "shadowSpread": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "70L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter285c3f36dd58c98678f0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "EqptGland"
+              }
+            },
+            "Property": "CORRECTEDTAG"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "e",
+              "Entity": "EqptGland",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "e"
+                              }
+                            },
+                            "Property": "CORRECTEDTAG"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Filter59c3d582afbe9d4139d2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "EqptGland"
+              }
+            },
+            "Property": "DECKNAME"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtera1fd3495f5e1fbd6b5e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "EqptGland"
+              }
+            },
+            "Property": "GROUPCATEGORYL"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter495e26953e15bb387e52",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "EqptGland"
+                  }
+                },
+                "Property": "Gland"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter389ca39fa514f02f4a30",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "EqptGland"
+                  }
+                },
+                "Property": "Completed"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter13fb185ca6a53e3bb13f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "EqptGland"
+              }
+            },
+            "Property": "From/To"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter86b351a61a6b0033e40e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "EqptGland"
+              }
+            },
+            "Property": "Progress"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter96e1c5ddf4ea23f2a60b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Equipment Status"
+              }
+            },
+            "Property": "Sub-System"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter4ce2aa5dc19878b345fb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Equipment Status"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "97aeac8238539e7d5840",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Query1"
+                      }
+                    },
+                    "Property": "TAGID"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Query1"
+                          }
+                        },
+                        "Property": "TAGID"
+                      }
+                    },
+                    "Function": 5
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "1cd5ef0b7a806be49c40",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+              }
+            },
+            "Property": "friendlyname"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "a"
+                          }
+                        },
+                        "Property": "friendlyname"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Cables'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'ElectricalEquipment'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'MasterEquipment'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "d130b5ba0dc0e4000058",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Query1"
+                  }
+                },
+                "Property": "TESTING_COMPLETED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "f53a406b818c3ae9c87c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Query1"
+                  }
+                },
+                "Property": "TO_GLAND_COMPLETED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "e5d2d86999a0aa68cdd0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Query1"
+                  }
+                },
+                "Property": "FROM_TERMINATION_COMPLETED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "c784d997342bc705be79",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Query1"
+                  }
+                },
+                "Property": "TO_TERMINATION_COMPLETED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "9af370cf10d91302cb69",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Query1"
+                  }
+                },
+                "Property": "FROM_GLAND_COMPLETED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "df664d035aa6008e7a98",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+                  }
+                },
+                "Property": "SystemTargetDate"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "5148e622449ca15c9be5",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Query1"
+                  }
+                },
+                "Property": "Est"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ]
+  }
+}

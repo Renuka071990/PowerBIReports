@@ -1,0 +1,569 @@
+table 'Previous Week Cable Report'
+	lineageTag: 570badfa-a2bc-4e0f-b52b-8462481408fc
+
+	column 'Source.Name'
+		dataType: string
+		lineageTag: b93aaefd-85f6-4970-aaff-a5396787f0dc
+		summarizeBy: none
+		sourceColumn: Source.Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column DECKNAME
+		dataType: string
+		lineageTag: dbe46287-39cf-4a91-8518-7924fedc1fc1
+		summarizeBy: none
+		sourceColumn: DECKNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAGID
+		dataType: string
+		lineageTag: 530ec538-af83-46f0-8a46-d2aa4ccac32b
+		summarizeBy: none
+		sourceColumn: TAGID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERVICE
+		dataType: string
+		lineageTag: 594710b3-87a5-4b18-9ba9-ef519f5baf96
+		summarizeBy: none
+		sourceColumn: SERVICE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromEquipment
+		dataType: string
+		lineageTag: dfabcd0c-3da4-47f9-af43-6dd38a7e87ff
+		summarizeBy: none
+		sourceColumn: FromEquipment
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToEquipment
+		dataType: string
+		lineageTag: 5aca98f4-827a-4c42-b8b4-1b4075a58e9b
+		summarizeBy: none
+		sourceColumn: ToEquipment
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromTag
+		dataType: string
+		lineageTag: 62e32216-9157-484f-8616-219a2c2c5781
+		summarizeBy: none
+		sourceColumn: FromTag
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromDescription
+		dataType: string
+		lineageTag: de518c04-81ac-4c1f-b0e3-77c3239871d2
+		summarizeBy: none
+		sourceColumn: FromDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToTag
+		dataType: string
+		lineageTag: 650bc18f-642a-40df-ae3a-240207f8af0c
+		summarizeBy: none
+		sourceColumn: ToTag
+
+		annotation SummarizationSetBy = Automatic
+
+	column TODESCRIPTION
+		dataType: string
+		lineageTag: 4fe3eb76-062f-447f-9f01-52629221eb74
+		summarizeBy: none
+		sourceColumn: TODESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column CoreNo
+		dataType: string
+		lineageTag: e10a15d9-8796-47e3-965d-63b293c7a488
+		summarizeBy: none
+		sourceColumn: CoreNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column CoreSize
+		dataType: int64
+		formatString: 0
+		lineageTag: dd5b81c2-79e2-40ab-b72e-56ed7f2ee99e
+		summarizeBy: sum
+		sourceColumn: CoreSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column CableVoltage
+		dataType: string
+		lineageTag: ed70129a-e969-4f92-a2a3-9cdd148125be
+		summarizeBy: none
+		sourceColumn: CableVoltage
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_RoomNo
+		dataType: string
+		lineageTag: 981633e4-9bb3-46a7-8f0b-1e9e6827e0d5
+		summarizeBy: none
+		sourceColumn: From_RoomNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_RoomNo
+		dataType: string
+		lineageTag: 66ecd3f5-4f8a-46fa-bd43-b30aae568132
+		summarizeBy: none
+		sourceColumn: To_RoomNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNITS
+		dataType: int64
+		formatString: 0
+		lineageTag: 02dfaa23-6f70-4823-8021-1d83753847f3
+		summarizeBy: sum
+		sourceColumn: UNITS
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCOPE
+		dataType: string
+		lineageTag: aceea52c-a137-462f-9972-50eca744fffa
+		summarizeBy: none
+		sourceColumn: SCOPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FROMDECKLEVEL
+		dataType: string
+		lineageTag: 1dd19390-e55d-42bf-bbd9-d94ba4cdf578
+		summarizeBy: none
+		sourceColumn: FROMDECKLEVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column TODECKLEVEL
+		dataType: string
+		lineageTag: d0ddacda-3311-4e0a-9136-7832a694ca7a
+		summarizeBy: none
+		sourceColumn: TODECKLEVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromGlandScope
+		dataType: string
+		lineageTag: 0fabd8b9-8bbc-4a86-b45d-b5e0005515f7
+		summarizeBy: none
+		sourceColumn: FromGlandScope
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToGlandScope
+		dataType: string
+		lineageTag: 8644cfe7-bd9e-4c19-9f20-ede1aaae1c20
+		summarizeBy: none
+		sourceColumn: ToGlandScope
+
+		annotation SummarizationSetBy = Automatic
+
+	column CableDrumNo
+		dataType: string
+		lineageTag: d93f27a7-d325-4dea-948e-4410dd59813b
+		summarizeBy: none
+		sourceColumn: CableDrumNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column CableSpecification
+		dataType: string
+		lineageTag: ef4f8195-1b2d-44a4-a55e-ddbd77235bf7
+		summarizeBy: none
+		sourceColumn: CableSpecification
+
+		annotation SummarizationSetBy = Automatic
+
+	column Remarks
+		dataType: string
+		lineageTag: 5f4c2874-3275-4ff5-97e6-6073c0135ef2
+		summarizeBy: none
+		sourceColumn: Remarks
+
+		annotation SummarizationSetBy = Automatic
+
+	column Remarks1
+		dataType: string
+		lineageTag: 2e44f27e-6a0d-4871-ae4e-1a55ccfab1ad
+		summarizeBy: none
+		sourceColumn: Remarks1
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocationDescription
+		dataType: string
+		lineageTag: 85c16e7e-5ead-4e74-8b1e-a5f35330012a
+		summarizeBy: none
+		sourceColumn: LocationDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column CableAssociatedTo
+		dataType: string
+		lineageTag: 24ec3f03-4ac7-4950-a0a3-0a7312251fd5
+		summarizeBy: none
+		sourceColumn: CableAssociatedTo
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommodityCode
+		dataType: string
+		lineageTag: 8fa3a30d-09c0-4e5d-bc39-1bf197ba42e8
+		summarizeBy: none
+		sourceColumn: CommodityCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartNumber
+		dataType: string
+		lineageTag: ea554647-a24e-46d2-83ed-1459c6ab22c1
+		summarizeBy: none
+		sourceColumn: PartNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClassDesignation
+		dataType: string
+		lineageTag: ecfc5de9-5c49-4f22-8e40-1780a9f01bbc
+		summarizeBy: none
+		sourceColumn: ClassDesignation
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATED_BY
+		dataType: string
+		lineageTag: 252953dc-0c77-4f5c-bcef-dabdaf2af859
+		summarizeBy: none
+		sourceColumn: CREATED_BY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATED_DATE
+		dataType: string
+		lineageTag: 7ed198d9-21a3-4c62-b0ab-859944f0e261
+		summarizeBy: none
+		sourceColumn: CREATED_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FROM_CORRECTEDTAG
+		dataType: string
+		lineageTag: 2197a2a3-0970-49f0-8eac-661b8afa6eb6
+		summarizeBy: none
+		sourceColumn: FROM_CORRECTEDTAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column FROM_GLANDCOUNT
+		dataType: int64
+		formatString: 0
+		lineageTag: a46424f4-abeb-4012-b344-4e1473a3120a
+		summarizeBy: sum
+		sourceColumn: FROM_GLANDCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE
+		dataType: string
+		lineageTag: fc517554-0257-4d12-8c20-8871dd7a7814
+		summarizeBy: none
+		sourceColumn: TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column STAGE
+		dataType: string
+		lineageTag: 572a0fbd-efd0-4ada-9083-c2ab1d5fdb9b
+		summarizeBy: none
+		sourceColumn: STAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PULLING MANHOURS'
+		dataType: int64
+		formatString: 0
+		lineageTag: 667ef569-db0e-45ab-a81a-76166e94daeb
+		summarizeBy: sum
+		sourceColumn: PULLING MANHOURS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PULLING ACTUAL'
+		dataType: int64
+		formatString: 0
+		lineageTag: 24165e87-1e4f-42b2-8882-c80e9c39d241
+		summarizeBy: sum
+		sourceColumn: PULLING ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pulled %'
+		dataType: int64
+		formatString: 0
+		lineageTag: 166e78df-3cc9-4498-adef-344f3271ccce
+		summarizeBy: sum
+		sourceColumn: Pulled %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dressing Manhours'
+		dataType: int64
+		formatString: 0
+		lineageTag: dbbc4714-0c98-49bb-a9c5-1d9f112f3f09
+		summarizeBy: sum
+		sourceColumn: Dressing Manhours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dressing ACTUAL'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5510c69a-93be-40a9-b638-985bf3588b05
+		summarizeBy: sum
+		sourceColumn: Dressing ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dressing %'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3bbf1174-a0c1-4115-ad53-bbbc6585a65b
+		summarizeBy: sum
+		sourceColumn: Dressing %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Glanding From Manhours'
+		dataType: int64
+		formatString: 0
+		lineageTag: e955141a-1671-441d-854b-94a8789c5073
+		summarizeBy: sum
+		sourceColumn: Glanding From Manhours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Glanding From Actual'
+		dataType: int64
+		formatString: 0
+		lineageTag: a0dbddae-cfec-4a08-9ad1-6240ca3176a9
+		summarizeBy: sum
+		sourceColumn: Glanding From Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Glanded From %'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c6f4fae-96db-4d63-a6a8-0cf8c12364d5
+		summarizeBy: sum
+		sourceColumn: Glanded From %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Glanding To Manhours'
+		dataType: int64
+		formatString: 0
+		lineageTag: 45289da9-31dc-46cd-ba83-79d1e819f937
+		summarizeBy: sum
+		sourceColumn: Glanding To Manhours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Glanding To Actual'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c079a5a-6b05-4fec-94ea-eb275155cbad
+		summarizeBy: sum
+		sourceColumn: Glanding To Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Glanded To %'
+		dataType: int64
+		formatString: 0
+		lineageTag: c4c13cf6-c823-42e7-a619-4da5a548f7fc
+		summarizeBy: sum
+		sourceColumn: Glanded To %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Termination From Manhours'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3dc484a5-e0b4-457c-aa73-d93659d72905
+		summarizeBy: sum
+		sourceColumn: Termination From Manhours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Termination From Actual'
+		dataType: int64
+		formatString: 0
+		lineageTag: c95bf10b-d0a5-4fa6-9965-9b92b177b96d
+		summarizeBy: sum
+		sourceColumn: Termination From Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Termination From %'
+		dataType: int64
+		formatString: 0
+		lineageTag: d412799a-92df-4b5e-a396-17e896b37657
+		summarizeBy: sum
+		sourceColumn: Termination From %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Termination To Manhours'
+		dataType: int64
+		formatString: 0
+		lineageTag: c383f36e-42cc-46ef-bbc8-256e81d34012
+		summarizeBy: sum
+		sourceColumn: Termination To Manhours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Termination To Actual'
+		dataType: int64
+		formatString: 0
+		lineageTag: ecd1a538-7b74-4e5d-b25a-f2949de9df83
+		summarizeBy: sum
+		sourceColumn: Termination To Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Termination To %'
+		dataType: int64
+		formatString: 0
+		lineageTag: 29c9dafa-2b3a-42a7-a329-39c1f6f0e0e8
+		summarizeBy: sum
+		sourceColumn: Termination To %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Testing Manhours'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ccbd7a7-9660-43b7-b0a7-3c14fa36af91
+		summarizeBy: sum
+		sourceColumn: Testing Manhours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Testing Actual'
+		dataType: int64
+		formatString: 0
+		lineageTag: bc497db6-e1dd-4a56-af88-df894de5732b
+		summarizeBy: sum
+		sourceColumn: Testing Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Testing %'
+		dataType: int64
+		formatString: 0
+		lineageTag: 817f1a12-ab40-4f27-aa43-7727bd168fec
+		summarizeBy: sum
+		sourceColumn: Testing %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Accep Manhours'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0205b736-dd32-4985-8352-183e0887b37f
+		summarizeBy: sum
+		sourceColumn: Accep Manhours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Accep Actual'
+		dataType: int64
+		formatString: 0
+		lineageTag: 53a1060b-34ef-414c-ab9b-993af8697498
+		summarizeBy: sum
+		sourceColumn: Accep Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Accep %'
+		dataType: int64
+		formatString: 0
+		lineageTag: a755a731-109a-46dd-ba57-be2ff92e903f
+		summarizeBy: sum
+		sourceColumn: Accep %
+
+		annotation SummarizationSetBy = Automatic
+
+	column FROM_GLAND_COMPLETED
+		dataType: int64
+		formatString: 0
+		lineageTag: 68cd5ba8-9e5d-4c5c-91f7-683a451de48e
+		summarizeBy: sum
+		sourceColumn: FROM_GLAND_COMPLETED
+
+		annotation SummarizationSetBy = Automatic
+
+	column FROM_TERMINATION_COMPLETED
+		dataType: int64
+		formatString: 0
+		lineageTag: 57c956aa-541b-482b-abec-2636ec1d05ea
+		summarizeBy: sum
+		sourceColumn: FROM_TERMINATION_COMPLETED
+
+		annotation SummarizationSetBy = Automatic
+
+	column TESTING_COMPLETED
+		dataType: int64
+		formatString: 0
+		lineageTag: 84bb47b6-35e1-494d-bddd-dcf0a6651271
+		summarizeBy: sum
+		sourceColumn: TESTING_COMPLETED
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Ending'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c3cc8d3e-5a27-461c-a7f9-7bc373660938
+		summarizeBy: none
+		sourceColumn: Week Ending
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Est length' = 'Previous Week Cable Report'[UNITS]*[Pulled %]/100
+		lineageTag: e134c3fe-98eb-480a-aab9-9cf9466eb57a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Previous Week Cable Report' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("qdfpu44b7frenbo2nq3upbjuru-qgujword6k6ungjlj6ncycndwq.datawarehouse.fabric.microsoft.com", "StagingLakehouseForDataflows_20250710073935"),
+				    dbo_Previous_Week_Cable_Report = Source{[Schema="dbo",Item="Previous_Week_Cable_Report"]}[Data]
+				in
+				    dbo_Previous_Week_Cable_Report
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

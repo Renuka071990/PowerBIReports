@@ -1,0 +1,211 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "c8bfd7e735023ccb4dce",
+  "displayName": "11.PGTT , Hydrotest & ITR by Sub-System",
+  "displayOption": "FitToWidth",
+  "height": 2880,
+  "width": 1440,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "292878d14a3625b0a04b",
+        "displayName": "01. SUB-SYSTEM NO.",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+              }
+            },
+            "Property": "subsystem"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "e10c66157be980472dbb",
+        "displayName": "02. DESCRIPTION",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+              }
+            },
+            "Property": "SystemDesc_01"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "f7373b6f14bedc4048ed",
+        "displayName": "03. REBASELINE MC Finish Dates",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+              }
+            },
+            "Property": "Rebaseline MC Finish Dates_01"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "b1768025394e6c80b39d",
+        "displayName": "04. TARGET MC Start",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+              }
+            },
+            "Property": "Target MC start"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "86b49962ce7dd3641103",
+        "displayName": "05. TARGET MC Finish",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+              }
+            },
+            "Property": "Target MC Finish"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "de29e7571a3e98d1b9be",
+        "displayName": "06. PRIORITY",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+              }
+            },
+            "Property": "Priority_02"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "f29b8e261435b2815ae6",
+        "displayName": "08.OWNER",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+              }
+            },
+            "Property": "Owner"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "00501b1c6c033e11ed07",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PIMS_aviw_CMS_Web_ObjectsEvents"
+              }
+            },
+            "Property": "Discipline"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "0bade10f3470de137490",
+        "ordinal": 8,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain"
+              }
+            },
+            "Property": "FAB FOCUS"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+table 'PGTT TEST Plan'
+	lineageTag: 8ac6586d-9b1f-4645-a452-a9e49fdc65cd
+
+	column 'Weekly Date'
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: e174c49e-9c33-45b9-ae18-392c636cd659
+		summarizeBy: none
+		sourceColumn: Weekly Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Weekly Plan'
+		dataType: string
+		lineageTag: f2c51690-f4bf-467c-9941-b67d145156d3
+		summarizeBy: none
+		sourceColumn: Weekly Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column CummPlan
+		dataType: double
+		formatString: 0
+		lineageTag: d5a2d8a5-7741-4b55-bb78-0c453004789e
+		summarizeBy: sum
+		sourceColumn: CummPlan
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Item
+		dataType: string
+		lineageTag: 31315c95-c74a-4658-930f-61fc508ecb82
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column TestCummActual =
+			VAR a = SUMX(FILTER('Previous Week Cable Report','Previous Week Cable Report'[Week Ending]='PGTT TEST Plan'[Weekly Date]),'Previous Week Cable Report'[Testing Actual])
+			VAR B = SUM(Query1[Testing Actual])
+			RETURN
+			IF('PGTT TEST Plan'[Weekly Date]='PGTT TEST Plan'[Current Week Ending],B,a)
+		lineageTag: 1914e178-da35-43d9-8a73-934e0fe8917b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TesT Week Actual' = ```
+			VAR a ='PGTT TEST Plan'[TestCummActual]-sumx(FILTER('PGTT TEST Plan','PGTT TEST Plan'[Weekly Date]=EARLIER('PGTT TEST Plan'[Weekly Date])-7),'PGTT TEST Plan'[TestCummActual])
+			
+			RETURN 
+			IF('PGTT TEst Plan'[Weekly Date]>'PGTT TEST Plan'[Current Week Ending],0,a)
+			```
+		formatString: 0
+		lineageTag: c4353496-dec4-4a4c-8520-19d539ea5753
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Week Ending' = (if(WEEKDAY(today()) < 6,(today()+5) - WEEKDAY(today()),((today()+5) - WEEKDAY(today()))+7))
+		formatString: General Date
+		lineageTag: 7d9c4a4a-e79a-4a48-a26a-1ad87d8a1830
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Week' = if('PGTT TEST Plan'[Weekly Date]='PGTT TEST Plan'[Current Week Ending],1,0)
+		formatString: 0
+		lineageTag: fff43f99-1c5b-4c94-bb40-0cd8c206a27f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prev Week' = if('PGTT TEST Plan'[Weekly Date]='PGTT TEST Plan'[Current Week Ending]-7,1,0)
+		formatString: 0
+		lineageTag: e4aa3580-1eef-4dbf-ac96-740b99397099
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cumm plan total' = MAX('PGTT TEST Plan'[CummPlan])
+		dataType: double
+		formatString: 0
+		lineageTag: 507e851c-9830-4742-9500-26e756ffa0a4
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition 'PGTT TEST Plan' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Cable Report\PGTT Plan\PGTT Plan TEST.xlsx"), null, true),
+				    #"PGTT Plan TEST_Sheet" = Source{[Item="PGTT Plan TEST",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"PGTT Plan TEST_Sheet", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

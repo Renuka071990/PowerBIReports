@@ -1,0 +1,126 @@
+table Subsystem-ItemType
+	lineageTag: 2064aa8d-178a-4296-aee3-f4b7579faeef
+
+	column DECKNAME
+		dataType: string
+		lineageTag: 7fb22774-27fc-434d-b343-f96e264bf8b5
+		summarizeBy: none
+		sourceColumn: DECKNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SYSTEM
+		dataType: string
+		lineageTag: 040f4e01-b75a-4461-80fa-fca97bf80dd0
+		summarizeBy: none
+		sourceColumn: SYSTEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBSYSTEM
+		dataType: string
+		lineageTag: e1f3d07d-af89-4773-aaaa-f6ebe4e2f2d9
+		summarizeBy: none
+		sourceColumn: SUBSYSTEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Custom
+		dataType: string
+		lineageTag: 2173db7d-9079-4624-8a3d-e4562ee2756d
+		summarizeBy: none
+		sourceColumn: Custom
+
+		annotation SummarizationSetBy = Automatic
+
+	column Item
+		dataType: string
+		lineageTag: 69d04ece-a4d5-45f3-aa5b-a3faa170f513
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_ACT_CUMM = if('Subsystem-ItemType'[Item]="01. Cable Pulling (LM)",[MX_ACT_CUMM_Pull],if('Subsystem-ItemType'[Item]="02. Cable Glanding (Nos)",[MX_ACT_CUMM_GLAND],if('Subsystem-ItemType'[Item]="03. Cable Termnation (Nos)",[MX_ACT_CUMM_TERM],if('Subsystem-ItemType'[Item]="04. Cable Testing (Nos)",[MX_ACT_CUMM_TEST],0))))
+		lineageTag: 8e7ffc52-cda7-4e73-a52a-4cd3fa46fd50
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_ACT_CUMM_% = if('Subsystem-ItemType'[Item]="01. Cable Pulling (LM)",([MX_ACT_CUMM_PULL%]),if('Subsystem-ItemType'[Item]="02. Cable Glanding (Nos)",([MX_ACT_CUMM_GLAND%]),if('Subsystem-ItemType'[Item]="03. Cable Termnation (Nos)",([MX_ACT_CUMM_TERM%]),if('Subsystem-ItemType'[Item]="04.Cable Testing ",([MX_ACT_CUMM_TEST%]),0))))
+		lineageTag: f1aa1d14-d964-44db-9c0d-99bceec71d87
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_ACT_WK = if('Subsystem-ItemType'[Item]="01. Cable Pulling (LM)",[MX_ACT_WK_Pull],if('Subsystem-ItemType'[Item]="02. Cable Glanding (Nos)",[MX_ACT_WK_GLAND],if('Subsystem-ItemType'[Item]="03. Cable Termnation (Nos)",[MX_ACT_WK_TERM],if('Subsystem-ItemType'[Item]="04. Cable Testing (Nos)",'FX_COMPU Table'[MX_ACT_WK_TEST],0))))
+		dataType: int64
+		lineageTag: 76c20709-efb8-45d5-abeb-9ffa10aa362a
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Sum_Est_Item = if('Subsystem-ItemType'[Item]="01. Cable Pulling (LM)",'FX_COMPU Table'[MX_EST_PULL],if('Subsystem-ItemType'[Item]="02. Cable Glanding (Nos)",[MX_EST_GLAND],if('Subsystem-ItemType'[Item]="03. Cable Termnation (Nos)",[MX_EST_TERM],if('Subsystem-ItemType'[Item]="04. Cable Testing (Nos)",[MX_EST_TEST],0))))
+		lineageTag: eccb1ef1-3c43-4e1e-a91c-4a8b7a1377c1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_DeckName-System = 'Subsystem-ItemType'[DECKNAME]&"_"&'Subsystem-ItemType'[SYSTEM]
+		lineageTag: e3cf1173-15f9-489f-a4e1-0478914251cd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_PLAN_WK = ```
+			
+			    var PULL_WEEKLY_PLAN = CALCULATE(
+			    sum ('PGTT Plan'[ESTLENGTH]),
+			    filter('PGTT Plan','PGTT Plan'[Item]="Pulling" && 'PGTT Plan'[FX_Week_Ending]=[WEEK ENDING NOW] && 'Subsystem-ItemType'[SYSTEM]='PGTT Plan'[SUBSYSTEM]))
+			    var GLAND_WEEKLY_PLAN = CALCULATE(
+			    count ('PGTT Plan'[TAGID]),
+			    filter('PGTT Plan','PGTT Plan'[Item]="Glanding" && 'PGTT Plan'[FX_Week_Ending]=[WEEK ENDING NOW] && 'Subsystem-ItemType'[SYSTEM]='PGTT Plan'[SUBSYSTEM]))*2
+			    var TERM_WEEKLY_PLAN = CALCULATE(
+			    count ('PGTT Plan'[TAGID]),filter('PGTT Plan','PGTT Plan'[Item]="Termination" && 'PGTT Plan'[FX_Week_Ending]=[WEEK ENDING NOW] && 'Subsystem-ItemType'[SYSTEM]='PGTT Plan'[SUBSYSTEM]))*2
+			    var TEST_WEEKLY_PLAN = CALCULATE(
+			    count ('PGTT Plan'[TAGID]),filter('PGTT Plan','PGTT Plan'[Item]="Testing" && 'PGTT Plan'[FX_Week_Ending]=[WEEK ENDING NOW] && 'Subsystem-ItemType'[SYSTEM]='PGTT Plan'[SUBSYSTEM])
+			)
+			return
+			 
+			if('Subsystem-ItemType'[Item]="01. Cable Pulling (LM)",PULL_WEEKLY_PLAN,if('Subsystem-ItemType'[Item]="02. Cable Glanding (Nos)",GLAND_WEEKLY_PLAN,if('Subsystem-ItemType'[Item]="03. Cable Termnation (Nos)",TERM_WEEKLY_PLAN,if('Subsystem-ItemType'[Item]="04. Cable Testing (Nos)",TEST_WEEKLY_PLAN,0))))
+			```
+		formatString: 0
+		lineageTag: 2f1268ce-5d86-43c4-a663-2276ae29c344
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Subsystem-ItemType-e42c17c7-464d-4dd3-998a-e179ce3cc9b4 = m
+		mode: import
+		source =
+				let
+				    Source = Table.NestedJoin(Query1, {"DECKNAME"}, StaticTbl_ItemType, {"DeckName"}, "StaticTbl_ItemType", JoinKind.FullOuter),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"DECKNAME", "SYSTEM", "SUBSYSTEM", "StaticTbl_ItemType"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Other Columns","l","L",Replacer.ReplaceText,{"SYSTEM"}),
+				    #"Added Custom" = Table.AddColumn(#"Replaced Value", "Custom", each [DECKNAME]&"-"&[SYSTEM]),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Added Custom",{"DECKNAME", "SYSTEM", "SUBSYSTEM", "Custom", "StaticTbl_ItemType"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Reordered Columns", {"Custom"}),
+				    #"Expanded StaticTbl_ItemType" = Table.ExpandTableColumn(#"Removed Duplicates", "StaticTbl_ItemType", {"Item Type"}, {"StaticTbl_ItemType.Item Type"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded StaticTbl_ItemType",{{"StaticTbl_ItemType.Item Type", "Item"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,20 @@
+table CorrectedtagRegister
+	lineageTag: ff147bec-ee3c-4a2f-9c36-491a5cf1daee
+
+	column Column
+		formatString: 0
+		lineageTag: 83fd5cc1-1c54-4785-b816-f51569cdc74f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CorrectedtagRegister = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 986b210246954adcb83630f43844a422
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

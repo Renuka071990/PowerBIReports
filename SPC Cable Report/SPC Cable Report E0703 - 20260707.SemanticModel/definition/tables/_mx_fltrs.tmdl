@@ -1,0 +1,150 @@
+table _mx_fltrs
+	lineageTag: dbaaa8de-91b3-41c8-a841-f6da06fcdbc8
+
+	measure mx_eqp_fltr = ```
+			
+			var a = IF(SELECTEDVALUE('Kahit ano'[FromEquipment]) IN VALUES(qry_eqp_detail[COMPONENT]) || 
+			SELECTEDVALUE('Kahit ano'[ToEquipment]) IN VALUES(qry_eqp_detail[COMPONENT]),1,0)
+			
+			RETURN
+			a
+			```
+		formatString: 0
+		lineageTag: a97fc791-1d47-4ff4-8cce-e07378af0fd1
+
+	measure 'Pulled Completed' = CALCULATE(DISTINCTCOUNT(Query1[PULLING IWP NO]),FILTER(Query1,Query1[Pull WP ProgCompleted]=1))
+		formatString: 0
+		lineageTag: bc4c3f3f-66f1-40d4-b2a8-efe896aa9851
+
+	measure 'Gland From Completed' = CALCULATE(DISTINCTCOUNT(Query1[GLANDING FROM IWP NO]),FILTER(Query1,Query1[Gland From WP ProgCompleted]=1))
+		formatString: 0
+		lineageTag: 54b6e652-f3f1-4a33-b9bd-e4455225fac9
+
+	measure 'Gland To Completed' = CALCULATE(DISTINCTCOUNT(Query1[GLANDING TO IWP NO]),FILTER(Query1,Query1[Gland To WP ProgCompleted]=1))
+		formatString: 0
+		lineageTag: 79ec3aed-7607-406b-ac5d-72d6f1f9478c
+
+	measure 'Term From Completed' = CALCULATE(DISTINCTCOUNT(Query1[Termination From IWP No]),FILTER(Query1,Query1[Term From WP ProgCompleted]=1))
+		formatString: 0
+		lineageTag: 2ec2a8b1-202a-48aa-b172-4f8891ced195
+
+	measure 'Term To Completed' = CALCULATE(DISTINCTCOUNT(Query1[Termination To IWP No]),FILTER(Query1,Query1[Term To WP ProgCompleted]=1))
+		formatString: 0
+		lineageTag: 7e2c48f0-f33b-45a4-ba92-fb46d5702e30
+
+	measure 'Test Completed' = CALCULATE(DISTINCTCOUNT(Query1[Testing IWP No]),FILTER(Query1,Query1[Test WP ProgCompleted]=1))
+		formatString: 0
+		lineageTag: b049a683-6933-4565-93af-7055c6f57742
+
+	measure 'Gland Completed' = ```
+			
+			[Gland From Completed] + [Gland To Completed]
+			
+			```
+		formatString: 0
+		lineageTag: ec34f9dd-5ed4-4fdb-bed5-8e039903db88
+
+	measure 'mx_Glanding Issued WP Count' = ```
+			
+			VAR DistinctGlandingFROM = 
+			    CALCULATE(
+			        DISTINCTCOUNT(Query1[GLANDING FROM IWP NO]),
+			        NOT(ISBLANK(Query1[GLANDING FROM IWP NO]))
+			    )
+			VAR DistinctGlandingTO = 
+			    CALCULATE(
+			        DISTINCTCOUNT(Query1[GLANDING TO IWP NO]),
+			        NOT(ISBLANK(Query1[GLANDING TO IWP NO]))
+			    )
+			RETURN
+			DistinctGlandingFROM + DistinctGlandingTO
+			```
+		formatString: 0
+		lineageTag: 5c107e68-7914-40b1-8c8e-ef23ff99d8e0
+
+	measure 'mx_Glanding Issued Total WP Count FromTo' = ```
+			
+			var GlandingFromIWP= 
+			CALCULATE(
+			    COUNTROWS('WP Level4 Report'),
+			    'WP Level4 Report'[WP PURPOSE] = "Glanding From",
+			    NOT(ISBLANK('WP Level4 Report'[WPNO]))
+			)
+			var GlandingToIWP= 
+			CALCULATE(
+			    COUNTROWS('WP Level4 Report'),
+			    'WP Level4 Report'[WP PURPOSE] = "Glanding To",
+			    NOT(ISBLANK('WP Level4 Report'[WPNO]))
+			)
+			RETURN
+			GlandingFromIWP + GlandingToIWP
+			```
+		formatString: 0
+		lineageTag: cf75aa53-6607-41b3-91a0-91f2a5904eaf
+
+	measure 'Termination Completed' = ```
+			
+			[Term From Completed] + [Term To Completed]
+			
+			```
+		formatString: 0
+		lineageTag: a391ed14-d3f8-4177-b2a0-03a2c6908007
+
+	measure 'mx_Termination Issued Total WP Count FromTo' = ```
+			
+			var TerminationFromIWP= 
+			CALCULATE(
+			    COUNTROWS('WP Level4 Report'),
+			    'WP Level4 Report'[WP PURPOSE] = "Termination From",
+			    NOT(ISBLANK('WP Level4 Report'[WPNO]))
+			)
+			var TerminationToIWP= 
+			CALCULATE(
+			    COUNTROWS('WP Level4 Report'),
+			    'WP Level4 Report'[WP PURPOSE] = "Termination To",
+			    NOT(ISBLANK('WP Level4 Report'[WPNO]))
+			)
+			RETURN
+			TerminationFromIWP + TerminationToIWP
+			```
+		formatString: 0
+		lineageTag: 127ce876-9eb6-451b-aac6-d2fe12eb43c0
+
+	measure 'mx_Termination Issued WP Count' = ```
+			
+			VAR DistinctTerminationFROM = 
+			    CALCULATE(
+			        DISTINCTCOUNT(Query1[Termination FROM IWP NO]),
+			        NOT(ISBLANK(Query1[Termination FROM IWP NO]))
+			    )
+			VAR DistinctTerminationTO = 
+			    CALCULATE(
+			        DISTINCTCOUNT(Query1[Termination TO IWP NO]),
+			        NOT(ISBLANK(Query1[Termination TO IWP NO]))
+			    )
+			RETURN
+			DistinctTerminationFROM + DistinctTerminationTO
+			```
+		formatString: 0
+		lineageTag: fdb2dc3b-447c-4574-92f4-48891de6ab83
+
+	column Column1
+		dataType: string
+		lineageTag: c9f684d9-9d82-4762-9738-9f0ce3f24281
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _mx_fltrs = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

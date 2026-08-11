@@ -1,0 +1,93 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 11/14/2022 7:25:46 AM.
+queryGroup 'Query Errors - 11/14/2022 7:25:46 AM'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errors in queries that were loaded on 11/14/2022 8:45:40 AM.
+queryGroup 'Query Errors - 11/14/2022 8:45:40 AM'
+
+	annotation PBI_QueryGroupOrder = 1
+
+/// Errors in queries that were loaded on 12/29/2022 2:53:25 PM.
+queryGroup 'Query Errors - 12/29/2022 2:53:25 PM'
+
+	annotation PBI_QueryGroupOrder = 2
+
+/// Errors in queries that were loaded on 1/4/2023 8:49:01 AM.
+queryGroup 'Query Errors - 1/4/2023 8:49:01 AM'
+
+	annotation PBI_QueryGroupOrder = 3
+
+/// Errors in queries that were loaded on 4/3/2025 3:04:59 PM.
+queryGroup 'Query Errors - 4/3/2025 3:04:59 PM'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Transform File from Previous Week Cable Report'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'Transform File from Previous Week Cable Report\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Query1","Cable Tray","CableTrayScope","Discipline","Weekly QTY Plan","Date Now","FromGlandCount","ToGlandCount","EqptGland","Equipment Status","Errors in Equipment Status","Errors in Equipment Status (2)","Equipment Detail","Errors in FromGlandCount","Errors in ToGlandCount","Errors in EqptGland","Errors in Equipment Status (3)","StaticTbl_ItemType","Subsystem-ItemType","PGTT Plan","Cable Tray (Progress)","qry_eqp_detail","_mx_fltrs","qry_eqp_progress","PIMS_aviw_CMS_Web_ObjectsEvents","PIMS_aviw_CMS_Compl_PunchItems_CrossDomain","PIMS_aviw_CMS_Compl_ObjectsEventsChecklist","PIMS_aviw_CMS_Compl_Systems","PIMS_aviw_CMS_Compl_SubSystems","aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain","Cable Drum Allocation","Errors in Cable Drum Allocation","WP Level4 Report","PIMS_aviw_CMS_Compl_Plants_MCD","Shared MC Target Dates by Susbsytem","Query1 (Original)","Query1(for duplicate)","xrefdate_Last Refreshed Date","PGTT Plan (Borwin)","Parameter1","Transform Sample File","Sample File","Transform File","Cable Grounding","Previous Week Cable Report","SequenceNo","Sub-System Target Date","Excel_aviw_CMS_Compl_Objects_WithEngR","Excel_PIMS_aviw_CMS_Compl_ObjectsEven","Excel_PIMS_aviw_CMS_Compl_PunchItems_","Excel_PIMS_aviw_CMS_Compl_SubSystems (2)","Excel_PIMS_aviw_CMS_Compl_Systems (2)","Excel_PIMS_aviw_CMS_Web_ObjectsEvents (2)","PGTT GLAND Plan","PGTT TERM Plan","PGTT TEST Plan","Cable Tray Register","BW6 HT","Hydro Reinst Test Progress"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Query1
+ref table 'Cable Tray'
+ref table CableTrayScope
+ref table Discipline
+ref table 'Weekly QTY Plan'
+ref table Calendar
+ref table 'Date Now'
+ref table EqptGland
+ref table 'Equipment Detail'
+ref table 'FX_COMPU Table'
+ref table StaticTbl_ItemType
+ref table Subsystem-ItemType
+ref table 'PGTT Plan'
+ref table 'Calendar Weekly'
+ref table 'Cable Tray (Progress)'
+ref table qry_eqp_detail
+ref table _mx_fltrs
+ref table qry_eqp_progress
+ref table PIMS_aviw_CMS_Web_ObjectsEvents
+ref table PIMS_aviw_CMS_Compl_PunchItems_CrossDomain
+ref table 'Kahit ano'
+ref table 'Cable Drum Allocation'
+ref table 'WP Level4 Report'
+ref table PIMS_aviw_CMS_Compl_ObjectsEventsChecklist
+ref table aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain
+ref table 'Shared MC Target Dates by Susbsytem'
+ref table 'Query1(for duplicate)'
+ref table 'xrefdate_Last Refreshed Date'
+ref table 'PGTT Plan (Borwin)'
+ref table 'Cable Grounding'
+ref table SequenceNo
+ref table 'Previous Week Cable Report'
+ref table 'Sub-System Target Date'
+ref table 'PGTT GLAND Plan'
+ref table 'PGTT TERM Plan'
+ref table 'PGTT TEST Plan'
+ref table PIMS_aviw_CMS_Compl_Systems
+ref table PIMS_aviw_CMS_Compl_SubSystems
+ref table 'Cable Tray Register'
+ref table CorrectedtagRegister
+ref table 'BW6 HT'
+ref table 'Hydro Reinst Test Progress'
+
+ref cultureInfo en-US
+

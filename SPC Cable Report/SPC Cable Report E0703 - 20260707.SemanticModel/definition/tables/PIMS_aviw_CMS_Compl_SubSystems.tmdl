@@ -1,0 +1,450 @@
+table PIMS_aviw_CMS_Compl_SubSystems
+	lineageTag: 1f868f71-a6a7-407a-9971-7e8bd46e1fb7
+
+	column PrimKey
+		dataType: string
+		lineageTag: b9ead48f-ee33-48f2-b38c-948bdfc54dcd
+		summarizeBy: none
+		sourceColumn: PrimKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedBy
+		dataType: string
+		lineageTag: 79eab257-842e-44c8-94b6-b27658479a4f
+		summarizeBy: none
+		sourceColumn: CreatedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created
+		dataType: string
+		lineageTag: e1e7e901-5df2-4143-90d9-71e1ab3d4e27
+		summarizeBy: none
+		sourceColumn: Created
+
+		annotation SummarizationSetBy = Automatic
+
+	column Updated
+		dataType: string
+		lineageTag: 938a9087-0a82-4592-a734-1a58f5c45a4a
+		summarizeBy: none
+		sourceColumn: Updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedBy
+		dataType: string
+		lineageTag: d57bc664-83c3-470d-a043-0b87d024d203
+		summarizeBy: none
+		sourceColumn: UpdatedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: 1fcf84f8-57be-4807-890a-32dcabde9386
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystem
+		dataType: string
+		lineageTag: 05b180a0-d275-48cb-8cb2-b34dba83f831
+		summarizeBy: none
+		sourceColumn: SubSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: e2bfbf8c-b4b0-4f9d-ba70-84554a105a80
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFCPlanned
+		dataType: string
+		lineageTag: 37f2c0f3-3828-48be-860c-7466fc8dcb43
+		summarizeBy: none
+		sourceColumn: RFCPlanned
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFCForecast
+		dataType: string
+		lineageTag: 8db59aec-525e-452a-a902-d93dc704ada3
+		summarizeBy: none
+		sourceColumn: RFCForecast
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFCIssued
+		dataType: string
+		lineageTag: cfcda638-11c3-4f25-adf5-2c8f1eaa2267
+		summarizeBy: none
+		sourceColumn: RFCIssued
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFCIssuedBy
+		dataType: string
+		lineageTag: fe6b102b-6787-47a8-b1ca-b33fd6e2e4c8
+		summarizeBy: none
+		sourceColumn: RFCIssuedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFCAccepted
+		dataType: string
+		lineageTag: 0934e0cf-f2c1-4e92-a2c8-6f5ecd9f9ecd
+		summarizeBy: none
+		sourceColumn: RFCAccepted
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFCAcceptedBy
+		dataType: string
+		lineageTag: bf22f7ee-1e1d-47b4-b8aa-5efffbb9ee08
+		summarizeBy: none
+		sourceColumn: RFCAcceptedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column SSResponsible
+		dataType: string
+		lineageTag: 2bc72fc2-e729-4ae2-bfc9-140c8cd0c0df
+		summarizeBy: none
+		sourceColumn: SSResponsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFOPlanned
+		dataType: string
+		lineageTag: a23bf97f-a723-411e-b1ab-0a8324b4df8e
+		summarizeBy: none
+		sourceColumn: RFOPlanned
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFOForecast
+		dataType: string
+		lineageTag: dec75b76-9e60-4850-bfc7-f2c5252b629a
+		summarizeBy: none
+		sourceColumn: RFOForecast
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFOIssued
+		dataType: string
+		lineageTag: 514713a2-7df8-44ce-9e3c-006c070e97a5
+		summarizeBy: none
+		sourceColumn: RFOIssued
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFOIssuedBy
+		dataType: string
+		lineageTag: 3702e1be-a47a-4c01-b9fb-cc418e946c53
+		summarizeBy: none
+		sourceColumn: RFOIssuedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFOAccepted
+		dataType: string
+		lineageTag: 29f6a9dc-93a4-485f-9b89-ad651097fc21
+		summarizeBy: none
+		sourceColumn: RFOAccepted
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFOAcceptedBy
+		dataType: string
+		lineageTag: 6d8a0fa3-2d42-4051-9a07-57b0928f1e6e
+		summarizeBy: none
+		sourceColumn: RFOAcceptedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemGroupSort1
+		dataType: string
+		lineageTag: 5746685e-ba1d-40b7-bfd2-e83da16ff3f0
+		summarizeBy: none
+		sourceColumn: SubSystemGroupSort1
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemGroupSort2
+		dataType: string
+		lineageTag: acd56f8a-35cb-4da1-a35c-e56c0a0dfa05
+		summarizeBy: none
+		sourceColumn: SubSystemGroupSort2
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemGroupSort3
+		dataType: string
+		lineageTag: 376ebd10-28ff-4643-8515-b32e312a5633
+		summarizeBy: none
+		sourceColumn: SubSystemGroupSort3
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemGroupSort4
+		dataType: string
+		lineageTag: b87f2dbd-ad85-46da-8490-26dabfabd179
+		summarizeBy: none
+		sourceColumn: SubSystemGroupSort4
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemGroupSort5
+		dataType: string
+		lineageTag: 0e1f2a2f-fd7a-44f3-90e4-ba6222b627e3
+		summarizeBy: none
+		sourceColumn: SubSystemGroupSort5
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemGroupSort6
+		dataType: string
+		lineageTag: 6ab0260e-0e11-4695-b187-64a7ec11c930
+		summarizeBy: none
+		sourceColumn: SubSystemGroupSort6
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemGroupSort7
+		dataType: string
+		lineageTag: d1599abf-8482-4cbd-87fe-19247a69aa73
+		summarizeBy: none
+		sourceColumn: SubSystemGroupSort7
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemGroupSort8
+		dataType: string
+		lineageTag: 929c58a1-3be5-46af-a991-5b0b13a2ad91
+		summarizeBy: none
+		sourceColumn: SubSystemGroupSort8
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemLead
+		dataType: string
+		lineageTag: c21edc6a-50eb-4d38-b673-63edb24950a0
+		summarizeBy: none
+		sourceColumn: SubSystemLead
+
+		annotation SummarizationSetBy = Automatic
+
+	column System
+		dataType: string
+		lineageTag: 8b6031f0-8d2e-4973-ae60-07f2512b21a9
+		summarizeBy: none
+		sourceColumn: System
+
+		annotation SummarizationSetBy = Automatic
+
+	column SplitSystem
+		dataType: string
+		lineageTag: 9e87045a-061b-487e-84ab-20b7356a895b
+		summarizeBy: none
+		sourceColumn: SplitSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column SSContractor
+		dataType: string
+		lineageTag: 39c3f57b-f129-4ae0-ae66-f119165aa57e
+		summarizeBy: none
+		sourceColumn: SSContractor
+
+		annotation SummarizationSetBy = Automatic
+
+	column SSMilestone
+		dataType: string
+		lineageTag: b13fc677-2137-44a4-89e1-b34c77368171
+		summarizeBy: none
+		sourceColumn: SSMilestone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comments
+		dataType: string
+		lineageTag: 797921de-2f92-438d-9a63-4ace8675b99e
+		summarizeBy: none
+		sourceColumn: Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutstandingPunchItems
+		dataType: string
+		lineageTag: 652fb4c1-6b9f-4ba0-8746-8b1e189bbfb9
+		summarizeBy: none
+		sourceColumn: OutstandingPunchItems
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutstandingChecklists
+		dataType: string
+		lineageTag: 8b69d0e1-f75a-4c28-a4a4-f057fbf4b5dd
+		summarizeBy: none
+		sourceColumn: OutstandingChecklists
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalPunchItems
+		dataType: string
+		lineageTag: ede0ea01-100c-460f-8967-e3fbf9a2fdf0
+		summarizeBy: none
+		sourceColumn: TotalPunchItems
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalChecklists
+		dataType: string
+		lineageTag: d6fd90f3-9c47-409c-a1e1-11357344ddc7
+		summarizeBy: none
+		sourceColumn: TotalChecklists
+
+		annotation SummarizationSetBy = Automatic
+
+	column CriticalityCommissioning
+		dataType: string
+		lineageTag: 0ea3660f-4ee5-4607-b34f-f7161f7ba4e5
+		summarizeBy: none
+		sourceColumn: CriticalityCommissioning
+
+		annotation SummarizationSetBy = Automatic
+
+	column CriticalityHandover
+		dataType: string
+		lineageTag: c9aa3148-8fdf-42b8-9835-04daaf7d1155
+		summarizeBy: none
+		sourceColumn: CriticalityHandover
+
+		annotation SummarizationSetBy = Automatic
+
+	column HandoverType
+		dataType: string
+		lineageTag: b50541e5-1691-4101-920f-d9e5575b0ecf
+		summarizeBy: none
+		sourceColumn: HandoverType
+
+		annotation SummarizationSetBy = Automatic
+
+	column SSArea
+		dataType: string
+		lineageTag: 5ae0deb2-0f39-406e-931f-0e73da98bf6e
+		summarizeBy: none
+		sourceColumn: SSArea
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutstandingPLA
+		dataType: string
+		lineageTag: 474f8ead-57c1-4c35-9b95-4baf2243587f
+		summarizeBy: none
+		sourceColumn: OutstandingPLA
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutstandingPLB
+		dataType: string
+		lineageTag: 24338937-0403-4934-9f9e-d76efccbf362
+		summarizeBy: none
+		sourceColumn: OutstandingPLB
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutstandingPLC
+		dataType: string
+		lineageTag: ed90ac53-6228-4200-860b-b8fda9f77408
+		summarizeBy: none
+		sourceColumn: OutstandingPLC
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutstandingPLD
+		dataType: string
+		lineageTag: a5a91ead-ea9c-470d-b73f-8634713759b5
+		summarizeBy: none
+		sourceColumn: OutstandingPLD
+
+		annotation SummarizationSetBy = Automatic
+
+	column SSSite
+		dataType: string
+		lineageTag: 2cad73ff-36e3-4467-8d3e-f7c455b96587
+		summarizeBy: none
+		sourceColumn: SSSite
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLStatus
+		dataType: string
+		lineageTag: 3e8a33b0-477e-488f-bff0-fb9669063ee6
+		summarizeBy: none
+		sourceColumn: PLStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column MainPlant
+		dataType: string
+		lineageTag: 36a2301e-d53a-4c08-aec1-db81523675cf
+		summarizeBy: none
+		sourceColumn: MainPlant
+
+		annotation SummarizationSetBy = Automatic
+
+	column SSandDesc
+		dataType: string
+		lineageTag: c970f4dc-b0e0-4d69-ad09-45f0c2d5dec5
+		summarizeBy: none
+		sourceColumn: SSandDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSystemWithDescription
+		dataType: string
+		lineageTag: f22e3d7e-545b-43e4-8900-53082c4bbc0e
+		summarizeBy: none
+		sourceColumn: SubSystemWithDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column SSPlant
+		dataType: string
+		lineageTag: e563eb61-bdc0-4e2a-a892-fc77d50df341
+		summarizeBy: none
+		sourceColumn: SSPlant
+
+		annotation SummarizationSetBy = Automatic
+
+	column SPlant
+		dataType: string
+		lineageTag: 5d412bcb-25d0-47ac-ba8a-9e304fde053f
+		summarizeBy: none
+		sourceColumn: SPlant
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PIMS_aviw_CMS_Compl_SubSystems = m
+		mode: import
+		source =
+				let
+				    Source = PimsDataApi.Contents("https://mcdermott.pimshosting.com/"),
+				    CMSKey = Source{[Key="CMSKey"]}[Data],
+				    aviw_CMS_Compl_SubSystemsKey = CMSKey{[Key="aviw_CMS_Compl_SubSystemsKey"]}[Data],
+				    #"Invoked Functionaviw_CMS_Compl_SubSystemsKey1" = aviw_CMS_Compl_SubSystemsKey("PrimKey,#(tab)CreatedBy,#(tab)Created,#(tab)Updated,#(tab)UpdatedBy,#(tab)Project,#(tab)SubSystem,#(tab)Description,#(tab)RFCPlanned,#(tab)RFCForecast,#(tab)RFCIssued,#(tab)RFCIssuedBy,#(tab)RFCAccepted,#(tab)RFCAcceptedBy,#(tab)SSResponsible,#(tab)RFOPlanned,#(tab)RFOForecast,#(tab)RFOIssued,#(tab)RFOIssuedBy,#(tab)RFOAccepted,#(tab)RFOAcceptedBy,#(tab)SubSystemGroupSort1,#(tab)SubSystemGroupSort2,#(tab)SubSystemGroupSort3,#(tab)SubSystemGroupSort4,#(tab)SubSystemGroupSort5,#(tab)SubSystemGroupSort6,#(tab)SubSystemGroupSort7,#(tab)SubSystemGroupSort8,#(tab)SubSystemLead,#(tab)System,#(tab)SplitSystem,#(tab)SSContractor,#(tab)SSMilestone,#(tab)Comments,#(tab)OutstandingPunchItems,#(tab)OutstandingChecklists,#(tab)TotalPunchItems,#(tab)TotalChecklists,#(tab)CriticalityCommissioning,#(tab)CriticalityHandover,#(tab)HandoverType,#(tab)SSArea,#(tab)OutstandingPLA,#(tab)OutstandingPLB,#(tab)OutstandingPLC,#(tab)OutstandingPLD,#(tab)SSSite,#(tab)PLStatus,#(tab)MainPlant,#(tab)SSandDesc,#(tab)SubSystemWithDescription,#(tab)SSPlant,#(tab)SPlant,PLStatus", "Max Records", "-1", null, null, null)
+				in
+				    #"Invoked Functionaviw_CMS_Compl_SubSystemsKey1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

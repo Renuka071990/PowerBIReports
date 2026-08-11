@@ -1,0 +1,1408 @@
+table 'WP Level4 Report'
+	lineageTag: 76091271-532e-4739-b01d-ec81abc60857
+
+	column FIWPOBID
+		dataType: string
+		lineageTag: 60de2554-3ed9-44ff-af0d-9809ef867793
+		summarizeBy: none
+		sourceColumn: FIWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPUID
+		dataType: string
+		lineageTag: beddd4d9-0dc3-42b0-95ca-24d7b96893f5
+		summarizeBy: none
+		sourceColumn: FIWPUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROJECT
+		dataType: string
+		lineageTag: abbec1db-7455-4010-8b72-56686182709a
+		summarizeBy: none
+		sourceColumn: PROJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TASK NO'
+		dataType: string
+		lineageTag: 68519fac-c6e6-4a8c-82e6-44c9b1dc2624
+		summarizeBy: none
+		sourceColumn: TASK NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JOB NO'
+		dataType: string
+		lineageTag: 685b5ca7-e657-4b99-b5d1-4ab07410d1ea
+		summarizeBy: none
+		sourceColumn: JOB NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTIVITY CODE'
+		dataType: string
+		lineageTag: 49cdcad6-d0a1-4d39-b581-23361af17131
+		summarizeBy: none
+		sourceColumn: ACTIVITY CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		dataType: string
+		lineageTag: 104f471f-9be9-4a26-98c6-a7e8d4bf14e1
+		summarizeBy: none
+		sourceColumn: DISCIPLINE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTIVITY ID'
+		dataType: string
+		lineageTag: 763aec33-60cd-4e67-875c-84201bec3cc5
+		summarizeBy: none
+		sourceColumn: ACTIVITY ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column WPNO
+		dataType: string
+		lineageTag: f9eff8f5-59c8-40c6-9cfb-3328774a6cac
+		summarizeBy: none
+		sourceColumn: WPNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP DESCRIPTION'
+		dataType: string
+		lineageTag: aad82142-902a-4a85-8ad8-c8fa837f1004
+		summarizeBy: none
+		sourceColumn: WP DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column WP_REVNO
+		dataType: string
+		lineageTag: 4a6e0a4f-4e8d-4877-847d-b080053bcd9e
+		summarizeBy: none
+		sourceColumn: WP_REVNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTIVITY ID DESCRIPTION'
+		dataType: string
+		lineageTag: 0786e8ff-a734-4510-9018-7485199593d7
+		summarizeBy: none
+		sourceColumn: ACTIVITY ID DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Hrs'
+		dataType: double
+		lineageTag: 5d7b5ab5-42e1-4050-9470-8d1d4666143b
+		summarizeBy: sum
+		sourceColumn: AFC Hrs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs'
+		dataType: double
+		lineageTag: 3ddef58a-3876-4c27-b716-3814bfa31c0b
+		summarizeBy: sum
+		sourceColumn: WP Hrs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC WP DELTA Hrs'
+		dataType: double
+		lineageTag: a5175d34-ea3b-4e34-9eb5-0d1af33aecca
+		summarizeBy: sum
+		sourceColumn: AFC WP DELTA Hrs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress'
+		dataType: double
+		lineageTag: 92b453db-13c4-4a0c-8ebc-9cc9cbd2a8d7
+		summarizeBy: sum
+		sourceColumn: AFC Progress
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned Hrs'
+		dataType: double
+		lineageTag: 3caa2dbf-fcb7-418b-89b9-84857e91a859
+		summarizeBy: sum
+		sourceColumn: AFC Earned Hrs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC WP Earned Delta Hrs'
+		dataType: double
+		lineageTag: 1700605b-6645-4d60-80bd-cc1560d39f7b
+		summarizeBy: sum
+		sourceColumn: AFC WP Earned Delta Hrs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC WP Progress Delta'
+		dataType: double
+		lineageTag: 975c3171-46ec-4b86-adbd-2bb7ac6dd9c8
+		summarizeBy: sum
+		sourceColumn: AFC WP Progress Delta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress'
+		dataType: double
+		lineageTag: ba94e31e-2ea3-4cb6-9b4a-ff58279856e4
+		summarizeBy: sum
+		sourceColumn: WP Progress
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs'
+		dataType: double
+		lineageTag: 79cbf33b-34ac-4da1-bf5a-b77f8c7ca6f8
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Components Qty Planned'
+		dataType: double
+		lineageTag: 8dfc00a1-616d-41e4-a57c-aa609b593bec
+		summarizeBy: sum
+		sourceColumn: WP Components Qty Planned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Components Qty Complete'
+		dataType: double
+		lineageTag: 619f1af3-32ac-48a8-a0c9-48ef80b29c43
+		summarizeBy: sum
+		sourceColumn: WP Components Qty Complete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLAN_UNITS
+		dataType: double
+		lineageTag: 2202e6ab-639c-4169-bc39-1febddd58943
+		summarizeBy: sum
+		sourceColumn: PLAN_UNITS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COMPLETED_UNITS
+		dataType: double
+		lineageTag: 44f46741-4b1b-4ce0-a5a1-9e61891cf041
+		summarizeBy: sum
+		sourceColumn: COMPLETED_UNITS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RATEUOM
+		dataType: string
+		lineageTag: c595f06c-7607-4ff5-bc48-6a68f3d7e776
+		summarizeBy: none
+		sourceColumn: RATEUOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP PURPOSE'
+		dataType: string
+		lineageTag: 562539d9-a0a3-458e-8ed0-4cbe9d2200d9
+		summarizeBy: none
+		sourceColumn: WP PURPOSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Last Week Progress'
+		dataType: double
+		lineageTag: 887ffe82-639b-400a-b5d7-7264178e2979
+		summarizeBy: sum
+		sourceColumn: WP Last Week Progress
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Last Week Earned'
+		dataType: double
+		lineageTag: 0c774257-296c-4b56-a968-46df960d5d4e
+		summarizeBy: sum
+		sourceColumn: WP Last Week Earned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Last Week Weekly Earned'
+		dataType: double
+		lineageTag: d885d6dc-8c5f-4a5b-a5a8-3e6bf0fd8475
+		summarizeBy: sum
+		sourceColumn: WP Last Week Weekly Earned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Weekly Progress'
+		dataType: double
+		lineageTag: c93a9a53-8181-4388-900e-7742cf2c50bd
+		summarizeBy: sum
+		sourceColumn: WP Weekly Progress
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Weekly Earned'
+		dataType: double
+		lineageTag: a1313dae-429f-43e8-ac9f-a9f87d727736
+		summarizeBy: sum
+		sourceColumn: WP Weekly Earned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Components Count Complete'
+		dataType: double
+		lineageTag: 52b2b122-5d39-4c53-b5d7-5978cfb98be5
+		summarizeBy: sum
+		sourceColumn: WP Components Count Complete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Components Count Planned'
+		dataType: double
+		lineageTag: 2b43ba93-7497-474c-abbe-170392a229f3
+		summarizeBy: sum
+		sourceColumn: WP Components Count Planned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AREA
+		dataType: string
+		lineageTag: 045e0261-a4d3-4269-a1c2-ccac6c02a23e
+		summarizeBy: none
+		sourceColumn: AREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: string
+		lineageTag: 4223a71a-e1f2-44fa-93df-a0d3aa0b478c
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Revision Date'
+		dataType: string
+		lineageTag: acaef716-fbf9-42ec-bdf7-e10a267ffde0
+		summarizeBy: none
+		sourceColumn: WP Revision Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Receive Date'
+		dataType: string
+		lineageTag: 8382658a-e44c-4a31-bad4-f22d6bedef1d
+		summarizeBy: none
+		sourceColumn: WP Receive Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Last Progress By'
+		dataType: string
+		lineageTag: 4ea981a1-d7d0-43ab-82c6-e4360bdc2de2
+		summarizeBy: none
+		sourceColumn: WP Last Progress By
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Last Progress Date'
+		dataType: string
+		lineageTag: dfe96b62-5b0b-4610-89e8-432155cb49ae
+		summarizeBy: none
+		sourceColumn: WP Last Progress Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Creation User'
+		dataType: string
+		lineageTag: 51a207a5-3519-438d-917c-7e9ea0397842
+		summarizeBy: none
+		sourceColumn: WP Creation User
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Creation Date'
+		dataType: string
+		lineageTag: ced24124-044a-4b1a-882a-e3d532fb5ca0
+		summarizeBy: none
+		sourceColumn: WP Creation Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Foreman
+		dataType: string
+		lineageTag: 5b15c9ff-9eeb-45eb-992c-2503248b9065
+		summarizeBy: none
+		sourceColumn: Foreman
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'General Foreman'
+		dataType: string
+		lineageTag: a5900dbb-ea41-403e-b9f2-371738ca9ed0
+		summarizeBy: none
+		sourceColumn: General Foreman
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'IWP Issued By'
+		dataType: string
+		lineageTag: a5c9cf52-9c27-440e-9084-c7b671038501
+		summarizeBy: none
+		sourceColumn: IWP Issued By
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Planned Start Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0780186a-cf8a-4e20-bd41-8a78563230f2
+		summarizeBy: none
+		sourceColumn: WP Planned Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Planned Finish Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d8756a0f-0e53-41a4-af0f-abcfa7820226
+		summarizeBy: none
+		sourceColumn: WP Planned Finish Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Actual Start Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2762c20c-5091-4854-b0e2-d449c4d28098
+		summarizeBy: none
+		sourceColumn: WP Actual Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Actual Finish Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4cba9448-bf97-4cf8-8f46-fb08c702c5c1
+		summarizeBy: none
+		sourceColumn: WP Actual Finish Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Forecast Start Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fd7e3598-966d-49be-a1b3-928eca1270c8
+		summarizeBy: none
+		sourceColumn: L3 Forecast Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Forecast Finish Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d0e4005d-08b8-472d-9ba6-523009ebb886
+		summarizeBy: none
+		sourceColumn: L3 Forecast Finish Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Baseline Start Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c7c777b6-d84c-48c3-9aad-7c6084f92416
+		summarizeBy: none
+		sourceColumn: L3 Baseline Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Baseline Finish Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8e9a5987-1c52-49f9-ae10-66cc6d792476
+		summarizeBy: none
+		sourceColumn: L3 Baseline Finish Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 1'
+		dataType: string
+		lineageTag: 72566385-8ffe-4765-bab4-ab4d77d5a904
+		summarizeBy: none
+		sourceColumn: ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 2'
+		dataType: string
+		lineageTag: 6fccd91c-a5f8-40f4-b359-355a3de87645
+		summarizeBy: none
+		sourceColumn: ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 3'
+		dataType: string
+		lineageTag: 0400e23a-7310-446a-af86-cfbea2cbfad9
+		summarizeBy: none
+		sourceColumn: ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 4'
+		dataType: string
+		lineageTag: 956baa29-d896-4a29-9cdb-e083f7a55908
+		summarizeBy: none
+		sourceColumn: ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 5'
+		dataType: string
+		lineageTag: bd564627-7ba2-4a8a-b4e4-42ba649cbcc2
+		summarizeBy: none
+		sourceColumn: ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 6'
+		dataType: string
+		lineageTag: 14d8bdbc-35ba-4c90-bc5c-3a85bedeb189
+		summarizeBy: none
+		sourceColumn: ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 7'
+		dataType: string
+		lineageTag: 93014c98-a670-40ea-b57f-c5217427c292
+		summarizeBy: none
+		sourceColumn: ROC 7
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 8'
+		dataType: string
+		lineageTag: ed12ed51-e253-4766-a437-da632e9695fa
+		summarizeBy: none
+		sourceColumn: ROC 8
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC Weightage 1'
+		dataType: double
+		lineageTag: fd6566ed-b286-467e-be1e-33e0b814d40a
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 2'
+		dataType: double
+		lineageTag: b66336eb-4b91-4415-9d00-42be9bb8283d
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 3'
+		dataType: double
+		lineageTag: 63889408-f6b2-46d8-8a6b-bf0c9b4817cd
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 4'
+		dataType: double
+		lineageTag: 3a8460a2-8ee0-4daa-b162-7082045e61ee
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 5'
+		dataType: double
+		lineageTag: d93e4996-586a-4101-9eb0-9cea01d56de3
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 6'
+		dataType: double
+		lineageTag: f13c1e46-9847-402d-ab96-d0456d9c4540
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 7'
+		dataType: double
+		lineageTag: 5beafd4d-7f92-4b91-9b80-5a33135c7167
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 8'
+		dataType: double
+		lineageTag: 48e47c65-82ef-4aa9-aa74-6407772cf5cc
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 1'
+		dataType: double
+		lineageTag: 7622498f-3d74-4082-811f-509757f5ae34
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 2'
+		dataType: double
+		lineageTag: 972da56f-8a5b-43ad-9bb6-753bf1c6b5b4
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 3'
+		dataType: double
+		lineageTag: d36dae3f-7c68-4b7b-a1e2-24ea861ce9fb
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 4'
+		dataType: double
+		lineageTag: 1d761f17-acdc-4e19-bf0b-37cbdf428612
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 5'
+		dataType: double
+		lineageTag: 6f9610a2-c0d8-4adb-95f5-2fd943424ee6
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 6'
+		dataType: double
+		lineageTag: ce187344-da56-491e-afda-57cf0a408c0d
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 7'
+		dataType: double
+		lineageTag: 113b2bad-db46-4374-accb-570c2fd0b998
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 8'
+		dataType: double
+		lineageTag: feaf257e-8ca4-4ab8-ac6f-8e6c186cc400
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 1'
+		dataType: double
+		lineageTag: fe13c4aa-62c0-42cd-874f-f1835c1ea0c6
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 2'
+		dataType: double
+		lineageTag: c3b03cb2-f8e7-49b5-84a4-464de080ad0f
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 3'
+		dataType: double
+		lineageTag: 6acf5aaa-8539-4440-aa92-40b9bd058a46
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 4'
+		dataType: double
+		lineageTag: d559ea51-b9f0-4ab0-ba42-e179f319f5d0
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 5'
+		dataType: double
+		lineageTag: 4bb58652-b588-4033-b5df-97a0ad3a260c
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 6'
+		dataType: double
+		lineageTag: fe4816b1-02de-4c7e-904d-f9be2a03fbfb
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 7'
+		dataType: double
+		lineageTag: 31f81e86-00f4-41da-848b-9d287859c5df
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 8'
+		dataType: double
+		lineageTag: b5ac7efd-0df3-4975-bd4a-e03f92036b13
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 1'
+		dataType: double
+		lineageTag: a9781a53-45a8-4a14-880a-85a28deeda01
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 2'
+		dataType: double
+		lineageTag: 36efa819-8e3b-4728-98a3-c4b94e203cfc
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 3'
+		dataType: double
+		lineageTag: 6a615546-5427-41a2-bbd0-2cd19d0381da
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 4'
+		dataType: double
+		lineageTag: 841624a9-c21a-45bb-8c81-92d02a9747c6
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 5'
+		dataType: double
+		lineageTag: 674a4199-05bb-40e1-a2de-42b2624b636b
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 6'
+		dataType: double
+		lineageTag: 86e04e8e-f94a-449e-abc0-e6ddd61d1319
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 7'
+		dataType: double
+		lineageTag: 9bb4abd2-f250-46b7-a299-4df7089b928b
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 8'
+		dataType: double
+		lineageTag: 3e0ecb5f-88ef-4011-898b-ebc302ac2cf6
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 1'
+		dataType: double
+		lineageTag: 73ec1fa0-4f20-47b5-9f35-43c734559051
+		summarizeBy: sum
+		sourceColumn: Qty Planned 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 2'
+		dataType: double
+		lineageTag: 174cf7d2-4c53-49b5-9307-a76b9a6976e1
+		summarizeBy: sum
+		sourceColumn: Qty Planned 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 3'
+		dataType: double
+		lineageTag: 55fca627-7d13-47ff-8655-209addcfca89
+		summarizeBy: sum
+		sourceColumn: Qty Planned 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 4'
+		dataType: double
+		lineageTag: e5843ef7-104e-4bf6-8bcc-3143fccdc849
+		summarizeBy: sum
+		sourceColumn: Qty Planned 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 5'
+		dataType: double
+		lineageTag: ec872078-0e24-4378-bc54-e51e3e6a70b9
+		summarizeBy: sum
+		sourceColumn: Qty Planned 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 6'
+		dataType: double
+		lineageTag: 1203c332-e193-48bb-9e39-5f8a6c1c1a3d
+		summarizeBy: sum
+		sourceColumn: Qty Planned 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 7'
+		dataType: double
+		lineageTag: 1c874e2f-63ec-4e40-832b-537a1fe78db9
+		summarizeBy: sum
+		sourceColumn: Qty Planned 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 8'
+		dataType: double
+		lineageTag: 62271bc7-5e6b-4918-ab46-26b8000af46c
+		summarizeBy: sum
+		sourceColumn: Qty Planned 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 1'
+		dataType: double
+		lineageTag: 7584fda4-0370-4fb8-8be2-f16f4b5623f1
+		summarizeBy: sum
+		sourceColumn: Qty Completed 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 2'
+		dataType: double
+		lineageTag: 60087ab9-6d94-401d-8265-534ccb2d89c9
+		summarizeBy: sum
+		sourceColumn: Qty Completed 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 3'
+		dataType: double
+		lineageTag: aaf7b23d-e48e-4291-b0fb-afefe668e1e9
+		summarizeBy: sum
+		sourceColumn: Qty Completed 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 4'
+		dataType: double
+		lineageTag: 75bea240-2d6c-47b0-b01f-2152348ff66c
+		summarizeBy: sum
+		sourceColumn: Qty Completed 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 5'
+		dataType: double
+		lineageTag: 14145b06-af75-4e5a-857b-92608effa4c0
+		summarizeBy: sum
+		sourceColumn: Qty Completed 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 6'
+		dataType: double
+		lineageTag: ab545035-23fc-4c8e-ad26-e2825d65f837
+		summarizeBy: sum
+		sourceColumn: Qty Completed 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 7'
+		dataType: double
+		lineageTag: ba3ee19e-4338-4dd0-9abf-01755291ec54
+		summarizeBy: sum
+		sourceColumn: Qty Completed 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 8'
+		dataType: double
+		lineageTag: 988965d9-8152-4ab8-b3a6-4f1993782838
+		summarizeBy: sum
+		sourceColumn: Qty Completed 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress ROC 1'
+		dataType: double
+		lineageTag: 4fe36071-02f3-4c86-9ca2-b04f0aab46da
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress ROC 2'
+		dataType: double
+		lineageTag: 842cf4f2-8db7-45d9-a51e-b9c09fa85aca
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress ROC 3'
+		dataType: double
+		lineageTag: 83adba43-dcb4-4d14-9e3a-b4e31ca88afe
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress ROC 4'
+		dataType: double
+		lineageTag: 4d4e9f69-93be-4a63-997e-16c672f8afb1
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress ROC 5'
+		dataType: double
+		lineageTag: d25cf66a-f31c-46a8-a68d-d8e78d31ed19
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress ROC 6'
+		dataType: double
+		lineageTag: c78b9586-cf29-47a0-b5ab-cafeac2d5f12
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress ROC 7'
+		dataType: double
+		lineageTag: 28e03c01-04cb-4101-b58a-0a33a7a22d8c
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress ROC 8'
+		dataType: double
+		lineageTag: ba2e2a85-39a2-4e78-9e22-bce8bf8e4417
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 1'
+		dataType: double
+		lineageTag: e81c6164-a01c-442e-bea9-9875f3f0a997
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 2'
+		dataType: double
+		lineageTag: 95ab10d5-5cee-4c31-ac58-db03031225be
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 3'
+		dataType: double
+		lineageTag: 6764ce7f-f742-4219-ace8-061aa1fde0bd
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 4'
+		dataType: double
+		lineageTag: 88e45cfa-b5f8-498c-9af1-8081e6cb6247
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 5'
+		dataType: double
+		lineageTag: 4016f56a-e6e1-4493-a8fe-279c64188b4d
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 6'
+		dataType: double
+		lineageTag: 6a2f2139-2a5b-4b7e-ba24-466e12ea3c7d
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 7'
+		dataType: double
+		lineageTag: 85014955-3655-4d53-a29d-6421784527b9
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 8'
+		dataType: double
+		lineageTag: e7704be7-b751-4f3a-8592-e2ab6bc4c11c
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 1'
+		dataType: double
+		lineageTag: 6dec9e71-d34e-49f3-977d-0f1ff5c84562
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 2'
+		dataType: double
+		lineageTag: a8aed4c5-8e32-4f78-8326-4fefba583859
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 3'
+		dataType: double
+		lineageTag: 9df3cf01-bd39-4736-9bbc-8f156c19a08d
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 4'
+		dataType: double
+		lineageTag: 8e21254c-4d9e-4c50-8a7e-8d355ff4bdfd
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 5'
+		dataType: double
+		lineageTag: 074364ec-8a1d-467d-8f27-ff78fe99d12d
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 6'
+		dataType: double
+		lineageTag: 127575a1-c9d4-414d-8f80-23763fa26cdb
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 7'
+		dataType: double
+		lineageTag: 60e82006-ad2c-423a-99fd-80f74c2be6fc
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 8'
+		dataType: double
+		lineageTag: a652995e-d536-440d-a9aa-18febe973887
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QTY COMPLETE ROC 1'
+		dataType: double
+		lineageTag: c44e21a2-cd15-4b57-bbfc-b720a400bc2f
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QTY COMPLETE ROC 2'
+		dataType: double
+		lineageTag: d28664cd-404f-4e5f-a999-1eac2e0044d1
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QTY COMPLETE ROC 3'
+		dataType: double
+		lineageTag: b63cea30-ac89-46a4-8c92-8d7e51f6c06e
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QTY COMPLETE ROC 4'
+		dataType: double
+		lineageTag: bc0cf87a-7571-4b2c-847f-d0a545c725ca
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QTY COMPLETE ROC 5'
+		dataType: double
+		lineageTag: 9795f79b-fc14-4428-9f3d-a5d90d8d80df
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QTY COMPLETE ROC 6'
+		dataType: double
+		lineageTag: e9b15ec2-709e-4c5c-9783-42dcc76079d4
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QTY COMPLETE ROC 7'
+		dataType: double
+		lineageTag: e3365a42-3f5f-4a4a-b1bd-f2d3466880f2
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QTY COMPLETE ROC 8'
+		dataType: double
+		lineageTag: a1d2449b-6a49-401e-b256-8f4279f48227
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WEIGHTAGE
+		dataType: string
+		lineageTag: e8b94c39-78f0-44ab-9213-c1c88317b7f7
+		summarizeBy: none
+		sourceColumn: WEIGHTAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESOURCECODE
+		dataType: string
+		lineageTag: 94b6b443-3744-4f55-a5fe-37fdbca8c50a
+		summarizeBy: none
+		sourceColumn: RESOURCECODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column WORKPHASE
+		dataType: string
+		lineageTag: 4e406a88-b2fd-4cae-a17c-a9f05468e668
+		summarizeBy: none
+		sourceColumn: WORKPHASE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROGRESSGROUPING
+		dataType: string
+		lineageTag: f64d54a0-ebd4-4b0b-8e8f-1a7ad043b9e1
+		summarizeBy: none
+		sourceColumn: PROGRESSGROUPING
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pulled Issue' = if('WP Level4 Report'[STATUS]="Issued for construction",1,0)
+		formatString: 0
+		lineageTag: ca7ec407-f51b-46a5-a0c1-4a527dec5e95
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column =
+			VAR DECK = mid('WP Level4 Report'[WPNO],4,3)
+			VAR DECKNAME = if(DECK="DBD","DBD DECK",
+			if(DECK="DL1","DECK-1",
+			if(DECK="DL2","DECK-2",
+			if(DECK="DL3","DECK-3",
+			if(DECK="DL4","DECK-4",
+			if(DECK="DL5","DECK-5",
+			if(DECK="DL6","DECK-6",
+			if(DECK="DL7","DECK-7",
+			if(DECK="DL8","DECK-8","")))))))))
+			Return
+			DECKNAME
+		lineageTag: 3b37ba8f-425b-4f9f-82c3-7c4c53752e2e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WP Level4 Report' = m
+		mode: import
+		source =
+				let
+				    Source = Oracle.Database("SPFC5DUP.world", [HierarchicalNavigation=true, Query="#(lf)WITH SPCRPT_CWP_IOBJECT_PROP_TMP AS#(lf)(#(lf) #(lf)SELECT #(lf)            CWP.OBID AS ""CWPOBID"",#(lf)            CWP.OBJUID AS ""CWPUID"",#(lf)            CWP.CONFIG AS ""PROJECT"" #(lf)-- sample: ,CWP.Property1 AS ""Prop1""#(lf)#(lf)FROM DATAOBJ CWP WHERE CWP.OBJDEFUID = 'SPC_CWP' AND CWP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)),#(lf)#(lf)-- Section #2a: Columns for Direct properties#(lf)SPCRPT_CWP_DIRECT_PROP_TMP AS#(lf)(#(lf)#(lf)SELECT #(lf)            CWP.CWPOBID AS ""CWPOBID"",#(lf)            CWP_NAME.STRVALUE AS ""NAME"", #(lf)            CWP_DESCRIPTION.STRVALUE AS ""DESCRIPTION"",#(tab) #(lf)            CWP_EWPNUMBER.STRVALUE AS ""EWPNUMBER"",#(lf)            CAST(CWP_BUDGETEDLABORHOURS.STRVALUE AS FLOAT) AS ""BUDGETEDLABORHOURS"",#(lf)            TO_DATE(CWP_PLANNEDSTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""PLANNEDSTARTDATE"",#(lf)            TO_DATE(CWP_PLANNEDFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""PLANNEDFINISHDATE"",#(lf)            TO_DATE(CWP_ACTUALSTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""ACTUALSTARTDATE"",#(lf)            TO_DATE(CWP_ACTUALFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""ACTUALFINISHDATE"",#(lf)            TO_DATE(CWP_EARLYSTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""EARLYSTARTDATE"",#(lf)            TO_DATE(CWP_EARLYFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""EARLYFINISHDATE"",#(lf)            TO_DATE(CWP_LATESTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""LATESTARTDATE"",#(lf)            TO_DATE(CWP_LATEFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""LATEFINISHDATE"",#(lf)            CWP_WBSPATH.STRVALUE AS ""WBSPATH""#(lf)-- sample: ,Property2.STRVALUE AS ""Prop2""#(lf)#(lf)FROM SPCRPT_CWP_IOBJECT_PROP_TMP CWP#(lf)#(lf)--Section #2c: Join SPF tables to get Direct Properties #(lf)#(lf)--#region "" Direct Properties ""#(lf)#(lf)#(tab)--NAME#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_NAME ON CWP_NAME.OBJOBID = CWP.CWPOBID AND CWP_NAME.PROPERTYDEFUID = 'Name' AND CWP_NAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--DESCRIPTION#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_DESCRIPTION ON CWP_DESCRIPTION.OBJOBID = CWP.CWPOBID AND CWP_DESCRIPTION.PROPERTYDEFUID = 'Description' AND CWP_DESCRIPTION.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--EWPNUMBER#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_EWPNUMBER ON CWP_EWPNUMBER.OBJOBID = CWP.CWPOBID AND CWP_EWPNUMBER.PROPERTYDEFUID = 'CWP_EWP_Number' AND CWP_EWPNUMBER.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--BUDGETEDLABORHOURS#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_BUDGETEDLABORHOURS ON CWP_BUDGETEDLABORHOURS.OBJOBID = CWP.CWPOBID AND CWP_BUDGETEDLABORHOURS.PROPERTYDEFUID = 'CWP_BudgetedLaborHours' AND CWP_BUDGETEDLABORHOURS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--PLANNEDSTARTDATE#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_PLANNEDSTARTDATE ON CWP_PLANNEDSTARTDATE.OBJOBID = CWP.CWPOBID AND CWP_PLANNEDSTARTDATE.PROPERTYDEFUID = 'CWP_PlannedStartDate' AND CWP_PLANNEDSTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--PLANNEDFINISHDATE#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_PLANNEDFINISHDATE ON CWP_PLANNEDFINISHDATE.OBJOBID = CWP.CWPOBID AND CWP_PLANNEDFINISHDATE.PROPERTYDEFUID = 'CWP_PlannedFinishDate' AND CWP_PLANNEDFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)--ACTUALSTARTDATE#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_ACTUALSTARTDATE ON CWP_ACTUALSTARTDATE.OBJOBID = CWP.CWPOBID AND CWP_ACTUALSTARTDATE.PROPERTYDEFUID = 'CWP_ActualStartDate' AND CWP_ACTUALSTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--ACTUALFINISHDATE#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_ACTUALFINISHDATE ON CWP_ACTUALFINISHDATE.OBJOBID = CWP.CWPOBID AND CWP_ACTUALFINISHDATE.PROPERTYDEFUID = 'CWP_ActualFinishDate' AND CWP_ACTUALFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)--EARLYSTARTDATE#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_EARLYSTARTDATE ON CWP_EARLYSTARTDATE.OBJOBID = CWP.CWPOBID AND CWP_EARLYSTARTDATE.PROPERTYDEFUID = 'CWP_EarlyStartDate' AND CWP_EARLYSTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--EARLYFINISHDATE#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_EARLYFINISHDATE ON CWP_EARLYFINISHDATE.OBJOBID = CWP.CWPOBID AND CWP_EARLYFINISHDATE.PROPERTYDEFUID = 'CWP_EarlyFinishDate' AND CWP_EARLYFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(tab)#(lf)#(tab)--LATESTARTDATE#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_LATESTARTDATE ON CWP_LATESTARTDATE.OBJOBID = CWP.CWPOBID AND CWP_LATESTARTDATE.PROPERTYDEFUID = 'CWP_LateStartDate' AND CWP_LATESTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--LATEFINISHDATE#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_LATEFINISHDATE ON CWP_LATEFINISHDATE.OBJOBID = CWP.CWPOBID AND CWP_LATEFINISHDATE.PROPERTYDEFUID = 'CWP_LateFinishDate' AND CWP_LATEFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--WBSPATH#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_WBSPATH ON CWP_WBSPATH.OBJOBID = CWP.CWPOBID AND CWP_WBSPATH.PROPERTYDEFUID = 'CWP_WBSPath' AND CWP_WBSPATH.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)  ---- sample:#(lf)#(tab)--LEFT JOIN DATAOBJPR Property2 ON Property2.OBJOBID = FIWP.FIWPOBID AND Property2.PROPERTYDEFUID = '<PROPERTYDEFUID>' AND Property2.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)  #(lf)--#endregion "" Direct Properties ""#(lf)),#(lf)#(lf)SPCRPT_CWP_DIR_ENUM_PROP_TMP AS#(lf)(#(lf)SELECT #(lf)            CWP.CWPOBID AS ""CWPOBID"",#(lf)            CWP_DISCIPLINE.OBJNAME AS ""DISCIPLINE""#(lf)            #(lf)-- sample: ,Property3.OBJNAME AS Prop3#(lf)      #(lf)FROM SPCRPT_CWP_IOBJECT_PROP_TMP CWP#(lf)#(lf)-- Section #3c: Join SPF tables to Direct Properties (Enum Type)#(lf)#(lf)--#region "" Direct Properties with Enum Type ""#(lf)#(tab)#(lf)#(tab)--CWP Discipline#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_DISCIPLINE_PR ON CWP_DISCIPLINE_PR.OBJOBID = CWP.CWPOBID AND CWP_DISCIPLINE_PR.PROPERTYDEFUID = 'CWP_Discipline' AND CWP_DISCIPLINE_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ CWP_DISCIPLINE ON CWP_DISCIPLINE.OBJUID = CWP_DISCIPLINE_PR.STRVALUE AND CWP_DISCIPLINE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)  ---- sample:#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab)#(tab) #(lf)#(tab)-- LEFT JOIN DATAOBJPR Property3_PR ON Property3_PR.OBJOBID = CWP.CWPOBID AND Property3_PR.PROPERTYDEFUID = '<PROPERTYDEFUID>' AND Property3_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)-- LEFT JOIN SCHEMAOBJ Property3 ON Property3.OBJUID = Prop3_PR.STRVALUE AND Property3.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)--#endregion "" Direct Properties Enum Type ""#(lf)),#(lf)#(lf)-- Section #4a: Columns for Properties from related objects#(lf)SPCRPT_CWP_REL_PROP_TMP AS#(lf)(#(lf)#(lf)SELECT#(lf)            CWP.CWPOBID AS ""CWPOBID"",#(lf)            CWP_DESIGNAREA.STRVALUE AS ""DESIGNAREA"",#(lf)            CWP_CWA.OBID AS ""CWAOBID""#(lf)-- sample: ,Property4.STRVALUE AS ""Prop4""#(lf)#(lf)FROM SPCRPT_CWP_IOBJECT_PROP_TMP CWP#(lf)#(lf)-- Section #4c: Join SPF tables to get Properties from related objects#(tab)#(lf)#(lf)--#region "" Relationship other end properties ""#(lf)#(lf)#(tab)--Design Area#(lf)#(tab)LEFT JOIN DATAREL CWP_DESIGNAREA_REL ON CWP_DESIGNAREA_REL.UID2 = CWP.CWPUID AND CWP_DESIGNAREA_REL.DEFUID = 'SPC_FunctionalArea_CWP' AND CWP_DESIGNAREA_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ CWP_DESIGNAREA_OBJ ON CWP_DESIGNAREA_OBJ.OBJUID = CWP_DESIGNAREA_REL.UID1 AND CWP_DESIGNAREA_OBJ.CONFIG = CWP.PROJECT AND CWP_DESIGNAREA_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR CWP_DESIGNAREA ON CWP_DESIGNAREA.OBJOBID = CWP_DESIGNAREA_OBJ.OBID AND CWP_DESIGNAREA.PROPERTYDEFUID = 'Name' AND CWP_DESIGNAREA.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--CWAs#(lf)#(tab)LEFT JOIN DATAREL CWP_CWA_REL ON CWP_CWA_REL.UID2 = CWP.CWPUID  AND CWP_CWA_REL.DEFUID = 'SPC_CWA_CWPs' AND CWP_CWA_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ CWP_CWA ON CWP_CWA.OBJUID = CWP_CWA_REL.UID1 AND CWP_CWA.CONFIG = CWP.PROJECT AND CWP_CWA.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  ---- sample:#(lf)#(tab)-- LEFT JOIN DATAREL Property4_REL ON Property4_REL.UID1 = CWP.CWPUID AND Property4_REL.DEFUID = '<RELDEFUID>' AND Property4_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)-- LEFT JOIN DATAOBJ Property4_OBJ ON Property4_OBJ.OBJUID = Property4_REL.UID2 AND Property4_OBJ.CONFIG = CWP.PROJECT AND Property4_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)-- LEFT JOIN DATAOBJPR Property4 ON Property4.OBJOBID = Property4_OBJ.OBID AND Property4.PROPERTYDEFUID = '<PROPERTYDEFUID>' AND Property4.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)--#endregion "" Relationship other end properties ""#(lf)),#(lf)#(lf)SPCCWP AS #(lf)(#(lf)#(lf)SELECT#(lf)    -- Section #6a: IObject properties#(lf)#(tab)  t1.CWPOBID, CWPUID, PROJECT, -- sample: Prop1Column,#(lf)    -- Section #6b: Direct properties #(lf)        #(lf)    NAME, DESCRIPTION, EWPNUMBER, BUDGETEDLABORHOURS, #(lf)    PLANNEDSTARTDATE, #(lf)    PLANNEDFINISHDATE, #(lf)    ACTUALSTARTDATE, #(lf)    ACTUALFINISHDATE, #(lf)    EARLYSTARTDATE,#(tab)#(lf)    EARLYFINISHDATE, #(lf)    LATESTARTDATE, #(lf)    LATEFINISHDATE,#(tab)#(lf)    #(lf)    WBSPATH, -- sample: Prop2Column,#(lf)#(tab)  -- Section #6c: Direct properties (Enum type)#(tab)#(tab)#(tab) #(lf)    DISCIPLINE, -- sample: Prop3Column,#(lf)    -- Section #6d: Properties from related objects#(tab) #(lf)    DESIGNAREA, CWAOBID -- sample: ,Prop4Column#(tab)  #(lf)FROM SPCRPT_CWP_IOBJECT_PROP_TMP t1#(lf)LEFT JOIN SPCRPT_CWP_DIRECT_PROP_TMP t2 ON t2.CWPOBID = t1.CWPOBID#(lf)LEFT JOIN SPCRPT_CWP_DIR_ENUM_PROP_TMP t3 ON t3.CWPOBID = t1.CWPOBID#(lf)LEFT JOIN SPCRPT_CWP_REL_PROP_TMP t4 ON t4.CWPOBID = t1.CWPOBID#(lf)),#(lf)SPCRPT_WORKSTEP_IOBJ_PROP_TMP as (#(lf)SELECT#(lf)            COMPWORKSTEP.OBID AS ""COMPWORKSTEPOBID"",#(lf)            COMPWORKSTEP.OBJUID AS ""COMPWORKSTEPUID"",#(tab)  #(lf)            COMPWORKSTEP.CONFIG AS ""PROJECT""#(lf)FROM DATAOBJ COMPWORKSTEP WHERE COMPWORKSTEP.OBJDEFUID = 'SPC_ComponentWorkTypeStep' AND COMPWORKSTEP.TERMINATIONDATE = '9999/12/31-23:59:59:999'),#(lf)#(lf)SPCRPT_WORKSTEP_DIR_PROP_TMP as (#(lf)SELECT#(lf)            COMPWORKSTEP.COMPWORKSTEPOBID AS ""COMPWORKSTEPOBID"",#(lf)            COMPWORKSTEP_NAME.STRVALUE AS ""NAME"", #(lf)            COMPWORKSTEP_DESCRIPTION.STRVALUE AS ""DESCRIPTION"",#(lf)            CAST(COMPWORKSTEP_SEQUENCE.STRVALUE AS INT) AS ""SEQUENCE"",#(lf)            CAST(COMPWORKSTEP_UNITRATE.STRVALUE AS FLOAT) AS ""UNITRATE"",#(lf)            COMPWORKSTEP_RATEUOM.STRVALUE AS ""RATEUOM"",#(lf)            COMPWORKSTEP_NOTES.STRVALUE AS ""NOTES"",#(lf)            CAST(COMPWORKSTEP_PLANNEDMANHOURS.STRVALUE AS FLOAT) AS ""PLANNEDMANHOURS"",#(lf)            CAST(COMPWORKSTEP_ACTUALMANHOURS.STRVALUE AS FLOAT) AS ""ACTUALMANHOURS"",#(lf)            COMPWORKSTEP_DATECOMPLETE.STRVALUE AS ""ACTUALDATECOMPLETE"",#(lf)            CAST(COMPWORKSTEP_QUANTITYCOMPLETE.STRVALUE AS FLOAT) AS ""QUANTITYCOMPLETE"",#(lf)            COMPWORKSTEP_QUANTITYCOMPLETE.CREATIONDATE,#(lf)            COMPWORKSTEP_QUANTITYCOMPLETE.CREATIONUSER #(lf)            #(lf)FROM SPCRPT_WORKSTEP_IOBJ_PROP_TMP COMPWORKSTEP#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_NAME ON COMPWORKSTEP_NAME.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_NAME.PROPERTYDEFUID = 'Name' AND COMPWORKSTEP_NAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_DESCRIPTION ON COMPWORKSTEP_DESCRIPTION.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_DESCRIPTION.PROPERTYDEFUID = 'Description' AND COMPWORKSTEP_DESCRIPTION.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_SEQUENCE ON COMPWORKSTEP_SEQUENCE.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_SEQUENCE.PROPERTYDEFUID = 'ComponentWorkTypeStep_Sequence' AND COMPWORKSTEP_SEQUENCE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_UNITRATE ON COMPWORKSTEP_UNITRATE.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_UNITRATE.PROPERTYDEFUID = 'ComponentWorkTypeStep_UnitRate' AND COMPWORKSTEP_UNITRATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_RATEUOM ON COMPWORKSTEP_RATEUOM.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_RATEUOM.PROPERTYDEFUID = 'ComponentWorkTypeStep_RateUoM' AND COMPWORKSTEP_RATEUOM.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_NOTES ON COMPWORKSTEP_NOTES.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_NOTES.PROPERTYDEFUID = 'ComponentWorkTypeStep_Notes' AND COMPWORKSTEP_NOTES.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_PLANNEDMANHOURS ON COMPWORKSTEP_PLANNEDMANHOURS.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_PLANNEDMANHOURS.PROPERTYDEFUID = 'ComponentWorkTypeStep_ManHours' AND COMPWORKSTEP_PLANNEDMANHOURS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_ACTUALMANHOURS ON COMPWORKSTEP_ACTUALMANHOURS.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_ACTUALMANHOURS.PROPERTYDEFUID = 'ComponentWorkTypeStep_ActualHours' AND COMPWORKSTEP_ACTUALMANHOURS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_DATECOMPLETE ON COMPWORKSTEP_DATECOMPLETE.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_DATECOMPLETE.PROPERTYDEFUID = 'ComponentWorkTypeStep_ActualDateComplete' AND COMPWORKSTEP_DATECOMPLETE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)  LEFT JOIN DATAOBJPR COMPWORKSTEP_QUANTITYCOMPLETE ON COMPWORKSTEP_QUANTITYCOMPLETE.OBJOBID = COMPWORKSTEP.COMPWORKSTEPOBID AND COMPWORKSTEP_QUANTITYCOMPLETE.PROPERTYDEFUID = 'ComponentWorkTypeStep_QuantityComplete' AND COMPWORKSTEP_QUANTITYCOMPLETE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(lf)),#(lf)#(lf)SPCRPT_WORKSTEP_REL_PROP_TMP as (#(lf)SELECT#(lf)            COMPWORKSTEP.COMPWORKSTEPOBID AS ""COMPWORKSTEPOBID"",#(lf)            COMPWORKSTEP_WORKTYPE_COSTCODE.STRVALUE AS ""COSTCODE"",#(lf)            COMPWORKSTEP_FIWP.OBID AS ""FIWPOBID"",#(tab)  #(lf)            COMPWORKSTEP_WORKTYPE.OBID AS ""WORKTYPEOBID"",#(lf)            COMPWORKSTEP_COMP.OBID AS ""COMPOBID"",#(lf)            CAST(COMPONENTITEM_QUANTITYPLANNED.STRVALUE AS FLOAT) AS ""QUANTITYPLANNED"",#(lf)            #(lf)            CAST(COMPONENTITEM_UNITS.STRVALUE AS FLOAT) AS ""UNITS""#(lf)FROM SPCRPT_WORKSTEP_IOBJ_PROP_TMP COMPWORKSTEP#(lf)#(tab)LEFT JOIN DATAREL COMPWORKSTEP_FIWP_REL ON COMPWORKSTEP_FIWP_REL.UID2 = COMPWORKSTEP.COMPWORKSTEPUID  AND COMPWORKSTEP_FIWP_REL.DEFUID = 'SPC_Package_ComponentWorkTypeStep' AND COMPWORKSTEP_FIWP_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ COMPWORKSTEP_FIWP ON COMPWORKSTEP_FIWP.OBJUID = COMPWORKSTEP_FIWP_REL.UID1 AND COMPWORKSTEP_FIWP.CONFIG = COMPWORKSTEP.PROJECT AND COMPWORKSTEP_FIWP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAREL COMPWORKSTEP_WORKTYPE_REL ON COMPWORKSTEP_WORKTYPE_REL.UID2 = COMPWORKSTEP.COMPWORKSTEPUID AND COMPWORKSTEP_WORKTYPE_REL.DEFUID = 'SPC_ComponentWorkType_ComponentWorkTypeSteps' AND COMPWORKSTEP_WORKTYPE_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ COMPWORKSTEP_WORKTYPE ON COMPWORKSTEP_WORKTYPE.OBJUID = COMPWORKSTEP_WORKTYPE_REL.UID1 AND COMPWORKSTEP_WORKTYPE.CONFIG = COMPWORKSTEP.PROJECT AND COMPWORKSTEP_WORKTYPE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPWORKSTEP_WORKTYPE_COSTCODE ON COMPWORKSTEP_WORKTYPE_COSTCODE.OBJOBID = COMPWORKSTEP_WORKTYPE.OBID AND COMPWORKSTEP_WORKTYPE_COSTCODE.PROPERTYDEFUID = 'ComponentWorkType_CostCode' AND COMPWORKSTEP_WORKTYPE_COSTCODE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAREL COMPWORKSTEP_COMP_REL ON COMPWORKSTEP_COMP_REL.UID2 = COMPWORKSTEP_WORKTYPE.OBJUID AND COMPWORKSTEP_COMP_REL.DEFUID = 'SPC_ComponentItem_ComponentWorkType' AND COMPWORKSTEP_COMP_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ COMPWORKSTEP_COMP ON COMPWORKSTEP_COMP.OBJUID = COMPWORKSTEP_COMP_REL.UID1 AND COMPWORKSTEP_COMP.CONFIG = COMPWORKSTEP.PROJECT AND COMPWORKSTEP_COMP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_QUANTITYPLANNED ON COMPONENTITEM_QUANTITYPLANNED.OBJOBID = COMPWORKSTEP_COMP.OBID AND COMPONENTITEM_QUANTITYPLANNED.PROPERTYDEFUID = 'SPC_ComponentItem_Units' AND COMPONENTITEM_QUANTITYPLANNED.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR COMPONENTITEM_UNITS ON COMPONENTITEM_UNITS.OBJOBID = COMPWORKSTEP_COMP.OBID AND COMPONENTITEM_UNITS.PROPERTYDEFUID = 'SPC_ComponentItem_Units' AND COMPONENTITEM_UNITS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)),#(lf)#(lf)#(lf)WorkStepsX as (#(lf)SELECT#(lf)#(lf)#(tab)    t1.COMPWORKSTEPOBID, COMPWORKSTEPUID, PROJECT, #(lf)      NAME, DESCRIPTION, SEQUENCE, UNITRATE, RATEUOM, NOTES, PLANNEDMANHOURS,  CASE WHEN NVL(t3.UNITS,0)=0 then 0 else CASE WHEN NVL(QUANTITYCOMPLETE,0)/ NVL(t3.UNITS,0)>1 THEN 1 ELSE NVL(QUANTITYCOMPLETE,0)/ NVL(t3.UNITS,0) END * NVL(PLANNEDMANHOURS,0) end as ACTUALMANHOURS, #(lf)      ACTUALDATECOMPLETE,  NVL(QUANTITYCOMPLETE,0) as UNIT_COMPLETED,#(lf)      CASE WHEN NVL(t3.UNITS,0)>0 THEN #(lf)      CASE WHEN NVL(QUANTITYCOMPLETE,0)/ NVL(t3.UNITS,0) * NVL(PLANNEDMANHOURS,0)>=PLANNEDMANHOURS THEN 1 ELSE 0 END      #(lf)      END AS QUANTITYCOMPLETE, COSTCODE, FIWPOBID, WORKTYPEOBID, COMPOBID, QUANTITYPLANNED, CREATIONUSER, CREATIONDATE, t3.UNITS , QUANTITYPLANNED as PLAN_UNITS#(lf)      #(lf)FROM SPCRPT_WORKSTEP_IOBJ_PROP_TMP t1#(lf)LEFT JOIN SPCRPT_WORKSTEP_DIR_PROP_TMP t2 ON t2.COMPWORKSTEPOBID = t1.COMPWORKSTEPOBID#(lf)LEFT JOIN SPCRPT_WORKSTEP_REL_PROP_TMP t3 ON t3.COMPWORKSTEPOBID = t1.COMPWORKSTEPOBID),#(lf)#(lf)--Select * From WorkStepsX where FIWPOBID = 'FIWP_C10DL4I5B139706'#(lf)#(lf)WorkSteps as #(lf)(#(lf)#(lf)  SELECT COMPWORKSTEPOBID, COMPWORKSTEPUID, PROJECT, NAME, DESCRIPTION, SEQUENCE, UNITRATE, RATEUOM, NOTES, PLANNEDMANHOURS, ACTUALMANHOURS, ACTUALDATECOMPLETE, #(lf)  QUANTITYCOMPLETE, COSTCODE, FIWPOBID, WORKTYPEOBID, COMPOBID, CREATIONUSER, CREATIONDATE, UNITS , COUNT(DISTINCT COMPOBID) AS QUANTITYPLANNED, sum(PLAN_UNITS) as PLAN_UNITS, SUM( DISTINCT UNIT_COMPLETED) as UNIT_COMPLETED,#(lf)  CASE WHEN PLANNEDMANHOURS=0 then 0 else CASE WHEN (ACTUALMANHOURS / PLANNEDMANHOURS)>=1 THEN 1 ELSE 0 END END as Gate_QTYComplete#(lf)  FROM WorkStepsX#(lf)  GROUP by COMPWORKSTEPOBID, COMPWORKSTEPUID, PROJECT, NAME, DESCRIPTION, SEQUENCE, UNITRATE, RATEUOM, NOTES, PLANNEDMANHOURS, ACTUALMANHOURS, ACTUALDATECOMPLETE, #(lf)  QUANTITYCOMPLETE, COSTCODE, FIWPOBID, WORKTYPEOBID, COMPOBID, CREATIONUSER, CREATIONDATE, UNITS#(lf)  #(lf)),#(lf)#(lf)#(lf) SPCRPT_COMP_IOBJECT_PROP_TMP as (#(lf)SELECT #(lf)            COMPONENTITEM.OBID AS ""COMPOBID"",#(lf)            COMPONENTITEM.OBJUID AS ""COMPUID"",#(lf)            COMPONENTITEM.CONFIG AS ""PROJECT""#(lf)FROM DATAOBJ COMPONENTITEM WHERE COMPONENTITEM.OBJDEFUID IN ('SPC_ComponentItem', 'SPC_AdhocComponentItem',  'SPC_NonPublishedComponentItem', 'SPC_Spool', 'SPC_Assembly') AND COMPONENTITEM.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)),#(lf)#(lf)SPCRPT_COMP_DIRECT_PROP_TMP as (#(lf)SELECT #(lf)            COMPONENTITEM.COMPOBID AS ""COMPOBID"",#(lf)            COMPONENTITEM_NAME.STRVALUE AS ""NAME"", #(lf)            COMPONENTITEM_DESCRIPTION.STRVALUE AS ""DESCRIPTION"",#(tab)  #(lf)            COMPONENTITEM_MATERIAL.STRVALUE AS ""MATERIAL"",#(tab)  #(lf)            COMPONENTITEM_RATING.STRVALUE AS ""RATING"",#(tab)  #(lf)            COMPONENTITEM_CLASS.STRVALUE AS ""CLASS"",#(tab)  #(lf)            CAST(COMPONENTITEM_SIZE.STRVALUE AS FLOAT) AS ""COMPSIZE"",#(tab)  #(lf)            COMPONENTITEM_THICKNESS.STRVALUE AS ""THICKNESS"",#(tab)  #(lf)            CAST(COMPONENTITEM_UNITS.STRVALUE AS FLOAT) AS ""UNITS"",#(lf)            COMPONENTITEM_COMMODITYCODE.STRVALUE AS ""COMMODITYCODE"",#(lf)            COMPONENTITEM_DRAWINGTITLE.STRVALUE AS ""DRAWINGTITLE"",#(lf)            COMPONENTITEM_DRAWINGREVISION.STRVALUE AS ""DRAWINGREVISION"",#(lf)            COMPONENTITEM_REVISIONDATE.STRVALUE AS ""REVISIONDATE"",#(lf)            COMPONENTITEM_TRANSMITTALNO.STRVALUE AS ""TRANSMITTALNO"",#(lf)            COMPONENTITEM_COMPONENTSTATUS.STRVALUE AS ""COMPONENTSTATUS""#(lf)FROM SPCRPT_COMP_IOBJECT_PROP_TMP COMPONENTITEM#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_NAME ON COMPONENTITEM_NAME.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_NAME.PROPERTYDEFUID = 'Name' AND COMPONENTITEM_NAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_DESCRIPTION ON COMPONENTITEM_DESCRIPTION.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_DESCRIPTION.PROPERTYDEFUID = 'SPC_ComponentItem_ShortDescription' AND COMPONENTITEM_DESCRIPTION.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)    LEFT JOIN DATAOBJPR COMPONENTITEM_MATERIAL ON COMPONENTITEM_MATERIAL.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_MATERIAL.PROPERTYDEFUID = 'SPC_ComponentItem_Material' AND COMPONENTITEM_MATERIAL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_RATING ON COMPONENTITEM_RATING.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_RATING.PROPERTYDEFUID = 'SPC_ComponentItem_Rating' AND COMPONENTITEM_RATING.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)    LEFT JOIN DATAOBJPR COMPONENTITEM_CLASS ON COMPONENTITEM_CLASS.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_CLASS.PROPERTYDEFUID = 'SpcNonPublishedClassDesignation' AND COMPONENTITEM_CLASS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_SIZE ON COMPONENTITEM_SIZE.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_SIZE.PROPERTYDEFUID = 'SPC_ComponentItem_Size' AND COMPONENTITEM_SIZE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_THICKNESS ON COMPONENTITEM_THICKNESS.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_THICKNESS.PROPERTYDEFUID = 'SPC_ComponentItem_Thickness' AND COMPONENTITEM_THICKNESS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_UNITS ON COMPONENTITEM_UNITS.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_UNITS.PROPERTYDEFUID = 'SPC_ComponentItem_Units' AND COMPONENTITEM_UNITS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_COMMODITYCODE ON COMPONENTITEM_COMMODITYCODE.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_COMMODITYCODE.PROPERTYDEFUID = 'SPC_ComponentItem_CommodityCode' AND COMPONENTITEM_COMMODITYCODE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_DRAWINGTITLE ON COMPONENTITEM_DRAWINGTITLE.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_DRAWINGTITLE.PROPERTYDEFUID = 'MDR_IDOCS_DrawingTitle' AND COMPONENTITEM_DRAWINGTITLE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_DRAWINGREVISION ON COMPONENTITEM_DRAWINGREVISION.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_DRAWINGREVISION.PROPERTYDEFUID = 'MDR_IDOCS_DrawingRevision' AND COMPONENTITEM_DRAWINGREVISION.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_REVISIONDATE ON COMPONENTITEM_REVISIONDATE.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_REVISIONDATE.PROPERTYDEFUID = 'MDR_IDOCS_RevisionDate' AND COMPONENTITEM_REVISIONDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_TRANSMITTALNO ON COMPONENTITEM_TRANSMITTALNO.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_TRANSMITTALNO.PROPERTYDEFUID = 'MDR_IDOCS_TransmittalNo' AND COMPONENTITEM_TRANSMITTALNO.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR COMPONENTITEM_COMPONENTSTATUS ON COMPONENTITEM_COMPONENTSTATUS.OBJOBID = COMPONENTITEM.COMPOBID AND COMPONENTITEM_COMPONENTSTATUS.PROPERTYDEFUID = 'MDR_ComponentStatus' AND COMPONENTITEM_COMPONENTSTATUS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)),#(lf)SPCRPT_COMPONENTITEM1 as (#(lf)SELECT#(lf)      #(lf)#(tab)    t1.COMPOBID, COMPUID, PROJECT,     #(lf)#(tab)    NAME, DESCRIPTION, MATERIAL, RATING, CLASS, COMPSIZE, THICKNESS, UNITS, COMMODITYCODE,DRAWINGTITLE,DRAWINGREVISION,REVISIONDATE,TRANSMITTALNO,COMPONENTSTATUS#(lf)FROM SPCRPT_COMP_IOBJECT_PROP_TMP t1#(lf)LEFT JOIN SPCRPT_COMP_DIRECT_PROP_TMP t2 ON t2.COMPOBID = t1.COMPOBID),#(lf)#(lf)SPCRPT_FIWP_IOBJECT_PROP_TMP as (#(lf)#(lf)SELECT #(lf)            FIWP.OBID AS ""FIWPOBID"",#(lf)            FIWP.OBJUID AS ""FIWPUID"",#(lf)            FIWP.CONFIG AS ""PROJECT"",#(lf)            FIWP.CREATIONUSER, FIWP.CREATIONDATE#(lf)FROM DATAOBJ FIWP WHERE FIWP.OBJDEFUID = 'SPC_FIWP' AND FIWP.TERMINATIONDATE = '9999/12/31-23:59:59:999'),#(lf)#(lf) SPCRPT_FIWP_DIRECT_PROP_TMP  as (#(lf)#(lf)SELECT #(lf)            FIWP.FIWPOBID AS ""FIWPOBID"",#(lf)             FIWP_NAME.STRVALUE AS ""NAME"", #(lf)            FIWP_DESCRIPTION.STRVALUE AS ""DESCRIPTION"", #(lf)            TO_DATE(FIWP_PLANNEDSTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""PLANNEDSTARTDATE"",            #(lf)            TO_DATE(FIWP_PLANNEDFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""PLANNEDFINISHDATE"",#(lf)            TO_DATE(FIWP_ACTUALSTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""ACTUALSTARTDATE"",#(lf)            TO_DATE(FIWP_ACTUALFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""ACTUALFINISHDATE"",#(lf)            CAST(FIWP_ESTIMATEDMANHOURS.STRVALUE AS FLOAT) AS ""ESTIMATEDMANHOURS"",#(lf)            FIWP_SCOPE.STRVALUE AS ""SCOPE"",#(lf)            FIWP_NOTES.STRVALUE AS ""NOTES"",#(lf)            CAST(FIWP_CREWSIZE.STRVALUE AS INT) AS ""CREWSIZE"", #(lf)            FIWP_EWPNUMBER.STRVALUE AS ""EWPNUMBER"",#(lf)            FIWP_CREWDURATION.STRVALUE AS ""CREWDURATION"",#(lf)            FIWP.FIWPUID as ""UID"",#(lf)           CAST( FIWP_PREVPROGRESS.STRVALUE AS FLOAT) as ""PREV_PROGRESS"",#(lf)           CAST( FIWP_PREVEARNED.STRVALUE AS FLOAT)  as ""PREV_EARNED"",#(lf)           CAST(FIWP_PREVWKLYEARNED.STRVALUE AS FLOAT)  as ""PREV_WKLYEARNED""#(lf)           #(lf)FROM SPCRPT_FIWP_IOBJECT_PROP_TMP FIWP#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_NAME ON FIWP_NAME.OBJOBID = FIWP.FIWPOBID AND FIWP_NAME.PROPERTYDEFUID = 'Name' AND FIWP_NAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_DESCRIPTION ON FIWP_DESCRIPTION.OBJOBID = FIWP.FIWPOBID AND FIWP_DESCRIPTION.PROPERTYDEFUID = 'Description' AND FIWP_DESCRIPTION.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_PLANNEDSTARTDATE ON FIWP_PLANNEDSTARTDATE.OBJOBID = FIWP.FIWPOBID AND FIWP_PLANNEDSTARTDATE.PROPERTYDEFUID = 'FIWP_PlannedStartDate' AND FIWP_PLANNEDSTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_PLANNEDFINISHDATE ON FIWP_PLANNEDFINISHDATE.OBJOBID = FIWP.FIWPOBID AND FIWP_PLANNEDFINISHDATE.PROPERTYDEFUID = 'FIWP_PlannedFinishDate' AND FIWP_PLANNEDFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_ACTUALSTARTDATE ON FIWP_ACTUALSTARTDATE.OBJOBID = FIWP.FIWPOBID AND FIWP_ACTUALSTARTDATE.PROPERTYDEFUID = 'FIWP_ActualStartDate'  AND FIWP_ACTUALSTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_ACTUALFINISHDATE ON FIWP_ACTUALFINISHDATE.OBJOBID = FIWP.FIWPOBID AND FIWP_ACTUALFINISHDATE.PROPERTYDEFUID = 'FIWP_ActualFinishDate'  AND FIWP_ACTUALFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_ESTIMATEDMANHOURS ON FIWP_ESTIMATEDMANHOURS.OBJOBID = FIWP.FIWPOBID AND FIWP_ESTIMATEDMANHOURS.PROPERTYDEFUID = 'FIWP_Estimated_Manhours'  AND FIWP_ESTIMATEDMANHOURS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_SCOPE ON FIWP_SCOPE.OBJOBID = FIWP.FIWPOBID AND FIWP_SCOPE.PROPERTYDEFUID = 'FIWP_Scope' AND FIWP_SCOPE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_NOTES ON FIWP_NOTES.OBJOBID = FIWP.FIWPOBID AND FIWP_NOTES.PROPERTYDEFUID like 'FIWP_Notes' AND FIWP_NOTES.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_CREWSIZE ON FIWP_CREWSIZE.OBJOBID = FIWP.FIWPOBID AND FIWP_CREWSIZE.PROPERTYDEFUID = 'FIWP_Crew_Size' AND FIWP_CREWSIZE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_EWPNUMBER ON FIWP_EWPNUMBER.OBJOBID = FIWP.FIWPOBID AND FIWP_EWPNUMBER.PROPERTYDEFUID = 'FIWP_EWP_Number' AND FIWP_EWPNUMBER.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_CREWDURATION ON FIWP_CREWDURATION.OBJOBID = FIWP.FIWPOBID AND FIWP_CREWDURATION.PROPERTYDEFUID = 'SPC_CrewDuration' AND FIWP_CREWDURATION.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  #(lf)  LEFT JOIN DATAOBJPR FIWP_PREVPROGRESS ON FIWP_PREVPROGRESS.OBJOBID = FIWP.FIWPOBID AND FIWP_PREVPROGRESS.PROPERTYDEFUID = 'MDR_PreviousProgress' AND FIWP_PREVPROGRESS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR FIWP_PREVEARNED ON FIWP_PREVEARNED.OBJOBID = FIWP.FIWPOBID AND FIWP_PREVEARNED.PROPERTYDEFUID = 'MDR_PreviousEarned' AND FIWP_PREVEARNED.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR FIWP_PREVWKLYEARNED ON FIWP_PREVWKLYEARNED.OBJOBID = FIWP.FIWPOBID AND FIWP_PREVWKLYEARNED.PROPERTYDEFUID = 'MDR_PrevWeeklyEarned' AND FIWP_PREVWKLYEARNED.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  ),#(lf)  #(lf)SPCRPT_FIWP_DIR_ENUM_PROP_TMP as ( #(lf)  SELECT #(lf)            FIWP.FIWPOBID AS ""FIWPOBID"",#(lf)            FIWP_PURPOSE.OBJNAME AS ""PURPOSE"",#(lf)            FIWP_DISCIPLINE.OBJNAME AS ""DISCIPLINE"",#(lf)            FIWP_STATUS.OBJNAME AS ""STATUS"" #(lf)            #(lf)FROM SPCRPT_FIWP_IOBJECT_PROP_TMP FIWP#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_PURPOSE_PR ON FIWP_PURPOSE_PR.OBJOBID = FIWP.FIWPOBID AND FIWP_PURPOSE_PR.PROPERTYDEFUID = 'FIWP_Purpose' AND FIWP_PURPOSE_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_PURPOSE ON FIWP_PURPOSE.OBJUID = FIWP_PURPOSE_PR.STRVALUE AND FIWP_PURPOSE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_DISCIPLINE_PR ON FIWP_DISCIPLINE_PR.OBJOBID = FIWP.FIWPOBID AND FIWP_DISCIPLINE_PR.PROPERTYDEFUID = 'FIWP_Discipline' AND FIWP_DISCIPLINE_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_DISCIPLINE ON FIWP_DISCIPLINE.OBJUID = FIWP_DISCIPLINE_PR.STRVALUE AND FIWP_DISCIPLINE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)  LEFT JOIN DATAOBJPR FIWP_STATUS_PR ON FIWP_STATUS_PR.OBJOBID = FIWP.FIWPOBID AND FIWP_STATUS_PR.PROPERTYDEFUID = 'Package_Status' AND FIWP_STATUS_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_STATUS ON FIWP_STATUS.OBJUID = FIWP_STATUS_PR.STRVALUE AND FIWP_STATUS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)--  WHERE  FIWP_STATUS.OBJNAME != 'Preliminary'#(lf)  #(lf)#(tab)),#(lf)#(lf)SPCRPT_FIWP_REL_PROP_TMP as (#(lf)  SELECT#(lf)            FIWP.FIWPOBID AS ""FIWPOBID"",#(lf)            CAST(FIWP_PLANNEDMANHOURS.STRVALUE AS FLOAT) AS ""PLANNEDMANHOURS"",#(lf)            CAST(FIWP_ACTUALMANHOURS.STRVALUE AS FLOAT) AS ""ACTUALMANHOURS"",#(lf)            CAST(FIWP_COMPLETEDMANHOURS.STRVALUE AS FLOAT) AS ""COMPLETEDMANHOURS"",#(lf)            CAST(FIWP_COMPONENTTOTALCONSTRAINTS.STRVALUE AS INT) AS ""TOTALCOMPONENTCONSTRAINTS"",#(lf)            CAST(FIWP_COMPONENTOPENCONSTRAINTS.STRVALUE AS INT) AS ""OPENCOMPONENTCONSTRAINTS"",#(lf)            FIWP_CONTRACT.STRVALUE AS ""CONTRACT"",#(lf)            FIWP_CONTRACTOR.STRVALUE AS ""CONTRACTOR"",#(lf)            FIWP_DESIGNAREA.STRVALUE AS ""DESIGNAREA"",#(lf)            FIWP_FOREMAN.STRVALUE AS ""FOREMAN"",#(lf)            FIWP_GENERALFOREMAN.STRVALUE AS ""GENERALFOREMAN"",#(lf)            FIWP_FIELDENGINEER.STRVALUE AS ""FIELDENGINEER"",#(lf)            FIWP_SUPERINTENDENT.STRVALUE AS ""SUPERINTENDENT"",#(lf)            FIWP_ISSUEDBY.STRVALUE AS ""ISSUEDBY"",#(lf)            FIWP_NAMEDCREW.OBID AS ""CREWOBID"",#(lf)            FIWP_CWP.OBID AS ""CWPOBID"",#(lf)            FIWP_REVDATE.STRVALUE AS ""REVDATE"",#(lf)            FIWP_RECEDATE.STRVALUE AS ""RECEDATE"",#(lf)            enumpr.objname AS ""WP_REVNO"",#(lf)            FIWP_TaskNo.STRVALUE AS ""FIWPTASKNO"",#(lf)            CAST(FIWP_Estimated.STRVALUE AS FLOAT) AS ""FIWPAFCHRS"",#(lf)#(tab)#(tab)#(tab)#(lf)#(tab)#(tab)#(tab)FIWP_MDRWeightage.STRVALUE AS ""WEIGHTAGE"",#(lf)            FIWP_MDRResourceCode.STRVALUE AS ""RESOURCECODE"",#(lf)#(tab)#(tab)#(tab) #(lf)#(tab)#(tab)#(tab)FIWP_MDRWorkPhase.STRVALUE AS ""WORKPHASE"",#(lf)#(tab)#(tab)#(tab)FIWP_MDRProgressGrouping.STRVALUE AS ""PROGRESSGROUPING""#(lf)          #(lf)#(lf)FROM SPCRPT_FIWP_IOBJECT_PROP_TMP FIWP#(lf)#(tab)LEFT JOIN DATAREL FIWP_PACKAGEROLLUPDATE_REL ON FIWP_PACKAGEROLLUPDATE_REL.UID1 = FIWP.FIWPUID AND FIWP_PACKAGEROLLUPDATE_REL.DEFUID = 'SPC_Package_PackageRollupData' AND FIWP_PACKAGEROLLUPDATE_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_PACKAGEROLLUPDATE ON FIWP_PACKAGEROLLUPDATE.OBJUID = FIWP_PACKAGEROLLUPDATE_REL.UID2 AND FIWP_PACKAGEROLLUPDATE.CONFIG = FIWP.PROJECT AND FIWP_PACKAGEROLLUPDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR FIWP_PLANNEDMANHOURS ON FIWP_PLANNEDMANHOURS.OBJOBID = FIWP_PACKAGEROLLUPDATE.OBID AND FIWP_PLANNEDMANHOURS.PROPERTYDEFUID = 'PackageRollupData_TotalManHours' AND FIWP_PLANNEDMANHOURS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_ACTUALMANHOURS ON FIWP_ACTUALMANHOURS.OBJOBID = FIWP_PACKAGEROLLUPDATE.OBID AND FIWP_ACTUALMANHOURS.PROPERTYDEFUID = 'PackageRollupData_TotalActualManHours' AND FIWP_ACTUALMANHOURS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_COMPLETEDMANHOURS ON FIWP_COMPLETEDMANHOURS.OBJOBID = FIWP_PACKAGEROLLUPDATE.OBID AND FIWP_COMPLETEDMANHOURS.PROPERTYDEFUID = 'PackageRollupData_TotalManHoursCompleted' AND FIWP_COMPLETEDMANHOURS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_COMPONENTTOTALCONSTRAINTS ON FIWP_COMPONENTTOTALCONSTRAINTS.OBJOBID = FIWP_PACKAGEROLLUPDATE.OBID AND FIWP_COMPONENTTOTALCONSTRAINTS.PROPERTYDEFUID = 'PackageRollupData_TotalConstraints' AND FIWP_COMPONENTTOTALCONSTRAINTS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_COMPONENTOPENCONSTRAINTS ON FIWP_COMPONENTOPENCONSTRAINTS.OBJOBID = FIWP_PACKAGEROLLUPDATE.OBID AND FIWP_COMPONENTOPENCONSTRAINTS.PROPERTYDEFUID = 'PackageRollupData_OpenConstraints' AND FIWP_COMPONENTOPENCONSTRAINTS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAREL FIWP_CONTRACT_REL ON FIWP_CONTRACT_REL.UID1 = FIWP.FIWPUID AND FIWP_CONTRACT_REL.DEFUID = 'SPC_Package_Contract' AND FIWP_CONTRACT_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_CONTRACT_OBJ ON FIWP_CONTRACT_OBJ.OBJUID = FIWP_CONTRACT_REL.UID2 AND FIWP_CONTRACT_OBJ.CONFIG = FIWP.PROJECT AND FIWP_CONTRACT_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_CONTRACT ON FIWP_CONTRACT.OBJOBID = FIWP_CONTRACT_OBJ.OBID AND FIWP_CONTRACT.PROPERTYDEFUID = 'Description' AND FIWP_CONTRACT.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)  LEFT JOIN DATAREL FIWP_CONTRACTOR_REL ON FIWP_CONTRACTOR_REL.UID1 = FIWP.FIWPUID AND FIWP_CONTRACTOR_REL.DEFUID = 'SPC_Package_Contractor' AND FIWP_CONTRACTOR_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_CONTRACTOR_OBJ ON FIWP_CONTRACTOR_OBJ.OBJUID = FIWP_CONTRACTOR_REL.UID2 AND FIWP_CONTRACTOR_OBJ.CONFIG = FIWP.PROJECT AND FIWP_CONTRACTOR_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_CONTRACTOR ON FIWP_CONTRACTOR.OBJOBID = FIWP_CONTRACTOR_OBJ.OBID AND FIWP_CONTRACTOR.PROPERTYDEFUID = 'Name' AND FIWP_CONTRACTOR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAREL FIWP_DESIGNAREA_REL ON FIWP_DESIGNAREA_REL.UID1 = FIWP.FIWPUID AND FIWP_DESIGNAREA_REL.DEFUID = 'SPC_FunctionalArea_FIWPs' AND FIWP_DESIGNAREA_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_DESIGNAREA_OBJ ON FIWP_DESIGNAREA_OBJ.OBJUID = FIWP_DESIGNAREA_REL.UID1 AND FIWP_DESIGNAREA_OBJ.CONFIG = FIWP.PROJECT AND FIWP_DESIGNAREA_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_DESIGNAREA ON FIWP_DESIGNAREA.OBJOBID = FIWP_DESIGNAREA_OBJ.OBID AND FIWP_DESIGNAREA.PROPERTYDEFUID = 'Name' AND FIWP_DESIGNAREA.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)--LEFT JOIN DATAREL FIWP_FOREMAN_REL ON FIWP_FOREMAN_REL.UID1 = FIWP.FIWPUID AND FIWP_FOREMAN_REL.DEFUID = 'SPC_Package_ForemanRole' AND FIWP_FOREMAN_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)LEFT JOIN#(lf)  (#(lf)    select DENSE_RANK() OVER (PARTITION BY UID1 ORDER BY CREATIONDATE DESC) AS SEQUENCE , UID1, UID2, CREATIONDATE#(lf)    FROM SCHEMAREL where  DEFUID='SPC_Package_ForemanRole'#(lf)    AND TERMINATIONDATE = '9999/12/31-23:59:59:999' #(lf)  ) FIWP_FOREMAN_REL ON FIWP_FOREMAN_REL.UID1=FIWP.FIWPUID AND FIWP_FOREMAN_REL.SEQUENCE=1#(lf)#(tab)#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_FOREMAN_OBJ ON FIWP_FOREMAN_OBJ.OBJUID = FIWP_FOREMAN_REL.UID2 AND FIWP_FOREMAN_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJPR FIWP_FOREMAN ON FIWP_FOREMAN.OBJOBID = FIWP_FOREMAN_OBJ.OBID AND FIWP_FOREMAN.PROPERTYDEFUID = 'Name' AND FIWP_FOREMAN.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)#(lf)#(tab)--LEFT JOIN DATAREL FIWP_GENERALFOREMAN_REL ON FIWP_GENERALFOREMAN_REL.UID1 = FIWP.FIWPUID AND FIWP_GENERALFOREMAN_REL.DEFUID = 'SPC_Package_GeneralForemanRole' AND FIWP_GENERALFOREMAN_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)LEFT JOIN#(lf)  (#(lf)    select DENSE_RANK() OVER (PARTITION BY UID1 ORDER BY CREATIONDATE DESC) AS SEQUENCE , UID1, UID2, CREATIONDATE#(lf)    FROM SCHEMAREL where  DEFUID='SPC_Package_GeneralForemanRole'#(lf)    AND TERMINATIONDATE = '9999/12/31-23:59:59:999' #(lf)  ) FIWP_GENERALFOREMAN_REL ON FIWP_GENERALFOREMAN_REL.UID1=FIWP.FIWPUID AND FIWP_GENERALFOREMAN_REL.SEQUENCE=1#(lf)#(tab)#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_GENERALFOREMAN_OBJ ON FIWP_GENERALFOREMAN_OBJ.OBJUID = FIWP_GENERALFOREMAN_REL.UID2 AND FIWP_GENERALFOREMAN_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJPR FIWP_GENERALFOREMAN ON FIWP_GENERALFOREMAN.OBJOBID = FIWP_GENERALFOREMAN_OBJ.OBID AND FIWP_GENERALFOREMAN.PROPERTYDEFUID = 'Name' AND FIWP_GENERALFOREMAN.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)#(lf)#(tab)LEFT JOIN SCHEMAREL FIWP_FIELDENGINEER_REL ON FIWP_FIELDENGINEER_REL.UID1 = FIWP.FIWPUID AND FIWP_FIELDENGINEER_REL.DEFUID = 'SPC_Package_FieldEngineerRole' AND FIWP_FIELDENGINEER_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_FIELDENGINEER_OBJ ON FIWP_FIELDENGINEER_OBJ.OBJUID = FIWP_FIELDENGINEER_REL.UID2 AND FIWP_FIELDENGINEER_OBJ.CONFIG = FIWP.PROJECT AND FIWP_FIELDENGINEER_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJPR FIWP_FIELDENGINEER ON FIWP_FIELDENGINEER.OBJOBID = FIWP_FIELDENGINEER_OBJ.OBID AND FIWP_FIELDENGINEER.PROPERTYDEFUID = 'Name' AND FIWP_FIELDENGINEER.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAREL FIWP_SUPERINTENDENT_REL ON FIWP_SUPERINTENDENT_REL.UID1 = FIWP.FIWPUID AND FIWP_SUPERINTENDENT_REL.DEFUID = 'SPC_Package_SuperintendentRole' AND FIWP_SUPERINTENDENT_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_SUPERINTENDENT_OBJ ON FIWP_SUPERINTENDENT_OBJ.OBJUID = FIWP_SUPERINTENDENT_REL.UID2 AND FIWP_SUPERINTENDENT_OBJ.CONFIG = FIWP.PROJECT AND FIWP_SUPERINTENDENT_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJPR FIWP_SUPERINTENDENT ON FIWP_SUPERINTENDENT.OBJOBID = FIWP_SUPERINTENDENT_OBJ.OBID AND FIWP_SUPERINTENDENT.PROPERTYDEFUID = 'Name' AND FIWP_SUPERINTENDENT.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(tab)#(lf)  LEFT JOIN SCHEMAREL FIWP_ISSUEDBY_REL ON FIWP_ISSUEDBY_REL.UID1 = FIWP.FIWPUID AND FIWP_ISSUEDBY_REL.DEFUID = 'SPC_Package_IWPIssuedBy' AND FIWP_ISSUEDBY_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_ISSUEDBY_OBJ ON FIWP_ISSUEDBY_OBJ.OBJUID = FIWP_ISSUEDBY_REL.UID2 AND  FIWP_ISSUEDBY_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJPR FIWP_ISSUEDBY ON FIWP_ISSUEDBY.OBJOBID = FIWP_ISSUEDBY_OBJ.OBID AND FIWP_ISSUEDBY.PROPERTYDEFUID = 'Name' AND FIWP_ISSUEDBY.TERMINATIONDATE = '9999/12/31-23:59:59:999' #(lf)  LEFT JOIN DATAREL FIWP_NAMEDCREW_REL ON FIWP_NAMEDCREW_REL.UID1 = FIWP.FIWPUID AND FIWP_NAMEDCREW_REL.DEFUID = 'SPC_Package_Crew' AND FIWP_NAMEDCREW_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_NAMEDCREW ON FIWP_NAMEDCREW.OBJUID = FIWP_NAMEDCREW_REL.UID2 AND FIWP_NAMEDCREW.CONFIG = FIWP.PROJECT AND FIWP_NAMEDCREW.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAREL FIWP_CWP_REL ON FIWP_CWP_REL.UID2 = FIWP.FIWPUID AND FIWP_CWP_REL.DEFUID = 'SPC_CWP_FIWPs' AND FIWP_CWP_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_CWP ON FIWP_CWP.OBJUID = FIWP_CWP_REL.UID1 AND FIWP_CWP.CONFIG = FIWP.PROJECT AND FIWP_CWP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)      #(tab)--IWP REVDATE#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_REVDATE ON FIWP_REVDATE.OBJOBID = FIWP.FIWPOBID AND FIWP_REVDATE.PROPERTYDEFUID = 'MDR_RevDate' AND FIWP_REVDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_REV ON FIWP_REV.OBJOBID = FIWP.FIWPOBID AND FIWP_REV.PROPERTYDEFUID = 'MDR_Rev' AND FIWP_REV.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(tab)#(lf)  left join schemaobj enumpr on FIWP_REV.strvalue=enumpr.objuid and enumpr.objdefuid='EnumEnum' and enumpr.terminationdate='9999/12/31-23:59:59:999'#(lf)--where pr.propertydefuid='MDR_Rev' and pr.OBJOBID = '1SRI000A' #(lf)  #(lf)#(tab)--IWP RECEDATE#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_RECEDATE ON FIWP_RECEDATE.OBJOBID = FIWP.FIWPOBID AND FIWP_RECEDATE.PROPERTYDEFUID = 'MDR_RecievedDate' AND FIWP_RECEDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--FIWP TASK NO#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_TaskNo ON FIWP_TaskNo.OBJOBID = FIWP.FIWPOBID AND FIWP_TaskNo.PROPERTYDEFUID = 'MDR_FIWPTaskNo' AND FIWP_TaskNo.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--FIWP AFC Hrs#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_Estimated ON FIWP_Estimated.OBJOBID = FIWP.FIWPOBID AND FIWP_Estimated.PROPERTYDEFUID = 'FIWP_Estimated_Manhours' AND FIWP_Estimated.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)#(tab)--MDR_Weld_Weightage#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_MDRWeightage ON FIWP_MDRWeightage.OBJOBID = FIWP.FIWPOBID AND FIWP_MDRWeightage.PROPERTYDEFUID = 'MDR_Weld_Weightage' AND FIWP_MDRWeightage.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--MDR_ResourceCode#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_MDRResourceCode ON FIWP_MDRResourceCode.OBJOBID = FIWP.FIWPOBID AND FIWP_MDRResourceCode.PROPERTYDEFUID = 'MDR_ResourceCode' AND FIWP_MDRResourceCode.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)--MDR_ProgressGrouping#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_MDRProgressGrouping ON FIWP_MDRProgressGrouping.OBJOBID = FIWP.FIWPOBID AND FIWP_MDRProgressGrouping.PROPERTYDEFUID = 'MDR_ProgressGrouping' AND FIWP_MDRProgressGrouping.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--MDR_WorkPhase#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_MDRWorkPhase ON FIWP_MDRWorkPhase.OBJOBID = FIWP.FIWPOBID AND FIWP_MDRWorkPhase.PROPERTYDEFUID = 'MDR_WorkPhase' AND FIWP_MDRWorkPhase.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)#(lf)#(tab)#(lf)),#(lf)#(lf)COMBINED AS #(lf)(#(lf) #(lf)  SELECT DISTINCT#(lf)    t1.FIWPUID,#(lf)    t1.PROJECT AS ""PROJECT"",#(lf)    t3.DISCIPLINE,#(lf)    t2.NAME AS ""WPNO"",#(lf)    t2.DESCRIPTION as ""WPDESCRIPTION"",#(lf)    t5.COSTCODE  AS ""ACTIVITYCODE"",#(tab)#(lf)    --T6.NAME AS ""NAME"",     #(lf)    T5.SEQUENCE ,#(lf)    sum(T5.ACTUALMANHOURS) AS ""COMPLETEDMANHOURS"",#(lf)    SUM(NULLIF(T5.PLANNEDMANHOURS,0)) AS ""PLANNEDHOURS"",#(lf)    --NVL(AVG(round((t5.QUANTITYCOMPLETE/t6.UNITS) * 100,1)),0) AS ""PERCCOMP"",#(lf)    t4.CWPOBID, t4.REVDATE, t4.RECEDATE, t4.FIWPTASKNO, t4.FIWPAFCHRS as FIWPAFCHRS ,t4.FIWPOBID,   t1.CREATIONUSER, t1.CREATIONDATE,#(lf)    t4.WEIGHTAGE ,t4.RESOURCECODE,t4.WORKPHASE,t4.PROGRESSGROUPING,#(lf)    NULLIF(t2.PREV_PROGRESS,0)  as ""PREV_PROGRESS"",#(lf)    NULLIF(t2.PREV_EARNED,0)  as ""PREV_EARNED"",#(lf)    NULLIF(t2.PREV_WKLYEARNED,0) as ""PREV_WKLYEARNED"" ,#(lf)    t5.RATEUOM, t3.PURPOSE, t4.CONTRACTOR as ""AREA"", t4.FOREMAN as ""FOREMAN"",t4.GENERALFOREMAN as ""GENERALFOREMAN"",t4.ISSUEDBY as ""ISSUEDBY"", t3.STATUS,#(lf)    t2.PLANNEDSTARTDATE, t2.PLANNEDFINISHDATE, t2.ACTUALSTARTDATE, t2.ACTUALFINISHDATE, SUM(t5.PLAN_UNITS) as PLAN_UNITS, SUM(t5.UNIT_COMPLETED) as UNIT_COMPLETED, t4.WP_REVNO#(lf)    #(lf)FROM SPCRPT_FIWP_IOBJECT_PROP_TMP t1#(lf)LEFT JOIN SPCRPT_FIWP_DIRECT_PROP_TMP t2 ON t2.FIWPOBID = t1.FIWPOBID#(lf)LEFT JOIN SPCRPT_FIWP_DIR_ENUM_PROP_TMP t3 ON t3.FIWPOBID = t1.FIWPOBID#(lf)LEFT JOIN SPCRPT_FIWP_REL_PROP_TMP t4 ON t4.FIWPOBID = t1.FIWPOBID#(lf)LEFT JOIN WORKSTEPS t5 ON t5.FIWPOBID = t1.FIWPOBID#(lf)LEFT JOIN SPCRPT_COMPONENTITEM1 t6 ON t6.COMPOBID = t5.COMPOBID#(lf)--WHERE t5.PLANNEDMANHOURS > 0#(lf)--WHERE t3.STATUS='Issued For Construction' and t5.PLANNEDMANHOURS > 0 #(lf)GROUP BY t1.FIWPUID, T2.NAME, t2.DESCRIPTION, T1.PROJECT, T5.COSTCODE, t3.DISCIPLINE, T5.SEQUENCE , T4.CWPOBID, COMPLETEDMANHOURS,  t4.CWPOBID , #(lf)t4.REVDATE, t4.RECEDATE, t4.FIWPTASKNO, t4.FIWPOBID , t1.CREATIONUSER, t1.CREATIONDATE,  t2.PREV_PROGRESS,  t2.PREV_EARNED, t2.PREV_WKLYEARNED, t5.RATEUOM, t3.PURPOSE, t4.CONTRACTOR , t4.FOREMAN,t4.GENERALFOREMAN, t4.ISSUEDBY,t3.STATUS,#(lf)  t2.PLANNEDSTARTDATE, t2.PLANNEDFINISHDATE, t2.ACTUALSTARTDATE, t2.ACTUALFINISHDATE , t4.WP_REVNO, t4.FIWPAFCHRS, t4.WEIGHTAGE ,t4.RESOURCECODE,t4.WORKPHASE,t4.PROGRESSGROUPING#(lf)),#(lf)#(lf) #(lf)BY_WORKPACK AS #(lf)(#(lf) #(lf)  SELECT distinct#(lf)    t1.PROJECT AS ""PROJECT"",#(lf)    t2.NAME AS ""WPNO"",#(lf)    t5.CREATIONUSER, t5.CREATIONDATE#(lf)    #(lf)FROM SPCRPT_FIWP_IOBJECT_PROP_TMP t1#(lf)LEFT JOIN SPCRPT_FIWP_DIRECT_PROP_TMP t2 ON t2.FIWPOBID = t1.FIWPOBID#(lf)LEFT JOIN WORKSTEPS t5 ON t5.FIWPOBID = t1.FIWPOBID#(lf)#(lf)), #(lf)#(lf)GET_USERINFO as#(lf)(#(lf)  SELECT a.* from BY_WORKPACK a#(lf)  inner join#(lf)  (#(lf)    select project, wpno, max(creationdate) as creationdate from BY_WORKPACK group by project, wpno#(lf)  )b#(lf)  on a.project=b.project and a.wpno=b.wpno and a.creationdate=b.creationdate#(lf))#(lf),#(lf)#(lf)TOTALPLANHRS as#(lf)(#(lf)  SELECT DISTINCT B.DESIGNAREA AS JOBNO, A.ACTIVITYCODE AS ACTIVITYCODE, A.WPNO, A.FIWPUID,-- A.FIWPOBID as FIWPOBIDx,#(lf)  C.PLANNEDHOURS as PLANNEDHOURS, #(lf)  C.COMPLETEDMANHOURS - C.PLANNEDHOURS  as ""BALANCE"", C.CUMPROGRESS, C.UNIT_COMPLETED, C.PLAN_UNITS,  C.CUMPROGRESS * C.PLANNEDHOURS as CUMEARNED#(lf)  FROM  COMBINED A#(lf)  LEFT JOIN SPCCWP B ON A.CWPOBID = B.CWPOBID #(lf)  LEFT JOIN #(lf)  (#(lf)      select FIWPOBID, sum(PLANNEDHOURS) as PLANNEDHOURS, SUM(COMPLETEDMANHOURS) as COMPLETEDMANHOURS, SUM(PLAN_UNITS) as PLAN_UNITS,#(lf)      SUM(UNIT_COMPLETED) as UNIT_COMPLETED, SUM(COMPLETEDMANHOURS) / SUM(PLANNEDHOURS) as CUMPROGRESS, SUM(CUMEARNED) as CUMEARNED#(lf)      FROM#(lf)      (#(lf)      #(lf)       SELECT   FIWPOBID,  SUM(NULLIF(PLANNEDMANHOURS,0)) as PLANNEDHOURS, sum(ActualManHours) as COMPLETEDMANHOURS, sum(Plan_units)/ count(*) as PLAN_UNITS, #(lf)       sum(Unit_Completed) / count(*) as UNIT_COMPLETED, (sum(ActualManHours) /  SUM(NULLIF(PLANNEDMANHOURS,0))) as CUMPROGRESS,   #(lf)            (sum(ActualManHours) /  SUM(NULLIF(PLANNEDMANHOURS,0))) *   SUM(NULLIF(PLANNEDMANHOURS,0)) as CUMEARNED#(lf)            from WorkSteps #(lf)         --   where fiwpobid='2XCC000A'#(lf)            Group by FIWPOBID, COMPOBID#(lf)      ) XX GROUP BY FIWPOBID#(lf)       #(lf)  ) C ON C.FIWPOBID=A.FIWPOBID-- AND INSTR(A.WPNO, A.ACTIVITYCODE)>0#(lf)--  WHERE  INSTR(A.WPNO, A.ACTIVITYCODE)>0#(lf)  #(lf)),#(lf)FIWPTOTAL AS#(lf)(#(lf)      SELECT FIWPUID, #(lf)       SUM(QUANTITYCOMPLETE) as ""FIWP_QTYCOMPLETE"" , #(lf)       SUM(QUANTITYPLANNED) as  ""FIWP_QTYPLAN"", #(lf)       SUM(PLANNEDMANHOURS)  as ""FIWP_PLANH"", #(lf)       SUM(ACTUALMANHOURS)   as ""FIWP_ACTUAL""#(lf)       FROM#(lf)       (#(lf)        SELECT t1x.FIWPUID, t5x.COMPOBID, t5x.PROJECT,  t5x.FIWPOBID, SUM(t5x.ACTUALMANHOURS) as ACTUALMANHOURS, SUM(t5x.PLANNEDMANHOURS) as PLANNEDMANHOURS, #(lf)                                             AVG(t5x.QUANTITYCOMPLETE) as QUANTITYCOMPLETE, AVG(t5x.QUANTITYPLANNED) as QUANTITYPLANNED #(lf)        FROM WORKSTEPS t5x#(lf)        LEFT JOIN SPCRPT_FIWP_IOBJECT_PROP_TMP t1x ON t5x.FIWPOBID = t1x.FIWPOBID#(lf)        GROUP BY t1x.FIWPUID, t5x.COMPOBID, t5x.PROJECT,  t5x.FIWPOBID#(lf)        #(lf)       ) X#(lf)       GROUP BY FIWPUID  #(lf)),#(lf)#(lf)#(lf)BYGATES1 AS#(lf)(#(lf)    SELECT t1.FIWPUID, t5.Name, t5.sequence,  SUM(NULLIF(t5.PLANNEDMANHOURS,0))  as ""PLANH"", ROUND(SUM(NULLIF(t5.ACTUALMANHOURS,0)),2) as ""ACTUAL"" , SUM(t5.UNIT_COMPLETED) as UNIT_COMPLETED, #(lf)   -- CASE WHEN SUM(t5.PLAN_UNITS)=0 THEN 0 ELSE CASE WHEN SUM(t5.UNIT_COMPLETED) / SUM(t5.PLAN_UNITS)>1 THEN 1 ELSE SUM(t5.UNIT_COMPLETED) / SUM(t5.PLAN_UNITS) END  END as ""GATEPROGRESS"" #(lf)  CASE WHEN SUM(t5.PLANNEDMANHOURS)=0 THEN 0 ELSE CASE WHEN SUM(t5.ACTUALMANHOURS) / SUM(t5.PLANNEDMANHOURS)>1 THEN 1 ELSE SUM(t5.ACTUALMANHOURS) / SUM(t5.PLANNEDMANHOURS) END  END as ""GATEPROGRESS"",#(lf)  sum(t5.Gate_QTYComplete) as ""GATEQTY_COMPLETE"" #(lf)  FROM SPCRPT_FIWP_IOBJECT_PROP_TMP t1#(lf)    LEFT JOIN WORKSTEPS t5 ON t5.FIWPOBID = t1.FIWPOBID    #(lf)    --LEFT JOIN FIWPTOTAL t6 ON t6.FIWPUID = t1.FIWPUID    #(lf)    GROUP BY t1.FIWPUID,t5.sequence, t5.Name#(lf)    ORDER By t5.sequence#(lf)   #(lf)) ,#(lf)--Select * From BYGATES1 Where FIWPUID ='FIWP_C10DL4I5B139706'#(lf)#(lf)BYGATES AS#(lf)(#(lf)    SELECT FIWPUID ,Name,ROW_NUMBER() OVER (PARTITION BY FIWPUID ORDER BY Sequence Asc) As Sequence,Planh,Actual,UNIT_Completed,GATEPROGRESS,Gateqty_Complete,#(lf)    Sequence As Seqno#(lf)    FROM BYGATES1#(lf)) ,#(lf)--Select * From BYGATES Where FIWPUID ='FIWP_C10DL4I5B139706'#(lf)COUNTINFO as#(lf)(#(lf)   SELECT FIWPUID, SUM(TOTAL) as COUNT_COMPLETE , SUM(PLANNED) as COUNT_PLANNED#(lf)   FROM#(lf)   (#(lf)    select FIWPUID, COMPOBID, MAX(SEQUENCE), SUM(ISDONE), CASE WHEN MAX(SEQUENCE)= SUM(ISDONE) THEN 1 ELSE 0 END as TOTAL, 1 as PLANNED#(lf)    FROM#(lf)    (#(lf)         SELECT  FIWPUID, COMPOBID, NAME, SEQUENCE, CASE WHEN PLANNEDMANHOURS <= ACTUALMANHOURS THEN 1 else 0 end as IsDONE#(lf)         FROM SPCRPT_FIWP_IOBJECT_PROP_TMP t1x#(lf)         LEFT JOIN WORKSTEPS t5x ON t5x.FIWPOBID = t1x.FIWPOBID#(lf)        ORDER BY t1x.FIWPUID , COMPOBID#(lf)   ) A#(lf)   GROUP BY FIWPUID, COMPOBID#(lf)   ) B#(lf)   GROUP BY FIWPUID#(lf)#(lf)),#(lf)GATE as#(lf)(#(lf)  SELECT a.FIWPUID, G1.NAME as G1 , G2.NAME as G2  , G3.NAME as G3  , G4.NAME as G4  , G5.NAME as G5  , G6.NAME as G6,G7.NAME as G7,G8.NAME as G8,#(lf)                    G1.PLANH as G1H , G2.PLANH as G2H , G3.PLANH as G3H ,  G4.PLANH as G4H ,  G5.PLANH as G5H , G6.PLANH as G6H, G7.PLANH as G7H,G8.PLANH as G8H,#(lf)                    G1.ACTUAL as G1A , G2.ACTUAL as G2A , G3.ACTUAL as G3A ,  G4.ACTUAL as G4A ,  G5.ACTUAL as G5A , G6.ACTUAL as G6A,G7.ACTUAL as G7A,G8.ACTUAL as G8A,#(lf)                    t6.FIWP_QTYPLAN as QTYPLANNED, t6.FIWP_QTYCOMPLETE as QTYCOMPLETE, t6.FIWP_ACTUAL as FIWP_ACTUAL, C1.COUNT_COMPLETE, C1.COUNT_PLANNED, #(lf)                    G1.UNIT_COMPLETED as UNIT_COMPLETED_1, #(lf)                    G2.UNIT_COMPLETED as UNIT_COMPLETED_2, #(lf)                    G3.UNIT_COMPLETED as UNIT_COMPLETED_3, #(lf)                    G4.UNIT_COMPLETED as UNIT_COMPLETED_4, #(lf)                    G5.UNIT_COMPLETED as UNIT_COMPLETED_5, #(lf)                    G6.UNIT_COMPLETED as UNIT_COMPLETED_6,#(lf)                    G7.UNIT_COMPLETED as UNIT_COMPLETED_7,#(lf)                    G8.UNIT_COMPLETED as UNIT_COMPLETED_8,#(lf)                    G1.GATEPROGRESS as G1_PROGRESS, #(lf)                    G2.GATEPROGRESS as G2_PROGRESS,#(lf)                    G3.GATEPROGRESS as G3_PROGRESS,#(lf)                    G4.GATEPROGRESS as G4_PROGRESS,#(lf)                    G5.GATEPROGRESS as G5_PROGRESS,#(lf)                    G6.GATEPROGRESS as G6_PROGRESS,#(lf)                    G7.GATEPROGRESS as G7_PROGRESS,#(lf)                    G8.GATEPROGRESS as G8_PROGRESS,#(lf)                    G1.GATEQTY_COMPLETE as G1_QTYCOMPLETE,#(lf)                    G2.GATEQTY_COMPLETE as G2_QTYCOMPLETE,#(lf)                    G3.GATEQTY_COMPLETE as G3_QTYCOMPLETE,#(lf)                    G4.GATEQTY_COMPLETE as G4_QTYCOMPLETE,#(lf)                    G5.GATEQTY_COMPLETE as G5_QTYCOMPLETE,#(lf)                    G6.GATEQTY_COMPLETE as G6_QTYCOMPLETE,#(lf)                    G7.GATEQTY_COMPLETE as G7_QTYCOMPLETE,#(lf)                    G8.GATEQTY_COMPLETE as G8_QTYCOMPLETE#(lf)  FROM SPCRPT_FIWP_IOBJECT_PROP_TMP a#(lf)  LEFT JOIN FIWPTOTAL t6 ON t6.FIWPUID = A.FIWPUID  #(lf)  LEFT JOIN COUNTINFO C1 on C1.FIWPUID=A.FIWPUID#(lf)  LEFT JOIN BYGATES G1 on A.FIWPUID=G1.FIWPUID AND G1.sequence=1#(lf)  LEFT JOIN BYGATES G2 on A.FIWPUID=G2.FIWPUID AND G2.sequence=2#(lf)  LEFT JOIN BYGATES G3 on A.FIWPUID=G3.FIWPUID AND G3.sequence=3#(lf)  LEFT JOIN BYGATES G4 on A.FIWPUID=G4.FIWPUID AND G4.sequence=4#(lf)  LEFT JOIN BYGATES G5 on A.FIWPUID=G5.FIWPUID AND G5.sequence=5#(lf)  LEFT JOIN BYGATES G6 on A.FIWPUID=G6.FIWPUID AND G6.sequence=6#(lf)  LEFT JOIN BYGATES G7 on A.FIWPUID=G7.FIWPUID AND G7.sequence=7#(lf)  LEFT JOIN BYGATES G8 on A.FIWPUID=G8.FIWPUID AND G8.sequence=8#(lf)),#(lf)#(lf)--Select * From GATE where FIWPUID ='FIWP_C10DL4I5B139706'#(lf)REGISTER AS #(lf)(#(lf)  SELECT distinct A.FIWPUID,  A.PROJECT, FIWPOBID,#(lf)  A.FIWPTASKNO,#(lf)  --B.WBSPATH AS ""TASK NO"", #(lf)  A.FIWPTASKNO AS ""TASK NO"",#(lf)  B.DESIGNAREA AS ""JOB NO"", A.ACTIVITYCODE AS ""ACTIVITY CODE"", A.DISCIPLINE,  B.NAME as ""ACTIVITY ID"",  #(lf)  A.WPNO, A.WPDESCRIPTION as ""WP DESCRIPTION"",#(lf)  A.WP_REVNO,#(lf)  B.DESCRIPTION AS ""ACTIVITY ID DESCRIPTION"",#(lf)  --ROUND((B.BUDGETEDLABORHOURS),2) AS ""AFC Hrs"",#(lf)  #(lf)  --SUM(ROUND((A.FIWPAFCHRS),2)) AS ""AFC Hrs"",#(lf)  ROUND(A.FIWPAFCHRS,2) AS ""AFC Hrs"",#(lf)  --A.SEQUENCE, #(lf)  C.PLANNEDHOURS as ""WP Hrs"", #(lf)  --ROUND((B.BUDGETEDLABORHOURS),2) - C.PLANNEDHOURS as ""AFC WP DELTA Hrs"",#(lf) #(lf)  ROUND((A.FIWPAFCHRS),2) - C.PLANNEDHOURS as ""AFC WP DELTA Hrs"", #(lf)#(lf) #(lf)#(lf)  CASE WHEN  ROUND((A.FIWPAFCHRS),2)<=C.PLANNEDHOURS  THEN  CASE WHEN C.CUMPROGRESS>1 THEN 1 ELSE C.CUMPROGRESS END  ELSE ROUND(C.CUMEARNED/ROUND((A.FIWPAFCHRS),2),4) END   AS ""AFC Progress"",#(lf) #(lf)  --ROUND((CASE WHEN C.PLANNEDHOURS < ROUND((B.BUDGETEDLABORHOURS),2) THEN ROUND(C.CUMEARNED/ROUND((B.BUDGETEDLABORHOURS),2),4)  ELSE  C.CUMPROGRESS END) * ROUND--((B.BUDGETEDLABORHOURS),2),2) AS ""AFC Earned Hrs"",#(lf)#(lf)  CASE WHEN  ROUND((A.FIWPAFCHRS),2)<=C.PLANNEDHOURS  THEN  CASE WHEN C.CUMPROGRESS>1 THEN 1 ELSE C.CUMPROGRESS END  ELSE ROUND(C.CUMEARNED/ROUND((A.FIWPAFCHRS),2),4) END * A.FIWPAFCHRS  AS ""AFC Earned Hrs"",#(lf) #(lf)--ROUND((CASE WHEN C.PLANNEDHOURS < ROUND((B.BUDGETEDLABORHOURS),2) THEN ROUND(C.CUMEARNED/ROUND((B.BUDGETEDLABORHOURS),2),4)  ELSE  C.CUMPROGRESS END) * ROUND((B.BUDGETEDLABORHOURS),2),2) #(lf)--ROUND(C.CUMEARNED,2) As ""AFC WP Earned Delta Hrs"" ,#(lf)#(lf)ROUND((CASE WHEN C.PLANNEDHOURS < ROUND((A.FIWPAFCHRS),2) THEN ROUND(C.CUMEARNED/ROUND((A.FIWPAFCHRS),2),4)  ELSE  C.CUMPROGRESS END)  * ROUND((A.FIWPAFCHRS),2),2) -#(lf)ROUND(C.CUMEARNED,2) As ""AFC WP Earned Delta Hrs"" ,#(lf)#(lf)#(lf)--CASE WHEN C.PLANNEDHOURS < ROUND((B.BUDGETEDLABORHOURS),2) THEN ROUND(C.CUMEARNED/ROUND((B.BUDGETEDLABORHOURS),2),4)  ELSE  C.CUMPROGRESS END -  C.CUMPROGRESS #(lf)--As  ""AFC WP Progress Delta"",#(lf)#(lf)CASE WHEN C.PLANNEDHOURS < ROUND((A.FIWPAFCHRS),2) THEN ROUND(C.CUMEARNED/ROUND((A.FIWPAFCHRS),2),4)  ELSE  C.CUMPROGRESS END -  C.CUMPROGRESS #(lf)As  ""AFC WP Progress Delta"",#(lf)#(lf)  C.CUMPROGRESS  as ""WP Progress"",#(lf)  ROUND(C.CUMEARNED,2) as ""WP Earned Hrs"",#(lf)  E.QTYPLANNED AS ""WP Components Qty Planned"", #(lf)  E.QTYCOMPLETE AS ""WP Components Qty Complete"", #(lf)  C.PLAN_UNITS as PLAN_UNITS, C.PLAN_UNITS * C.CUMPROGRESS  as COMPLETED_UNITS,#(lf)  #(lf)  --A.RATEUOM,#(lf)  ' ' as RATEUOM,#(lf)  A.PURPOSE AS ""WP PURPOSE"",#(lf)  NVL(A.PREV_PROGRESS,0) as ""WP Last Week Progress"",#(lf)  NVL(A.PREV_EARNED,0) as ""WP Last Week Earned"",#(lf)  NVL(A.PREV_WKLYEARNED,0) as ""WP Last Week Weekly Earned"",#(lf)  NVL(C.CUMPROGRESS,0) -  NVL(A.PREV_PROGRESS,0) as ""WP Weekly Progress"",#(lf)  ROUND(NVL(C.CUMEARNED,0),3) -  ROUND(NVL(A.PREV_EARNED,0),3)  as ""WP Weekly Earned"",#(lf)  E.COUNT_COMPLETE AS ""WP Components Count Complete"", #(lf)E.COUNT_PLANNED AS ""WP Components Count Planned"", #(lf)A.AREA, A.STATUS#(lf)  ,A.REVDATE AS ""WP Revision Date"", #(lf)A.RECEDATE AS ""WP Receive Date"", #(lf)D.CREATIONUSER as ""WP Last Progress By"", SUBSTR(D.CREATIONDATE,1, 10) as ""WP Last Progress Date"", A.CREATIONUSER AS ""WP Creation User"", #(lf)SUBSTR(A.CREATIONDATE,1,10) as ""WP Creation Date"",#(lf)A.FOREMAN as ""Foreman"",#(lf)A.GENERALFOREMAN as ""General Foreman"",#(lf)A.ISSUEDBY as ""IWP Issued By"",  #(lf)  A.PLANNEDSTARTDATE AS ""WP Planned Start Date"",#(lf)  A.PLANNEDFINISHDATE AS ""WP Planned Finish Date"",#(lf)  A.ACTUALSTARTDATE AS ""WP Actual Start Date"", #(lf)  A.ACTUALFINISHDATE AS ""WP Actual Finish Date"",#(lf)  B.EARLYSTARTDATE AS ""L3 Forecast Start Date"", #(lf)  B.EARLYFINISHDATE AS ""L3 Forecast Finish Date"", #(lf)  B.LATESTARTDATE AS ""L3 Baseline Start Date"", #(lf)  B.LATEFINISHDATE AS ""L3 Baseline Finish Date"", #(lf)#(lf)  --C.BALANCE,#(lf) #(lf)  --CASE WHEN SUM(A.COMPLETEDMANHOURS)>SUM(A.PLANNEDHOURS) THEN 1 ELSE ROUND(SUM(A.COMPLETEDMANHOURS) / NULLIF(SUM(A.PLANNEDHOURS),0), 4) END as ""PERCCOMP"" #(lf)#(lf)  --GATES#(lf)  E.G1 AS ""ROC 1"", E.G2 AS ""ROC 2"", E.G3 AS ""ROC 3"", E.G4 AS ""ROC 4"", E.G5 AS ""ROC 5"", E.G6 AS ""ROC 6"",  E.G7 AS ""ROC 7"", E.G8 AS ""ROC 8"",#(lf)  #(lf)  --WEIGHTAGES#(lf)  CASE WHEN ROUND(E.G1H/nullif(C.PLANNEDHOURS,0),2)>1 then -1 else ROUND(nullif(E.G1H,0)/nullif(C.PLANNEDHOURS,0),2) end as ""ROC Weightage 1"",   #(lf)  CASE WHEN ROUND(E.G1H/nullif(C.PLANNEDHOURS,0),2)>1 then -1 else ROUND(nullif(E.G2H,0)/nullif(C.PLANNEDHOURS,0),2) end as ""ROC Weightage 2"",   #(lf)  CASE WHEN ROUND(E.G1H/nullif(C.PLANNEDHOURS,0),2)>1 then -1 else ROUND(nullif(E.G3H,0)/nullif(C.PLANNEDHOURS,0),2) end as ""ROC Weightage 3"",   #(lf)  CASE WHEN ROUND(E.G1H/nullif(C.PLANNEDHOURS,0),2)>1 then -1 else ROUND(nullif(E.G4H,0)/nullif(C.PLANNEDHOURS,0),2) end as ""ROC Weightage 4"",  #(lf)  CASE WHEN ROUND(E.G1H/nullif(C.PLANNEDHOURS,0),2)>1 then -1 else ROUNd(nullif(E.G5H,0)/nullif(C.PLANNEDHOURS,0),2) end as ""ROC Weightage 5"",  #(lf)  CASE WHEN ROUND(E.G1H/nullif(C.PLANNEDHOURS,0),2)>1 then -1 else ROUND(nullif(E.G6H,0)/nullif(C.PLANNEDHOURS,0),2) end as ""ROC Weightage 6"", #(lf)  CASE WHEN ROUND(E.G1H/nullif(C.PLANNEDHOURS,0),2)>1 then -1 else ROUND(nullif(E.G7H,0)/nullif(C.PLANNEDHOURS,0),2) end as ""ROC Weightage 7"",#(lf)  CASE WHEN ROUND(E.G1H/nullif(C.PLANNEDHOURS,0),2)>1 then -1 else ROUND(nullif(E.G8H,0)/nullif(C.PLANNEDHOURS,0),2) end as ""ROC Weightage 8"",#(lf)  #(lf)  --PLANHOURS#(lf)  E.G1H AS ""WP Hrs ROC 1"",  E.G2H AS ""WP Hrs ROC 2"",   E.G3H AS ""WP Hrs ROC 3"",   E.G4H AS ""WP Hrs ROC 4"",   E.G5H AS ""WP Hrs ROC 5"",   E.G6H AS ""WP Hrs ROC 6"", E.G7H AS ""WP Hrs ROC 7"", E.G8H AS ""WP Hrs ROC 8"",     #(lf)  #(lf)  --EARNINGS#(lf)  E.G1A as ""WP Earned Hrs ROC 1"",   E.G2A as ""WP Earned Hrs ROC 2"",  E.G3A as ""WP Earned Hrs ROC 3"",  E.G4A as ""WP Earned Hrs ROC 4"",  E.G5A as ""WP Earned Hrs ROC 5"",  E.G6A as ""WP Earned Hrs ROC 6"",#(lf)  E.G7A as ""WP Earned Hrs ROC 7"",E.G8A as ""WP Earned Hrs ROC 8"",#(lf)#(lf)  --WP Progress Gate#(lf)--ROUND(E.G1A /  E.G1H,4)  As ""WP Progress ROC 1"",#(lf)--ROUND(E.G2A /  E.G2H, 4) As ""WP Progress ROC 2"",#(lf)--ROUND(E.G3A /  E.G3H, 4) As ""WP Progress ROC 3"",#(lf)--ROUND(E.G4A /  E.G4H, 4) As ""WP Progress ROC 4"",#(lf)--ROUND(E.G5A /  E.G5H, 4) As ""WP Progress ROC 5"",#(lf)--ROUND(E.G6A /  E.G6H, 4) As ""WP Progress ROC 6"" ,#(lf)#(lf)E.G1_PROGRESS  As ""WP Progress ROC 1"",#(lf)E.G2_PROGRESS  As ""WP Progress ROC 2"",#(lf)E.G3_PROGRESS  As ""WP Progress ROC 3"",#(lf)E.G4_PROGRESS  As ""WP Progress ROC 4"",#(lf)E.G5_PROGRESS  As ""WP Progress ROC 5"",#(lf)E.G6_PROGRESS  As ""WP Progress ROC 6"",#(lf)E.G7_PROGRESS  As ""WP Progress ROC 7"",#(lf)E.G8_PROGRESS  As ""WP Progress ROC 8"",#(lf)#(lf)C.PLAN_UNITS * (ROUND(E.G1H/C.PLANNEDHOURS,2)) as ""Qty Planned 1"",#(lf)C.PLAN_UNITS * (ROUND(E.G2H/C.PLANNEDHOURS,2)) as ""Qty Planned 2"",#(lf)C.PLAN_UNITS * (ROUND(E.G3H/C.PLANNEDHOURS,2)) as ""Qty Planned 3"",#(lf)C.PLAN_UNITS * (ROUND(E.G4H/C.PLANNEDHOURS,2)) as ""Qty Planned 4"",#(lf)C.PLAN_UNITS * (ROUND(E.G5H/C.PLANNEDHOURS,2)) as ""Qty Planned 5"",#(lf)C.PLAN_UNITS * (ROUND(E.G6H/C.PLANNEDHOURS,2)) as ""Qty Planned 6"",#(lf)C.PLAN_UNITS * (ROUND(E.G7H/C.PLANNEDHOURS,2)) as ""Qty Planned 7"",#(lf)C.PLAN_UNITS * (ROUND(E.G8H/C.PLANNEDHOURS,2)) as ""Qty Planned 8"",#(lf)#(lf)C.PLAN_UNITS * (ROUND(E.G1H/C.PLANNEDHOURS,2)) * ROUND(E.G1A /  E.G1H,2)  as ""Qty Completed 1"",#(lf)C.PLAN_UNITS * (ROUND(E.G2H/C.PLANNEDHOURS,2)) * ROUND(E.G2A /  E.G2H,2)  as ""Qty Completed 2"",#(lf)C.PLAN_UNITS * (ROUND(E.G3H/C.PLANNEDHOURS,2)) * ROUND(E.G3A /  E.G3H,2)  as ""Qty Completed 3"",#(lf)C.PLAN_UNITS * (ROUND(E.G4H/C.PLANNEDHOURS,2)) * ROUND(E.G4A /  E.G4H,2)  as ""Qty Completed 4"",#(lf)C.PLAN_UNITS * (ROUND(E.G5H/C.PLANNEDHOURS,2)) * ROUND(E.G5A /  E.G5H,2)  as ""Qty Completed 5"",#(lf)C.PLAN_UNITS * (ROUND(E.G6H/C.PLANNEDHOURS,2)) * ROUND(E.G6A /  E.G6H,2)  as ""Qty Completed 6"",#(lf)C.PLAN_UNITS * (ROUND(E.G7H/C.PLANNEDHOURS,2)) * ROUND(E.G7A /  E.G7H,2)  as ""Qty Completed 7"",#(lf)C.PLAN_UNITS * (ROUND(E.G8H/C.PLANNEDHOURS,2)) * ROUND(E.G8A /  E.G8H,2)  as ""Qty Completed 8"",#(lf)#(lf)SUM(E.G1_QTYCOMPLETE) as G1_QTYCOMPLETE,#(lf)SUM(E.G2_QTYCOMPLETE) as G2_QTYCOMPLETE,#(lf)SUM(E.G3_QTYCOMPLETE) as G3_QTYCOMPLETE,#(lf)SUM(E.G4_QTYCOMPLETE) as G4_QTYCOMPLETE,#(lf)SUM(E.G5_QTYCOMPLETE) as G5_QTYCOMPLETE,#(lf)SUM(E.G6_QTYCOMPLETE) as G6_QTYCOMPLETE,#(lf)SUM(E.G7_QTYCOMPLETE) as G7_QTYCOMPLETE,#(lf)SUM(E.G8_QTYCOMPLETE) as G8_QTYCOMPLETE,#(lf)  A.WEIGHTAGE As ""WEIGHTAGE"",A.RESOURCECODE As ""RESOURCECODE"",#(lf)A.WORKPHASE As ""WORKPHASE"",A.PROGRESSGROUPING As ""PROGRESSGROUPING""#(lf)  #(lf)#(lf)  FROM  COMBINED A#(lf)  LEFT JOIN SPCCWP B ON A.CWPOBID = B.CWPOBID #(lf)  LEFT JOIN TOTALPLANHRS C ON C.FIWPUID=A.FIWPUID#(lf)  LEFT JOIN GET_USERINFO D ON D.PROJECT=A.PROJECT AND D.WPNO=A.WPNO#(lf)  LEFT JOIN GATE E ON E.FIWPUID=A.FIWPUID  #(lf)  --WHERE A.FIWPUID='cbf3ae65-15a4-478b-a0fb-cb1006b058e6'#(lf)  GROUP BY A.PROJECT,  A.FIWPUID, #(lf)  --B.WBSPATH,  #(lf)  A.WPNO, A.WPDESCRIPTION, B.NAME , B.DESIGNAREA, A.ACTIVITYCODE, --B.WBSPATH, #(lf)  A.DISCIPLINE, B.DESCRIPTION, A.SEQUENCE, #(lf)  --B.BUDGETEDLABORHOURS, #(lf)  A.FIWPAFCHRS,#(lf)  C.PLANNEDHOURS, C.CUMEARNED, C.BALANCE, C.CUMPROGRESS,#(lf)  A.REVDATE, A.RECEDATE,A.FIWPTASKNO,D.CREATIONUSER, D.CREATIONDATE, A.CREATIONUSER, A.CREATIONDATE, A.PREV_PROGRESS,  A.PREV_EARNED, A.PREV_WKLYEARNED#(lf) , E.G1, E.G2, E.G3, E.G4, E.G5, E.G6, E.G7 , E.G8  #(lf) ,  E.G1H/C.PLANNEDHOURS#(lf) ,  E.G2H/C.PLANNEDHOURS#(lf) ,  E.G3H/C.PLANNEDHOURS#(lf) ,  E.G4H/C.PLANNEDHOURS#(lf) ,  E.G5H/C.PLANNEDHOURS#(lf) ,  E.G6H/C.PLANNEDHOURS#(lf) ,  E.G7H/C.PLANNEDHOURS#(lf) ,  E.G8H/C.PLANNEDHOURS,#(lf) #(lf)  E.G1H,#(lf)  E.G2H,#(lf)  E.G3H,#(lf)  E.G4H,#(lf)  E.G5H,#(lf)  E.G6H,#(lf)  E.G7H,#(lf)  E.G8H,#(lf)  #(lf)  E.G1A,#(lf)  E.G2A,#(lf)  E.G3A,#(lf)  E.G4A,#(lf)  E.G5A,#(lf)  E.G6A, #(lf)  E.G7A,#(lf)  E.G8A,#(lf)  E.QTYCOMPLETE, E.QTYPLANNED, #(lf)  --A.RATEUOM, #(lf)  E.COUNT_COMPLETE, E.COUNT_PLANNED, A.PURPOSE, A.AREA, A.FOREMAN,A.FOREMAN,A.GENERALFOREMAN,A.ISSUEDBY, A.STATUS,   #(lf)  A.PLANNEDSTARTDATE, A.PLANNEDFINISHDATE, A.ACTUALSTARTDATE, A.ACTUALFINISHDATE, B.EARLYSTARTDATE,#(tab)B.EARLYFINISHDATE, B.LATESTARTDATE, B.LATEFINISHDATE, B.EWPNUMBER ,   C.PLAN_UNITS,  A.WP_REVNO,#(lf)  E.G1_PROGRESS,#(lf)  E.G2_PROGRESS,#(lf)  E.G3_PROGRESS,#(lf)  E.G4_PROGRESS,#(lf)  E.G5_PROGRESS,#(lf)  E.G6_PROGRESS,#(lf)  E.G7_PROGRESS,#(lf)  E.G8_PROGRESS,#(lf)  #(lf)  FIWPOBID ,A.WEIGHTAGE ,A.RESOURCECODE,A.WORKPHASE,A.PROGRESSGROUPING#(lf)  #(lf)  #(lf)),#(lf)#(lf)#(lf)FINAL as#(lf)(#(lf)#(lf) SELECT DISTINCT a.""FIWPUID"", FIWPOBID,#(lf)a.""PROJECT"",#(lf)a.""FIWPTASKNO"",#(lf)a.""TASK NO"",#(lf)a.""JOB NO"",#(lf)a.""ACTIVITY CODE"",#(lf)a.""DISCIPLINE"",#(lf)a.""ACTIVITY ID"",#(lf)a.""WPNO"",#(lf)a.""WP DESCRIPTION"",#(lf)a.""WP_REVNO"",#(lf)a.""ACTIVITY ID DESCRIPTION"",#(lf)a.""AFC Hrs"",#(lf)a.""WP Hrs"",#(lf)a.""AFC WP DELTA Hrs"",#(lf)a.""AFC Progress"",#(lf)a.""AFC Earned Hrs"",#(lf)ROUND(a.""AFC Earned Hrs"" - a.""WP Earned Hrs"" ,4) as ""AFC WP Earned Delta Hrs"",#(lf)ROUND(a.""AFC WP Progress Delta"", 4) as ""AFC WP Progress Delta"",#(lf)ROUND(a.""WP Progress"",4) as ""WP Progress"",#(lf)a.""WP Earned Hrs"",#(lf)a.""WP Components Qty Planned"",#(lf)a.""WP Components Qty Complete"",#(lf)a.""PLAN_UNITS"",#(lf)a.""COMPLETED_UNITS"",#(lf)a.""RATEUOM"",#(lf)a.""WP PURPOSE"",#(lf)a.""WP Last Week Progress"",#(lf)a.""WP Last Week Earned"",#(lf)a.""WP Last Week Weekly Earned"",#(lf)a.""WP Weekly Progress"",#(lf)a.""WP Weekly Earned"",#(lf)a.""WP Components Count Complete"",#(lf)a.""WP Components Count Planned"",#(lf)a.""AREA"",#(lf)a.""STATUS"",#(lf)a.""WP Revision Date"",#(lf)a.""WP Receive Date"",#(lf)a.""WP Last Progress By"",#(lf)a.""WP Last Progress Date"",#(lf)a.""WP Creation User"",#(lf)a.""WP Creation Date"",#(lf)a.""Foreman"",#(lf)a.""General Foreman"",#(lf)a.""IWP Issued By"",#(lf)a.""WP Planned Start Date"",#(lf)a.""WP Planned Finish Date"",#(lf)a.""WP Actual Start Date"",#(lf)a.""WP Actual Finish Date"",#(lf)a.""L3 Forecast Start Date"",#(lf)a.""L3 Forecast Finish Date"",#(lf)a.""L3 Baseline Start Date"",#(lf)a.""L3 Baseline Finish Date"",#(lf)a.""ROC 1"",#(lf)a.""ROC 2"",#(lf)a.""ROC 3"",#(lf)a.""ROC 4"",#(lf)a.""ROC 5"",#(lf)a.""ROC 6"",#(lf)a.""ROC 7"",#(lf)a.""ROC 8"",#(lf)a.""ROC Weightage 1"",#(lf)a.""ROC Weightage 2"",#(lf)a.""ROC Weightage 3"",#(lf)a.""ROC Weightage 4"",#(lf)a.""ROC Weightage 5"",#(lf)a.""ROC Weightage 6"",#(lf)a.""ROC Weightage 7"",#(lf)a.""ROC Weightage 8"",#(lf)#(lf)a.""WP Hrs ROC 1"",#(lf)a.""WP Hrs ROC 2"",#(lf)a.""WP Hrs ROC 3"",#(lf)a.""WP Hrs ROC 4"",#(lf)a.""WP Hrs ROC 5"",#(lf)a.""WP Hrs ROC 6"",#(lf)a.""WP Hrs ROC 7"",#(lf)a.""WP Hrs ROC 8"",#(lf)#(lf)a.""WP Earned Hrs ROC 1"",#(lf)a.""WP Earned Hrs ROC 2"",#(lf)a.""WP Earned Hrs ROC 3"",#(lf)a.""WP Earned Hrs ROC 4"",#(lf)a.""WP Earned Hrs ROC 5"",#(lf)a.""WP Earned Hrs ROC 6"",#(lf)a.""WP Earned Hrs ROC 7"",#(lf)a.""WP Earned Hrs ROC 8"",#(lf)#(lf)a.""WP Progress ROC 1"",#(lf)a.""WP Progress ROC 2"",#(lf)a.""WP Progress ROC 3"",#(lf)a.""WP Progress ROC 4"",#(lf)a.""WP Progress ROC 5"",#(lf)a.""WP Progress ROC 6"",#(lf)a.""WP Progress ROC 7"",#(lf)a.""WP Progress ROC 8"",#(lf)#(lf)a.""Qty Planned 1"",#(lf)a.""Qty Planned 2"",#(lf)a.""Qty Planned 3"",#(lf)a.""Qty Planned 4"",#(lf)a.""Qty Planned 5"",#(lf)a.""Qty Planned 6"",#(lf)a.""Qty Planned 7"",#(lf)a.""Qty Planned 8"",#(lf)#(lf)a.""Qty Completed 1"",#(lf)a.""Qty Completed 2"",#(lf)a.""Qty Completed 3"",#(lf)a.""Qty Completed 4"",#(lf)a.""Qty Completed 5"",#(lf)a.""Qty Completed 6"",#(lf)a.""Qty Completed 7"",#(lf)a.""Qty Completed 8"",#(lf)#(lf)a.G1_QTYCOMPLETE,#(lf)a.G2_QTYCOMPLETE,#(lf)a.G3_QTYCOMPLETE,#(lf)a.G4_QTYCOMPLETE,#(lf)a.G5_QTYCOMPLETE,#(lf)a.G6_QTYCOMPLETE,#(lf)a.G7_QTYCOMPLETE,#(lf)a.G8_QTYCOMPLETE,#(lf)   a.""WEIGHTAGE"" ,a.""RESOURCECODE"",a.""WORKPHASE"",a.""PROGRESSGROUPING""#(lf)/*#(lf) CASE WHEN ""AFC Hrs""<""WP Hrs"" then ""WP Progress ROC 1""  else   ROUND((""WP Earned Hrs ROC 1"" / nullif(""ROC Weightage 1"",0)) / nullif(""AFC Hrs"",0) ,3) end as ""AFC Progress ROC 1"",#(lf) CASE WHEN ""AFC Hrs""<""WP Hrs"" then ""WP Progress ROC 2""  else   ROUND((""WP Earned Hrs ROC 2"" / nullif(""ROC Weightage 2"",0)) / nullif(""AFC Hrs"",0) ,3) end as ""AFC Progress ROC 2"",#(lf) CASE WHEN ""AFC Hrs""<""WP Hrs"" then ""WP Progress ROC 3""  else   ROUND((""WP Earned Hrs ROC 3"" / nullif(""ROC Weightage 3"",0)) / nullif(""AFC Hrs"",0) ,3) end as ""AFC Progress ROC 3"",#(lf) CASE WHEN ""AFC Hrs""<""WP Hrs"" then ""WP Progress ROC 4""  else   ROUND((""WP Earned Hrs ROC 4"" / nullif(""ROC Weightage 4"",0)) / nullif(""AFC Hrs"",0) ,3) end as ""AFC Progress ROC 4"",#(lf) CASE WHEN ""AFC Hrs""<""WP Hrs"" then ""WP Progress ROC 5""  else   ROUND((""WP Earned Hrs ROC 5"" / nullif(""ROC Weightage 5"",0)) / nullif(""AFC Hrs"",0) ,3) end as ""AFC Progress ROC 5"",#(lf) CASE WHEN ""AFC Hrs""<""WP Hrs"" then ""WP Progress ROC 6""  else   ROUND((""WP Earned Hrs ROC 6"" / nullif(""ROC Weightage 6"",0)) / nullif(""AFC Hrs"",0) ,3) end as ""AFC Progress ROC 6"" #(lf) */#(lf) #(lf) FROM REGISTER a    #(lf)-- WHERE INSTR(a.""WPNO"", a.""ACTIVITY CODE"")>0#(lf) order by 1#(lf) )#(lf)  #(lf)#(lf) select #(lf) ""FIWPOBID"",#(lf) ""FIWPUID"",#(lf)""PROJECT"",#(lf)""TASK NO"",#(lf)""JOB NO"",#(lf)""ACTIVITY CODE"",#(lf)""DISCIPLINE"",#(lf)""ACTIVITY ID"",#(lf)""WPNO"",#(lf)""WP DESCRIPTION"",#(lf)""WP_REVNO"",#(lf)""ACTIVITY ID DESCRIPTION"",#(lf)""AFC Hrs"",#(lf)""WP Hrs"",#(lf)""AFC WP DELTA Hrs"",#(lf)""AFC Progress"",#(lf)""AFC Earned Hrs"",#(lf)ROUND(""AFC Earned Hrs"" - (""WP Progress"" * ""WP Hrs""), 4) as ""AFC WP Earned Delta Hrs"",#(lf)""AFC WP Progress Delta"",#(lf)#(lf)""WP Progress"",#(lf)ROUND(""WP Progress"" * ""WP Hrs"" ,4) as ""WP Earned Hrs"",#(lf)#(lf)""WP Components Qty Planned"",#(lf)""WP Components Qty Complete"",#(lf)""PLAN_UNITS"",#(lf)""COMPLETED_UNITS"",#(lf)""RATEUOM"",#(lf)""WP PURPOSE"",#(lf)""WP Last Week Progress"",#(lf)""WP Last Week Earned"",#(lf)""WP Last Week Weekly Earned"",#(lf)""WP Weekly Progress"",#(lf)CASE WHEN ""AFC Hrs"" < ""WP Hrs"" THEN ""WP Progress"" * ""WP Hrs""  ELSE ""WP Earned Hrs"" END  - ""WP Last Week Earned"" AS ""WP Weekly Earned"",#(lf)""WP Components Count Complete"",#(lf)""WP Components Count Planned"",#(lf)""AREA"",#(lf)""STATUS"",#(lf)""WP Revision Date"",#(lf)""WP Receive Date"",#(lf)""WP Last Progress By"",#(lf)""WP Last Progress Date"",#(lf)""WP Creation User"",#(lf)""WP Creation Date"",#(lf)""Foreman"",#(lf)""General Foreman"",#(lf)""IWP Issued By"",#(lf)""WP Planned Start Date"",#(lf)""WP Planned Finish Date"",#(lf)""WP Actual Start Date"",#(lf)""WP Actual Finish Date"",#(lf)""L3 Forecast Start Date"",#(lf)""L3 Forecast Finish Date"",#(lf)""L3 Baseline Start Date"",#(lf)""L3 Baseline Finish Date"",#(lf)""ROC 1"",#(lf)""ROC 2"",#(lf)""ROC 3"",#(lf)""ROC 4"",#(lf)""ROC 5"",#(lf)""ROC 6"",#(lf)""ROC 7"",#(lf)""ROC 8"",#(lf)""ROC Weightage 1"",#(lf)""ROC Weightage 2"",#(lf)""ROC Weightage 3"",#(lf)""ROC Weightage 4"",#(lf)""ROC Weightage 5"",#(lf)""ROC Weightage 6"",#(lf)""ROC Weightage 7"",#(lf)""ROC Weightage 8"",#(lf)#(lf)""WP Hrs ROC 1"",#(lf)""WP Hrs ROC 2"",#(lf)""WP Hrs ROC 3"",#(lf)""WP Hrs ROC 4"",#(lf)""WP Hrs ROC 5"",#(lf)""WP Hrs ROC 6"",#(lf)""WP Hrs ROC 7"",#(lf)""WP Hrs ROC 8"",#(lf)#(lf)""WP Earned Hrs ROC 1"",#(lf)""WP Earned Hrs ROC 2"",#(lf)""WP Earned Hrs ROC 3"",#(lf)""WP Earned Hrs ROC 4"",#(lf)""WP Earned Hrs ROC 5"",#(lf)""WP Earned Hrs ROC 6"",#(lf)""WP Earned Hrs ROC 7"",#(lf)""WP Earned Hrs ROC 8"",#(lf)#(lf)""WP Progress ROC 1"",#(lf)""WP Progress ROC 2"",#(lf)""WP Progress ROC 3"",#(lf)""WP Progress ROC 4"",#(lf)""WP Progress ROC 5"",#(lf)""WP Progress ROC 6"",#(lf)""WP Progress ROC 7"",#(lf)""WP Progress ROC 8"",#(lf)#(lf)""Qty Planned 1"",#(lf)""Qty Planned 2"",#(lf)""Qty Planned 3"",#(lf)""Qty Planned 4"",#(lf)""Qty Planned 5"",#(lf)""Qty Planned 6"",#(lf)""Qty Planned 7"",#(lf)""Qty Planned 8"",#(lf)#(lf)""Qty Completed 1"",#(lf)""Qty Completed 2"",#(lf)""Qty Completed 3"",#(lf)""Qty Completed 4"",#(lf)""Qty Completed 5"",#(lf)""Qty Completed 6"",#(lf)""Qty Completed 7"",#(lf)""Qty Completed 8"",#(lf)#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 1""  ELSE ROUND((""WP Earned Hrs ROC 1"")/ (""AFC Hrs"" * nullif(""ROC Weightage 1"",0)),2) END as ""AFC Progress ROC 1"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 2""  ELSE ROUND((""WP Earned Hrs ROC 2"")/ (""AFC Hrs"" * nullif(""ROC Weightage 2"",0)),2) END as ""AFC Progress ROC 2"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 3""  ELSE ROUND((""WP Earned Hrs ROC 3"")/ (""AFC Hrs"" * nullif(""ROC Weightage 3"",0)),2) END as ""AFC Progress ROC 3"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 4""  ELSE ROUND((""WP Earned Hrs ROC 4"")/ (""AFC Hrs"" * nullif(""ROC Weightage 4"",0)),2) END as ""AFC Progress ROC 4"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 5""  ELSE ROUND((""WP Earned Hrs ROC 5"")/ (""AFC Hrs"" * nullif(""ROC Weightage 5"",0)),2) END as ""AFC Progress ROC 5"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 6""  ELSE ROUND((""WP Earned Hrs ROC 6"")/ (""AFC Hrs"" * nullif(""ROC Weightage 6"",0)),2) END as ""AFC Progress ROC 6"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 7""  ELSE ROUND((""WP Earned Hrs ROC 7"")/ (""AFC Hrs"" * nullif(""ROC Weightage 7"",0)),2) END as ""AFC Progress ROC 7"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 8""  ELSE ROUND((""WP Earned Hrs ROC 8"")/ (""AFC Hrs"" * nullif(""ROC Weightage 8"",0)),2) END as ""AFC Progress ROC 8"",#(lf)#(lf)(""AFC Hrs"" * ""ROC Weightage 1"") as ""AFC Hrs ROC 1"",#(lf)(""AFC Hrs"" * ""ROC Weightage 2"") as ""AFC Hrs ROC 2"",#(lf)(""AFC Hrs"" * ""ROC Weightage 3"") as ""AFC Hrs ROC 3"",#(lf)(""AFC Hrs"" * ""ROC Weightage 4"") as ""AFC Hrs ROC 4"",#(lf)(""AFC Hrs"" * ""ROC Weightage 5"") as ""AFC Hrs ROC 5"",#(lf)(""AFC Hrs"" * ""ROC Weightage 6"") as ""AFC Hrs ROC 6"", #(lf)(""AFC Hrs"" * ""ROC Weightage 7"") as ""AFC Hrs ROC 7"",#(lf)(""AFC Hrs"" * ""ROC Weightage 8"") as ""AFC Hrs ROC 8"",#(lf)#(lf)#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 1""  ELSE (""WP Earned Hrs ROC 1"")/ (""AFC Hrs"" * nullif(""ROC Weightage 1"",0)) END * (""AFC Hrs"" * nullif(""ROC Weightage 1"",0)) as ""AFC Earned ROC 1"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 2""  ELSE (""WP Earned Hrs ROC 2"")/ (""AFC Hrs"" * nullif(""ROC Weightage 2"",0)) END * (""AFC Hrs"" * nullif(""ROC Weightage 2"",0)) as ""AFC Earned ROC 2"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 3""  ELSE (""WP Earned Hrs ROC 3"")/ (""AFC Hrs"" * nullif(""ROC Weightage 3"",0)) END * (""AFC Hrs"" * nullif(""ROC Weightage 3"",0)) as ""AFC Earned ROC 3"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 4""  ELSE (""WP Earned Hrs ROC 4"")/ (""AFC Hrs"" * nullif(""ROC Weightage 4"",0)) END * (""AFC Hrs"" * nullif(""ROC Weightage 4"",0)) as ""AFC Earned ROC 4"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 5""  ELSE (""WP Earned Hrs ROC 5"")/ (""AFC Hrs"" * nullif(""ROC Weightage 5"",0)) END * (""AFC Hrs"" * nullif(""ROC Weightage 5"",0)) as ""AFC Earned ROC 5"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 6""  ELSE (""WP Earned Hrs ROC 6"")/ (""AFC Hrs"" * nullif(""ROC Weightage 6"",0)) END * (""AFC Hrs"" * nullif(""ROC Weightage 6"",0)) as ""AFC Earned ROC 6"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 7""  ELSE (""WP Earned Hrs ROC 7"")/ (""AFC Hrs"" * nullif(""ROC Weightage 7"",0)) END * (""AFC Hrs"" * nullif(""ROC Weightage 7"",0)) as ""AFC Earned ROC 7"",#(lf)CASE WHEN ""AFC Hrs"" <= ""WP Hrs"" THEN ""WP Progress ROC 8""  ELSE (""WP Earned Hrs ROC 8"")/ (""AFC Hrs"" * nullif(""ROC Weightage 8"",0)) END * (""AFC Hrs"" * nullif(""ROC Weightage 8"",0)) as ""AFC Earned ROC 8"",#(lf)#(lf)G1_QTYCOMPLETE as ""QTY COMPLETE ROC 1"",#(lf)G2_QTYCOMPLETE as ""QTY COMPLETE ROC 2"",#(lf)G3_QTYCOMPLETE as ""QTY COMPLETE ROC 3"",#(lf)G4_QTYCOMPLETE as ""QTY COMPLETE ROC 4"",#(lf)G5_QTYCOMPLETE as ""QTY COMPLETE ROC 5"",#(lf)G6_QTYCOMPLETE as ""QTY COMPLETE ROC 6"",#(lf)G7_QTYCOMPLETE as ""QTY COMPLETE ROC 7"",#(lf)G8_QTYCOMPLETE as ""QTY COMPLETE ROC 8"",#(lf)""WEIGHTAGE"" ,""RESOURCECODE"",""WORKPHASE"",""PROGRESSGROUPING""#(lf) from FINAL#(lf) #(lf)#(lf)"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

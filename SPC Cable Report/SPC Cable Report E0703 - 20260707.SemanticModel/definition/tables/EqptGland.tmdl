@@ -1,0 +1,499 @@
+table EqptGland
+	lineageTag: 08a88df4-deb2-4fe0-b44f-aa574be3045e
+
+	measure 'Count of Glanding From Comp Date plus Count of Glanding To Comp Date 2' =
+			
+			COUNTA('EqptGland'[Glanding From Comp Date]) + COUNTA('EqptGland'[Glanding To Comp Date])
+		formatString: #,0
+		lineageTag: 5145a813-a59b-4124-b4c1-615fd0d1b205
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalAddition"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Count of Glanding From Comp Date plus Count of Glanding To Comp Date 2 minus Count of TAGID' =
+			
+			[Count of Glanding From Comp Date plus Count of Glanding To Comp Date 2] - COUNTA('EqptGland'[TAGID])
+		formatString: #,0
+		lineageTag: 017ca086-596d-4335-8113-4a3897522840
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Count of Glanding From Comp Date plus Count of Glanding To Comp Date 2 x Count of TAGID' =
+			
+			[Count of Glanding From Comp Date plus Count of Glanding To Comp Date 2] / COUNTA('EqptGland'[TAGID])*100
+		formatString: #,0
+		lineageTag: 784ff876-2724-4c61-82da-d237d679542f
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalMultiplication"
+				}
+
+		changedProperty = FormatString
+
+	measure 'FromTERMINATION plus ToTERMINATION' =
+			
+			SUM('EqptGland'[FromTERMINATION]) + SUM('EqptGland'[ToTERMINATION])
+		lineageTag: 18830508-7e25-4636-b923-286bf011df55
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalAddition"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FromTERMINATION plus ToTERMINATION minus Count of TAGID' =
+			
+			[FromTERMINATION plus ToTERMINATION] - COUNTA('EqptGland'[TAGID])
+		formatString: #,0
+		lineageTag: 557b4b70-67b9-47bf-b8f8-624eca8a5e41
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'FromTERMINATION plus ToTERMINATION x Count of TAGID' =
+			
+			[FromTERMINATION plus ToTERMINATION] * COUNTA('EqptGland'[TAGID])/100
+		lineageTag: 820a4e46-509d-47e9-a72e-63016a550247
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalMultiplication"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FromTERMINATION plus ToTERMINATION divided by Count of TAGID 2' =
+			
+			DIVIDE([FromTERMINATION plus ToTERMINATION], COUNTA('EqptGland'[TAGID]))
+		lineageTag: 6e6394e0-d277-4104-8772-5a752efa73c9
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FromTERMINATION plus ToTERMINATION divided by Count of TAGID 3' =
+			
+			DIVIDE([FromTERMINATION plus ToTERMINATION], COUNTA('EqptGland'[TAGID]))
+		lineageTag: c060aaf8-4b14-4523-aecb-a15f63dbb58b
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DECKNAME
+		dataType: string
+		lineageTag: 3ee16d5e-4072-47fe-a292-710497e46643
+		summarizeBy: none
+		sourceColumn: DECKNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column GROUPCATEGORYL
+		dataType: string
+		lineageTag: e2a48ee2-00f8-4b26-8c61-009639e5a6ff
+		summarizeBy: none
+		sourceColumn: GROUPCATEGORYL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CORRECTEDTAG
+		dataType: string
+		lineageTag: 079b70ee-050f-4ad0-8e26-cf0ac1266c37
+		summarizeBy: none
+		sourceColumn: CORRECTEDTAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gland
+		dataType: int64
+		formatString: 0
+		lineageTag: 736ccfc2-d619-4e51-888a-ed8f11772413
+		summarizeBy: none
+		sourceColumn: Gland
+
+		annotation SummarizationSetBy = User
+
+	column Completed
+		dataType: double
+		formatString: 0
+		lineageTag: af140b77-932c-4c35-9182-46cb794804c4
+		summarizeBy: sum
+		sourceColumn: Completed
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column From/To
+		dataType: string
+		lineageTag: 363afa84-45c1-4e9f-9dec-7b20c3f31b0b
+		summarizeBy: none
+		sourceColumn: From/To
+
+		annotation SummarizationSetBy = Automatic
+
+	column Progress
+		dataType: string
+		lineageTag: 63010253-22f1-410a-a168-f11fca506d3c
+		summarizeBy: none
+		sourceColumn: Progress
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Termination Completed'
+		dataType: int64
+		lineageTag: 75c1733b-8a3b-451b-ae1a-087be3ade2ad
+		summarizeBy: sum
+		sourceColumn: Termination Completed
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Testing Completed'
+		dataType: int64
+		formatString: 0
+		lineageTag: e3bfacf8-77b6-4082-b5c4-d2309b80cb40
+		summarizeBy: sum
+		sourceColumn: Testing Completed
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAGID
+		dataType: string
+		lineageTag: 031d8d05-607a-401b-81ba-36f037e939be
+		summarizeBy: none
+		sourceColumn: TAGID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromTag
+		dataType: string
+		lineageTag: 1bd07c69-c1c8-4ce1-b06b-5959a71863cb
+		summarizeBy: none
+		sourceColumn: FromTag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Glanding From Comp Date'
+		dataType: string
+		lineageTag: ed445c0a-d9d7-4441-b260-48e803ede58a
+		summarizeBy: none
+		sourceColumn: Glanding From Comp Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToTag
+		dataType: string
+		lineageTag: a7d0ce74-71d6-4ba5-a949-b8a7fa5aec55
+		summarizeBy: none
+		sourceColumn: ToTag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Glanding To Comp Date'
+		dataType: string
+		lineageTag: d9084d1a-3397-45ef-9ecb-8f7ef8a1bb0a
+		summarizeBy: none
+		sourceColumn: Glanding To Comp Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromTERMINATION
+		dataType: double
+		lineageTag: 4cf389d6-2d5b-4dd8-8c90-0303495f8788
+		summarizeBy: sum
+		sourceColumn: FromTERMINATION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ToTERMINATION
+		dataType: double
+		lineageTag: 5f4e5692-a669-4e2e-8f45-e3739d2c56c3
+		summarizeBy: sum
+		sourceColumn: ToTERMINATION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TESTED
+		dataType: int64
+		lineageTag: 18d52545-7404-43b0-b08b-14e3bca6afb0
+		summarizeBy: sum
+		sourceColumn: TESTED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PIMS CERTID' = LOOKUPVALUE(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[CertID_01],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno],EqptGland[CORRECTEDTAG])
+		formatString: 0
+		lineageTag: d0397ecf-7fa2-40be-b22f-e1079e57ea32
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PIMS SUBSYSTEM' = LOOKUPVALUE(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno],EqptGland[CORRECTEDTAG])
+		lineageTag: 79605c39-82aa-40a8-ae0f-06b319380186
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PIMS SUBSYSTEM DESC' = LOOKUPVALUE(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[SystemDesc_01],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno],EqptGland[CORRECTEDTAG])
+		lineageTag: c967cfad-8719-46bc-a00b-0a76516a2080
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PIMS CERT PROGRESS' = LOOKUPVALUE(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[Actual CertID_01],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno],EqptGland[CORRECTEDTAG])
+		formatString: 0
+		lineageTag: 446985a2-a32e-40e1-8b36-cae3210b10c9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PIMS SUBSYTEM CABLE TAGID' = LOOKUPVALUE(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno],EqptGland[TAGID])
+		lineageTag: 4ebf7d2c-c110-4ef4-9cf8-11f77be6f752
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DECK LEVEL' = LOOKUPVALUE(Query1[CableAssociatedTo],Query1[TAGID],EqptGland[TAGID])
+		lineageTag: c77959da-f524-407d-b551-f20fb02f878f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column RoomNo
+		dataType: string
+		lineageTag: a3ffdbf6-4dda-4d6b-98c6-131770d6d5cb
+		summarizeBy: none
+		sourceColumn: RoomNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PIMS SUBSYTEM EQUIPMENT TAGID' = LOOKUPVALUE(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno],EqptGland[CORRECTEDTAG])
+		lineageTag: 57d76fef-88c5-47b6-afb3-e7b25963e476
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pulled Comp Date'
+		dataType: string
+		lineageTag: b4b65447-c914-418d-abef-c124308b52e8
+		summarizeBy: none
+		sourceColumn: Pulled Comp Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PIMS SUBSYSTEM+DESC' = LOOKUPVALUE(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[SubsystemandDesc_01],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno],EqptGland[CORRECTEDTAG])
+		lineageTag: 1a4d06a0-8cbe-4447-aeb9-93280e657744
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PIMS COMPONENT DESC' = LOOKUPVALUE(aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[Description],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno],EqptGland[CORRECTEDTAG])
+		lineageTag: 6ae1aeec-027a-43e5-b728-53bef8dae2a5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EQUIPMENT PROGRESS INSTALLED' = IFERROR(LOOKUPVALUE('Equipment Detail'[INSTALLED Comp Date],'Equipment Detail'[FromCorrectedTag],EqptGland[CORRECTEDTAG]),BLANK())
+		lineageTag: 668f7193-bcea-44bc-b569-dae4dfcb58e3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column EQUIPMENT+DESC = EqptGland[CORRECTEDTAG]& "_" & EqptGland[PIMS COMPONENT DESC]
+		lineageTag: e140dd7b-f4e9-49fa-99cb-82549d326417
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TERMINATION FROM' = LOOKUPVALUE('Query1'[Termination From Comp Date],'Query1'[TAGID],EqptGland[TAGID])
+		dataType: string
+		lineageTag: bfb30990-dfaf-4d96-b157-2206ae089c68
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TERMINATION TO' = LOOKUPVALUE('Query1'[Termination To Comp Date],'Query1'[TAGID],EqptGland[TAGID])
+		dataType: string
+		lineageTag: 71d58072-c650-4c4f-8ba0-8cba78859147
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column TESTED1 = LOOKUPVALUE('Query1'[Testing Comp Date],'Query1'[TAGID],EqptGland[TAGID])
+		dataType: string
+		lineageTag: dfb699ea-8f69-4187-887c-b50ca7c48e5e
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column TERMC = IF([From/To]= "From",[TERMINATION FROM],[TERMINATION TO])
+		lineageTag: b1b8d321-c161-4977-92ec-46f3df8d911c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GLANDED FROM1' = LOOKUPVALUE('Query1'[Glanding From Comp Date],'Query1'[TAGID],EqptGland[TAGID])
+		dataType: string
+		lineageTag: 703941dd-c435-4a29-a6ba-1e8abacb2797
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GLANDED TO1' = LOOKUPVALUE('Query1'[Glanding To Comp Date],'Query1'[TAGID],EqptGland[TAGID])
+		dataType: string
+		lineageTag: 7d043e46-2817-4dfc-9708-d644c95aa61c
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLANDC = IF([From/To]= "From",[GLANDED FROM1],[GLANDED TO1])
+		lineageTag: f35cdb26-7c33-40c0-8a8a-356d5d213ee1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column TESTEDC = IF([From/To]= "From",[TESTED1],BLANK())
+		dataType: string
+		lineageTag: 5fe6ed46-d96c-4546-b1a6-ad179ca0fb97
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLandWPFromIssued = LOOKUPVALUE('Query1'[GLANDING FROM IWP NO],'Query1'[TAGID],EqptGland[TAGID])
+		dataType: string
+		lineageTag: fdc4ba7d-4266-4ccf-b575-82f28e953a21
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLandWPToIssued = LOOKUPVALUE('Query1'[GLANDING TO IWP NO],'Query1'[TAGID],EqptGland[TAGID])
+		dataType: string
+		lineageTag: 4c5d2e4c-a2cb-45d3-8b9a-758e15e6af7d
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLANDWPISSUED = IF([From/To]= "From",[GLandWPFromIssued],[GLandWPToIssued])
+		lineageTag: a3241cd9-15fa-401e-860f-2b50e441db37
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column TermWPFromIssued = LOOKUPVALUE('Query1'[Termination From IWP No],'Query1'[TAGID],EqptGland[TAGID])
+		lineageTag: 1797e625-37b2-49b6-8e84-c00ef55dce7a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column TermWPToIssued = LOOKUPVALUE('Query1'[Termination To IWP No],'Query1'[TAGID],EqptGland[TAGID])
+		lineageTag: fe90c79a-631d-4c70-bf3f-767067b7aded
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column TERMWPISSUED = IF([From/To]= "From",[TermWPFromIssued],[TermWPToIssued])
+		lineageTag: 97111308-0465-4409-9a72-91c19f7f5b66
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column CorrectedtagRegister = LOOKUPVALUE('Equipment Detail'[FromCorrectedTag],'Equipment Detail'[TAGID],EqptGland[CORRECTEDTAG])
+		lineageTag: 568c70b6-896e-4c44-9ca8-74487a921372
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Correctedfrom = IF([From/To]= "From",[CORRECTEDTAG],[CORRECTEDTAG])
+		lineageTag: acb5bb77-1abc-4282-9dc6-ca868d84d382
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition EqptGland-67d98791-9cd0-4d91-9a3b-8c3fc7a88fc1 = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({FromGlandCount, ToGlandCount}),
+				    #"Filtered Rows" = Table.SelectRows(Source, each true),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Gland", Int64.Type}, {"TESTED", Int64.Type}}),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Changed Type", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				in
+				    #"Removed Blank Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

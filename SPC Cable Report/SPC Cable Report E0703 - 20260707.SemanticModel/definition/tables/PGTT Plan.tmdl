@@ -1,0 +1,119 @@
+table 'PGTT Plan'
+	lineageTag: e59bbbfd-d95f-45c3-8399-3761323d2532
+
+	measure 'MAX DATE' = MAX('PGTT Plan'[Plan Date])
+		lineageTag: 46cd4d1d-ca85-40d4-a7a8-0a1297a12075
+
+	measure 'MIN DATE' = MIN('PGTT Plan'[Plan Date])
+		lineageTag: be85c995-cff4-4413-9f28-6dc8a5c16ee9
+
+	column Item
+		dataType: string
+		lineageTag: 534545ec-6238-4ca6-b3d6-8aceea02b80e
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAGID
+		dataType: string
+		lineageTag: 27f04944-309b-4d19-a8d9-7c3da60a8705
+		summarizeBy: none
+		sourceColumn: TAGID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 483263b8-c14f-445f-bf71-771705a472f5
+		summarizeBy: none
+		sourceColumn: Plan Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'From Tag'
+		dataType: string
+		lineageTag: 1e53af66-7f33-4531-8acd-589056abfc6e
+		summarizeBy: none
+		sourceColumn: From Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Tag'
+		dataType: string
+		lineageTag: 1b69e9cc-395d-45b3-9613-b5392999364c
+		summarizeBy: none
+		sourceColumn: To Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBSYSTEM
+		dataType: string
+		lineageTag: 77313eac-74df-414a-b589-11cb38bad70b
+		summarizeBy: none
+		sourceColumn: SUBSYSTEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SUBSYSTEM DESCRIPTION'
+		dataType: string
+		lineageTag: ccc1927d-95bf-4623-87e0-374e2d0f0964
+		summarizeBy: none
+		sourceColumn: SUBSYSTEM DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DECKNAME
+		dataType: string
+		lineageTag: 229e7124-0354-4570-9abf-9b0cd1d92113
+		summarizeBy: none
+		sourceColumn: DECKNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTLENGTH
+		dataType: double
+		lineageTag: 4a6ed0f6-498b-4e8f-af39-3fbcb42cd541
+		summarizeBy: sum
+		sourceColumn: ESTLENGTH
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Week_Ending = (if(WEEKDAY('PGTT Plan'[Plan Date]) < 6,('PGTT Plan'[Plan Date]+5) - WEEKDAY('PGTT Plan'[Plan Date]),(('PGTT Plan'[Plan Date]+5) - WEEKDAY('PGTT Plan'[Plan Date]))+7))
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ce4ff04b-1e4b-4630-b811-5397970ebdf3
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'PGTT Plan' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\E0703\Borwin6\14 - PBI Report\EandI\Cable PGTT Plan.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Filtered Rows" = Table.SelectRows(#"Promoted Headers", each ([Plan Date] <> null) and ([DECKNAME] <> "PL_MRJN_3011_Dk")),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Filtered Rows", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Blank Rows", {"TAGID"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

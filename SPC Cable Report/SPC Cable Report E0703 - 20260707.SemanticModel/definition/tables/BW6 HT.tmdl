@@ -1,0 +1,78 @@
+table 'BW6 HT'
+	lineageTag: 568b8850-a70a-462c-b119-3c0980ca9d8c
+
+	measure 'Hydrotest Comp%' = Count('BW6 HT'[Hydrotest Completed])/Count('BW6 HT'[Test Pack])
+		formatString: 0%;-0%;0%
+		lineageTag: 37e68066-fc17-4f4e-a094-dba7e99de0fe
+
+	measure 'Reinst Comp%' = Count('BW6 HT'[Reinst. Accepted])/Count('BW6 HT'[Test Pack])
+		formatString: 0%;-0%;0%
+		lineageTag: d85f7642-8190-451f-b7cb-76b73b54f610
+
+	column Platform
+		dataType: string
+		lineageTag: 50cb3fa5-4b8b-4e58-9bb5-5c1804a6e732
+		summarizeBy: none
+		sourceColumn: Platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub-SystemCode
+		dataType: string
+		lineageTag: a47efe46-0f70-4fcc-b769-d94b20a522ec
+		summarizeBy: none
+		sourceColumn: Sub-SystemCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Test Pack'
+		dataType: string
+		lineageTag: a72564a4-14d8-472b-b510-5dd51385ccd7
+		summarizeBy: none
+		sourceColumn: Test Pack
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hydrotest Completed'
+		dataType: string
+		lineageTag: 4b72dc71-4a9f-476b-aa91-ad3338ef1bd0
+		summarizeBy: none
+		sourceColumn: Hydrotest Completed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reinst. Accepted'
+		dataType: string
+		lineageTag: 4e679b83-4909-4d61-8b6e-7f303b483111
+		summarizeBy: none
+		sourceColumn: Reinst. Accepted
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subsystem = 'BW6 HT'[Platform]&"-"&'BW6 HT'[Sub-SystemCode]
+		lineageTag: 45a4bbb6-c278-4d44-a7b4-8113f50f72d4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Testpack Count' = If(Left('BW6 HT'[Test Pack],2) = "TP",1,0)
+		formatString: 0
+		lineageTag: f67b5b53-ca3f-42a7-8f03-fafb83d5ef6e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'BW6 HT' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\dubai\group\DEPT\FAB\Smart Construction\Reports\Power Bi\Cable Report\Hydrotest Skyline\BW6_Hydrotest_Skyline.xlsx"), null, true),
+				    #"BW6 HT_Sheet" = Source{[Item="BW6 HT",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"BW6 HT_Sheet", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,856 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 938.908937281397,
+        "y": 131.94888154016556
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 939.17189777667625,
+            "y": 611.01632039491335
+          },
+          "nodeIndex": "Query1",
+          "size": {
+            "height": 606.1656050955412,
+            "width": 454.84076433121015
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 1745,
+            "y": 104.85032085542855
+          },
+          "nodeIndex": "Cable Tray",
+          "nodeLineageTag": "f6539c1c-c7cb-45a7-8d20-2a7b367d608e",
+          "size": {
+            "height": 735.96226042375974,
+            "width": 308.97095305698258
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 2120.4,
+            "y": 104.85032085542855
+          },
+          "nodeIndex": "CableTrayScope",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 1434.606657202243,
+            "y": 546.49738977292611
+          },
+          "nodeIndex": "Discipline",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 1548.0774618070584,
+            "y": 718.24902768528636
+          },
+          "nodeIndex": "Weekly QTY Plan",
+          "size": {
+            "height": 189.58823277062561,
+            "width": 124
+          },
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 2119.1671666211168,
+            "y": 785.0413313178708
+          },
+          "nodeIndex": "Calendar",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 1538.2028832446194,
+            "y": 1244.4088073215644
+          },
+          "nodeIndex": "Date Now",
+          "nodeLineageTag": "6bd33bed-b4ab-4861-af66-eaaacd0fe55e",
+          "size": {
+            "height": 284.75744730096358,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 545.22899156541109,
+            "y": 584.66442042011715
+          },
+          "nodeIndex": "EqptGland",
+          "nodeLineageTag": "08a88df4-deb2-4fe0-b44f-aa574be3045e",
+          "size": {
+            "height": 350.4778543871596,
+            "width": 234
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 3110.7529310825025,
+            "y": 520.59833326233218
+          },
+          "nodeIndex": "Equipment Detail",
+          "nodeLineageTag": "d2eefb46-52a7-4c0b-95c5-7e30b588d88c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 3825.3255698897283,
+            "y": 103.48721261802886
+          },
+          "nodeIndex": "FX_COMPU Table",
+          "nodeLineageTag": "2cdde0a3-8728-4151-b94f-8550b8da45b3",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 157.05140366146304,
+            "y": 731.8801100592832
+          },
+          "nodeIndex": "StaticTbl_ItemType",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 512.05835776804088,
+            "y": 977.2395927912263
+          },
+          "nodeIndex": "Subsystem-ItemType",
+          "size": {
+            "height": 369.02542143756091,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 4039.0485963385372,
+            "y": 710.02571590478863
+          },
+          "nodeIndex": "PGTT Plan",
+          "nodeLineageTag": "e59bbbfd-d95f-45c3-8399-3761323d2532",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 3544.4198364228182,
+            "y": 523.5710990720429
+          },
+          "nodeIndex": "Calendar Weekly",
+          "nodeLineageTag": "cd753ea2-c2d0-4a16-b64e-5cae9c9450fe",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1240.7669152173519,
+            "y": 104.85032085542855
+          },
+          "nodeIndex": "Cable Tray (Progress)",
+          "nodeLineageTag": "62ed8e46-a97b-4a22-aaae-bff91e631ec0",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 24
+        },
+        {
+          "location": {
+            "x": 773.62542490562146,
+            "y": 1234.1510006604526
+          },
+          "nodeIndex": "qry_eqp_detail",
+          "nodeLineageTag": "1be42ebe-58d7-4b47-b0b9-1a5bf4840f01",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 25
+        },
+        {
+          "location": {
+            "x": 4165.9971926770741,
+            "y": 873.82310327511584
+          },
+          "nodeIndex": "_mx_fltrs",
+          "nodeLineageTag": "dbaaa8de-91b3-41c8-a841-f6da06fcdbc8",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4292.9457890156109,
+            "y": 775.82310327511584
+          },
+          "nodeIndex": "qry_eqp_progress",
+          "nodeLineageTag": "0db9ede9-cebf-46b6-920c-e3c259dfcbf7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1275.5627421938104,
+            "y": 1294.7323369406067
+          },
+          "nodeIndex": "Kahit ano",
+          "nodeLineageTag": "ad6e9c94-bc95-41f4-9aaa-405b386119f5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2811.7857257432538,
+            "y": 344.07581651907321
+          },
+          "nodeIndex": "Cable Drum Allocation",
+          "nodeLineageTag": "b404f122-65f1-4911-9e43-100bc0bdc53c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5272.2774353688419,
+            "y": 661.28948626797921
+          },
+          "nodeIndex": "WP Level4 Report",
+          "nodeLineageTag": "76091271-532e-4739-b01d-ec81abc60857",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2502.8649853391739,
+            "y": 98.561369710755031
+          },
+          "nodeIndex": "PIMS_aviw_CMS_Web_ObjectsEvents",
+          "nodeLineageTag": "6b13a302-23f2-407f-90c4-9ef19b5530f5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3113.5374756942324,
+            "y": 106.74001913515313
+          },
+          "nodeIndex": "PIMS_aviw_CMS_Compl_PunchItems_CrossDomain",
+          "nodeLineageTag": "beaf8a8e-9db1-48a0-80f6-f47b73a9a9f1",
+          "size": {
+            "height": 300,
+            "width": 439.82934384735245
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5038.2774353688419,
+            "y": 594.86713728805671
+          },
+          "nodeIndex": "PIMS_aviw_CMS_Compl_ObjectsEventsChecklist",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4754.0959465473334,
+            "y": 627.71183524790183
+          },
+          "nodeIndex": "PIMS_aviw_CMS_Compl_SubSystems",
+          "nodeLineageTag": "8d78e53e-6845-476f-874a-deac0bd07098",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4469.8943853541477,
+            "y": 624.85224806765461
+          },
+          "nodeIndex": "PIMS_aviw_CMS_Compl_Systems",
+          "nodeLineageTag": "715f5843-eacb-4f3a-8e27-7ebba02304bc",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5556.2774353688419,
+            "y": 735.28948626797921
+          },
+          "nodeIndex": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain",
+          "nodeLineageTag": "8a6ea74e-f714-4601-b5d9-853d677c230f",
+          "size": {
+            "height": 196.98257183418957,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5840.2774353688419,
+            "y": 661.28948626797921
+          },
+          "nodeIndex": "Shared MC Target Dates by Susbsytem",
+          "nodeLineageTag": "a1147f5b-0a9c-4976-9d47-00a26a95010e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5967.2260317073788,
+            "y": 736.43389902299873
+          },
+          "nodeIndex": "Query1(for duplicate)",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6094.1746280459156,
+            "y": 720.90051815552783
+          },
+          "nodeIndex": "xrefdate_Last Refreshed Date",
+          "nodeLineageTag": "be1a5723-1c8e-4f93-8a97-3ee881218eef",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6378.1746280459156,
+            "y": 696.90051815552783
+          },
+          "nodeIndex": "PGTT Plan (Borwin)",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6662.1746280459156,
+            "y": 622.90051815552783
+          },
+          "nodeIndex": "Cable Grounding",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6946.1746280459156,
+            "y": 708.90051815552783
+          },
+          "nodeIndex": "SequenceNo",
+          "nodeLineageTag": "3ce5c7d9-a08d-4d26-8e25-690f0d5ee32c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7230.1746280459156,
+            "y": 622.90051815552783
+          },
+          "nodeIndex": "Previous Week Cable Report",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7514.1746280459156,
+            "y": 622.90051815552783
+          },
+          "nodeIndex": "Sub-System Target Date",
+          "nodeLineageTag": "c871238e-9169-4144-92c5-4172a2cd3a58",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7798.1746280459156,
+            "y": 622.90051815552783
+          },
+          "nodeIndex": "PGTT GLAND Plan",
+          "nodeLineageTag": "9440c830-45d0-483d-b269-0b96add6921b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8082.1746280459156,
+            "y": 622.90051815552783
+          },
+          "nodeIndex": "PGTT TERM Plan",
+          "nodeLineageTag": "148f5157-2963-4109-afe1-ad896e871f32",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8366.1746280459156,
+            "y": 684.90051815552783
+          },
+          "nodeIndex": "PGTT TEST Plan",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8650.1746280459156,
+            "y": 622.90051815552783
+          },
+          "nodeIndex": "Cable Tray Register",
+          "nodeLineageTag": "8787c86b-bc5e-4d74-bd36-d7ae5bab0fcd",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8934.1746280459156,
+            "y": 672.90051815552783
+          },
+          "nodeIndex": "CorrectedtagRegister",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4647.6727080447763,
+            "y": 137.19898085745234
+          },
+          "nodeIndex": "BW6 HT",
+          "nodeLineageTag": "568b8850-a70a-462c-b119-3c0980ca9d8c",
+          "size": {
+            "height": 172.73783525200636,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6240.8522812045094,
+            "y": 166.13202736122213
+          },
+          "nodeIndex": "Hydro Reinst Test Progress",
+          "nodeLineageTag": "390d5cd4-d29e-49bd-9d7c-17ba71f3614b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 73.361745792662632,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 306
+          },
+          "nodeIndex": "Query1",
+          "nodeLineageTag": "55c8c206-ccbc-4a84-b178-53cbf6648e22",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 262,
+            "y": 500
+          },
+          "nodeIndex": "EqptGland",
+          "nodeLineageTag": "08a88df4-deb2-4fe0-b44f-aa574be3045e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 492,
+            "y": 530
+          },
+          "nodeIndex": "Cable Drum Allocation",
+          "nodeLineageTag": "b404f122-65f1-4911-9e43-100bc0bdc53c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 523,
+            "y": 0
+          },
+          "nodeIndex": "PIMS_aviw_CMS_Web_ObjectsEvents",
+          "size": {
+            "height": 152,
+            "width": 434
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 506,
+            "y": 197
+          },
+          "nodeIndex": "PIMS_aviw_CMS_Compl_PunchItems_CrossDomain",
+          "nodeLineageTag": "beaf8a8e-9db1-48a0-80f6-f47b73a9a9f1",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 305,
+            "y": 120
+          },
+          "nodeIndex": "WP Level4 Report",
+          "nodeLineageTag": "76091271-532e-4739-b01d-ec81abc60857",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 707,
+            "y": 188
+          },
+          "nodeIndex": "Cable Tray (Progress)",
+          "nodeLineageTag": "62ed8e46-a97b-4a22-aaae-bff91e631ec0",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 784,
+            "y": 582
+          },
+          "nodeIndex": "Cable Tray",
+          "nodeLineageTag": "f6539c1c-c7cb-45a7-8d20-2a7b367d608e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 12.200000762939453,
+            "y": -45
+          },
+          "nodeIndex": "PGTT Plan (Borwin)",
+          "nodeLineageTag": "ae2519b9-504b-4e30-ab4c-921d38014922",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1111,
+            "y": 589
+          },
+          "nodeIndex": "Cable Grounding",
+          "nodeLineageTag": "3e7ac202-b679-4330-8fdb-0c5f721aa641",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 998,
+            "y": 0
+          },
+          "nodeIndex": "SequenceNo",
+          "nodeLineageTag": "3ce5c7d9-a08d-4d26-8e25-690f0d5ee32c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1108,
+            "y": 181.59999084472656
+          },
+          "nodeIndex": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain",
+          "nodeLineageTag": "8a6ea74e-f714-4601-b5d9-853d677c230f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 1",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 569.20000076293945,
+            "y": 0
+          },
+          "nodeIndex": "Kahit ano",
+          "nodeLineageTag": "ad6e9c94-bc95-41f4-9aaa-405b386119f5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 876.20000076293945,
+            "y": 0
+          },
+          "nodeIndex": "qry_eqp_detail",
+          "nodeLineageTag": "1be42ebe-58d7-4b47-b0b9-1a5bf4840f01",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 362
+          },
+          "nodeIndex": "Query1",
+          "nodeLineageTag": "55c8c206-ccbc-4a84-b178-53cbf6648e22",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 331,
+            "y": 218
+          },
+          "nodeIndex": "PIMS_aviw_CMS_Compl_ObjectsEventsChecklist",
+          "nodeLineageTag": "83afd9ba-d17d-488f-890d-6a99d7f76c6f",
+          "size": {
+            "height": 300,
+            "width": 445
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 869,
+            "y": 320
+          },
+          "nodeIndex": "PIMS_aviw_CMS_Compl_SubSystems",
+          "nodeLineageTag": "8d78e53e-6845-476f-874a-deac0bd07098",
+          "size": {
+            "height": 300,
+            "width": 342
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 262,
+            "y": 613
+          },
+          "nodeIndex": "aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain",
+          "nodeLineageTag": "8a6ea74e-f714-4601-b5d9-853d677c230f",
+          "size": {
+            "height": 386,
+            "width": 482
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 903,
+            "y": 665
+          },
+          "nodeIndex": "Shared MC Target Dates by Susbsytem",
+          "nodeLineageTag": "a1147f5b-0a9c-4976-9d47-00a26a95010e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 677,
+            "y": 551
+          },
+          "nodeIndex": "Cable Drum Allocation",
+          "nodeLineageTag": "b404f122-65f1-4911-9e43-100bc0bdc53c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "EqptGland",
+          "nodeLineageTag": "08a88df4-deb2-4fe0-b44f-aa574be3045e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 2",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

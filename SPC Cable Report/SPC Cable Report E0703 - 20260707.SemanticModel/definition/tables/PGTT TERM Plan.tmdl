@@ -1,0 +1,155 @@
+table 'PGTT TERM Plan'
+	lineageTag: 148f5157-2963-4109-afe1-ad896e871f32
+
+	column 'Weekly Date'
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: ff501804-42d7-49dd-bfb6-285598df0843
+		summarizeBy: none
+		sourceColumn: Weekly Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Cable Term QTY'
+		dataType: double
+		formatString: 0
+		lineageTag: e82c1390-3158-4836-a61a-250e429fa3b5
+		summarizeBy: sum
+		sourceColumn: Cable Term QTY
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Cable Term Cumm QTY'
+		dataType: double
+		formatString: 0
+		lineageTag: 1cd6f105-58d1-487c-88aa-d076c3e14098
+		summarizeBy: sum
+		sourceColumn: Cable Term Cumm QTY
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Item
+		dataType: string
+		lineageTag: 80144932-f048-4568-acde-84f7357c2abf
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column TermFromCummActual =
+			VAR a = SUMX(FILTER('Previous Week Cable Report','Previous Week Cable Report'[Week Ending]='PGTT TERM Plan'[Weekly Date]),'Previous Week Cable Report'[Termination From Actual])
+			VAR B = SUM(Query1[Termination From Actual])
+			RETURN
+			IF('PGTT TERM Plan'[Weekly Date]='PGTT TERM Plan'[Current Week Ending],B,a)
+		formatString: 0
+		lineageTag: 4a3a293b-059d-4960-b0b6-533e281dffcb
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TermFrom Week Actual' = ```
+			VAR a ='PGTT TERM Plan'[TermFromCummActual]-sumx(FILTER('PGTT TERM Plan','PGTT TERM Plan'[Weekly Date]=EARLIER('PGTT TERM Plan'[Weekly Date])-7),'PGTT TERM Plan'[TermFromCummActual])
+			
+			RETURN 
+			IF('PGTT TERM Plan'[Weekly Date]>'PGTT TERM Plan'[Current Week Ending],0,a)
+			```
+		formatString: 0
+		lineageTag: 72054ccf-8a17-4986-9c65-a0114ce88d8b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Week Ending' = (if(WEEKDAY(today()) < 6,(today()+5) - WEEKDAY(today()),((today()+5) - WEEKDAY(today()))+7))
+		formatString: General Date
+		lineageTag: 9bd64028-a619-472e-8779-f7566fc3677d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Week' = if('PGTT TERM Plan'[Weekly Date]='PGTT TERM Plan'[Current Week Ending],1,0)
+		formatString: 0
+		lineageTag: fe59e664-5c17-44c3-8676-8adce7f92228
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prev Week' = if('PGTT TERM Plan'[Weekly Date]='PGTT TERM Plan'[Current Week Ending]-7,1,0)
+		formatString: 0
+		lineageTag: b55554c1-3cc8-4723-8bcf-a4c2055a9ca0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column TermToCummActual =
+			VAR a = SUMX(FILTER('Previous Week Cable Report','Previous Week Cable Report'[Week Ending]='PGTT TERM Plan'[Weekly Date]),'Previous Week Cable Report'[Termination To Actual])
+			VAR B = SUM(Query1[Termination To Actual])
+			RETURN
+			IF('PGTT TERM Plan'[Weekly Date]='PGTT TERM Plan'[Current Week Ending],B,a)
+		formatString: 0
+		lineageTag: 3add9494-9791-4313-8630-34007bf76bb5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOTALTermCummActual = ('PGTT TERM Plan'[TermFromCummActual])+('PGTT TERM Plan'[TermToCummActual])
+		formatString: 0
+		lineageTag: 2e92f4be-c0da-476c-b832-079815e44a50
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TermTo Week Actual' = ```
+			VAR a ='PGTT TERM Plan'[TermToCummActual]-sumx(FILTER('PGTT TERM Plan','PGTT TERM Plan'[Weekly Date]=EARLIER('PGTT TERM Plan'[Weekly Date])-7),'PGTT TERM Plan'[TermToCummActual])
+			
+			RETURN 
+			IF('PGTT TERM Plan'[Weekly Date]>'PGTT TERM Plan'[Current Week Ending],0,a)
+			```
+		formatString: 0
+		lineageTag: 5f883daa-826b-446a-9d67-687a24d40612
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOTALTermWeekActual = ('PGTT TERM Plan'[TermFrom Week Actual])+('PGTT TERM Plan'[TermTo Week Actual])
+		formatString: 0
+		lineageTag: 2bc47397-02c3-4baa-95ec-eedb629452d7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cumm plan total' = MAX('PGTT GLAND Plan'[Cable Cumm Gland QTY])
+		lineageTag: 5bfcfe10-854a-4e57-b62c-cd4a31ef4bc3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'PGTT TERM Plan' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Cable Report\PGTT Plan\PGTT Plan TERM.xlsx"), null, true),
+				    #"PGTT Plan TERM_Sheet" = Source{[Item="PGTT Plan TERM",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"PGTT Plan TERM_Sheet", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

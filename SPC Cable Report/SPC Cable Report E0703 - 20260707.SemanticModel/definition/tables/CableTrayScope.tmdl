@@ -1,0 +1,49 @@
+table CableTrayScope
+	lineageTag: 8c65b89e-2d44-4cc3-8534-8dca80e63c09
+
+	column DeckLevelAct
+		dataType: string
+		lineageTag: 1faffb89-7ecf-4cc5-932e-426e7088fb59
+		summarizeBy: none
+		sourceColumn: DeckLevelAct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desription
+		dataType: string
+		lineageTag: fc7a632d-1f8d-4ceb-870e-f59984205924
+		summarizeBy: none
+		sourceColumn: Desription
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scope
+		dataType: int64
+		formatString: #,0
+		lineageTag: 6a39efe2-a2e9-425c-b3bd-8e81c084686a
+		summarizeBy: sum
+		sourceColumn: Scope
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column UOM
+		dataType: string
+		lineageTag: fd349976-0089-4dbb-88cc-3c733e3c72db
+		summarizeBy: none
+		sourceColumn: UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CableTrayScope-12600852-30cc-4af8-807a-5e7214aa5f4b = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("rZhBT9tAEIX/yiqnIoG6u95d28fGIFo1VJYIJ+Cw4KWycGNkEST49bVyaGPExG9nuURWFH+efTPz/JTr60V1/kOs6xMlTs+qn1XoOj+I03D/uFTOSOkWx4t6aP/44VV8WfmmCcNXsR76hyNR+bsujNf+dfxNno0fq4vF7fFhotoRL8N9v2l2zDoMD/3gn0PzjmhKCnnh2w2jRJcrBIhXqKUs54n5xyUeifX27h8qMwjoYGn7OC1zihfe3hjaFdIiQFw7ZZybJ0La6QIB4dpNR7lOnjulnEWIEYOXlRoh6h3x/62i6l/CMH4l5++GpFcKqCNC+0xRQ/E9dC1He0nt/ASIS5/reR4knUQ4sHAU7erpKXDsXFlDHXSKjNh4Zale7COTxJuCYPWUIaaY/TpUpsCQuH5Z6Qgk09NJE+A5OoCL7y3F4S1Gne4nCgJG+Ak1ekl+QnGSZWP7ibPUm4LtJzqjtIv2E0dtK9NQ7F5lv76df4qhKAwZkSKsJZDsoFNkCDGix4XJ54lQi/cTEw3Ck4omxeO5sSscAsS1s6WcB0LSkS3g5WtyOT7Dk2kgrpyjDpzgyTSH48kTGteTC0OtBN+Sc6q3KRHvAAgWz0GOnFTZOxJc2uQ/BCopxqRZKh0vt23XtJvfCTGRoKWnxMvgm/Gg4mYrpXZi2ftnsfKbxHLxB8Sf4PYv", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [DeckLevelAct = _t, Desription = _t, Scope = _t, UOM = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"DeckLevelAct", type text}, {"Desription", type text}, {"Scope", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,274 @@
+table aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain
+	lineageTag: 8a6ea74e-f714-4601-b5d9-853d677c230f
+
+	measure 'CABLE ITR COMP. %' =
+			
+			DIVIDE(
+				SUM('aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain'[CABLE ITR COMP.]),
+				SUM('aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain'[Cable_01])
+			)
+		formatString: #,0%;-#,0%;#,0%
+		lineageTag: 00f1e620-4a6d-4dfc-879a-06cbc8dae15f
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'NON CABLE ITR COMP.%' =
+			
+			DIVIDE(
+				SUM('aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain'[NON CABLE ITR COMP.]),
+				SUM('aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain'[Equipment_01])
+			)
+		formatString: #,0%;-#,0%;#,0%
+		lineageTag: b9f001e6-e54a-47da-a6e1-9d94e25d7b03
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	column tagno
+		dataType: string
+		lineageTag: 8bbf3ed3-985d-44e4-96d9-f6e35ad3e4c9
+		summarizeBy: none
+		sourceColumn: tagno
+
+		annotation SummarizationSetBy = Automatic
+
+	column subsystem
+		dataType: string
+		lineageTag: d19149e6-b40b-46a0-af52-1f0bafd32083
+		summarizeBy: none
+		sourceColumn: subsystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column friendlyname
+		dataType: string
+		lineageTag: 78ff14eb-fd36-4b36-8847-f066fd2906e7
+		summarizeBy: none
+		sourceColumn: friendlyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column CertID_01 = COUNTAX(FILTER(PIMS_aviw_CMS_Web_ObjectsEvents,aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno]=PIMS_aviw_CMS_Web_ObjectsEvents[TagNo]),PIMS_aviw_CMS_Web_ObjectsEvents[CertID])
+		formatString: #,0
+		lineageTag: 9619213e-f506-4043-9414-cc1d3025f6a2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Cable_01 = IF(CONTAINSSTRING([friendlyname],"Cable"),[CertID_01],0)
+		formatString: #,0
+		lineageTag: 5ad5f6c4-34db-49b4-b429-cb270a578185
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Equipment_01 = IF(CONTAINSSTRING([friendlyname],"Equipment"),[CertID_01],0)
+		formatString: #,0
+		lineageTag: 8639594e-1f73-4430-b6fd-003d7da69ee9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column SystemDesc_01 = LOOKUPVALUE(PIMS_aviw_CMS_Compl_SubSystems[Description],PIMS_aviw_CMS_Compl_SubSystems[SubSystem],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		lineageTag: e64a8f51-c9ef-4f84-8efb-dab226b70e3e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual CertID_01' = COUNTAX(FILTER(PIMS_aviw_CMS_Web_ObjectsEvents,aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[tagno]=PIMS_aviw_CMS_Web_ObjectsEvents[TagNo]),PIMS_aviw_CMS_Web_ObjectsEvents[Actual])
+		formatString: 0
+		lineageTag: f427d00a-f33b-4545-adc0-1cc6a76e8ae2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column SystemTargetDate = LOOKUPVALUE('Shared MC Target Dates by Susbsytem'[Target MC Dates],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		formatString: dd-mmm-yy
+		lineageTag: 43e1e30f-6330-4634-9483-897913d57704
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column SubsystemandDesc_01 = aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem]& "_" & aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[SystemDesc_01]
+		lineageTag: 8090958e-2972-4adf-8483-a3c5162e128f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: eab6bd1f-9e17-42cc-8489-206a3e9b7f77
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column SystemDiscipline_01 = LOOKUPVALUE('Shared MC Target Dates by Susbsytem'[Discipline],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		lineageTag: 096da025-b935-40bb-9abd-f8ca0e9f249a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rebaseline MC Finish Dates_01' = LOOKUPVALUE('Sub-System Target Date'[Rebaseline MC Finish Dates],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: a08993bb-3cbd-45aa-972a-860e3b8c2850
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Target MC start' = LOOKUPVALUE('Sub-System Target Date'[Target MC start ],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: bc5e65bb-d364-483e-aa17-7e2be1dcfcc3
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Target MC Finish' = LOOKUPVALUE('Sub-System Target Date'[Target MC Finish],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 4c5060fc-7bc2-4319-8fa8-9d3a73bc929f
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Priority_01 = LOOKUPVALUE('Sub-System Target Date'[Priority],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		lineageTag: 9b2ebfe0-97aa-48bc-881b-723f32fdd282
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Constraints_01
+		type: calculated
+		dataType: string
+		lineageTag: 92270655-549b-43be-9399-943eb3ce3562
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Link = "https://mcdermott.pimshosting.com/cms-subsystems-details?Domain=E0703&Project=BW61&Subsystem="&aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem]
+		lineageTag: d0210fc3-25e6-4a69-b007-0709dcd0e2cd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner = LOOKUPVALUE('Sub-System Target Date'[System Owner],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		lineageTag: e386e4f9-2ba8-40ef-b912-b5cfd7e3d253
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Priority_02 = LOOKUPVALUE('Sub-System Target Date'[Offshore Priority],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		lineageTag: 490e7143-0265-420d-aa55-171e5b0870a0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disicipline_02 = ```
+			LOOKUPVALUE('Sub-System Target Date'[Discipline_1],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+			
+			```
+		lineageTag: e368101f-cebf-431a-8afd-84edfd60187c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NON CABLE ITR COMP.' = IF(CONTAINSSTRING([friendlyname],"Equipment"),[Actual CertID_01],0)
+		formatString: #,0
+		lineageTag: 878a974b-e67d-4647-8c99-3df7835f4ed5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CABLE ITR COMP.' = IF(CONTAINSSTRING([friendlyname],"Cable"),[Actual CertID_01],0)
+		formatString: #,0
+		lineageTag: ed9fd04d-7161-4c2e-9b99-370f0ae1d096
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status SS' = ```
+			IFERROR(LOOKUPVALUE('PIMS_aviw_CMS_Web_ObjectsEvents'[status],'PIMS_aviw_CMS_Web_ObjectsEvents'[SubSystem],'aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain'[subsystem],'PIMS_aviw_CMS_Web_ObjectsEvents'[SubSystem],"BW61-AA01-01"),"error")
+			
+			```
+		lineageTag: bd2ca1a5-98e4-4ce8-9eb7-794dc76775d2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Outstanding Checklists' = ```
+			LOOKUPVALUE(PIMS_aviw_CMS_Compl_SubSystems[OutstandingChecklists],PIMS_aviw_CMS_Compl_SubSystems[SubSystem],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+			
+			```
+		lineageTag: acc2815e-29ab-456c-9b94-0fc4fff96e0c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Checklists' = LOOKUPVALUE(PIMS_aviw_CMS_Compl_SubSystems[TotalChecklists],PIMS_aviw_CMS_Compl_SubSystems[SubSystem],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		lineageTag: 2e59e403-3723-4d4c-875a-0c81535aeb6c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FAB FOCUS' = LOOKUPVALUE('Sub-System Target Date'[FAB Focus],'Shared MC Target Dates by Susbsytem'[Subsystem No.],aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain[subsystem])
+		lineageTag: 55928a97-6452-413e-b4a3-0d8db81f8f3c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomain = m
+		mode: import
+		source =
+				let
+				    Source = PimsDataApi.Contents("https://mcdermott.pimshosting.com/"),
+				    CMSKey = Source{[Key="CMSKey"]}[Data],
+				    aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomainKey = CMSKey{[Key="aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomainKey"]}[Data],
+				    #"Invoked Functionaviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomainKey1" = aviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomainKey("tagno, subsystem, friendlyname,Description" ,"Max Records", "-1", null, null, null)
+				in
+				    #"Invoked Functionaviw_CMS_Compl_Objects_WithEngRegisterFriendlyName_CrossDomainKey1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

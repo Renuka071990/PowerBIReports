@@ -1,0 +1,30 @@
+table StaticTbl_ItemType
+	lineageTag: 5dca36e4-cbb6-4622-9ab5-f170cedd0d0a
+
+	column DeckName
+		dataType: string
+		lineageTag: 7d68bd96-f3e6-4c60-b094-6d901832ee26
+		summarizeBy: none
+		sourceColumn: DeckName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Type'
+		dataType: string
+		lineageTag: 200bf0af-b3e8-492f-be18-21705f3d410e
+		summarizeBy: none
+		sourceColumn: Item Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StaticTbl_ItemType-c9a465ce-e816-4ec4-9601-a597310ca391 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCvCJ9w3y8os3NjAyjHfJVtJRMjDUU3BOTMpJVQgozcnJzEtX0PDx1VSK1cGq2Aim2D0nMS8FrNovvxincmOY8pDUoty8xJLM/Dz8GkwQGopLcBlvQIrTDUhzugGpTjcg5PRYAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [DeckName = _t, #"Item Type" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"DeckName", type text}, {"Item Type", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

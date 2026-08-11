@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SPC Cable Report E0703 - 20260707"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e2cc734d-1a5d-468e-b60f-3576432eb33b"
+  }
+}

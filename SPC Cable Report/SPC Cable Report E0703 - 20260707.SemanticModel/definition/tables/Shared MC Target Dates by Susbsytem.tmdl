@@ -1,0 +1,120 @@
+table 'Shared MC Target Dates by Susbsytem'
+	lineageTag: a1147f5b-0a9c-4976-9d47-00a26a95010e
+
+	column 'Sr No'
+		dataType: string
+		lineageTag: d663f94c-ff24-47e9-8c08-1a396aed7372
+		summarizeBy: none
+		sourceColumn: Sr No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Number'
+		dataType: string
+		lineageTag: 4f94dcf7-daf7-493f-99a8-0ddae0b83281
+		summarizeBy: none
+		sourceColumn: Project Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sr No_1'
+		dataType: string
+		lineageTag: 662b97bb-0623-4e9b-984d-50f0ac921d3c
+		summarizeBy: none
+		sourceColumn: Sr No_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'System No.'
+		dataType: string
+		lineageTag: f0d660af-aeeb-48de-9a85-d7201340d847
+		summarizeBy: none
+		sourceColumn: System No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'System Name'
+		dataType: string
+		lineageTag: 198a54c4-2d15-4860-ac40-8486b320de48
+		summarizeBy: none
+		sourceColumn: System Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Subsystem No.'
+		dataType: string
+		lineageTag: a65665c0-01cd-4ebd-9d7e-951f0764f79c
+		summarizeBy: none
+		sourceColumn: Subsystem No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Subsystem Name'
+		dataType: string
+		lineageTag: 291cd4d0-348c-4b31-b09a-33cb1ed44e7d
+		summarizeBy: none
+		sourceColumn: Subsystem Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discipline
+		dataType: string
+		lineageTag: 33ff1cec-1108-4c64-ad85-1db83cbe1507
+		summarizeBy: none
+		sourceColumn: Discipline
+
+		annotation SummarizationSetBy = Automatic
+
+	column Drawing
+		dataType: string
+		lineageTag: 6f539d90-aae7-448f-a4c2-b025954c0a02
+		summarizeBy: none
+		sourceColumn: Drawing
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Completion Plan'
+		dataType: string
+		lineageTag: 0fcb8f84-e6f5-4aef-9451-b0b4e027bbd2
+		summarizeBy: none
+		sourceColumn: Completion Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target MC Dates'
+		dataType: dateTime
+		formatString: mm/dd/yy
+		lineageTag: b966f12b-f718-4a84-a383-3f089681b84c
+		summarizeBy: none
+		sourceColumn: Target MC Dates
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Primavera ID'
+		dataType: string
+		lineageTag: 87c46b82-2dec-49d5-9b23-68a0d9bb9968
+		summarizeBy: none
+		sourceColumn: Primavera ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Shared MC Target Dates by Susbsytem' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\E0703\Borwin6\14 - PBI Report\EandI\BW61 System-Subsystem Target Plan.xlsx"), null, true),
+				    #"Auxiliaries - PIL NEW_Sheet" = Source{[Item="Auxiliaries - PIL NEW",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Auxiliaries - PIL NEW_Sheet", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

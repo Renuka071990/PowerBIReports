@@ -1,0 +1,38 @@
+table SequenceNo
+	lineageTag: 3ce5c7d9-a08d-4d26-8e25-690f0d5ee32c
+
+	column Date
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 4a7d4f09-26e2-4c79-b043-4c4ce778de19
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Sequence No'
+		dataType: string
+		lineageTag: dc3bd452-28b8-40b4-a85e-22470a8c3e13
+		summarizeBy: none
+		sourceColumn: Sequence No
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SequenceNo = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("TdG9asNQDIbhezmzDxxJ/h0LoUMg7dDReHCN6VKaUupA7j61P6nS+iDLr+VxTMz5vH1mblKVKE3VmIRc+BCm/LR9QOSQQvlt/YbUEHFpIJ1LewgVlw6ba5ceTzX5dfmFDJDWhYotckI1hecI2dQFQjfHKYRzXI9y7gMhvdT55XpTQjtxIMRTnEI9ixMXi3BCfenzaV2U2NY7iX2jU23rz/NX5nanxqae13el1qacOvuDl/lHSU/PgQY79D+J3l4CkX22E1uEk94+rBetHwKhXuIb9fb71F1Jb0+B/uqnBw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Date = _t, #"Sequence No" = _t])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

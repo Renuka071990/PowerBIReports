@@ -1,0 +1,426 @@
+table qry_eqp_detail
+	lineageTag: 1be42ebe-58d7-4b47-b0b9-1a5bf4840f01
+
+	column COMPOBID
+		dataType: string
+		lineageTag: 5146493b-7276-484d-ac22-6500262e0df9
+		summarizeBy: none
+		sourceColumn: COMPOBID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPONENT
+		dataType: string
+		lineageTag: efa4fc38-624c-41d2-93c5-e235bc138553
+		summarizeBy: none
+		sourceColumn: COMPONENT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROJECT
+		dataType: string
+		lineageTag: 82f88dbc-ccdf-4f89-b3ba-4036f843ec56
+		summarizeBy: none
+		sourceColumn: PROJECT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPOBID
+		dataType: string
+		lineageTag: 72dcda33-4ffa-4d5f-a999-47323eb8481e
+		summarizeBy: none
+		sourceColumn: FIWPOBID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPUID
+		dataType: string
+		lineageTag: 2ba56df6-2ab2-4027-8073-3089482198d2
+		summarizeBy: none
+		sourceColumn: FIWPUID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WPNO
+		dataType: string
+		lineageTag: 8dbdf9a7-33d7-4be3-a232-e8b002b421dd
+		summarizeBy: none
+		sourceColumn: WPNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		dataType: string
+		lineageTag: 2ba4e705-1280-469a-953d-7430b122464e
+		summarizeBy: none
+		sourceColumn: DISCIPLINE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PURPOSE
+		dataType: string
+		lineageTag: 16a2740c-aa8e-4f41-ae77-3de90a93dedb
+		summarizeBy: none
+		sourceColumn: PURPOSE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESIGNAREA
+		dataType: string
+		lineageTag: e98033e5-d180-4338-bceb-c98288ca54b5
+		summarizeBy: none
+		sourceColumn: DESIGNAREA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTITYPLANNED
+		dataType: double
+		lineageTag: ba33027c-9367-415c-8139-c846acc5aab4
+		summarizeBy: sum
+		sourceColumn: QUANTITYPLANNED
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRACTOR
+		dataType: string
+		lineageTag: ec8cfc7c-6a33-457b-87c1-1e6150c99cee
+		summarizeBy: none
+		sourceColumn: CONTRACTOR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TASKNO
+		dataType: string
+		lineageTag: 524c5ac6-3efc-4e30-8de0-418f968a96d7
+		summarizeBy: none
+		sourceColumn: TASKNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AFCHRS
+		dataType: double
+		lineageTag: 1aedb021-4a45-4ecf-b39e-ee46f2c96ec6
+		summarizeBy: sum
+		sourceColumn: AFCHRS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WP_REVNO
+		dataType: string
+		lineageTag: 4e377f63-17a2-4ac6-b0af-97f81fcd71ff
+		summarizeBy: none
+		sourceColumn: WP_REVNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP STATUS'
+		dataType: string
+		lineageTag: d117159c-466b-41d1-abf7-555cc2aa3681
+		summarizeBy: none
+		sourceColumn: WP STATUS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column REVDATE
+		dataType: string
+		lineageTag: 034d5d30-4f3f-49dc-a8a8-04cef459a3b3
+		summarizeBy: none
+		sourceColumn: REVDATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECEDATE
+		dataType: string
+		lineageTag: 2cb5bcfb-d89f-49bd-93a5-03e8ebcb8a3d
+		summarizeBy: none
+		sourceColumn: RECEDATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNEDSTARTDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 69cac608-74e6-406b-82c4-0f49eff366e2
+		summarizeBy: none
+		sourceColumn: PLANNEDSTARTDATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNEDFINISHDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b9b830fc-f53c-4098-ae7a-618ab0285019
+		summarizeBy: none
+		sourceColumn: PLANNEDFINISHDATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTUALSTARTDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 26da8e41-437e-4826-a9a0-c91d8d3cd1d7
+		summarizeBy: none
+		sourceColumn: ACTUALSTARTDATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTUALFINISHDATE
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: fd7618b3-0d6c-40d7-965b-d77c5c05c8e9
+		summarizeBy: none
+		sourceColumn: ACTUALFINISHDATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column MDR_DISCIPLINE
+		dataType: string
+		lineageTag: a1e203e9-d687-443b-b058-378310cc904b
+		summarizeBy: none
+		sourceColumn: MDR_DISCIPLINE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_MATCUSTOM
+		dataType: string
+		lineageTag: cf712b56-c011-418e-b75d-3c0729c7df10
+		summarizeBy: none
+		sourceColumn: MDR_MATCUSTOM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_ROOMNO
+		dataType: string
+		lineageTag: 5c3d66f7-7550-45b5-b632-23b4acf39ae2
+		summarizeBy: none
+		sourceColumn: MDR_ROOMNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_DUMMYWP
+		dataType: string
+		lineageTag: bad5b3cc-ec44-4903-b3c5-82536cce3007
+		summarizeBy: none
+		sourceColumn: MDR_DUMMYWP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_TYPE
+		dataType: string
+		lineageTag: cb28364b-17fd-4223-902b-b848a18aaedd
+		summarizeBy: none
+		sourceColumn: MDR_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_LEVEL
+		dataType: string
+		lineageTag: 7a859ca9-2398-46e9-adfb-c409758c3b1a
+		summarizeBy: none
+		sourceColumn: MDR_LEVEL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_PARTNUMBER
+		dataType: string
+		lineageTag: f5b25aa4-5e6e-44f9-9b08-12ad62196be7
+		summarizeBy: none
+		sourceColumn: MDR_PARTNUMBER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_DRAWINGNO
+		dataType: string
+		lineageTag: c841f966-21d3-4138-8063-6ecdc51010aa
+		summarizeBy: none
+		sourceColumn: MDR_DRAWINGNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_PARENTNAME
+		dataType: string
+		lineageTag: f6d27e7a-f73b-40c3-8c38-3dedd5735acc
+		summarizeBy: none
+		sourceColumn: MDR_PARENTNAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_SHORTDESC
+		dataType: string
+		lineageTag: 68b71df8-ee9e-49c4-a7c5-6b8f74351abf
+		summarizeBy: none
+		sourceColumn: MDR_SHORTDESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_SYSTEMPATH
+		dataType: string
+		lineageTag: 8d9b6e2b-1d48-4eaa-ab3f-a7a1566bc598
+		summarizeBy: none
+		sourceColumn: MDR_SYSTEMPATH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSDESIG
+		dataType: string
+		lineageTag: 71cb0c92-7f94-46f8-9873-d6358c5e0865
+		summarizeBy: none
+		sourceColumn: CLASSDESIG
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISASSEMBLY
+		dataType: string
+		lineageTag: 840465d4-23e2-4443-8227-35f868b641ff
+		summarizeBy: none
+		sourceColumn: ISASSEMBLY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSDEF
+		dataType: string
+		lineageTag: 235b5c35-b22d-41ec-a9c7-9ee932b6f20e
+		summarizeBy: none
+		sourceColumn: CLASSDEF
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_installwp_hrs =
+			
+			SUMX(FILTER(qry_eqp_progress,qry_eqp_progress[COMPONENT]=qry_eqp_detail[COMPONENT]),qry_eqp_progress[fx_wphrs])
+		lineageTag: 76cf0efc-cec1-4d15-812d-62b390b80a46
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_installwp_hrs_earned =
+			
+			SUMX(FILTER(qry_eqp_progress,qry_eqp_progress[COMPONENT]=qry_eqp_detail[COMPONENT]),qry_eqp_progress[fx_wphrs_earned])
+		dataType: int64
+		formatString: #,0.00
+		lineageTag: c9f881ab-634e-4d7b-ac77-97a86f6d2e26
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ColumnTAGID = Calculate(FIRSTNONBLANK(Query1[TAGID],0),FILTER(Query1,Query1[FromEquipment]=qry_eqp_detail[COMPONENT]))
+		lineageTag: 5bf058ed-c46f-484c-aebb-33b7658a53f7
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_LOCATION
+		dataType: string
+		lineageTag: f0a6fd9c-3b0c-41e5-9784-bb46078d5f6c
+		summarizeBy: none
+		sourceColumn: MDR_LOCATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column Correctedtag = LOOKUPVALUE('Equipment Detail'[FromCorrectedTag],'Equipment Detail'[TAGID],qry_eqp_detail[COMPONENT])
+		lineageTag: 5730b6f4-de9a-401e-b662-df3c3d0a4aae
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition qry_eqp_detail = m
+		mode: import
+		source =
+				let
+				    Source = Oracle.Database("SPFC5DUP.world", [HierarchicalNavigation=true, Query="#(lf)#(lf)SELECT COMPONENTITEM.OBID AS ""COMPOBID"",#(lf)        COMPONENTITEM.OBJNAME as ""COMPONENT"",#(lf)        COMPONENTITEM.CONFIG AS ""PROJECT"" ,#(lf)        COMPONENTITEM_FIWP.OBID AS ""FIWPOBID"",#(lf)        COMPONENTITEM_FIWP.OBJUID AS ""FIWPUID"",#(lf)        COMPONENTITEM_FIWP_NAME.STRVALUE AS ""WPNO"",#(lf)        FIWP_DISCIPLINE.OBJNAME AS ""DISCIPLINE"",#(lf)        FIWP_PURPOSE.OBJNAME AS ""PURPOSE"",#(lf)        FIWP_DESIGNAREA.STRVALUE AS ""DESIGNAREA"",#(lf)        CAST(COMPONENTITEM_QUANTITYPLANNED.STRVALUE AS FLOAT) AS ""QUANTITYPLANNED"",#(lf)        FIWP_CONTRACTOR.STRVALUE AS ""CONTRACTOR"", #(lf)        FIWP_TaskNo.STRVALUE AS ""TASKNO"",#(lf)        CAST(FIWP_Estimated.STRVALUE AS FLOAT) AS ""AFCHRS"" ,#(lf)        enumpr.objname AS ""WP_REVNO"",#(lf)        FIWP_STATUS.OBJNAME AS ""WP STATUS"" ,#(lf)        FIWP_REVDATE.STRVALUE AS ""REVDATE"",#(lf)        FIWP_RECEDATE.STRVALUE AS ""RECEDATE"",#(lf)        TO_DATE(FIWP_PLANNEDSTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""PLANNEDSTARTDATE"",            #(lf)        TO_DATE(FIWP_PLANNEDFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""PLANNEDFINISHDATE"",#(lf)        TO_DATE(FIWP_ACTUALSTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""ACTUALSTARTDATE"",#(lf)        TO_DATE(FIWP_ACTUALFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""ACTUALFINISHDATE"",#(lf)        #(lf)#(tab)#(tab)#(tab)#(tab)----Component Properties#(lf)        MDR_DISCIPLINE.STRVALUE as ""MDR_DISCIPLINE"",#(tab)#(tab)#(lf)        MDR_MATCUSTOM.STRVALUE as ""MDR_MATCUSTOM"",        #(lf)        MDR_ROOMNO.STRVALUE as ""MDR_ROOMNO"",#(lf)#(tab)#(tab)MDR_DUMMYWP.STRVALUE as ""MDR_DUMMYWP"",#(lf)        MDR_TYPE.STRVALUE as ""MDR_TYPE"",#(lf)        MDR_LEVEL.STRVALUE as ""MDR_LEVEL"",#(lf)#(tab)MDR_LOCATION.STRVALUE as ""MDR_LOCATION"",#(lf)        MDR_PARTNUMBER.STRVALUE as ""MDR_PARTNUMBER"",#(lf)        MDR_DRAWINGNO.STRVALUE as ""MDR_DRAWINGNO"",#(lf)        MDR_PARENTNAME.STRVALUE as ""MDR_PARENTNAME"",        #(lf)        MDR_SHORTDESC.STRVALUE as ""MDR_SHORTDESC"",  #(lf)#(tab)#(tab)MDR_SYSTEMPATH.STRVALUE as ""MDR_SYSTEMPATH"",#(lf)        #(lf)        #(lf)        ClassDesignation.STRVALUE As ""CLASSDESIG"",#(lf)        IsAssembly.STRVALUE As ""ISASSEMBLY"",#(tab)#(tab)#(lf)        COMPONENTITEM.OBJDEFUID as ""CLASSDEF""#(lf)#(tab)#(tab)#(lf)            #(lf)  FROM DATAOBJ COMPONENTITEM#(lf)#(lf)  LEFT JOIN DATAREL COMPONENTITEM_FIWP_REL ON COMPONENTITEM_FIWP_REL.UID2 = COMPONENTITEM.OBJUID AND COMPONENTITEM_FIWP_REL.DEFUID = 'SPC_Package_ComponentItems' AND COMPONENTITEM_FIWP_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ COMPONENTITEM_FIWP ON COMPONENTITEM_FIWP.OBJUID = COMPONENTITEM_FIWP_REL.UID1 AND COMPONENTITEM_FIWP.CONFIG = COMPONENTITEM.CONFIG AND COMPONENTITEM_FIWP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(tab)#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_DISCIPLINE_PR ON FIWP_DISCIPLINE_PR.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_DISCIPLINE_PR.PROPERTYDEFUID = 'FIWP_Discipline' AND FIWP_DISCIPLINE_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR COMPONENTITEM_FIWP_NAME ON COMPONENTITEM_FIWP_NAME.OBJOBID = COMPONENTITEM_FIWP.OBID AND COMPONENTITEM_FIWP_NAME.PROPERTYDEFUID = 'Name' AND COMPONENTITEM_FIWP_NAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_DISCIPLINE ON FIWP_DISCIPLINE.OBJUID = FIWP_DISCIPLINE_PR.STRVALUE AND FIWP_DISCIPLINE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(lf)  LEFT JOIN DATAOBJPR FIWP_PURPOSE_PR ON FIWP_PURPOSE_PR.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_PURPOSE_PR.PROPERTYDEFUID = 'FIWP_Purpose' AND FIWP_PURPOSE_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_PURPOSE ON FIWP_PURPOSE.OBJUID = FIWP_PURPOSE_PR.STRVALUE AND FIWP_PURPOSE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR COMPONENTITEM_QUANTITYPLANNED ON COMPONENTITEM_QUANTITYPLANNED.OBJOBID = COMPONENTITEM.OBID  AND COMPONENTITEM_QUANTITYPLANNED.PROPERTYDEFUID = 'SPC_ComponentItem_Units' AND COMPONENTITEM_QUANTITYPLANNED.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)LEFT JOIN DATAREL FIWP_CONTRACTOR_REL ON FIWP_CONTRACTOR_REL.UID1 = COMPONENTITEM_FIWP.OBJUID AND FIWP_CONTRACTOR_REL.DEFUID = 'SPC_Package_Contractor' AND FIWP_CONTRACTOR_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_CONTRACTOR_OBJ ON FIWP_CONTRACTOR_OBJ.OBJUID = FIWP_CONTRACTOR_REL.UID2 AND FIWP_CONTRACTOR_OBJ.CONFIG = COMPONENTITEM.CONFIG AND FIWP_CONTRACTOR_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_CONTRACTOR ON FIWP_CONTRACTOR.OBJOBID = FIWP_CONTRACTOR_OBJ.OBID AND FIWP_CONTRACTOR.PROPERTYDEFUID = 'Name' AND FIWP_CONTRACTOR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAREL FIWP_DESIGNAREA_REL ON FIWP_DESIGNAREA_REL.UID2 = COMPONENTITEM_FIWP.OBJUID AND FIWP_DESIGNAREA_REL.DEFUID = 'SPC_FunctionalArea_FIWPs' AND FIWP_DESIGNAREA_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_DESIGNAREA_OBJ ON FIWP_DESIGNAREA_OBJ.OBJUID = FIWP_DESIGNAREA_REL.UID1 AND FIWP_DESIGNAREA_OBJ.CONFIG = COMPONENTITEM.CONFIG AND FIWP_DESIGNAREA_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_DESIGNAREA ON FIWP_DESIGNAREA.OBJOBID = FIWP_DESIGNAREA_OBJ.OBID AND FIWP_DESIGNAREA.PROPERTYDEFUID = 'Name' AND FIWP_DESIGNAREA.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(tab)#(lf)  #(lf)        #(tab)--IWP REVDATE#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_REVDATE ON FIWP_REVDATE.OBJOBID =  COMPONENTITEM_FIWP.OBID AND FIWP_REVDATE.PROPERTYDEFUID = 'MDR_RevDate' AND FIWP_REVDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_REV ON FIWP_REV.OBJOBID =  COMPONENTITEM_FIWP.OBID AND FIWP_REV.PROPERTYDEFUID = 'MDR_Rev' AND FIWP_REV.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(tab)#(lf)  LEFT JOIN DATAOBJPR FIWP_RECEDATE ON FIWP_RECEDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_RECEDATE.PROPERTYDEFUID = 'MDR_RecievedDate' AND FIWP_RECEDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  #(lf)  left join schemaobj enumpr on FIWP_REV.strvalue=enumpr.objuid and enumpr.objdefuid='EnumEnum' and enumpr.terminationdate='9999/12/31-23:59:59:999'#(lf)  #(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_TaskNo ON FIWP_TaskNo.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_TaskNo.PROPERTYDEFUID = 'MDR_FIWPTaskNo' AND FIWP_TaskNo.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--FIWP AFC Hrs#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_Estimated ON FIWP_Estimated.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_Estimated.PROPERTYDEFUID = 'FIWP_Estimated_Manhours' AND FIWP_Estimated.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  #(lf)  LEFT JOIN DATAOBJPR FIWP_STATUS_PR ON FIWP_STATUS_PR.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_STATUS_PR.PROPERTYDEFUID = 'Package_Status' AND FIWP_STATUS_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_STATUS ON FIWP_STATUS.OBJUID = FIWP_STATUS_PR.STRVALUE AND FIWP_STATUS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  #(lf)  --DATES#(lf)  LEFT JOIN DATAOBJPR FIWP_PLANNEDSTARTDATE ON FIWP_PLANNEDSTARTDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_PLANNEDSTARTDATE.PROPERTYDEFUID = 'FIWP_PlannedStartDate' AND FIWP_PLANNEDSTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_PLANNEDFINISHDATE ON FIWP_PLANNEDFINISHDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_PLANNEDFINISHDATE.PROPERTYDEFUID = 'FIWP_PlannedFinishDate' AND FIWP_PLANNEDFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_ACTUALSTARTDATE ON FIWP_ACTUALSTARTDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_ACTUALSTARTDATE.PROPERTYDEFUID = 'FIWP_ActualStartDate'  AND FIWP_ACTUALSTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_ACTUALFINISHDATE ON FIWP_ACTUALFINISHDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_ACTUALFINISHDATE.PROPERTYDEFUID = 'FIWP_ActualFinishDate'  AND FIWP_ACTUALFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(lf)----Component Properties #(lf)  LEFT JOIN DATAOBJPR MDR_DISCIPLINE ON MDR_DISCIPLINE.objobid = COMPONENTITEM.OBID AND MDR_DISCIPLINE.propertydefuid = 'MDR_Discipline'   AND MDR_DISCIPLINE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_MATCUSTOM ON MDR_MATCUSTOM.objobid = COMPONENTITEM.OBID AND MDR_MATCUSTOM.propertydefuid = 'MDR_MaterialICustom'   AND MDR_MATCUSTOM.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(tab)  #(lf)  LEFT JOIN DATAOBJPR MDR_ROOMNO ON MDR_ROOMNO.objobid = COMPONENTITEM.OBID AND MDR_ROOMNO.propertydefuid = 'MDR_RoomNo'   AND MDR_ROOMNO.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)    LEFT JOIN DATAOBJPR MDR_DUMMYWP ON MDR_DUMMYWP.objobid = COMPONENTITEM.OBID AND MDR_DUMMYWP.propertydefuid = 'MDR_DUMMYWP'   AND MDR_DUMMYWP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_TYPE ON MDR_TYPE.objobid = COMPONENTITEM.OBID AND MDR_TYPE.propertydefuid = 'MDR_Type'   AND MDR_TYPE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_LEVEL ON MDR_LEVEL.objobid = COMPONENTITEM.OBID AND MDR_LEVEL.propertydefuid = 'MDR_Level'   AND MDR_LEVEL.TERMINATIONDATE = '9999/12/31-23:59:59:999' #(lf)LEFT JOIN DATAOBJPR MDR_PARTNUMBER ON MDR_PARTNUMBER.objobid = COMPONENTITEM.OBID AND MDR_PARTNUMBER.propertydefuid = 'MDR_PartNumber1'   AND MDR_PARTNUMBER.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_DRAWINGNO ON MDR_DRAWINGNO.objobid = COMPONENTITEM.OBID AND MDR_DRAWINGNO.propertydefuid = 'MDR_IDOCS_DrawingNo'   AND MDR_DRAWINGNO.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_PARENTNAME ON MDR_PARENTNAME.objobid = COMPONENTITEM.OBID AND MDR_PARENTNAME.propertydefuid = 'MDR_ParentName'   AND MDR_PARENTNAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_SHORTDESC ON MDR_SHORTDESC.objobid = COMPONENTITEM.OBID AND MDR_SHORTDESC.propertydefuid = 'SPC_ComponentItem_ShortDescription'   AND MDR_SHORTDESC.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_LOCATION ON MDR_LOCATION.objobid = COMPONENTITEM.OBID AND MDR_LOCATION.propertydefuid = 'SPC_ComponentItem_LocationDescription'   AND MDR_LOCATION.TERMINATIONDATE = '9999/12/31-23:59:59:999' #(lf)LEFT JOIN DATAOBJPR MDR_SYSTEMPATH ON MDR_SYSTEMPATH.objobid = COMPONENTITEM.OBID AND MDR_SYSTEMPATH.propertydefuid = 'SPC_SystemPath'   AND MDR_SYSTEMPATH.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  #(lf)#(lf)#(lf)#(tab)  #(tab)--Class#(lf) LEFT JOIN DATAOBJPR ClassDesignation ON ClassDesignation.OBJOBID = COMPONENTITEM.OBID AND ClassDesignation.PROPERTYDEFUID = 'SpcNonPublishedClassDesignation' AND  ClassDesignation.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(lf)  #(tab)  #(tab)--Assembly#(lf) LEFT JOIN DATAOBJPR IsAssembly ON IsAssembly.OBJOBID = COMPONENTITEM.OBID AND IsAssembly.PROPERTYDEFUID = 'SPC_Assembly_IsSimple' AND  IsAssembly.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(lf)#(tab) WHERE  ClassDesignation.STRVALUE IN ( 'Non_Published_ElectricalEquipment_2','SPC_NonPublished_Elect_LigthingFixtures','Non_Published_ElectricalEquipment','Non_Published_InstrumentEquipment#(lf)') AND COMPONENTITEM.TERMINATIONDATE = '9999/12/31-23:59:59:999' #(lf)  --WHERE COMPONENTITEM.OBJUID IS NOT NULL  AND COMPONENTITEM_FIWP.OBJUID IS NOT NULL AND COMPONENTITEM.TERMINATIONDATE = '9999/12/31-23:59:59:999'  AND FIWP_DISCIPLINE.OBJNAME = 'Electrical' MDR_PARENTNAME.STRVALUE", CommandTimeout=#duration(0, 2, 0, 0)]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([PURPOSE] = "Installation") or ([PURPOSE] = null))
+				in
+				    #"Filtered Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

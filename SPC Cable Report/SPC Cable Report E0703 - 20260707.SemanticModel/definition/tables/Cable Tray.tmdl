@@ -1,0 +1,769 @@
+table 'Cable Tray'
+	lineageTag: f6539c1c-c7cb-45a7-8d20-2a7b367d608e
+
+	measure 'Progress Count minus Count of COMPONENT' =
+			
+			SUM('Cable Tray'[Progress Count]) - COUNTA('Cable Tray'[COMPONENT])
+		formatString: 0
+		lineageTag: 66d51776-62b9-4245-9603-928e5160b7a0
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Progress Count minus Count of COMPONENT 2' =
+			
+			SUM('Cable Tray'[Progress Count]) - COUNTA('Cable Tray'[COMPONENT])
+		formatString: 0
+		lineageTag: 6c637a1b-c1c6-43c6-8337-ec763211f25c
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+	measure 'Count of COMPONENT minus Progress Count 2' =
+			
+			COUNTA('Cable Tray'[COMPONENT]) - SUM('Cable Tray'[Progress Count])
+		formatString: #,0
+		lineageTag: 2ff79c49-918b-42c0-850f-412d59e3f979
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Balance color' = sum('Cable Tray'[INSTALLED2])/sum('Cable Tray'[MDR_UNITS])
+		lineageTag: 10ae2fc2-1bb4-4c5f-869b-d5731c8e8650
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tray Balance color' = IFERROR((sum('Cable Tray'[NEW MDR TRAY%])/Count('Cable Tray'[WPLengthIssued])),0)
+		formatString: 0
+		lineageTag: 18bfcd48-d86f-480b-bcae-39f7b17d07f2
+
+	measure 'Fitting Balance color' = IFERROR((sum('Cable Tray'[NEW MDR FITTING%])/Count('Cable Tray'[WPCountIssued])),0)
+		lineageTag: 172cac56-9218-4724-b775-fbfa713dc148
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fitting Progress' = sum('Cable Tray'[NEW MDR FITTING%] )/sum('Cable Tray'[NEW MDR FITTING])
+		formatString: 0
+		lineageTag: 80ac7cca-8f1f-4844-8db2-22d7f17d055a
+
+	column COMPOBID
+		dataType: string
+		lineageTag: bd32c9ad-d88a-4909-92a0-8a69ef8ec03f
+		summarizeBy: none
+		sourceColumn: COMPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPONENT
+		dataType: string
+		lineageTag: db7196c3-a33f-4a58-8748-cf4eda0cc773
+		summarizeBy: none
+		sourceColumn: COMPONENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROJECT
+		dataType: string
+		lineageTag: d3dd0ce9-b1cb-4122-9faa-1ca127e6d0b2
+		summarizeBy: none
+		sourceColumn: PROJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPOBID
+		dataType: string
+		lineageTag: 32ac4163-89b8-4add-90c1-80851980bf4c
+		summarizeBy: none
+		sourceColumn: FIWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		dataType: string
+		lineageTag: 3f167f48-b975-4488-a2d8-feb02c7db371
+		summarizeBy: none
+		sourceColumn: DISCIPLINE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMBPOID = CONCATENATE('Cable Tray'[COMPOBID],'Cable Tray'[FIWPOBID])
+		lineageTag: b04504d1-ac00-4327-82a5-4305e483afbc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPUID
+		dataType: string
+		lineageTag: accb5d83-0feb-4282-9a84-4cb64bab11e3
+		summarizeBy: none
+		sourceColumn: FIWPUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column WPNO
+		dataType: string
+		lineageTag: a2df88b8-9d52-4d3c-b812-134866ba1573
+		summarizeBy: none
+		sourceColumn: WPNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PURPOSE
+		dataType: string
+		lineageTag: 21a50c76-9fe3-4f9e-aa93-79a4cdaea018
+		summarizeBy: none
+		sourceColumn: PURPOSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESIGNAREA
+		dataType: string
+		lineageTag: c1b11a6a-dcd7-4247-a6fc-773a3ab3773f
+		summarizeBy: none
+		sourceColumn: DESIGNAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTITYPLANNED
+		dataType: double
+		lineageTag: 55ee4030-ad41-446d-96eb-499f186a65d0
+		summarizeBy: sum
+		sourceColumn: QUANTITYPLANNED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRACTOR
+		dataType: string
+		lineageTag: 43ac9a18-daae-4b06-9b74-d07945bdf08b
+		summarizeBy: none
+		sourceColumn: CONTRACTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TASKNO
+		dataType: string
+		lineageTag: b6401cd1-1390-4f08-8309-9cd00456c5b3
+		summarizeBy: none
+		sourceColumn: TASKNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column AFCHRS
+		dataType: double
+		lineageTag: e48f5ed3-9b07-433a-9213-3026a43d0fd4
+		summarizeBy: sum
+		sourceColumn: AFCHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WP_REVNO
+		dataType: string
+		lineageTag: 89c8f4b7-f4ac-4ec8-bfc5-060d54faed3e
+		summarizeBy: none
+		sourceColumn: WP_REVNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP STATUS'
+		dataType: string
+		lineageTag: 72ce40ba-33a8-43dc-b1b7-d552a125528a
+		summarizeBy: none
+		sourceColumn: WP STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column REVDATE
+		dataType: string
+		lineageTag: f7e4e6d7-c608-43d6-873e-a7c315f5f86a
+		summarizeBy: none
+		sourceColumn: REVDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECEDATE
+		dataType: string
+		lineageTag: 8ff25181-fdf4-4f9a-9b9a-f1e865198afc
+		summarizeBy: none
+		sourceColumn: RECEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNEDSTARTDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 82f0c0f1-f326-44a9-b63f-cb49c8d4d3b2
+		summarizeBy: none
+		sourceColumn: PLANNEDSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNEDFINISHDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ef7e26e1-8ee6-45ce-a3ee-00115f9a9b2c
+		summarizeBy: none
+		sourceColumn: PLANNEDFINISHDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTUALSTARTDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3d8cc343-4b21-4656-b01c-62e77b87a751
+		summarizeBy: none
+		sourceColumn: ACTUALSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTUALFINISHDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8ecf3908-9787-4b7b-a09e-590d7160c2d9
+		summarizeBy: none
+		sourceColumn: ACTUALFINISHDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_DISCIPLINE
+		dataType: string
+		lineageTag: a0839460-36f0-4097-9d0e-43449ecab29f
+		summarizeBy: none
+		sourceColumn: MDR_DISCIPLINE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_MATCUSTOM
+		dataType: string
+		lineageTag: 679761d8-2804-4e85-b0d3-feeb21c13438
+		summarizeBy: none
+		sourceColumn: MDR_MATCUSTOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_ROOMNO
+		dataType: string
+		lineageTag: 6230d287-727a-4c50-a0d0-e449d54daf06
+		summarizeBy: none
+		sourceColumn: MDR_ROOMNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_TYPE
+		dataType: string
+		lineageTag: 01aa6189-3c61-4d2e-aaac-3baa9e509ff1
+		summarizeBy: none
+		sourceColumn: MDR_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_LEVEL
+		dataType: string
+		lineageTag: 14ea159b-d4fe-4430-a806-34230f74814a
+		summarizeBy: none
+		sourceColumn: MDR_LEVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_PARTNUMBER
+		dataType: string
+		lineageTag: c85f33b2-73ba-4197-bc89-ad7317d0bde9
+		summarizeBy: none
+		sourceColumn: MDR_PARTNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_DRAWINGNO
+		dataType: string
+		lineageTag: cbfc12f7-c0cf-4b0a-81f4-c744379ccf94
+		summarizeBy: none
+		sourceColumn: MDR_DRAWINGNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_PARENTNAME
+		dataType: string
+		lineageTag: 8c9e9ea0-6bb4-4d80-ab05-504fc17254f8
+		summarizeBy: none
+		sourceColumn: MDR_PARENTNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_SHORTDESC
+		dataType: string
+		lineageTag: d45fa596-91e3-4be7-b706-b8a2c4919332
+		summarizeBy: none
+		sourceColumn: MDR_SHORTDESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSDESIG
+		dataType: string
+		lineageTag: de8902f7-7437-4898-a2cf-4fc5cfe08bb5
+		summarizeBy: none
+		sourceColumn: CLASSDESIG
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISASSEMBLY
+		dataType: string
+		lineageTag: 3ca59ece-a944-48e7-b1d9-5af82ecaa158
+		summarizeBy: none
+		sourceColumn: ISASSEMBLY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSDEF
+		dataType: string
+		lineageTag: 22a48fb2-4220-45b4-971a-22904adc57ac
+		summarizeBy: none
+		sourceColumn: CLASSDEF
+
+		annotation SummarizationSetBy = Automatic
+
+	column CombinedPOBID = CONCATENATE('Cable Tray'[COMPOBID],'Cable Tray'[FIWPOBID])
+		lineageTag: 75d587bf-3f3f-4c52-865c-e13ad7c76d96
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_SYSTEMPATH
+		dataType: string
+		lineageTag: 77a5f895-f03d-4eb4-af79-abedc1bcba67
+		summarizeBy: none
+		sourceColumn: MDR_SYSTEMPATH
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Hrs' = sumx(FILTER('Cable Tray (Progress)','Cable Tray (Progress)'[CombinedPOBID]='Cable Tray'[CombinedPOBID]&&'Cable Tray (Progress)'[FIWPOBID]<>BLANK()),'Cable Tray (Progress)'[WP Hrs])
+		lineageTag: 873ce5a3-3f95-4cd7-9555-6e5767e04a43
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned' =
+			VAR Earned=sumx(FILTER('Cable Tray (Progress)','Cable Tray (Progress)'[CombinedPOBID]='Cable Tray'[CombinedPOBID]&&'Cable Tray (Progress)'[FIWPOBID]<>BLANK()),'Cable Tray (Progress)'[Earned Hrs])
+			RETURN
+			IF(Earned=0,BLANK(),Earned)
+		lineageTag: 1e07cf9b-21dc-41c4-86f9-de6a31140e29
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Progress Count' = ```
+			if([WP Hrs]=[WP Earned]&&[WP Hrs]<>0,1,BLANK())
+			
+			```
+		formatString: 0
+		lineageTag: a9004c23-4b84-4cd2-8ff7-168088ffda52
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Progress% = 'Cable Tray'[WP Earned]/'Cable Tray'[WP Hrs]*100
+		dataType: int64
+		lineageTag: b8b52b06-4d29-447d-b883-da6b06dbf442
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		type: calculated
+		lineageTag: 5cda71fe-8f6c-4621-9851-de8b4f6d2a76
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_UNITS
+		dataType: double
+		formatString: #,0
+		lineageTag: 2052ef7e-99e2-451b-b496-589d81f5fbe3
+		summarizeBy: sum
+		sourceColumn: MDR_UNITS
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'LENGTH PROGRESS' = 'Cable Tray'[LENGTH (M)]*'Cable Tray'[Progress%]/100
+		dataType: double
+		formatString: #,0.0
+		lineageTag: df8ac94a-9638-41e0-9c23-33c08ace7bfa
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column BALANCE = 'Cable Tray'[LENGTH (M)]-'Cable Tray'[LENGTH PROGRESS]
+		dataType: int64
+		formatString: #,0
+		lineageTag: 07a74d2f-bc89-445e-9495-34f71f33f8dc
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LENGTH (M)' = 'Cable Tray'[MDR_UNITS]/1000
+		dataType: int64
+		formatString: #,0
+		lineageTag: 0ad8fb21-9406-40c5-aa2c-0a6cf6320f14
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LENGTH BALANCE' = 'Cable Tray'[MDR_UNITS]-'Cable Tray'[LENGTH PROGRESS]
+		formatString: #,0
+		lineageTag: fff71dd6-a012-4b7c-9217-209d9eb19742
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'PROGRESS COUNT%' = if('Cable Tray'[Progress%]=100,1)
+		formatString: 0
+		lineageTag: dd0fd869-b4a3-4919-9e9c-821d9147da87
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'QUANTITY BALANCE' = 'Cable Tray'[MDR_UNITS]-'Cable Tray'[PROGRESS COUNT%]
+		formatString: #,0
+		lineageTag: ab27c65e-1bf2-4bd0-883f-1dfae8605989
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'COMPONENT TYPE' = IF(CONTAINSSTRING('Cable Tray'[COMPONENT],"FTUBE"),"FTUBE","NON-FTUBE")
+		lineageTag: d4d6f15a-8ab9-4e61-b21f-a5ccf19e15f0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NEW MDR UNITS' = if([COMPONENT TYPE]="NON-FTUBE",[MDR_UNITS],[MDR_UNITS]/1000)
+		dataType: double
+		formatString: #,0
+		lineageTag: 24acb27b-a77b-45ff-a3a3-1093ed40136e
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column INSTALLED2 = 'Cable Tray'[NEW MDR UNITS]*'Cable Tray'[Progress%]/100
+		dataType: double
+		formatString: #,0
+		lineageTag: f0c13183-90f9-4c7a-abdb-92129fed9486
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'NEW MDR TRAY' = if([COMPONENT TYPE]="FTUBE",[NEW MDR UNITS],0)
+		dataType: double
+		formatString: #,0
+		lineageTag: 47ce5872-3a48-426a-9021-66c0f78af20f
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'NEW MDR FITTING' = if([COMPONENT TYPE]="NON-FTUBE",[NEW MDR UNITS],0)
+		formatString: #,0
+		lineageTag: 9e0b52b7-35d7-4a9a-b02e-a5c6dff69d0c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NEW MDR TRAY%' = if([COMPONENT TYPE]="FTUBE",[INSTALLED2],0)
+		formatString: #,0
+		lineageTag: 81765847-3f46-4d69-8b6f-f448d50bc22d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'NEW MDR FITTING%' = if([COMPONENT TYPE]="NON-FTUBE",[INSTALLED2],0)
+		formatString: #,0
+		lineageTag: 95f6e71f-2b2c-40ea-a188-6cf240997c41
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PROGRESS BALANCE(O)' = 'Cable Tray'[NEW MDR UNITS] -'Cable Tray'[INSTALLED2]
+		dataType: double
+		formatString: #,0
+		lineageTag: 47f6f6b0-d22d-4a5f-a49a-b89c51247ad0
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'PROGRESS BALANCE(T)' = 'Cable Tray'[NEW MDR TRAY]-'Cable Tray'[NEW MDR TRAY%]
+		formatString: #,0
+		lineageTag: b226d144-3a7c-4646-888e-87b7a61c04d0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'PROGRESS BALANCE(F)' = 'Cable Tray'[NEW MDR FITTING]-'Cable Tray'[NEW MDR FITTING%]
+		formatString: #,0
+		lineageTag: 678f27be-5020-473b-bdc2-1558dc14c337
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column MDR_PARTNUMBER1
+		dataType: string
+		lineageTag: 5dab71b4-5730-4aa6-b1d4-15f4962d7a97
+		summarizeBy: none
+		sourceColumn: MDR_PARTNUMBER1
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_PARTCODE_ESTI
+		dataType: string
+		lineageTag: 5d319b9d-0f43-44d1-9909-2bcbc12acf53
+		summarizeBy: none
+		sourceColumn: MDR_PARTCODE_ESTI
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMP_IDENTCODE_M
+		dataType: string
+		lineageTag: 61b328f1-26cf-446f-b244-1e451e3361a0
+		summarizeBy: none
+		sourceColumn: COMP_IDENTCODE_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMP_SHORTDESC
+		dataType: string
+		lineageTag: ea0f74bf-679d-41db-93ad-3f8b42f63393
+		summarizeBy: none
+		sourceColumn: COMP_SHORTDESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column PIP_COMPNODE
+		dataType: string
+		lineageTag: 932d4808-8698-4ef6-a0f2-9b651910d0e2
+		summarizeBy: none
+		sourceColumn: PIP_COMPNODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'COMPONENT N' = ```
+			VAR A = Find("/",[COMPONENT])
+			VAR B = IF(ISERROR(Find(" of",[COMPONENT])),BLANK(),Find(" of",[COMPONENT])-1)
+			VAR Length = LEN([COMPONENT])
+			VAR Output = MID([COMPONENT],A+1,Length-A)
+			VAR Output2 = LEFT([COMPONENT],B)
+			VAR FinalOutput = Output&" - "&Output2  
+			RETURN
+			FinalOutput
+			```
+		lineageTag: e1c7270d-6570-4ff7-8800-5ef6fd5315d3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Column 2' = IF(ISERROR(Find(" of",[COMPONENT])),BLANK(),Find(" of",[COMPONENT]))
+		formatString: 0
+		lineageTag: cf56a1af-e07d-445c-be72-0251e452462a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column WPLengthIssued = if('Cable Tray'[COMPONENT TYPE]="FTUBE" && 'Cable Tray'[WPNO]<>BLANK(),[WPNO],BLANK())
+		dataType: string
+		lineageTag: a15d40ed-f48d-4656-b4f5-67b009b6f3bd
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column WPCountIssued = if('Cable Tray'[COMPONENT TYPE]="NON-FTUBE", 'Cable Tray'[WPNO])
+		lineageTag: 2308472b-9051-42c8-9314-d0e14a4da125
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Balance %' = 'Cable Tray'[INSTALLED2]/'Cable Tray'[MDR_UNITS]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 2b2d410f-b4dc-443f-bbdf-def4bd1f1473
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_ZONECOLD
+		dataType: string
+		lineageTag: ff00935b-5f76-4285-aa84-752d3cda24cd
+		summarizeBy: none
+		sourceColumn: MDR_ZONECOLD
+
+		annotation SummarizationSetBy = Automatic
+
+	column MDR_ITEMZONE
+		dataType: string
+		lineageTag: 0fef0571-e29e-4962-bb3a-2410c6469133
+		summarizeBy: none
+		sourceColumn: MDR_ITEMZONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Progress ActualGate2' = LOOKUPVALUE('Cable Tray (Progress)'[Qty Completed 2],'Cable Tray (Progress)'[CombinedPOBID],'Cable Tray'[CombinedPOBID])
+		formatString: 0.00
+		lineageTag: 41644b45-5b73-4f94-a9eb-8815fe3fabfc
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column PPP = 'Cable Tray'[WP Earned]/'Cable Tray'[WP Hrs]*100
+		lineageTag: 1be9681a-f299-4e1f-8aa1-85762e6e44f6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ZZZ = if('Cable Tray'[PPP]>100,100, 'Cable Tray'[PPP])
+		formatString: 0
+		lineageTag: 4a876600-104f-43cf-81c7-01d840b1780a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Progress Actual' = ```
+			LOOKUPVALUE('Cable Tray (Progress)'[PROGRESS_DATE],'Cable Tray (Progress)'[CombinedPOBID],'Cable Tray'[CombinedPOBID])
+			
+			```
+		lineageTag: 921804ed-b85d-4da3-8852-871b216f942f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPNODE_COMPTYPE
+		dataType: string
+		lineageTag: 7f6c7e71-93b3-4c73-b77d-17bf502919be
+		summarizeBy: none
+		sourceColumn: COMPNODE_COMPTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column check = if('Cable Tray'[ZZZ]=100, 'Cable Tray'[Progress Actual])
+		lineageTag: 4db7e7af-66a5-4ecf-aebe-c07a270cfb48
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total overall cable trayG' =
+			
+			('Cable Tray'[NEW MDR TRAY%]) + ('Cable Tray'[NEW MDR FITTING%])
+		formatString: 0.00
+		lineageTag: 6f9b4707-c2a5-449c-9397-bf9e3b04f312
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grace = if('Cable Tray'[COMPONENT TYPE]="FTUBE" && 'Cable Tray'[MDR_UNITS]<>BLANK(),[MDR_UNITS],BLANK())
+		dataType: int64
+		formatString: #,0
+		lineageTag: 10dcbde0-91ff-4d9c-99a3-d57b11c4de59
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column WPLengthIssued1 = if('Cable Tray'[COMPONENT TYPE]="FTUBE" && 'Cable Tray'[WPNO]<>BLANK(),[MDR_UNITS],BLANK())
+		lineageTag: 839b9422-6c29-402e-a562-9815628e1f94
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WPISSUED(m) = 'Cable Tray'[WPLengthIssued1]/1000
+		lineageTag: 90467dcc-4503-48c5-9f92-50c690a829c0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TombstoneItem
+		dataType: string
+		lineageTag: 0bf6eeee-a7b3-4b22-b504-3fdf2d84c73e
+		summarizeBy: none
+		sourceColumn: TombstoneItem
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cable Tray-49d4f801-c230-4deb-a4d2-5f99dfa35e25' = m
+		mode: import
+		source =
+				let
+				    Source = Oracle.Database("SPFC5DUP.world", [HierarchicalNavigation=true, Query="#(lf)SELECT COMPONENTITEM.OBID AS ""COMPOBID"",#(lf)        COMPONENTITEM.OBJNAME as ""COMPONENT"",#(lf)        COMPONENTITEM.CONFIG AS ""PROJECT"" ,#(lf)        COMPONENTITEM_FIWP.OBID AS ""FIWPOBID"",#(lf)        COMPONENTITEM_FIWP.OBJUID AS ""FIWPUID"",#(lf)        COMPONENTITEM_FIWP_NAME.STRVALUE AS ""WPNO"",#(lf)        FIWP_DISCIPLINE.OBJNAME AS ""DISCIPLINE"",#(lf)        FIWP_PURPOSE.OBJNAME AS ""PURPOSE"",#(lf)        FIWP_DESIGNAREA.STRVALUE AS ""DESIGNAREA"",#(lf)        CAST(COMPONENTITEM_QUANTITYPLANNED.STRVALUE AS FLOAT) AS ""QUANTITYPLANNED"",#(lf)        FIWP_CONTRACTOR.STRVALUE AS ""CONTRACTOR"", #(lf)        FIWP_TaskNo.STRVALUE AS ""TASKNO"",#(lf)        CAST(FIWP_Estimated.STRVALUE AS FLOAT) AS ""AFCHRS"" ,#(lf)        enumpr.objname AS ""WP_REVNO"",#(lf)        FIWP_STATUS.OBJNAME AS ""WP STATUS"" ,#(lf)        FIWP_REVDATE.STRVALUE AS ""REVDATE"",#(lf)        FIWP_RECEDATE.STRVALUE AS ""RECEDATE"",#(lf)        TO_DATE(FIWP_PLANNEDSTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""PLANNEDSTARTDATE"",            #(lf)        TO_DATE(FIWP_PLANNEDFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""PLANNEDFINISHDATE"",#(lf)        TO_DATE(FIWP_ACTUALSTARTDATE.STRVALUE, 'YYYY/MM/DD') AS ""ACTUALSTARTDATE"",#(lf)        TO_DATE(FIWP_ACTUALFINISHDATE.STRVALUE, 'YYYY/MM/DD') AS ""ACTUALFINISHDATE"",#(lf)        #(lf)#(tab)#(tab)#(tab)#(tab)----Component Properties#(lf)        MDR_DISCIPLINE.STRVALUE as ""MDR_DISCIPLINE"",#(tab)#(tab)      #(lf)        MDR_ROOMNO.STRVALUE as ""MDR_ROOMNO"",#(lf)        MDR_TYPE.STRVALUE as ""MDR_TYPE"",#(lf)        MDR_LEVEL.STRVALUE as ""MDR_LEVEL"",#(lf)        MDR_PARTNUMBER.STRVALUE as ""MDR_PARTNUMBER"",#(lf)        MDR_DRAWINGNO.STRVALUE as ""MDR_DRAWINGNO"",#(lf)        MDR_PARENTNAME.STRVALUE as ""MDR_PARENTNAME"",        #(lf)        MDR_SHORTDESC.STRVALUE as ""MDR_SHORTDESC"",  #(lf)#(tab)#(tab)MDR_ZONECOLD.STRVALUE as ""MDR_ZONECOLD"",  #(lf)#(tab)#(tab)MDR_ITEMZONE.STRVALUE as ""MDR_ITEMZONE"", #(lf)#(tab)#(tab)MDR_SYSTEMPATH.STRVALUE as ""MDR_SYSTEMPATH"",#(lf)        MDR_UNITS.STRVALUE as ""MDR_UNITS"",#(lf)#(tab)#(tab)MDR_PARTNUMBER1.STRVALUE as ""MDR_PARTNUMBER1"",#(lf)        MDR_PARTCODE_ESTI.STRVALUE as ""MDR_PARTCODE_ESTI"",        #(lf)        COMP_IDENTCODE_M.STRVALUE as ""COMP_IDENTCODE_M"",#(tab)#(tab)#(lf)        COMP_SHORTDESC.STRVALUE as ""COMP_SHORTDESC"",#(tab)#(tab)#(lf)#(tab)#(tab)PIP_COMPNODE.STRVALUE as ""PIP_COMPNODE"",#(tab)#(tab)#(lf)        MDR_MATCUSTOM.STRVALUE as ""MDR_MATCUSTOM"",#(lf)#(tab)#(tab)COMPNODE_COMPTYPE.STRVALUE as ""COMPNODE_COMPTYPE"",#(lf)#(tab)#(tab)#(lf)        ClassDesignation.STRVALUE As ""CLASSDESIG"",#(lf)        IsAssembly.STRVALUE As ""ISASSEMBLY"",#(tab)#(tab)#(lf)        COMPONENTITEM.OBJDEFUID as ""CLASSDEF"",#(lf)        Case When Tomobj.CreationDate Is Null Then 'False' Else 'True' End as ""TombstoneItem""#(lf)#(tab)#(tab)#(lf)            #(lf)  FROM DATAOBJ COMPONENTITEM#(lf)#(lf)  LEFT JOIN DATAREL COMPONENTITEM_FIWP_REL ON COMPONENTITEM_FIWP_REL.UID2 = COMPONENTITEM.OBJUID AND COMPONENTITEM_FIWP_REL.DEFUID = 'SPC_Package_ComponentItems' AND COMPONENTITEM_FIWP_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ COMPONENTITEM_FIWP ON COMPONENTITEM_FIWP.OBJUID = COMPONENTITEM_FIWP_REL.UID1 AND COMPONENTITEM_FIWP.CONFIG = COMPONENTITEM.CONFIG AND COMPONENTITEM_FIWP.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(tab)#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_DISCIPLINE_PR ON FIWP_DISCIPLINE_PR.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_DISCIPLINE_PR.PROPERTYDEFUID = 'FIWP_Discipline' AND FIWP_DISCIPLINE_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR COMPONENTITEM_FIWP_NAME ON COMPONENTITEM_FIWP_NAME.OBJOBID = COMPONENTITEM_FIWP.OBID AND COMPONENTITEM_FIWP_NAME.PROPERTYDEFUID = 'Name' AND COMPONENTITEM_FIWP_NAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_DISCIPLINE ON FIWP_DISCIPLINE.OBJUID = FIWP_DISCIPLINE_PR.STRVALUE AND FIWP_DISCIPLINE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(lf)  LEFT JOIN DATAOBJPR FIWP_PURPOSE_PR ON FIWP_PURPOSE_PR.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_PURPOSE_PR.PROPERTYDEFUID = 'FIWP_Purpose' AND FIWP_PURPOSE_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_PURPOSE ON FIWP_PURPOSE.OBJUID = FIWP_PURPOSE_PR.STRVALUE AND FIWP_PURPOSE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR COMPONENTITEM_QUANTITYPLANNED ON COMPONENTITEM_QUANTITYPLANNED.OBJOBID = COMPONENTITEM.OBID  AND COMPONENTITEM_QUANTITYPLANNED.PROPERTYDEFUID = 'SPC_ComponentItem_Units' AND COMPONENTITEM_QUANTITYPLANNED.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)LEFT JOIN DATAREL FIWP_CONTRACTOR_REL ON FIWP_CONTRACTOR_REL.UID1 = COMPONENTITEM_FIWP.OBJUID AND FIWP_CONTRACTOR_REL.DEFUID = 'SPC_Package_Contractor' AND FIWP_CONTRACTOR_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_CONTRACTOR_OBJ ON FIWP_CONTRACTOR_OBJ.OBJUID = FIWP_CONTRACTOR_REL.UID2 AND FIWP_CONTRACTOR_OBJ.CONFIG = COMPONENTITEM.CONFIG AND FIWP_CONTRACTOR_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_CONTRACTOR ON FIWP_CONTRACTOR.OBJOBID = FIWP_CONTRACTOR_OBJ.OBID AND FIWP_CONTRACTOR.PROPERTYDEFUID = 'Name' AND FIWP_CONTRACTOR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAREL FIWP_DESIGNAREA_REL ON FIWP_DESIGNAREA_REL.UID2 = COMPONENTITEM_FIWP.OBJUID AND FIWP_DESIGNAREA_REL.DEFUID = 'SPC_FunctionalArea_FIWPs' AND FIWP_DESIGNAREA_REL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJ FIWP_DESIGNAREA_OBJ ON FIWP_DESIGNAREA_OBJ.OBJUID = FIWP_DESIGNAREA_REL.UID1 AND FIWP_DESIGNAREA_OBJ.CONFIG = COMPONENTITEM.CONFIG AND FIWP_DESIGNAREA_OBJ.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_DESIGNAREA ON FIWP_DESIGNAREA.OBJOBID = FIWP_DESIGNAREA_OBJ.OBID AND FIWP_DESIGNAREA.PROPERTYDEFUID = 'Name' AND FIWP_DESIGNAREA.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(tab)#(lf)  #(lf)        #(tab)--IWP REVDATE#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_REVDATE ON FIWP_REVDATE.OBJOBID =  COMPONENTITEM_FIWP.OBID AND FIWP_REVDATE.PROPERTYDEFUID = 'MDR_RevDate' AND FIWP_REVDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_REV ON FIWP_REV.OBJOBID =  COMPONENTITEM_FIWP.OBID AND FIWP_REV.PROPERTYDEFUID = 'MDR_Rev' AND FIWP_REV.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(tab)#(lf)  LEFT JOIN DATAOBJPR FIWP_RECEDATE ON FIWP_RECEDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_RECEDATE.PROPERTYDEFUID = 'MDR_RecievedDate' AND FIWP_RECEDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  #(lf)  left join schemaobj enumpr on FIWP_REV.strvalue=enumpr.objuid and enumpr.objdefuid='EnumEnum' and enumpr.terminationdate='9999/12/31-23:59:59:999'#(lf)  #(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_TaskNo ON FIWP_TaskNo.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_TaskNo.PROPERTYDEFUID = 'MDR_FIWPTaskNo' AND FIWP_TaskNo.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)--FIWP AFC Hrs#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_Estimated ON FIWP_Estimated.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_Estimated.PROPERTYDEFUID = 'FIWP_Estimated_Manhours' AND FIWP_Estimated.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  #(lf)  LEFT JOIN DATAOBJPR FIWP_STATUS_PR ON FIWP_STATUS_PR.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_STATUS_PR.PROPERTYDEFUID = 'Package_Status' AND FIWP_STATUS_PR.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN SCHEMAOBJ FIWP_STATUS ON FIWP_STATUS.OBJUID = FIWP_STATUS_PR.STRVALUE AND FIWP_STATUS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  #(lf)  --DATES#(lf)  LEFT JOIN DATAOBJPR FIWP_PLANNEDSTARTDATE ON FIWP_PLANNEDSTARTDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_PLANNEDSTARTDATE.PROPERTYDEFUID = 'FIWP_PlannedStartDate' AND FIWP_PLANNEDSTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_PLANNEDFINISHDATE ON FIWP_PLANNEDFINISHDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_PLANNEDFINISHDATE.PROPERTYDEFUID = 'FIWP_PlannedFinishDate' AND FIWP_PLANNEDFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_ACTUALSTARTDATE ON FIWP_ACTUALSTARTDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_ACTUALSTARTDATE.PROPERTYDEFUID = 'FIWP_ActualStartDate'  AND FIWP_ACTUALSTARTDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(tab)LEFT JOIN DATAOBJPR FIWP_ACTUALFINISHDATE ON FIWP_ACTUALFINISHDATE.OBJOBID = COMPONENTITEM_FIWP.OBID AND FIWP_ACTUALFINISHDATE.PROPERTYDEFUID = 'FIWP_ActualFinishDate'  AND FIWP_ACTUALFINISHDATE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(lf)----Component Properties #(lf)  LEFT JOIN DATAOBJPR MDR_DISCIPLINE ON MDR_DISCIPLINE.objobid = COMPONENTITEM.OBID AND MDR_DISCIPLINE.propertydefuid = 'MDR_Discipline'   AND MDR_DISCIPLINE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_MATCUSTOM ON MDR_MATCUSTOM.objobid = COMPONENTITEM.OBID AND MDR_MATCUSTOM.propertydefuid = 'MDR_MaterialICustom'   AND MDR_MATCUSTOM.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(tab)  #(lf)  LEFT JOIN DATAOBJPR MDR_ROOMNO ON MDR_ROOMNO.objobid = COMPONENTITEM.OBID AND MDR_ROOMNO.propertydefuid = 'MDR_RoomNo'   AND MDR_ROOMNO.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_TYPE ON MDR_TYPE.objobid = COMPONENTITEM.OBID AND MDR_TYPE.propertydefuid = 'MDR_Type'   AND MDR_TYPE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_LEVEL ON MDR_LEVEL.objobid = COMPONENTITEM.OBID AND MDR_LEVEL.propertydefuid = 'MDR_Level'   AND MDR_LEVEL.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_PARTNUMBER ON MDR_PARTNUMBER.objobid = COMPONENTITEM.OBID AND MDR_PARTNUMBER.propertydefuid = 'MDR_PartNumber1'   AND MDR_PARTNUMBER.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_DRAWINGNO ON MDR_DRAWINGNO.objobid = COMPONENTITEM.OBID AND MDR_DRAWINGNO.propertydefuid = 'MDR_IDOCS_DrawingNo'   AND MDR_DRAWINGNO.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_PARENTNAME ON MDR_PARENTNAME.objobid = COMPONENTITEM.OBID AND MDR_PARENTNAME.propertydefuid = 'MDR_ParentName'   AND MDR_PARENTNAME.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_SHORTDESC ON MDR_SHORTDESC.objobid = COMPONENTITEM.OBID AND MDR_SHORTDESC.propertydefuid = 'SPC_ComponentItem_ShortDescription'   AND MDR_SHORTDESC.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)   #(lf)   LEFT JOIN DATAOBJPR MDR_ZONECOLD ON MDR_ZONECOLD.objobid = COMPONENTITEM.OBID AND MDR_ZONECOLD.propertydefuid = 'MDR_Zone_Cold'   AND MDR_ZONECOLD.TERMINATIONDATE = '9999/12/31-23:59:59:999' #(lf)   LEFT JOIN DATAOBJPR MDR_ITEMZONE ON MDR_ITEMZONE.objobid = COMPONENTITEM.OBID AND MDR_ITEMZONE.propertydefuid = 'SPC_ComponentItem_Zone'   AND MDR_ITEMZONE.TERMINATIONDATE = '9999/12/31-23:59:59:999' #(lf)  #(lf)  LEFT JOIN DATAOBJPR MDR_SYSTEMPATH ON MDR_SYSTEMPATH.objobid = COMPONENTITEM.OBID AND MDR_SYSTEMPATH.propertydefuid = 'SPC_SystemPath'   AND MDR_SYSTEMPATH.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_UNITS ON MDR_UNITS.objobid = COMPONENTITEM.OBID AND MDR_UNITS.propertydefuid = 'SPC_ComponentItem_Units'   AND MDR_UNITS.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_PARTNUMBER1 ON MDR_PARTNUMBER1.objobid = COMPONENTITEM.OBID AND MDR_PARTNUMBER1.propertydefuid = 'MDR_PartNumber1'   AND MDR_PARTNUMBER1.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR MDR_PARTCODE_ESTI ON MDR_PARTCODE_ESTI.objobid = COMPONENTITEM.OBID AND MDR_PARTCODE_ESTI.propertydefuid = 'MDR_PartCode_Esti'   AND MDR_PARTCODE_ESTI.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR COMP_IDENTCODE_M ON COMP_IDENTCODE_M.objobid = COMPONENTITEM.OBID AND COMP_IDENTCODE_M.propertydefuid = 'SPC_ComponentItem_IdentCode_M'   AND COMP_IDENTCODE_M.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR COMP_SHORTDESC ON COMP_SHORTDESC.objobid = COMPONENTITEM.OBID AND COMP_SHORTDESC.propertydefuid = 'SPC_ComponentItem_ShortDescription'   AND COMP_SHORTDESC.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)  LEFT JOIN DATAOBJPR PIP_COMPNODE ON PIP_COMPNODE.objobid = COMPONENTITEM.OBID AND PIP_COMPNODE.propertydefuid = 'PipingComponentNode_ComponentType'   AND PIP_COMPNODE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)  #(lf)  LEFT JOIN DATAOBJPR COMPNODE_COMPTYPE ON COMPNODE_COMPTYPE.objobid = COMPONENTITEM.OBID AND COMPNODE_COMPTYPE.propertydefuid = 'PipingComponentNode_ComponentType'   AND COMPNODE_COMPTYPE.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf)#(lf)#(tab)  #(tab)--Class#(lf) LEFT JOIN DATAOBJPR ClassDesignation ON ClassDesignation.OBJOBID = COMPONENTITEM.OBID AND ClassDesignation.PROPERTYDEFUID = 'SpcNonPublishedClassDesignation' AND  ClassDesignation.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(lf)  #(tab)  #(tab)--Assembly#(lf) LEFT JOIN DATAOBJPR IsAssembly ON IsAssembly.OBJOBID = COMPONENTITEM.OBID AND IsAssembly.PROPERTYDEFUID = 'SPC_Assembly_IsSimple' AND  IsAssembly.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(lf) --TombstoneItem #(lf) Left Join DataobjIf Tomobj ON Tomobj.Objobid = COMPONENTITEM.OBID And Tomobj.Interfacedefuid = 'ISPC_TombstoneItem' And Tomobj.TERMINATIONDATE = '9999/12/31-23:59:59:999'#(lf) #(lf) #(lf)#(tab) WHERE  MDR_DISCIPLINE.STRVALUE IS NOT NULL AND COMPONENTITEM.TERMINATIONDATE = '9999/12/31-23:59:59:999' #(lf)   --And COMPONENTITEM.OBJNAME = 'BEND 1 of BRANCH /WD0016-T-100-SS/B1'#(lf)  --WHERE COMPONENTITEM.OBJUID IS NOT NULL  AND COMPONENTITEM_FIWP.OBJUID IS NOT NULL AND COMPONENTITEM.TERMINATIONDATE = '9999/12/31-23:59:59:999'  AND FIWP_DISCIPLINE.OBJNAME = 'Electrical'"])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

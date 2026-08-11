@@ -1,0 +1,25 @@
+table 'Query1(for duplicate)'
+	lineageTag: aae5be2f-07ab-4f0e-b37d-97b562f3da36
+
+	column TAGID
+		dataType: string
+		lineageTag: 8bf47a62-4da0-48e0-b0bf-5450c2b0d0a0
+		summarizeBy: none
+		sourceColumn: TAGID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Query1(for duplicate)' = m
+		mode: import
+		source =
+				let
+				    Source = #"Query1 (Original)",
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"TAGID"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"TAGID", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

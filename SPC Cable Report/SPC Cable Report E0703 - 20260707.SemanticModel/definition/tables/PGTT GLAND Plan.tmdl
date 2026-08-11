@@ -1,0 +1,164 @@
+table 'PGTT GLAND Plan'
+	lineageTag: 9440c830-45d0-483d-b269-0b96add6921b
+
+	column 'Weekly Date'
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: f96026e0-549c-49dc-9f9e-e9e09b4f443e
+		summarizeBy: none
+		sourceColumn: Weekly Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Cable Gland QTY'
+		dataType: double
+		formatString: 0
+		lineageTag: 579c8946-8afa-4599-b560-4c68d5a47dfd
+		summarizeBy: sum
+		sourceColumn: Cable Gland QTY
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Cable Cumm Gland QTY'
+		dataType: double
+		formatString: 0
+		lineageTag: efc5e924-7c24-4cc7-9789-43dc328cd9cc
+		summarizeBy: sum
+		sourceColumn: Cable Cumm Gland QTY
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Item
+		dataType: string
+		lineageTag: 7199d617-4642-4f2b-9a55-68a97f289ab7
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column GlandFromCummActual =
+			VAR a = SUMX(FILTER('Previous Week Cable Report','Previous Week Cable Report'[Week Ending]='PGTT GLAND Plan'[Weekly Date]),'Previous Week Cable Report'[Glanding From Actual])
+			VAR B = count(Query1[Glanding From Comp Date])
+			RETURN
+			IF('PGTT GLAND Plan'[Weekly Date]='PGTT GLAND Plan'[Current Week Ending],B,a)
+		lineageTag: 9aa85f25-6c78-40e8-9641-7b0805a689e0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'GlandFrom Week Actual' = ```
+			VAR a ='PGTT GLAND Plan'[GlandFromCummActual]-sumx(FILTER('PGTT GLAND Plan','PGTT GLAND Plan'[Weekly Date]=EARLIER('PGTT Gland Plan'[Weekly Date])-7),'PGTT GLAND Plan'[GlandFromCummActual])
+			
+			RETURN 
+			IF('PGTT GLAND Plan'[Weekly Date]>'PGTT GLAND Plan'[Current Week Ending],0,a)
+			```
+		lineageTag: 989ff1b8-1f9b-459f-ac68-81b91f40e34d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Current Week Ending' = (if(WEEKDAY(today()) < 6,(today()+5) - WEEKDAY(today()),((today()+5) - WEEKDAY(today()))+7))
+		formatString: General Date
+		lineageTag: 07a54a9f-bb46-4eec-a169-526dd17afff8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Week' = if('PGTT GLAND Plan'[Weekly Date]='PGTT GLAND Plan'[Current Week Ending],1,0)
+		formatString: 0
+		lineageTag: eca02769-68a8-4e96-ba53-01570106294a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prev Week' = if('PGTT GLAND Plan'[Weekly Date]='PGTT GLAND Plan'[Current Week Ending]-7,1,0)
+		formatString: 0
+		lineageTag: d4bdf429-3d16-438f-84ae-a7393aa9d0a3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column GlandToCummActual =
+			VAR a = SUMX(FILTER('Previous Week Cable Report','Previous Week Cable Report'[Week Ending]='PGTT GLAND Plan'[Weekly Date]),'Previous Week Cable Report'[Glanding To Actual])
+			VAR B = Count(Query1[Glanding To Comp Date])
+			RETURN
+			IF('PGTT GLAND Plan'[Weekly Date]='PGTT GLAND Plan'[Current Week Ending],B,a)
+		formatString: 0
+		lineageTag: ecee4ea2-d2d8-4b62-ad4d-bd95f8e96e07
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOTALGlandCummActual = ('PGTT GLAND Plan'[GlandFromCummActual])+('PGTT GLAND Plan'[GlandToCummActual])
+		formatString: 0
+		lineageTag: d640fedb-7f1a-4eb3-a0f2-319c7aae1a2f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GlandTo Week Actual' = ```
+			VAR a ='PGTT GLAND Plan'[GlandToCummActual]-sumx(FILTER('PGTT GLAND Plan','PGTT GLAND Plan'[Weekly Date]=EARLIER('PGTT Gland Plan'[Weekly Date])-7),'PGTT GLAND Plan'[GlandToCummActual])
+			
+			RETURN 
+			IF('PGTT GLAND Plan'[Weekly Date]>'PGTT GLAND Plan'[Current Week Ending],0,a)
+			```
+		formatString: 0
+		lineageTag: fb990d92-2e99-4190-b976-5b44d953058e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOTALGlandWeekActual = ('PGTT GLAND Plan'[GlandFrom Week Actual])+('PGTT GLAND Plan'[GlandTo Week Actual])
+		formatString: 0
+		lineageTag: 8ceb473b-e504-440a-93fd-901159fd527b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cumm plan total' = MAX('PGTT GLAND Plan'[Cable Cumm Gland QTY])
+		lineageTag: 36a6d33f-a539-4fba-a819-530a80e5a704
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'week actual graph' = if(sum('PGTT GLAND Plan'[TOTALGlandWeekActual]),0)
+		formatString: 0
+		lineageTag: c7519f2c-44e8-4ec7-8655-ed64df3abead
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PGTT GLAND Plan' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Cable Report\PGTT Plan\PGTT Plan GLAND.xlsx"), null, true),
+				    #"PGTT GLAND Plan_Sheet" = Source{[Item="PGTT GLAND Plan",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"PGTT GLAND Plan_Sheet", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

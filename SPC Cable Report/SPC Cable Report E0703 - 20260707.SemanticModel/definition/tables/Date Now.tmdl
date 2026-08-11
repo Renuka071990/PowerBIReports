@@ -1,0 +1,48 @@
+table 'Date Now'
+	lineageTag: 6bd33bed-b4ab-4861-af66-eaaacd0fe55e
+
+	column 'Date Now'
+		dataType: string
+		lineageTag: da8e2c09-da7c-45a1-ae04-0dab8506188d
+		summarizeBy: none
+		sourceColumn: Date Now
+
+		annotation SummarizationSetBy = Automatic
+
+	column Today
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: 5feff6d7-7094-43d3-a4c7-6b65a3a5f59c
+		summarizeBy: none
+		sourceColumn: Today
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Week Ending' = 'DATE NOW'[Today]-WEEKDAY('DATE NOW'[Today],2)+4
+		formatString: Short Date
+		lineageTag: 78d39a0d-d2c2-424d-b815-94a8010fefa4
+		summarizeBy: none
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Now-0bd062f8-9398-487a-a53c-a45a0a087159' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WckksSVXwyy9Xio0FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Date Now" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Date Now", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Custom", each DateTime.LocalNow()),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom",{{"Custom", "Today"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

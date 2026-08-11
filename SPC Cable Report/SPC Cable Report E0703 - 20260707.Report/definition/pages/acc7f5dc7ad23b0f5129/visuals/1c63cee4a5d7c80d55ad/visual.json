@@ -1,0 +1,1246 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "1c63cee4a5d7c80d55ad",
+  "position": {
+    "x": 0,
+    "y": 270.89108910891088,
+    "z": 0,
+    "height": 550.55597867479059,
+    "width": 1440,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "qry_eqp_detail"
+                    }
+                  },
+                  "Property": "COMPONENT"
+                }
+              },
+              "queryRef": "qry_eqp_detail.COMPONENT",
+              "nativeQueryRef": "EQUIPMENT TAGS",
+              "displayName": "EQUIPMENT TAGS"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "qry_eqp_detail"
+                    }
+                  },
+                  "Property": "Correctedtag"
+                }
+              },
+              "queryRef": "qry_eqp_detail.Correctedtag",
+              "nativeQueryRef": "CORRECTED TAGS",
+              "displayName": "CORRECTED TAGS"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "qry_eqp_detail"
+                    }
+                  },
+                  "Property": "PURPOSE"
+                }
+              },
+              "queryRef": "qry_eqp_detail.PURPOSE",
+              "nativeQueryRef": "PURPOSE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "qry_eqp_detail"
+                    }
+                  },
+                  "Property": "MDR_LOCATION"
+                }
+              },
+              "queryRef": "qry_eqp_detail.MDR_LOCATION",
+              "nativeQueryRef": "MDR_LOCATION"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "qry_eqp_detail"
+                    }
+                  },
+                  "Property": "WPNO"
+                }
+              },
+              "queryRef": "qry_eqp_detail.WPNO",
+              "nativeQueryRef": "WPNO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "qry_eqp_detail"
+                    }
+                  },
+                  "Property": "WP STATUS"
+                }
+              },
+              "queryRef": "qry_eqp_detail.WP STATUS",
+              "nativeQueryRef": "WP STATUS"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "qry_eqp_detail"
+                        }
+                      },
+                      "Property": "fx_installwp_hrs"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(qry_eqp_detail.fx_installwp_hrs)",
+              "nativeQueryRef": "WP HRS",
+              "displayName": "WP HRS"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "qry_eqp_detail"
+                        }
+                      },
+                      "Property": "fx_installwp_hrs_earned"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(qry_eqp_detail.fx_installwp_hrs_earned)",
+              "nativeQueryRef": "WP Hrs Earned",
+              "displayName": "WP Hrs Earned"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "qry_eqp_detail"
+                        }
+                      },
+                      "Property": "fx_installwp_hrs_earned"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(qry_eqp_detail.fx_installwp_hrs_earned)",
+              "nativeQueryRef": "INSTALLED",
+              "displayName": "INSTALLED"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "qry_eqp_detail"
+                    }
+                  },
+                  "Property": "PLANNEDSTARTDATE"
+                }
+              },
+              "queryRef": "qry_eqp_detail.PLANNEDSTARTDATE",
+              "nativeQueryRef": "PLANNEDSTARTDATE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "qry_eqp_detail"
+                    }
+                  },
+                  "Property": "PLANNEDFINISHDATE"
+                }
+              },
+              "queryRef": "qry_eqp_detail.PLANNEDFINISHDATE",
+              "nativeQueryRef": "PLANNEDFINISHDATE"
+            }
+          ],
+          "showAll": true
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "qry_eqp_detail"
+                  }
+                },
+                "Property": "PLANNEDSTARTDATE"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Calibri'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Calibri'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "232.84565916398714D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Cable PGTT Plan"
+                          }
+                        },
+                        "Property": "Pulled"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "10L"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141.81634130643036D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.FromEquipment"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "153.28041783312932D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.ToEquipment"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "98.97368995997908D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.PULLING IWP NO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "88.1922263938937D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Termination From IWP No"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "66.72461752433937D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Query1.PULLING MANHOURS)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61.40612634830329D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Pulled Comp Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.71349095966622D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.GLANDING FROM IWP NO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74.82339099618719D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Glanding From Manhours"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.15298166700155D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Glanding From Comp Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77.95549374130738D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.GLANDING TO IWP NO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "68.49373702776498D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Glanding To Comp Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "68.16411682892908D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Glanding To Manhours"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89.71348356349894D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Termination From Manhours"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89.26286509040335D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Termination From Comp Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.29625262650929D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Termination To IWP No"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.16413161200501D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Termination To Manhours"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.60362001751359D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Termination To Comp Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.85675113083502D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Query1.Testing Manhours)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.41725532715347D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.Testing Comp Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "107.03937007874016D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.fx_eqp_from_iwp"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "106.07086614173228D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Query1.fx_eqp_to_iwp"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "155.06369760351674D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "qry_eqp_detail.WPNO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119.09027038052716D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "qry_eqp_detail.PURPOSE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141.64095182770853D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(qry_eqp_detail.fx_installwp_hrs_earned)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104.55882489714665D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(qry_eqp_detail.fx_installwp_hrs)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "209.1725846768054D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "qry_eqp_detail.PLANNEDFINISHDATE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "157.9935686240284D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "qry_eqp_detail.MDR_LOCATION"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "233.57882766080593D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "qry_eqp_detail.Correctedtag"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "252.3198732346858D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "qry_eqp_detail.COMPONENT"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "212.772273485077D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "qry_eqp_detail.PLANNEDSTARTDATE"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(qry_eqp_detail.fx_installwp_hrs)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(qry_eqp_detail.fx_installwp_hrs_earned)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CountNonNull(qry_eqp_detail.fx_installwp_hrs_earned)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'EQUIPMENT'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#070f25'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Inner'"
+                }
+              }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BottomLeft'"
+                }
+              }
+            },
+            "angle": {
+              "expr": {
+                "Literal": {
+                  "Value": "45L"
+                }
+              }
+            },
+            "shadowDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
+                }
+              }
+            },
+            "shadowBlur": {
+              "expr": {
+                "Literal": {
+                  "Value": "15L"
+                }
+              }
+            },
+            "shadowSpread": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "70L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b553757f50336b298db2",
+        "displayName": "Equipment Name",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "qry_eqp_detail"
+              }
+            },
+            "Property": "MDR_PARENTNAME"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "2df037d146b0f9beeccd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "qry_eqp_detail"
+              }
+            },
+            "Property": "PURPOSE"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "q",
+              "Entity": "qry_eqp_detail",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "q"
+                          }
+                        },
+                        "Property": "PURPOSE"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Installation'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "ecc9bd914ff4cc5c61ee",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "qry_eqp_detail"
+              }
+            },
+            "Property": "DISCIPLINE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "31e35de123870aac51c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "qry_eqp_detail"
+              }
+            },
+            "Property": "WPNO"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "81be1653280db8cd6a0c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "qry_eqp_detail"
+              }
+            },
+            "Property": "WP STATUS"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "76dacd8abc97b3008226",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "qry_eqp_detail"
+                  }
+                },
+                "Property": "fx_installwp_hrs"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "301e260a4ed181c01806",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "qry_eqp_detail"
+                  }
+                },
+                "Property": "fx_installwp_hrs_earned"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "99c6d6b1d900a8accd9d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "qry_eqp_detail"
+              }
+            },
+            "Property": "COMPONENT"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "f09e53d55b547cdc203d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "qry_eqp_detail"
+              }
+            },
+            "Property": "ACTUALFINISHDATE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ]
+  }
+}

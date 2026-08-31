@@ -1,0 +1,13 @@
+# Power BI Local Files
+*.abf
+**/cache.abf
+
+# User-specific settings
+.localSettings.json
+
+# Power BI cache
+**/.pbi/
+
+# Temporary files
+*.tmp
+*.bak

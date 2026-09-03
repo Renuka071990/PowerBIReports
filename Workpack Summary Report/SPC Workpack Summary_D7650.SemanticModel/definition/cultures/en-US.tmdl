@@ -6978,7 +6978,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "StaticTbl_Phase",
-			          "ConceptualProperty": "Phase Prefab Erection"
+			          "ConceptualProperty": "Phase Prefab Erection1"
 			        }
 			      },
 			      "State": "Generated",

@@ -345,7 +345,7 @@ table Excel_Distrib-Alloc-ToGo
 
 		annotation SummarizationSetBy = Automatic
 
-	column FX_Phase = LOOKUPVALUE(StaticTbl_Phase[Phase Prefab Erection],StaticTbl_Phase[Areacode],[CONTRACTOR])
+	column FX_Phase = LOOKUPVALUE(StaticTbl_Phase[Phase Prefab Erection1],StaticTbl_Phase[Areacode],[CONTRACTOR])
 		lineageTag: f5e31d6b-fb66-4a56-8845-627efb8e2f90
 		summarizeBy: none
 

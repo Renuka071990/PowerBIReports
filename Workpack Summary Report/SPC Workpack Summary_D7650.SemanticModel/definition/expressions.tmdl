@@ -518,7 +518,7 @@ expression 'Errors in Qry_IWP Detail Only' =
 		    Table.TransformColumns(Source, pairs),
 		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
 		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"Plant", "Job Number", "WP", "JOB_WPNO", "Hours", "Details", "Attribute", "Value", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Category"}),
-		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "Plant", "Job Number", "WP", "JOB_WPNO", "Hours", "Details", "Attribute", "Value", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Category"})
+		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "Plant", "Job Number", "WP", "JOB_WPNO", "Hours", "Details", "Attribute", "Value", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Category","Category-New"})
 		in
 		  #"Reordered Columns"
 	lineageTag: 020e9223-ee71-4ca1-bcaa-a523cd88d19d
@@ -526,7 +526,7 @@ expression 'Errors in Qry_IWP Detail Only' =
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 expression 'Errors in Qry_IWP Detail Only (2)' =
 		let
@@ -541,11 +541,13 @@ expression 'Errors in Qry_IWP Detail Only (2)' =
 		    Table.TransformColumns(Source, pairs),
 		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
 		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"Plant", "Job Number", "WP", "JOB_WPNO", "Hours", "Details", "Attribute", "Value", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Category"}),
-		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "Plant", "Job Number", "WP", "JOB_WPNO", "Hours", "Details", "Attribute", "Value", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Category"})
+		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "Plant", "Job Number", "WP", "JOB_WPNO", "Hours", "Details", "Attribute", "Value", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Category","Category2"})
 		in
 		  #"Reordered Columns"
 	lineageTag: a477095a-5fb8-4222-b367-0fbab6e372aa
 	queryGroup: 'Query Errors - 5/5/2026 11:40:02 AM'
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
 

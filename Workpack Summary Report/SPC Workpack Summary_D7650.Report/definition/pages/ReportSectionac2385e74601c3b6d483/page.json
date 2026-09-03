@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSectionac2385e74601c3b6d483",
+  "displayName": "ToolTip Discipline",
+  "displayOption": "ActualSize",
+  "height": 240,
+  "width": 320,
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

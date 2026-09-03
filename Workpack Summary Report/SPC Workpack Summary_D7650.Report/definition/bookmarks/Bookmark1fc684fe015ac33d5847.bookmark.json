@@ -1,0 +1,1595 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Show 6wks",
+  "name": "Bookmark1fc684fe015ac33d5847",
+  "options": {
+    "targetVisualNames": [
+      "0fbab946bcec1a433252"
+    ]
+  },
+  "explorationState": {
+    "version": "1.11",
+    "activeSection": "ReportSection895f6f86e73d905eb251",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "Filterd6f3edb9d1522361723b",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WPNO"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter141e10b7729d854dd3cd",
+          "type": "Advanced",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "_FX_WPPlan_Final_Issued"
+                }
+              },
+              "Property": "WeekEnding"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter0ecff6f358bc123f7182",
+          "type": "Advanced",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "_FX_WPPlan_Final_Comp"
+                }
+              },
+              "Property": "WeekEnding"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter69a2b6ba44d25000ea94",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Plant_Names"
+                }
+              },
+              "Property": "Plants"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter71ab0be6c2524ad36511",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "Foreman"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter60fe9df3505119017ad9",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "General Foreman"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter1508262078b498a4b071",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Plant_Names"
+                }
+              },
+              "Property": "JobNo"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter6985de4033dc6e283306",
+          "type": "Advanced",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "TASK NO"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter86b8cca312b4517a69c1",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "DISCIPLINE"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter79d3709d06a0049884d3",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Area_Names"
+                }
+              },
+              "Property": "Areaname"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filtere28c322404c90e6e300d",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Phase"
+                }
+              },
+              "Property": "Phase"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter8231a014ebb4a785f83e",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_DeckLvl"
+                }
+              },
+              "Property": "Description"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter9010e803d09bc659cc0c",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP PURPOSE"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3954d00d52c79161625f",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Receive Date"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3efca2f6459a7d7cc399",
+          "type": "Advanced",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Progress"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter27c744dd5e848a077138",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ACTIVITY CODE"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter74b3160f0e8e58b35b95",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 1"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter7442b55316151339bf69",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 2"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterb82383fc6f778ffa36bd",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 3"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterdf4c6bb3708aa8e357c0",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 4"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3eca1312099bf8b7dc3b",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 5"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterad48c0f5abd406bc58a5",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "STATUS"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterc1d6c6477b353be405d9",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Progress"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSection895f6f86e73d905eb251": {
+        "filters": {
+          "byName": {
+            "Filter3e65b981813140578770": {
+              "name": "Filter3e65b981813140578770",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "_",
+                    "Entity": "_FX_Distribution_Qty_Count",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "_"
+                                }
+                              },
+                              "Property": "FX_WeekSummary"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Week Summary'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FX_Distribution_Qty_Count"
+                    }
+                  },
+                  "Property": "FX_WeekSummary"
+                }
+              },
+              "howCreated": 1
+            }
+          }
+        },
+        "visualContainers": {
+          "2172f05ca510b040f695": {
+            "filters": {
+              "byName": {
+                "Filterf8e7ae1a9a045e36d398": {
+                  "name": "Filterf8e7ae1a9a045e36d398",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_FX_Distribution_Qty_Count",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "_"
+                                    }
+                                  },
+                                  "Property": "Status"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'01. To-Go'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filterbdda782b7eeb168979e9": {
+                  "name": "Filterbdda782b7eeb168979e9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_Distribution_Qty_Count"
+                            }
+                          },
+                          "Property": "Qty"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "c13a832a85492b8a72d4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_count_bal"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "StaticTbl_Area_Names"
+                        }
+                      },
+                      "Property": "Areaname"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "uom"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_count_bal"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_qty_bal"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_hrs_bal"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Values": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "_par_distrib"
+                          }
+                        },
+                        "Property": "_par_distrib"
+                      }
+                    },
+                    "index": 0,
+                    "length": 3
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "Area_Names.Areaname"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "FX_Distribution_Qty_Count.DISCIPLINE"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "FX_Distribution_Qty_Count.uom"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "7fa6d161df4686c9b327": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "a93421d3aa090bb56ff0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "70aa2aaa344d1e44afcc": {
+            "filters": {
+              "byName": {
+                "Filter5e0eb7f6494ee5a3bec5": {
+                  "name": "Filter5e0eb7f6494ee5a3bec5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Excel_Distrib-Alloc-ToGo"
+                            }
+                          },
+                          "Property": "HRS"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Excel_Distrib-Alloc-ToGo"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Excel_Distrib-Alloc-ToGo"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "5c247ad4df419f281b68": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "092041ce8ceca16e297b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f6978596c51b5d144bf7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "xrefdate_Distribution File"
+                        }
+                      },
+                      "Property": "xrefdate_Distribution File"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "7354719cf6cda3deb8aa": {
+            "filters": {
+              "byName": {
+                "Filter73a4f09b80185a506d2b": {
+                  "name": "Filter73a4f09b80185a506d2b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FX_Distribution_Allocation_Count"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter9cb620d902d2eaedcc9a": {
+                  "name": "Filter9cb620d902d2eaedcc9a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FX_Distribution_Allocation_Count"
+                        }
+                      },
+                      "Property": "FX_UOM-00"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter7f63f9b6f97da65d82e7": {
+                  "name": "Filter7f63f9b6f97da65d82e7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "FX_Distribution_Allocation_Count"
+                            }
+                          },
+                          "Property": "FX_Quantity_Bal_Dist-00"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter6e411bfbd780ed64b4c1": {
+                  "name": "Filter6e411bfbd780ed64b4c1",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_FX_Distribution_Qty_Count",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "_"
+                                    }
+                                  },
+                                  "Property": "Status"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'01. To-Go'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "cc288f98de0d30a61ddd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "769a5c24a932ef6265b2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "uom"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ed117a1f9305adf721a6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "MX_QTY_Tot"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "0fbab946bcec1a433252": {
+            "filters": {
+              "byName": {
+                "Filtere19e31a2e4a826cde29c": {
+                  "name": "Filtere19e31a2e4a826cde29c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Excel_Distrib-Alloc-ToGo"
+                            }
+                          },
+                          "Property": "FX_Distribution_Hrs"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter3cebf7c5d86c2054f575": {
+                  "name": "Filter3cebf7c5d86c2054f575",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FX_Distribution_Allocation_Count"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter6797c7514cb59957a4df": {
+                  "name": "Filter6797c7514cb59957a4df",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "FX_Distribution_Allocation_Count"
+                            }
+                          },
+                          "Property": "FX_Comp_Bal_Dist"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filteraed37276f285b10e3bc1": {
+                  "name": "Filteraed37276f285b10e3bc1",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_FX_Distribution_Qty_Count",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "_"
+                                    }
+                                  },
+                                  "Property": "Status"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'01. To-Go'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "0471f5ea8a8c77bc81f6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "592eab49828c75492e2b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "MX_Count_Tot"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "55ec5fe359a79814319e": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "3c67256d84b71e5cd5da": {
+            "filters": {
+              "byName": {
+                "Filter48b59b2d316c6a43a550": {
+                  "name": "Filter48b59b2d316c6a43a550",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "StaticTbl_Area_Names"
+                        }
+                      },
+                      "Property": "Areaname"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "1a6b6fdcb84890e61868": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "2632a26095061e29b07c": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "1171c0da3087173cca79": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "400643d7e94a495eca1c": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "62baa6b9078481191043": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4b131cafb9d4769c8928",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "586d38e6e985b641e842",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_Distribution_Qty_Count"
+                            }
+                          },
+                          "Property": "Count"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d7f212102be9b4699d3e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "317cf31896c7eb2a4b19",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "mx_hour_bal"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "105dc578a5127d749be0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "mx_hour_complete"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "91a31fe4690572091c48": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "026770d301e4ac3db5da",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "57158f87b0a331b4347f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "99650a20cbd757f368cc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_Distribution_Qty_Count"
+                            }
+                          },
+                          "Property": "Qty"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c3cce88a0a179058203b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "mx_hour_bal"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9c555c986ce46db21263",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "mx_hour_complete"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "e6966ff0306ab2af7978": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ba5b16dc55436fc7c203",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_par_distrib"
+                        }
+                      },
+                      "Property": "_par_distrib"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {}
+            }
+          },
+          "959d192ba55ac89c6154": {
+            "filters": {
+              "byName": {
+                "Filter3cfba57b884d0ea1c51d": {
+                  "name": "Filter3cfba57b884d0ea1c51d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter99bd24becb426ea5e16e": {
+                  "name": "Filter99bd24becb426ea5e16e",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "f",
+                        "Entity": "FX_Distribution_Allocation_Count",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "f"
+                                        }
+                                      },
+                                      "Property": "NAME"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FX_Distribution_Allocation_Count"
+                        }
+                      },
+                      "Property": "NAME"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                "Filtere0d72211304c9b37d603": {
+                  "name": "Filtere0d72211304c9b37d603",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Qty_Count"
+                        }
+                      },
+                      "Property": "MX_QTY_Tot"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FX_Distribution_Allocation_Count"
+                        }
+                      },
+                      "Property": "NAME"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FX_Distribution_Allocation_Count"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,2954 @@
+table 'Qry_IWP Detail'
+	lineageTag: b566e6f4-a6ac-4391-8c31-129bebcc512f
+
+	measure 'FX_WP Prog' = sum('Qry_IWP Detail'[WP Earned Hrs])/sum('Qry_IWP Detail'[WP Hrs])
+		formatString: 0%;-0%;0%
+		lineageTag: cc821811-1701-46d7-b72e-4c01b90dd008
+
+		changedProperty = FormatString
+
+	column FIWPUID
+		dataType: string
+		lineageTag: b0ba5eac-ce75-4f51-b5fd-3b3b8d261782
+		summarizeBy: none
+		sourceColumn: FIWPUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROJECT
+		dataType: string
+		lineageTag: 3b8df6bc-8b12-4516-8e6a-fc00fd7732bd
+		summarizeBy: none
+		sourceColumn: PROJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TASK NO'
+		dataType: string
+		lineageTag: 122e180d-25ae-4479-a863-7c095ef179af
+		summarizeBy: none
+		sourceColumn: TASK NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JOB NO'
+		dataType: string
+		lineageTag: d71708b7-c627-4148-9b68-f38971e0e53c
+		summarizeBy: none
+		sourceColumn: JOB NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTIVITY CODE'
+		dataType: string
+		lineageTag: 45ebd52a-9e5c-4d0a-a3de-4d7f4e81a7c6
+		summarizeBy: none
+		sourceColumn: ACTIVITY CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		dataType: string
+		lineageTag: 03c21bcf-b4d1-4b4d-9bda-68de9fd30b5a
+		summarizeBy: none
+		sourceColumn: DISCIPLINE
+
+		annotation SummarizationSetBy = Automatic
+
+	column WPNO
+		dataType: string
+		lineageTag: 85db27a5-1f06-4518-87cd-a37e3724f247
+		summarizeBy: none
+		sourceColumn: WPNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP DESCRIPTION'
+		dataType: string
+		lineageTag: 2e8adc61-ddfe-4cca-89ad-0549912b09d7
+		summarizeBy: none
+		sourceColumn: WP DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Hrs'
+		dataType: double
+		formatString: #,0.0
+		lineageTag: 6843d450-9249-4978-b50b-72e1d5c410d9
+		summarizeBy: sum
+		sourceColumn: AFC Hrs
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Qry_IWP Detail","TableItemName":"AFC Hrs (bins_200)","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"Qry_IWP Detail","TableItemName":"AFC Hrs (bins_050)","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"Qry_IWP Detail","TableItemName":"AFC Hrs (bins_100)","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"Qry_IWP Detail","TableItemName":"AFC Hrs (bins_400)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'WP Hrs'
+		dataType: double
+		formatString: #,0.0
+		lineageTag: bcda8d17-00b3-454d-b9b0-e3835a1e07c2
+		summarizeBy: sum
+		sourceColumn: WP Hrs
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Qry_IWP Detail","TableItemName":"WP Hrs (bins_050)","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"Qry_IWP Detail","TableItemName":"WP Hrs (bins_100)","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"Qry_IWP Detail","TableItemName":"WP Hrs (bins_200)","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"Qry_IWP Detail","TableItemName":"WP Hrs (bins_400)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column RATEUOM
+		dataType: string
+		lineageTag: 4edab95a-11a2-4b91-9c07-734d894ba8cc
+		summarizeBy: none
+		sourceColumn: RATEUOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column AREA
+		dataType: string
+		lineageTag: 0de95340-7904-4971-8f90-7c60c736e816
+		summarizeBy: none
+		sourceColumn: AREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: string
+		lineageTag: 37dc3d88-332f-445e-bf0a-51872671e894
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_job_wpno = 'Qry_IWP Detail'[JOB NO]&"_"&'Qry_IWP Detail'[WPNO]
+		lineageTag: 48d4d39d-3480-4679-9c37-827e86568873
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Balance Hours' = 'Qry_IWP Detail'[WP Hrs]-'Qry_IWP Detail'[WP Earned Hrs]
+		formatString: #,0
+		lineageTag: 63d4adcb-71b0-40c1-bdda-f70bec8158a4
+		summarizeBy: sum
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'FX_DUPLICATE WP' = Countx(FILTER('Qry_IWP Detail',EARLIER('Qry_IWP Detail'[FIWPOBID])='Qry_IWP Detail'[FIWPOBID]),'Qry_IWP Detail'[FIWPOBID])
+		formatString: 0
+		lineageTag: c671687c-1d32-4897-a034-20362b52ba01
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_ACTIVITY ID MISMATCHED' = IF(('Qry_IWP Detail'[ACTIVITY ID]=LEFT('Qry_IWP Detail'[WPNO],LEN('Qry_IWP Detail'[ACTIVITY ID]))) || 'Qry_IWP Detail'[DISCIPLINE]="Fab Adder","TRUE","FALSE")
+		lineageTag: 8b4941fe-ff02-49c1-aae7-bd73d2ba0a27
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_DUPLICATEWPCOUNT = IF('Qry_IWP Detail'[FX_DUPLICATE WP] >1 , 1,0)
+		formatString: 0
+		lineageTag: ed4d7f67-de9a-4d43-8e17-0ba6b032e80e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTIVITYCOUNT = IF('Qry_IWP Detail'[FX_ACTIVITY ID MISMATCHED] = "FALSE",1,0)
+		formatString: 0
+		lineageTag: 7e3f624f-e561-4ac0-8807-813cff736a9c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Job-ActCode = 'Qry_IWP Detail'[JOB NO]&"-"&'Qry_IWP Detail'[ACTIVITY CODE]
+		lineageTag: ef9f6947-eae6-4bcd-af48-534f6ab20b0c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTIVITY ID'
+		dataType: string
+		lineageTag: dd1f1bfc-937e-4371-9c7d-f7940ff37a55
+		summarizeBy: none
+		sourceColumn: ACTIVITY ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTIVITY ID DESCRIPTION'
+		dataType: string
+		lineageTag: 7ad2c26d-7e68-453c-84aa-2ce1ef9690d2
+		summarizeBy: none
+		sourceColumn: ACTIVITY ID DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC WP DELTA Hrs'
+		dataType: double
+		lineageTag: dba17d30-458d-462c-952e-37fc79b564f5
+		summarizeBy: sum
+		sourceColumn: AFC WP DELTA Hrs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress'
+		dataType: double
+		lineageTag: ed139c64-d794-4aea-ad58-dcdb53c2afc1
+		summarizeBy: sum
+		sourceColumn: AFC Progress
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned Hrs'
+		dataType: double
+		formatString: 0.00
+		lineageTag: a52b4b82-e011-4bd0-aba1-f614499c8bca
+		summarizeBy: sum
+		sourceColumn: AFC Earned Hrs
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC WP Earned Delta Hrs'
+		dataType: double
+		lineageTag: e814f8cb-318d-4718-a019-a014790c8a99
+		summarizeBy: sum
+		sourceColumn: AFC WP Earned Delta Hrs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC WP Progress Delta'
+		dataType: double
+		lineageTag: 29d602e7-cd54-471a-a503-5c189cd7edd7
+		summarizeBy: sum
+		sourceColumn: AFC WP Progress Delta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7f4f1957-1205-442c-a194-a27dc34ae458
+		summarizeBy: none
+		sourceColumn: WP Progress
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'WP Earned Hrs'
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b64139f5-51f4-4065-b551-b462b502059b
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP PURPOSE'
+		dataType: string
+		lineageTag: be27a67d-11b0-42e7-bc79-93e47f55d785
+		summarizeBy: none
+		sourceColumn: WP PURPOSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Last Week Progress'
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: 1f00a8b1-1419-4aab-a2d2-ca7d0e4dd370
+		summarizeBy: sum
+		sourceColumn: WP Last Week Progress
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Last Week Earned'
+		dataType: double
+		lineageTag: f5e1c667-a801-4b7d-9dd7-3fadc2d7fc4f
+		summarizeBy: sum
+		sourceColumn: WP Last Week Earned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Last Week Weekly Earned'
+		dataType: double
+		lineageTag: c3c0ccbc-dfc8-4c76-9024-682de3470419
+		summarizeBy: sum
+		sourceColumn: WP Last Week Weekly Earned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Weekly Progress'
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: 96375cbf-4dcd-41b7-836b-1290c77a7fda
+		summarizeBy: sum
+		sourceColumn: WP Weekly Progress
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Weekly Earned'
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 38a35b81-2ee8-4574-ad25-a9aca4e72dad
+		summarizeBy: sum
+		sourceColumn: WP Weekly Earned
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Revision Date'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 12dbcecb-45a0-4d07-879e-9f75d4e1e1ee
+		summarizeBy: none
+		sourceColumn: WP Revision Date
+
+		variation Variation
+			isDefault
+			relationship: 2cd60a22-2084-4f1d-9a0a-4b2d326125ad
+			defaultHierarchy: LocalDateTable_baaa1ece-cee2-472c-b8bd-284d5e9676b1.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'WP Receive Date'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 0574273c-0f37-4798-b1bf-07298e7c5e2c
+		summarizeBy: none
+		sourceColumn: WP Receive Date
+
+		variation Variation
+			isDefault
+			relationship: 29bf6aa7-500e-4737-9860-1f14278ef563
+			defaultHierarchy: LocalDateTable_ca5544f6-8907-4c26-ad20-32edf3df811f.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'WP Last Progress By'
+		dataType: string
+		lineageTag: 1fc7ba34-d69a-40b6-b9a9-94022a8f7bc1
+		summarizeBy: none
+		sourceColumn: WP Last Progress By
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Last Progress Date'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 49250dac-3a42-4153-8f02-c78a3342ad36
+		summarizeBy: none
+		sourceColumn: WP Last Progress Date
+
+		variation Variation
+			isDefault
+			relationship: 233ea024-244d-4d87-b4f5-4f762ead4c7e
+			defaultHierarchy: LocalDateTable_a4c5fd99-c260-4969-9279-89c6096a46f3.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'WP Creation User'
+		dataType: string
+		lineageTag: e4d6ee1f-d31e-4247-b7f9-3849e4cdcc5b
+		summarizeBy: none
+		sourceColumn: WP Creation User
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Creation Date'
+		dataType: string
+		lineageTag: ef48ecfa-1351-421d-9f85-1ff7d1005c6e
+		summarizeBy: none
+		sourceColumn: WP Creation Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Planned Start Date'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: a0d8d82d-0c80-4122-830d-87b0cbd383a7
+		summarizeBy: none
+		sourceColumn: WP Planned Start Date
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'WP Planned Finish Date'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: eb9c8b0c-8a62-456c-80ce-5ac44238b763
+		summarizeBy: none
+		sourceColumn: WP Planned Finish Date
+
+		variation Variation
+			isDefault
+			relationship: fe34b3b5-61bf-4a23-98be-25479a0b8699
+			defaultHierarchy: LocalDateTable_5ad8ee89-1d7c-450a-8df6-86b3a27b9c8e.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'WP Actual Start Date'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: d221d472-289e-4646-8b28-ebc09c0866a9
+		summarizeBy: none
+		sourceColumn: WP Actual Start Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'WP Actual Finish Date'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: a17c0f55-e0a9-42d4-9241-a83ff7c89b79
+		summarizeBy: none
+		sourceColumn: WP Actual Finish Date
+
+		variation Variation
+			isDefault
+			relationship: 2d4a0482-a47a-45bb-afae-6da8e7ee98b5
+			defaultHierarchy: LocalDateTable_a6f1725b-5213-4bca-a40b-6fde60638b75.'Date Hierarchy'
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'L3 Forecast Start Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 8019313b-ec4e-4c67-9815-0cc737a4686e
+		summarizeBy: none
+		sourceColumn: L3 Forecast Start Date
+
+		variation Variation
+			isDefault
+			relationship: 25045054-0b30-4b7c-bd25-1e2629f0ab12
+			defaultHierarchy: LocalDateTable_02716f34-640a-4102-af50-042396d73db6.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'L3 Forecast Finish Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: c3cdd35b-931e-4cc0-9ea6-9ffdbfbd931f
+		summarizeBy: none
+		sourceColumn: L3 Forecast Finish Date
+
+		variation Variation
+			isDefault
+			relationship: dd775419-4fcc-41a4-9a0c-9c23487a19c7
+			defaultHierarchy: LocalDateTable_acf7517d-0821-43e0-bf83-a738bc90562a.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'L3 Baseline Start Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: f275a665-656c-4c62-97fa-13b77049eafe
+		summarizeBy: none
+		sourceColumn: L3 Baseline Start Date
+
+		variation Variation
+			isDefault
+			relationship: edba85c9-f9e3-41f9-afd3-f396be641b22
+			defaultHierarchy: LocalDateTable_22d202db-fc7a-465a-aa9d-eae3af3228eb.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'L3 Baseline Finish Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: e97970e9-9e42-45f4-a817-f2d410cee00a
+		summarizeBy: none
+		sourceColumn: L3 Baseline Finish Date
+
+		variation Variation
+			isDefault
+			relationship: af148eb6-e264-47cc-bf82-7d779feb9c9d
+			defaultHierarchy: LocalDateTable_f28a3278-bba5-4e9d-860f-22988a824e7a.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'ROC 1'
+		dataType: string
+		lineageTag: 86199a38-a2e1-47d4-be3e-9e66d78d68c0
+		summarizeBy: none
+		sourceColumn: ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 2'
+		dataType: string
+		lineageTag: bf77a1b2-b483-4ed2-b51f-b7bea8dd2476
+		summarizeBy: none
+		sourceColumn: ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 3'
+		dataType: string
+		lineageTag: 74a2eb38-42f3-43e6-9fcb-8a763f2b18cb
+		summarizeBy: none
+		sourceColumn: ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 4'
+		dataType: string
+		lineageTag: c78cbc31-b51c-40f2-b4e4-25c8a6480b6f
+		summarizeBy: none
+		sourceColumn: ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 5'
+		dataType: string
+		lineageTag: 216e538a-5785-40e3-9056-062cabee81a6
+		summarizeBy: none
+		sourceColumn: ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC 6'
+		dataType: string
+		lineageTag: db602903-6351-4545-a6da-eacfd852d61a
+		summarizeBy: none
+		sourceColumn: ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROC Weightage 1'
+		dataType: double
+		lineageTag: 6f3ea425-39bc-4ad7-adac-9259c2f0e747
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 2'
+		dataType: double
+		lineageTag: b913a66e-8f97-4e80-a4fe-298ea2306a05
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 3'
+		dataType: double
+		lineageTag: beac6787-3a31-4e07-8a7e-d00e1adf935e
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 4'
+		dataType: double
+		lineageTag: 46a5c732-0a5d-411f-9019-326a624459c3
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 5'
+		dataType: double
+		lineageTag: 8713e337-8833-43f3-ab20-a12fa9cee1dc
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ROC Weightage 6'
+		dataType: double
+		lineageTag: d5fb7d4b-381b-4153-b859-ee4568530557
+		summarizeBy: sum
+		sourceColumn: ROC Weightage 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 1'
+		dataType: double
+		formatString: 0.00
+		lineageTag: 3025b46c-3c56-4611-bb23-c9585e8e6613
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Hrs ROC 2'
+		dataType: double
+		lineageTag: 3d8303bb-f61f-4d52-bd7d-22602962914b
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 3'
+		dataType: double
+		lineageTag: fb8f0e8b-6370-44a6-8c17-c7a0331dcb4f
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 4'
+		dataType: double
+		lineageTag: 053ea5f4-6a57-4159-8a87-55953286e319
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 5'
+		dataType: double
+		lineageTag: a318bb72-3450-4b45-a8ac-0821d8cd26f7
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs ROC 6'
+		dataType: double
+		lineageTag: a05e3f93-ab5f-41a7-a2e8-5ab6281e538d
+		summarizeBy: sum
+		sourceColumn: WP Hrs ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 1'
+		dataType: double
+		lineageTag: 0f851936-0295-4552-989e-1b580b6c9bdd
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 2'
+		dataType: double
+		lineageTag: 610cc139-0668-4618-a4ac-1d5f7d876d7c
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 3'
+		dataType: double
+		lineageTag: cee3d644-b2de-4e7f-8a4b-123277425058
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 4'
+		dataType: double
+		lineageTag: b5d3254c-cead-4803-8981-dcb9e7faaa75
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 5'
+		dataType: double
+		lineageTag: 24a060de-adfe-4476-946b-77a90ff37c9c
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs ROC 6'
+		dataType: double
+		lineageTag: 693e4bf7-7cd5-492d-ba1c-246b04e9df3c
+		summarizeBy: sum
+		sourceColumn: WP Earned Hrs ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 1'
+		dataType: double
+		lineageTag: cea824d5-c7ed-463f-9c1d-a2e5dc29917c
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 2'
+		dataType: double
+		lineageTag: 77a74f73-1eec-4f87-bfb8-e1afe0346231
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 3'
+		dataType: double
+		lineageTag: 686c1c71-c532-4284-b8e6-f522bb56efa5
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 4'
+		dataType: double
+		lineageTag: 002e936e-5997-492e-803b-af437d27043d
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 5'
+		dataType: double
+		lineageTag: 6ce3453e-41e5-4e2e-9401-4c1da5757d67
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Progress ROC 6'
+		dataType: double
+		lineageTag: 69caf9f4-17b1-4587-9c15-c2c88fd6a9af
+		summarizeBy: sum
+		sourceColumn: WP Progress ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Progress ROC 1'
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: c02ce76a-9933-4cc9-b6c0-0006b9bdc103
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 1
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Progress ROC 2'
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d47a97dd-ba47-46db-aea2-7988bb07b709
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 2
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Progress ROC 3'
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b0a151cb-b851-451d-a70f-eadddc1f05d4
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 3
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Progress ROC 4'
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e814c544-4a94-4054-8e66-04094da58019
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 4
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Progress ROC 5'
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: f1c9a080-017d-4ee5-b2eb-1fe16bc6b587
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 5
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Progress ROC 6'
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8eb9c113-2a3f-4110-9c98-8329d4f27a14
+		summarizeBy: sum
+		sourceColumn: AFC Progress ROC 6
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_ActivityCode = right(left('Qry_IWP Detail'[WPNO],13),7)
+		lineageTag: 6a617ff2-5fc1-4e88-aaf3-0ba775a32534
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WP_Complete = if([WP Progress]>=1,'Qry_IWP Detail'[WPNO]&" - Complete","")
+		lineageTag: 23bd680a-5332-4b6d-900f-239dee1aade4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_IWP_Status = if('Qry_IWP Detail'[WP Progress]>= 1, "Complete","Incomplete")
+		lineageTag: 0bc2e5b5-6045-4c4a-b615-377a7d49ad6a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Issued_Status =
+			if('Qry_IWP Detail'[STATUS]="Issued for Construction","01-Issued",
+			                        if(ISBLANK('Qry_IWP Detail'[WP Planned Start Date]),"04-No Date",
+			                            if('Qry_IWP Detail'[fx_planned_issued_date]<=TODAY() && 'Qry_IWP Detail'[STATUS]<>"Issued for Construction","03-Late",
+			                                if('Qry_IWP Detail'[fx_planned_issued_date]>TODAY() && 'Qry_IWP Detail'[STATUS]<>"Issued for Construction","02-On Sched",
+			                                    "No Data"))))
+		lineageTag: 63490895-7929-4ca9-88bb-d081ec27fc6f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Completion_Status =
+			if('Qry_IWP Detail'[FX_IWP_Status]="Incomplete" && ISBLANK('Qry_IWP Detail'[WP Planned Finish Date]),"04-No Date",
+			if('Qry_IWP Detail'[FX_IWP_Status]="Incomplete" && 'Qry_IWP Detail'[WP Planned Finish Date]<=today() && not(ISBLANK('Qry_IWP Detail'[WP Planned Finish Date])),"03-Late - Incomplete",
+			if('Qry_IWP Detail'[FX_IWP_Status]="Incomplete" && 'Qry_IWP Detail'[WP Planned Finish Date]>today(),"02-On Sched - Incomplete",
+			if('Qry_IWP Detail'[FX_IWP_Status]="Complete","01-IWP Completed","No Data"))))
+		lineageTag: cfa6a476-9a50-47fa-a071-01dae0ddca46
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_anomaly_actcode = ```
+			
+			                if('Qry_IWP Detail'[FX_ACTIVITY_CODE_MATCHED]="False","Act_CODE Mismatched",
+			               "Matched")
+			```
+		lineageTag: 0aa90026-b07d-4b42-98b4-2da80c2e997f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Issued_Actual_WkEnd = LOOKUPVALUE(_FX_Date[FX_WeekEnding],_FX_Date[Date],'Qry_IWP Detail'[FX_FisrtIssuanceDate])
+		formatString: dd-mmm-yy
+		lineageTag: 68091f70-302b-44f6-845f-7dbadc697008
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: ba7819c9-2436-4d54-b16b-a026b45781e8
+			defaultHierarchy: LocalDateTable_a9f4d98e-58d9-429c-863b-7e328dcd2314.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Issued_Plan_WkEnd = IF([WP Planned Start Date]<>BLANK(),LOOKUPVALUE(_FX_Date[FX_WeekEnding],_FX_Date[Date],[WP Planned Start Date])-7,BLANK())
+		formatString: dd-mmm-yy
+		lineageTag: 82c4a9a6-a4bb-4196-80bc-3c103e711333
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 828e9e41-201e-4bb8-86ba-b72d013d0289
+			defaultHierarchy: LocalDateTable_53321a0a-0b31-431b-9c45-92d239c0b721.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Comp_Actual_WkEnd = if('Qry_IWP Detail'[FX_IWP_Status] = "Complete",LOOKUPVALUE(_FX_Date[FX_WeekEnding],_FX_Date[Date],'Qry_IWP Detail'[WP Last Progress Date]),BLANK())
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 42e732b3-88b0-402c-98a8-ae10d465eb6d
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 42f4e54f-15ae-4f40-87fa-1774f6f5d1b6
+			defaultHierarchy: LocalDateTable_1ee98c90-bfd2-4eeb-8673-37db4b387124.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Comp_Plan_WkEnd = LOOKUPVALUE(_FX_Date[FX_WeekEnding],_FX_Date[Date],'Qry_IWP Detail'[WP Planned Finish Date])
+		formatString: dd-mmm-yy
+		lineageTag: 76c01844-1b05-4c60-9f95-f2196913ea5b
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 2dcf3388-f8ea-4897-a6ff-990ebf0c03f7
+			defaultHierarchy: LocalDateTable_02c6f9cd-9e7e-438c-8502-c67d6d803a54.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_ACTIVITY_CODE_MATCHED = IF(('Qry_IWP Detail'[ACTIVITY CODE]=LEFT('Qry_IWP Detail'[WPNO],7)) || 'Qry_IWP Detail'[DISCIPLINE]="Fab Adder","TRUE","FALSE")
+		lineageTag: 92638e4f-60df-4146-a9d6-36fafca02302
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column WP_REVNO
+		dataType: int64
+		lineageTag: 6363d9eb-2407-4f96-a4c0-53dbf534af8f
+		summarizeBy: sum
+		sourceColumn: WP_REVNO
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLAN_UNITS
+		dataType: double
+		lineageTag: 6f5a74be-34b5-43bb-a7ae-98d230099183
+		summarizeBy: sum
+		sourceColumn: PLAN_UNITS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COMPLETED_UNITS
+		dataType: double
+		lineageTag: 76c366f5-f0ca-48f6-9489-1a7d4959db9b
+		summarizeBy: sum
+		sourceColumn: COMPLETED_UNITS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 1'
+		dataType: double
+		lineageTag: 068f4b4b-b531-493f-9334-fda121387139
+		summarizeBy: sum
+		sourceColumn: Qty Planned 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 2'
+		dataType: double
+		lineageTag: dae6f73a-d7ef-42bb-9be9-1f9438496a2c
+		summarizeBy: sum
+		sourceColumn: Qty Planned 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 3'
+		dataType: double
+		lineageTag: c3558c5a-f2bf-4ead-b40d-d6a6c6c590f8
+		summarizeBy: sum
+		sourceColumn: Qty Planned 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 4'
+		dataType: double
+		lineageTag: b05b91be-5d8f-4632-aabd-58273edd8103
+		summarizeBy: sum
+		sourceColumn: Qty Planned 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 5'
+		dataType: double
+		lineageTag: e3b8e8a3-9d88-400f-91f5-a635461d5f05
+		summarizeBy: sum
+		sourceColumn: Qty Planned 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Planned 6'
+		dataType: double
+		lineageTag: e5f62531-4b94-4f5d-9c2b-d17a2135ca23
+		summarizeBy: sum
+		sourceColumn: Qty Planned 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 1'
+		dataType: double
+		lineageTag: d1700219-4f09-4cd3-912a-777578a754fd
+		summarizeBy: sum
+		sourceColumn: Qty Completed 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 2'
+		dataType: double
+		lineageTag: f21dab5a-cb18-4f2c-9fda-eaa8a111cc1a
+		summarizeBy: sum
+		sourceColumn: Qty Completed 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 3'
+		dataType: double
+		lineageTag: c3e124d8-03aa-4b1e-8143-1000459e9002
+		summarizeBy: sum
+		sourceColumn: Qty Completed 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 4'
+		dataType: double
+		lineageTag: c9062653-56ca-4e78-a585-f3597ebf511a
+		summarizeBy: sum
+		sourceColumn: Qty Completed 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty Completed 5'
+		dataType: double
+		lineageTag: 7db4f54b-19d1-49d0-b74d-977dbc3a59f6
+		summarizeBy: sum
+		sourceColumn: Qty Completed 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_WeeklyEarned = 'Qry_IWP Detail'[WP Earned Hrs]-'Qry_IWP Detail'[WP Last Week Earned]
+		lineageTag: bf0c70fc-598e-4411-82e1-367b4005cde8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Gantt_Desc = 'Qry_IWP Detail'[WPNO]&" | "&'Qry_IWP Detail'[DISCIPLINE]&" | "&'Qry_IWP Detail'[WP DESCRIPTION]
+		lineageTag: f21672ce-1b2c-4ab0-8bc4-743daf841b2f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_AFC_Balance = 'Qry_IWP Detail'[AFC Hrs]-'Qry_IWP Detail'[AFC Earned Hrs]
+		lineageTag: 2375201c-2bbf-4563-b79d-de082dc464ae
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Anomaly_Exists = ```
+			if(
+			    'Qry_IWP Detail'[fx_anomaly_actcode] <> "Matched" || 
+			    'Qry_IWP Detail'[FX_DUPLICATE WP]>1 || 
+			    'Qry_IWP Detail'[FX_DateIssue]<>"No Date Issues" ||  
+			    'Qry_IWP Detail'[FX_MissingAssignment]<>"No Issue" || 
+			    [fx_anomaly_prelim_prog]="Anomaly" ||
+			[fx_anomaly_gates_wt_L4] = "Anomaly" ||
+			[fx_anomaly_gatesname_L4] = "Anomaly" ||
+			[fx_anomaly_negative_ear] = "Negative" ||
+			[fx_anomaly_prelim_prog] = "Anomaly" ||
+			[fx_anomaly_prog%] = "Anomaly" ||
+			[fx_anomaly_pwearn] = "Anomaly"
+			    
+			    ,"Anomaly","No Anomaly")
+			```
+		lineageTag: 2c8ccf94-a51c-4df6-a347-dc1c863ec2b8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_DateIssue =
+			if('Qry_IWP Detail'[STATUS]="Issued for Construction" && ISBLANK('Qry_IWP Detail'[WP Revision Date]) && (ISBLANK('Qry_IWP Detail'[WP Planned Finish Date]) || ISBLANK('Qry_IWP Detail'[WP Planned Start Date])),"No Planned/Issued Dates",
+			if('Qry_IWP Detail'[STATUS]="Issued for Construction" && ISBLANK('Qry_IWP Detail'[WP Revision Date]),"No Issuance Date",
+			if('Qry_IWP Detail'[STATUS]="Issued for Construction" && (ISBLANK('Qry_IWP Detail'[WP Planned Finish Date]) || ISBLANK('Qry_IWP Detail'[WP Planned Start Date])),"No Planned Dates","No Date Issues")))
+		lineageTag: 97e2532d-38e8-45a8-9b4c-76f794b92180
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Foreman
+		dataType: string
+		lineageTag: c20bb0fe-0cc3-42a9-a470-c986b09b79b9
+		summarizeBy: none
+		sourceColumn: Foreman
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'General Foreman'
+		dataType: string
+		lineageTag: df6b76ba-cf00-4604-ae96-6bfb136c86ed
+		summarizeBy: none
+		sourceColumn: General Foreman
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'IWP Issued By'
+		dataType: string
+		lineageTag: 3ea2c27d-d4aa-4047-bf5a-74a30c8ce93d
+		summarizeBy: none
+		sourceColumn: IWP Issued By
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_MissingAssignment =
+			if(ISBLANK('Qry_IWP Detail'[Foreman]) && NOT(ISBLANK('Qry_IWP Detail'[General Foreman])) && 'Qry_IWP Detail'[STATUS]="Issued for Construction","Foreman",
+			IF(ISBLANK('Qry_IWP Detail'[General Foreman]) && NOT(ISBLANK('Qry_IWP Detail'[Foreman])) && 'Qry_IWP Detail'[STATUS]="Issued for Construction","General Foreman",
+			IF(ISBLANK('Qry_IWP Detail'[General Foreman]) && ISBLANK('Qry_IWP Detail'[Foreman]) && 'Qry_IWP Detail'[STATUS]="Issued for Construction","Missing Both","No Issue")))
+		lineageTag: bec38d6b-a7aa-4b02-af9d-9e505e1db3a0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Fix_AFC_Total = sum('Qry_IWP Detail'[AFC Hrs])
+		lineageTag: d305d79d-3ddc-41fb-8027-c23b523cc602
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_UOM = if('Qry_IWP Detail'[RATEUOM]="kg","t",'Qry_IWP Detail'[RATEUOM])
+		lineageTag: d6dd8c76-3e92-47c1-b919-4f0539a5011f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Comp_Qty = if('Qry_IWP Detail'[FX_UOM]="t",('Qry_IWP Detail'[COMPLETED_UNITS]/1000),'Qry_IWP Detail'[COMPLETED_UNITS])
+		lineageTag: 0240cc2f-7395-4877-9f2e-e06484be9056
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Plan_Qty = if('Qry_IWP Detail'[FX_UOM]="t",('Qry_IWP Detail'[PLAN_UNITS]/1000),'Qry_IWP Detail'[PLAN_UNITS])
+		lineageTag: 3aa26ed0-bd7a-4dad-979a-0f146419d4b1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_SPC_Fitter_ActCode = IF('Qry_IWP Detail'[WEIGHTAGE]>0,'Qry_IWP Detail'[WPNO]&"F",'Qry_IWP Detail'[WPNO])
+		lineageTag: 6482c5fd-3ab0-4259-9719-fd7170b18b3a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_SPC_Welder_ActCode = IF('Qry_IWP Detail'[WEIGHTAGE]>0,'Qry_IWP Detail'[WPNO]&"W",BLANK())
+		lineageTag: c7bd8bec-576f-4005-bc5c-42c366109d1a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_SPC_Fitter_WPHrs =
+			var _fitterweight = (100-'Qry_IWP Detail'[WEIGHTAGE])/100
+			                    var _fitterweighthrs = 'Qry_IWP Detail'[WP Hrs]*_fitterweight
+			return
+			
+			if('Qry_IWP Detail'[_FX_SPC_WeldGateCheck]="No Weld Gate",'Qry_IWP Detail'[WP Hrs],_fitterweighthrs)
+		lineageTag: 56839bf0-c970-489c-927e-951ee442f64f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_SPC_Welder_WPHrs =
+			var _welderweighthrs = 'Qry_IWP Detail'[WP Hrs]*('Qry_IWP Detail'[WEIGHTAGE]/100)
+			return
+			
+			if('Qry_IWP Detail'[_FX_SPC_WeldGateCheck]="No Weld Gate",0,_welderweighthrs)
+		lineageTag: 598dcdc0-39e7-4bfa-8897-4edd91af698d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_SPC_Fitter_WPHrsEarned =
+			var _fitterweight = (100-'Qry_IWP Detail'[WEIGHTAGE])/100
+			                    var _fitterweighthrs = 'Qry_IWP Detail'[WP Earned Hrs]*_fitterweight
+			return
+			
+			if('Qry_IWP Detail'[_FX_SPC_WeldGateCheck]="No Weld Gate",'Qry_IWP Detail'[WP Earned Hrs],_fitterweighthrs)
+		lineageTag: dfc9d8e9-d540-46f0-9b95-a6a85e008f56
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_SPC_Welder_WPHrsEarned =
+			var _welderweighthrs = 'Qry_IWP Detail'[WP Earned Hrs]*('Qry_IWP Detail'[WEIGHTAGE]/100)
+			return
+			
+			if('Qry_IWP Detail'[_FX_SPC_WeldGateCheck]="No Weld Gate",0,_welderweighthrs)
+		lineageTag: 39fbb8b0-755b-4d87-b069-6b03a38c545c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_BaselineDate = if('Qry_IWP Detail'[L3 Forecast Start Date]=BLANK(),"No Baseline Date","With Baseline Date")
+		lineageTag: 0bdfdee7-603c-475b-84d0-2e9a4b2379a1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_CompPlan_Status = if('Qry_IWP Detail'[FX_Comp_Plan_WkEnd]>[MX_CurrentWeekEnding],"CompPlan-Future","CompPlan-Past")
+		lineageTag: 90d940a2-9f29-4f2a-92ce-07c7bfb447c6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_IssuedPlan_Status = if('Qry_IWP Detail'[FX_Issued_Plan_WkEnd]>[MX_CurrentWeekEnding],"IssuedPlan-Future","IssuedPlan-Past")
+		lineageTag: 8bf97092-8b73-4188-88d4-303205300a05
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPOBID
+		dataType: string
+		lineageTag: dae0504e-87aa-44f1-af35-4495c808e0e4
+		summarizeBy: none
+		sourceColumn: FIWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Hrs ROC 1'
+		dataType: double
+		lineageTag: 97d76a9e-ee99-4811-bfd8-6d9953782a78
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 2'
+		dataType: double
+		lineageTag: 4614b0dc-5f41-4ecf-8c12-768893a5a237
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 3'
+		dataType: double
+		lineageTag: 0db86ce5-c2eb-4ea2-b820-ff5166631fc3
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 4'
+		dataType: double
+		lineageTag: 4db01f45-c046-48a1-8eff-107a61a33010
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 5'
+		dataType: double
+		lineageTag: b7cbabe2-73e9-45d1-aff3-23a8ddd6bb28
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs ROC 6'
+		dataType: double
+		lineageTag: 48667d66-f61b-40fc-a398-7fa7541c6f20
+		summarizeBy: sum
+		sourceColumn: AFC Hrs ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 1'
+		dataType: double
+		lineageTag: ac5d791d-da27-4c2e-8bc9-453e1f702b97
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 2'
+		dataType: double
+		lineageTag: 21da5a30-5d8c-499e-9669-4cea1290d52a
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 3'
+		dataType: double
+		lineageTag: 571fc70a-c20b-410b-b8f4-e2789ca4620f
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 4'
+		dataType: double
+		lineageTag: c1446aef-3897-4145-b692-3cdb37b95393
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 5'
+		dataType: double
+		lineageTag: 9eeb3261-63c7-483e-a62b-1eb587d15dd6
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Earned ROC 6'
+		dataType: double
+		lineageTag: 65c59269-93ae-4a6f-aa7f-1daff4d43613
+		summarizeBy: sum
+		sourceColumn: AFC Earned ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _FX_SPC_WeldGateCheck = IF('Qry_IWP Detail'[ROC 1]="Weld" || 'Qry_IWP Detail'[ROC 2]="Weld" || 'Qry_IWP Detail'[ROC 3]="Weld" || 'Qry_IWP Detail'[ROC 4]="Weld" || 'Qry_IWP Detail'[ROC 5]="Weld" || 'Qry_IWP Detail'[ROC 6]="Weld","Weld Gate","No Weld Gate")
+		lineageTag: 2fbb0b04-72f2-4d28-bb6e-af475948ca7d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_PrevWk_Rev =
+			
+			var wpno = MAX(dataflow_ProgressReportHistory[Date])
+			var prevrev = CALCULATE(
+			    MAX(dataflow_ProgressReportHistory[WP_REVNO]),
+			FILTER(dataflow_ProgressReportHistory,dataflow_ProgressReportHistory[FIWPUID]='Qry_IWP Detail'[FIWPUID] && dataflow_ProgressReportHistory[PROJECT]='Qry_IWP Detail'[PROJECT] ))
+			RETURN
+			prevrev
+		dataType: int64
+		formatString: 0
+		lineageTag: c7ce3745-0426-4045-ad52-c0226d60b48d
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_PrevWk_RevUp =
+			
+			IF('Qry_IWP Detail'[WP_REVNO]>[FX_PrevWk_Rev] && 'Qry_IWP Detail'[STATUS]="Issued for Construction","Rev Up",BLANK())
+		lineageTag: f3823c4c-7c10-4fa1-a56c-432b79b917ab
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_DeckLvl = MID('Qry_IWP Detail'[WPNO],4,3)
+		lineageTag: db569d6a-606f-4ba7-b6f6-36e241867c32
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_PrevWk_WPHrs =
+			var prevwk_wphrs = SUMX(
+			FILTER(ALL(dataflow_ProgressReportHistory),
+			dataflow_ProgressReportHistory[FIWPUID]='Qry_IWP Detail'[FIWPUID] &&
+			dataflow_ProgressReportHistory[Date]=[MX_CurrentWeekEnding]-7
+			),dataflow_ProgressReportHistory[WP Hrs])
+			RETURN
+			
+			IF('Qry_IWP Detail'[FX_PrevWk_RevUp]="Rev Up",prevwk_wphrs,BLANK())
+		lineageTag: 0ec18c26-8cb4-4e05-8fa2-3cde18263d84
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Dashboard_WP_Filter = IF([FX_DUPLICATEWPCOUNT]=1 && [FX_ACTIVITY_CODE_MATCHED]="False","Exclude","Include")
+		lineageTag: 3ab21798-e488-4c20-9c13-3162f310ba63
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Issuance_Current_Plan =
+			if([FX_Issued_Plan_WkEnd]=[MX_CurrentWeekEnding],"Current Week",
+			if([FX_Issued_Plan_WkEnd]=[MX_CurrentWeekEnding]-7,"Previous Week",
+			if([FX_Issued_Plan_WkEnd]<[MX_CurrentWeekEnding],"Past Week",
+			if([FX_Issued_Plan_WkEnd]>[MX_CurrentWeekEnding],"Future Week",BLANK()))))
+		lineageTag: 05d48434-c4c3-45a3-a626-2699e7c289d3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Issuance_Current_Actual =
+			if([FX_Issued_Actual_WkEnd]=[MX_CurrentWeekEnding] && [FX_PrevWk_RevUp]=BLANK(),"Current Week",
+			if([FX_Issued_Actual_WkEnd]=[MX_CurrentWeekEnding]-7 && [FX_PrevWk_RevUp]=BLANK(),"Previous Week",
+			if([FX_Issued_Actual_WkEnd]<=[MX_CurrentWeekEnding] && [FX_PrevWk_RevUp]<>BLANK(),"Revised",
+			if([FX_Issued_Actual_WkEnd]<[MX_CurrentWeekEnding] && [FX_PrevWk_RevUp]=BLANK() && [FX_Issued_Actual_WkEnd]<>BLANK(),"Past Week",
+			if([FX_Issued_Actual_WkEnd]>[MX_CurrentWeekEnding] && [FX_PrevWk_RevUp]=BLANK(),"Future Week",BLANK())))))
+		lineageTag: a5bd1f93-d7c8-4c8c-acb6-4dc9b642a454
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Completion_Current_Plan =
+			if([FX_Comp_Plan_WkEnd]=[MX_CurrentWeekEnding],"Current Week",
+			if([FX_Comp_Plan_WkEnd]=[MX_CurrentWeekEnding]-7,"Current Week",
+			if([FX_Comp_Plan_WkEnd]<[MX_CurrentWeekEnding],"Past Week",
+			if([FX_Comp_Plan_WkEnd]>[MX_CurrentWeekEnding],"Future Week",BLANK()))))
+		lineageTag: 7f1998dc-a0d1-4644-b9dc-08616462b57f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Completion_Current_Actual =
+			if([FX_Comp_Actual_WkEnd]=[MX_CurrentWeekEnding],"Current Week",
+			if([FX_Comp_Actual_WkEnd]=[MX_CurrentWeekEnding]-7,"Previous Week",
+			if([FX_Comp_Actual_WkEnd]<[MX_CurrentWeekEnding] && [FX_Comp_Actual_WkEnd]<>BLANK(),"Past Week",
+			if([FX_Comp_Actual_WkEnd]>[MX_CurrentWeekEnding],"Future Week",BLANK()))))
+		lineageTag: 626597e7-8a66-4ed3-8390-c94e5210f573
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Count_Delta =
+			
+			var _lastweek = SUMX(FILTER(dataflow_ProgressReportHistory,dataflow_ProgressReportHistory[WPNO]='Qry_IWP Detail'[WPNO] && dataflow_ProgressReportHistory[Date]=[MX_CurrentWeekEnding]-7),dataflow_ProgressReportHistory[WP Components Count Complete])
+			return
+			[WP Components Count Complete_]-_lastweek
+		lineageTag: 089f8f4f-9b7a-40ac-bcf1-a3ad2ec61504
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Qty_Delta =
+			
+			var _lastweek = SUMX(FILTER(dataflow_ProgressReportHistory,dataflow_ProgressReportHistory[WPNO]='Qry_IWP Detail'[WPNO] && dataflow_ProgressReportHistory[Date]=[MX_CurrentWeekEnding]-7),dataflow_ProgressReportHistory[COMPLETED_UNITS])
+			return
+			[COMPLETED_UNITS]-_lastweek
+		lineageTag: 3fe932bc-2f22-4517-92fa-444ec6ce8276
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_UniqWP_Identifier = ```
+			var _count = COUNTROWS(
+			    FILTER('Qry_IWP Detail',
+			    'Qry_IWP Detail'[FIWPOBID]=EARLIER('Qry_IWP Detail'[FIWPOBID]) && 
+			    [Index]<=EARLIER([Index]) && 
+			    [FX_ACTIVITY_CODE_MATCHED]="TRUE"))
+			    return
+			    IF('Qry_IWP Detail'[FX_DUPLICATE WP]=1,1,
+			    if('Qry_IWP Detail'[FX_DUPLICATE WP]>1 && [FX_ACTIVITY_CODE_MATCHED]="TRUE",_count,0))
+			```
+		formatString: 0
+		lineageTag: fc7b495f-8190-4ef0-8026-9c41b39083e4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_FisrtIssuanceDate =
+			
+			var issue_date = IFERROR(LOOKUPVALUE(dataflow_ProgressReportHistory[FX_FisrtIssuanceDate],dataflow_ProgressReportHistory[FIWPOBID],'Qry_IWP Detail'[FIWPOBID]),9/9/9999)
+			RETURN
+			IF(issue_date<>BLANK(),issue_date,[WP Revision Date])
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 8e2ad7a9-99f5-490b-abad-73921b66a5fd
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 6d10fa59-71cc-4c46-8555-6b2b93588a89
+			defaultHierarchy: LocalDateTable_370649d9-1685-4224-a72c-ebcc38ec4b3b.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Plant_Phase_Disc = [PROJECT]&"-"&[FX_Phase]&"-"&[DISCIPLINE]
+		lineageTag: 856d14e8-40e8-4894-a47b-d185d8f2e388
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Phase = LOOKUPVALUE(StaticTbl_Phase[Phase],StaticTbl_Phase[Areacode],[AREA])
+		lineageTag: 4139c4ca-99ce-4f67-9e1a-3602b13d39d6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_IFE_WP = LOOKUPVALUE(Excel_IFE_PLN_PRG[Contract],Excel_IFE_PLN_PRG[Activity Code],'Qry_IWP Detail'[WPNO])
+		lineageTag: 8e8baa26-b78c-4d97-b661-0652c906b12d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_ProgressGrouping = LOOKUPVALUE(StaticTbl_WPNO_PhaseGrouping[Progress Grouping],StaticTbl_WPNO_PhaseGrouping[Progress Grouping Code],'Qry_IWP Detail'[PROGRESSGROUPING])
+		lineageTag: a49a3f45-d320-4f0f-aa8f-36b5e6a65720
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_anomaly_prelim_prog = IF([STATUS]<>"Issued for Construction" && [WP Progress]>0,"Anomaly","No anomaly")
+		lineageTag: caf7d3ff-3bf1-4521-99e1-0a8a0027f9c9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_anomaly_negative_ear = IF((ROUNDUP([WP Earned Hrs],0)-ROUNDUP([WP Last Week Earned],0))<0,"Negative","No Anomaly")
+		lineageTag: 85ebf8bc-86b9-4023-8882-0e4486379e98
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_pw_WPearn = CALCULATE(FIRSTNONBLANK(dataflow_ProgressReportHistory[WP Earned Hrs],0),FILTER(dataflow_ProgressReportHistory,dataflow_ProgressReportHistory[WPNO]='Qry_IWP Detail'[WPNO] && dataflow_ProgressReportHistory[Date]=([MX_CurrentWeekEnding]-7)))
+		lineageTag: 18734d95-5370-41f7-8f17-ff9e7f46c8c1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_anomaly_pwearn =
+			
+			var output = IF(ROUND([fx_pw_WPearn],0)<>ROUND([WP Last Week Earned],0),"Anomaly","No Anomaly")
+			var a = ROUNDUP([fx_pw_WPearn],0)
+			RETURN
+			output
+		lineageTag: 7e47f71d-dde9-408f-b401-42efa59e4fc3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_actualhrs = LOOKUPVALUE(Qry_WP_Direct[ACTUALMANHOURS],Qry_WP_Direct[FIWPOBID],'Qry_IWP Detail'[FIWPOBID])
+		formatString: 0
+		lineageTag: 6661e630-8ec5-437c-a0bc-27522f3a847b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column fx_anomaly_actualhrs =
+			
+			var output = IF(ROUND([fx_actualhrs],0)<>ROUND([WP Earned Hrs],0),"Anomaly","No Anomaly")
+			var test = ROUND([WP Earned Hrs],0)
+			RETURN
+			output
+		lineageTag: 12b98504-5feb-438d-bfbd-c28caca28a84
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_anomaly_prog% =
+			var old = if([COMPLETED_UNITS]/[PLAN_UNITS]>1,"Anomaly","No Anomaly")
+			var roc1 = ROUND([WP Earned Hrs ROC 1],0)/ROUND([WP Hrs ROC 1],0)
+			var roc2 = ROUND([WP Earned Hrs ROC 2],0)/ROUND([WP Hrs ROC 2],0)
+			var roc3 = ROUND([WP Earned Hrs ROC 3],0)/ROUND([WP Hrs ROC 3],0)
+			var roc4 = ROUND([WP Earned Hrs ROC 4],0)/ROUND([WP Hrs ROC 4],0)
+			var roc5 = ROUND([WP Earned Hrs ROC 5],0)/ROUND([WP Hrs ROC 5],0)
+			var roc6 = ROUND([WP Earned Hrs ROC 6],0)/ROUND([WP Hrs ROC 6],0)
+			var output = IF(roc1>1.1 || roc2>1.1 || roc3>1.1 || roc4>1.1 || roc5>1.1 || roc6>1.1, "Anomaly","No Anomaly")
+			RETURN
+			output
+		lineageTag: ce725d9b-a39a-4b25-94e6-90328a680dca
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_anomaly_gatesname_L4 =
+			
+			var gate = IF(([ROC 1]<>[Excel_d7650_L4.Gate 1] || [ROC 2]<>[Excel_d7650_L4.Gate 2] || [ROC 3]<>[Excel_d7650_L4.Gate 3] || [ROC 4]<>[Excel_d7650_L4.Gate 4] || [ROC 5]<>[Excel_d7650_L4.Gate 5] || [ROC 6]<>[Excel_d7650_L4.Gate 6]) && [ROC 1]<>BLANK(),"ROC Anomaly","No Anomaly")
+			return
+			IF(gate="ROC Anomaly","Anomaly","No anomaly")
+		lineageTag: 5d494d53-5639-42df-953a-80c0e71582cf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_anomaly_gates_wt_L4 =
+			
+			var gate_wt = IF(([ROC Weightage 1]<>[Excel_D7650_L4.Gate 1 weightage] || [ROC Weightage 2]<>[Excel_D7650_L4.Gate 2 weightage]  || [ROC Weightage 3]<>[Excel_D7650_L4.Gate 3 weightage] || [ROC Weightage 4]<>[Excel_D7650_L4.Gate 4 weightage] || [ROC Weightage 5]<>[Excel_D7650_L4.Gate 5 weightage] || [ROC Weightage 6]<>[Excel_D7650_L4.Gate 6 weightage]) && [ROC 1]<>BLANK(),"ROC Anomaly","No Anomaly")
+			return
+			IF(gate_wt="ROC Anomaly","Anomaly","No anomaly")
+		lineageTag: 639144b2-6575-4055-ae3e-35ac341f2201
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Qty Completed 6'
+		dataType: double
+		lineageTag: b5997837-3784-455b-b9ef-6e3916245322
+		summarizeBy: sum
+		sourceColumn: Qty Completed 6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_mdm_phase = LOOKUPVALUE('Excel MDM'[Phase Grouping],'Excel MDM'[WPNO],'Qry_IWP Detail'[WPNO])
+		lineageTag: bdfe74d2-e8e8-43ef-9fcd-52c6f3607a90
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Hrs (bins_200)' =
+			IF(
+				ISBLANK('Qry_IWP Detail'[AFC Hrs]),
+				BLANK(),
+				IF(
+					'Qry_IWP Detail'[AFC Hrs] >= 0,
+					ROUNDDOWN('Qry_IWP Detail'[AFC Hrs] / 200, 0) * 200,
+					ROUNDUP('Qry_IWP Detail'[AFC Hrs] / 200, 0) * 200
+				)
+			)
+		formatString: #,0.0
+		lineageTag: dc11e497-78a4-4321-986b-66f4e94f9d45
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Qry_IWP Detail"
+				          }
+				        },
+				        "Property": "AFC Hrs"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 200.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"q","Entity":"Qry_IWP Detail"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"AFC Hrs"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"AFC Hrs"}},"Size":200.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Hrs BIN200' =
+			IF([AFC Hrs (bins_200)]<=200,200,
+			IF([AFC Hrs (bins_200)]>=(200*80),(200*80),[AFC Hrs (bins_200)]))
+		formatString: 0
+		lineageTag: 961d5422-9309-4d6d-84dd-192f676b466e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'AFC Hrs (bins_050)' =
+			IF(
+				ISBLANK('Qry_IWP Detail'[AFC Hrs]),
+				BLANK(),
+				IF(
+					'Qry_IWP Detail'[AFC Hrs] >= 0,
+					ROUNDDOWN('Qry_IWP Detail'[AFC Hrs] / 50, 0) * 50,
+					ROUNDUP('Qry_IWP Detail'[AFC Hrs] / 50, 0) * 50
+				)
+			)
+		formatString: #,0.0
+		lineageTag: 0dd83f62-3aec-47da-958a-98c719764338
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Qry_IWP Detail"
+				          }
+				        },
+				        "Property": "AFC Hrs"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 50.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"q","Entity":"Qry_IWP Detail"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"AFC Hrs"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"AFC Hrs"}},"Size":50.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Hrs BIN050' =
+			IF([AFC Hrs (bins_050)]<=50,50,
+			IF([AFC Hrs (bins_050)]>=(50*80),(50*80),[AFC Hrs (bins_050)]))
+		lineageTag: 3c79bf35-069e-4177-83cb-6e39e70ba34b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs (bins_100)' =
+			IF(
+				ISBLANK('Qry_IWP Detail'[AFC Hrs]),
+				BLANK(),
+				IF(
+					'Qry_IWP Detail'[AFC Hrs] >= 0,
+					ROUNDDOWN('Qry_IWP Detail'[AFC Hrs] / 100, 0) * 100,
+					ROUNDUP('Qry_IWP Detail'[AFC Hrs] / 100, 0) * 100
+				)
+			)
+		formatString: #,0.0
+		lineageTag: 57191694-6287-45aa-8363-53f47bb89323
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Qry_IWP Detail"
+				          }
+				        },
+				        "Property": "AFC Hrs"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 100.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"q","Entity":"Qry_IWP Detail"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"AFC Hrs"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"AFC Hrs"}},"Size":100.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Hrs BIN100' =
+			IF([AFC Hrs (bins_100)]<=100,100,
+			IF([AFC Hrs (bins_100)]>=(100*80),100*80,[AFC Hrs (bins_100)]))
+		lineageTag: 434df491-5e03-48e8-9fa0-4661d3349b9d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'AFC Hrs (bins_400)' =
+			IF(
+				ISBLANK('Qry_IWP Detail'[AFC Hrs]),
+				BLANK(),
+				IF(
+					'Qry_IWP Detail'[AFC Hrs] >= 0,
+					ROUNDDOWN('Qry_IWP Detail'[AFC Hrs] / 400, 0) * 400,
+					ROUNDUP('Qry_IWP Detail'[AFC Hrs] / 400, 0) * 400
+				)
+			)
+		formatString: #,0.0
+		lineageTag: 4c8ac686-d074-4724-ad07-818b3d6f023b
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Qry_IWP Detail"
+				          }
+				        },
+				        "Property": "AFC Hrs"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 400.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"q","Entity":"Qry_IWP Detail"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"AFC Hrs"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"AFC Hrs"}},"Size":400.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Hrs BIN400' =
+			IF([AFC Hrs (bins_400)]<=400,400,
+			IF([AFC Hrs (bins_400)]>=(400*80),(400*80),[AFC Hrs (bins_400)]))
+		lineageTag: 5ba92874-a059-4b77-8f8a-012228565b0c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs (bins_050)' =
+			IF(
+				ISBLANK('Qry_IWP Detail'[WP Hrs]),
+				BLANK(),
+				IF(
+					'Qry_IWP Detail'[WP Hrs] >= 0,
+					ROUNDDOWN('Qry_IWP Detail'[WP Hrs] / 50, 0) * 50,
+					ROUNDUP('Qry_IWP Detail'[WP Hrs] / 50, 0) * 50
+				)
+			)
+		formatString: #,0.0
+		lineageTag: 0c824f2f-fe35-4533-86c2-a8245e2d9b21
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Qry_IWP Detail"
+				          }
+				        },
+				        "Property": "WP Hrs"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 50.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"q","Entity":"Qry_IWP Detail"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"WP Hrs"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"WP Hrs"}},"Size":50.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Hrs BIN050' =
+			IF([WP Hrs (bins_050)]<=50,50,
+			IF([WP Hrs (bins_050)]>=(50*80),(50*80),[WP Hrs (bins_050)]))
+		lineageTag: 22342bbf-789a-40df-a1e1-86efef08ddcd
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs (bins_100)' =
+			IF(
+				ISBLANK('Qry_IWP Detail'[WP Hrs]),
+				BLANK(),
+				IF(
+					'Qry_IWP Detail'[WP Hrs] >= 0,
+					ROUNDDOWN('Qry_IWP Detail'[WP Hrs] / 100, 0) * 100,
+					ROUNDUP('Qry_IWP Detail'[WP Hrs] / 100, 0) * 100
+				)
+			)
+		formatString: #,0.0
+		lineageTag: e696fb7e-eb02-42eb-b98a-84d390a74abe
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Qry_IWP Detail"
+				          }
+				        },
+				        "Property": "WP Hrs"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 100.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"q","Entity":"Qry_IWP Detail"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"WP Hrs"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"WP Hrs"}},"Size":100.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Hrs BIN100' =
+			IF([WP Hrs (bins_100)]<=100,100,
+			IF([WP Hrs (bins_100)]>=(100*80),(100*80),[WP Hrs (bins_100)]))
+		lineageTag: f879142d-3287-4fa5-bd5a-157bc1f0eef1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs (bins_200)' =
+			IF(
+				ISBLANK('Qry_IWP Detail'[WP Hrs]),
+				BLANK(),
+				IF(
+					'Qry_IWP Detail'[WP Hrs] >= 0,
+					ROUNDDOWN('Qry_IWP Detail'[WP Hrs] / 200, 0) * 200,
+					ROUNDUP('Qry_IWP Detail'[WP Hrs] / 200, 0) * 200
+				)
+			)
+		formatString: #,0.0
+		lineageTag: 8fd84f1f-ab2d-4658-a4e0-d57062f45636
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Qry_IWP Detail"
+				          }
+				        },
+				        "Property": "WP Hrs"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 200.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"q","Entity":"Qry_IWP Detail"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"WP Hrs"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"WP Hrs"}},"Size":200.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Hrs BIN200' =
+			IF([WP Hrs (bins_200)]<=200,200,
+			IF([WP Hrs (bins_200)]>=(200*80),(200*80),[WP Hrs (bins_200)]))
+		lineageTag: bc5d9cc6-bc2b-4037-adbe-16f124a6c41c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Hrs (bins_400)' =
+			IF(
+				ISBLANK('Qry_IWP Detail'[WP Hrs]),
+				BLANK(),
+				IF(
+					'Qry_IWP Detail'[WP Hrs] >= 0,
+					ROUNDDOWN('Qry_IWP Detail'[WP Hrs] / 400, 0) * 400,
+					ROUNDUP('Qry_IWP Detail'[WP Hrs] / 400, 0) * 400
+				)
+			)
+		formatString: #,0.0
+		lineageTag: 14c50441-5908-42ab-88e0-94e5c46ae07f
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Qry_IWP Detail"
+				          }
+				        },
+				        "Property": "WP Hrs"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 400.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"q","Entity":"Qry_IWP Detail"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"WP Hrs"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"q"}},"Property":"WP Hrs"}},"Size":400.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Hrs BIN400' =
+			IF([WP Hrs (bins_400)]<=400,400,
+			IF([WP Hrs (bins_400)]>=(400*80),(400*80),[WP Hrs (bins_400)]))
+		lineageTag: 9c417fc1-6d4e-457f-8391-0452099bc739
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_Plan_Duration_Days = if('Qry_IWP Detail'[WP Planned Finish Date] = BLANK() || 'Qry_IWP Detail'[WP Planned Start Date] = BLANK(),BLANK(), (1. * ('Qry_IWP Detail'[WP Planned Finish Date] - 'Qry_IWP Detail'[WP Planned Start Date])))
+		lineageTag: 09ddd5fa-86b6-4a86-9674-6a0395ee0adb
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_Plan_Duration_Weeks = 'Qry_IWP Detail'[fx_Plan_Duration_Days] / 7
+		lineageTag: 95b25d62-47c8-46f0-944c-e300ee60bb10
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_Actual_Duration_Days =
+			
+			var actual_0 = [WP Actual Finish Date] - [WP Actual Start Date]
+			var actual_inc = TODAY() - [WP Actual Start Date]
+			var output = IF([WP Actual Start Date] = BLANK() || ([WP Progress]>=1 && [WP Actual Finish Date]=BLANK()),BLANK(),
+			                    IF([WP Progress]<1,actual_inc,actual_0))
+			RETURN
+			output
+		dataType: double
+		lineageTag: 8150f336-41a4-4ec4-b8f9-857b736b8562
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_Actual_Duration_Weeks = 'Qry_IWP Detail'[fx_Actual_Duration_Days] / 7
+		lineageTag: 234c2af0-e6b5-4f8a-9223-6a2334b918d2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PlanStart_WK_Summary = IF([FX_Issued_Plan_WkEnd]<([MX_CurrentWeekEnding]+42) && [FX_Issued_Plan_WkEnd]>([MX_CurrentWeekEnding]-28),"Week Summary","Exclude")
+		lineageTag: c7d9909e-b0d9-4c0a-9f02-f726de8ea110
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActualStart_WK_Summary = IF([FX_Issued_Actual_WkEnd]<([MX_CurrentWeekEnding]+42) && [FX_Issued_Actual_WkEnd]>([MX_CurrentWeekEnding]-28),"Week Summary_ActualStart","Exclude")
+		lineageTag: ee6c3823-6c8b-4c77-b6ee-447fe1dd2e7c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column WP_Complete_Percentage = ('Qry_IWP Detail'[WP Components Count Complete_] / 'Qry_IWP Detail'[WP Components Count Planned_] )
+		lineageTag: e6475a98-3880-48d6-8dd5-c85c504b07df
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PlanFinish_WK_Summary = IF([FX_Comp_Plan_WkEnd]<([MX_CurrentWeekEnding]+49) && [FX_Comp_Plan_WkEnd]>([MX_CurrentWeekEnding]-28),"Week Summary","Exclude")
+		lineageTag: 16e829c7-4a19-46fa-b4b3-4ae6f24af840
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActualFinish_WK_Summary = IF([FX_Comp_Actual_WkEnd]<([MX_CurrentWeekEnding]+42) && [FX_Comp_Actual_WkEnd]>([MX_CurrentWeekEnding]-28),"Week Summary","Exclude")
+		lineageTag: a20f15ca-e5fc-4895-b7c0-0316ccc776b4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEIGHTAGE
+		dataType: double
+		lineageTag: 1f70fadc-50f2-4956-8631-dec2c3097a33
+		summarizeBy: sum
+		sourceColumn: WEIGHTAGE
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RESOURCECODE
+		dataType: string
+		lineageTag: 1362c924-586c-4c53-98a8-2683ce1cbf68
+		summarizeBy: none
+		sourceColumn: RESOURCECODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column WORKPHASE
+		dataType: string
+		lineageTag: 4c4fa9e9-79bd-4673-b0ae-f4d7e03b402b
+		summarizeBy: none
+		sourceColumn: WORKPHASE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROGRESSGROUPING
+		dataType: string
+		lineageTag: cf13363b-0206-4eb7-a168-b4f3a1fc94ab
+		summarizeBy: none
+		sourceColumn: PROGRESSGROUPING
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_roc1 =
+			
+			var roc = LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],1)
+			RETURN
+			IF(ISERROR(LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],1)),"Error",roc)
+		lineageTag: 6e24d882-3521-4223-b77a-831ef1a67136
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_roc2 =
+			
+			var roc = LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],2)
+			RETURN
+			IF(ISERROR(LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],2)),"Error",roc)
+		lineageTag: ac7c9f0b-29b2-4298-886f-1233def1b51b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_roc3 =
+			
+			var roc = LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],3)
+			RETURN
+			IF(ISERROR(LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],3)),"Error",roc)
+		lineageTag: 102c1656-2bd2-4afb-ab8d-b09c9c7d1a57
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_roc4 =
+			
+			var roc = LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],4)
+			RETURN
+			IF(ISERROR(LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],4)),"Error",roc)
+		lineageTag: b8c2d99f-0f40-43c8-8e15-b6911fb5c787
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_roc5 =
+			
+			var roc = LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],5)
+			RETURN
+			IF(ISERROR(LOOKUPVALUE(Qry_IWP_Workstep[NAME],Qry_IWP_Workstep[FIWPUID],'Qry_IWP Detail'[FIWPUID],Qry_IWP_Workstep[fx_rank],5)),"Error",roc)
+		lineageTag: b2dd065f-8225-4122-a0e9-4c9204b8681d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_roc1_wp_planhrs = SUMX(FILTER(Qry_IWP_Workstep,'Qry_IWP Detail'[FIWPUID]=Qry_IWP_Workstep[FIWPUID] && [fx_rank] = 1),Qry_IWP_Workstep[PLANH])
+		lineageTag: edb7a9dd-c2fd-4faa-a933-a4c695637324
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_roc2_wp_planhrs = SUMX(FILTER(Qry_IWP_Workstep,'Qry_IWP Detail'[FIWPUID]=Qry_IWP_Workstep[FIWPUID] && [fx_rank] = 2),Qry_IWP_Workstep[PLANH])
+		lineageTag: 0c09f655-4d0b-490f-934b-dcc152676f8c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_roc3_wp_planhrs = SUMX(FILTER(Qry_IWP_Workstep,'Qry_IWP Detail'[FIWPUID]=Qry_IWP_Workstep[FIWPUID] && [fx_rank] = 3),Qry_IWP_Workstep[PLANH])
+		lineageTag: 06653351-7a5e-4126-a6ef-20a8aea202a0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_roc4_wp_planhrs = SUMX(FILTER(Qry_IWP_Workstep,'Qry_IWP Detail'[FIWPUID]=Qry_IWP_Workstep[FIWPUID] && [fx_rank] = 4),Qry_IWP_Workstep[PLANH])
+		lineageTag: 66db479e-2314-4f93-8fbe-59ffa74de2ad
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_roc5_wp_planhrs = SUMX(FILTER(Qry_IWP_Workstep,'Qry_IWP Detail'[FIWPUID]=Qry_IWP_Workstep[FIWPUID] && [fx_rank] = 5),Qry_IWP_Workstep[PLANH])
+		lineageTag: f37dea76-0cb3-4bda-8f04-94c5e2082666
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_wphrs_00 = [fx_roc1_wp_planhrs]+[fx_roc2_wp_planhrs]+[fx_roc3_wp_planhrs]+[fx_roc4_wp_planhrs]+[fx_roc5_wp_planhrs]
+		lineageTag: dad61056-97ba-4b4f-a12b-90469c867679
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_wphrs_xmatch = IF(ROUND([fx_wphrs_00],0)<>ROUND([WP Hrs],0),"Anomaly", "No Anomaly")
+		lineageTag: 70fe6c4e-f16a-422a-9b55-eacb3d16290b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_roc1_wt = ROUND([fx_roc1_wp_planhrs]/[fx_wphrs_00],2)
+		lineageTag: 58e5c1e7-9235-4eda-b31b-954218f2594a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_roc2_wt = ROUND([fx_roc2_wp_planhrs]/[fx_wphrs_00],2)
+		lineageTag: dc937659-cecb-42e8-9964-97b6859c8cdc
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_roc3_wt = ROUND([fx_roc3_wp_planhrs]/[fx_wphrs_00],2)
+		lineageTag: 45f1256f-2fee-4d14-9fdf-8ef0d5979ce2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_roc4_wt = ROUND([fx_roc4_wp_planhrs]/[fx_wphrs_00],2)
+		lineageTag: d072e121-7bbc-45f6-9145-8c71eaa27305
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_roc5_wt = ROUND([fx_roc5_wp_planhrs]/[fx_wphrs_00],2)
+		lineageTag: 01a5e316-a0c4-404c-a996-b68e60d00a43
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_anomaly_gatesname_L4_00 =
+			
+			var gate = IF(([fx_roc1]<>[Excel_D7650_L4.Gate 1] || [fx_roc2]<>[Excel_D7650_L4.Gate 2] || [fx_roc3]<>[Excel_D7650_L4.Gate 3] || [fx_roc4]<>[Excel_D7650_L4.Gate 4] || [fx_roc5]<>[Excel_D7650_L4.Gate 5]) && [fx_roc1_wp_planhrs]<>BLANK(),"ROC Anomaly","No Anomaly")
+			return
+			IF(gate="ROC Anomaly","Anomaly","No anomaly")
+		lineageTag: c5427e12-0527-4cf1-98cd-4acb59e62dbd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_anomaly_gates_wt_L4_00 =
+			
+			var gate_wt = IF(([fx_roc1_wt]<>[Excel_D7650_L4.Gate 1 weightage] || [fx_roc2_wt]<>[Excel_D7650_L4.Gate 2 weightage]  || [fx_roc3_wt]<>[Excel_D7650_L4.Gate 3 weightage] || [fx_roc4_wt]<>[Excel_D7650_L4.Gate 4 weightage] || [fx_roc5_wt]<>[Excel_D7650_L4.Gate 5 weightage]) && [WP Hrs]<>BLANK(),"ROC Anomaly","No Anomaly")
+			return
+			IF(gate_wt="ROC Anomaly","Anomaly","No anomaly")
+		lineageTag: 404d2bb9-4c13-4555-9ea7-a944103c55c6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_validation_mdm = LOOKUPVALUE('Excel MDM'[WPNO],'Excel MDM'[WPNO],'Qry_IWP Detail'[WPNO])
+		lineageTag: 2c2e57ed-a760-40b4-ae26-05cb0c2ec4bf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_Structure_code = LEFT([ACTIVITY CODE],2)
+		lineageTag: 72c14257-266d-4468-a645-6aad232f9e5d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_discipline_code = MID([ACTIVITY CODE],3,1)
+		lineageTag: b574ecc3-a3d7-4eaf-bc27-6b6bf4335ac1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_component_code = MID([ACTIVITY CODE],4,2)
+		lineageTag: 389392fd-8b29-4407-9163-6a8b2f0d6b69
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_activity_component = [fx_Structure_code]&[fx_discipline_code]&[fx_component_code]
+		lineageTag: 843554a8-757b-4f41-8d48-5ba4f12c7c74
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_component =
+			
+			var c = IFERROR(IF([fx_activity_component]=BLANK(),BLANK(),LOOKUPVALUE(Excel_MasterActivity[Component Description],Excel_MasterActivity[pqry_CombiCode],[fx_activity_component])),"Blank")
+			RETURN
+			c
+		lineageTag: 9476016d-6401-4f9e-a2d2-e663d002c9a0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_structure =
+			
+			var c = IFERROR(IF([fx_activity_component]=BLANK(),BLANK(),LOOKUPVALUE(Excel_MasterActivity[Structure Description],Excel_MasterActivity[pqry_CombiCode],[fx_activity_component])),"Duplicate")
+			RETURN
+			c
+		lineageTag: 192925de-e9d6-448b-b633-fe49e151ce02
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: ab407809-b519-49e7-9754-c968dcb6b5f0
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Progress Range'
+		dataType: string
+		lineageTag: 31e62963-1a4f-4790-be82-b4ee99413967
+		summarizeBy: none
+		sourceColumn: WP Progress Range
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Excel_D7650_L4.Gate 1'
+		dataType: string
+		lineageTag: 4df6f47f-5598-4db2-9240-a61e4d2c829d
+		summarizeBy: none
+		sourceColumn: Excel_D7650_L4.Gate 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Excel_D7650_L4.Gate 1 weightage'
+		dataType: double
+		lineageTag: b411d340-3bd7-4039-9eba-a50a202db25e
+		summarizeBy: sum
+		sourceColumn: Excel_D7650_L4.Gate 1 weightage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Excel_D7650_L4.Gate 2'
+		dataType: string
+		lineageTag: a9ffa4be-acb3-4952-a7bf-152cf112e512
+		summarizeBy: none
+		sourceColumn: Excel_D7650_L4.Gate 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Excel_D7650_L4.Gate 2 weightage'
+		dataType: double
+		lineageTag: 952db416-dbdb-41fd-ab69-164be1ab5110
+		summarizeBy: sum
+		sourceColumn: Excel_D7650_L4.Gate 2 weightage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Excel_D7650_L4.Gate 3'
+		dataType: string
+		lineageTag: 6c255a2d-b83f-4a5e-8a0b-522551c6d61b
+		summarizeBy: none
+		sourceColumn: Excel_D7650_L4.Gate 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Excel_D7650_L4.Gate 3 weightage'
+		dataType: double
+		lineageTag: b6be5a79-8d5f-468f-a14c-3d28418d1047
+		summarizeBy: sum
+		sourceColumn: Excel_D7650_L4.Gate 3 weightage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Excel_D7650_L4.Gate 4'
+		dataType: string
+		lineageTag: 85073329-3f8d-4f2b-97aa-4a3cc6d6c0fb
+		summarizeBy: none
+		sourceColumn: Excel_D7650_L4.Gate 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Excel_D7650_L4.Gate 4 weightage'
+		dataType: double
+		lineageTag: 5ff79909-3ed9-40b3-a0d7-b304e7eba59b
+		summarizeBy: sum
+		sourceColumn: Excel_D7650_L4.Gate 4 weightage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Excel_D7650_L4.Gate 5'
+		dataType: string
+		lineageTag: 155e4b13-dbec-4684-a4ea-75aee5fbc511
+		summarizeBy: none
+		sourceColumn: Excel_D7650_L4.Gate 5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Excel_D7650_L4.Gate 5 weightage'
+		dataType: double
+		lineageTag: 7aeb64fd-34e4-4264-a65c-913baa535506
+		summarizeBy: sum
+		sourceColumn: Excel_D7650_L4.Gate 5 weightage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Excel_D7650_L4.Gate 6'
+		dataType: string
+		lineageTag: 5280ee2e-c35c-4317-8f50-d8205811dc35
+		summarizeBy: none
+		sourceColumn: Excel_D7650_L4.Gate 6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Excel_D7650_L4.Gate 6 weightage'
+		dataType: double
+		lineageTag: fcdc85ce-5155-4197-9cb5-e69fb4b48176
+		summarizeBy: sum
+		sourceColumn: Excel_D7650_L4.Gate 6 weightage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_duplicate_seq = CALCULATE(COUNTROWS('Qry_IWP Detail'),FILTER(ALLEXCEPT('Qry_IWP Detail','Qry_IWP Detail'[FIWPOBID]),'Qry_IWP Detail'[Index]<=EARLIER('Qry_IWP Detail'[Index])))
+		formatString: 0
+		lineageTag: 86c45ad2-8e32-4182-a574-373e0f4d8fe2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_togo_craft = SUMX(FILTER(_FX_Craft_Allocation_Distribution,_FX_Craft_Allocation_Distribution[fx_lookup_mdm]='Qry_IWP Detail'[WPNO] && _FX_Craft_Allocation_Distribution[JOB Number]='Qry_IWP Detail'[JOB NO] && _FX_Craft_Allocation_Distribution[Status]="1. To-Go WPhrs"),_FX_Craft_Allocation_Distribution[Hours])
+		dataType: double
+		lineageTag: 0908a688-c50c-486b-bb3c-cef27d539638
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_togo_dist = SUMX(FILTER('Excel_Distrib-Alloc-ToGo','Excel_Distrib-Alloc-ToGo'[NAME]='Qry_IWP Detail'[WPNO] && 'Excel_Distrib-Alloc-ToGo'[DESIGNAREA]='Qry_IWP Detail'[JOB NO] && 'Excel_Distrib-Alloc-ToGo'[pqry_TYPE]="WPHRS"),'Excel_Distrib-Alloc-ToGo'[FX_Distribution_Hrs])
+		lineageTag: cf4608c0-ce8b-40e9-9893-c92f57e07506
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_compare_balance_craft = [Balance Hours]-[fx_togo_craft]
+		lineageTag: ea3cc3b8-bd43-47af-82b4-76843e4bd5ec
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_compare_balance_togo = [Balance Hours]-[fx_togo_dist]
+		lineageTag: cd00c02f-a1d2-4bf5-ad90-d047a2654889
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_issued_actual_wkrank2 = RANK(DENSE,,ORDERBY('Qry_IWP Detail'[FX_Issued_Actual_WkEnd],ASC),,)
+		formatString: 0
+		lineageTag: bc91abde-8442-43bb-87c7-f68f2332928e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'QTY COMPLETE ROC 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 346f3438-f18a-4c36-9eab-4a6831212a53
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'QTY COMPLETE ROC 2'
+		dataType: int64
+		formatString: 0
+		lineageTag: 11fbbff1-7e83-4c04-a67a-5f2ce6b7dc2b
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'QTY COMPLETE ROC 3'
+		dataType: int64
+		formatString: 0
+		lineageTag: cbd3ebd4-26ec-4c6e-91ac-119f347f41e7
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'QTY COMPLETE ROC 4'
+		dataType: int64
+		formatString: 0
+		lineageTag: 94ef09c5-3b1d-4814-a11a-4e2d2a1d255d
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'QTY COMPLETE ROC 5'
+		dataType: int64
+		formatString: 0
+		lineageTag: df5daf8a-1e7b-4a87-820d-4069c009bc31
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'QTY COMPLETE ROC 6'
+		dataType: int64
+		formatString: 0
+		lineageTag: e3ef6e84-fe37-46a6-96ae-a3dd66bda33a
+		summarizeBy: sum
+		sourceColumn: QTY COMPLETE ROC 6
+
+		annotation SummarizationSetBy = Automatic
+
+	column CWPNUMBER
+		dataType: string
+		lineageTag: d914fcb0-9c08-4628-bdaa-589e76edd617
+		summarizeBy: none
+		sourceColumn: CWPNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WPProg = [WP Earned Hrs]/[WP Hrs]
+		lineageTag: 933b5348-216c-4826-a6fb-5cb499e962a8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Start_Actual_WkEnd = LOOKUPVALUE(_FX_Date[FX_WeekEnding],_FX_Date[Date],'Qry_IWP Detail'[WP Actual Start Date])
+		formatString: dd-mmm-yy
+		lineageTag: 68c13e35-0dd7-4f85-b1a3-9015cc8bf730
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 0e9866d8-595f-4e1c-9500-e25f94fd9c9a
+			defaultHierarchy: LocalDateTable_e8d4c31d-3cdb-437e-853b-6930fd4f0894.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column fx_start_status = ```
+			
+			var currwe = TODAY()
+			var output =
+			if([WP Earned Hrs]>0,"Start",
+			if([WP Planned Start Date]=BLANK(),"No Date",
+			if(([WP Earned Hrs]=0 || [WP Earned Hrs]=BLANK())&& [WP Planned Start Date]>=currwe , "On Schedule",
+			if(([WP Earned Hrs]=0 || [WP Earned Hrs]=BLANK())&& [WP Planned Start Date]<currwe, "Late"
+			))))
+			RETURN
+			output
+			
+			```
+		lineageTag: 1e2e95a7-bcd7-4e3e-a12a-b914d27b72d0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Components Count Complete'
+		dataType: int64
+		formatString: 0
+		lineageTag: e5899bcc-acd3-4c87-94e9-00a17a752000
+		summarizeBy: sum
+		sourceColumn: WP Components Count Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Components Count Planned'
+		dataType: int64
+		formatString: 0
+		lineageTag: 92a40d5b-9101-473d-a83e-1cc66f7b96ea
+		summarizeBy: sum
+		sourceColumn: WP Components Count Planned
+
+		annotation SummarizationSetBy = Automatic
+
+	column qpry_JOBNO_WPNO
+		dataType: string
+		lineageTag: 689e8296-3bdf-4d92-a0fb-8ebe644a2c15
+		summarizeBy: none
+		sourceColumn: qpry_JOBNO_WPNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Components Count Complete_'
+		dataType: double
+		lineageTag: 0a8f22f6-8208-4663-9868-9b7859e6241a
+		summarizeBy: sum
+		sourceColumn: WP Components Count Complete_
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Components Count Planned_'
+		dataType: double
+		lineageTag: 32e2ad31-be40-4bf6-9b72-0134f17312a9
+		summarizeBy: sum
+		sourceColumn: WP Components Count Planned_
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_planned_issued_date = IF([WP Planned Start Date]=BLANK(),BLANK(),[WP Planned Start Date]-7)
+		formatString: dd-mmm-yy
+		lineageTag: 418827cd-0c5a-4fa0-8860-82dfe9c9be7f
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 5e5dc50a-7e54-4a63-95dd-9b30d25a7616
+			defaultHierarchy: LocalDateTable_2d47ab4f-5566-4b67-b56a-168c9e92c0d4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column fx_late_category =
+			
+			IF(TODAY()-[fx_planned_issued_date]<=2 && [fx_planned_issued_date]<>BLANK() && [FX_Issued_Status]="03-Late","3 Days Late",
+			IF(TODAY()-[fx_planned_issued_date]<=6 && [fx_planned_issued_date]<>BLANK() && [FX_Issued_Status]="03-Late","7 Days Late",
+			IF([FX_Issued_Status]="03-Late","7+ Days Late","Not Late")))
+		lineageTag: a9634e61-85d9-4bb5-9c01-40c53fc5fef2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_afc_wphrs = IF([FX_Issued_Status]="01-Issued",[WP Hrs],[AFC Hrs])
+		formatString: #,0
+		lineageTag: 3e84b47c-e196-4bd8-8594-049e6e5eb066
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column FX_Start_Plan_WkEnd = IF([WP Planned Start Date]<>BLANK(),LOOKUPVALUE(_FX_Date[FX_WeekEnding],_FX_Date[Date],[WP Planned Start Date]),BLANK())
+		formatString: dd-mmm-yy
+		lineageTag: cc3c0132-df93-41e4-9e45-00df51e5a929
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 64951cc9-c0ac-4e38-b869-4ef66c3be1cb
+			defaultHierarchy: LocalDateTable_857e19e8-779e-4093-9da9-056258f35662.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition 'Qry_IWP Detail-9abc1d4f-bacf-4405-bc36-2b167f862414' = m
+		mode: import
+		source = ```
+				let
+				    Source = dataflow_iwp_detail,
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([PROJECT] <> "PL_PlantA")),
+				    #"Added Custom" = Table.AddColumn(#"Filtered Rows", "qpry_JOBNO_WPNO", each [JOB NO]&"_"&[WPNO]),
+				    #"Replaced Value" = Table.ReplaceValue(#"Added Custom",null,"0",Replacer.ReplaceValue,{"WEIGHTAGE"}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Replaced Value", each [WEIGHTAGE] <> "#N/A"),
+				    #"Added Custom1" = Table.AddColumn(#"Filtered Rows1", "WP Components Count Complete_", each if [WP Hrs]=0 or [WP Hrs] = null then 0 else [WP Components Count Complete]),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "WP Components Count Planned_", each if [WP Hrs]=0 or [WP Hrs] = null then 0 else [WP Components Count Planned]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom2",{{"WP Components Count Complete_", type number}, {"WP Components Count Planned_", type number}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Changed Type", "Index", 1, 1, Int64.Type),
+				    #"Added Conditional Column" = Table.AddColumn(#"Added Index", "WP Progress Range", 
+				each 
+				if [STATUS] <> "Issued For Construction" or [WP Progress] = null then "Not Issued" else 
+				if [WP Progress] < .25 then "< 25%" else 
+				if [WP Progress] >= .25 and [WP Progress] < .75 then "25% to <75%" else 
+				if [WP Progress] >= .75 and [WP Progress] < 1 then "75% to <100%" else 
+				if [WP Progress] >= 1 then "100%" else "BLANK"),
+				    #"Merged Queries" = Table.NestedJoin(#"Added Conditional Column", {"JOB NO", "WPNO"}, Excel_D7650_L4, {"Job No.", "Link Code"}, "Excel_D7650_L4", JoinKind.LeftOuter),
+				    Custom1 = Table.ExpandTableColumn(#"Merged Queries", "Excel_D7650_L4", {"Gate 1", "Gate 1 weightage", "Gate 2", "Gate 2 weightage", "Gate 3", "Gate 3 weightage", "Gate 4", "Gate 4 weightage", "Gate 5", "Gate 5 weightage", "Gate 6", "Gate 6 weightage"}, {"Excel_D7650_L4.Gate 1", "Excel_D7650_L4.Gate 1 weightage", "Excel_D7650_L4.Gate 2", "Excel_D7650_L4.Gate 2 weightage", "Excel_D7650_L4.Gate 3", "Excel_D7650_L4.Gate 3 weightage", "Excel_D7650_L4.Gate 4", "Excel_D7650_L4.Gate 4 weightage", "Excel_D7650_L4.Gate 5", "Excel_D7650_L4.Gate 5 weightage", "Excel_D7650_L4.Gate 6", "Excel_D7650_L4.Gate 6 weightage"}),
+				    #"Filtered Rows2" = Table.SelectRows(Custom1, each not Text.Contains([WPNO], "FB20112BR001"))
+				in
+				    #"Filtered Rows2"
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

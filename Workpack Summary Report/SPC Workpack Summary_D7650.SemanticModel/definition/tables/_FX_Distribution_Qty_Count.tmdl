@@ -1,0 +1,152 @@
+table _FX_Distribution_Qty_Count
+	lineageTag: d19f93f1-a955-4544-80e6-9e0292ff7cf9
+
+	measure MX_QTY_Tot = sum(_FX_Distribution_Qty_Count[Qty])
+		formatString: #,0
+		lineageTag: 9ec01a37-1e0b-4cff-82fc-e162f43ffdd6
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Count_Tot = sum(_FX_Distribution_Qty_Count[Count])
+		formatString: #,0
+		lineageTag: 625bc982-da41-4686-bb4e-5db7ba4cc0c5
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure mx_hour_bal =
+			var _bal = SUM(_FX_Distribution_Qty_Count[Hours Balance])
+			
+			return
+			IF(SELECTEDVALUE(_FX_Distribution_Qty_Count[DATE])<[MX_CurrentWeekEnding],BLANK(),_bal)
+		lineageTag: d400030b-98cb-4e18-a875-7b64aa21358e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure mx_hour_complete =
+			var _bal = SUM(_FX_Distribution_Qty_Count[Hours Completed])
+			
+			return
+			IF(SELECTEDVALUE(_FX_Distribution_Qty_Count[DATE])>[MX_CurrentWeekEnding],BLANK(),_bal)
+		lineageTag: 9d2397d9-53eb-41e1-9e11-8143728badb6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DISCIPLINE
+		lineageTag: e2786c2a-6f49-4586-9b2a-7ae4101a0350
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: FX_Distribution_Allocation_Count[DISCIPLINE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		formatString: dd-mmm-yy
+		lineageTag: 3ff1c0a0-de06-41e1-9141-6ec39522775b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: FX_Distribution_Allocation_Count[DATE]
+
+		variation Variation
+			isDefault
+			relationship: df664341-a3d1-463b-97e3-58276c749fe6
+			defaultHierarchy: LocalDateTable_42f7efbf-0d6b-4149-a31c-46ca29f35f12.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Count
+		lineageTag: 66a08e20-0375-4f1c-bd47-864c4ae0ce44
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Qty
+		lineageTag: 31e7e77e-25b8-4172-8773-ec96f1543161
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Qty]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column uom
+		lineageTag: ac4b8114-ace0-4187-b0a8-956335484e95
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [uom]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		lineageTag: 08b1807e-8dd8-456c-af60-d092fdb58dfd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Status]
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		lineageTag: 3cad0c03-0d9d-4993-971d-4bb09fa165ab
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: FX_Distribution_Allocation_Count[NAME]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WPNO_Date = _FX_Distribution_Qty_Count[FIWPOBID]&" - "&_FX_Distribution_Qty_Count[DATE]
+		lineageTag: 3a42b43d-063b-4ec0-9971-c27d99110139
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hours Balance'
+		lineageTag: 58c5e9d5-81ba-4cff-9552-32f360e71938
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Hours Balance]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Hours Completed'
+		lineageTag: 1e6f4647-7547-4a30-8ba2-402c96adcb0b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Hours Completed]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_WeekSummary = IF([DATE]<([MX_CurrentWeekEnding]+49) && [DATE]>([MX_CurrentWeekEnding]-28),"Week Summary","Exclude")
+		lineageTag: 385205ad-8f99-47af-b6bb-c89205d72c6f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPOBID
+		lineageTag: 5dda4997-64d7-4e17-b983-026018307cf2
+		isNameInferred
+		sourceColumn: FX_Distribution_Allocation_Count[FIWPOBID]
+
+	partition _FX_Distribution_Qty_Count = calculated
+		mode: import
+		source =
+				union(
+				SUMMARIZE(FX_Distribution_Allocation_Count,[NAME],[FIWPOBID],[DISCIPLINE],[DATE],"Count",sum(FX_Distribution_Allocation_Count[FX_Comp_Bal_Dist]),"Qty",sum(FX_Distribution_Allocation_Count[FX_Quantity_Bal_Dist-00]),"Hours Balance",sum(FX_Distribution_Allocation_Count[FX_WPHrs_Bal_Dist]),"Hours Completed",0,"uom",firstnonblank(FX_Distribution_Allocation_Count[FX_UOM-00],0),"Status","01. To-Go"),
+				--SUMMARIZE(FILTER('Qry_IWP Detail','Qry_IWP Detail'[WP Progress]>=1),[WPNO],[DISCIPLINE],[FX_Comp_Actual_WkEnd],"Count",sum('Qry_IWP Detail'[FX_Count_Delta]),"Qty",sum('Qry_IWP Detail'[FX_Qty_Delta]),"Hours Balance",0,"Hours Completed",0,"UOM",FIRSTNONBLANK('Qry_IWP Detail'[FX_UOM],0),"Status","04. Completed"),
+				SUMMARIZE('Excel_Distrib-Alloc-Plan',[NAME],[FIWPOBID],[DISCIPLINE],[DATE],"Count",SUM('Excel_Distrib-Alloc-Plan'[FX_Count_Distrib]),"Qty",SUM('Excel_Distrib-Alloc-Plan'[FX_Qty_Distrib]),"Hours Balance",0,"Hours Completed",0,"UOM",FIRSTNONBLANK('Excel_Distrib-Alloc-Plan'[FX_UOM],0),"Status","02. Planned"),
+				SUMMARIZE(dataflow_ProgressReportHistory,[WPNO],[FIWPOBID],[DISCIPLINE],[Date],"Count",sum(dataflow_ProgressReportHistory[FX_CompCount_WklyProg]),"Qty",sum(dataflow_ProgressReportHistory[FX_CompQty_WklyProg]),"Hours Balance",0,"Hours Completed",SUM(dataflow_ProgressReportHistory[FX_Kronos_Wkly]),"UOM",FIRSTNONBLANK(dataflow_ProgressReportHistory[FX_UOM],1),"Status","04. Completed"),
+				SUMMARIZE(_FX_Prod_ActivityCode,[WPNO],[FIWPOBID],[DISCIPLINE],"Date",[MX_CurrentWeekEnding],"Count",0,"Qty",0,"Hours Balance",0,"Hours Completed",SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk]),"UOM","","Status","04. Completed")
+				
+				)
+
+	annotation PBI_Id = d1c885e1f57c4e23bddcf35ebe9e8df5
+

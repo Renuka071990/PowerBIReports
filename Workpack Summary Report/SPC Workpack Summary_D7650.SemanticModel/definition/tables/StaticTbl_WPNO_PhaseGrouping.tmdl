@@ -1,0 +1,71 @@
+table StaticTbl_WPNO_PhaseGrouping
+	lineageTag: 4efc2a90-40b3-4043-b484-a85710e31b28
+
+	column 'Activity Code'
+		dataType: string
+		lineageTag: 8d2deb3a-d48a-46d7-96d4-85d7e1815983
+		summarizeBy: none
+		sourceColumn: Activity Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Progress Grouping'
+		dataType: string
+		lineageTag: 07c9079d-4ec5-4bf3-a0e2-7bdd13432413
+		summarizeBy: none
+		sourceColumn: Progress Grouping
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phase Grouping (groups)'
+		dataType: string
+		lineageTag: 0f99887f-15df-481f-ba45-3f5b8e2979cd
+		summarizeBy: none
+		sourceColumn: Phase Grouping (groups)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Structure
+		dataType: string
+		lineageTag: 46c931fb-fce8-47bf-b53d-ef3a5911b063
+		summarizeBy: none
+		sourceColumn: Structure
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_PlantName = LOOKUPVALUE(Excel_IFE_PLN_PRG[Contract],Excel_IFE_PLN_PRG[Activity Code],StaticTbl_WPNO_PhaseGrouping[Activity Code])
+		lineageTag: 1e155645-d779-4caf-b9f9-aa20d6fa3c76
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discipline_SPC
+		dataType: string
+		lineageTag: bcfc7a16-ad62-40f9-be9a-914ce897f5bc
+		summarizeBy: none
+		sourceColumn: Discipline_SPC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Progress Grouping Code'
+		dataType: string
+		lineageTag: 2bff4bfc-0856-4979-ba7f-697f08c3c6c8
+		summarizeBy: none
+		sourceColumn: Progress Grouping Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StaticTbl_WPNO_PhaseGrouping = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Workpack Summary\Main Fab Workpack\E0703 - Main Fab WP.xlsx"), null, true),
+				    #"Analytics File_Activity Codes_Sheet" = Source{[Item="Analytics File_Activity Codes",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Analytics File_Activity Codes_Sheet", [PromoteAllScalars=true]),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers",{"Activity Code","Structure", "Progress Grouping", "Progress Grouping Code","Phase Grouping (groups)", "Discipline_SPC"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each [Activity Code] <> null and [Activity Code] <> "")
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+

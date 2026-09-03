@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "1718e48235183803357b",
+  "position": {
+    "x": 4.1854902555291655,
+    "y": 3.1806716200351977,
+    "z": 1500,
+    "height": 701.72588832487315,
+    "width": 1269.5807435107045,
+    "tabOrder": 5000
+  },
+  "visualGroup": {
+    "displayName": "Count - Actual Start",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

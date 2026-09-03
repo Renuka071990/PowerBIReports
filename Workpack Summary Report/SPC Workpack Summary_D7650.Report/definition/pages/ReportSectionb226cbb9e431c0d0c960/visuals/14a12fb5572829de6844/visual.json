@@ -1,0 +1,219 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "14a12fb5572829de6844",
+  "position": {
+    "x": 15.72119444231212,
+    "y": 78.6059722115606,
+    "z": 1000,
+    "height": 624.13141935979115,
+    "width": 962.13709986950175,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BIN Table"
+                    }
+                  },
+                  "Property": "No"
+                }
+              },
+              "queryRef": "BIN Table.No",
+              "nativeQueryRef": "No",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BIN"
+                    }
+                  },
+                  "Property": "mx_afcbin050"
+                }
+              },
+              "queryRef": "BIN.mx_afcbin050",
+              "nativeQueryRef": "AFC Hrs_BIN-050",
+              "displayName": "AFC Hrs_BIN-050"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BIN"
+                    }
+                  },
+                  "Property": "mx_wphrsbin050"
+                }
+              },
+              "queryRef": "BIN.mx_wphrsbin050",
+              "nativeQueryRef": "WP Hrs_BIN-050",
+              "displayName": "WP Hrs_BIN-050"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BIN"
+                    }
+                  },
+                  "Property": "BIN"
+                }
+              },
+              "index": 0,
+              "length": 2
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "BIN Table"
+                  }
+                },
+                "Property": "No"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "axisType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Categorical'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filterf9b5017a8b21ac4823cd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "BIN Table"
+              }
+            },
+            "Property": "No"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterbfe14f3e61a00d70ed30",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "BIN"
+              }
+            },
+            "Property": "mx_afcbin100"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterd6323134ace9bc45b693",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "BIN"
+              }
+            },
+            "Property": "mx_wphrsbin100"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ]
+  }
+}

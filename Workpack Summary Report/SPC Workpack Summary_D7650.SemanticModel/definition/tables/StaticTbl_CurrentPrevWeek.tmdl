@@ -1,0 +1,21 @@
+table StaticTbl_CurrentPrevWeek
+	lineageTag: f746443f-a048-439b-ade8-00ef36294c34
+
+	column 'Week Type'
+		dataType: string
+		lineageTag: 936f5530-50f9-4df5-9a24-67cca54d5286
+		summarizeBy: none
+		sourceColumn: Week Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StaticTbl_CurrentPrevWeek = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wci4tKkrNK1GK1YlWCihKLcvMLy1Wio0FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Week Type" = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,131 @@
+table 'Excel_D7650 MLF'
+	lineageTag: de372cbb-3e48-41e2-bc38-34d0deef0752
+
+	column Craft
+		dataType: string
+		lineageTag: e5598bfd-0b82-4797-a96f-3a5295a47596
+		summarizeBy: none
+		sourceColumn: Craft
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Ending'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: ba5deb31-b6a4-4a2e-907c-b77c2040007b
+		summarizeBy: none
+		sourceColumn: Week Ending
+
+		variation Variation
+			isDefault
+			relationship: 6570084d-6428-4900-afd7-b74e5a5d2b44
+			defaultHierarchy: LocalDateTable_dccf5e91-bbd3-48da-bd0d-1dfd0f7cda09.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Approved Count'
+		dataType: double
+		formatString: #,0
+		lineageTag: 144ab8a8-e4f6-4946-9d23-402d74e2a343
+		summarizeBy: sum
+		sourceColumn: Approved Count
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column FX_Craft_WeekEnding = "MLF-"&[Type]&"-"&[Craft]&"-"&[Week Ending]
+		lineageTag: bb021def-5352-4b58-b884-8d30710f7cf1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Approved_Hrs = [Approved Count]*60
+		lineageTag: a5b257be-464b-42d4-ab0b-15fd076f5594
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Type
+		dataType: string
+		lineageTag: 1c241af9-2241-4644-83af-d5b875eacdbe
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WPNO = ""
+		lineageTag: 64b60f95-d3b2-4df4-a650-11d07862412d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discipline
+		dataType: string
+		lineageTag: 024a2489-c840-40d2-adb7-c250bb6db64c
+		summarizeBy: none
+		sourceColumn: Discipline
+
+		annotation SummarizationSetBy = Automatic
+
+	column Facility
+		dataType: string
+		lineageTag: e6ab455b-d5b6-44e7-9175-724d542912c7
+		summarizeBy: none
+		sourceColumn: Facility
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Update'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 509599d1-6f15-4aef-b501-3f0dff7da779
+		summarizeBy: none
+		sourceColumn: Date Update
+
+		variation Variation
+			isDefault
+			relationship: 9341a056-ab88-4460-830c-fd4c28e5660d
+			defaultHierarchy: LocalDateTable_a5bb931b-51f8-4e8c-8ba3-b3e981acdbfc.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column fx_dmy_jobno = ""
+		lineageTag: aed0bbc8-e4f1-4943-9a8e-3a7ad13afa08
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Excel_D7650 MLF' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Workpack Summary\MLF\D7650 MLF.xlsx"), null, true),
+				    #"E0703 MLF Prefab_Sheet" = Source{[Item="D7650 MLF",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"E0703 MLF Prefab_Sheet", [PromoteAllScalars=true]),
+				    #"Filtered Rows" = Table.SelectRows(#"Promoted Headers", each ([Type] <> null)),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"Craft_MLF"}),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Removed Columns", {"Type","Discipline", "Craft","Facility","Date Update"}, "Attribute", "Value"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Unpivoted Other Columns",{{"Attribute", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Attribute", "Week Ending"}, {"Value", "Approved Count"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

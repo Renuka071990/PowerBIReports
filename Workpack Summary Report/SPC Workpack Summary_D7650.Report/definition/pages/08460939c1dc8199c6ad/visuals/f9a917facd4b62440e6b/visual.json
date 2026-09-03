@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "f9a917facd4b62440e6b",
+  "position": {
+    "x": 5.7918552036198889,
+    "y": 0,
+    "z": 10000,
+    "height": 709.50226244343889,
+    "width": 1262.62443438914,
+    "tabOrder": 12000
+  },
+  "visualGroup": {
+    "displayName": "Summary - Activity Code",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

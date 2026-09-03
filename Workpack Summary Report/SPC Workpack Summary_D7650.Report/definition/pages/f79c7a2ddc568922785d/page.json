@@ -1,0 +1,219 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "f79c7a2ddc568922785d",
+  "displayName": "12. Workface Planning",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter8752ba14a1308bca8707",
+        "displayName": "PlantName  - SPC/IFE",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_WPNO_PhaseGrouping"
+              }
+            },
+            "Property": "FX_PlantName"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter461963d55dd54b290704",
+        "displayName": "DISCIPLINE - SPC/IFE",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_Distribution_Hrs"
+              }
+            },
+            "Property": "DISCIPLINE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterb98243113a39a60ba443",
+        "displayName": "ProgressGrouping  - SPC/IFE",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_Distribution_Hrs"
+              }
+            },
+            "Property": "FX_ProgressGrouping"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter04cc4349e8463a30d409",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_Distribution_Hrs"
+              }
+            },
+            "Property": "FX_WeekEnding_Filter"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtera1c2a389b8795f509ea8",
+        "displayName": "Week Ending Date",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_Distribution_Hrs"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "RelativeDate",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterb310db1138b3573ed188",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_WPNO_PhaseGrouping"
+              }
+            },
+            "Property": "FX_PlantName"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "6cd3925f21320d9453c0",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_Plant_Names"
+              }
+            },
+            "Property": "Subcon"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Workpack Summary 900x1920.svg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Workpack_Summary_900x19200641762977765108.svg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "221L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "b0cb609da195094e5373",
+      "target": "44081c576a127e51a4a7",
+      "type": "DataFilter"
+    },
+    {
+      "source": "b0cb609da195094e5373",
+      "target": "78b6f4b3c704e2ec80e6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "44081c576a127e51a4a7",
+      "target": "78b6f4b3c704e2ec80e6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "698bcbd757cca4c8269c",
+      "target": "78b6f4b3c704e2ec80e6",
+      "type": "NoFilter"
+    }
+  ]
+}

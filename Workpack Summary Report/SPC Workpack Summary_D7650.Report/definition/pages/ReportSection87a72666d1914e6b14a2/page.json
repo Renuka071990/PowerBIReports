@@ -1,0 +1,501 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection87a72666d1914e6b14a2",
+  "displayName": "02. WP Plan-Count",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6694fc2e8c586d5978b7",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "FX_Type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_FX_WPPlan_Final_Issued",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "_"
+                              }
+                            },
+                            "Property": "FX_Type"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Weekly Progress'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "943dcfef9d46fb0d5bc8",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Statictbl_WPStatus"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "Statictbl_WPStatus",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Count'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "d0d16ec51a1b69fdd431",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_CurrentPrevWeek"
+              }
+            },
+            "Property": "Week Type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "StaticTbl_CurrentPrevWeek",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "Week Type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Current'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "pageBinding": {
+    "name": "Pod15",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "183L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [
+      {
+        "properties": {
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Workpack Summary page2.svg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Workpack_Summary_page226283920673682437.svg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "846c3c786095d19f28de",
+      "target": "f28f7490a90ed8a500ee",
+      "type": "DataFilter"
+    },
+    {
+      "source": "846c3c786095d19f28de",
+      "target": "c79d2d14b2094ae2b65b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f28f7490a90ed8a500ee",
+      "target": "daa1c7861991db0f1243",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c79d2d14b2094ae2b65b",
+      "target": "daa1c7861991db0f1243",
+      "type": "NoFilter"
+    },
+    {
+      "source": "846c3c786095d19f28de",
+      "target": "daa1c7861991db0f1243",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3f77f6852b53184863da",
+      "target": "daa1c7861991db0f1243",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c79d2d14b2094ae2b65b",
+      "target": "f28f7490a90ed8a500ee",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f28f7490a90ed8a500ee",
+      "target": "846c3c786095d19f28de",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f28f7490a90ed8a500ee",
+      "target": "c79d2d14b2094ae2b65b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c79d2d14b2094ae2b65b",
+      "target": "846c3c786095d19f28de",
+      "type": "DataFilter"
+    },
+    {
+      "source": "846c3c786095d19f28de",
+      "target": "4a45f0dd61064f39670f",
+      "type": "DataFilter"
+    },
+    {
+      "source": "846c3c786095d19f28de",
+      "target": "78d82798f77b9fbed5b1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c79d2d14b2094ae2b65b",
+      "target": "4a45f0dd61064f39670f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c79d2d14b2094ae2b65b",
+      "target": "78d82798f77b9fbed5b1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ab56deca9ff036dd247b",
+      "target": "8e5ac04b5bb69855250a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ab56deca9ff036dd247b",
+      "target": "ac07c77c3d5297d32191",
+      "type": "NoFilter"
+    },
+    {
+      "source": "69af2d48f3c59f711d53",
+      "target": "ac07c77c3d5297d32191",
+      "type": "NoFilter"
+    },
+    {
+      "source": "69af2d48f3c59f711d53",
+      "target": "8e5ac04b5bb69855250a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "69af2d48f3c59f711d53",
+      "target": "ab56deca9ff036dd247b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3e5c5b71c6e4dd6e423a",
+      "target": "ab56deca9ff036dd247b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3e5c5b71c6e4dd6e423a",
+      "target": "8e5ac04b5bb69855250a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3e5c5b71c6e4dd6e423a",
+      "target": "ac07c77c3d5297d32191",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3e5c5b71c6e4dd6e423a",
+      "target": "cbb989aa9d7a11f5fbd3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3e5c5b71c6e4dd6e423a",
+      "target": "52353edc3d604a0ea33c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3e5c5b71c6e4dd6e423a",
+      "target": "14d227cd8c995c655de9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3e5c5b71c6e4dd6e423a",
+      "target": "e759cad8a9d96699ab82",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ab56deca9ff036dd247b",
+      "target": "cbb989aa9d7a11f5fbd3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ab56deca9ff036dd247b",
+      "target": "3e5c5b71c6e4dd6e423a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8e5ac04b5bb69855250a",
+      "target": "ab56deca9ff036dd247b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "69af2d48f3c59f711d53",
+      "target": "3e5c5b71c6e4dd6e423a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "69af2d48f3c59f711d53",
+      "target": "cbb989aa9d7a11f5fbd3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "daa1c7861991db0f1243",
+      "target": "f28f7490a90ed8a500ee",
+      "type": "DataFilter"
+    },
+    {
+      "source": "daa1c7861991db0f1243",
+      "target": "c79d2d14b2094ae2b65b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ac07c77c3d5297d32191",
+      "target": "8e5ac04b5bb69855250a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ac07c77c3d5297d32191",
+      "target": "3e5c5b71c6e4dd6e423a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "daa1c7861991db0f1243",
+      "target": "846c3c786095d19f28de",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ac07c77c3d5297d32191",
+      "target": "ab56deca9ff036dd247b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d6d547aff68bb93ef4c7",
+      "target": "daa1c7861991db0f1243",
+      "type": "NoFilter"
+    },
+    {
+      "source": "667064bbc468f2df30be",
+      "target": "daa1c7861991db0f1243",
+      "type": "NoFilter"
+    },
+    {
+      "source": "96468ac4b9f5e2ee42c3",
+      "target": "3bdb7aa090d7fdf2fbc6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b118ddfbc8726a16f9c6",
+      "target": "3bdb7aa090d7fdf2fbc6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "4a8adc426a9b522cc1df",
+      "target": "3bdb7aa090d7fdf2fbc6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "27357f4976520e5b077e",
+      "target": "3bdb7aa090d7fdf2fbc6",
+      "type": "NoFilter"
+    }
+  ]
+}

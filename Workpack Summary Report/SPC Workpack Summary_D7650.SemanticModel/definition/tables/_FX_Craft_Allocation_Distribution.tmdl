@@ -1,0 +1,194 @@
+table _FX_Craft_Allocation_Distribution
+	lineageTag: 8429a64a-a664-4aa3-842f-22d22b5ee432
+
+	measure 'MX_Line_ManPower Forecast' = CALCULATE(SUMX(FILTER(_FX_Craft_Allocation_Distribution,[Status]="1. Forecast"),[FX_Manpower]),_FX_Craft_Allocation_Distribution[Status]="1. Forecast")
+		lineageTag: 4e39315e-96b2-4f75-8a74-1ce70c6915bf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MX_Line_ManPower MLF' = CALCULATE(SUMX(FILTER(_FX_Craft_Allocation_Distribution,[Status]="2. MLF"),[FX_Manpower]),_FX_Craft_Allocation_Distribution[Status]="2. MLF")
+		lineageTag: afd8fffc-8920-4fde-bcc7-b51d1c7419de
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MX_Line_ManPower Actual' = CALCULATE(SUMX(FILTER(_FX_Craft_Allocation_Distribution,[Status]="3. Actual" && _FX_Craft_Allocation_Distribution[FX_LastWeek]<[MX_CurrentWeekEnding]),[FX_Manpower]),_FX_Craft_Allocation_Distribution[Status]="3. Actual")
+		lineageTag: a20ae589-6566-41c6-aa82-c0bd1416671a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_CF_AlternateColumn2 = ```
+			
+			var _weekending = SELECTEDVALUE(_FX_Craft_Allocation_Distribution[Status])
+			var _RankWeekEndingTable = ALLSELECTED(_FX_Craft_Allocation_Distribution[fx_lastweek])
+			var _weekendingRank = 
+			RANKX(
+			    _RankWeekEndingTable,
+			    _FX_Craft_Allocation_Distribution[fx_lastweek],
+			    _weekending,ASC,Dense
+			)
+			var CF = IF(_weekending="MLF" || _weekending=BLANK(),"lightgrey","white")
+			RETURN
+			CF
+			```
+		lineageTag: 6965caac-3871-43fb-aa37-ddf5d09b0d0f
+
+	measure MX_ManPower =
+			var _manpower = SUM(_FX_Craft_Allocation_Distribution[FX_Manpower])
+			RETURN
+			if(ISBLANK(_manpower),0,_manpower)
+		formatString: 0
+		lineageTag: 660327bf-f1fe-4bcd-b30a-12fea09102a4
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Togo =
+			var _togo = SUMX(FILTER(_FX_Craft_Allocation_Distribution,[Status]="1. To-Go WPhrs"),[Hours])
+			RETURN
+			_togo
+		formatString: #,0
+		lineageTag: 0ced58b6-4519-4bff-a4e0-a83655789d8d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Status
+		lineageTag: 3c6dc7a7-fad8-4657-acd7-c2d620a157dc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Status]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hours
+		lineageTag: a7a76156-1a2f-49a6-a7c4-099c47ffa66c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Hours]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Manpower = ([Hours]/[ManPower Factor])
+		formatString: #,0.00
+		lineageTag: 7fca23a2-d242-458e-9add-889f0c9facfc
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WeekSummary = IF([FX_LastWeek]<([MX_CurrentWeekEnding]+49) && [FX_LastWeek]>([MX_CurrentWeekEnding]-28),"Week Summary","Exclude")
+		lineageTag: 559bca17-ce3d-41fb-9bbe-f1e3e5c1024f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Plant_Phase_Disc = [FX_Phase]&"-"&[FX_Discipline]
+		lineageTag: e3aaec20-3fae-4606-90a4-1462942c8e3b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ManPower Factor'
+		lineageTag: 637d1f7a-a9f1-4adb-a38c-1982c202ebdd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ManPower Factor]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_LastWeek
+		formatString: dd-mmm-yy
+		lineageTag: 64e86aa2-41e2-4fa3-8661-3fbecec7153f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Kronos_2024[FX_LastWeek]
+
+		variation Variation
+			isDefault
+			relationship: 342ed976-099e-4121-9772-2e7182d1bad9
+			defaultHierarchy: LocalDateTable_97eb81ee-947a-4c3d-bb43-953d12a5f6de.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Plant
+		lineageTag: f179a2e5-adc4-48de-89cb-9eb6e221980f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Kronos_2024[FX_Plant]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Discipline
+		lineageTag: c451d69c-0bb4-435d-a804-bb50d344a217
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Kronos_2024[FX_Discipline]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Phase
+		lineageTag: 88ad3ae7-a2e2-48f5-bd53-ea242c4b09a8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Kronos_2024[FX_Phase]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'StaticTbl_Exc_Craft.Craft Standard'
+		lineageTag: f3e824ea-f3cf-4645-852e-4d62ee68f170
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Kronos_2024[StaticTbl_Exc_Craft.Craft Standard]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_plant_x =
+			IF(CONTAINSSTRING([FX_Plant],"WIP-1-T"),"WIP-1-T",
+			IF(CONTAINSSTRING([FX_Plant],"WIP-1-J"),"WIP-1-J",
+			IF(CONTAINSSTRING([FX_Plant],"WHT"),"WHT",BLANK())))
+		lineageTag: 70388c1d-ded1-4103-bfe5-6bfcf48faa1d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JOB Number'
+		lineageTag: 3d64581a-9360-4ccb-a164-98ddbff41475
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Kronos_2024[JOB Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_lookup_mdm
+		lineageTag: 6eec6247-35ea-455e-9a9d-66d5a68198ab
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Kronos_2024[fx_lookup_mdm]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_jobno_wpno = [JOB Number]&"_"&[fx_lookup_mdm]
+		lineageTag: e916ce97-9e10-4a72-85ae-aee779f6a328
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_wpno_desc = LOOKUPVALUE('Qry_IWP Detail'[WP DESCRIPTION],'Qry_IWP Detail'[fx_job_wpno],_FX_Craft_Allocation_Distribution[fx_jobno_wpno])
+		lineageTag: b4867193-a3f5-4db1-b5e4-39697f8d0630
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FX_Craft_Allocation_Distribution = calculated
+		mode: import
+		source =
+				UNION(
+				        SUMMARIZE(FILTER(Excel_Kronos_2024,[fx_lookup_mdm]<>BLANK()),[FX_LastWeek],[fx_lookup_mdm],[JOB Number],[FX_Plant],[FX_Discipline],[FX_Phase],[StaticTbl_Exc_Craft.Craft Standard],"Status","3. Actual","Hours",SUM(Excel_Kronos_2024[Kronos Hrs]),"ManPower Factor",FIRSTNONBLANK(Excel_Kronos_2024[Manpower Factor],0)),
+				        SUMMARIZE(FILTER('Excel_Distrib-Alloc-ToGo',[pqry_TYPE]="WPHRS"),[DATE],[NAME],[DESIGNAREA],[PROJECT],[DISCIPLINE],[FX_Phase],[Craft],"Status","1. To-Go WPhrs","Hours",SUM('Excel_Distrib-Alloc-ToGo'[FX_Distribution_Hrs]),"ManPower Factor",60),
+				        SUMMARIZE(FILTER('Excel_Distrib-Alloc-ToGo',[pqry_TYPE]="WPHRS"),[DATE],[NAME],[DESIGNAREA],[PROJECT],[DISCIPLINE],[FX_Phase],[Craft],"Status","4. To-Go AFCHrs","Hours",SUM('Excel_Distrib-Alloc-ToGo'[fx_afc_distrib]),"ManPower Factor",60),
+				        SUMMARIZE(FILTER('Excel_Distrib-Alloc-ToGo',[pqry_TYPE]="AFCHRS" && [FX_STATUS] = BLANK()),[DATE],[NAME],[DESIGNAREA],[PROJECT],[DISCIPLINE],[FX_Phase],[Craft],"Status","1. To-Go AFCHrs Prelim","Hours",SUM('Excel_Distrib-Alloc-ToGo'[FX_Distribution_Hrs]),"ManPower Factor",60),
+				        SUMMARIZE('Excel_D7650 MLF',[Week Ending],[FX_WPNO],[fx_dmy_jobno],[Facility],[Discipline],[Type],[Craft],"Status","2. MLF","Hours",SUM('Excel_D7650 MLF'[FX_Approved_Hrs]),"ManPower Factor",60))
+
+	annotation PBI_Id = c660c94a110448eb8ed70d8595594d58
+

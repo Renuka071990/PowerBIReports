@@ -1,0 +1,6564 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "b888a8ed0203da3d212b",
+  "position": {
+    "x": 9.2828364222401287,
+    "y": 107.26833199033038,
+    "z": 1000,
+    "height": 605.447219983884,
+    "width": 1256.2771958098308,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "PROJECT"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.PROJECT",
+              "nativeQueryRef": "PROJECT"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "TASK NO"
+                }
+              },
+              "queryRef": "IWP Detail.TASK NO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "JOB NO"
+                }
+              },
+              "queryRef": "IWP Detail.JOB NO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "ACTIVITY CODE"
+                }
+              },
+              "queryRef": "IWP Detail.ACTIVITY CODE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "DISCIPLINE"
+                }
+              },
+              "queryRef": "IWP Detail.DISCIPLINE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "ACTIVITY ID"
+                }
+              },
+              "queryRef": "IWP Detail.ACTIVITY ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "ACTIVITY ID DESCRIPTION"
+                }
+              },
+              "queryRef": "IWP Detail.ACTIVITY ID DESCRIPTION"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "CWPNUMBER"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.CWPNUMBER",
+              "nativeQueryRef": "CWPNUMBER"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WPNO"
+                }
+              },
+              "queryRef": "IWP Detail.WPNO",
+              "nativeQueryRef": "WPNO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "fx_job_wpno"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.fx_job_wpno",
+              "nativeQueryRef": "JOB NO_WPNO",
+              "displayName": "JOB NO_WPNO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP PURPOSE"
+                }
+              },
+              "queryRef": "IWP Detail.WP PURPOSE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP DESCRIPTION"
+                }
+              },
+              "queryRef": "IWP Detail.WP DESCRIPTION"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Progress"
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Progress)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_Prod_WP_Cum"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_Prod_WP_Cum",
+              "displayName": "Prod WP Cum (ATCPTD)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_Prod_WP_Wkly",
+              "displayName": "Prod WP Wkly (ATCPTD)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_Prod_AFC_Cum"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_Prod_AFC_Cum",
+              "displayName": "Prod AFC Cum (ATCPTD)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_Prod_AFC_Wkly"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_Prod_AFC_Wkly",
+              "displayName": "Prod AFC Wkly (ATCPTD)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "AREA"
+                }
+              },
+              "queryRef": "IWP Detail.AREA"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "AFC Hrs"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.AFC Hrs)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Hrs"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Hrs)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "AFC WP DELTA Hrs"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.AFC WP DELTA Hrs)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Earned Hrs"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Earned Hrs)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "Balance Hours"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Qry_IWP Detail.Balance Hours)",
+              "nativeQueryRef": "WP Balance Hours",
+              "displayName": "WP Balance Hours"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Weekly Earned"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Weekly Earned)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Weekly Progress"
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Weekly Progress)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Last Week Earned"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Last Week Earned)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Last Week Weekly Earned"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Last Week Weekly Earned)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Last Week Progress"
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Last Week Progress)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Components Count Complete_"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Components Count Complete)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Components Count Planned_"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Components Count Planned)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "RATEUOM"
+                }
+              },
+              "queryRef": "IWP Detail.RATEUOM",
+              "displayName": "RATE UOM"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "COMPLETED_UNITS"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.COMPLETED_UNITS)",
+              "displayName": "WP Components Qty Complete"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "PLAN_UNITS"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.PLAN_UNITS)",
+              "displayName": "WP Components Qty Planned"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Creation User"
+                }
+              },
+              "queryRef": "IWP Detail.WP Creation User"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "STATUS"
+                }
+              },
+              "queryRef": "IWP Detail.STATUS"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Creation Date"
+                }
+              },
+              "queryRef": "IWP Detail.WP Creation Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP_REVNO"
+                }
+              },
+              "queryRef": "Sum(Qry_IWP Detail.WP_REVNO)",
+              "nativeQueryRef": "WP Rev No",
+              "displayName": "WP Rev No"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Revision Date"
+                }
+              },
+              "queryRef": "IWP Detail.WP Revision Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Receive Date"
+                }
+              },
+              "queryRef": "IWP Detail.WP Receive Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Last Progress By"
+                }
+              },
+              "queryRef": "IWP Detail.WP Last Progress By"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Last Progress Date"
+                }
+              },
+              "queryRef": "IWP Detail.WP Last Progress Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Planned Start Date"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.WP Planned Start Date",
+              "nativeQueryRef": "WP Planned Start Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Planned Finish Date"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.WP Planned Finish Date",
+              "nativeQueryRef": "WP Planned Finish Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "L3 Forecast Start Date"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.L3 Forecast Start Date",
+              "nativeQueryRef": "L3 Forecast Start Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "L3 Forecast Finish Date"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.L3 Forecast Finish Date",
+              "nativeQueryRef": "L3 Forecast Finish Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "L3 Baseline Start Date"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.L3 Baseline Start Date",
+              "nativeQueryRef": "L3 Baseline Start Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "L3 Baseline Finish Date"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.L3 Baseline Finish Date",
+              "nativeQueryRef": "L3 Baseline Finish Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Actual Start Date"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.WP Actual Start Date",
+              "nativeQueryRef": "WP Actual Start Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "WP Actual Finish Date"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.WP Actual Finish Date",
+              "nativeQueryRef": "WP Actual Finish Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "Foreman"
+                }
+              },
+              "queryRef": "IWP Detail.Foreman",
+              "nativeQueryRef": "Foreman"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "General Foreman"
+                }
+              },
+              "queryRef": "IWP Detail.General Foreman",
+              "nativeQueryRef": "General Foreman"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "IWP Issued By"
+                }
+              },
+              "queryRef": "IWP Detail.IWP Issued By",
+              "nativeQueryRef": "IWP Issued By"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "AFC Progress ROC 1"
+                }
+              },
+              "queryRef": "Sum(IWP Detail.AFC Progress ROC 1)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "AFC Progress ROC 2"
+                }
+              },
+              "queryRef": "Sum(IWP Detail.AFC Progress ROC 2)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "AFC Progress ROC 3"
+                }
+              },
+              "queryRef": "Sum(IWP Detail.AFC Progress ROC 3)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "AFC Progress ROC 4"
+                }
+              },
+              "queryRef": "Sum(IWP Detail.AFC Progress ROC 4)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "AFC Progress ROC 5"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.AFC Progress ROC 5)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "AFC Progress ROC 6"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.AFC Progress ROC 6)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "ROC Weightage 1"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.ROC Weightage 1)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "ROC Weightage 2"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.ROC Weightage 2)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "ROC Weightage 3"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.ROC Weightage 3)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "ROC Weightage 4"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.ROC Weightage 4)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "ROC Weightage 5"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.ROC Weightage 5)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "ROC Weightage 6"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.ROC Weightage 6)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Earned Hrs ROC 1"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Earned Hrs ROC 1)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Earned Hrs ROC 2"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Earned Hrs ROC 2)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Earned Hrs ROC 3"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Earned Hrs ROC 3)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Earned Hrs ROC 4"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Earned Hrs ROC 4)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Earned Hrs ROC 5"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Earned Hrs ROC 5)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Earned Hrs ROC 6"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Earned Hrs ROC 6)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "ROC 1"
+                }
+              },
+              "queryRef": "IWP Detail.ROC 1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "ROC 2"
+                }
+              },
+              "queryRef": "IWP Detail.ROC 2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "ROC 3"
+                }
+              },
+              "queryRef": "IWP Detail.ROC 3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "ROC 4"
+                }
+              },
+              "queryRef": "IWP Detail.ROC 4"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "ROC 5"
+                }
+              },
+              "queryRef": "IWP Detail.ROC 5"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "ROC 6"
+                }
+              },
+              "queryRef": "IWP Detail.ROC 6"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Hrs ROC 1"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Hrs ROC 1)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Hrs ROC 2"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Hrs ROC 2)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Hrs ROC 3"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Hrs ROC 3)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Hrs ROC 4"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Hrs ROC 4)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Hrs ROC 5"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Hrs ROC 5)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "WP Hrs ROC 6"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(IWP Detail.WP Hrs ROC 6)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "FIWPUID"
+                }
+              },
+              "queryRef": "IWP Detail.FIWPUID"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_Sum_KronosHrs_Cum"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_Sum_KronosHrs_Cum",
+              "displayName": "MyTime Hrs Cum Actual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_Sum_KronosHrs_Cum_ATCPTD"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_Sum_KronosHrs_Cum_ATCPTD",
+              "nativeQueryRef": "MyTime Hrs Cum (ATCPTD)",
+              "displayName": "MyTime Hrs Cum (ATCPTD)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_Sum_KronosHrs_Wkly_Act"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_Sum_KronosHrs_Wkly_Act",
+              "displayName": "MyTime Hrs Wkly Actual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_Sum_KronosHrs_Wkly_ATCPTD"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_Sum_KronosHrs_Wkly_ATCPTD",
+              "displayName": "MyTime Hrs Wkly (ATCPTD)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_DLT_AFC-WP_Tot"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_DLT_AFC-WP_Tot",
+              "displayName": "Delta Total AFC - WP Hrs"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_DLT_AFC-WP_Cum"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_DLT_AFC-WP_Cum",
+              "displayName": "Delta Cum AFC - WP Hrs"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_DLT_AFC-WP_Wkly"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_DLT_AFC-WP_Wkly",
+              "displayName": "Delta Wkly AFC - WP Hrs"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MX_Productivity"
+                    }
+                  },
+                  "Property": "MXD_DLT_WP_Tot-Cum"
+                }
+              },
+              "queryRef": "MX_Measures.MXD_DLT_WP_Tot-Cum",
+              "displayName": "Delta WPHrs Issued - Cum"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "PROJECT"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SPCRPT_FILE.FILEOBID"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "47D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SPCRPT_FIWP.SCOPE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.JOB NO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.DISCIPLINE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "143.1618178383639D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.WPNO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "306.1147075994478D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.WP DESCRIPTION"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.53303060534132D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC Hrs)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61.266515302670655D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "55D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.TASK NO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.G4H)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.G5H)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "55.74052399206487D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.G6H)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "131.20757406479947D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.FIWPUID"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "51.39977295400598D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.RATEUOM"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "38D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.AREA"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "123D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.STATUS"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "128.42516809013662D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.ACTIVITY ID"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "212D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.ACTIVITY ID DESCRIPTION"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.WP PURPOSE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.59909181602394D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC WP DELTA Hrs)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.21885279209888D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Progress)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "64.79954590801196D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.59909181602394D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Weekly Earned)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.565493595697596D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Weekly Progress)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.43223594436228D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Last Week Earned)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "92.66515302670658D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Last Week Weekly Earned)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "80.43223594436228D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Last Week Progress)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "96.46469893471856D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Components Count Complete)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.19818363204789D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Components Count Planned)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "95D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.WP Creation User"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.9328035593473D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.WP Creation Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.49943238501497D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.WP Revision Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.79954590801196D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.WP Receive Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "88.36617473367964D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.WP Last Progress By"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.2025848362327D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.WP Last Progress Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.46583416468862D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC Progress ROC 1)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.33257651335329D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC Progress ROC 2)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74.03246299035628D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC Progress ROC 3)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.33257651335329D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC Progress ROC 4)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.76594768768562D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC Progress ROC 5)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.33257651335329D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC Progress ROC 6)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "70.6326900363503D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.ROC Weightage 1)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.36617473367964D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.ROC Weightage 2)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77.79954590801196D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.ROC Weightage 3)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.36617473367964D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.ROC Weightage 4)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.49943238501497D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.ROC Weightage 5)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.36617473367964D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.ROC Weightage 6)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.43223594436228D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 1)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.29897829302695D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 2)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.29897829302693D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 3)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.73234946735927D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 4)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.43223594436228D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 5)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.43223594436228D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 6)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "42D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.ROC 1"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "87D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.ROC 2"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "42D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.ROC 3"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "42D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.ROC 4"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "42D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.ROC 5"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "42D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.ROC 6"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "66.09965943100897D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs ROC 1)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "60.36617473367964D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs ROC 2)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.23291708234431D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs ROC 3)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "60.698901718796094D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs ROC 4)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.00504249084406D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs ROC 5)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61.775436911808086D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs ROC 6)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.28585737951227D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_Sum_KronosHrs_Cum"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74.28131139962245D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_Sum_KronosHrs_Wkly_Act"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82.68686674114883D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_Sum_KronosHrs_Wkly_ATCPTD"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.14292868975613D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_Prod_WP_Cum"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.06919135493317D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_Prod_WP_Wkly"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.10606002234465D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_Prod_AFC_Cum"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.14292868975615D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_Prod_AFC_Wkly"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.62222136610549D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_DLT_AFC-WP_Tot"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.585352698694D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_DLT_WP_Tot-Cum"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.99090804022038D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_DLT_AFC-WP_Wkly"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77.54848403128251D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_DLT_AFC-WP_Cum"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.FX_Job-ActCode"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "66.41935483870968D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.ACTIVITY CODE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.COMPLETED_UNITS)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "95.3755971619594D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.PLAN_UNITS)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.Foreman"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.General Foreman"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IWP Detail.IWP Issued By"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.93548387096774D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_Sum_KronosHrs_Cum_ATCPTD"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.PROJECT"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.56389766352434D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.WP Actual Start Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74.95629344257571D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.WP Actual Finish Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "71.79059942898611D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.L3 Forecast Start Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.90105870133863D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.L3 Forecast Finish Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.90106715197582D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.L3 Baseline Start Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.84583227581237D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.L3 Baseline Finish Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "45.950547600715495D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Qry_IWP Detail.WP_REVNO)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Qry_IWP Detail.Balance Hours)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "156D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.fx_job_wpno"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "70.43485091485925D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.WP Planned Start Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77.51777138555173D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.WP Planned Finish Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Qry_IWP Detail.CWPNUMBER"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "urlIcon": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1.05D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "100D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#65AC69'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.95D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1.05D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#B6F2B9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.95D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#EFB5B9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 1,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#e19490'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "_MX_Productivity"
+                                    }
+                                  },
+                                  "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#cccccc'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 1,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "-100D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#d7706b'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "MX_Measures.MXD_Prod_WP_Wkly"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1.05D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "100D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#65AC69'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.95D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1.05D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#B6F2B9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.95D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#EFB5B9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 1,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#e19490'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "_MX_Productivity"
+                                    }
+                                  },
+                                  "Property": "MXD_Prod_WP_Cum"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#cccccc'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 1,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "-100D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_WP_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#d7706b'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "MX_Measures.MXD_Prod_WP_Cum"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1.05D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "100D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#65AC69'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.95D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1.05D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#B6F2B9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.95D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#EFB5B9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 1,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#e19490'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "_MX_Productivity"
+                                    }
+                                  },
+                                  "Property": "MXD_Prod_AFC_Cum"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#cccccc'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "-100D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Cum"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#d7706b'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "MX_Measures.MXD_Prod_AFC_Cum"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1.05D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "100D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#65AC69'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.95D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1.05D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#B6F2B9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.95D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#EFB5B9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 1,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#e19490'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "_MX_Productivity"
+                                    }
+                                  },
+                                  "Property": "MXD_Prod_AFC_Wkly"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#cccccc'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "-100D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_MX_Productivity"
+                                        }
+                                      },
+                                      "Property": "MXD_Prod_AFC_Wkly"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#d7706b'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "MX_Measures.MXD_Prod_AFC_Wkly"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Qry_IWP Detail"
+                                }
+                              },
+                              "Property": "WP Progress"
+                            }
+                          },
+                          "Function": 0
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#E68F96'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#F0E199'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#B6F2B9'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "1D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'noColor'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Sum(IWP Detail.WP Progress)"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 1,
+                                  "Left": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "Qry_IWP Detail"
+                                            }
+                                          },
+                                          "Property": "FX_DUPLICATE WP"
+                                        }
+                                      },
+                                      "Function": 0
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "Qry_IWP Detail"
+                                            }
+                                          },
+                                          "Property": "FX_DUPLICATE WP"
+                                        }
+                                      },
+                                      "Function": 0
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "100D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#f4de90'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "IWP Detail.WPNO"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#005A7C'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "imageHeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "73D"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#070f25'"
+                    }
+                  }
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#070f25'"
+                    }
+                  }
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#005A7C'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC Hrs)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.AFC WP DELTA Hrs)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Weekly Earned)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Last Week Weekly Earned)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Last Week Earned)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Components Count Complete)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Components Count Planned)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs ROC 1)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs ROC 2)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Hrs ROC 3)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 1)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 2)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 3)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 4)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 5)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.WP Earned Hrs ROC 6)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.COMPLETED_UNITS)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(IWP Detail.PLAN_UNITS)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MX_Measures.MXD_Sum_KronosHrs_Cum_ATCPTD"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'AlternatingRows'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#005A7C'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "foreground": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#689fb0'"
+                    }
+                  }
+                }
+              }
+            },
+            "border": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#005A7C'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filterd17129e9801d32273c19",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CWP Summary"
+              }
+            },
+            "Property": "LINKCODE DESCRIPTION"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterc2ff27ebb9bf75da96d8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "JOB NO"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter6f4854deb454c02a99cb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ACTIVITY CODE"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter56d24cdccc08e5dc07a6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "DISCIPLINE"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filteref5b8819c17f324efdf7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "LINKCODE DESCRIPTION"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter42dc943b4ff8b209861b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WPNO"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterf2ac9e3e032af5a1c936",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP DESCRIPTION"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filteredce82965880d2b8a6d0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Hrs"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtered83663c17048dd06635",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "AFC Hrs"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterc9012132b7ef2b4b046f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "TASK NO"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter10be6da76c5c3db9d46d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FIWPUID"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterc0eab71ab902eec322a8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "AREA"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtera20742edca5d8b77d0b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "RATEUOM"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter8b90ebfb9114bdb4e934",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "STATUS"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter6eba07dac050005fef4f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ACTIVITY ID"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter44245cb9b67200e9745c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ACTIVITY ID DESCRIPTION"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterdbdcfd47b19aec2e9044",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP PURPOSE"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter19238c3834731648a907",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "AFC WP DELTA Hrs"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterdbd6baf9b12906bbcff7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Progress"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter1786980e29d315a67751",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Earned Hrs"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterab31d605a4843682750f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Weekly Earned"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter891169743b60b80f32b4",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Weekly Progress"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtera722711f29d67715bbec",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Last Week Earned"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter1870c04b5b39d0f64062",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Last Week Weekly Earned"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterb2a9c5d21f1d524c0179",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Last Week Progress"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter155c9f8fcedf2002ed88",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Components Count Complete_"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter3b64df437732102a380b",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Components Count Planned_"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter3bf103fb14546df5cb75",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Components Qty Complete"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter6e8480fcaed0c24f3ee7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Components Qty Planned"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter2a26fd7d2a3c1c8bb082",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Creation User"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter46711da6b9a61de8a9af",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Creation Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter065c2117f4cffa7723ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Revision Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter8df303dc230983fa5b8e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Receive Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterb820b7ce1c608f9ba55e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Last Progress By"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter9986d61f851dfcce49be",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Last Progress Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterea015586f0889de84fff",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "ROC Weightage 1"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtercb23a0f13f6f7bf47b4f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "ROC Weightage 2"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter368118f340575bd6bb8d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "ROC Weightage 3"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter9bcedbff00525efb1019",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "ROC Weightage 4"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter3f4142fe48998231d1d0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "ROC Weightage 5"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterd5a58129e767383f0c40",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "ROC Weightage 6"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtera383a96edbbcc1c25c2a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Earned Hrs ROC 1"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter665b85aabb43c58776c9",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Earned Hrs ROC 2"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter4cf1576a392ae19f6f5d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Earned Hrs ROC 3"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterbdfaec2faa8ceee17f1c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Earned Hrs ROC 4"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter21849f635951351363a7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Earned Hrs ROC 5"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter68862dd55930145fc7e7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Earned Hrs ROC 6"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtera565f5f2ea0659e7c08c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 1"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter547b148c88ba1d033dff",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 2"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter54a583d39b63c6b511e1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 3"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterf92931641e8012e2750e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 4"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter0066d3b5d781bd4ab604",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 5"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterccfeb9e3ded17bee821d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 6"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterb316b10d9e0fd730ecfc",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Hrs ROC 1"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter76379cd90b8181e86a83",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Hrs ROC 2"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter314f1cda57b1c1980a8c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Hrs ROC 3"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter6ee6baa1e049a65fc2b4",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Hrs ROC 4"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterb8b9051a7a46fed9d568",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Hrs ROC 5"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter1e98c58231223e6ba9ce",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "WP Hrs ROC 6"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter5425f6c061491520d37d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Progress"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter3fb94937de8409c01d21",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "AFC Progress ROC 1"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterbe76c41c024c4266d0de",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "AFC Progress ROC 2"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtercd191b490ab50e095c37",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "AFC Progress ROC 3"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtercf4f2efe2135cc1b6426",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "AFC Progress ROC 4"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter7171b592a60192b39cd3",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "AFC Progress ROC 5"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter309b87ed8d02c62a3b6a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "AFC Progress ROC 6"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter4b5b245964050dd2da59",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_Sum_KronosHrs_Cum"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter6f7a0ba94e9aa83ee6b7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_Sum_KronosHrs_Wkly_Act"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter3b6bf69ceea405bc60ce",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_Sum_KronosHrs_Wkly_ATCPTD"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter40abfee09a286cae454e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_Prod_WP_Cum"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterdee532f4dae509c0d61b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_Prod_WP_Wkly_ATCPTD"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter7616287d71d6c00b2dac",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_Prod_AFC_Cum"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterc3a4a4d8d5ddbb138501",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_Prod_AFC_Wkly"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter23461ea0559e24213a5e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_DLT_AFC-WP_Tot"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter8f28ef6d280d8bc0a2a1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_DLT_WP_Tot-Cum"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter969687d5be6d7b8340a8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_DLT_AFC-WP_Wkly"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter34ac85366ea45374a10c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_DLT_AFC-WP_Cum"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter2b0b15f0abea0306e4cd",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "AFC Hrs"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter9cb3d6d92082794da90b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_Plant_Names"
+              }
+            },
+            "Property": "Plants"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterb40302b56d5019835d67",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Last Week Progress"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter82dfaf8ac7740ba7fd2f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "AFC Progress ROC 1"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter17e21842416041770f9d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "AFC Progress ROC 2"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter6e9e09692d113cc8a353",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "AFC Progress ROC 3"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter6441d08699663c0b4271",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "AFC Progress ROC 4"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter2846a99e0287283265aa",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "PLAN_UNITS"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter32243cc13bc80ce7255c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "Foreman"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterb28cb4a44842a0162171",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "General Foreman"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter63ec7ada461ada3e2c74",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "IWP Issued By"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter6f172c28a32bf0add9e0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MX_Productivity"
+              }
+            },
+            "Property": "MXD_Sum_KronosHrs_Cum_ATCPTD"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "ba49b4cbd6bd6ea50e30",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Weekly Progress"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "b0a39b6789ab77046688",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "COMPLETED_UNITS"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "1f7a448c0be7540606bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "PROJECT"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "812e9d250e52000abd24",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Actual Start Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "b64630e0a4755c32e015",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Actual Finish Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "5cdaeef9617b5c0b8058",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "L3 Forecast Start Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "986641fb38a04de7318d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "L3 Forecast Finish Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "0f657edbdb6a314ab559",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "L3 Baseline Start Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "eddeb4dda84c220eaa0c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "L3 Baseline Finish Date"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "cb1e8ef8771c6da1dced",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP_REVNO"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "5ca9e9f79b17457aba24",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Qry_IWP Detail"
+                  }
+                },
+                "Property": "Balance Hours"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "fc106037de79a8325a01",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "fx_job_wpno"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      }
+    ]
+  }
+}

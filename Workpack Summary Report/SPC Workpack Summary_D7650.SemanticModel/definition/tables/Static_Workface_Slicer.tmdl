@@ -1,0 +1,39 @@
+table Static_Workface_Slicer
+	lineageTag: da6fd097-64a5-4b23-937f-3a343b88de27
+
+	column Item
+		dataType: string
+		lineageTag: 656165a3-d618-46ee-a911-4d1773641ed9
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Slicer
+		dataType: string
+		lineageTag: 999cdebb-acf7-491e-bf0e-f97f9c3ccb75
+		summarizeBy: none
+		sourceColumn: Slicer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan Type'
+		dataType: string
+		lineageTag: 4e5d15ff-35f4-4a53-a46f-68fa3e31b0a9
+		summarizeBy: none
+		sourceColumn: Plan Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Static_Workface_Slicer = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("jZNdC4IwFIb/yqGrAvM/mClFlKMCL6IL6QvJtpgfv7/Nsjzz6LoZ7PC8L+45eDiMPBdYlnBYRsHIMW76PDqIAb989HKzZrrVU3zTp8F8umjOb6ahnuKbPg3m00VzcxdiBkEi+eXc+fi9mN5EByPfGbOFzGs0cME7FWWSdZiVFFx8IdX35sg+L/RrMFRTKao0TwVXaCzk/apqik6goXfPNMsgqi6yF7GUaGUx20TARQEphx3zYbxWjHrhhI5opB3RFWP1hIGIIR5velA8RmnxmBkWj9k/xOMAKZ5GLCU28UTEJp6IGOLxb9HnHFO/9bSdYwbtxVSO0dZ6BqzjTGtNSDzxHEM8QdjEExGbeDNyfAE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Item = _t, Slicer = _t, #"Plan Type" = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

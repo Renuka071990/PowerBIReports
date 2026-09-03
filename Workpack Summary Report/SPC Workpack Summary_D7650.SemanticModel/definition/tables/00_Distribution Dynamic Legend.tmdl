@@ -1,0 +1,59 @@
+table '00_Distribution Dynamic Legend'
+	lineageTag: df6f161e-7ecc-456b-8ca9-ac0727a6ec53
+
+	measure mx_start_status = ```
+			
+			var wpno = SELECTEDVALUE('Qry_IWP Detail'[WPNO])
+			var _start = MAX('Qry_IWP Detail'[WP Actual Start Date])
+			var stat = IF(_start=BLANK(),"Started","Not Started")
+			
+			```
+		lineageTag: 0a71b04c-ad34-4e50-8964-5f9974253d52
+
+	column 'Distribution Dynamic Legend'
+		lineageTag: 2c6a8640-c0ea-4d11-abdc-473ac233600d
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Distribution Dynamic Legend Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Distribution Dynamic Legend Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Distribution Dynamic Legend Fields'
+		isHidden
+		lineageTag: cd885970-b4c0-472f-9d2e-52c2e21644a9
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Distribution Dynamic Legend Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Distribution Dynamic Legend Order'
+		isHidden
+		formatString: 0
+		lineageTag: bed8f6bc-31f5-42a9-a3a2-3a61f84384d1
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '00_Distribution Dynamic Legend' = calculated
+		mode: import
+		source =
+				{
+				    ("Discipline", NAMEOF('Excel_Distrib-Alloc-ToGo'[DISCIPLINE]), 0),
+				    ("Purpose", NAMEOF('Excel_Distrib-Alloc-ToGo'[PURPOSE]), 1),
+				    ("WP Comp Status", NAMEOF('Excel_Distrib-Alloc-ToGo'[FX_WP_Distribution_Status]), 2),
+				    ("Craft", NAMEOF('Excel_Distrib-Alloc-ToGo'[Craft]), 3)
+				}
+
+	annotation PBI_Id = fa8bc0d73aaa4ff69c4010330b683421
+

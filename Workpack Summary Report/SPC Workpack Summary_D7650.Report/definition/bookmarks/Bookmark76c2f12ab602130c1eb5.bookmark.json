@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Drawing BM",
+  "name": "Bookmark76c2f12ab602130c1eb5",
+  "options": {
+    "targetVisualNames": []
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSectiond5acbe2ade00ed15b59e",
+    "sections": {
+      "ReportSectiond5acbe2ade00ed15b59e": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filter",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPCRPT_FIWP"
+                    }
+                  },
+                  "Property": "NAME"
+                }
+              },
+              "howCreated": 5
+            }
+          ]
+        },
+        "visualContainers": {}
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

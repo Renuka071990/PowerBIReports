@@ -1,0 +1,35 @@
+table _flt_progress_grouping
+	lineageTag: 1d02bb75-a540-48c7-ad3b-1a56fea5c531
+
+	column 'Progress Grouping Code'
+		dataType: string
+		lineageTag: 3e4f8411-c6cc-4b2b-a215-32ed3cfc134c
+		summarizeBy: none
+		sourceColumn: Progress Grouping Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Progress Grouping'
+		dataType: string
+		lineageTag: f43f4ae4-7f28-42c6-ac35-ede2c582c8a6
+		summarizeBy: none
+		sourceColumn: Progress Grouping
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _flt_progress_grouping = m
+		mode: import
+		source =
+				let
+				    Source = #"Excel MDM",
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Progress Grouping Code", "Progress Grouping"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Other Columns", "combi", each [Progress Grouping Code]&[Progress Grouping]),
+				    #"Removed Duplicates" = Table.Distinct(#"Added Custom", {"combi"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Removed Duplicates",{"combi"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

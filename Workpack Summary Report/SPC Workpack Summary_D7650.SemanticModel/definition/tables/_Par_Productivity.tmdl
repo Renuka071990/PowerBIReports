@@ -1,0 +1,121 @@
+table _Par_Productivity
+	lineageTag: feeebba7-6431-4f00-b1cc-36c841842616
+
+	column _Par_Productivity
+		lineageTag: 601a8560-6cdd-4f40-b294-40b7f44e2ff0
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '_Par_Productivity Order'
+
+		relatedColumnDetails
+			groupByColumn: '_Par_Productivity Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_Par_Productivity Fields'
+		isHidden
+		lineageTag: 6da1c417-f707-4b1e-b304-8669b0271bd7
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '_Par_Productivity Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_Par_Productivity Order'
+		isHidden
+		formatString: 0
+		lineageTag: eac43c03-3374-4bb2-a57d-9cba7ae6ab34
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Weekly_Cum = IF(ISERROR(SEARCH("Wkly",_Par_Productivity[_Par_Productivity])),"Cum","Weekly")
+		lineageTag: c5de96a1-cb8b-46c0-89d0-7f7222f524f7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Category =
+			IF(_Par_Productivity[_Par_Productivity Order]=0 ||
+			_Par_Productivity[_Par_Productivity Order]=1 ||
+			_Par_Productivity[_Par_Productivity Order]=2 ||
+			_Par_Productivity[_Par_Productivity Order]=3 ||
+			_Par_Productivity[_Par_Productivity Order]=4 ||
+			_Par_Productivity[_Par_Productivity Order]=5 ||
+			_Par_Productivity[_Par_Productivity Order]=6,"WP Hrs",
+			if(_Par_Productivity[_Par_Productivity Order]=7 ||
+			_Par_Productivity[_Par_Productivity Order]=8 ||
+			_Par_Productivity[_Par_Productivity Order]=9 ||
+			_Par_Productivity[_Par_Productivity Order]=10 ||
+			_Par_Productivity[_Par_Productivity Order]=11 ||
+			_Par_Productivity[_Par_Productivity Order]=12, "AFC Hrs",
+			if(_Par_Productivity[_Par_Productivity Order]=13 ||
+			_Par_Productivity[_Par_Productivity Order]=14 ||
+			_Par_Productivity[_Par_Productivity Order]=15 ||
+			_Par_Productivity[_Par_Productivity Order]=16,"Kronos Hrs",
+			IF(_Par_Productivity[_Par_Productivity Order]=17 ||
+			_Par_Productivity[_Par_Productivity Order]=18 ||
+			_Par_Productivity[_Par_Productivity Order]=19 ||
+			_Par_Productivity[_Par_Productivity Order]=20,"AFC-WP Delta Hrs",
+			IF(_Par_Productivity[_Par_Productivity Order]=21 ||
+			_Par_Productivity[_Par_Productivity Order]=22 ||
+			_Par_Productivity[_Par_Productivity Order]=23 ||
+			_Par_Productivity[_Par_Productivity Order]=24,"Fitter Hrs",
+			IF(_Par_Productivity[_Par_Productivity Order]=25 ||
+			_Par_Productivity[_Par_Productivity Order]=26 ||
+			_Par_Productivity[_Par_Productivity Order]=27 ||
+			_Par_Productivity[_Par_Productivity Order]=28,"Welder Hrs"))))))
+		lineageTag: 64fed84c-cce5-4209-a6e0-0a694fd241d2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Par_Productivity = calculated
+		mode: import
+		source =
+				{
+				 --   ("Total WP Count", NAMEOF('_MX_Productivity'[MX_IWP_count]), 0),
+				    ("Total WP Mnhrs", NAMEOF('_MX_Productivity'[MX_Sum_WPHrs_Tot]), 1),
+				    ("WP Cum Earnings", NAMEOF('_MX_Productivity'[MX_Sum_WPHrs_Cum]), 2),
+				    ("WP Wkly Earnings", NAMEOF('_MX_Productivity'[MX_Sum_WPHrs_Wkly]), 3),
+				    ("WP Prog%", NAMEOF('_MX_Productivity'[MX_WP_Prog%]), 4),
+				    ("Prod WP Cum (ATCPTD)", NAMEOF('_MX_Productivity'[MXD_Prod_WP_Cum]), 5),
+				    ("Prod WP Wkly (ATCPTD)", NAMEOF('_MX_Productivity'[MXD_Prod_WP_Wkly_ATCPTD]), 6),
+				    ("Prod WP PrevWk", NAMEOF('_MX_Productivity'[MXD_Prod_WP_PrevWk]), 7),
+				    ("Total AFC Mnhrs", NAMEOF('_MX_Productivity'[MX_Sum_AFCHrs_Tot]), 8),
+				    ("AFC Cum Earnings", NAMEOF('_MX_Productivity'[MX_Sum_AFCHrs_Cum]), 9),
+				    ("AFC Wkly Earnings", NAMEOF('_MX_Productivity'[MX_Sum_AFCHrs_Wkly]), 10),
+				    ("AFC Prog%", NAMEOF('_MX_Productivity'[MX_AFC_Prog%]), 11),
+				    ("Prod AFC Cum (ATCPTD)", NAMEOF('_MX_Productivity'[MXD_Prod_AFC_Cum]), 12),
+				    ("Prod AFC Wkly (ATCPTD)", NAMEOF('_MX_Productivity'[MXD_Prod_AFC_Wkly]), 13),
+				    ("MyTime  Hrs Cum Actual", NAMEOF('_MX_Productivity'[MXD_Sum_KronosHrs_Cum]), 14),
+				    ("MyTime  Hrs Cum (ATCPTD)", NAMEOF('_MX_Productivity'[MXD_Sum_KronosHrs_Cum_ATCPTD]), 15),
+				    ("MyTime  Hrs Wkly Actual", NAMEOF('_MX_Productivity'[MXD_Sum_KronosHrs_Wkly_Act]), 16),
+				    ("MyTime  Hrs Wkly (ATCPTD)", NAMEOF('_MX_Productivity'[MXD_Sum_KronosHrs_Wkly_ATCPTD]), 17),
+				    ("Delta Total AFC - WP Hrs", NAMEOF('_MX_Productivity'[MXD_DLT_AFC-WP_Tot]), 18),
+				    ("Delta Cum AFC - WP Hrs", NAMEOF('_MX_Productivity'[MXD_DLT_AFC-WP_Cum]), 19),
+				    ("Delta Wkly AFC - WP Hrs", NAMEOF('_MX_Productivity'[MXD_DLT_AFC-WP_Wkly]), 20),
+				    ("Delta WPHrs Issued - Cum", NAMEOF('_MX_Productivity'[MXD_DLT_WP_Tot-Cum]), 21),
+				    --    ("Fitter Foreman", NAMEOF('Qry_IWP_Constraints'[Fitup Foreman]), 21),
+				     --           ("Fitter Supervisor", NAMEOF('Qry_IWP_Constraints'[Fitup Supervisor]), 21),
+				    ("Fitter WPHrs Wkly", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_WPHrs_Wkly]), 22),
+				    ("Fitter MyTime  Hrs Wkly Actual", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Kronos_Wkly]), 23),
+				    ("Fitter MyTime  Hrs Wkly (ATCPTD)", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Kronos_Wkly_ATCPTD]), 24),
+				    ("Prod Fitter Wkly (ATCPTD)", NAMEOF('_MX_Productivity'[MX_Prod_Fitter]), 25),
+				     --                       ("Welder Foreman", NAMEOF('Qry_IWP_Constraints'[Weld Foreman]), 25),
+				     --                           ("Welder Supervisor", NAMEOF('Qry_IWP_Constraints'[Weld Supervisor]), 25),
+				    ("Welder WPHrs Wkly", NAMEOF('_MX_Productivity'[MX_Prod_Welder_WPHrs_Wkly]), 26),
+				    ("Welder MyTime  Hrs Wkly Actual", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Kronos_Wkly]), 27),
+				    ("Welder MyTime  Hrs Wkly (ATCPTD)", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Kronos_Wkly_ATCPTD]), 28),
+				    ("Prod Welder Wkly (ATCPTD)", NAMEOF('_MX_Productivity'[MX_Prod_Welder]), 29)
+				}
+
+	annotation PBI_Id = 82e5c761c79446e79db48a3c2c29d162
+

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "4a2d79cc6221cfd91c1f",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 2000,
+    "height": 709.36852026390193,
+    "width": 1275.8441558441559,
+    "tabOrder": 0
+  },
+  "visualGroup": {
+    "displayName": "Count - Completion",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

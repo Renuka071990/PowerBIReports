@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "dcd373b3c867c3947350",
+  "position": {
+    "x": 359.75757575757575,
+    "y": 0,
+    "z": 19000,
+    "height": 41.696969696969695,
+    "width": 560.4848484848485,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Work Packages Status Summary by Hours",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt",
+                      "color": "#ffffff"
+                    },
+                    "url": "https://app.powerbi.com/groups/9e1d6e5e-7857-48c8-ad93-941ffb086897/reports/625c2df6-b75e-43c3-8f81-a5703f98981d/ReportSection9758582649a702c5c478?ctid=73faca80-f981-4662-85da-6c374785348d&experience=power-bi"
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

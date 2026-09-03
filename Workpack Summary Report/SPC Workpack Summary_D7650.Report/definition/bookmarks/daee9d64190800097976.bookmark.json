@@ -1,0 +1,1226 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Close Notes",
+  "name": "daee9d64190800097976",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "a979648734b2217c6552",
+      "a9407ddbd911240a7d19",
+      "e8470658a95a0e9dad86"
+    ],
+    "suppressActiveSection": true,
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.11",
+    "activeSection": "ReportSection7ee448d015e8fb3bdcd7",
+    "filters": {
+      "byName": {
+        "Filter8231a014ebb4a785f83e": {
+          "name": "Filter8231a014ebb4a785f83e",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_DeckLvl"
+                }
+              },
+              "Property": "Description"
+            }
+          },
+          "howCreated": 1
+        }
+      },
+      "byExpr": [
+        {
+          "name": "7b9507472e88031ee067",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "WPNO"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "81485fa5eaf22993f217",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Plant_Names"
+                }
+              },
+              "Property": "Plants"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterc3ff8ee441fa1b86dc66",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "_FX_WPPlan_Final_Issued"
+                }
+              },
+              "Property": "WeekEnding"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterb02d3cad7166f5064834",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "_FX_WPPlan_Final_Comp"
+                }
+              },
+              "Property": "WeekEnding"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filtereeaad615422140d77563",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Code-Progress Grouping"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterbae19649d35d8d2b2b9c",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Code-Phase Grouping"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "b37092c040e8616e0705",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Discipline"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filtera8cf6810c27d209a0c00",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Code-Area"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter71ab0be6c2524ad36511",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "Foreman"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter60fe9df3505119017ad9",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "General Foreman"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter1508262078b498a4b071",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Plant_Names"
+                }
+              },
+              "Property": "JobNo"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter6985de4033dc6e283306",
+          "type": "Advanced",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "TASK NO"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter9010e803d09bc659cc0c",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP PURPOSE"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3954d00d52c79161625f",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Receive Date"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3efca2f6459a7d7cc399",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Progress"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter27c744dd5e848a077138",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ACTIVITY CODE"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter74b3160f0e8e58b35b95",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 1"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter7442b55316151339bf69",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 2"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterb82383fc6f778ffa36bd",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 3"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterdf4c6bb3708aa8e357c0",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 4"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3eca1312099bf8b7dc3b",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 5"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterad48c0f5abd406bc58a5",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "STATUS"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterc1d6c6477b353be405d9",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Progress"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSection7ee448d015e8fb3bdcd7": {
+        "filters": {
+          "byName": {
+            "Filtercb3c208bed85aafc158a": {
+              "name": "Filtercb3c208bed85aafc158a",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "_",
+                    "Entity": "_FX_Craft_Allocation_Distribution",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "_"
+                                }
+                              },
+                              "Property": "FX_WeekSummary"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Week Summary'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FX_Craft_Allocation_Distribution"
+                    }
+                  },
+                  "Property": "FX_WeekSummary"
+                }
+              },
+              "howCreated": 1
+            }
+          },
+          "byExpr": [
+            {
+              "name": "dc27a7f99465b6821e11",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FX_Craft_Allocation_Distribution"
+                    }
+                  },
+                  "Property": "fx_plant_x"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "184cb8e67a9da254be29",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FX_Craft_Allocation_Distribution"
+                    }
+                  },
+                  "Property": "FX_WPNO"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "66c553283271649dfdb1": {
+            "filters": {
+              "byName": {
+                "Filterbcdb86cebc058c627386": {
+                  "name": "Filterbcdb86cebc058c627386",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_FX_Craft_Allocation_Distribution",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "_"
+                                        }
+                                      },
+                                      "Property": "Status"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'1. To-Go AFCHrs Prelim'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "StaticTbl_Exc_Craft.Craft Standard"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "FX_LastWeek"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "19f0077c9810a2f3e89c": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "cfacf1d68fbbe9caf426": {
+            "filters": {
+              "byName": {
+                "Filterdfaa98024bd3716a6ef6": {
+                  "name": "Filterdfaa98024bd3716a6ef6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Excel_Distrib-Alloc-ToGo"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter0b987e4084503e2434d7": {
+                  "name": "Filter0b987e4084503e2434d7",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_FX_Craft_Allocation_Distribution",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "_"
+                                        }
+                                      },
+                                      "Property": "Status"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'4. To-Go AFCHrs'"
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'1. To-Go AFCHrs Prelim'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "StaticTbl_Exc_Craft.Craft Standard"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "FX_LastWeek"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "0df517da5245dde0856e": {
+            "singleVisual": {
+              "visualType": "pieChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Excel_Distrib-Alloc-ToGo"
+                            }
+                          },
+                          "Property": "HRS"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "FX_Discipline"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f2f99befe2055461a46b": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "12f8cd19f7fda6b45fd8": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "e266ac15b44754e9c1ca": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "871791199c73ff3f9aa9": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "2712dbb9170c02b3b00c": {
+            "filters": {
+              "byName": {
+                "Filter4771c11a70815e0d0250": {
+                  "name": "Filter4771c11a70815e0d0250",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "StaticTbl_Plant_Names"
+                        }
+                      },
+                      "Property": "Plants"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter5e0eb7f6494ee5a3bec5": {
+                  "name": "Filter5e0eb7f6494ee5a3bec5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Excel_Distrib-Alloc-ToGo"
+                            }
+                          },
+                          "Property": "HRS"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filterceeab27a864c0167db06": {
+                  "name": "Filterceeab27a864c0167db06",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Excel_Distrib-Alloc-ToGo"
+                        }
+                      },
+                      "Property": "Craft"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Excel_Distrib-Alloc-ToGo"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Excel_Distrib-Alloc-ToGo"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Excel_Distrib-Alloc-ToGo"
+                        }
+                      },
+                      "Property": "DATE"
+                    }
+                  }
+                ],
+                "Y": [
+                  {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Excel_Distrib-Alloc-ToGo"
+                            }
+                          },
+                          "Property": "FX_Distribution_Hrs"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Series": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "00_Distribution Dynamic Legend"
+                          }
+                        },
+                        "Property": "Distribution Dynamic Legend"
+                      }
+                    },
+                    "index": 0,
+                    "length": 0
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "8f9342dbe36298ea0681": {
+            "filters": {
+              "byName": {
+                "Filtercf11418a5b565c1ecd7c": {
+                  "name": "Filtercf11418a5b565c1ecd7c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "FX_WPNO"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter512e4e45206ebc4ca80c": {
+                  "name": "Filter512e4e45206ebc4ca80c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "cab79ba1fb257752d4df",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "fx_lookup_mdm"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "FX_LastWeek"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "fx_lookup_mdm"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "581dabbb8ed6bcdc171d": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3664b407da5bc3d67e8c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ef533663985f0955008f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "xrefdate_Distribution File"
+                        }
+                      },
+                      "Property": "xrefdate_Distribution File"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "712d95ea40a681feed52": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "FX_Phase"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "0c9fe8356a7f13b5ddfa": {
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "FX_LastWeek"
+                    }
+                  }
+                },
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  }
+                },
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "Craft"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Craft_Allocation_Distribution"
+                        }
+                      },
+                      "Property": "FX_LastWeek"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "StaticTbl_ComboChart_Craft"
+                        }
+                      },
+                      "Property": "Description"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "435ef98624e253ce0e46": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3f3ca11430c4065c0c20": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "037cf16a974c6bc4ed2d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Excel_D7650 MLF"
+                            }
+                          },
+                          "Property": "Date Update"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "270113464cb45bbce75a": {
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "a9407ddbd911240a7d19": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "a979648734b2217c6552": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "e8470658a95a0e9dad86": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

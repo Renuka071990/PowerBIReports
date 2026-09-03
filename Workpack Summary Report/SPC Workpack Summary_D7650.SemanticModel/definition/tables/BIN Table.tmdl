@@ -1,0 +1,113 @@
+table 'BIN Table'
+	lineageTag: 0a6d2127-86c2-44d9-a780-1796a46b7b7c
+
+	column No
+		dataType: int64
+		formatString: 0
+		lineageTag: e711b774-c8f5-4986-8448-4e1748eaf37e
+		summarizeBy: sum
+		sourceColumn: No
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_bin050 = [No]*50
+		lineageTag: c8df55bd-41a2-49dd-aa1f-3e2d9fc4c9d1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_bin100 = [No]*100
+		lineageTag: a628d25e-3620-4f0a-b603-9a98723a6f1c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_bin200 = [No]*200
+		lineageTag: 8c695f62-1a65-46e0-b73d-8f604dbc1c36
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_bin400 = [No]*400
+		lineageTag: edff6595-979c-432e-9aae-78a8645eb8a7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'fx_afc_hrs bin050' = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[WPNO]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[AFC Hrs BIN050]='BIN Table'[No] && 'Qry_IWP Detail'[STATUS]="Issued for Construction"))
+		lineageTag: da8593f1-8287-4a70-abf3-91342100a498
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fx_afc_hrs bin100' = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[WPNO]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[AFC Hrs BIN100]='BIN Table'[No] && 'Qry_IWP Detail'[STATUS]="Issued for Construction"))
+		formatString: 0
+		lineageTag: 97f30da6-d341-4dbd-b880-74418ac7f2c4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fx_afc_hrs bin200' = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[WPNO]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[AFC Hrs BIN200]='BIN Table'[No] && 'Qry_IWP Detail'[STATUS]="Issued for Construction"))
+		formatString: 0
+		lineageTag: d5987578-3329-4263-9669-b16243edc27e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fx_afc_hrs bin400' = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[WPNO]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[AFC Hrs BIN400]='BIN Table'[No] && 'Qry_IWP Detail'[STATUS]="Issued for Construction"))
+		formatString: 0
+		lineageTag: c6e3ddc8-7ad2-4ba5-99c0-56944b1a935b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fx_wp_hrs bin050' = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[WPNO]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[WP Hrs BIN050]='BIN Table'[No] && 'Qry_IWP Detail'[STATUS]="Issued for Construction"))
+		formatString: 0
+		lineageTag: bdb3b5c3-ddd6-4480-b237-efcf12860a5f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fx_wp_hrs bin100' = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[WPNO]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[WP Hrs BIN100]='BIN Table'[No] && 'Qry_IWP Detail'[STATUS]="Issued for Construction"))
+		formatString: 0
+		lineageTag: dcf3730d-5b75-4abb-bef2-03fede10f471
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fx_wp_hrs bin200' = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[WPNO]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[WP Hrs BIN200]='BIN Table'[No] && 'Qry_IWP Detail'[STATUS]="Issued for Construction"))
+		formatString: 0
+		lineageTag: f017b09e-1700-455c-873e-a6fa4692623b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fx_wp_hrs bin400' = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[WPNO]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[WP Hrs BIN400]='BIN Table'[No] && 'Qry_IWP Detail'[STATUS]="Issued for Construction"))
+		formatString: 0
+		lineageTag: 9a4ae228-5aaa-4319-81f4-bebd3ed957d6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'BIN Table' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("Tdg7diQ3EETRvYwtAxGJ71rmaP/bkKGKl22xAeuBbNatxN+/f9b48+8/f/9ofD+/tb+1v3V96/rW81vPb72+9frW+1vvb32+9fnW91vfb/2+9euefMgOiWlUIpVKJVPpVEKVUi2Omp3EKrVKrtKrBCvFSrJe/87yITtpNr9XfrFpdpqdZqfZafbiz5GdNDvNTrPT7DQ7zU6zX/9d8yE7aa40V5qLbwNfhzRXmivNtfjKZCfNleZKc6W50lxprjRXmmeaZ5pnmmeaZ5pnmmeaJ99hvsRpnmmeaZ5pnmmeaZ5pnmmeaZ5pnmleaV5pXmleaV5pXmleaV5pXmle/Of1v1520rzSvNK80rzSvNK80rzSvNO807zTvNO807zTvNO807zTvNO807x5XvDASPNO807zTvNO807zTvNJ80nzSfNJ80nzSfNJ80nzSfNJ80nzSfNJ8+Epx2MuzSfNJ80nzSfNN803zTfNN803zTfNN803zTfNN803zTfNN803zTfNl2czD+c03zTfNL80vzS/NL80vzS/NL80vzS/NL80vzS/NL80vzS/NL80vzQ/RIGUX1P4xB6sDFwZwDKQZUDLwJYBLgNdBrwMfBkAMxBmQMzAmAEyA2UGzAzO0Tj+6Ng8co4GsoVsItvIRrKVbCbbyYaypWwq28rGsrVsLvFSgCnEFGTK7XxDzzlgU7gp4BRyCjqFnQJPoafgU/gpABWCCkKFoQJRoahgVDgqIFX1G0u/snAOMBWaCk6FpwJUIaogVZgqUBWqClaFqwJWIaugVdgqcBW6Cl41+92rX744B8QKYwWyQlnBrHBWQCukFdQKawW2QlutfsPlHIArxBXkCnMFulr9FvnzGske50BeQa+wV+Ar9BX8Cn8FwEJgQbAwWCAsFBYMC4cFxEJiQbF2vw/3CzHngGPhsQBZiCxIFiYLlIXKgmXhsoBZyCxoFjYLnIXOgmfhswBap9/s+9Wec4C0UFowLZwWUAupBdXCaoG10FpwLbwWYAuxBdnCbIG2UFuwrdszSg8pnAO6hd0Cb6G34Fv4LQAXggvCheECcaG4YFw4LiAXkgvKheUCc72etnrc+p23+MQeI9foWZahC8+N58Zz47nx3HhuPDeeG8+N58Zz47nx3HhuPDeeWz059ujIOfDceG48N54bz43nxnPjufHceG48N54bz43nxnP3/NsDcE/APQL/zMA9BHOOHoN7Du5BuCfhHoV7Fu5huKfhHod7Hu6BuCfiHonx3HhuPDeeG8+N566e5nuc5xx4bjw3nhvPjefGc+O58dx4bjw3nhvPjefGc+O58dx4bjw3nnv2vURfTHAOPDeeG8+N58Zz47nx3HhuPDeeG8+N58Zz47lX31pxDjw3nhvPvfqG5eeKhT3OgefGc+O58dx4bjw3nhvPjefGc+O58dx4bjw3nhvPjefGc+++K+rLIs6B58Zz47nx3HhuPDeeG8+N58Zz47nx3HhuPDeeG8+N58Zz47lP33r1tRfnwHPjufHceG48N54bz43nxnPjufHceG48N54bz43nxnPjufHct+/v+gKPc+C58dx4bjw3nhvPjefGc+O58dx4bjw3nhvPjefGc+O58dx47tc3kX0V+XsXySf2uI7E88LzwvPC88LzwvPC88LzwvPC88LzwvPC88LzwvPC88LzwvNS36r2tSrnwPPC88LzwvPC88LzwvPC88LzwvPC88LzwvPC88LzwvP63/N//wM=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [No = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

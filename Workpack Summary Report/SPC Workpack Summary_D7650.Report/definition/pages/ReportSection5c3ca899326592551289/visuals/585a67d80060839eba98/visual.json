@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "585a67d80060839eba98",
+  "position": {
+    "x": -0.040640032382395885,
+    "y": 0,
+    "z": 6000,
+    "height": 712.84552845528458,
+    "width": 1269.6357880011785,
+    "tabOrder": 11000
+  },
+  "visualGroup": {
+    "displayName": "Summary - Foreman",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

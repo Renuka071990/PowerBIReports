@@ -1,0 +1,307 @@
+table FX_Distribution_Allocation_Count
+	lineageTag: bd3bf76a-03c8-4d70-b53b-adcc7de6b94e
+
+	column PROJECT
+		lineageTag: dde68543-107f-480e-b9f0-63d255f2d240
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[PROJECT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		lineageTag: d947a17c-0c77-4753-8cc4-ccef39eee148
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[NAME]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		formatString: dd-mmm-yy
+		lineageTag: 03cd027f-fcdd-4d80-989e-9eab1982d79a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[DATE]
+
+		variation Variation
+			isDefault
+			relationship: 922dd9c0-6d67-4a58-a925-3214bf43d2af
+			defaultHierarchy: LocalDateTable_a85baf3f-6d72-46a2-b637-2516cb10c6d0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_DstrbHrs-ToGo%
+		lineageTag: 325b01f1-e260-4764-b05c-11da4daea0d6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[FX_DstrbHrs-ToGo%]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FIWPOBID
+		lineageTag: 1dcd3720-493a-4cc5-ab9d-e7a862220e87
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[FIWPOBID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WP_Hrs =
+			sumx(
+			    FILTER('Qry_IWP Detail','Qry_IWP Detail'[FIWPOBID]=FX_Distribution_Allocation_Count[FIWPOBID]),'Qry_IWP Detail'[WP Hrs])
+		lineageTag: 61a03cfe-1dd4-4c53-a486-04ba32ca2c16
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_WP_CompHrs =
+			sumx(
+			    FILTER('Qry_IWP Detail','Qry_IWP Detail'[FIWPOBID]=FX_Distribution_Allocation_Count[FIWPOBID]),'Qry_IWP Detail'[WP Earned Hrs])
+		formatString: #,0
+		lineageTag: d12b7949-3a2b-493c-bdac-f6a3d56c8f94
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column FX_Prog = FX_Distribution_Allocation_Count[COMPLETEDHRS]/FX_Distribution_Allocation_Count[PLANNEDMANHRS]
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 2f55ff28-2045-4b19-adf4-1dbde9438ea1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WP_CompCount =
+			sumx(
+			    FILTER('Qry_IWP Detail','Qry_IWP Detail'[FIWPOBID]=FX_Distribution_Allocation_Count[FIWPOBID]),'Qry_IWP Detail'[WP Components Count Planned_])
+		formatString: 0
+		lineageTag: fcd90d98-aea9-41c0-9312-7dfe9a05f238
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Comp_Bal = [FX_WP_CompCount]-([FX_WP_CompCount]*[FX_Prog])
+		formatString: #,0
+		lineageTag: a8cad04d-6e90-4397-a181-cf3d78ef3db4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column FX_Comp_Bal_Dist = [FX_Comp_Bal]*[FX_DstrbHrs-ToGo%]
+		formatString: #,0
+		lineageTag: 4d77a286-36d3-40cb-a721-65632f0a11df
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column FX_Quantity_Plan =
+			sumx(
+			    FILTER('Qry_IWP Detail','Qry_IWP Detail'[FIWPOBID]=FX_Distribution_Allocation_Count[FIWPOBID]),'Qry_IWP Detail'[PLAN_UNITS])
+		formatString: #,0
+		lineageTag: 51c4de82-d0ba-4ff3-90d3-5d499543a736
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column FX_Quantity_Bal = [FX_Quantity_Plan]-([FX_Quantity_Plan]*[FX_Prog])
+		lineageTag: 4611e1d8-d0b8-4146-a06e-41027cde589a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Quantity_Bal_Dist = [FX_Quantity_Bal]*[FX_DstrbHrs-ToGo%]
+		lineageTag: 928997d1-5402-486a-9c27-19c67039930f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_UOM =
+			var _uom = CALCULATE(FIRSTNONBLANK('dataflow_ProgressReportHistory'[FX_UOM],1),FILTER('dataflow_ProgressReportHistory',[FIWPOBID]=FX_Distribution_Allocation_Count[FIWPOBID]))
+			RETURN
+			_uom
+		lineageTag: d2b2fa1c-e5e6-417d-9ce9-cb16cb4c6b9a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_UOM-00 = ```
+			if([FX_UOM]="kg","t", [FX_UOM]) 
+			```
+		lineageTag: 4b1cab8f-69cb-4b30-9c8a-9a3f6d93de1b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Quantity_Bal_Dist-00 = if([FX_UOM-00]="t", [FX_Quantity_Bal_Dist]/1000,[FX_Quantity_Bal_Dist])
+		formatString: #,0
+		lineageTag: 28029c4a-b0eb-446c-84f0-cd298d7593a1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column DISCIPLINE
+		lineageTag: e38079d2-02ad-491a-b330-4904a4ae10e2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[DISCIPLINE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACTOR
+		dataType: string
+		lineageTag: e5b4f63b-8a81-4bca-a158-a474f8f378ce
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[CONTRACTOR]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PLAN START'
+		formatString: dd-mmm-yy
+		lineageTag: daeedf0b-c32b-4129-b7bc-e3ae00983d7d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[PLAN START]
+
+		variation Variation
+			isDefault
+			relationship: 9e8cf0e6-85bd-425b-9354-a293503f8b53
+			defaultHierarchy: LocalDateTable_9eb77177-fcb5-46bb-8d5c-985658d8531b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'PLAN FINISH'
+		formatString: dd-mmm-yy
+		lineageTag: a605d1b8-ab16-4c17-94b4-45c4efd8f85b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[PLAN FINISH]
+
+		variation Variation
+			isDefault
+			relationship: a21cdf9e-b141-4a0e-b3e3-8c51b4ff23af
+			defaultHierarchy: LocalDateTable_7c9b10e7-5989-487b-ae6b-32ee257bf8ab.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column DESCRIPTION
+		lineageTag: 09314bce-23b3-426a-9c0f-7d242285380f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[DESCRIPTION]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WPNO_Date = FX_Distribution_Allocation_Count[FIWPOBID]&" - "&FX_Distribution_Allocation_Count[DATE]
+		lineageTag: 519c2692-01c1-4c18-83ae-24a05c1be304
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WPHrs_Bal = [FX_WP_Hrs]-FX_Distribution_Allocation_Count[FX_WP_CompHrs]
+		lineageTag: 466b8f8e-e84a-447f-ac49-28234c084d08
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_WPHrs_Bal_Dist = [TOGO]*[FX_DstrbHrs-ToGo%]
+		lineageTag: 7a982917-1d99-4fb8-a5fb-1a379aae1149
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_To-go_Status = IF(FX_Distribution_Allocation_Count[PLAN FINISH]<=MIN(FX_Distribution_Allocation_Count[DATE])-7,"Late","On-Sched")
+		lineageTag: 312c0536-8b54-4ee0-aaed-8307b1810e08
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_STATUS
+		lineageTag: a8d476f7-aa44-41ba-8b33-e1053e1773c2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[FX_STATUS]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Quantity_Bal_Total = if([FX_UOM-00]="t", [FX_Quantity_Bal]/1000,[FX_Quantity_Bal])
+		formatString: #,0
+		lineageTag: c18cc681-add9-4d75-9046-96bf52dafa46
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column DESIGNAREA
+		lineageTag: 832d0579-ed12-4131-966c-3fa01d784205
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[DESIGNAREA]
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNEDMANHRS
+		lineageTag: a1b204d7-fab9-4a49-b86a-ccc6b48e4e03
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[PLANNEDMANHRS]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COMPLETEDHRS
+		lineageTag: 1c37a7e1-b92f-42e7-a3ad-7330cd40af9a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[COMPLETEDHRS]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOGO
+		lineageTag: 6687c666-b0df-4baf-88e5-201bccf9fd69
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Excel_Distrib-Alloc-ToGo[TOGO]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FX_Distribution_Allocation_Count = calculated
+		mode: import
+		source = SUMMARIZE(FILTER('Excel_Distrib-Alloc-ToGo',[pqry_TYPE]="WPHRS"),[PROJECT],[NAME],[PLANNEDMANHRS],[COMPLETEDHRS],[TOGO],[DESIGNAREA],[FIWPOBID],[DATE],[FX_DstrbHrs-ToGo%],[DISCIPLINE],[CONTRACTOR],[PLAN START],[PLAN FINISH],[DESCRIPTION],'Excel_Distrib-Alloc-ToGo'[FX_STATUS])
+
+	annotation PBI_Id = 3191834694cc4f4c86b227e1f56e6e13
+

@@ -1,0 +1,59 @@
+table _delete_table_matrix
+	lineageTag: 5151d854-5479-4b9e-8d42-e3ae05ddbfc3
+
+	measure mx_matrix_value =
+			
+			SWITCH(
+			    SELECTEDVALUE(_delete_table_matrix[Metric]),
+			    "Wkly Constraints WPs",[mx_constraint_wkly],
+			     "Prev Week Constrait WPs",[mx_constraint_prevwkly], BLANK()  )
+		formatString: 0
+		lineageTag: 51127b6f-215b-4bd1-8f4e-2d9277432a68
+
+	measure mx_detail_filter =
+			
+			VAR SelectedMetric = SELECTEDVALUE(_par_prod_fitter[fx_par_fitter])
+			RETURN
+			SWITCH(
+			    SelectedMetric,
+			    "Wkly Constraint WPs", IF([mx_constraint_wkly_cons] <> 0, 1, 0),
+			    "Prev Week Constraint WPs", IF([mx_constraint_prevwkly_cons] <> 0, 1, 0),
+			    1 -- Default to show all rows if nothing in the matrix is clicked
+			)
+		formatString: 0
+		lineageTag: babb879f-bc2f-420d-95c3-5096d4259691
+
+	measure 'Drillthrough Detail Filter' = ```
+			
+			VAR SelectedMetric = SELECTEDVALUE(_delete_table_matrix[Metric])
+			RETURN
+			SWITCH(
+			    SelectedMetric,
+			    -- Check if there is data in Table B for this specific metric
+			    "Wkly Constraints WPs", IF([mx_constraint_wkly_cons] <> 0, 1, 0), 
+			    "Prev Week Constrait WPs", IF([mx_constraint_prevwkly_cons] <> 0, 1, 0), 
+			
+			    1
+			)
+			```
+		formatString: 0
+		lineageTag: c1814a7f-a130-4a87-95f8-6f2770d83f17
+
+	column Metric
+		dataType: string
+		lineageTag: c508ccc5-9e56-49cf-b9f3-8c185586701c
+		summarizeBy: none
+		sourceColumn: Metric
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _delete_table_matrix = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCs/OqVRwzs8rLilKzMwrKVYIDyhWitWJVgooSi1TCE9NzYbLlkDkYgE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Metric = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

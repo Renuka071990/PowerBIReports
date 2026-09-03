@@ -1,0 +1,49 @@
+table 'Parameter 2'
+	lineageTag: 73ad8e06-c7d3-4e53-8699-ee3ea8e05e5d
+
+	column Parameter
+		lineageTag: a090f231-851c-40e3-9461-f0524638f144
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 6fead8e4-3a5e-4995-ab82-f934cf87efa9
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: c0439717-2213-40b3-a691-a8598f39b8eb
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter 2' = calculated
+		mode: import
+		source =
+				{
+				    ("Plant", NAMEOF('Qry_IWP_Constraints'[Plant]), 0),
+				    ("Discipline", NAMEOF('Qry_IWP_Constraints'[fx_discipline]), 1),
+				    ("Phase", NAMEOF('Qry_IWP_Constraints'[fx_phase]), 2)
+				}
+
+	annotation PBI_Id = 63621b47dcb24a28924752edbc4fd0e1
+

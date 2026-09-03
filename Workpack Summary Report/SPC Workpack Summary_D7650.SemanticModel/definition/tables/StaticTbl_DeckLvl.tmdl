@@ -1,0 +1,31 @@
+table StaticTbl_DeckLvl
+	lineageTag: cdef6321-c329-48f1-aea7-0e0a92594f88
+
+	column Code
+		dataType: string
+		lineageTag: a0d6c6a7-c86e-49bf-bf5a-d5b0b54e39cd
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: e2f4a8ab-7ea5-43fe-b77d-57544fe6adae
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StaticTbl_DeckLvl = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("XdDJCoMwEIDhVwk59+J+dmkQqsX1JB7amoPUOGLj+9doBmsvgfn+QIY0DY0Sg15oxF9vYtD2osBEMDVYCJYGG8HW4CA4GlwEV4OH4O0QRApgeQ6cBCAlCKLyHsM73g5BCBh3LRlquUwTzJKw+SG4jvV/rMdebu1aVGtbT1IAiI2YX6zE+vkjid93R4ij2xpiPvQdblNtVMF0LJjk6tPSJNeTeZqs02T/TGmmnk2zgLbtFw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Code = _t, Description = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

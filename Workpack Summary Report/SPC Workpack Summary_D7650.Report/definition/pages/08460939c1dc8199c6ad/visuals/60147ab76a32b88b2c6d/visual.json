@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "60147ab76a32b88b2c6d",
+  "position": {
+    "x": 7.4827032549992705,
+    "y": 0.14584870270452921,
+    "z": 3000,
+    "height": 706.39515119970383,
+    "width": 1259.7285067873302,
+    "tabOrder": 3000
+  },
+  "visualGroup": {
+    "displayName": "Summary - IWP w Earn",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

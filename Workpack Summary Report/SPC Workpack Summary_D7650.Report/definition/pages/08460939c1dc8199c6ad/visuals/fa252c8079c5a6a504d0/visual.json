@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "fa252c8079c5a6a504d0",
+  "position": {
+    "x": 6.1244019138755981,
+    "y": 0,
+    "z": 12000,
+    "height": 710.43062200956933,
+    "width": 1255.5023923444976,
+    "tabOrder": 14000
+  },
+  "visualGroup": {
+    "displayName": "Summary - Plant",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

@@ -1,0 +1,49 @@
+table Parameter
+	lineageTag: 00cd8b23-b527-4901-a1a8-f1ddf2415f95
+
+	column Parameter
+		lineageTag: c1dec3dc-e70e-4a2c-802f-7a6c173b7f1c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 8f50854e-f94e-4b66-92f0-51760f57b9e1
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 86c597a3-cc20-48de-bf64-9c43af569242
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("WP Progress Range", NAMEOF('Qry_IWP Detail'[WP Progress Range]), 0),
+				    ("DISCIPLINE", NAMEOF('Qry_IWP Detail'[DISCIPLINE]), 1),
+				    ("WP PURPOSE", NAMEOF('Qry_IWP Detail'[WP PURPOSE]), 2)
+				}
+
+	annotation PBI_Id = 449a5e2c13b246c8adfa8917718ca9de
+

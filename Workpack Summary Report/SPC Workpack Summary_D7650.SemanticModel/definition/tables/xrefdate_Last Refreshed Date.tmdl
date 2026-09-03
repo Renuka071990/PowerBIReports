@@ -1,0 +1,68 @@
+table 'xrefdate_Last Refreshed Date'
+	lineageTag: 377692da-900e-446e-a61a-54b187dcef44
+
+	column 'Refresh Date'
+		dataType: dateTime
+		formatString: dd-mmm-yy h:nn AM/PM
+		lineageTag: 878c019d-a02d-41a9-be94-62e7dbc082f9
+		summarizeBy: none
+		sourceColumn: Refresh Date
+
+		variation Variation
+			isDefault
+			relationship: 363311d5-2917-4f3a-bdbe-689a939ac3e7
+			defaultHierarchy: LocalDateTable_51a12202-9dc0-4b9b-af39-5d93a8cc263a.'Date Hierarchy'
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_UTC_Adjust = 'xrefdate_Last Refreshed Date'[Refresh Date]+'xrefdate_Last Refreshed Date'[FX_Adjust]
+		formatString: dd-mmm-yy h:nn AM/PM
+		lineageTag: 2eb476cb-f991-47d6-9cf9-405d61a0d328
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 7bfec771-b9c9-4a5d-a6bb-0fb81aad5439
+			defaultHierarchy: LocalDateTable_e8dd3ba0-7da2-455b-9f5d-b31c27e9c7f4.'Date Hierarchy'
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Adjust = "4:00:00"
+		dataType: dateTime
+		formatString: h:nn:ss
+		lineageTag: 4709af96-99ff-4bc1-8832-e1b560fcd0f5
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition 'xrefdate_Last Refreshed Date-76cf1861-8a01-458b-b515-a23337ff366a' = m
+		mode: import
+		source =
+				let
+				    Source = DateTime.LocalNow(),
+				    #"Converted to Table" = #table(1, {{Source}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Converted to Table",{{"Column1", type datetime}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Refresh Date"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

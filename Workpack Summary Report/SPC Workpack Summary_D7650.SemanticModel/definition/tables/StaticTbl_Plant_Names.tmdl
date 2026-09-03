@@ -1,0 +1,61 @@
+table StaticTbl_Plant_Names
+	lineageTag: 0dfdabf7-7f04-4ecf-b298-c2493978d6e8
+
+	column JobNo
+		dataType: string
+		lineageTag: 536828fe-0906-4410-b445-80439eea5b78
+		summarizeBy: none
+		sourceColumn: JobNo
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plants
+		dataType: string
+		lineageTag: ccf4a184-ef04-4c87-a3cd-2433d6cb2a42
+		summarizeBy: none
+		sourceColumn: Plants
+
+		annotation SummarizationSetBy = Automatic
+
+	column SPC_Plants
+		dataType: string
+		lineageTag: 3e43c66a-5806-465c-b675-5e0c4a51bcd1
+		summarizeBy: none
+		sourceColumn: SPC_Plants
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract
+		dataType: string
+		lineageTag: 46f43d96-0acb-4d23-9a07-1263d1d29447
+		summarizeBy: none
+		sourceColumn: Contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subcon
+		dataType: string
+		lineageTag: 360cf454-ff2c-480f-a979-37bb97ea00fa
+		summarizeBy: none
+		sourceColumn: Subcon
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StaticTbl_Plant_Names-5faee322-80e4-4ab3-9954-731b737e1ff7 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Workpack Summary\Project_Plants\Project-Plant Reference.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"JobNo", Int64.Type}, {"Plants", type text}, {"SPC_Plants", type text}, {"Contract", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([Contract] = "D7650"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

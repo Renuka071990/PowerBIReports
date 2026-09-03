@@ -1,0 +1,417 @@
+table Excel_Distrib-Alloc-ToGo
+	lineageTag: b3dafac5-5769-4fc1-91fa-44eb8b138c56
+
+	column FIWPOBID
+		dataType: string
+		lineageTag: 396451f3-0e4d-4466-9bbb-d11846f04f4a
+		summarizeBy: none
+		sourceColumn: FIWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPUID
+		dataType: string
+		lineageTag: 89cc862a-d783-4b7f-927f-d8d655d52cd1
+		summarizeBy: none
+		sourceColumn: FIWPUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROJECT
+		dataType: string
+		lineageTag: 7416f859-85b6-44b3-9862-12c0a7c5bb8c
+		summarizeBy: none
+		sourceColumn: PROJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		dataType: string
+		lineageTag: f58d4789-8cc8-4ec2-a126-51b42f0ced23
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CWPOBID
+		dataType: string
+		lineageTag: 09399944-d882-4cb9-9744-7e44b8bb4af2
+		summarizeBy: none
+		sourceColumn: CWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPTION
+		dataType: string
+		lineageTag: 6ac961be-0f74-4a20-ae3b-ec04b2e28a65
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		dataType: string
+		lineageTag: 58e3d7a9-9fa6-4738-9e65-83c73c7fb6e2
+		summarizeBy: none
+		sourceColumn: DISCIPLINE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPOBID
+		dataType: string
+		lineageTag: 5ff9a4b5-67ad-4ed9-9004-c56ed0b30347
+		summarizeBy: none
+		sourceColumn: COMPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPONENT
+		dataType: string
+		lineageTag: bec3d109-6012-4bfc-af74-d0ccf97fa828
+		summarizeBy: none
+		sourceColumn: COMPONENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTITYPLANNED
+		dataType: double
+		lineageTag: d748da3d-432d-4ee4-8afc-16e3a083e5e9
+		summarizeBy: sum
+		sourceColumn: QUANTITYPLANNED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLANNEDMANHRS
+		dataType: double
+		lineageTag: 86f830d6-e26b-4fc7-848e-110d4f07a628
+		summarizeBy: sum
+		sourceColumn: PLANNEDMANHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COMPLETEDHRS
+		dataType: double
+		lineageTag: 5b6e71dc-0a3a-4cae-b8ee-b733de926653
+		summarizeBy: sum
+		sourceColumn: COMPLETEDHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PURPOSE
+		dataType: string
+		lineageTag: cd3d3332-4311-4efe-b55b-70ef01554e7f
+		summarizeBy: none
+		sourceColumn: PURPOSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACTOR
+		dataType: string
+		lineageTag: 068d1f7b-217f-4579-949c-e2a21a873bcd
+		summarizeBy: none
+		sourceColumn: CONTRACTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESIGNAREA
+		dataType: string
+		lineageTag: ab0cf7fd-0063-4990-ae5a-fdb7b383a423
+		summarizeBy: none
+		sourceColumn: DESIGNAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PLAN START'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 97aec4a5-bc40-4983-83b9-1bd205cd29fb
+		summarizeBy: none
+		sourceColumn: PLAN START
+
+		variation Variation
+			isDefault
+			relationship: 2a37d2e8-89fe-4aba-a0eb-332ad64d07c7
+			defaultHierarchy: LocalDateTable_dc3d0bda-a944-4d8b-a8cb-a82aeda6e3b0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'PLAN FINISH'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 49e21739-7c25-43fc-8a4b-7bd037fa8640
+		summarizeBy: none
+		sourceColumn: PLAN FINISH
+
+		variation Variation
+			isDefault
+			relationship: 51193929-2889-4a7d-9a9a-24dff1d6874c
+			defaultHierarchy: LocalDateTable_88212af9-e6c6-43c8-9fa7-65ea0677b81d.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'DISTRIBUTION START'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 3eefee79-f95b-4603-a599-0be92c53e300
+		summarizeBy: none
+		sourceColumn: DISTRIBUTION START
+
+		variation Variation
+			isDefault
+			relationship: 4c7a27c4-2f86-47a9-8cc9-c23e5dab1e52
+			defaultHierarchy: LocalDateTable_ba7e7e4b-72ff-4f82-a634-c6db385d7e0d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'DISTRIBUTION FINISH'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 0e68e395-1a5d-456a-ae3c-64a6b499eb3d
+		summarizeBy: none
+		sourceColumn: DISTRIBUTION FINISH
+
+		variation Variation
+			isDefault
+			relationship: 4cc64798-0efe-44b1-bbd2-56efc74c33c3
+			defaultHierarchy: LocalDateTable_b76446a4-cff2-4f55-a3d2-98ec29901e5b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column CUMPROGRESS
+		dataType: double
+		formatString: 0.00
+		lineageTag: 60fb57ed-3b95-4c9c-8624-c9c3c0c3d3ed
+		summarizeBy: sum
+		sourceColumn: CUMPROGRESS
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOGO
+		dataType: double
+		lineageTag: c74fa72c-8967-4e80-8324-39df6304fc4f
+		summarizeBy: sum
+		sourceColumn: TOGO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HRS
+		dataType: string
+		lineageTag: e4cb09c7-e608-45f5-8812-9405caa4261e
+		summarizeBy: none
+		sourceColumn: HRS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6c830733-90ef-46aa-b580-3600fe1994b4
+		summarizeBy: none
+		sourceColumn: DATE
+
+		variation Variation
+			isDefault
+			relationship: c553ab19-f744-415d-99cb-29e3c3d304a6
+			defaultHierarchy: LocalDateTable_8e0cc351-42e6-487d-ab53-0a9a8fd2762c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FX_ManPower = ('Excel_Distrib-Alloc-ToGo'[HRS]/10/6)*('Excel_Distrib-Alloc-ToGo'[Split]/100)
+		lineageTag: 5ecb5438-7a15-48cd-80a3-6beb2ae4ae4a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Craft
+		dataType: string
+		lineageTag: e77d65bb-fde1-49a6-8e19-d45f88c000e3
+		summarizeBy: none
+		sourceColumn: Craft
+
+		annotation SummarizationSetBy = Automatic
+
+	column Split
+		dataType: string
+		lineageTag: 034e0c95-14f2-4f7c-a07a-7803fed5dd33
+		summarizeBy: none
+		sourceColumn: Split
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Distribution_Hrs = 'Excel_Distrib-Alloc-ToGo'[HRS]*('Excel_Distrib-Alloc-ToGo'[Split]/100)
+		formatString: 0.0000000000
+		lineageTag: 8a0fe212-83d6-4fac-883e-fbc300536442
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WP_Distribution_Status =
+			
+			var Start_ = 'Excel_Distrib-Alloc-ToGo'[PLAN START]
+			var Finish_ = 'Excel_Distrib-Alloc-ToGo'[PLAN FINISH]
+			var CurrWkEnd = [MX_CurrentWeekEnding]
+			var Prog = 'Excel_Distrib-Alloc-ToGo'[CUMPROGRESS] return
+			if(Start_ < CurrWkEnd && Finish_ < CurrWkEnd && Prog =BLANK(),"Behind Sched|Not Started",
+			if(Start_ < CurrWkEnd && Finish_ < CurrWkEnd && Prog >0,"Behind Sched|Started",
+			if(Start_ <= CurrWkEnd && Finish_ >=CurrWkEnd && Prog =BLANK(),"On-Sched|Not Started(Late)",
+			if(Start_ <= CurrWkEnd && Finish_ >=CurrWkEnd && Prog >0,"On-Sched|Started",
+			if(Start_ > CurrWkEnd && Finish_ >CurrWkEnd && Prog =BLANK(),"On-Sched|Not Started",
+			if(Start_ > CurrWkEnd && Finish_ > CurrWkEnd && Prog >0,"On-Sched|Started(Ahead)","No Status"))))))
+		lineageTag: da70530e-288b-4bf7-9bf4-cee602b05ca5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column WORKSTEP
+		dataType: string
+		lineageTag: 2d5e6c64-1cff-49bc-a2a3-47fc85f54c5b
+		summarizeBy: none
+		sourceColumn: WORKSTEP
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Discipline-UOM = 'Excel_Distrib-Alloc-ToGo'[DISCIPLINE]&" - "&'Excel_Distrib-Alloc-ToGo'[FX_UOM]
+		lineageTag: cdda08e2-8fae-46dd-8ae5-19786e3b9981
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_UOM =
+			var _uom = CALCULATE(FIRSTNONBLANK('Qry_IWP Detail'[FX_UOM],1),FILTER('Qry_IWP Detail',[WPNO]='Excel_Distrib-Alloc-ToGo'[NAME]))
+			RETURN
+			_uom
+		lineageTag: 9006af9a-4c96-4ab7-bfa8-d4d8a6686c85
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_DstrbHrs-ToGo% = IF([pqry_TYPE]="AFCHRS",BLANK(),ROUNDUP('Excel_Distrib-Alloc-ToGo'[HRS]/'Excel_Distrib-Alloc-ToGo'[TOGO],7))
+		formatString: 0.00000
+		lineageTag: 90a864ac-5ac3-4ab1-95b7-47ca530e0ca1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resource Code.RESOURCECODE'
+		dataType: string
+		lineageTag: 7626eeb5-e3c4-46b2-ab0c-280cb14cb07e
+		summarizeBy: none
+		sourceColumn: Resource Code.RESOURCECODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_STATUS =
+			var _status = CALCULATE(FIRSTNONBLANK('Qry_IWP Detail'[STATUS],1),FILTER('Qry_IWP Detail',[FIWPOBID]='Excel_Distrib-Alloc-ToGo'[FIWPOBID]))
+			RETURN
+			_status
+		lineageTag: fbdec5ff-1487-495d-9b87-60123d103c4a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Craft_Date = [FX_Phase]&"-"&[Craft]&"-"&[DATE]
+		lineageTag: 77c458c8-65f8-412b-b540-a3d664239c00
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Phase = LOOKUPVALUE(StaticTbl_Phase[Phase Prefab Erection],StaticTbl_Phase[Areacode],[CONTRACTOR])
+		lineageTag: f5e31d6b-fb66-4a56-8845-627efb8e2f90
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_AFChrs = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[AFC Hrs],'Qry_IWP Detail'[FIWPOBID],'Excel_Distrib-Alloc-ToGo'[FIWPOBID]),0)
+		lineageTag: 5a8d5a0f-2b1a-4d08-97d3-72e56ead24f8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pqry_TYPE
+		dataType: string
+		lineageTag: ec9a75cc-5a52-4842-9897-f0a94c0cb750
+		summarizeBy: none
+		sourceColumn: pqry_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_afc_distrib = ([FX_AFChrs]/[PLANNEDMANHRS])*[FX_Distribution_Hrs]
+		lineageTag: 71df14b3-2fe0-4341-b456-633a23cb835e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Excel_Distrib-Alloc-ToGo = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\WP Hour Distribution\D7650\WP Hrs\D7650 WP To-Go Hrs - Distribution.xlsx"), null, true),
+				    DISTRIBUTION_Sheet = Source{[Item="DISTRIBUTION",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(DISTRIBUTION_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"FIWPOBID", type text}, {"FIWPUID", type text}, {"PROJECT", type text}, {"NAME", type text}, {"CWPOBID", type text}, {"DESCRIPTION", type text}, {"DISCIPLINE", type text}, {"COMPOBID", type text}, {"COMPONENT", type text}, {"QUANTITYPLANNED", type number}, {"PLANNEDMANHRS", type number}, {"COMPLETEDHRS", type number}, {"PURPOSE", type text}, {"CONTRACTOR", type text}, {"DESIGNAREA", type text}, {"PLAN START", type date}, {"PLAN FINISH", type date}, {"DISTRIBUTION START", type date}, {"DISTRIBUTION FINISH", type date}, {"CUMPROGRESS", type number}, {"TOGO", type number}, {"HRS", type number}, {"DATE", type date}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "pqry_TYPE", each "WPHRS"),
+				    #"Appended Query" = Table.Combine({#"Added Custom", #"Excel_Distrib-Alloc-AFC_To-go"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Appended Query", {"FIWPOBID"}, Qry_IWP_ResourceCode, {"FIWPOBID"}, "Resource Code", JoinKind.LeftOuter),
+				    #"Expanded Resource Code" = Table.ExpandTableColumn(#"Merged Queries", "Resource Code", {"RESOURCECODE"}, {"Resource Code.RESOURCECODE"}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Expanded Resource Code", "Rolling Ops", each if [Resource Code.RESOURCECODE] = "PMF_MOFF" then 20 else null),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Added Conditional Column", "Rolling - Welders", each if [Resource Code.RESOURCECODE] = "PMF_MOFF" then 80 else null),
+				    #"Added Conditional Column2" = Table.AddColumn(#"Added Conditional Column1", "Str Fitters", each if [Resource Code.RESOURCECODE] = "PRF_MOFF" then 55 else if [Resource Code.RESOURCECODE] = "BRF_MOFF" then 55 else if [Resource Code.RESOURCECODE] = "BLF_MOFF" then 55 else if [Resource Code.RESOURCECODE] = "PLC_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "SLW_MOFF" then 55 else if [Resource Code.RESOURCECODE] = "SHW_MOFF" then 55 else if [Resource Code.RESOURCECODE] = "ASF_MOFF" then 45 else if [Resource Code.RESOURCECODE] = "RGF_MOFF" then 30 else if [Resource Code.RESOURCECODE] = "RFR_MOFF" then 70 else if [Resource Code.RESOURCECODE] = "SPV_MOFF" then 100 else null),
+				    #"Added Conditional Column3" = Table.AddColumn(#"Added Conditional Column2", "Str Welders", each if [Resource Code.RESOURCECODE] = "PRF_MOFF" then 40 else if [Resource Code.RESOURCECODE] = "BRF_MOFF" then 40 else if [Resource Code.RESOURCECODE] = "BLF_MOFF" then 40 else if [Resource Code.RESOURCECODE] = "SLW_MOFF" then 40 else if [Resource Code.RESOURCECODE] = "SHW_MOFF" then 40 else if [Resource Code.RESOURCECODE] = "ASF_MOFF" then 45 else if [Resource Code.RESOURCECODE] = "SEF_MOFF" then 30 else if [Resource Code.RESOURCECODE] = "SIF_MOFF" then 30 else if [Resource Code.RESOURCECODE] = "MEC_MOFF" then 17 else if [Resource Code.RESOURCECODE] = "RGF_MOFF" then 35 else null),
+				    #"Added Conditional Column4" = Table.AddColumn(#"Added Conditional Column3", "Riggers", each if [Resource Code.RESOURCECODE] = "PRF_MOFF" then 5 else if [Resource Code.RESOURCECODE] = "BRF_MOFF" then 5 else if [Resource Code.RESOURCECODE] = "BLF_MOFF" then 5 else if [Resource Code.RESOURCECODE] = "SLW_MOFF" then 5 else if [Resource Code.RESOURCECODE] = "SHW_MOFF" then 5 else if [Resource Code.RESOURCECODE] = "ASF_MOFF" then 10 else if [Resource Code.RESOURCECODE] = "MEC_MOFF" then 18 else if [Resource Code.RESOURCECODE] = "RGF_MOFF" then 35 else if [Resource Code.RESOURCECODE] = "RIG_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "RFR_MOFF" then 30 else null),
+				    #"Added Conditional Column5" = Table.AddColumn(#"Added Conditional Column4", "Painters", each if [Resource Code.RESOURCECODE] = "PNA_MOFF" then 100 else null),
+				    #"Added Conditional Column6" = Table.AddColumn(#"Added Conditional Column5", "Electrical Fitters", each if [Resource Code.RESOURCECODE] = "SEF_MOFF" then 70 else if [Resource Code.RESOURCECODE] = "EFT_MOFF" then 50 else null),
+				    #"Added Conditional Column7" = Table.AddColumn(#"Added Conditional Column6", "Instrument Tech", each if [Resource Code.RESOURCECODE] = "INT_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "IFT_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "IPC_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "GPV_MOFF" then 10 else if [Resource Code.RESOURCECODE] = "IPV_MOFF" then 100 else null),
+				    #"Added Conditional Column8" = Table.AddColumn(#"Added Conditional Column7", "Mech Fitters", each if [Resource Code.RESOURCECODE] = "CLD_MOFF" then 30 else if [Resource Code.RESOURCECODE] = "MEC_MOFF" then 65 else if [Resource Code.RESOURCECODE] = "MPC_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "GPV_MOFF" then 10 else if [Resource Code.RESOURCECODE] = "MPV_MOFF" then 100 else null),
+				    #"Added Conditional Column9" = Table.AddColumn(#"Added Conditional Column8", "Pipe Fitters", each if [Resource Code.RESOURCECODE] = "PEX_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "PCS_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "PLR_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "HYD_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "SPF_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "PEF_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "PPC_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "GPV_MOFF" then 30 else if [Resource Code.RESOURCECODE] = "PPV_MOFF" then 100 else null),
+				    #"Added Conditional Column10" = Table.AddColumn(#"Added Conditional Column9", "Pipe Welders", each if [Resource Code.RESOURCECODE] = "CLD_MOFF" then 70 else if [Resource Code.RESOURCECODE] = "PEX_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "PCS_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "PLR_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "SPF_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "PEF_MOFF" then 50 else null),
+				    #"Added Conditional Column11" = Table.AddColumn(#"Added Conditional Column10", "Scaffolders", each if [Resource Code.RESOURCECODE] = "SCF_MOFF" then 100 else null),
+				    #"Added Conditional Column12" = Table.AddColumn(#"Added Conditional Column11", "Mat Handling", each if [Resource Code.RESOURCECODE] = "MAT_MOFF" then 100 else null),
+				    #"Added Conditional Column13" = Table.AddColumn(#"Added Conditional Column12", "QAQC", each if [Resource Code.RESOURCECODE] = "QAC_MOFF" then 100 else null),
+				    #"Added Conditional Column14" = Table.AddColumn(#"Added Conditional Column13", "Electrical Tec", each if [Resource Code.RESOURCECODE] = "ELT_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "EFT_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "EPC_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "GPV_MOFF" then 50 else if [Resource Code.RESOURCECODE] = "EPV_MOFF" then 100 else null),
+				    #"Added Conditional Column15" = Table.AddColumn(#"Added Conditional Column14", "Instrument Fitters", each if [Resource Code.RESOURCECODE] = "SIF_MOFF" then 70 else if [Resource Code.RESOURCECODE] = "INF_MOFF" then 100 else if [Resource Code.RESOURCECODE] = "IFT_MOFF" then 50 else null),
+				    #"Added Conditional Column16" = Table.AddColumn(#"Added Conditional Column15", "VO", each if [CONTRACTOR] = "32" then 100 else null),
+				    #"Added Conditional Column17" = Table.AddColumn(#"Added Conditional Column16", "Fab Adder", each if [DISCIPLINE] = "Fab Adder" then 100 else if [DISCIPLINE] = "FAB ADDER" then 100 else null),
+				    #"Added Conditional Column18" = Table.AddColumn(#"Added Conditional Column17", "No Resource Code", each if [Resource Code.RESOURCECODE] = "NA" then 100 else null),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Added Conditional Column18", {"FIWPOBID", "FIWPUID", "PROJECT", "NAME", "CWPOBID", "DESCRIPTION", "DISCIPLINE", "COMPOBID", "COMPONENT", "QUANTITYPLANNED", "PLANNEDMANHRS", "COMPLETEDHRS", "PURPOSE", "CONTRACTOR", "DESIGNAREA", "PLAN START", "PLAN FINISH", "DISTRIBUTION START", "DISTRIBUTION FINISH", "CUMPROGRESS", "TOGO", "HRS", "DATE",  "Resource Code.RESOURCECODE","WORKSTEP","pqry_TYPE"}, "Attribute", "Value"),
+				    Custom1 = Table.RenameColumns(#"Unpivoted Other Columns",{{"Value", "Split"}, {"Attribute", "Craft"}})
+				in
+				    Custom1
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

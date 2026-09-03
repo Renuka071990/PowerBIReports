@@ -1,0 +1,981 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "ERECTION - B,P&T",
+  "name": "Bookmark0c541a3fb9df644e6379",
+  "options": {
+    "targetVisualNames": [
+      "9e5acf7d207aca60008c"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSectionff7f046ed07301200544",
+    "filters": {
+      "byName": {
+        "Filter8231a014ebb4a785f83e": {
+          "name": "Filter8231a014ebb4a785f83e",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_DeckLvl"
+                }
+              },
+              "Property": "Description"
+            }
+          },
+          "howCreated": 1
+        }
+      },
+      "byExpr": [
+        {
+          "name": "7b9507472e88031ee067",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "WPNO"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "81485fa5eaf22993f217",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Plant_Names"
+                }
+              },
+              "Property": "Plants"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "109939c519e991fc8cec",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "FX_Start_Actual_WkEnd"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterc3ff8ee441fa1b86dc66",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "_FX_WPPlan_Final_Issued"
+                }
+              },
+              "Property": "WeekEnding"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterb02d3cad7166f5064834",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "_FX_WPPlan_Final_Comp"
+                }
+              },
+              "Property": "WeekEnding"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filtereeaad615422140d77563",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Code-Progress Grouping"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterbae19649d35d8d2b2b9c",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Code-Phase Grouping"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "b37092c040e8616e0705",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Discipline"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filtera8cf6810c27d209a0c00",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Code-Area"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter71ab0be6c2524ad36511",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "Foreman"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter60fe9df3505119017ad9",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "General Foreman"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter1508262078b498a4b071",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Plant_Names"
+                }
+              },
+              "Property": "JobNo"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter6985de4033dc6e283306",
+          "type": "Advanced",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "TASK NO"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter9010e803d09bc659cc0c",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "i",
+                "Entity": "Qry_IWP Detail",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "i"
+                            }
+                          },
+                          "Property": "WP PURPOSE"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Erection - Blast, Prime, & Tie Coat'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP PURPOSE"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "44ec7f70719a4c1096bb",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP DESCRIPTION"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3954d00d52c79161625f",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Receive Date"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3efca2f6459a7d7cc399",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Progress"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter27c744dd5e848a077138",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ACTIVITY CODE"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter74b3160f0e8e58b35b95",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 1"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter7442b55316151339bf69",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 2"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterb82383fc6f778ffa36bd",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 3"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterdf4c6bb3708aa8e357c0",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 4"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3eca1312099bf8b7dc3b",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 5"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterad48c0f5abd406bc58a5",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "STATUS"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterc1d6c6477b353be405d9",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Progress"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSectionff7f046ed07301200544": {
+        "visualContainers": {
+          "a10019f4cb40d9c81cc8": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "9e5acf7d207aca60008c": {
+            "filters": {
+              "byName": {
+                "Filter950ff640dcd35787b2a6": {
+                  "name": "Filter950ff640dcd35787b2a6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "ACTIVITY CODE"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter56af30bc6d4138277200": {
+                  "name": "Filter56af30bc6d4138277200",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "RATEUOM"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter393911258bcb829de001": {
+                  "name": "Filter393911258bcb829de001",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Qry_IWP Detail"
+                            }
+                          },
+                          "Property": "AFC Hrs"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter30837887919436125a4c": {
+                  "name": "Filter30837887919436125a4c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "StaticTbl_Plant_Names"
+                        }
+                      },
+                      "Property": "Plants"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "FX_WP Prog"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "PROJECT"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "Qry_IWP Detail.PROJECT"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "IWP Detail.WP PURPOSE"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "IWP Detail.WPNO"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "IWP Detail.WP DESCRIPTION"
+                      ],
+                      "isCollapsed": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "f66a855c39d215949ddb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c21d7486b1d03bf69d47",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "xrefdate_Last Refreshed Date"
+                            }
+                          },
+                          "Property": "FX_UTC_Adjust"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "xrefdate_Last Refreshed Date"
+                            }
+                          },
+                          "Property": "FX_UTC_Adjust"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "862f9d104b084bccd90b": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "5832fd165c7bce25072a": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "f0f739a1a1bd9da752d0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ea889639de9524da2027",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "xrefdate_KronosDailyDate"
+                            }
+                          },
+                          "Property": "Date modified"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "xrefdate_KronosDailyDate"
+                            }
+                          },
+                          "Property": "Date modified"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "fec240d7508c7cba565a": {
+            "filters": {
+              "byName": {
+                "Filter5f0b0124118c2c5616bd": {
+                  "name": "Filter5f0b0124118c2c5616bd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Qry_IWP Detail"
+                            }
+                          },
+                          "Property": "WPNO"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "0d3ae5090bb3bc69f67c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Qry_IWP Detail"
+                            }
+                          },
+                          "Property": "FIWPOBID"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Qry_IWP Detail"
+                            }
+                          },
+                          "Property": "WPNO"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "d62debdf5d67e96371be": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_AFC_Hrs"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "d09a8da7465984e1e0bf": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_Hrs"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "df5ea7e57a6f52b376a4": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_Earned_Hrs"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "83c6dd7c7271146f2395": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_Comp_Count_Comp"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "3f4c39edf2bae2b899b4": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_Comp_Count_Plan"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "78531d56b16e7d9e41be": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "2c68be5aa8f461289293": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "50d18c8b23bf110fa0be",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "xrefdate_KronosDailyDate"
+                            }
+                          },
+                          "Property": "FX_FileStatus"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3cd96e9533f224f19488",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "xrefdate_KronosDailyDate"
+                        }
+                      },
+                      "Property": "FX_FileStatus"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pieChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "xrefdate_KronosDailyDate"
+                        }
+                      },
+                      "Property": "FX_FileStatus"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "8ff7809757219ff1cdcb": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

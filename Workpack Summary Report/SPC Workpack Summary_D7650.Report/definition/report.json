@@ -1,0 +1,679 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY18SU07",
+      "reportVersionAtImport": {
+        "visual": "1.8.23",
+        "report": "2.0.23",
+        "page": "1.3.23"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "City_Park42998421887860094.json",
+      "reportVersionAtImport": {
+        "visual": "1.8.84",
+        "report": "2.0.84",
+        "page": "1.3.84"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4fd933e33523e0953cf6",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WPNO"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "81485fa5eaf22993f217",
+        "displayName": "Facility",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_Plant_Names"
+              }
+            },
+            "Property": "Plants"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "109939c519e991fc8cec",
+        "displayName": "WeekEnding - Actual Start",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Start_Actual_WkEnd"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filterc3ff8ee441fa1b86dc66",
+        "displayName": "WeekEnding - Issuance",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "WeekEnding"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filterb02d3cad7166f5064834",
+        "displayName": "WeekEnding - Completion",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Comp"
+              }
+            },
+            "Property": "WeekEnding"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filtereeaad615422140d77563",
+        "displayName": "Progress Grouping",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Excel MDM"
+              }
+            },
+            "Property": "Code-Progress Grouping"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "Filterbae19649d35d8d2b2b9c",
+        "displayName": "Phase Grouping",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Excel MDM"
+              }
+            },
+            "Property": "Code-Phase Grouping"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "b37092c040e8616e0705",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Excel MDM"
+              }
+            },
+            "Property": "Discipline"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filtera8cf6810c27d209a0c00",
+        "displayName": "Area",
+        "ordinal": 8,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Excel MDM"
+              }
+            },
+            "Property": "Code-Area"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter71ab0be6c2524ad36511",
+        "ordinal": 9,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "Foreman"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter60fe9df3505119017ad9",
+        "displayName": "Supervisor",
+        "ordinal": 10,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "General Foreman"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter1508262078b498a4b071",
+        "ordinal": 11,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_Plant_Names"
+              }
+            },
+            "Property": "JobNo"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "Filter6985de4033dc6e283306",
+        "displayName": "Task No",
+        "ordinal": 12,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "TASK NO"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter8231a014ebb4a785f83e",
+        "displayName": "Deck Level",
+        "ordinal": 13,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_DeckLvl"
+              }
+            },
+            "Property": "Description"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter9010e803d09bc659cc0c",
+        "displayName": "WP Purpose",
+        "ordinal": 14,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP PURPOSE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "44ec7f70719a4c1096bb",
+        "displayName": "WP Description",
+        "ordinal": 15,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP DESCRIPTION"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter3954d00d52c79161625f",
+        "ordinal": 16,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Receive Date"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter3efca2f6459a7d7cc399",
+        "ordinal": 17,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Progress"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter27c744dd5e848a077138",
+        "displayName": "Activity Code",
+        "ordinal": 18,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ACTIVITY CODE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter74b3160f0e8e58b35b95",
+        "ordinal": 19,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 1"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter7442b55316151339bf69",
+        "ordinal": 20,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 2"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filterb82383fc6f778ffa36bd",
+        "ordinal": 21,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 3"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filterdf4c6bb3708aa8e357c0",
+        "ordinal": 22,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 4"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter3eca1312099bf8b7dc3b",
+        "ordinal": 23,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ROC 5"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filterad48c0f5abd406bc58a5",
+        "displayName": "Status",
+        "ordinal": 24,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "STATUS"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filterc1d6c6477b353be405d9",
+        "ordinal": 25,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WP Progress"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "advancedPieDonut812F760774854B428BA58A87279F6AF6",
+    "BulletChart1443347686880",
+    "clusteredstackedcolumnchart12C4F6FB782E5E0DAB5E7D4D600BB13B",
+    "clusteredstackedcolumnchartA3BF4C5A66422DC09283C291A3EA7904",
+    "enlightenLegend0ED91DCE508743998CF5A23E37414AD6",
+    "Gantt1448688115699",
+    "GanttChartByMAQSoftware1448688115701",
+    "imagepro72F4F4C66B5C47EDB72C8CA5F4BFCD1A",
+    "LinearGauge1450736844786",
+    "lineStackedColumnMatrixADACEA3309644A92B1A6D50A68C81088",
+    "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B190",
+    "PBI_CV_9272D058_BEA0_476A_B090_A712545F92FA",
+    "simpleImageEBC4593F96F1425FB3D84C5BF02B5075",
+    "skylineB4E364EE272342C783483632B1D063C8",
+    "Timeline1447991079100",
+    "wishyoulizationbarchartrace",
+    "ZoomChartsPieChartPaidE77E4ED357DC402ABA005987437CF500"
+  ],
+  "resourcePackages": [
+    {
+      "name": "BulletChart1443347686880",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "BulletChart1443347686880.pbiviz.json",
+          "path": "BulletChart1443347686880.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "Gantt1448688115699",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "Gantt1448688115699.pbiviz.json",
+          "path": "Gantt1448688115699.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "LinearGauge1450736844786",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "LinearGauge1450736844786.pbiviz.json",
+          "path": "LinearGauge1450736844786.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY18SU07",
+          "path": "BaseThemes/CY18SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "allocation_plan6555048233032559.svg",
+          "path": "allocation_plan6555048233032559.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Anomaly9145586089800082.jpg",
+          "path": "Anomaly9145586089800082.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "City_Park42998421887860094.json",
+          "path": "City_Park42998421887860094.json",
+          "type": "Image"
+        },
+        {
+          "name": "Component_Count8851956894522854.jpg",
+          "path": "Component_Count8851956894522854.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "IWP_Detail5145760062809086.jpg",
+          "path": "IWP_Detail5145760062809086.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary_-_issued_vs_e7945765309951713.svg",
+          "path": "Workpack_Summary_-_issued_vs_e7945765309951713.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary_-_main036509141922090205.svg",
+          "path": "Workpack_Summary_-_main036509141922090205.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary_1080x192046621456927591387.svg",
+          "path": "Workpack_Summary_1080x192046621456927591387.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary_25049185756896069.svg",
+          "path": "Workpack_Summary_25049185756896069.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary_900x19200641762977765108.svg",
+          "path": "Workpack_Summary_900x19200641762977765108.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary_page226283920673682437.svg",
+          "path": "Workpack_Summary_page226283920673682437.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary_plain19206545605344783.svg",
+          "path": "Workpack_Summary_plain19206545605344783.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary07486693564668112.svg",
+          "path": "Workpack_Summary07486693564668112.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary23615569056969532.svg",
+          "path": "Workpack_Summary23615569056969532.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary33627663623744497.svg",
+          "path": "Workpack_Summary33627663623744497.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary4281676120209572.svg",
+          "path": "Workpack_Summary4281676120209572.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary5409368160754247.svg",
+          "path": "Workpack_Summary5409368160754247.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary6153859073059659.svg",
+          "path": "Workpack_Summary6153859073059659.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Workpack_Summary7178932365636412.svg",
+          "path": "Workpack_Summary7178932365636412.svg",
+          "type": "Image"
+        },
+        {
+          "name": "WP_Plan_Review8673392720911626.jpg",
+          "path": "WP_Plan_Review8673392720911626.jpg",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": false
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

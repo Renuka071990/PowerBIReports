@@ -1,0 +1,223 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transform File from E0703'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from E0703\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from Excel_IFE_PLN_PRG_Auto Deck (2)'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Transform File from Excel_IFE_PLN_PRG_Auto Deck (2)\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from Excel_IFE_PLN_PRG_Auto Jacket'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Transform File from Excel_IFE_PLN_PRG_Auto Jacket\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from Excel_IFE_PLN_PRG_Auto Deck'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'Transform File from Excel_IFE_PLN_PRG_Auto Deck\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from E0703 (2)'
+
+	annotation PBI_QueryGroupOrder = 8
+
+queryGroup 'Transform File from E0703 (2)\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from Excel_IFE_PLN_PRG_Auto Deck (3)'
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 'Transform File from Excel_IFE_PLN_PRG_Auto Deck (3)\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from Query1'
+
+	annotation PBI_QueryGroupOrder = 12
+
+queryGroup 'Transform File from Query1\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from Query1 (2)'
+
+	annotation PBI_QueryGroupOrder = 14
+
+queryGroup 'Transform File from Query1 (2)\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errors in queries that were loaded on 5/5/2026 11:03:00 AM.
+queryGroup 'Query Errors - 5/5/2026 11:03:00 AM'
+
+	annotation PBI_QueryGroupOrder = 16
+
+/// Errors in queries that were loaded on 5/5/2026 11:40:02 AM.
+queryGroup 'Query Errors - 5/5/2026 11:40:02 AM'
+
+	annotation PBI_QueryGroupOrder = 17
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["_flt_progress_grouping","StaticTbl_Area_Names","StaticTbl_Project","StaticTbl_Discipline Code","StaticTbl_Plant_Names","StaticTbl_PURPOSE SEQUENCE TABLE","StaticTbl_Phase","StaticTbl_ComboChart_Workface","StaticTbl_ComboChart_Craft","StaticTbl_DeckLvl","StaticTbl_WPNO_PhaseGrouping","StaticTbl_Exc_Craft","Static_Workface_Slicer","xrefdate_Distribution File","xrefdate_KronosDailyDate","xrefdate_Last Refreshed Date","_MX_Productivity","_MX_WP_Count","_MX_WP_Hrs","_MX_Weekly_Issuance","_MX_Distribution","Qry_IWP Detail","dataflow_iwp_detail","Qry_WP_Direct","Qry_IWP_Workstep","sqlqry_IWP_Workstep","sqlqry_IWP_Direct","Excel_D7650_L4","Excel_Kronos Weekly","Excel_Distrib-Alloc-ToGo","Excel_Distrib-Alloc-AFC_To-go","Qry_IWP_ResourceCode","Excel_Distrib-Alloc-Plan","Excel_Kronos_2024","Parameter1","Transform Sample File","Sample File","Transform File","Excel_AFC_Distrib","Excel_D7650 MLF","Excel_Resource split","Excel_IOE_PLN_PRG","Excel_IRE_PLN_PRG","Excel_IFE_PLN_PRG","D7650 Excel_IFE_PLN_PRG","D7650 Excel_IOE_PLN_PRG","Excel MDM","Excel_MasterActivity","D7650_ProgressReportHistoryfromPE","dataflow_ProgressReportHistory","Sample File (2)","Parameter2","Transform Sample File (2)","Transform File (2)","Sample File (3)","Parameter3","Transform Sample File (3)","Transform File (3)","Sample File (4)","Parameter4","Transform Sample File (4)","Transform File (4)","Parameter5","Transform Sample File (5)","Sample File (5)","Transform File (5)","_mx_anomaly","_mx_anomaly (2)","BIN Table","Sample File (6)","Parameter6","Transform Sample File (6)","Transform File (6)","Parameter7","Transform Sample File (7)","Sample File (7)","Transform File (7)","Parameter8","Transform Sample File (8)","Sample File (8)","Transform File (8)","Qry_IWP_Constraints","Qry_IWP_Assignments","sqlqry_IWP_Detail Only","Statictbl_WPStatus","Errors in Qry_IWP Detail Only","Errors in Qry_IWP Detail Only (2)","_delete_table_matrix","Statictbl_ConstraintWeekfilter","StaticTbl_CurrentPrevWeek"]
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","TMDLView_Desktop","DevMode"]
+
+ref table DateTableTemplate_15c27613-c414-4292-ade4-1bb6af737fa0
+ref table StaticTbl_Area_Names
+ref table StaticTbl_Project
+ref table 'StaticTbl_PURPOSE SEQUENCE TABLE'
+ref table 'Qry_IWP Detail'
+ref table StaticTbl_Phase
+ref table 'Excel_Kronos Weekly'
+ref table _MX_Productivity
+ref table _FX_Prod_ActivityCode
+ref table xrefdate_KronosDailyDate
+ref table LocalDateTable_b96f41c7-2045-47f9-bd42-22661c091238
+ref table LocalDateTable_841deb0a-789d-4c14-b2d7-4078528d8884
+ref table LocalDateTable_4ac3e0ad-316f-4084-b1c7-6f9ee5904b41
+ref table 'StaticTbl_Discipline Code'
+ref table LocalDateTable_5ad8ee89-1d7c-450a-8df6-86b3a27b9c8e
+ref table LocalDateTable_a6f1725b-5213-4bca-a40b-6fde60638b75
+ref table LocalDateTable_02716f34-640a-4102-af50-042396d73db6
+ref table LocalDateTable_acf7517d-0821-43e0-bf83-a738bc90562a
+ref table LocalDateTable_22d202db-fc7a-465a-aa9d-eae3af3228eb
+ref table LocalDateTable_f28a3278-bba5-4e9d-860f-22988a824e7a
+ref table 'xrefdate_Last Refreshed Date'
+ref table LocalDateTable_51a12202-9dc0-4b9b-af39-5d93a8cc263a
+ref table LocalDateTable_ca5544f6-8907-4c26-ad20-32edf3df811f
+ref table LocalDateTable_baaa1ece-cee2-472c-b8bd-284d5e9676b1
+ref table LocalDateTable_e8dd3ba0-7da2-455b-9f5d-b31c27e9c7f4
+ref table _MX_WP_Count
+ref table _FX_Date
+ref table LocalDateTable_e6dc2717-7c34-43ec-be8f-4037174de699
+ref table LocalDateTable_a4c5fd99-c260-4969-9279-89c6096a46f3
+ref table LocalDateTable_02c6f9cd-9e7e-438c-8502-c67d6d803a54
+ref table LocalDateTable_1ee98c90-bfd2-4eeb-8673-37db4b387124
+ref table LocalDateTable_53321a0a-0b31-431b-9c45-92d239c0b721
+ref table LocalDateTable_a9f4d98e-58d9-429c-863b-7e328dcd2314
+ref table _FX_WPPlan_Final_Issued
+ref table _FX_WPPlan_Final_Comp
+ref table _MX_WP_Hrs
+ref table _FX_Xmatch_ActCode
+ref table StaticTbl_Plant_Names
+ref table _MX_Weekly_Issuance
+ref table Excel_Distrib-Alloc-ToGo
+ref table LocalDateTable_dc3d0bda-a944-4d8b-a8cb-a82aeda6e3b0
+ref table LocalDateTable_ba7e7e4b-72ff-4f82-a634-c6db385d7e0d
+ref table LocalDateTable_b76446a4-cff2-4f55-a3d2-98ec29901e5b
+ref table '00_Distribution Dynamic Legend'
+ref table FX_Distribution_Allocation_Count
+ref table _FX_Distribution_Qty_Count
+ref table Excel_Distrib-Alloc-Plan
+ref table LocalDateTable_c5c1d9cc-44c3-4d9f-ab42-682a85ad72d7
+ref table _Par_Productivity
+ref table _Par_Productivity_PrevWeek
+ref table _FX_Distribution_Hrs
+ref table StaticTbl_ComboChart_Workface
+ref table LocalDateTable_5ebfd1ff-8823-42e2-bffe-33d3b073cf4b
+ref table Excel_AFC_Distrib
+ref table LocalDateTable_f7ca9c7a-a5d8-4f5c-b72d-b47493c71fbf
+ref table dataflow_ProgressReportHistory
+ref table LocalDateTable_4d9c8295-2781-40c8-8597-e4cfd57b3b57
+ref table StaticTbl_DeckLvl
+ref table 'xrefdate_Distribution File'
+ref table LocalDateTable_c94ed8ff-882d-42f7-b940-7c002b3e7960
+ref table LocalDateTable_1852654f-11af-49a3-9bd8-68f00140f4d1
+ref table LocalDateTable_1314f1b3-9572-4848-aa2d-711c6a5a279c
+ref table 'Excel_D7650 MLF'
+ref table LocalDateTable_6e2fc92e-a33f-4053-a087-e9b2e01cc825
+ref table _par_qtycounthrs
+ref table _MX_Distribution
+ref table _par_distrib
+ref table 'Excel_Resource split'
+ref table _FX_Craft_Allocation_Distribution
+ref table LocalDateTable_dccf5e91-bbd3-48da-bd0d-1dfd0f7cda09
+ref table LocalDateTable_370649d9-1685-4224-a72c-ebcc38ec4b3b
+ref table LocalDateTable_ee931ea4-6a0c-4b55-aa2a-d2ff7d919d93
+ref table LocalDateTable_a5bb931b-51f8-4e8c-8ba3-b3e981acdbfc
+ref table Excel_IRE_PLN_PRG
+ref table LocalDateTable_15c2dcfa-697e-43d3-b63d-207531ec9f52
+ref table LocalDateTable_84772921-7daf-435e-a6f7-b543cb2ce0ac
+ref table Excel_IFE_PLN_PRG
+ref table LocalDateTable_da20f1a6-21b8-44c9-a583-46483261b8ef
+ref table Excel_IOE_PLN_PRG
+ref table LocalDateTable_6476895b-1186-4e50-9bc2-33480047a196
+ref table LocalDateTable_1d1ceaf5-f477-4337-8fd3-595ba21916d0
+ref table Static_Workface_Slicer
+ref table StaticTbl_WPNO_PhaseGrouping
+ref table LocalDateTable_b1f957ad-a584-46da-8987-4779e1ae03cf
+ref table Excel_Kronos_2024
+ref table LocalDateTable_b8b88855-1a62-48a3-89fa-80e778610f51
+ref table Qry_WP_Direct
+ref table '_mx_anomaly (2)'
+ref table 'Excel MDM'
+ref table _flt_progress_grouping
+ref table BIN
+ref table 'BIN Table'
+ref table Qry_IWP_Workstep
+ref table StaticTbl_ComboChart_Craft
+ref table LocalDateTable_8162341a-6299-4857-8171-5bbd2d9d6167
+ref table LocalDateTable_8e0cc351-42e6-487d-ab53-0a9a8fd2762c
+ref table Excel_MasterActivity
+ref table LocalDateTable_f296862e-5e4b-4271-9c15-a22a3dd2fd06
+ref table LocalDateTable_88212af9-e6c6-43c8-9fa7-65ea0677b81d
+ref table Excel_D7650_L4
+ref table LocalDateTable_aa430eef-0707-41be-996f-237b86dcc620
+ref table LocalDateTable_a85baf3f-6d72-46a2-b637-2516cb10c6d0
+ref table LocalDateTable_9eb77177-fcb5-46bb-8d5c-985658d8531b
+ref table LocalDateTable_7c9b10e7-5989-487b-ae6b-32ee257bf8ab
+ref table LocalDateTable_46f1959a-72f9-4eae-8dd7-52b6180aa4e3
+ref table LocalDateTable_319035f4-36b2-4d44-87fb-77cbf20bc1d4
+ref table Parameter
+ref table LocalDateTable_b5fb8881-ad51-4d0e-b08c-36ed4753d9c9
+ref table LocalDateTable_db40cefa-0891-4351-9eb5-e89f172a2a9b
+ref table LocalDateTable_e8d4c31d-3cdb-437e-853b-6930fd4f0894
+ref table Qry_IWP_Constraints
+ref table Statictbl_WPStatus
+ref table LocalDateTable_fd6849df-38ef-4b99-a0ff-b450ef992f42
+ref table fx_fitter_welder
+ref table 'Parameter 2'
+ref table _par_prod_fitter
+ref table _par_prod_welder
+ref table Qry_IWP_Assignments
+ref table LocalDateTable_2d47ab4f-5566-4b67-b56a-168c9e92c0d4
+ref table LocalDateTable_44625829-e6c5-4904-b01b-0186d94ce61f
+ref table delete
+ref table Parameter_delete
+ref table _delete_table_matrix
+ref table LocalDateTable_857e19e8-779e-4093-9da9-056258f35662
+ref table Statictbl_ConstraintWeekfilter
+ref table StaticTbl_CurrentPrevWeek
+ref table LocalDateTable_42f7efbf-0d6b-4149-a31c-46ca29f35f12
+ref table Excel_Distrib-Alloc-AFC_To-go
+ref table LocalDateTable_d9234841-64fc-4c54-866d-618dec32c8a9
+ref table LocalDateTable_fb69e720-acd9-4c2f-bc07-9ba1ce787247
+ref table LocalDateTable_97eb81ee-947a-4c3d-bb43-953d12a5f6de
+
+ref cultureInfo en-US
+

@@ -1,0 +1,193 @@
+table 'Excel_Resource split'
+	lineageTag: 82bbaa99-1d0a-4452-8774-8fd32a8a5007
+
+	column DESCRIPTION
+		dataType: string
+		lineageTag: 8d2af9d8-67ec-4e38-8854-a880dc47d956
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		dataType: string
+		lineageTag: 3c60f33b-82ba-4f6b-80bd-368975dd89c5
+		summarizeBy: none
+		sourceColumn: DISCIPLINE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESOURCECODE(P6)
+		dataType: string
+		lineageTag: 30dc77d7-b6d4-43d0-b85c-e57785b39439
+		summarizeBy: none
+		sourceColumn: RESOURCECODE(P6)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RESOURCE DESCRIPTION (P6)'
+		dataType: string
+		lineageTag: 7c2582b5-0377-4b67-b762-0ea7b16ec327
+		summarizeBy: none
+		sourceColumn: RESOURCE DESCRIPTION (P6)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WORK PHASE'
+		dataType: string
+		lineageTag: 24b89e81-342c-44c1-9fa9-bd585769439c
+		summarizeBy: none
+		sourceColumn: WORK PHASE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PERCENTAGE SPLIT - CRAFT NEW'
+		dataType: string
+		lineageTag: e9b97ada-cf6e-4b7f-b12e-2a8470395b5a
+		summarizeBy: none
+		sourceColumn: PERCENTAGE SPLIT - CRAFT NEW
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rolling Ops'
+		dataType: string
+		lineageTag: 98aa518c-8852-4cc8-a093-cfdfad3f086b
+		summarizeBy: none
+		sourceColumn: Rolling Ops
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rolling Welders'
+		dataType: string
+		lineageTag: d6f494dd-2880-46ba-a036-e7b21a995ec7
+		summarizeBy: none
+		sourceColumn: Rolling Welders
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Str Fitters'
+		dataType: string
+		lineageTag: c3f51f9e-719c-452c-bdc0-9394e70b98be
+		summarizeBy: none
+		sourceColumn: Str Fitters
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Str Welders'
+		dataType: string
+		lineageTag: c429480b-0136-4a0d-bb5e-d9fe919c3c42
+		summarizeBy: none
+		sourceColumn: Str Welders
+
+		annotation SummarizationSetBy = Automatic
+
+	column Riggers
+		dataType: string
+		lineageTag: 8271154a-fd3b-4f69-9af0-1dc9cc264952
+		summarizeBy: none
+		sourceColumn: Riggers
+
+		annotation SummarizationSetBy = Automatic
+
+	column Painters
+		dataType: string
+		lineageTag: 0bbd54ec-5ba3-425a-9628-4da559b38e02
+		summarizeBy: none
+		sourceColumn: Painters
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Electrical Fitters'
+		dataType: string
+		lineageTag: c0031934-4880-4345-b249-f18577f678a6
+		summarizeBy: none
+		sourceColumn: Electrical Fitters
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Instrument Tech'
+		dataType: string
+		lineageTag: 7bb159a3-d4a1-4bc5-ae88-1ab351eec48c
+		summarizeBy: none
+		sourceColumn: Instrument Tech
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mech Fitters'
+		dataType: string
+		lineageTag: d83ebee1-4a96-4a71-8e35-a4e2ea86ed87
+		summarizeBy: none
+		sourceColumn: Mech Fitters
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipe Fitters'
+		dataType: string
+		lineageTag: 7565800c-b09f-4b12-b88b-3eb3f05e28fd
+		summarizeBy: none
+		sourceColumn: Pipe Fitters
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipe Welders'
+		dataType: string
+		lineageTag: 848f0e0c-fc5b-455e-a929-ecbe1d652446
+		summarizeBy: none
+		sourceColumn: Pipe Welders
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scaffolders
+		dataType: string
+		lineageTag: 2382ee7a-cc72-4760-88a4-a300fc8b52ff
+		summarizeBy: none
+		sourceColumn: Scaffolders
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mat Handling'
+		dataType: string
+		lineageTag: 1395040d-a9de-4506-9aed-f3d6d60d9954
+		summarizeBy: none
+		sourceColumn: Mat Handling
+
+		annotation SummarizationSetBy = Automatic
+
+	column QAQC
+		dataType: string
+		lineageTag: 4f3c445b-b2d9-443f-83e9-edb582eb4282
+		summarizeBy: none
+		sourceColumn: QAQC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Electrical Tec'
+		dataType: string
+		lineageTag: 249c2407-254c-4263-8506-516ccf6714a8
+		summarizeBy: none
+		sourceColumn: Electrical Tec
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Instrument Fitters'
+		dataType: string
+		lineageTag: 99aaa435-4b89-4de5-baec-054b9061c14a
+		summarizeBy: none
+		sourceColumn: Instrument Fitters
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Excel_Resource split' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\WP Hour Distribution\Standard Resource Split\Standard Resource Split.xlsm"), null, true),
+				    #"Resource split_Sheet" = Source{[Item="Resource split",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Resource split_Sheet", [PromoteAllScalars=true]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"AREA CODE", "Column24"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Str. Fitters", "Str Fitters"}, {"Rolling - Welders", "Rolling Welders"}, {"Str. Welders", "Str Welders"}, {"Mat'l. Handl'g.", "Mat Handling"}, {"QA/QC", "QAQC"}, {"Electrical Tech.", "Electrical Tec"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

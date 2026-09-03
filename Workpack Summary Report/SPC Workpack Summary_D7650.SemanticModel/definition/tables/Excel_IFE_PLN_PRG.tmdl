@@ -1,0 +1,166 @@
+table Excel_IFE_PLN_PRG
+	lineageTag: 5699806b-dbb9-4c1e-b39d-2cdc11966c96
+
+	column 'Transaction Type'
+		dataType: string
+		lineageTag: fb0ec9eb-d946-4011-8cbf-4cb17e98c2b1
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract
+		dataType: string
+		lineageTag: 947ae649-1622-4578-b0c4-692a3e1139e4
+		summarizeBy: none
+		sourceColumn: Contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 331a81eb-96b9-4d12-b7b1-3a1d2a560287
+		summarizeBy: sum
+		sourceColumn: Job Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Code'
+		dataType: string
+		lineageTag: 44400374-4814-4720-8bc3-613f41235e5a
+		summarizeBy: none
+		sourceColumn: Activity Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Man Hours'
+		dataType: double
+		lineageTag: ae35b205-a0a9-4a67-8403-12b3495e2c36
+		summarizeBy: sum
+		sourceColumn: Man Hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Effective Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 895975d4-0205-4429-af1c-ab71a2f7b12f
+		summarizeBy: none
+		sourceColumn: Effective Date
+
+		variation Variation
+			isDefault
+			relationship: 0e56d6d4-1b02-4bac-a919-f20df616fa2f
+			defaultHierarchy: LocalDateTable_b1f957ad-a584-46da-8987-4779e1ae03cf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FX_Weekly_Earning =
+			
+			var prev_earn = SUMX(FILTER(Excel_IFE_PLN_PRG,[fx_job_activitycode]=EARLIER([fx_job_activitycode]) && [Metrics]=EARLIER([Metrics]) &&[Effective Date]=EARLIER([Effective Date])-7),[Man Hours])
+			var weeklyearn = [Man Hours]-prev_earn
+			
+			return
+			weeklyearn
+		lineageTag: adedc6ce-5f4f-485e-a684-daf6b6e5a3f0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_SPC_Discipline = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[DISCIPLINE],'Qry_IWP Detail'[WPNO],Excel_IFE_PLN_PRG[Activity Code]),BLANK())
+		lineageTag: cc021a0f-155a-4b47-8fb3-3aae054b8a33
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Area = LOOKUPVALUE('Qry_IWP Detail'[AREA],'Qry_IWP Detail'[WPNO],Excel_IFE_PLN_PRG[Activity Code])
+		lineageTag: e5fe16a4-de81-4451-81ce-7fbb748d3889
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Date = [Effective Date].[Date]
+		formatString: dd-mmm-yy
+		lineageTag: e5fa8f90-63f3-4a42-ae4b-61ad47dcb48e
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: bbc26c5d-e0b3-490c-b7b8-fe08d9ec2312
+			defaultHierarchy: LocalDateTable_da20f1a6-21b8-44c9-a583-46483261b8ef.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Disc = LOOKUPVALUE(StaticTbl_WPNO_PhaseGrouping[Discipline_SPC],StaticTbl_WPNO_PhaseGrouping[Activity Code],Excel_IFE_PLN_PRG[Activity Code])
+		lineageTag: e6fcb7a7-9d4f-415b-b163-0bd1f5969096
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Contract = LOOKUPVALUE(StaticTbl_WPNO_PhaseGrouping[Structure],StaticTbl_WPNO_PhaseGrouping[Activity Code],Excel_IFE_PLN_PRG[Activity Code])
+		lineageTag: 5f227760-fbde-4968-abfd-e5a6ee519c0d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		dataType: string
+		lineageTag: f3bea673-8e0a-47c1-b916-d3dc4764229c
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data[Job Description]'
+		dataType: string
+		lineageTag: 01692d77-81d2-461f-aa3c-f88923f8ff92
+		summarizeBy: none
+		sourceColumn: Data[Job Description]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_job_activitycode = [Job Number]&"_"&[Activity Code]
+		lineageTag: 1fb57996-664e-49f5-88ec-95e4b588b473
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Metrics
+		dataType: string
+		lineageTag: ddce0411-9758-4a6f-9bb3-5cb090ea2cb9
+		summarizeBy: none
+		sourceColumn: Metrics
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line No'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e858e8f-93c1-4afa-b040-35ed5cad5e46
+		summarizeBy: sum
+		sourceColumn: Line No
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Excel_IFE_PLN_PRG = m
+		mode: import
+		source =
+				let
+				    Source = #"D7650 Excel_IFE_PLN_PRG",
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Transaction Type] = "IFE_PLN_PRG"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

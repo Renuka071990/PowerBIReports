@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "af94b13c11f5ad2063c3",
+  "position": {
+    "x": 831.61094224924011,
+    "y": 150.75987841945289,
+    "z": 7000,
+    "height": 299.57446808510639,
+    "width": 299.57446808510639,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "xrefdate_Last Refreshed Date"
+                    }
+                  },
+                  "Property": "Refresh Date"
+                }
+              },
+              "queryRef": "xrefdate_Last Refreshed Date.Refresh Date",
+              "nativeQueryRef": "Refresh Date"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "xrefdate_Last Refreshed Date"
+                  }
+                },
+                "Property": "Refresh Date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

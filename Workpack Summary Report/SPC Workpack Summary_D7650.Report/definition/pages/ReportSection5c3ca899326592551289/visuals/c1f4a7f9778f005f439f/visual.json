@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "c1f4a7f9778f005f439f",
+  "position": {
+    "x": 127.87225720231208,
+    "y": 0.6903578243169044,
+    "z": 12000,
+    "height": 701.77503385730211,
+    "width": 1141.5934959349593,
+    "tabOrder": 1000
+  },
+  "visualGroup": {
+    "displayName": "Summary - Job Number",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

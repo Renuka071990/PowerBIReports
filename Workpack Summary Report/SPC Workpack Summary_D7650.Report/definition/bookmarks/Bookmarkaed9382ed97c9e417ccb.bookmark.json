@@ -1,0 +1,2760 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "⬤",
+  "name": "Bookmarkaed9382ed97c9e417ccb",
+  "options": {
+    "targetVisualNames": [
+      "28dcb15134eb14ccabed"
+    ],
+    "suppressDisplay": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSectionca20a40c79b02ebd700e",
+    "filters": {
+      "byName": {
+        "Filter8231a014ebb4a785f83e": {
+          "name": "Filter8231a014ebb4a785f83e",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_DeckLvl"
+                }
+              },
+              "Property": "Description"
+            }
+          },
+          "howCreated": 1
+        }
+      },
+      "byExpr": [
+        {
+          "name": "7b9507472e88031ee067",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "WPNO"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "81485fa5eaf22993f217",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Plant_Names"
+                }
+              },
+              "Property": "Plants"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "109939c519e991fc8cec",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "FX_Start_Actual_WkEnd"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterc3ff8ee441fa1b86dc66",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "_FX_WPPlan_Final_Issued"
+                }
+              },
+              "Property": "WeekEnding"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterb02d3cad7166f5064834",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "_FX_WPPlan_Final_Comp"
+                }
+              },
+              "Property": "WeekEnding"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filtereeaad615422140d77563",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Code-Progress Grouping"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterbae19649d35d8d2b2b9c",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Code-Phase Grouping"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "b37092c040e8616e0705",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Discipline"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filtera8cf6810c27d209a0c00",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Excel MDM"
+                }
+              },
+              "Property": "Code-Area"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter71ab0be6c2524ad36511",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "Foreman"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter60fe9df3505119017ad9",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "General Foreman"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter1508262078b498a4b071",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "StaticTbl_Plant_Names"
+                }
+              },
+              "Property": "JobNo"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter6985de4033dc6e283306",
+          "type": "Advanced",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "TASK NO"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter9010e803d09bc659cc0c",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP PURPOSE"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "44ec7f70719a4c1096bb",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP DESCRIPTION"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3954d00d52c79161625f",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Receive Date"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3efca2f6459a7d7cc399",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Progress"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter27c744dd5e848a077138",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ACTIVITY CODE"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter74b3160f0e8e58b35b95",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 1"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter7442b55316151339bf69",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 2"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterb82383fc6f778ffa36bd",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 3"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterdf4c6bb3708aa8e357c0",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 4"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filter3eca1312099bf8b7dc3b",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "ROC 5"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterad48c0f5abd406bc58a5",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "STATUS"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "Filterc1d6c6477b353be405d9",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Qry_IWP Detail"
+                }
+              },
+              "Property": "WP Progress"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSectionca20a40c79b02ebd700e": {
+        "filters": {
+          "byName": {
+            "b0e0f04fbe783efbbaf6": {
+              "name": "b0e0f04fbe783efbbaf6",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FX_WPPlan_Final_Issued"
+                    }
+                  },
+                  "Property": "FX_Type"
+                }
+              },
+              "howCreated": 1
+            },
+            "d1e3b9dc06da41a12d53": {
+              "name": "d1e3b9dc06da41a12d53",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Statictbl_WPStatus"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "howCreated": 1
+            }
+          }
+        },
+        "visualContainers": {
+          "fe927c69eaf84661d7c0": {
+            "filters": {
+              "byName": {
+                "Filterae2d50aba29a1af1b7f2": {
+                  "name": "Filterae2d50aba29a1af1b7f2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "FX_WP_Issued_Status_2"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Qry_IWP Detail"
+                            }
+                          },
+                          "Property": "WPNO"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "28dcb15134eb14ccabed": {
+            "filters": {
+              "byName": {
+                "Filterf798892c01010e416bda": {
+                  "name": "Filterf798892c01010e416bda",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "f",
+                        "Entity": "_FX_WPPlan_Final_Issued",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "f"
+                                        }
+                                      },
+                                      "Property": "WeekEnding"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                "Filterd6603dc036087670e42e": {
+                  "name": "Filterd6603dc036087670e42e",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_MX_Distribution",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "mx_issuance_wk_fltr"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_issuance_wk_fltr"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "480aa36371eccade0b12",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_MX_Distribution",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "mx_start_wk_fltr"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_start_wk_fltr"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b8f47b172fa41d136731": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "e5b11b6b02f4ca84efa4": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_WPPlan_Final_Issued"
+                            }
+                          },
+                          "Property": "FX_WP_Issued_Cum_Actual"
+                        }
+                      },
+                      "Function": 4
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "90c6e57ea807d3f8ab80": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_WPPlan_Final_Issued"
+                            }
+                          },
+                          "Property": "FX_WP_Issued_Cum_Plan"
+                        }
+                      },
+                      "Function": 4
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "8ad06951bcdc923e55df": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "e0752237862adbcf610d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e437f649429f4ac09304",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_WPHrs_IssuedNoDate"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "6abe11a79834a2700be2": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c2985f4ba727fc19ef15": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "57e5798137a069101aac": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "986ed1212d952827fbed",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_WPHrs_IssuedNoPlanDate"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "b8b0d39ebf9f2fd27a50": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "63c54cdec3b038a2d82c": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "a2be25557fd313795e3f": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WP_Issued_Actual_wkly"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "c83f83b130b6fe5e94b2": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WP_Issued_Plan_wkly"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "df903493966d13f721a3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "cf9a1b73166ea253fca3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WPHrs_Wkly_Revised"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "89b1887884002e802e3c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WPHrs_Issued_Late_Cum"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b147aec8d9ec5efcc1ca",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WPHRs_Issued_Late_Wk"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "ee0dadb59bb9d2461819": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "b1e66f0019643cf14286": {
+            "filters": {
+              "byName": {
+                "Filter65c530a0c68062c4ae63": {
+                  "name": "Filter65c530a0c68062c4ae63",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Comp"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "c2f46c72b351dbc69338",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_WPHrs"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "dfb0a9b3ff4adf3c2956": {
+            "filters": {
+              "byName": {
+                "Filter5554c9923cb8eb3ec709": {
+                  "name": "Filter5554c9923cb8eb3ec709",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Comp_LateOnSched"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "a0a1bbe2cbf4ba28eef9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_OnSched_AFCHrs"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_OnSched"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "76853795f8a619ce1b57": {
+            "filters": {
+              "byName": {
+                "Filter3233cd8918417917e55a": {
+                  "name": "Filter3233cd8918417917e55a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Comp_Late"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "2b194d7f5a3d383a1a77",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_Late_AFCHrs"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_Late"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "c7decc55b36242d4b2bc": {
+            "filters": {
+              "byName": {
+                "Filter24cc218090d0d3557602": {
+                  "name": "Filter24cc218090d0d3557602",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Comp_No_Date"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "86790a9f5c38d5e53a7b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_NoDate_AFCHrs"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_No_Date"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "13b9dd1a12cab00378b2": {
+            "filters": {
+              "byName": {
+                "Filter3be754c6908e7fa9bc23": {
+                  "name": "Filter3be754c6908e7fa9bc23",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter5bfe89c621051871dd0b": {
+                  "name": "Filter5bfe89c621051871dd0b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_Late"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter15df19d56dbc76101577": {
+                  "name": "Filter15df19d56dbc76101577",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_No_Date"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter27f01bc25ed2a5dc31db": {
+                  "name": "Filter27f01bc25ed2a5dc31db",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_OnSched"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "columnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_AFC_Hrs"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "86fe5e1e7e6d3e46efa9": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "de440fc07793987fae4d": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Count"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "7c7c34329f42a0941ea3": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "0c8cbe2f70ec9181f555": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "90f9bc95e4a5b5d43d72": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5fff7f1fe07cff470172",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Productivity"
+                        }
+                      },
+                      "Property": "MX_CurrentWeekEnding"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Productivity"
+                        }
+                      },
+                      "Property": "MX_CurrentWeekEnding"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "7f3d0547b2f9c37961a9": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "49cb0c64f9ff49c11d39": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b881619e6349e287609c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "xrefdate_Last Refreshed Date"
+                            }
+                          },
+                          "Property": "FX_UTC_Adjust"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "73384198dfbf57ee9aef": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "9dad59fa791ce03eefa5": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c25e5fa2442641974f9a": {
+            "filters": {
+              "byName": {
+                "Filter00dc8e5e173cb5e881d8": {
+                  "name": "Filter00dc8e5e173cb5e881d8",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_FX_WPPlan_Final_Comp",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "_"
+                                        }
+                                      },
+                                      "Property": "WeekEnding"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Comp"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                "Filterc94a15be702ca333ae9d": {
+                  "name": "Filterc94a15be702ca333ae9d",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_MX_Distribution",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "mx_completion_wk_fltr"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_completion_wk_fltr"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Comp"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Comp"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6e1c63e02c67818a0485": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "ec773c0ebb0dba79ab5d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2f4d68b739dc93c32b0e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WPHrs_Comp_Late_Cum"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "24e444f8bab43883779f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WPHrs_Comp_Late_Wk"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WP_Issued_Plan_wkly"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "4f70784954bd18c042f2": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "bd312d9e7173f408e4fd": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "b03881aba2860fffbe39": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_OnSched"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "3d315570bb0922150ebc": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_Late"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "b50f16c59d8c52483063": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_No_Date"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "451a7cbde350de51db40": {
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "PROJECT"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "5e62c71fe1ae2e8c95a2": {
+            "filters": {
+              "byName": {
+                "Filterae2d50aba29a1af1b7f2": {
+                  "name": "Filterae2d50aba29a1af1b7f2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "FX_WP_Issued_Status_2"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Qry_IWP Detail"
+                            }
+                          },
+                          "Property": "WPNO"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "09151d37b2c76c46cddb": {
+            "singleVisual": {
+              "visualType": "columnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Hrs"
+                        }
+                      },
+                      "Property": "MS_WP_AFC_Hrs"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a4997ffdbfbc662a8ece": {
+            "filters": {
+              "byName": {
+                "Filterd0729defdcade1ba3ce7": {
+                  "name": "Filterd0729defdcade1ba3ce7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_WPPlan_Final_Issued"
+                            }
+                          },
+                          "Property": "FX_WP_Issued_Cum_Actual"
+                        }
+                      },
+                      "Function": 4
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "f7bb9660e42f71ac7ae9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Comp"
+                        }
+                      },
+                      "Property": "MX_WPHrs_Comp_Cum_Actual-Card"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_WPPlan_Final_Issued"
+                            }
+                          },
+                          "Property": "FX_WP_Issued_Cum_Actual"
+                        }
+                      },
+                      "Function": 4
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "d4f447918147f780736e": {
+            "filters": {
+              "byName": {
+                "Filter14316360960ab528d114": {
+                  "name": "Filter14316360960ab528d114",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_WPPlan_Final_Issued"
+                            }
+                          },
+                          "Property": "FX_WP_Issued_Cum_Plan"
+                        }
+                      },
+                      "Function": 4
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "2c511054bb09699aa1ed",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Comp"
+                        }
+                      },
+                      "Property": "MX_WPHrs_Comp_Cum_Plan-Card"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_WPPlan_Final_Issued"
+                            }
+                          },
+                          "Property": "FX_WP_Issued_Cum_Plan"
+                        }
+                      },
+                      "Function": 4
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "8fd78e90d9efe688d604": {
+            "filters": {
+              "byName": {
+                "Filter26e6b573eed42ecfd556": {
+                  "name": "Filter26e6b573eed42ecfd556",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "3aab903cbc5cc7209bdb",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Comp"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Comp"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Comp"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "36cf881ca89bbc93d205": {
+            "filters": {
+              "byName": {
+                "Filterd0729defdcade1ba3ce7": {
+                  "name": "Filterd0729defdcade1ba3ce7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_WPPlan_Final_Issued"
+                            }
+                          },
+                          "Property": "FX_WP_Issued_Cum_Actual"
+                        }
+                      },
+                      "Function": 4
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "a0332830a8181005d55f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WPHrs_Comp_Plan"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WP_Issued_Plan_wkly"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "144a14663ba8d76909a7": {
+            "filters": {
+              "byName": {
+                "Filter14316360960ab528d114": {
+                  "name": "Filter14316360960ab528d114",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_FX_WPPlan_Final_Issued"
+                            }
+                          },
+                          "Property": "FX_WP_Issued_Cum_Plan"
+                        }
+                      },
+                      "Function": 4
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "5f1f1a4429caced80017",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WPHrs_Comp_Actual"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WP_Issued_Actual_wkly"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "efef3b7138440e7240ba": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "646688a0536518d5e8e1": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "62207c0fdad710393000": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "0815a4c015c0e70b4b39": {
+            "filters": {
+              "byName": {
+                "Filterae2d50aba29a1af1b7f2": {
+                  "name": "Filterae2d50aba29a1af1b7f2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "FX_WP_Issued_Status_2"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {}
+            }
+          },
+          "3fcedf100edd26b8f7cc": {
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "PROJECT"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "5818a683d7a53a845535": {
+            "filters": {
+              "byName": {
+                "Filtercd8fa0e1247e513570d4": {
+                  "name": "Filtercd8fa0e1247e513570d4",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_MX_Distribution",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "mx_issuance_wk_fltr"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_issuance_wk_fltr"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter2d67bac1aed043152dce": {
+                  "name": "Filter2d67bac1aed043152dce",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_completion_wk_fltr"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "f7eca0eb2f73ff58bf72",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_MX_Distribution",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "mx_start_wk_fltr"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Distribution"
+                        }
+                      },
+                      "Property": "mx_start_wk_fltr"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Date"
+                        }
+                      },
+                      "Property": "FX_WeekEnding"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "992777f41381b5b7f135": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3102879b9f0772c83b06": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_WPPlan_Final_Issued"
+                        }
+                      },
+                      "Property": "WeekEnding"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "887a88c2a8c1727903c6": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "cab7dc84ef3bf6aee7ac": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "1dde7cb7d96e57caa43c": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7f64ace6c92705428297": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "801e1f20ac1e47888826",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "mx_actualstart_nodate"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "601aa9636bc3e9fcd886": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "ab6ac9c6f1a0d71dc99f": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "fa0ecef6548585220f6f": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "81bba377a60451dd9dee": {
+            "filters": {
+              "byName": {
+                "Filterc50c442461a51b402746": {
+                  "name": "Filterc50c442461a51b402746",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "MX_WP_Issued_Plan_wkly"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "Filter19402367cafd845a99e0": {
+                  "name": "Filter19402367cafd845a99e0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Count"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "57bf57b3918a353c24da": {
+                  "name": "57bf57b3918a353c24da",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_Weekly_Issuance"
+                        }
+                      },
+                      "Property": "mx_planstart_cum"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Qry_IWP Detail"
+                        }
+                      },
+                      "Property": "DISCIPLINE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a9d5e6504f9ccdb637d2": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "fba3413f02fb067ccc69": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "0a7b7aafb46dd9751951": {
+            "filters": {
+              "byName": {
+                "Filter405b3cdee75005e022f1": {
+                  "name": "Filter405b3cdee75005e022f1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MX_WP_Count"
+                        }
+                      },
+                      "Property": "MS_WP_Issued_OnSched"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              }
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "901eec1df7952690232b": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "9548762e6e9990a0f077": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "d7997f4fcd594e8fb33b": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "7439ed9c274d5f710df9": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1cdc64250cd9545962b2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Statictbl_WPStatus"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Statictbl_WPStatus"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "941a14707cb2425a760c": {
+            "isHidden": false
+          },
+          "55e6d91dc2943ce87ca6": {
+            "isHidden": false
+          },
+          "cfaa62fb8a08083a553f": {
+            "isHidden": true
+          },
+          "1718e48235183803357b": {
+            "isHidden": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

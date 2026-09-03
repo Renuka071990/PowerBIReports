@@ -1,0 +1,29 @@
+table StaticTbl_Area_Names
+	lineageTag: bee82107-5743-4773-b946-65d00ffc7d4e
+
+	column Areacode
+		dataType: string
+		lineageTag: daaa15f6-c30f-4b12-a1b1-a73de6c95c74
+		summarizeBy: none
+		sourceColumn: Areacode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Areaname
+		dataType: string
+		lineageTag: bd6de937-0ad6-432c-86c6-bb095bc69a97
+		summarizeBy: none
+		sourceColumn: Areaname
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StaticTbl_Area_Names-19f50d13-36e3-4fa6-b608-79f72f5d9f12 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("bZPRbtowFIZfxcp1u8U2gXLJUqRdgJZCJVR1XBjnNFhz4spx2Hj7+RyTbmxcJdL/yfH3n5PX1yzn2V3Gcs7u2cZZa7qGrY21fba/i6GgUMRwBQ37PuS5mLLKWGAbpX+wRd9De7DnBEuCZYS/eKUTkpIJJRNMQLVsZTpIQUFBEYPKqgCsHELAK2yP7j0RUyKmkSitqv8KZhTMYrANftBh8MrGk5tjYDvAB2E8R4zn19hXUKfzFUYtcGyhMu9An2HLXy4YnZrg1AQXV0Cp/MF18WAAmyiqgMsLFduEsbS16fWnBFEbHNuolOnIV4U/ZpxK4cU/+dKDDsZ1xAjSEqg1zuDzB8FW6ly7nxeSzAS/TS47bV0PdULJUaDji/I1qzzcl65tRwV8TwqCPAV6ruPYvMFOVVfT+lxflGTF5CY56iWStEVxk/woR9A+iOlNaqc8HN3Qp+UStCECN+Rp8VSOFo9lSh8ofcDF0Ortzdl6vImkciWW+xhrZM+mTSdKLEhiPxs4sW++Bp+2Q5KlRMuF10cTIC1aCklMoth2OOjY+s759GMUZFOgTSy7B39SNJb4nwz2gpBFMfsfeVZNc5ncfI7QfI6t4J7FW4DK9vvf", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Areacode = _t, Areaname = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

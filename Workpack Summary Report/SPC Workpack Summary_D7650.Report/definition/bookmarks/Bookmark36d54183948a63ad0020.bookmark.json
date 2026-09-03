@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "IWP Comp Reset",
+  "name": "Bookmark36d54183948a63ad0020",
+  "options": {
+    "targetVisualNames": []
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSectione8263b60036ceea94a08",
+    "sections": {
+      "ReportSectione8263b60036ceea94a08": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filter",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPCRPT_FIWP"
+                    }
+                  },
+                  "Property": "NAME"
+                }
+              },
+              "howCreated": 5
+            }
+          ]
+        },
+        "visualContainers": {}
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

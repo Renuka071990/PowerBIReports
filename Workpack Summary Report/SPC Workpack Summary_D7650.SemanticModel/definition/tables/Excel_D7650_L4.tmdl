@@ -1,0 +1,651 @@
+table Excel_D7650_L4
+	lineageTag: ea7b7bd0-a82f-4dea-8b5f-f989450fc6d5
+
+	column 'TASK NO'
+		dataType: string
+		lineageTag: 89b7b5b1-70f6-4652-a864-d19da456d341
+		summarizeBy: none
+		sourceColumn: TASK NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job No / Activity Code'
+		dataType: string
+		lineageTag: 6cace6fc-50e8-4656-844e-c82bcf79b630
+		summarizeBy: none
+		sourceColumn: Job No / Activity Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link Code Desc'
+		dataType: string
+		lineageTag: 75f429db-b82b-4585-8815-e264622c20ea
+		summarizeBy: none
+		sourceColumn: Link Code Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTIVITY_ID
+		dataType: string
+		lineageTag: 5ab3bc2e-1d44-42dd-b744-d531ffd260dc
+		summarizeBy: none
+		sourceColumn: ACTIVITY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTIVITY_DESC
+		dataType: string
+		lineageTag: 04adfebe-5732-4a2b-804c-f5a42ba031b8
+		summarizeBy: none
+		sourceColumn: ACTIVITY_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job No.'
+		dataType: string
+		lineageTag: bbfb87cc-6909-4b54-85d5-a03bd195b562
+		summarizeBy: none
+		sourceColumn: Job No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Code'
+		dataType: string
+		lineageTag: 801e8aff-e5f0-4086-892d-78240033fe03
+		summarizeBy: none
+		sourceColumn: Activity Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBFUNCTION
+		dataType: string
+		lineageTag: 8f60b9e5-87e3-48c3-a81e-95c51df98cfb
+		summarizeBy: none
+		sourceColumn: SUBFUNCTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link Code'
+		dataType: string
+		lineageTag: 49c7799c-a90e-4517-a7a5-f22f15630e5e
+		summarizeBy: none
+		sourceColumn: Link Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTIVITY CODE DESC'
+		dataType: string
+		lineageTag: fea87d3e-f09d-47bd-b273-3c555c3609b7
+		summarizeBy: none
+		sourceColumn: ACTIVITY CODE DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESOURCE_CODE
+		dataType: string
+		lineageTag: aabf1d18-e2d7-45fb-86c4-ed7dc71eea07
+		summarizeBy: none
+		sourceColumn: RESOURCE_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WORK PHS'
+		dataType: string
+		lineageTag: c65450f9-f6f4-46e7-84f0-31ac142492fc
+		summarizeBy: none
+		sourceColumn: WORK PHS
+
+		annotation SummarizationSetBy = Automatic
+
+	column AREA_CODE
+		dataType: string
+		lineageTag: fd3209bf-7dfa-4a09-bc10-197b90ecdd6e
+		summarizeBy: none
+		sourceColumn: AREA_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column AREA_DESCRIPTION
+		dataType: string
+		lineageTag: 0482573c-3043-48e6-96cb-794d2353fa95
+		summarizeBy: none
+		sourceColumn: AREA_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DISC CODE'
+		dataType: string
+		lineageTag: 74b04c53-3144-447b-85df-33e2fe44274e
+		summarizeBy: none
+		sourceColumn: DISC CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DISC DESCRIPTION'
+		dataType: string
+		lineageTag: 77c2e7ed-2739-4699-a9af-059a65525d37
+		summarizeBy: none
+		sourceColumn: DISC DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLATFORM
+		dataType: string
+		lineageTag: 5914611b-f479-45b3-9bce-3bf80d94aeb3
+		summarizeBy: none
+		sourceColumn: PLATFORM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Code'
+		dataType: string
+		lineageTag: 13002ae5-6732-49c9-a515-46b5c5249b48
+		summarizeBy: none
+		sourceColumn: Component Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL
+		dataType: string
+		lineageTag: 2376e5eb-36a6-4a3e-a205-5b7323eef100
+		summarizeBy: none
+		sourceColumn: LEVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan Start'
+		dataType: string
+		lineageTag: 32333c3e-6433-449d-95fe-b16af5dcaf5d
+		summarizeBy: none
+		sourceColumn: Plan Start
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan Finish'
+		dataType: string
+		lineageTag: f978c4ea-09e0-4a8c-9504-70183854e9a0
+		summarizeBy: none
+		sourceColumn: Plan Finish
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTUAL START'
+		dataType: string
+		lineageTag: 3ff9aae3-467d-466d-97a1-c72b68ee0532
+		summarizeBy: none
+		sourceColumn: ACTUAL START
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTUAL FINISH'
+		dataType: string
+		lineageTag: 7106a975-2590-4bd8-b55f-b0cbd126ebed
+		summarizeBy: none
+		sourceColumn: ACTUAL FINISH
+
+		annotation SummarizationSetBy = Automatic
+
+	column AFC_MANHOUR
+		dataType: string
+		lineageTag: 6fde1cd0-d679-4ed4-9511-478727084dc6
+		summarizeBy: none
+		sourceColumn: AFC_MANHOUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column AFC_FACTOR
+		dataType: string
+		lineageTag: 98ddfc44-9c1d-497d-891d-832edcc437a8
+		summarizeBy: none
+		sourceColumn: AFC_FACTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Issued Work Pack Mhrs'
+		dataType: string
+		lineageTag: 57394141-0c1f-4ef0-8765-6b9d1c31eae5
+		summarizeBy: none
+		sourceColumn: Issued Work Pack Mhrs
+
+		annotation SummarizationSetBy = Automatic
+
+	column AFC_MHR_FACTORED
+		dataType: string
+		lineageTag: 960e8e30-0029-425f-a0db-18fc10621251
+		summarizeBy: none
+		sourceColumn: AFC_MHR_FACTORED
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Qty'
+		dataType: string
+		lineageTag: 0cbf8e85-61e1-422e-ac29-09b046a5aadd
+		summarizeBy: none
+		sourceColumn: Total Qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Issued Qty'
+		dataType: string
+		lineageTag: fbda25a2-a838-45b7-9762-2211aadb088a
+		summarizeBy: none
+		sourceColumn: Issued Qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Qty'
+		dataType: string
+		lineageTag: 257c7a99-ca42-4eee-9937-3d3c139151b7
+		summarizeBy: none
+		sourceColumn: Actual Qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit Of Measurement'
+		dataType: string
+		lineageTag: 3c6aa039-ad45-47be-ba11-a1ae31129c97
+		summarizeBy: none
+		sourceColumn: Unit Of Measurement
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 1'
+		dataType: string
+		lineageTag: 35520671-ad09-46c7-a8e1-bbd19e368c26
+		summarizeBy: none
+		sourceColumn: Gate 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 1 weightage'
+		dataType: string
+		lineageTag: dc2d2e7f-6e81-4086-b5fb-d17945994e28
+		summarizeBy: none
+		sourceColumn: Gate 1 weightage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 1 % Complete'
+		dataType: string
+		lineageTag: ae534f91-3007-4ad6-bac9-093200b30ac3
+		summarizeBy: none
+		sourceColumn: Gate 1 % Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 2'
+		dataType: string
+		lineageTag: 04102383-cdf2-42aa-b59a-8313ed439a87
+		summarizeBy: none
+		sourceColumn: Gate 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 2 weightage'
+		dataType: string
+		lineageTag: 446a75ee-d14f-45f7-9d43-e90389e6f069
+		summarizeBy: none
+		sourceColumn: Gate 2 weightage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 2 % Complete'
+		dataType: string
+		lineageTag: 456a09ac-6ee8-4d07-b4a7-833726a44ac9
+		summarizeBy: none
+		sourceColumn: Gate 2 % Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 3'
+		dataType: string
+		lineageTag: 94bfc36c-2ba7-4441-acf3-624ec3e2f554
+		summarizeBy: none
+		sourceColumn: Gate 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 3 weightage'
+		dataType: string
+		lineageTag: 8037ccb8-ba62-4b58-917a-d7e34c23920a
+		summarizeBy: none
+		sourceColumn: Gate 3 weightage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 3 % Complete'
+		dataType: string
+		lineageTag: 48ba5fbe-153d-4aac-91aa-c7d5b97bf07e
+		summarizeBy: none
+		sourceColumn: Gate 3 % Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 4'
+		dataType: string
+		lineageTag: 6bb3e04b-79a7-498b-a7ca-a33a57de9a33
+		summarizeBy: none
+		sourceColumn: Gate 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 4 weightage'
+		dataType: string
+		lineageTag: c8794369-c948-4c00-bf69-78f52970a4ed
+		summarizeBy: none
+		sourceColumn: Gate 4 weightage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 4 % Complete'
+		dataType: string
+		lineageTag: c3a1e552-a67b-413c-9c56-f5e74baae041
+		summarizeBy: none
+		sourceColumn: Gate 4 % Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 5'
+		dataType: string
+		lineageTag: 1ad0f80d-55ee-4b20-82c0-463d3a99b82f
+		summarizeBy: none
+		sourceColumn: Gate 5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 5 weightage'
+		dataType: string
+		lineageTag: 738f77a3-ffd7-460c-b816-51a0eecd7dd9
+		summarizeBy: none
+		sourceColumn: Gate 5 weightage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 5 % Complete'
+		dataType: string
+		lineageTag: 21a5d084-8af8-4ef0-80e4-af4aa39c5623
+		summarizeBy: none
+		sourceColumn: Gate 5 % Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 6'
+		dataType: string
+		lineageTag: 69b60626-615c-4fd2-8da1-4dbcee82a509
+		summarizeBy: none
+		sourceColumn: Gate 6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 6 weightage'
+		dataType: string
+		lineageTag: c984c629-4a9d-4828-abb3-b623f29fff8a
+		summarizeBy: none
+		sourceColumn: Gate 6 weightage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gate 6 % Complete'
+		dataType: string
+		lineageTag: 67a7f677-fe7f-4de7-92be-7758b1114708
+		summarizeBy: none
+		sourceColumn: Gate 6 % Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cum. % Complete'
+		dataType: string
+		lineageTag: 451ac3b4-6566-4746-97b4-f153cd51c8f1
+		summarizeBy: none
+		sourceColumn: Cum. % Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cum. AFC Earned'
+		dataType: string
+		lineageTag: 800d7e34-0ded-4dab-abb7-72ce0356363f
+		summarizeBy: none
+		sourceColumn: Cum. AFC Earned
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Week Cum. % Complete'
+		dataType: string
+		lineageTag: eb9e0ad1-48de-4b9a-bde8-5b1ca3465921
+		summarizeBy: none
+		sourceColumn: Last Week Cum. % Complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Week Cum. AFC Earned'
+		dataType: string
+		lineageTag: f4b25958-ea9e-4952-a01f-af86c97dd2b9
+		summarizeBy: none
+		sourceColumn: Last Week Cum. AFC Earned
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekly AFC Earned'
+		dataType: string
+		lineageTag: e72eb9d0-a78b-4946-a41e-025230548d3d
+		summarizeBy: none
+		sourceColumn: Weekly AFC Earned
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Remaining AFC Mhrs'
+		dataType: string
+		lineageTag: 23341dc3-99d0-4555-9188-fd85d71c7072
+		summarizeBy: none
+		sourceColumn: Remaining AFC Mhrs
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level Code'
+		dataType: string
+		lineageTag: 81765534-aaa8-4bf6-81ee-368438459ce0
+		summarizeBy: none
+		sourceColumn: Level Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work Pack Cum. Earned'
+		dataType: string
+		lineageTag: b5c41cf4-b9f4-4a1e-b576-c33921539ccc
+		summarizeBy: none
+		sourceColumn: Work Pack Cum. Earned
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENTITY
+		dataType: string
+		lineageTag: 4ab5ce83-a16a-46e8-a49c-c1f3a472dabd
+		summarizeBy: none
+		sourceColumn: ENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT
+		dataType: string
+		lineageTag: 764b34d2-8b38-4913-861d-5f7277d09e04
+		summarizeBy: none
+		sourceColumn: CONTRACT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Yard / Subcon'
+		dataType: string
+		lineageTag: 7276b155-cfcb-4436-a061-5f02982962ec
+		summarizeBy: none
+		sourceColumn: Yard / Subcon
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProgressGrouping
+		dataType: string
+		lineageTag: dd354d1d-c862-4fd6-9c61-ddcf9c7ee962
+		summarizeBy: none
+		sourceColumn: ProgressGrouping
+
+		annotation SummarizationSetBy = Automatic
+
+	column GlobalCostCode
+		dataType: string
+		lineageTag: 94666419-bb36-42c2-9f5d-9ae19e64ebf4
+		summarizeBy: none
+		sourceColumn: GlobalCostCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Automated Progress'
+		dataType: string
+		lineageTag: c9608e98-ace6-4af3-9891-60f5cb870b68
+		summarizeBy: none
+		sourceColumn: Automated Progress
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Automated Progress Group'
+		dataType: string
+		lineageTag: 1702fa10-8761-446e-8018-827cbeeb959e
+		summarizeBy: none
+		sourceColumn: Automated Progress Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Start'
+		dataType: string
+		lineageTag: 13f084fe-5c3d-4b21-b4c6-da1912abb69f
+		summarizeBy: none
+		sourceColumn: Forecast Start
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Finish'
+		dataType: string
+		lineageTag: a3c1a231-3903-4501-b5e4-477ad99b1fad
+		summarizeBy: none
+		sourceColumn: Forecast Finish
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prime
+		dataType: string
+		lineageTag: 33397517-3216-49f8-b5fa-28abf871c69c
+		summarizeBy: none
+		sourceColumn: Prime
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub-prime
+		dataType: string
+		lineageTag: e792bb9c-1a24-409c-a43e-96cc4159436c
+		summarizeBy: none
+		sourceColumn: Sub-prime
+
+		annotation SummarizationSetBy = Automatic
+
+	column TBA3
+		dataType: string
+		lineageTag: 382bce4b-15eb-4ecf-ba3b-fb0db6039118
+		summarizeBy: none
+		sourceColumn: TBA3
+
+		annotation SummarizationSetBy = Automatic
+
+	column TBA4
+		dataType: string
+		lineageTag: e4ead373-ce5a-4257-b353-f07d8527a44b
+		summarizeBy: none
+		sourceColumn: TBA4
+
+		annotation SummarizationSetBy = Automatic
+
+	column TBA5
+		dataType: string
+		lineageTag: 68deb8e4-6b21-4948-a52b-5a14938e66dd
+		summarizeBy: none
+		sourceColumn: TBA5
+
+		annotation SummarizationSetBy = Automatic
+
+	column TBA6
+		dataType: string
+		lineageTag: f50620c2-b8e1-46e0-8006-763c0381ee6a
+		summarizeBy: none
+		sourceColumn: TBA6
+
+		annotation SummarizationSetBy = Automatic
+
+	column TBA7
+		dataType: string
+		lineageTag: 818ac628-c5d0-4b19-a4b5-4031acda39c5
+		summarizeBy: none
+		sourceColumn: TBA7
+
+		annotation SummarizationSetBy = Automatic
+
+	column TBA8
+		dataType: string
+		lineageTag: 1c268253-f34b-4346-8ad2-f39ab065299b
+		summarizeBy: none
+		sourceColumn: TBA8
+
+		annotation SummarizationSetBy = Automatic
+
+	column TBA9
+		dataType: string
+		lineageTag: 526ad31c-c476-46ab-a9dc-fd4fbdf0d204
+		summarizeBy: none
+		sourceColumn: TBA9
+
+		annotation SummarizationSetBy = Automatic
+
+	column TBA10
+		dataType: string
+		lineageTag: 1e8d07c3-1fac-460a-83e9-50caaf378794
+		summarizeBy: none
+		sourceColumn: TBA10
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Global Cost Type'
+		dataType: string
+		lineageTag: 444508f9-5f04-44e2-8242-6210f3550085
+		summarizeBy: none
+		sourceColumn: Global Cost Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shop Plan Start'
+		dataType: string
+		lineageTag: cd753f07-5743-43af-8e88-4ff17aba9296
+		summarizeBy: none
+		sourceColumn: Shop Plan Start
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shop Plan Finish'
+		dataType: string
+		lineageTag: 945f15f9-1f63-4a19-a1e8-b9cb877cefeb
+		summarizeBy: none
+		sourceColumn: Shop Plan Finish
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Excel_D7650_L4 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Workpack Summary\L4\D7650\D7650 - LEVEL-4.xlsx"), null, true),
+				    #"Filtered Hidden Files1" = Source{[Item="L4",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Filtered Hidden Files1", [PromoteAllScalars=true]),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Promoted Headers",0,null,Replacer.ReplaceValue,{"Gate 1 weightage", "Gate 2", "Gate 2 weightage", "Gate 3", "Gate 3 weightage", "Gate 4", "Gate 4 weightage", "Gate 5", "Gate 5 weightage", "Gate 6", "Gate 6 weightage"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value3",{{"Job No.", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

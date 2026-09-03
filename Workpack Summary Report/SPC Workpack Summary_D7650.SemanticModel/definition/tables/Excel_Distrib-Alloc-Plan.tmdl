@@ -1,0 +1,248 @@
+table Excel_Distrib-Alloc-Plan
+	lineageTag: 524d3cbc-7efc-4cf0-993d-2faaea0b8032
+
+	column FIWPOBID
+		dataType: string
+		lineageTag: ca29f3d2-7eb7-4de2-b839-89789fb3fb7e
+		summarizeBy: none
+		sourceColumn: FIWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPUID
+		dataType: string
+		lineageTag: c04975ef-d13c-4751-b862-b6b0a60e1bb2
+		summarizeBy: none
+		sourceColumn: FIWPUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROJECT
+		dataType: string
+		lineageTag: 1fbcf327-f9e3-48a9-a6ff-f38a5c99f379
+		summarizeBy: none
+		sourceColumn: PROJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		dataType: string
+		lineageTag: 4bb500c2-a9c9-45b2-9622-c8a85cf002cc
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CWPOBID
+		dataType: string
+		lineageTag: 264e8514-3d28-44da-a00d-d331832c5f67
+		summarizeBy: none
+		sourceColumn: CWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPTION
+		dataType: string
+		lineageTag: e31363f2-cc6d-455d-a3f4-c294df5a08dc
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		dataType: string
+		lineageTag: 8b3a96c6-8bef-43e7-a82b-525eea85812d
+		summarizeBy: none
+		sourceColumn: DISCIPLINE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNEDMANHRS
+		dataType: double
+		lineageTag: 4dc1c247-f263-4bae-bc4c-dc7a36872793
+		summarizeBy: sum
+		sourceColumn: PLANNEDMANHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PURPOSE
+		dataType: string
+		lineageTag: c92a3627-d38b-41ca-85f4-f3487e60fc73
+		summarizeBy: none
+		sourceColumn: PURPOSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACTOR
+		dataType: int64
+		formatString: 0
+		lineageTag: 07326ecd-d1b4-44d8-bddc-913bce3cdd63
+		summarizeBy: sum
+		sourceColumn: CONTRACTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESIGNAREA
+		dataType: string
+		lineageTag: 2430f29c-f10d-4694-9c99-3dbdbca5ce9b
+		summarizeBy: none
+		sourceColumn: DESIGNAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PLAN START'
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: c99963a9-5c66-4a90-9653-5c8fc6742369
+		summarizeBy: none
+		sourceColumn: PLAN START
+
+		variation Variation
+			isDefault
+			relationship: 754744c9-e91c-45c9-80e5-8a0b35cedce4
+			defaultHierarchy: LocalDateTable_c5c1d9cc-44c3-4d9f-ab42-682a85ad72d7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'PLAN FINISH'
+		dataType: string
+		lineageTag: 1e2ec8b5-3a27-4b9f-b465-85f9089ada07
+		summarizeBy: none
+		sourceColumn: PLAN FINISH
+
+		annotation SummarizationSetBy = Automatic
+
+	column HRS
+		dataType: string
+		lineageTag: 8167f07f-2d84-431d-9ea8-448b4047fb81
+		summarizeBy: none
+		sourceColumn: HRS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7ad74bf0-b6cb-40dd-af5b-543a2eb7784b
+		summarizeBy: none
+		sourceColumn: DATE
+
+		variation Variation
+			isDefault
+			relationship: beb86e17-0887-4e08-ba9d-8513821bba36
+			defaultHierarchy: LocalDateTable_8162341a-6299-4857-8171-5bbd2d9d6167.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FX_Quantity_Plan =
+			
+			var qty = CALCULATETABLE(FIRSTNONBLANK('Qry_IWP Detail'[PLAN_UNITS],TRUE()),FILTER('Qry_IWP Detail','Qry_IWP Detail'[FIWPOBID]='Excel_Distrib-Alloc-Plan'[FIWPOBID]))
+			var qty2 = LOOKUPVALUE('Qry_IWP Detail'[PLAN_UNITS],'Qry_IWP Detail'[FIWPOBID],'Excel_Distrib-Alloc-Plan'[NAME])
+			return
+			if('Excel_Distrib-Alloc-Plan'[FX_UOM] = "t",qty/1000,qty)
+		lineageTag: a759926f-d297-4d7d-a664-59bf12d3189f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Count_Plan = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[WP Components Count Planned_],'Qry_IWP Detail'[FIWPOBID],'Excel_Distrib-Alloc-Plan'[FIWPOBID]),0)
+		lineageTag: 23d6a952-237f-4f7c-82d7-93ed93bfe540
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_UOM =
+			var uom = CALCULATE(FIRSTNONBLANK('dataflow_ProgressReportHistory'[RATEUOM],1),
+			FILTER('dataflow_ProgressReportHistory','dataflow_ProgressReportHistory'[WPNO]='Excel_Distrib-Alloc-Plan'[NAME]))
+			    return
+			if(uom="kg","t",uom)
+		lineageTag: 250e5830-f100-41f8-8ba1-117a20baac40
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Distrib_% = 'Excel_Distrib-Alloc-Plan'[HRS]/'Excel_Distrib-Alloc-Plan'[PLANNEDMANHRS]
+		lineageTag: 971e727c-12a2-4fe1-911f-86687a1549b2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Qty_Distrib = 'Excel_Distrib-Alloc-Plan'[FX_Quantity_Plan]*'Excel_Distrib-Alloc-Plan'[FX_Distrib_%]
+		lineageTag: ba2c1d87-7d7c-4c17-86a6-31452c7e04b0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Count_Distrib = 'Excel_Distrib-Alloc-Plan'[FX_Count_Plan]*'Excel_Distrib-Alloc-Plan'[FX_Distrib_%]
+		lineageTag: 3d572a96-798c-4bbf-a43a-862bcad8a0d2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_BaselineDate = LOOKUPVALUE('Qry_IWP Detail'[FX_BaselineDate],'Qry_IWP Detail'[WPNO],'Excel_Distrib-Alloc-Plan'[NAME])
+		lineageTag: eb231d1d-6ddd-4651-8a75-23097661bcce
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column pqry_TYPE
+		dataType: string
+		lineageTag: 2eecff48-1834-44c1-a708-0b0e763a1ed5
+		summarizeBy: none
+		sourceColumn: pqry_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WPHrs = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[WP Hrs],'Qry_IWP Detail'[FIWPOBID],'Excel_Distrib-Alloc-Plan'[FIWPOBID]),0)
+		lineageTag: 6d28f280-2a46-45fe-ae1f-b1f980da6f5e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_wphrs_distrib = [FX_WPHrs]*[FX_Distrib_%]
+		lineageTag: 3c8eeb04-861d-4db6-b8d0-f6f1dd559520
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Excel_Distrib-Alloc-Plan = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\WP Hour Distribution\D7650\AFC\D7650 AFC Hrs - Plan Distribution.xlsx"), null, true),
+				    #"PLAN DISTRIBUTION_Sheet" = Source{[Item="PLAN DISTRIBUTION",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"PLAN DISTRIBUTION_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"FIWPOBID", type text}, {"FIWPUID", type text}, {"PROJECT", type text}, {"NAME", type text}, {"CWPOBID", type text}, {"DESCRIPTION", type text}, {"DISCIPLINE", type text}, {"PLANNEDMANHRS", type number}, {"PURPOSE", type text}, {"CONTRACTOR", Int64.Type}, {"DESIGNAREA", type text}, {"PLAN START", type date}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"FIWPOBID", "FIWPUID", "PROJECT", "NAME", "CWPOBID", "DESCRIPTION", "DISCIPLINE", "PLANNEDMANHRS", "PURPOSE", "CONTRACTOR", "DESIGNAREA", "PLAN START", "PLAN FINISH", "HRS", "DATE"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([PLANNEDMANHRS] <> 0)),
+				    #"Added Custom" = Table.AddColumn(#"Filtered Rows", "pqry_TYPE", each "AFCHRS"),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"DATE", type date}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,67 @@
+table _FX_Date
+	lineageTag: 481264e1-d544-46ce-ab61-867ed5eb5c3e
+
+	column Date
+		formatString: Long Date
+		lineageTag: 7befb7a8-a192-4cff-bd37-270d33678f39
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 87e19c81-2109-4393-b27a-6e98d57b2ce5
+			defaultHierarchy: LocalDateTable_5ebfd1ff-8823-42e2-bffe-33d3b073cf4b.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		formatString: 0
+		lineageTag: 3c6cd32b-f192-4a1a-800f-4c9e630f77ad
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WeekEnding = if(WEEKDAY(_FX_Date[Date]) < 6,(_FX_Date[Date]+5) - WEEKDAY(_FX_Date[Date]),((_FX_Date[Date]+5) - WEEKDAY(_FX_Date[Date]))+7)
+		formatString: dd-mmm-yy
+		lineageTag: 6f264b62-cd31-4bb6-a7b2-a4934b0e9b16
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: d8abd569-e790-4eba-b27a-8bb8f21d7ef6
+			defaultHierarchy: LocalDateTable_e6dc2717-7c34-43ec-be8f-4037174de699.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Day
+		formatString: 0
+		lineageTag: 824bf475-6502-44aa-a98e-fa492b41c915
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Day]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FX_Date-b569f0e0-f944-447f-b5ec-6d60d7af1473 = calculated
+		mode: import
+		source =
+				ADDCOLUMNS (
+				CALENDAR (DATE(2023,1,1), DATE(2030,12,31)),
+				"Year", YEAR ( [Date] ),
+				"Day",DAY([Date]))
+
+	annotation PBI_Id = 611afacbe3924b0fb8208db483c91703
+

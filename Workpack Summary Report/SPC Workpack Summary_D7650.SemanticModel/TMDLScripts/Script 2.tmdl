@@ -1,0 +1,28 @@
+createOrReplace
+
+	ref table StaticTbl_ComboChart_Craft
+
+		measure MS_afc_wphrs = ```
+				
+				
+				 var afc =     CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+				    _FX_Craft_Allocation_Distribution[Status] = "4. To-Go AFCHrs")
+				var wp =     CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+				    _FX_Craft_Allocation_Distribution[Status] = "1. To-Go WPhrs")
+				var more_afc = IF(afc-wp<0,0,afc-wp)
+				var more_wp = IF(wp-afc<0,0,wp-afc)
+				var output = IF(wp>afc,wp,afc)
+				
+				 RETURN
+				SWITCH(
+				    SELECTEDVALUE(StaticTbl_ComboChart_Craft[New Axis]),
+				    "Hrs",
+				output
+				)
+				
+				
+				```
+			lineageTag: f4d56425-e181-4acd-94d0-c9e729a4aef0
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+

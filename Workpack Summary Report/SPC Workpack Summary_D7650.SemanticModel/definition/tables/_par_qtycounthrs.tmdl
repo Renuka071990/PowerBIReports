@@ -1,0 +1,49 @@
+table _par_qtycounthrs
+	lineageTag: b0221878-a76f-4762-9389-ea1446c189ad
+
+	column _par_qtycounthrs
+		lineageTag: 0155fddf-bf38-4713-ab38-02964c8c9c8e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '_par_qtycounthrs Order'
+
+		relatedColumnDetails
+			groupByColumn: '_par_qtycounthrs Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_par_qtycounthrs Fields'
+		isHidden
+		lineageTag: e27c7950-b843-4946-9a0d-b5ddeaa88423
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '_par_qtycounthrs Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_par_qtycounthrs Order'
+		isHidden
+		formatString: 0
+		lineageTag: 73cd3dbf-b8b9-4c30-9e21-92c4383ff121
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _par_qtycounthrs = calculated
+		mode: import
+		source =
+				{
+				    ("Hours", NAMEOF('_FX_Distribution_Qty_Count'[Hours Balance]), 0),
+				    ("Count", NAMEOF('_FX_Distribution_Qty_Count'[Count]), 1),
+				    ("Quantity", NAMEOF('_FX_Distribution_Qty_Count'[Qty]), 2)
+				}
+
+	annotation PBI_Id = f6a39c2b431d42c68be895e3f725ed16
+

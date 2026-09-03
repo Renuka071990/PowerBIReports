@@ -1,0 +1,241 @@
+table Qry_WP_Direct
+	lineageTag: 66eeb553-aaad-499c-ac40-e28949af7bd5
+
+	column FIWPOBID
+		dataType: string
+		lineageTag: a8e54f17-9417-4402-bc98-924a39704170
+		summarizeBy: none
+		sourceColumn: FIWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column WPNO
+		dataType: string
+		lineageTag: e649d1ee-e9e4-40ad-8ed5-b70d9bbc32c7
+		summarizeBy: none
+		sourceColumn: WPNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNEDMANHOURS
+		dataType: double
+		lineageTag: 54a920eb-9af6-49ac-bd51-0ff03029130e
+		summarizeBy: sum
+		sourceColumn: PLANNEDMANHOURS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ACTUALMANHOURS
+		dataType: double
+		lineageTag: 9e394d57-60d1-401a-bd73-e96754e28c77
+		summarizeBy: sum
+		sourceColumn: ACTUALMANHOURS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COMPLETEDMANHOURS
+		dataType: double
+		lineageTag: 9daa3eeb-ca27-44e5-898e-2656d974166d
+		summarizeBy: sum
+		sourceColumn: COMPLETEDMANHOURS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTALCOMPONENTCONSTRAINTS
+		dataType: int64
+		lineageTag: e04e52dd-8b06-4f18-ac92-2be774b96fcd
+		summarizeBy: sum
+		sourceColumn: TOTALCOMPONENTCONSTRAINTS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OPENCOMPONENTCONSTRAINTS
+		dataType: int64
+		lineageTag: 0582eea9-e94f-48d2-a6e1-6b56f8749ef7
+		summarizeBy: sum
+		sourceColumn: OPENCOMPONENTCONSTRAINTS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRACT
+		dataType: string
+		lineageTag: 500421fb-2d5d-4eb2-bcee-185873997c3a
+		summarizeBy: none
+		sourceColumn: CONTRACT
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACTOR
+		dataType: string
+		lineageTag: 4f9864e6-25fc-4c31-9e17-0eb6695c4f39
+		summarizeBy: none
+		sourceColumn: CONTRACTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESIGNAREA
+		dataType: string
+		lineageTag: 74d05127-5295-4276-af37-1b5f2510ed5a
+		summarizeBy: none
+		sourceColumn: DESIGNAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FOREMAN
+		dataType: string
+		lineageTag: bf14c715-f459-461f-94f4-695dced5e6c4
+		summarizeBy: none
+		sourceColumn: FOREMAN
+
+		annotation SummarizationSetBy = Automatic
+
+	column GENERALFOREMAN
+		dataType: string
+		lineageTag: 8841229c-537b-4f78-bdf0-1c64ee2e613e
+		summarizeBy: none
+		sourceColumn: GENERALFOREMAN
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIELDENGINEER
+		dataType: string
+		lineageTag: 3b0289f5-f5be-4beb-adcf-8faa42d29ccd
+		summarizeBy: none
+		sourceColumn: FIELDENGINEER
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUPERINTENDENT
+		dataType: string
+		lineageTag: 587d04c2-9843-4603-96b7-c6323fead74a
+		summarizeBy: none
+		sourceColumn: SUPERINTENDENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISSUEDBY
+		dataType: string
+		lineageTag: d5c1f994-395a-4dc4-b55e-88d27e816128
+		summarizeBy: none
+		sourceColumn: ISSUEDBY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREWOBID
+		dataType: string
+		lineageTag: 7879a5ef-c8e1-45ab-b0bc-ca49f6921346
+		summarizeBy: none
+		sourceColumn: CREWOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CWPOBID
+		dataType: string
+		lineageTag: ce9175d5-564b-44c2-8c11-56a5c62a7962
+		summarizeBy: none
+		sourceColumn: CWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column REVDATE
+		dataType: string
+		lineageTag: cbce1a89-f30d-4731-ab0b-85a14ce2a680
+		summarizeBy: none
+		sourceColumn: REVDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECEDATE
+		dataType: string
+		lineageTag: d2b4a356-ef26-4164-b08e-e86e3b85379d
+		summarizeBy: none
+		sourceColumn: RECEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column WP_REVNO
+		dataType: string
+		lineageTag: c6ee61d2-9c14-4676-81f2-d7b6f028ea1c
+		summarizeBy: none
+		sourceColumn: WP_REVNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPTASKNO
+		dataType: string
+		lineageTag: b9bcde44-229c-4020-a9c2-53dd10adf82e
+		summarizeBy: none
+		sourceColumn: FIWPTASKNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPAFCHRS
+		dataType: double
+		lineageTag: a9336163-a9c7-470a-acdc-a40a16d7d0ba
+		summarizeBy: sum
+		sourceColumn: FIWPAFCHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WEIGHTAGE
+		dataType: double
+		lineageTag: a8485007-9e66-4ca5-b10f-960fa7a5c5df
+		summarizeBy: sum
+		sourceColumn: WEIGHTAGE
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RESOURCECODE
+		dataType: string
+		lineageTag: 59445bac-b711-4c6e-a5bc-44c607337fca
+		summarizeBy: none
+		sourceColumn: RESOURCECODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column WORKPHASE
+		dataType: string
+		lineageTag: 0e61294e-4464-4c44-9616-5534d2c32ec4
+		summarizeBy: none
+		sourceColumn: WORKPHASE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROGRESSGROUPING
+		dataType: string
+		lineageTag: 0733b557-7fe2-447f-bec0-fecbb363b70e
+		summarizeBy: none
+		sourceColumn: PROGRESSGROUPING
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Qry_WP_Direct = m
+		mode: import
+		source =
+				let
+				    Source = sqlqry_IWP_Direct,
+				    #"Removed Duplicates" = Table.Distinct(Source, {"FIWPOBID"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates", each ([WEIGHTAGE] <> "#N/A"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

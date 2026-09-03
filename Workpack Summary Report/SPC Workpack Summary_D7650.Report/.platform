@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SPC Workpack Summary_D7650"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6e0a7b68-1a03-486e-a763-b94b584135c9"
+  }
+}

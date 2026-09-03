@@ -1,0 +1,113 @@
+table _MX_WP_Count
+	lineageTag: 802b8dc0-80ab-4ba2-8b86-21f1d4c7f038
+
+	measure MS_WP_Count = DISTINCTCOUNT('Qry_IWP Detail'[FIWPOBID])
+		formatString: #,0
+		lineageTag: 0015d71f-176a-4049-a045-7a423b3fcff7
+
+		changedProperty = FormatString
+
+	measure MS_WP_Issued = ```
+			
+			var a = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),
+			FILTER('Qry_IWP Detail',
+			    ('Qry_IWP Detail'[FX_Issued_Actual_WkEnd]<=[MX_CurrentWeekEnding_dynamic] && 
+			    'Qry_IWP Detail'[STATUS]="Issued for Construction")))
+			RETURN
+			if(a=0 || a=BLANK(),0,a)
+			```
+		formatString: #,0
+		lineageTag: ec6ccfd0-a697-46ff-b969-02a97618338c
+
+	measure MS_WP_Issued_Late = ```
+			
+			var old = if(isblank(CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="03-Late"))),0,CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="03-Late")))
+			var currwe = [MX_CurrentWeekEnding]
+			var new =     CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPOBID]),
+			    'Qry_IWP Detail'[STATUS]<>"Issued for Construction" && 'Qry_IWP Detail'[WP Hrs]=BLANK()  && 'Qry_IWP Detail'[WP Planned Start Date]<currwe)
+			    RETURN
+			    old
+			
+			```
+		formatString: 0
+		lineageTag: 9ce938fb-4be1-4307-91e1-5d3798e254be
+
+	measure MS_WP_Issued_OnSched = if(isblank(CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="02-On Sched"))),0,CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="02-On Sched")))
+		formatString: #,0
+		lineageTag: 1978303f-352a-499a-a8ce-5ed73022d5f0
+
+		changedProperty = FormatString
+
+	measure MS_WP_Comp = if(isblank(CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="01-IWP Completed"))),0,CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="01-IWP Completed")))
+		formatString: 0
+		lineageTag: 5e78a87b-6ce5-47a0-b6f1-68167cc6c521
+
+	measure MS_WP_Comp_Late = if(isblank(CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="03-Late - Incomplete"))),0,CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="03-Late - Incomplete")))
+		formatString: 0
+		lineageTag: 18929e9c-d1c8-4ddc-8631-1a0d750768e6
+
+	measure MS_WP_Comp_LateOnSched = if(isblank(CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="02-On Sched - Incomplete"))),0,CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="02-On Sched - Incomplete")))
+		formatString: #,0
+		lineageTag: 156b5fc3-c6e5-4b96-b5ae-ae360273c076
+
+		changedProperty = FormatString
+
+	measure MS_WP_Issued_No_Date = if(isblank(CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="04-No Date"))),0,CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="04-No Date")))
+		formatString: 0
+		lineageTag: 8ace7926-6fc6-4be6-845f-6bfb751b23cb
+
+	measure MS_WP_Comp_No_Date = if(isblank(CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="04-No Date"))),0,CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="04-No Date")))
+		formatString: 0
+		lineageTag: e87e402d-83e7-42d9-966a-ab5d3657623e
+
+	measure MS_Note_WP_Issued_NoDate = [MS_WP_Issued]-[MX_Issued_Cum_Actual-Card]
+		formatString: 0
+		lineageTag: 6d6b2d84-5767-48fc-a415-b9a15b49e8ed
+
+	measure MS_WP_Issued_NoPlannedDate = if(isblank(CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="01-Issued" && 'Qry_IWP Detail'[WP Planned Start Date]=0))),0,CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="01-Issued" && 'Qry_IWP Detail'[WP Planned Start Date]=0)))
+		formatString: 0
+		lineageTag: 87b58981-39aa-4233-8c24-47c1703f8b13
+
+	measure MS_Comp_Count_Plan = Sum('Qry_IWP Detail'[WP Components Count Planned_])
+		lineageTag: 9c808920-23e7-45da-ac06-0f799064b918
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_Comp_Count_Comp = Sum('Qry_IWP Detail'[WP Components Count Complete_])
+		lineageTag: fc8e2c08-e2b9-44d3-8c6f-0bbc0be2cb8b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure mx_plan_issuance_wkly =
+			
+			var plan = MAX('Qry_IWP Detail'[FX_Issued_Plan_WkEnd])
+			RETURN
+			IF(plan=[MX_CurrentWeekEnding_dynamic],1,0)
+		formatString: 0
+		lineageTag: 79328125-0fb6-4c2b-b416-58e6c9eb751d
+
+	measure MS_WPHrs_Issued = ```
+			var a = CALCULATE(sum('Qry_IWP Detail'[WP Hrs]),
+			FILTER('Qry_IWP Detail',
+			    ('Qry_IWP Detail'[FX_Issued_Actual_WkEnd]<=[MX_CurrentWeekEnding_dynamic] && 
+			    'Qry_IWP Detail'[STATUS]="Issued for Construction")))
+			RETURN
+			if(a=0 || a=BLANK(),0,a)
+			```
+		formatString: #,0
+		lineageTag: 4ef8c542-b25c-41cf-adc9-6281248b7001
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition _MX_WP_Count-855d2fbb-d3f7-4028-8076-6e2c2e4ed58f = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WKkktLlGKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

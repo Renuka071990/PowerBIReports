@@ -1,0 +1,436 @@
+table _FX_WPPlan_Final_Issued
+	lineageTag: 3b1c24d4-e55c-4a0f-a4a3-dc7c901249a0
+
+	measure MX_Issued_Cum_Actual-Graph =
+			calculate(sumx(FILTER(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="Issued Actual"),_FX_WPPlan_Final_Issued[FX_Issued_Actual_Cnt]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],max(_FX_WPPlan_Final_Issued[WeekEnding]),DESC)))
+		lineageTag: d037f7aa-5ea4-4c55-9f1c-305efe745eac
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Issued_Cum_Plan-Graph =
+			calculate(sum(_FX_WPPlan_Final_Issued[FX_Issued_Plan_Cnt]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],max(_FX_WPPlan_Final_Issued[WeekEnding]),DESC)))
+		formatString: 0
+		lineageTag: e3953775-bf20-469f-901d-7bf6bd98ebbf
+
+	measure MX_Issued_Cum_Actual-Card =
+			calculate(sum(_FX_WPPlan_Final_Issued[FX_Issued_Actual_Cnt]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],[MX_CurrentWeekEnding],DESC)
+			    ))
+		formatString: #,0
+		lineageTag: dd93c9a5-ee17-431c-911f-bfc98f341df9
+
+	measure MX_Issued_Cum_Plan-Card =
+			calculate(sum(_FX_WPPlan_Final_Issued[FX_Issued_Plan_Cnt]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],[MX_CurrentWeekEnding],DESC)))
+		formatString: #,0
+		lineageTag: 6a25d858-de14-4c48-889a-8de12cf415b2
+
+	measure MX_WPHr_Issued_Actual = sumx(filter(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="Issued Actual" && _FX_WPPlan_Final_Issued[FX_Issued_Actual_Cnt]=1),_FX_WPPlan_Final_Issued[WP Hrs])
+		lineageTag: 586c6156-0b4f-4ea5-8586-6c8a2f6048f9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Plan-Graph =
+			calculate(SUMX(FILTER(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="IssuedPlan-Past"),_FX_WPPlan_Final_Issued[AFC Hrs]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],max(_FX_WPPlan_Final_Issued[WeekEnding]),DESC)))
+		lineageTag: ac24f138-3985-4df7-8397-f5408075e5a5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Plan-Card =
+			calculate(SUMX(FILTER(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Issued_Plan_Cnt]=1),_FX_WPPlan_Final_Issued[AFC Hrs]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],[MX_CurrentWeekEnding],DESC)))
+		formatString: #,0
+		lineageTag: 4b6239f3-cd07-415c-a98a-90ebeb51b282
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_WPHrs_Issued_Cum_Actual-Graph =
+			calculate(SUMX(FILTER(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="Issued Actual" && [FX_Issued_Actual_Cnt]=1),_FX_WPPlan_Final_Issued[WP Hrs]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],max(_FX_WPPlan_Final_Issued[WeekEnding]),DESC)))
+		lineageTag: edb1beb7-5131-437b-8ecb-410571a2a492
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Actual-Card =
+			calculate(SUMX(FILTER(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Issued_Actual_Cnt]=1),_FX_WPPlan_Final_Issued[WP Hrs]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],[MX_CurrentWeekEnding],DESC)))
+		lineageTag: d3efd193-ee78-46b7-a2cb-9b834c5db7c0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHr_Issued_Plan = sumx(filter(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="IssuedPlan-Past" && _FX_WPPlan_Final_Issued[WeekEnding]<>0),_FX_WPPlan_Final_Issued[AFC Hrs])
+		lineageTag: 3cc21c89-9760-4dd0-9867-4f2ddaed4d82
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Future-Graph_Final = ```
+			
+			    calculate(if(max(_FX_WPPlan_Final_Issued[WeekEnding])>=[MX_CurrentWeekEnding],[MX_WPHrs_Issued_Cum_Future-Graph]+[MX_WPHrs_Issued_Cum_Plan-Graph]
+			
+			    ,""))
+			```
+		lineageTag: e7fa2a2d-701e-4e29-9645-1e78aca42cea
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Plan-Graph_Final = ```
+			
+			    calculate(if(max(_FX_WPPlan_Final_Issued[WeekEnding])<=[MX_CurrentWeekEnding],[MX_WPHrs_Issued_Cum_Plan-Graph]
+			
+			    ,""))
+			```
+		lineageTag: c2f06750-de63-4474-ad98-9921eb74c9b5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Actual-Graph_Final = ```
+			
+			    calculate(if(max(_FX_WPPlan_Final_Issued[WeekEnding])<=[MX_CurrentWeekEnding],[MX_WPHrs_Issued_Cum_Actual-Graph]
+			
+			    ,""))
+			```
+		lineageTag: 364843ed-22fe-44d1-b007-6ea1cac5c8e3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Future-Graph =
+			calculate(SUMX(FILTER(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="IssuedPlan-Future"),_FX_WPPlan_Final_Issued[AFC Hrs]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],max(_FX_WPPlan_Final_Issued[WeekEnding]),DESC)))
+		lineageTag: 04b1c326-d44a-4c00-a768-00fc479e28b2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Issued_Cum_Actual-Graph_Final = ```
+			
+			    calculate(if(max(_FX_WPPlan_Final_Issued[WeekEnding])<=[MX_CurrentWeekEnding],[MX_Issued_Cum_Actual-Graph]
+			
+			    ,""))
+			```
+		lineageTag: 5b89110d-f72a-457f-868d-70fdbd4d9591
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Issued_Cum_Plan-Graph_Final = ```
+			
+			    calculate(if(max(_FX_WPPlan_Final_Issued[WeekEnding])<=[MX_CurrentWeekEnding],[MX_Issued_Cum_Plan-Graph]
+			
+			    ,""))
+			```
+		lineageTag: 21b315eb-9fe7-48c8-ae0c-3497d255a538
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Issued_Cum_Future-Graph =
+			calculate(sum(_FX_WPPlan_Final_Issued[FX_Issued_Future_Cnt]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],max(_FX_WPPlan_Final_Issued[WeekEnding]),DESC)))
+		lineageTag: e875bd16-13e7-4d5c-82c2-d55c419b4964
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Issued_Cum_Future-Graph_Final = ```
+			
+			    calculate(if(max(_FX_WPPlan_Final_Issued[WeekEnding])>=[MX_CurrentWeekEnding],[MX_Issued_Cum_Future-Graph]+[MX_Issued_Cum_Plan-Graph]
+			
+			    ,""))
+			```
+		lineageTag: c899d1a9-2b01-495b-bf0f-a7b8db2f5456
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHr_Issued_Future = sumx(filter(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="IssuedPlan-Future" && _FX_WPPlan_Final_Issued[WeekEnding]<>0),_FX_WPPlan_Final_Issued[AFC Hrs])
+		lineageTag: 41a0b72f-0ada-4e72-a4ac-2c72a72e61a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHr_Issued_Progressed = sumx(filter(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="Weekly Progress" && _FX_WPPlan_Final_Issued[WeekEnding]<>BLANK()),_FX_WPPlan_Final_Issued[Weekly Earn])
+		lineageTag: 6ab1f520-0f22-4f19-bc86-4770578ad889
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Progressed-Graph =
+			calculate(SUMX(FILTER(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="Weekly Progress"),_FX_WPPlan_Final_Issued[Weekly Earn]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],max(_FX_WPPlan_Final_Issued[WeekEnding]),DESC)))
+		lineageTag: 3aac7322-f6aa-426e-b1a2-86d1d7bea9d0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Progressed-Graph_Final = ```
+			
+			    calculate(if(max(_FX_WPPlan_Final_Issued[WeekEnding])<=[MX_CurrentWeekEnding],[MX_WPHrs_Issued_Cum_Progressed-Graph]
+			
+			    ,""))
+			```
+		lineageTag: 7147fc29-de1b-44d7-b887-38a1ebfa1fd7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Variance = [MX_WPHrs_Issued_Cum_Progressed-Graph_Final]-[MX_WPHrs_Issued_Cum_Actual-Graph_Final]
+		lineageTag: e7e0b6c6-a572-4659-af7e-42de3e226057
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_WPHrs_Issued_Cum_Progressed-Card =
+			calculate(SUMX(FILTER(_FX_WPPlan_Final_Issued,_FX_WPPlan_Final_Issued[FX_Type]="Weekly Progress"),_FX_WPPlan_Final_Issued[Weekly Earn]),
+			filter(
+			   ALLSELECTED(_FX_WPPlan_Final_Issued),
+			    ISONORAFTER(_FX_WPPlan_Final_Issued[WeekEnding],[MX_CurrentWeekEnding],DESC)))
+		lineageTag: 262fd8c5-ca14-47a3-972f-b18b8779d663
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Variance_Total = [MX_Variance] - [MS_WP_Issued_WPHrs_IssuedNoDate]
+		lineageTag: 36fdafd5-0dc5-4055-91ed-9be1e0784b9e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Issued_Actual_Cnt = if(_FX_WPPlan_Final_Issued[FX_Type]="Issued Actual" && not(ISBLANK(_FX_WPPlan_Final_Issued[WeekEnding])) && _FX_WPPlan_Final_Issued[STATUS]="Issued for Construction",1,0)
+		formatString: 0
+		lineageTag: eb9fb8fd-6098-4ddd-aac3-62b20c9e4092
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Issued_Plan_Cnt = if(_FX_WPPlan_Final_Issued[FX_Type]="IssuedPlan-Past" && not(ISBLANK(_FX_WPPlan_Final_Issued[WeekEnding])),1,0)
+		formatString: 0
+		lineageTag: d5f487b4-05e9-4f51-b533-88a5efd62adb
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Project = "D7650"
+		lineageTag: 91d8f297-9d76-4e79-8818-9c2c87685339
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WP_Issued_Cum_Actual = SUMX(filter('_FX_WPPlan_Final_Issued',_FX_WPPlan_Final_Issued[WeekEnding]<=earlier(_FX_WPPlan_Final_Issued[WeekEnding])),_FX_WPPlan_Final_Issued[FX_Issued_Actual_Cnt])
+		formatString: 0
+		lineageTag: c8e27d5d-d0d5-4ba0-9add-f482889efdcb
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WP_Issued_Cum_Plan = SUMX(filter('_FX_WPPlan_Final_Issued',_FX_WPPlan_Final_Issued[WeekEnding]<=earlier(_FX_WPPlan_Final_Issued[WeekEnding])),_FX_WPPlan_Final_Issued[FX_Issued_Plan_Cnt])
+		formatString: 0
+		lineageTag: eb875fc1-d583-4385-a80a-95ffe66795f8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_AFC_Issued_Cum_Plan = SUMX(filter('_FX_WPPlan_Final_Issued',_FX_WPPlan_Final_Issued[WeekEnding]<=earlier(_FX_WPPlan_Final_Issued[WeekEnding]) && _FX_WPPlan_Final_Issued[FX_Issued_Plan_Cnt]=1),_FX_WPPlan_Final_Issued[AFC Hrs])
+		lineageTag: 95b5e34a-6675-4f9c-bd2d-a534fc18172a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_WPHrs_Issued_Cum_Actual = ```
+			SUMX(
+			    filter('_FX_WPPlan_Final_Issued',
+			        _FX_WPPlan_Final_Issued[WeekEnding]<=earlier(_FX_WPPlan_Final_Issued[WeekEnding]) && 
+			        _FX_WPPlan_Final_Issued[FX_Issued_Actual_Cnt]=1)
+			        ,_FX_WPPlan_Final_Issued[wp Hrs])
+			```
+		lineageTag: 897e6bdd-c7e3-4ec1-9347-9a4dd7879d36
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Issued_Future_Cnt = if(_FX_WPPlan_Final_Issued[FX_Type]="IssuedPlan-Future" && not(ISBLANK(_FX_WPPlan_Final_Issued[WeekEnding])),1,0)
+		formatString: 0
+		lineageTag: c050f14e-55c4-4f38-835e-bf03c6b7afc6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WP_Issued_Status_2 = if(_FX_WPPlan_Final_Issued[FX_Type]="Issued Actual","",_FX_WPPlan_Final_Issued[FX_WP_Issued_Status])
+		lineageTag: fb70398f-76bb-40e5-9acb-331e67fbb3ac
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Future_Hide = if(_FX_WPPlan_Final_Issued[WeekEnding]>[MX_CurrentWeekEnding] && _FX_WPPlan_Final_Issued[FX_Type]="IssuedPlan-Future","Show","Hide")
+		lineageTag: b5c29cd1-5235-4a85-9d90-5ea08d06dc7d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP Hrs' =
+			sumx(
+			    filter('Qry_IWP Detail',
+			    'Qry_IWP Detail'[FIWPOBID]=_FX_WPPlan_Final_Issued[FIWPOBID]),'Qry_IWP Detail'[WP Hrs])
+		lineageTag: 6166856a-d078-4bb2-a904-1ea263edc1bf
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WP Earned Hrs' =
+			sumx(
+			    filter('Qry_IWP Detail',
+			    'Qry_IWP Detail'[FIWPOBID]=_FX_WPPlan_Final_Issued[FIWPOBID]),'Qry_IWP Detail'[WP Earned Hrs])
+		lineageTag: 37448ef0-5069-444e-958e-2a30bf326a71
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WPNO
+		lineageTag: 59204d80-2b86-4236-a0a8-9b8af1ec1f22
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[WPNO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekEnding
+		formatString: dd-mmm-yy
+		lineageTag: 2f290f62-1643-45a5-b067-8dd3b53559d2
+		summarizeBy: none
+		sourceColumn: Qry_IWP Detail[FX_Issued_Actual_WkEnd]
+
+		variation Variation
+			isDefault
+			relationship: be30f7d0-118c-44e9-9b8c-c8d48fc5ff2e
+			defaultHierarchy: LocalDateTable_46f1959a-72f9-4eae-8dd7-52b6180aa4e3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column DISCIPLINE
+		lineageTag: 875ac2ca-19ca-46e7-b53b-64cce84609a9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[DISCIPLINE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		lineageTag: 4682bf16-f28b-4c7f-87f4-4b9a04ad2549
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[STATUS]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP PURPOSE'
+		lineageTag: a583396d-7c6a-4c20-b962-1448cdcd42e1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[WP PURPOSE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AFC Hrs'
+		lineageTag: 7bf76387-8b16-46d7-a395-255d1b2df34f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[AFC Hrs]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Type
+		lineageTag: 15635f23-68ce-415a-b08b-b61af64c8595
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [FX_Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_PrevRevUp =
+			var _prevrevup = CALCULATE(FIRSTNONBLANK('Qry_IWP Detail'[FX_PrevWk_RevUp],1),FILTER('Qry_IWP Detail','Qry_IWP Detail'[WPNO]=[WPNO]))
+			return
+			_prevrevup
+		lineageTag: d7e72b1a-c313-450d-a3a6-ccde6bd4de54
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekly Earn'
+		lineageTag: 4a26a3c7-2699-4dde-a0df-7dac7ddb998e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Weekly Earn]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Fltr_PrevWeek = IF([WeekEnding]<[MX_CurrentWeekEnding],1,0)
+		formatString: 0
+		lineageTag: e51d213a-dd4f-4224-ae00-9399898db2f3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_kpi_cat = IF([FX_Type]="IssuedPlan-Future" || [FX_Type]="IssuedPlan-Past","Plan",IF([FX_Type]="Issued Actual","Actual","Weekly"))
+		lineageTag: f963338c-2cd4-449a-9a5b-9c67bc18ee8f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_weeksummary = IF([WeekEnding]<([MX_CurrentWeekEnding]+42) && [WeekEnding]>([MX_CurrentWeekEnding]-28),"Week Summary","Exclude")
+		lineageTag: 58307c68-4678-47cd-9465-41ecd3efb1c5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPOBID
+		lineageTag: 2c6351b5-b5cd-486d-8c5e-71fb1e1edd5d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FIWPOBID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Issued_Status
+		lineageTag: bd43bb19-a6ca-47d5-a271-6af204cda6d1
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FX_Issued_Status]
+
+	partition _FX_WPPlan_Final_Issued-a27a1087-9603-437c-a6ae-807ed96423aa = calculated
+		mode: import
+		source =
+				
+				var _issued_actual = CALCULATETABLE(SUMMARIZE('Qry_IWP Detail',[WPNO],[FIWPOBID],[FX_Issued_Actual_WkEnd],[DISCIPLINE],[FX_Issued_Status],[STATUS],[WP PURPOSE],[AFC Hrs],"FX_Type","Issued Actual","Weekly Earn",0),filter('Qry_IWP Detail',[FX_Issued_Actual_WkEnd]<=[MX_CurrentWeekEnding]))
+				var _issued_plan = SUMMARIZE('Qry_IWP Detail',[WPNO],[FIWPOBID],[FX_Issued_Plan_WkEnd],[DISCIPLINE],[FX_Issued_Status],[STATUS],[WP PURPOSE],[AFC Hrs],[FX_IssuedPlan_Status],"Weekly Earn",0)
+				var _issued_progress = SUMMARIZE(FILTER('dataflow_ProgressReportHistory',[WP Weekly Earned]>0),[WPNO],[FIWPOBID],[Date],[DISCIPLINE],"Issued Status","","Status","","WP Purpose","","AFC Hrs",0,"FX_Type","Weekly Progress","Weekly Earn",SUMX(FILTER(dataflow_ProgressReportHistory,[Date]=EARLIER([Date])),dataflow_ProgressReportHistory[WP Weekly Earned]))
+				return
+				
+				union(_issued_actual,_issued_plan,_issued_progress)
+
+	annotation PBI_Id = ba245bb06dc543c0a6a3b38b3209213d
+

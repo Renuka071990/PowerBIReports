@@ -1,0 +1,154 @@
+table _FX_Distribution_Hrs
+	lineageTag: 95f63c34-b378-46bc-b280-018567bbc38e
+
+	measure mx_weekly_earning_total =
+			
+			CALCULATE(
+			    CALCULATE(SUM(_FX_Distribution_Hrs[FX_Weekly_Earning]),ALLEXCEPT(_FX_Distribution_Hrs,_FX_Distribution_Hrs[Status],_FX_Distribution_Hrs[WPNO])),
+			    ALLEXCEPT('Excel MDM','Excel MDM'[Code-Progress Grouping]))
+		formatString: #,0
+		lineageTag: b5659db5-73ea-4df5-9459-e01a672b8a9a
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure mx_weekly_earning_total_compare = CALCULATE(SUM(_FX_Distribution_Hrs[FX_Weekly_Earning]),ALLSELECTED(_FX_Distribution_Hrs[Date]))
+		lineageTag: 92ecddef-8baa-4904-aac4-0f92a2d7c971
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Status
+		lineageTag: c9097e18-65f1-455c-b4d1-e9ba71d9115e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Status]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hours
+		formatString: #,0
+		lineageTag: e1d51ce2-695a-447b-8638-c388379682e5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Hours]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column WPNO
+		lineageTag: 74891b93-3356-4af8-b587-1580a55bc1fb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dataflow_ProgressReportHistory[WPNO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		formatString: dd-mmm-yy
+		lineageTag: fe10737b-e5be-4cbb-8552-11f49687c16e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dataflow_ProgressReportHistory[Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_WeekEnding_Filter = IF(_FX_Distribution_Hrs[Date]>=[MX_CurrentWeekEnding]-48 && _FX_Distribution_Hrs[Date]<=[MX_CurrentWeekEnding]+48,"Plus/Minus 6-week","NA")
+		lineageTag: 160a9563-ef72-4064-8d25-3b68e3e86f2c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Month = FORMAT([Date],"mmm-yyyy")
+		lineageTag: a250e171-e6fd-4baf-87c3-fbb02a99667a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Date2 = [Date]
+		formatString: dd-mmm-yy
+		lineageTag: 8404f815-0350-4620-bce3-62a8006f6642
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: abbf17eb-1160-48bc-be94-ffa25a502fd1
+			defaultHierarchy: LocalDateTable_1d1ceaf5-f477-4337-8fd3-595ba21916d0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Weekly_Earning =
+			
+			var prev_earn = SUMX(FILTER(_FX_Distribution_Hrs,[WPNO]=EARLIER([WPNO]) && [JOB NO]=EARLIER([JOB NO]) && [Status]=EARLIER([Status]) && [Date]=EARLIER([Date])-7),[Hours])
+			--var kronos_cum = CALCULATE(SUM([HOURS]),filter(_FX_Distribution_Hrs,[Date]<=EARLIER(_FX_Distribution_Hrs[Date]) && [WPNO]=EARLIER([WPNO]) && [Status]= "E. WP Actual"))
+			
+			var weeklyearn = [Hours]-prev_earn
+			var output = if([Status] ="A. Plan IOE" || [Status]= "B. Plan IRE" || [Status]= "C. Plan IFE" || [Status]= "E. WP Actual Cum",weeklyearn,
+			                [Hours])
+			
+			return
+			output
+		formatString: #,0
+		lineageTag: 31516ad8-05c1-4c31-af2a-41c72a40d046
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Status_1
+		lineageTag: e4d23a1d-27d9-473a-90cd-abaa036ea185
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Status_1]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		lineageTag: c922e873-d834-46d3-860a-c2af5b53a162
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dataflow_ProgressReportHistory[DISCIPLINE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_ProgressGrouping = IF(CONTAINSSTRING([Status],"Plan") || CONTAINSSTRING([Status],"IFE WPNO"),LOOKUPVALUE(StaticTbl_WPNO_PhaseGrouping[Progress Grouping],StaticTbl_WPNO_PhaseGrouping[Activity Code],_FX_Distribution_Hrs[WPNO]),LOOKUPVALUE('Qry_IWP Detail'[FX_ProgressGrouping],'Qry_IWP Detail'[WPNO],_FX_Distribution_Hrs[WPNO]))
+		lineageTag: 18d7f60d-e61e-49b3-8445-f1e067f943c2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JOB NO'
+		lineageTag: 3167e6e2-6d64-4373-a772-15ff9ba1938f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dataflow_ProgressReportHistory[JOB NO]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FX_Distribution_Hrs = calculated
+		mode: import
+		source =
+				union(
+				SUMMARIZE('dataflow_ProgressReportHistory',[WPNO],[JOB NO],[DISCIPLINE],[DATE],"Hours",SUM('dataflow_ProgressReportHistory'[WP Weekly Earned]),"Status","D. WP Earned","Status_1","WP Earned"),
+				SUMMARIZE('Qry_IWP Detail',[WPNO],[JOB NO],[DISCIPLINE],"Date",[MX_CurrentWeekEnding],"Hours",SUM('Qry_IWP Detail'[WP Weekly Earned]),"Status","D. WP Earned","Status_1","WP Earned"),
+				SUMMARIZE(FILTER('Excel_AFC_Distrib',Excel_AFC_Distrib[FX_IFE_WP]=BLANK()),[NAME],[DESIGNAREA],[DISCIPLINE],[DATE],"Hours",SUM('Excel_AFC_Distrib'[HRS]),"Status","SPC WPNO not in IFE (AFC Hrs)","Status_1","SPC (AFC Hrs)"),
+				SUMMARIZE(FILTER(Excel_Kronos_2024,Excel_Kronos_2024[fx_lookup_mdm]<>BLANK()),[fx_lookup_mdm],[JOB Number],[FX_Discipline],[FX_LastWeek],"Hours",sum(Excel_Kronos_2024[Kronos Hrs]),"Status","E. Actual","Status_1","Actual"),
+				SUMMARIZE(_FX_Prod_ActivityCode,[WPNO],[JOB NO],[DISCIPLINE],"Date",[MX_KronosDaily_WeekEnding],"Hours",sum(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk])*1.2,"Status","E. Actual","Status_1","Actual"),
+				SUMMARIZE(FILTER('FX_Distribution_Allocation_Count',FX_Distribution_Allocation_Count[FX_To-go_Status]="On-Sched" && FX_Distribution_Allocation_Count[FX_STATUS] = "Issued for Construction"),[NAME],[DESIGNAREA],[DISCIPLINE],[DATE],"Hours",SUM('FX_Distribution_Allocation_Count'[FX_WPHrs_Bal_Dist]),"Status","F. Workfront","Status_1","Workfront"),
+				SUMMARIZE(FILTER('FX_Distribution_Allocation_Count',FX_Distribution_Allocation_Count[FX_To-go_Status]="Late" && FX_Distribution_Allocation_Count[FX_STATUS] = "Issued for Construction"),[NAME],[DESIGNAREA],[DISCIPLINE],[DATE],"Hours",SUM('FX_Distribution_Allocation_Count'[FX_WPHrs_Bal_Dist]),"Status","F. Spill Over","Status_1","Spill Over"),
+				SUMMARIZE(FILTER('FX_Distribution_Allocation_Count',FX_Distribution_Allocation_Count[FX_STATUS] = "Preliminary" || FX_Distribution_Allocation_Count[FX_STATUS] = BLANK() || FX_Distribution_Allocation_Count[FX_STATUS] = ""),[NAME],[DESIGNAREA],[DISCIPLINE],[DATE],"Hours",SUM('FX_Distribution_Allocation_Count'[FX_WPHrs_Bal_Dist]),"Status","F. Provisional Workfront","Status_1","Provisional Workfront"),
+				SUMMARIZE(FILTER(Excel_IRE_PLN_PRG,[Man Hours]>0),[Activity Code],[Job Number],[FX_Disc],[FX_Date],"Hours",SUM(Excel_IRE_PLN_PRG[Man Hours]),"Status","B. Plan IRE","Status_1","Plan IRE"),
+				SUMMARIZE(FILTER(Excel_IFE_PLN_PRG,[Man Hours]>0),[Activity Code],[Job Number],[FX_Disc],[Effective Date],"Hours",SUM(Excel_IFE_PLN_PRG[Man Hours]),"Status","C. Plan IFE","Status_1","Plan IFE"),
+				SUMMARIZE(FILTER(Excel_IOE_PLN_PRG,[Man Hours]>0),[Activity Code],[Job Number],[FX_Disc],[FX_Date],"Hours",SUM(Excel_IOE_PLN_PRG[Man Hours]),"Status","A. Plan IOE","Status_1","Plan IOE"),
+				SUMMARIZE('dataflow_ProgressReportHistory',[WPNO],[JOB NO],[DISCIPLINE],[DATE],"Hours",SUM('dataflow_ProgressReportHistory'[WP Earned Hrs]),"Status","D. WP Earned Cum","Status_1","WP Earned Cum"),
+				SUMMARIZE('dataflow_ProgressReportHistory',[WPNO],[JOB NO],[DISCIPLINE],[DATE],"Hours",SUM('dataflow_ProgressReportHistory'[FX_Kronos_Cum]),"Status","E. WP Actual Cum","Status_1","WP Actual Cum"),
+				SUMMARIZE(FILTER(Excel_IFE_PLN_PRG,[Man Hours]>0 && [FX_SPC_Discipline]=BLANK()),[Activity Code],[Job Number],[FX_Disc],[Effective Date],"Hours",SUM(Excel_IFE_PLN_PRG[FX_Weekly_Earning]),"Status","IFE WPNO not in SPC (Man Hrs)","Status_1","IFE (Man Hrs))")
+				
+				)
+
+	annotation PBI_Id = 7d1340544311485da43df781d5d38062
+

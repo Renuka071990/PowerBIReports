@@ -1,0 +1,271 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "1d857356bfdda201c3ad",
+  "displayName": "19. Constraints",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "19ddd6e6254e7d44ab79",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "Type"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "0e0419e2f6965f76e035",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "Foreman"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "836ff93461c5f7e5b519",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "Supervisor"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "327e2952f70859b0df0a",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "fx_constraint_wkly_earning"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "f8c908fccd8d7810761a",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "fx_constraint_prevwkly_earning"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "28d9e67d90cffcc42de8",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "JOB_WPNO"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter78b07d92901792724748",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "BIN Table"
+              }
+            },
+            "Property": "No"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter60b201bd007e482c9473",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "STATUS"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "7c39680226515a8bd130",
+        "ordinal": 8,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "Hours"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "pageBinding": {
+    "name": "3588675e0e30fa44a801",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "e05a6b03b207866ce5d6",
+        "boundFilter": "28d9e67d90cffcc42de8",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "JOB_WPNO"
+          }
+        }
+      },
+      {
+        "name": "13fa71be116a925fefb5",
+        "boundFilter": "836ff93461c5f7e5b519",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "Supervisor"
+          }
+        }
+      },
+      {
+        "name": "f604ab8331271f83a151",
+        "boundFilter": "0e0419e2f6965f76e035",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "Foreman"
+          }
+        }
+      },
+      {
+        "name": "05b0560d441e3cfd8277",
+        "boundFilter": "19ddd6e6254e7d44ab79",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP_Constraints"
+              }
+            },
+            "Property": "Type"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Workpack Summary.svg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Workpack_Summary4281676120209572.svg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

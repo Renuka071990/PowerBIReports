@@ -1,0 +1,32 @@
+table 'StaticTbl_Discipline Code'
+	lineageTag: f4a4e42c-9fbe-4d17-93a7-1c68b29441aa
+
+	column Code
+		dataType: string
+		lineageTag: b85f290f-c4a9-4503-aee4-af360d2b6c35
+		summarizeBy: none
+		sourceColumn: Code
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 43120a8b-2423-449a-99a1-b98f1e65fbb7
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'StaticTbl_Discipline Code-317cdda5-9841-4baf-a20c-5422051b22b9' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("PY3LCoMwEEV/RbIW2tL3UqQtXZQqLsVFGoeaksyEMf5/BzEuz7l37rSt2qpcPQCBtVNd3qqdcF1s6nKmvVATeTJxSoWDqBeYQaM1izqKqmyw+J3xJHhzYCKvjbOoJ46y5AGjjpZw9hfxbxwHYshK8sHBGl0lKkmqy6rgXX+you+Bk0inFYMh75OumH7yPmumEIij6ro/", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Code = _t, Description = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Code", Int64.Type}, {"Description", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

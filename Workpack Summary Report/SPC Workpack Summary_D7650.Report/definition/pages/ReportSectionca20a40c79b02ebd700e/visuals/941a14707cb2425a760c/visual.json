@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "941a14707cb2425a760c",
+  "position": {
+    "x": 0,
+    "y": 0.81828965276130106,
+    "z": 0,
+    "height": 711.05258379736529,
+    "width": 1276.8831168831168,
+    "tabOrder": 0
+  },
+  "visualGroup": {
+    "displayName": "Count - Issuance",
+    "groupMode": "ScaleMode"
+  }
+}

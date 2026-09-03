@@ -1,0 +1,305 @@
+table Qry_IWP_Constraints
+	lineageTag: 12494d90-1069-4453-a4e3-006b3ca039ca
+
+	measure _mx_hours =
+			
+			var a = SUMX(VALUES('Qry_IWP_Constraints'[JOB_WPNO]),
+			CALCULATE(MAX('Qry_IWP_Constraints'[Hours])))
+			RETURN
+			IF(a=BLANK(),0,a)
+		formatString: #,0
+		lineageTag: 5d2efc8a-1868-4c7b-aa5a-745f170bcd36
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure _mx_wp_count = CALCULATE(DISTINCTCOUNT('Qry_IWP_Constraints'[WP_OID]),'Qry_IWP_Constraints'[Value]=1)
+		formatString: 0
+		lineageTag: e0f182b9-7021-40d0-8d17-6308130d1c3e
+
+	measure mx_constraint_wkly_cons = CALCULATE(DISTINCTCOUNT(Qry_IWP_Constraints[WP_OID]),Qry_IWP_Constraints[fx_constraint_wkly_earning]="Yes")
+		formatString: 0
+		lineageTag: 90f30cf5-783b-4d30-bf59-4a0ea6920b3b
+
+	measure mx_constraint_prevwkly_cons = CALCULATE(DISTINCTCOUNT(Qry_IWP_Constraints[WP_OID]),Qry_IWP_Constraints[fx_constraint_prevwkly_earning]="Yes")
+		formatString: 0
+		lineageTag: f250d0d1-192c-4e95-87db-3488ec65abeb
+
+	measure mx_constraint_total = CALCULATE(DISTINCTCOUNT(Qry_IWP_Constraints[WP_OID]),Qry_IWP_Constraints[Value]=1)
+		formatString: 0
+		lineageTag: d6631737-ca14-4591-8df3-7da0e53dc038
+
+	column Plant
+		dataType: string
+		lineageTag: bb5bbb57-be31-4020-a49a-4d4bf649d619
+		summarizeBy: none
+		sourceColumn: Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column WP
+		dataType: string
+		lineageTag: badbf63f-b948-4792-b309-af833fe8d74a
+		summarizeBy: none
+		sourceColumn: WP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hours
+		dataType: double
+		lineageTag: d47a025b-5797-49bb-9e14-a3c82904e951
+		summarizeBy: sum
+		sourceColumn: Hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Details
+		dataType: string
+		lineageTag: a8bf89f0-2782-40ef-97b0-3b78cc18ecba
+		summarizeBy: none
+		sourceColumn: Details
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Number'
+		dataType: string
+		lineageTag: a6cb5672-cdc8-4a81-9779-14d21c88b4da
+		summarizeBy: none
+		sourceColumn: Job Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column JOB_WPNO
+		dataType: string
+		lineageTag: 7c220ccc-4b0a-41ec-a51d-0ec290c778e1
+		summarizeBy: none
+		sourceColumn: JOB_WPNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_fitter_welder =
+			
+			UNION(
+			    SUMMARIZE('Qry_IWP_Constraints',[JOB NO],[Fitup Foreman],[WPNO]),
+			    SUMMARIZE('Qry_IWP_Constraints',[JOB NO],[Fitup Supervisor],[WPNO]),
+			    SUMMARIZE('Qry_IWP_Constraints',[JOB NO],[Weld Foreman],[WPNO]),
+			    SUMMARIZE('Qry_IWP_Constraints',[JOB NO],[Weld Supervisor],[WPNO])
+			    )
+		lineageTag: 68dbcfe8-1e13-4af0-b5aa-ee4bac6e9c97
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_fitter_wpno = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[FX_SPC_Fitter_ActCode],'Qry_IWP Detail'[fx_job_wpno],'Qry_IWP_Constraints'[JOB_WPNO]),"Duplicate")
+		lineageTag: 1cd6ce7d-dd09-4acb-ab85-910ffd183ba3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_welder_wpno = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[FX_SPC_Welder_ActCode],'Qry_IWP Detail'[fx_job_wpno],'Qry_IWP_Constraints'[JOB_WPNO]),"Duplicate")
+		lineageTag: 2a2efc4d-ea0c-4d59-a12f-4b6ab025c57a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attribute
+		dataType: string
+		lineageTag: c928fac8-a3bd-4610-9669-d91814550a73
+		summarizeBy: none
+		sourceColumn: Attribute
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: int64
+		formatString: 0
+		lineageTag: ceea0c29-0bd8-4e6e-9d89-247031277f7d
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 60ff9ef6-e40d-4738-88c4-d7c7d69fe71f
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_discipline = LOOKUPVALUE('Qry_IWP Detail'[DISCIPLINE],'Qry_IWP Detail'[fx_job_wpno],[JOB_WPNO])
+		lineageTag: 78e3adb9-93b6-45c2-9577-aef98da83d58
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_phase = LOOKUPVALUE('Qry_IWP Detail'[fx_mdm_phase],'Qry_IWP Detail'[fx_job_wpno],[JOB_WPNO])
+		lineageTag: da0cb2e8-3c6a-4b2a-a6e8-f47779e17231
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_area = LOOKUPVALUE('Excel MDM'[Area],'Excel MDM'[WPNO],[WP])
+		lineageTag: bffe814a-a3f3-49d6-b4ec-c3b716ccf466
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_description = LOOKUPVALUE('Qry_IWP Detail'[WP DESCRIPTION],'Qry_IWP Detail'[fx_job_wpno],[JOB_WPNO])
+		lineageTag: 46ef9e8d-8e99-4e5c-81ad-bc4f155fe7af
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discipline
+		dataType: string
+		lineageTag: ee0fec6c-84e8-4d1c-99be-11e9205e42f5
+		summarizeBy: none
+		sourceColumn: Discipline
+
+		annotation SummarizationSetBy = Automatic
+
+	column WP_OID
+		dataType: string
+		lineageTag: 226b18b5-892e-442c-8611-e70bc44ecb1a
+		summarizeBy: none
+		sourceColumn: WP_OID
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_constraint_wkly_earning =
+			
+			var a = CALCULATE(MAX('Qry_IWP Detail'[WP Weekly Earned]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[qpry_JOBNO_WPNO]=Qry_IWP_Constraints[JOB_WPNO]))
+			var output = IF(a>=1 && [fx_constraint_status]="Yes","Yes",BLANK())
+			RETURN
+			output
+		lineageTag: b69077de-46b9-4718-a876-cdb7c8934416
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_constraint_status = IF(CALCULATE(MAX(Qry_IWP_Constraints[Value]),FILTER(Qry_IWP_Constraints,Qry_IWP_Constraints[JOB_WPNO]=EARLIER(Qry_IWP_Constraints[JOB_WPNO])))=1,"Yes","No")
+		lineageTag: 95dc98ab-03c4-4f91-87bc-5b1c029f72fb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_constraint_prevwkly_earning =
+			
+			var a = CALCULATE(MAX('Qry_IWP Detail'[WP Last Week Weekly Earned]),FILTER('Qry_IWP Detail','Qry_IWP Detail'[qpry_JOBNO_WPNO]=Qry_IWP_Constraints[JOB_WPNO]))
+			var output = IF(a>=1 && [fx_constraint_status]="Yes","Yes",BLANK())
+			RETURN
+			output
+		lineageTag: 121632eb-008f-4a77-8850-a25d848cacb5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type01
+		dataType: string
+		lineageTag: 34d64d7d-8fac-4ba3-b102-8092ffe98719
+		summarizeBy: none
+		sourceColumn: Type01
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_constraint_week_status =
+			
+			IF([fx_constraint_status]="Yes" && [fx_constraint_wkly_earning]="Yes" && [fx_constraint_prevwkly_earning]="Yes","Both",
+			IF([fx_constraint_status]="Yes" && [fx_constraint_wkly_earning]="Yes" && [fx_constraint_prevwkly_earning]<>"Yes","Current",
+			IF([fx_constraint_status]="Yes" && [fx_constraint_wkly_earning]<>"Yes" && [fx_constraint_prevwkly_earning]="Yes","Previous",
+			IF([fx_constraint_status]="Yes" && [fx_constraint_wkly_earning]<>"Yes" && [fx_constraint_prevwkly_earning]<>"Yes","All","No constraint"))))
+		lineageTag: a542ab25-0dfc-4dde-a6fb-69aed96ac313
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_craft_no =
+			
+			IF(CONTAINSSTRING([Type01],"Fitter"),"1. Fitter",
+			IF(CONTAINSSTRING([Type01],"Welder"),"2. Welder",
+			IF(CONTAINSSTRING([Type01],"Paint"),"3. Painting",BLANK())))
+		lineageTag: 75f2d1be-03f8-41c1-8759-c19d60e4814e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column
+		type: calculated
+		lineageTag: 0ddbe46e-4a9b-4683-915e-797697d4c891
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	column Type
+		dataType: string
+		lineageTag: 17e43f18-b01c-4ade-bf1e-74e0a9bba5bc
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Foreman
+		dataType: string
+		lineageTag: 1f0216d8-770d-4709-aae7-7a32aa0694d0
+		summarizeBy: none
+		sourceColumn: Foreman
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisor
+		dataType: string
+		lineageTag: 5ed9f528-96c8-4d8c-9b94-8945cc241034
+		summarizeBy: none
+		sourceColumn: Supervisor
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_wpstatus = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[STATUS],'Qry_IWP Detail'[fx_job_wpno],[JOB_WPNO]),BLANK())
+		lineageTag: 82877977-9f1b-4fc8-8791-425941398240
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Qry_IWP_Constraints = m
+		mode: import
+		source =
+				let
+				    Source = #"sqlqry_IWP_Detail Only",
+				        #"Filtered Rows" = Table.SelectRows(Source, each ([Plant] <> "PL_PlantA")),
+				    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"Equ Grane", "Equ Crane"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "JOB_WPNO", each [Job Number]&"_"&[WP]),
+				    #"Removed Duplicates" = Table.Distinct(#"Added Custom", {"JOB_WPNO"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Duplicates",null,"0",Replacer.ReplaceValue,{"Eng Hold", "Equ AerialLift", "Equ Breakdown", "Equ Comperssor", "Equ Crane", "Equ Forklift", "Ins Client Hold", "Ins InternalMDR Hold", "Ins Other", "Mat Hold", "Other Fab Seq", "Other Heavy Lift Barricade", "Other Incident", "Other Labour", "Other Others", "Other Permits", "Other SIMOPS", "Other Speciality Tools", "Other Weather Downtime", "Sca Notavailable"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","False","0",Replacer.ReplaceText,{"Eng Hold", "Equ AerialLift", "Equ Breakdown", "Equ Comperssor", "Equ Crane", "Equ Forklift", "Ins Client Hold", "Ins InternalMDR Hold", "Ins Other", "Mat Hold", "Other Fab Seq", "Other Heavy Lift Barricade", "Other Incident", "Other Labour", "Other Others", "Other Permits", "Other SIMOPS", "Other Speciality Tools", "Other Weather Downtime", "Sca Notavailable"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","True","1",Replacer.ReplaceText,{"Eng Hold", "Equ AerialLift", "Equ Breakdown", "Equ Comperssor", "Equ Crane", "Equ Forklift", "Ins Client Hold", "Ins InternalMDR Hold", "Ins Other", "Mat Hold", "Other Fab Seq", "Other Heavy Lift Barricade", "Other Incident", "Other Labour", "Other Others", "Other Permits", "Other SIMOPS", "Other Speciality Tools", "Other Weather Downtime", "Sca Notavailable"}),
+				    #"Replaced Value9" = Table.ReplaceValue(#"Replaced Value2","rev-0-112 hrs","0",Replacer.ReplaceText,{"Hours"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Replaced Value9",{"Plant", "Job Number", "WP", "JOB_WPNO", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Hours", "Details", "Eng Hold", "Equ AerialLift", "Equ Breakdown", "Equ Comperssor", "Equ Crane", "Equ Forklift", "Ins Client Hold", "Ins InternalMDR Hold", "Ins Other", "Mat Hold", "Other Fab Seq", "Other Heavy Lift Barricade", "Other Incident", "Other Labour", "Other Others", "Other Permits", "Other SIMOPS", "Other Speciality Tools", "Other Weather Downtime", "Sca Notavailable"}),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Reordered Columns", {"Plant", "Job Number", "WP", "WP_OID","Discipline", "JOB_WPNO", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Paint Foreman","Paint Supervisor", "Hours", "Details"}, "Attribute", "Value"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Unpivoted Other Columns",{{"Value", Int64.Type}, {"Hours", type number}}),
+				    #"Reordered Columns1" = Table.ReorderColumns(#"Changed Type",{"Plant", "Job Number", "WP", "WP_OID", "JOB_WPNO", "Hours", "Details", "Attribute", "Value", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Paint Foreman", "Paint Supervisor"}),
+				    #"Added Custom1" = Table.AddColumn(#"Reordered Columns1", "Category", each if Text.Contains([Attribute], "Eng") then "Engg Drawing" else if Text.Contains([Attribute], "Equ") then "Equipment" else if Text.Contains([Attribute], "Ins") then "Inspection" else if Text.Contains([Attribute], "Mat") then "Materials" else if Text.Contains([Attribute], "Other") then "Others" else if Text.Contains([Attribute], "Sca") then "Scaffolding" else null),
+				    #"Reordered Columns2" = Table.ReorderColumns(#"Added Custom1",{"Plant", "Job Number", "WP", "Discipline", "WP_OID", "JOB_WPNO", "Hours", "Details", "Attribute", "Category", "Value", "Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Paint Foreman", "Paint Supervisor"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Reordered Columns2","Equ ","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","Other ","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","Ins ","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5","Sca Notavailable","Not Available",Replacer.ReplaceText,{"Attribute"}),
+				    #"Replaced Value7" = Table.ReplaceValue(#"Replaced Value6",null,"none",Replacer.ReplaceValue,{"Fitup Foreman", "Fitup Supervisor", "Weld Foreman", "Weld Supervisor", "Paint Foreman", "Paint Supervisor"}),
+				    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Replaced Value7", {"Plant", "Job Number", "WP", "Discipline", "WP_OID", "JOB_WPNO", "Hours", "Details", "Attribute", "Category", "Value"}, "Attribute.1", "Value.1"),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Unpivoted Columns", "Attribute.1", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Attribute.1.1", "Attribute.1.2"}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Split Column by Delimiter", each true),
+				    #"Pivoted Column" = Table.Pivot(#"Filtered Rows1", List.Distinct(#"Filtered Rows1"[Attribute.1.2]), "Attribute.1.2", "Value.1"),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Pivoted Column",{{"Attribute.1.1", "Type"}}),
+				    #"Added Custom2" = Table.AddColumn(#"Renamed Columns1", "Type01", each if Text.Contains([Type], "Paint") then "Painting" else if Text.Contains([Type], "Fitup") then "Fitter" else "Welder"),
+				    #"Filtered Rows2" = Table.SelectRows(#"Added Custom2", each true),
+				    #"Replaced Value8" = Table.ReplaceValue(#"Filtered Rows2","none",null,Replacer.ReplaceValue,{"Foreman", "Supervisor"})
+				in
+				    #"Replaced Value8"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,59 @@
+table '_mx_anomaly (2)'
+	lineageTag: c6cc7a38-96f2-4671-90aa-93324a640ca1
+
+	measure mx_anomaly_duplicate_rows = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPOBID]),'Qry_IWP Detail'[FX_DUPLICATEWPCOUNT]>0)
+		formatString: 0
+		lineageTag: e5f8fd31-3cf2-47bb-a901-b1291b811144
+
+	measure mx_anomaly_actcode = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPOBID]),'Qry_IWP Detail'[fx_anomaly_actcode]<>"Matched" && 'Qry_IWP Detail'[STATUS]="Issued for Construction")
+		formatString: 0
+		lineageTag: a0d2c2c3-7d09-4522-81dd-b54b0b24f775
+
+	measure mx_anomaly_roc_name = ```
+			
+			 var a = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPOBID]),'Qry_IWP Detail'[fx_anomaly_gatesname_L4]="Anomaly" && 'Qry_IWP Detail'[WP Hrs ROC 1]>0)
+			 RETURN
+			 IF(a<1,0,a)
+			```
+		formatString: 0
+		lineageTag: 2fb6edff-22e3-4b9a-92ce-12bf0a528c74
+
+	measure mx_anomaly_roc_wt =
+			
+			var a = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPOBID]),'Qry_IWP Detail'[fx_anomaly_gates_wt_L4]="Anomaly" && 'Qry_IWP Detail'[WP Hrs ROC 1]>0)
+			RETURN
+			IF(a<1,0,a)
+		formatString: 0
+		lineageTag: aad46e31-e6b0-465e-8e84-e30f04ae595c
+
+	measure mx_anomaly_roctot = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPOBID]),('Qry_IWP Detail'[fx_anomaly_gatesname_L4]="Anomaly" ||'Qry_IWP Detail'[fx_anomaly_gates_wt_L4]="Anomaly") &&'Qry_IWP Detail'[WP Hrs ROC 1]>0)
+		formatString: 0
+		lineageTag: f300e96f-ae35-48f0-bccf-24ceacd90d0a
+
+	measure PageDestination = ```
+			
+			VAR CurrentUser = USERPRINCIPALNAME()
+			VAR IsAuthorized = CONTAINSROW(VALUES(AllowedUser[Email]) , CurrentUser)
+			
+			RETURN
+			    IF(
+			        IsAuthorized, 
+			        "Admin Page",  -- Must match the exact page tab name
+			        "Access Denied"                  -- Must match the exact Access Denied page tab name
+			    )
+			```
+		lineageTag: 6090000a-e2dc-4bf4-b2b1-3f9ae3036d1a
+
+	partition '_mx_anomaly (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

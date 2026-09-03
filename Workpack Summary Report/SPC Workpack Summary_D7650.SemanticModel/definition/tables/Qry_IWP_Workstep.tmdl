@@ -1,0 +1,120 @@
+table Qry_IWP_Workstep
+	lineageTag: ef4d634e-5397-42b4-94bf-3b9b01ccb89e
+
+	column FIWPUID
+		dataType: string
+		lineageTag: 5e055690-e792-4a79-98f7-1dcafa86dc39
+		summarizeBy: none
+		sourceColumn: FIWPUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANH
+		dataType: double
+		lineageTag: 21cbf347-0006-4311-b88d-6cc79a32fdff
+		summarizeBy: sum
+		sourceColumn: PLANH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ACTUAL
+		dataType: double
+		lineageTag: fef97625-6b2c-4e78-8bba-1ef141df1d6e
+		summarizeBy: sum
+		sourceColumn: ACTUAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNIT_COMPLETED
+		dataType: double
+		lineageTag: e03cfaf1-6397-4b8a-8831-124749ea9a11
+		summarizeBy: sum
+		sourceColumn: UNIT_COMPLETED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GATEPROGRESS
+		dataType: double
+		lineageTag: 2034670b-a530-4f8b-bc82-db13b066a0ad
+		summarizeBy: sum
+		sourceColumn: GATEPROGRESS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GATEQTY_COMPLETE
+		dataType: int64
+		lineageTag: f1f0e9b2-1077-4f93-9a38-3d9d13bee6f5
+		summarizeBy: sum
+		sourceColumn: GATEQTY_COMPLETE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_rank_min =
+			
+			var minn = MINX(FILTER(Qry_IWP_Workstep,[NAME]=EARLIER(Qry_IWP_Workstep[NAME]) && [FIWPUID]=EARLIER(Qry_IWP_Workstep[FIWPUID])),[SEQUENCE])
+			var rnk = RANKX(FILTER(Qry_IWP_Workstep,[FIWPUID]=EARLIER(Qry_IWP_Workstep[FIWPUID])),minn,,ASC,Dense)
+			RETURN
+			minn
+		lineageTag: cd4796e3-ff51-4d63-af14-d20f412e02e6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fx_rank = RANKX(FILTER(Qry_IWP_Workstep,[FIWPUID]=EARLIER(Qry_IWP_Workstep[FIWPUID])),[fx_rank_min],,ASC,Dense)
+		formatString: 0
+		lineageTag: 16fabc2f-e747-45c2-b8a4-782c16583ec7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: bd9bf534-b7e7-44d4-8bfc-8d78ecaf0645
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sequence
+		dataType: int64
+		formatString: 0
+		lineageTag: d2d3c7c8-c088-424b-8060-e640d0ef9dba
+		summarizeBy: sum
+		sourceColumn: sequence
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seqno
+		dataType: int64
+		formatString: 0
+		lineageTag: d549f3da-c0ec-49b5-9878-4f612a7bc88e
+		summarizeBy: sum
+		sourceColumn: Seqno
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Qry_IWP_Workstep = m
+		mode: import
+		source =
+				let
+				    Source = sqlqry_IWP_Workstep,
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([PLANH] <> null))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

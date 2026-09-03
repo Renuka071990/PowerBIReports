@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "72e0cf4b044ec81d3025",
+  "position": {
+    "x": 0,
+    "y": 250,
+    "z": 3000,
+    "height": 300,
+    "width": 1280,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Qry_IWP Detail"
+                    }
+                  },
+                  "Property": "FIWPOBID"
+                }
+              },
+              "queryRef": "Qry_IWP Detail.FIWPOBID",
+              "nativeQueryRef": "FIWPOBID"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

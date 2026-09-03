@@ -1,0 +1,193 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "1095bcc6b92d57800110",
+  "displayName": "Duplicate of 10. Weekly Allocation Plan",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filtercb3c208bed85aafc158a",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_Craft_Allocation_Distribution"
+              }
+            },
+            "Property": "FX_WeekSummary"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_FX_Craft_Allocation_Distribution",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "_"
+                          }
+                        },
+                        "Property": "FX_WeekSummary"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Week Summary'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter9bbcbba63e59524e4a16",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_WP_Direct"
+              }
+            },
+            "Property": "WORKPHASE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'allocation plan.svg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "allocation_plan6555048233032559.svg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "221L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "c7f55b7602ae2cc5da1e",
+      "target": "c08060528c94b639844d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c7f55b7602ae2cc5da1e",
+      "target": "ffe57bd5ac375702b922",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c08060528c94b639844d",
+      "target": "c7f55b7602ae2cc5da1e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00b4d13923c3a0485ec8",
+      "target": "f15f4132a0db8529ad96",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00b4d13923c3a0485ec8",
+      "target": "c08060528c94b639844d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "51a3c75e5a6337976665",
+      "target": "c08060528c94b639844d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f15f4132a0db8529ad96",
+      "target": "8b0a0e0cc0058c43b0e2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "51a3c75e5a6337976665",
+      "target": "8b0a0e0cc0058c43b0e2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00b4d13923c3a0485ec8",
+      "target": "8b0a0e0cc0058c43b0e2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "106a09b980e33da1e530",
+      "target": "8b0a0e0cc0058c43b0e2",
+      "type": "DataFilter"
+    }
+  ]
+}

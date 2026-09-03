@@ -1,0 +1,150 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "WP Dashboard",
+  "name": "Bookmark3c2e873589c1d00ce6a4",
+  "options": {
+    "targetVisualNames": []
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSectionf4bde242103c02e168e9",
+    "sections": {
+      "ReportSectionf4bde242103c02e168e9": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filtere9f279f88703e25a6a55",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPCRPT_FIWP"
+                    }
+                  },
+                  "Property": "FACILITY"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filter833142f26e3b9cfd6a1e",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPCRPT_FIWP"
+                    }
+                  },
+                  "Property": "AREA"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filter82d08456b6fa9e9cba7e",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPCRPT_FIWP"
+                    }
+                  },
+                  "Property": "DISCIPLINE"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filterd572941a42dfb031b34f",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPCRPT_FIWP"
+                    }
+                  },
+                  "Property": "PURPOSE"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filtercda5bbb6242461ea99fd",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPCRPT_FIWP"
+                    }
+                  },
+                  "Property": "STATUS"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filtere9b87858c15b11128b48",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPCRPT_FIWP"
+                    }
+                  },
+                  "Property": "JOB No."
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filter8ea628cba4d1bd2d6009",
+              "type": "RelativeDate",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Date"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "ed98a005428d72001bb6": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

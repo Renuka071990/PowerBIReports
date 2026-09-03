@@ -1,0 +1,91 @@
+table Excel_MasterActivity
+	lineageTag: 36edd57e-3e3c-4fb1-b85a-e8132c08be3e
+
+	column 'Structure Code'
+		dataType: string
+		lineageTag: 764ba182-9555-4bc6-b46c-2d3d3e7272a7
+		summarizeBy: none
+		sourceColumn: Structure Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Structure Description'
+		dataType: string
+		lineageTag: 244f580b-abb2-4c57-9d53-003937aa9d58
+		summarizeBy: none
+		sourceColumn: Structure Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discipline Code'
+		dataType: string
+		lineageTag: a1de02eb-5c14-4e58-adf5-4ff1f0057d9a
+		summarizeBy: none
+		sourceColumn: Discipline Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discipline Description'
+		dataType: string
+		lineageTag: c10f6fb0-b23a-4a83-9d65-d35df08ee742
+		summarizeBy: none
+		sourceColumn: Discipline Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Code'
+		dataType: string
+		lineageTag: d7c40d2f-13e5-4cec-a827-faf220a66dd9
+		summarizeBy: none
+		sourceColumn: Component Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Description'
+		dataType: string
+		lineageTag: eb892fd5-a393-4cae-8bcb-cea100104810
+		summarizeBy: none
+		sourceColumn: Component Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Task Code'
+		dataType: string
+		lineageTag: f96c6ea6-156a-4074-9dd2-c10d51262dc7
+		summarizeBy: none
+		sourceColumn: Task Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Task Description'
+		dataType: string
+		lineageTag: 77183807-a7b8-49cf-9dc9-0ada33c0643f
+		summarizeBy: none
+		sourceColumn: Task Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column pqry_CombiCode
+		dataType: string
+		lineageTag: 7e050168-5931-4e7c-ab1a-2bdf7f51ddc0
+		summarizeBy: none
+		sourceColumn: pqry_CombiCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Excel_MasterActivity = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\Workpack Summary\Fabrication Master Activity\Fabrication Master Activity.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Sheet1_Sheet,{{"Column3", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Added Custom" = Table.AddColumn(#"Promoted Headers", "pqry_CombiCode", each [Structure Code]&[Discipline Code]&[Component Code])
+				in
+				    #"Added Custom"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

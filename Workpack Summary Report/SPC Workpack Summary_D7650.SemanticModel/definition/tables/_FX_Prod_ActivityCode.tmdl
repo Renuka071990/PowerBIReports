@@ -1,0 +1,527 @@
+table _FX_Prod_ActivityCode
+	lineageTag: 975d18af-b624-4d11-bcb3-74b9193ef3c2
+
+	column FX_WPHrs =
+			
+			var _wphrs = sumx(
+			    filter('Qry_IWP Detail',
+			   'Qry_IWP Detail'[qpry_JOBNO_WPNO]='_FX_Prod_ActivityCode'[qpry_JOBNO_WPNO]),'Qry_IWP Detail'[WP Hrs])
+			
+			return
+			_wphrs/_FX_Prod_ActivityCode[FX_WP_Cnt]
+		lineageTag: ec4108a1-b215-47f0-9d31-cef7ba9cf6fe
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_WPHrs_CumEarn =
+			var _cumearn = sumx(
+			    filter('Qry_IWP Detail',
+			    '_FX_Prod_ActivityCode'[qpry_JOBNO_WPNO]='Qry_IWP Detail'[qpry_JOBNO_WPNO]),'Qry_IWP Detail'[WP Earned Hrs])
+			return
+			_cumearn/_FX_Prod_ActivityCode[FX_WP_Cnt]
+		lineageTag: 1a52c2ad-0ae9-4e9f-916b-22bb8bb64f22
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_WPHrs_WklyEarn =
+			
+			var wklyearn = sumx(
+			    filter('Qry_IWP Detail',
+			  '_FX_Prod_ActivityCode'[qpry_JOBNO_WPNO]='Qry_IWP Detail'[qpry_JOBNO_WPNO]),'Qry_IWP Detail'[FX_WeeklyEarned])
+			return
+			wklyearn/_FX_Prod_ActivityCode[FX_WP_Cnt]
+		lineageTag: d3411b63-dcf8-4232-b614-5064fc3ff51f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Kronos_Hrs_Wk = _FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Fitter]+_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Welder]
+		lineageTag: a52b1338-3015-45c9-a45e-1c95e9dd1a61
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_KRONOS_HRS_PREVWK = ```
+			
+			    sumx(
+			    FILTER( Excel_Kronos_2024,
+			   '_FX_Prod_ActivityCode'[qpry_JOBNO_WPNO]=Excel_Kronos_2024[fx_jobno_actcode]),Excel_Kronos_2024[Kronos Hrs])
+			```
+		lineageTag: eb19e33e-c5ed-4a00-9c0a-45fee0da836c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_KRNOS_HRS_CUM = '_FX_Prod_ActivityCode'[FX_Kronos_Hrs_Wk]+'_FX_Prod_ActivityCode'[FX_KRONOS_HRS_PREVWK]
+		lineageTag: eeeba01b-2007-4b0d-85a6-a3061aafd203
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_AFC_Hrs = ```
+			
+			 var _afchrs = sumx(
+			    filter('Qry_IWP Detail',
+			  '_FX_Prod_ActivityCode'[qpry_JOBNO_WPNO]='Qry_IWP Detail'[qpry_JOBNO_WPNO]),'Qry_IWP Detail'[AFC Hrs])
+			
+			return
+			_afchrs/_FX_Prod_ActivityCode[FX_WP_Cnt]
+			```
+		lineageTag: 348dd3b9-556d-499d-8efe-e7b4254e543b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_AFC_Hrs_CumEarn =
+			var _afccumearn = sumx(
+			    filter('Qry_IWP Detail',
+			  '_FX_Prod_ActivityCode'[qpry_JOBNO_WPNO]='Qry_IWP Detail'[qpry_JOBNO_WPNO]),'Qry_IWP Detail'[AFC Earned Hrs])
+			return
+			_afccumearn/_FX_Prod_ActivityCode[FX_WP_Cnt]
+		lineageTag: 06d4827c-a585-4a3f-a59f-433e96133aa1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_AFC_Hrs_WklyEarn =
+			sumx(
+			    filter('Qry_IWP Detail',
+			  '_FX_Prod_ActivityCode'[qpry_JOBNO_WPNO]='Qry_IWP Detail'[qpry_JOBNO_WPNO]),'Qry_IWP Detail'[AFC Earned Hrs])
+		lineageTag: e3608100-dc64-454f-b9da-a6c0653137f9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_WP_Cnt =
+			countx(
+			    filter('Qry_IWP Detail',
+			    '_FX_Prod_ActivityCode'[qpry_JOBNO_WPNO]='Qry_IWP Detail'[qpry_JOBNO_WPNO]),'Qry_IWP Detail'[qpry_JOBNO_WPNO])
+		formatString: #,0
+		lineageTag: 6a405d98-4549-4c31-9acf-1a1b8f2b3e1b
+		summarizeBy: sum
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column WPNO
+		lineageTag: 2dda60d0-fd5d-464b-904c-dd765b44667d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[WPNO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		lineageTag: 4830e94c-a2f5-4872-93ca-70e87c9993bf
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[DISCIPLINE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JOB NO'
+		lineageTag: 9a70b240-32f7-46dd-a68d-a40dee3cfbb0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[JOB NO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column AREA
+		lineageTag: ba2e4e65-f946-4e56-b1b1-31c2d5d52a47
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[AREA]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_ActivityCode = right(left('_FX_Prod_ActivityCode'[WPNO],13),7)
+		lineageTag: 1dbdb03a-5dff-4460-a76a-8db14dfab3a2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTIVITY CODE'
+		lineageTag: 8f686dee-a6a5-412e-82f1-9ace332f90dc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[ACTIVITY CODE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_IWP_WeeklyEarn = if('_FX_Prod_ActivityCode'[FX_WPHrs_WklyEarn]>0,"With Earnings","No Earnings")
+		lineageTag: f9dae65f-ded2-4a61-be30-10c071d92b01
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Kronos_WeeklyEarn = if('_FX_Prod_ActivityCode'[FX_Kronos_Hrs_Wk]>0,"With Earnings","No Earnings")
+		lineageTag: 49bb7c68-4cd1-478b-86b2-df913a57ccb2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WithEarnings = if('_FX_Prod_ActivityCode'[FX_IWP_WeeklyEarn]="With Earnings" || '_FX_Prod_ActivityCode'[FX_Kronos_WeeklyEarn]="With Earnings","With Earning","No Earnings")
+		lineageTag: 96cb69c0-1f11-428f-99f1-ac36076f7e66
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WP DESCRIPTION'
+		lineageTag: aa93697d-8466-4741-9c70-27ad333c0f1f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[WP DESCRIPTION]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_SPC_Fitter_ActCode
+		lineageTag: 0b1f337e-d66c-48b3-b935-4bde2748f199
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FX_SPC_Fitter_ActCode]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_SPC_Fitter_WPHrs
+		formatString: #,0
+		lineageTag: 3da4dd6f-1584-4860-9fcb-cd95df6e0c0c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FX_SPC_Fitter_WPHrs]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column FX_SPC_Fitter_WPHrsEarned
+		lineageTag: a0753570-3799-4b05-a96d-68967a0fb7dd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FX_SPC_Fitter_WPHrsEarned]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_SPC_Welder_ActCode
+		lineageTag: 7c350cbe-162b-4474-b877-894b806e85d9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FX_SPC_Welder_ActCode]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_SPC_Welder_WPHrs
+		formatString: #,0
+		lineageTag: 43195668-9850-47bd-a9fe-a9188a230d2a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FX_SPC_Welder_WPHrs]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column FX_SPC_Welder_WPHrsEarned
+		lineageTag: 03cb7fbf-5a6a-4f47-84e1-d8d4c8e0b8a6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FX_SPC_Welder_WPHrsEarned]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Kronos_Hrs_Wk_Fitter = ```
+			
+			    sumx(
+			    FILTER('Excel_Kronos Weekly',
+			 '_FX_Prod_ActivityCode'[FX_SPC_Fitter_Job_ActCode]='Excel_Kronos Weekly'[FX_JobNo-ActCode] && 'Excel_Kronos Weekly'[FX_KronosDaily_CurrentWeekEnding]=[MX_CurrentWeekEnding]),'Excel_Kronos Weekly'[HOURS])
+			```
+		dataType: double
+		lineageTag: a800a8c5-60f2-43ec-ae14-b6e0210b7023
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Kronos_Hrs_Wk_Welder = ```
+			
+			    sumx(
+			    FILTER('Excel_Kronos Weekly',
+			 '_FX_Prod_ActivityCode'[FX_SPC_Welder_Job_ActCode]='Excel_Kronos Weekly'[FX_JobNo-ActCode] && _FX_Prod_ActivityCode[FX_SPC_Welder_ActCode]<>BLANK() && 'Excel_Kronos Weekly'[FX_KronosDaily_CurrentWeekEnding]=[MX_CurrentWeekEnding]),'Excel_Kronos Weekly'[HOURS])
+			```
+		lineageTag: d58ac331-4f3d-4350-b602-d5622128a2f9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WELD_WEIGHTAGE
+		lineageTag: 7606609f-9dd7-4786-baf7-3b4c8f1547ff
+		summarizeBy: sum
+		sourceColumn: Qry_IWP Detail[WEIGHTAGE]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _FX_SPC_WeldGateCheck
+		lineageTag: 3d6d7196-1df5-40c3-bfa9-f0cd3bf9a0ef
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[_FX_SPC_WeldGateCheck]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Kronos_FitterWelderProgCheck =
+			if([FX_SPC_Welder_ActCode]<>BLANK() && [FX_Kronos_Hrs_Wk_Fitter]>0 && [FX_Kronos_Hrs_Wk_Welder]>0,"Both",
+			IF([FX_SPC_Welder_ActCode]<>BLANK() && ([FX_Kronos_Hrs_Wk_Fitter]=0 || [FX_Kronos_Hrs_Wk_Fitter]=BLANK()) && [FX_Kronos_Hrs_Wk_Welder]>0,"Welder Only",
+			IF(([FX_Kronos_Hrs_Wk_Fitter]=0 || [FX_Kronos_Hrs_Wk_Fitter]=BLANK())  && ([FX_Kronos_Hrs_Wk_Welder]=0 || [FX_Kronos_Hrs_Wk_Welder]=BLANK()),"No Booking","Fitter Only")))
+		lineageTag: d1481803-17bd-4192-86e9-36802d93a065
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column _FX_SPC_Fitter_WPHrs_WklyEarn = ```
+			var _fitterweigt = (100-_FX_Prod_ActivityCode[WELD_WEIGHTAGE])/100
+			return
+			IF(_FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Welder Only",0,
+			IF(_FX_Prod_ActivityCode[_FX_SPC_WeldGateCheck]="No Weld Gate" || _FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Fitter Only",_FX_Prod_ActivityCode[FX_WPHrs_WklyEarn],_FX_Prod_ActivityCode[FX_WPHrs_WklyEarn]*_fitterweigt))
+			
+			```
+		lineageTag: 7f87f48f-3a3c-414c-8c90-f0364b55196f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _FX_SPC_Welder_WPHrs_WklyEarn = ```
+			var _welderweigt = _FX_Prod_ActivityCode[WELD_WEIGHTAGE]/100
+			return
+			IF(_FX_Prod_ActivityCode[_FX_SPC_WeldGateCheck]="No Weld Gate" || _FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Fitter Only", 0,
+			IF(_FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Welder Only",_FX_Prod_ActivityCode[FX_WPHrs_WklyEarn],
+			_FX_Prod_ActivityCode[FX_WPHrs_WklyEarn]*_welderweigt))
+			
+			```
+		lineageTag: 977d22a5-5f94-45a8-80ff-893bb9a6f1f1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Fitter_Prod =
+			var _prod = _FX_Prod_ActivityCode[_FX_SPC_Fitter_WPHrs_WklyEarn]/_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Fitter]
+			return
+			IF(ISERROR(_prod),0,_prod)
+		lineageTag: 188e85a1-ac7b-4e1d-be62-78f7afad2fd1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Welder_Prod =
+			var _prod = _FX_Prod_ActivityCode[_FX_SPC_Welder_WPHrs_WklyEarn]/_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Welder]
+			return
+			IF(ISERROR(_prod),0,_prod)
+		lineageTag: acd12e89-c8b7-4a66-9b54-e871254c1f56
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Kronos_Hrs_Cum_Fitter =
+			sumx(
+			    FILTER( Excel_Kronos_2024,
+			   '_FX_Prod_ActivityCode'[FX_SPC_Fitter_Job_ActCode]=Excel_Kronos_2024[fx_jobno_actcode_fitter_welder]),Excel_Kronos_2024[Kronos Hrs])
+		lineageTag: 762136d2-24d5-41d1-9161-992d9aa18539
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Kronos_Hrs_Cum_Welder =
+			sumx(
+			    FILTER( Excel_Kronos_2024,
+			   '_FX_Prod_ActivityCode'[FX_SPC_Welder_Job_ActCode]=Excel_Kronos_2024[fx_jobno_actcode_fitter_welder]),Excel_Kronos_2024[Kronos Hrs])
+		lineageTag: a297498a-f0bd-4c81-b9b4-19ddcdeb1a4a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Kronos_Hrs_Prev_Wk_Fitter = ```
+			
+			    sumx(
+			    FILTER('Excel_Kronos_2024',
+			 '_FX_Prod_ActivityCode'[FX_SPC_Fitter_Job_ActCode]=Excel_Kronos_2024[fx_jobno_actcode_fitter_welder] && Excel_Kronos_2024[FX_LastWeek]=([MX_CurrentWeekEnding]-7)),Excel_Kronos_2024[Kronos Hrs])
+			```
+		lineageTag: ba2eccee-3b2b-45ba-977f-3f2198d2e55a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Kronos_Hrs_Prev_Wk_Welder = ```
+			
+			    sumx(
+			    FILTER('Excel_Kronos_2024',
+			 '_FX_Prod_ActivityCode'[FX_SPC_Welder_Job_ActCode]=Excel_Kronos_2024[fx_jobno_actcode_fitter_welder] && _FX_Prod_ActivityCode[FX_SPC_Welder_ActCode]<>BLANK()  && Excel_Kronos_2024[FX_LastWeek]=([MX_CurrentWeekEnding]-7)),Excel_Kronos_2024[Kronos Hrs])
+			```
+		lineageTag: 983f4b88-436e-4cd5-8417-2a1d6408be4f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_WPHrs_PrevWklyEarn =
+			sumx(
+			    filter('Qry_IWP Detail',
+			  '_FX_Prod_ActivityCode'[qpry_JOBNO_WPNO]='Qry_IWP Detail'[qpry_JOBNO_WPNO]),'Qry_IWP Detail'[WP Last Week Weekly Earned])
+		lineageTag: e86c4b3a-5379-4ab8-ab82-f89ad02bc94e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _FX_SPC_Fitter_WPHrs_PrevWklyEarn = ```
+			var _fitterweigt = (100-_FX_Prod_ActivityCode[WELD_WEIGHTAGE])/100
+			return
+			IF(_FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Welder Only",0,
+			IF(_FX_Prod_ActivityCode[_FX_SPC_WeldGateCheck]="No Weld Gate" || _FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Fitter Only",_FX_Prod_ActivityCode[FX_WPHrs_PrevWklyEarn],_FX_Prod_ActivityCode[FX_WPHrs_PrevWklyEarn]*_fitterweigt))
+			
+			```
+		lineageTag: 828f51ff-5573-41c3-a8a8-801bd6c07da3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _FX_SPC_Welder_WPHrs_PrevWklyEarn = ```
+			var _welderweigt = _FX_Prod_ActivityCode[WELD_WEIGHTAGE]/100
+			return
+			IF(_FX_Prod_ActivityCode[_FX_SPC_WeldGateCheck]="No Weld Gate" || _FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Fitter Only", 0,
+			IF(_FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Welder Only",_FX_Prod_ActivityCode[FX_WPHrs_PrevWklyEarn],_FX_Prod_ActivityCode[FX_WPHrs_PrevWklyEarn]*_welderweigt))
+			
+			```
+		lineageTag: 043c51ba-2fc9-4317-b696-70cd93e6107b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _FX_SPC_Fitter_WPHrs_CumEarn = ```
+			var _fitterweigt = (100-_FX_Prod_ActivityCode[WELD_WEIGHTAGE])/100
+			return
+			IF(_FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Welder Only",0,
+			IF(_FX_Prod_ActivityCode[_FX_SPC_WeldGateCheck]="No Weld Gate" || _FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Fitter Only",_FX_Prod_ActivityCode[FX_WPHrs_CumEarn],_FX_Prod_ActivityCode[FX_WPHrs_CumEarn]*_fitterweigt))
+			
+			```
+		lineageTag: 063044a7-7245-413d-b191-524e5602fadd
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _FX_SPC_Welder_WPHrs_CumEarn = ```
+			var _welderweigt = _FX_Prod_ActivityCode[WELD_WEIGHTAGE]/100
+			return
+			IF(_FX_Prod_ActivityCode[_FX_SPC_WeldGateCheck]="No Weld Gate" || _FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Fitter Only", 0,
+			IF(_FX_Prod_ActivityCode[FX_Kronos_FitterWelderProgCheck]="Welder Only",_FX_Prod_ActivityCode[FX_WPHrs_CumEarn],_FX_Prod_ActivityCode[FX_WPHrs_CumEarn]*_welderweigt))
+			
+			```
+		lineageTag: 95742365-60da-4fcd-9d83-f3ad598feeef
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_Kronos_Hrs_Prev_Wk = [FX_Kronos_Hrs_Prev_Wk_Fitter]+[FX_Kronos_Hrs_Prev_Wk_Welder]
+		lineageTag: 886e5eff-a339-438b-a92b-9b6c7887b8d5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column qpry_JOBNO_WPNO
+		lineageTag: a415e5d7-a0db-432a-8ec4-eafce531e50d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[qpry_JOBNO_WPNO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_SPC_Fitter_Job_ActCode = [JOB NO]&"_"&[FX_SPC_Fitter_ActCode]
+		lineageTag: 815b3797-0be0-46b5-ae46-7316a6f0a5f6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_SPC_Welder_Job_ActCode = [JOB NO]&"_"&[FX_SPC_Welder_ActCode]
+		lineageTag: 3b1e8116-b852-48c8-8c24-40fbe2a2a25a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_constraint = CALCULATE(MAX(Qry_IWP_Constraints[Value]),FILTER(Qry_IWP_Constraints,Qry_IWP_Constraints[JOB_WPNO]=_FX_Prod_ActivityCode[qpry_JOBNO_WPNO]))
+		formatString: 0
+		lineageTag: b1084ccc-8c17-4604-ac2c-a1fbc7d70dc8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPOBID
+		lineageTag: 5dbb38c9-dcd8-4f13-979f-5600b02ab062
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FIWPOBID]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FX_Prod_ActivityCode-16be1e90-3fb3-4ae8-89dc-ec2af2a8e788 = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE(FILTER('Qry_IWP Detail',[FX_UniqWP_Identifier]=1),
+				   [WPNO],[FIWPOBID],[DISCIPLINE],[JOB NO],[AREA],[ACTIVITY CODE],[WP DESCRIPTION],[FX_SPC_Fitter_ActCode],[FX_SPC_Fitter_WPHrs],[FX_SPC_Fitter_WPHrsEarned],[FX_SPC_Welder_ActCode],[FX_SPC_Welder_WPHrs],[FX_SPC_Welder_WPHrsEarned],[WEIGHTAGE],[_FX_SPC_WeldGateCheck],[qpry_JOBNO_WPNO])
+
+	annotation PBI_Id = 18daf7e547474cb68ecb314401d8826d
+

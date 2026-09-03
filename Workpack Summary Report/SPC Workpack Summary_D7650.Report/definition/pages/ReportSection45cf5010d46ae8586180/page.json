@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection45cf5010d46ae8586180",
+  "displayName": "Summary by Job Number",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter922835cac9c6752d3e46",
+        "displayName": "ACTIVITY CODE - Summary",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_Prod_ActivityCode"
+              }
+            },
+            "Property": "ACTIVITYCODE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter5400beeb79b74c447c54",
+        "displayName": "DISCIPLINE - SUMMARY",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_Discipline Code"
+              }
+            },
+            "Property": "Description"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "pageBinding": {
+    "name": "Pod7",
+    "type": "Default",
+    "parameters": []
+  },
+  "visibility": "HiddenInViewMode"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "76a4778a8139f17a82ec",
+  "position": {
+    "x": 127.88547101394009,
+    "y": 0,
+    "z": 3000,
+    "height": 706.60162601626018,
+    "width": 1139.5121951219512,
+    "tabOrder": 3000
+  },
+  "visualGroup": {
+    "displayName": "Summary - IWP",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

@@ -1,0 +1,264 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "Bookmarkf69732f0ea40462b5005"
+    },
+    {
+      "name": "Bookmark76c2f12ab602130c1eb5"
+    },
+    {
+      "name": "Bookmarkf0421cf6a568c46161ad"
+    },
+    {
+      "name": "Bookmark051515690556239ea94e"
+    },
+    {
+      "name": "Bookmark0dba08a9aa3071c29659"
+    },
+    {
+      "name": "Bookmark5ae9070fa80eaeeb09b7"
+    },
+    {
+      "name": "Bookmark7363edd21e0a8bc13e86"
+    },
+    {
+      "name": "Bookmarke0f37168b069dec7067e"
+    },
+    {
+      "name": "Bookmarkfd8a4ef94d3256bbb16a"
+    },
+    {
+      "name": "Bookmark36d54183948a63ad0020"
+    },
+    {
+      "name": "Bookmark322bbcd8cd159c082e0c"
+    },
+    {
+      "name": "Bookmark3c2e873589c1d00ce6a4"
+    },
+    {
+      "name": "92a962cb1ac2fe8b5591",
+      "displayName": "Issuance Count",
+      "children": [
+        "Bookmark2ca140f6125c0c05d8db",
+        "0fc535bdfee61f19c80d",
+        "Bookmark2a5af659cbf2297145b9"
+      ]
+    },
+    {
+      "name": "Bookmark157b8e0fe46cc2af9469",
+      "displayName": "Issuance - Hours",
+      "children": [
+        "Bookmark54fc024b4eb08850b353",
+        "1068653797386e9a8ded",
+        "Bookmark3df8f457c5122459dd2c"
+      ]
+    },
+    {
+      "name": "Bookmarkf7b2ceca45dd6e8147a0",
+      "displayName": "Summary Reports",
+      "children": [
+        "a812c318e2518c6194e8",
+        "Bookmark50bdf5e13c016db2fbc2",
+        "Bookmarkea24d7ff559fb15e7f3c",
+        "Bookmark8cb9146e752c08da2a78",
+        "23c0c798a1d0c7194aad",
+        "Bookmark20a4bcc36fbdcc5ae276",
+        "Bookmarke13d7b4c79a6e2329cf8",
+        "Bookmarkb1e20597cf1cfaceadd7",
+        "Bookmarkba4064019d74b40df73e",
+        "Bookmark5ccb26286629cb252234"
+      ]
+    },
+    {
+      "name": "44922f701bc9bdeb53c3",
+      "displayName": "Summary Reprt w Earn",
+      "children": [
+        "Bookmark48d1365718fa590dce72",
+        "Bookmarka3f10a9d70a25f764ea4"
+      ]
+    },
+    {
+      "name": "Bookmark966a372d6328377f1134",
+      "displayName": "Component Count",
+      "children": [
+        "Bookmarkfcf54d02dffd26b5a305",
+        "Bookmark81faa2f1f50e671b664b",
+        "Bookmark29eca977968a2db26160",
+        "Bookmark75ad2ee1b29bb2e55c0f",
+        "Bookmark0c541a3fb9df644e6379",
+        "Bookmark2c96a1f70c789140d6bf"
+      ]
+    },
+    {
+      "name": "Bookmarkad2e0027c581fd4437a5"
+    },
+    {
+      "name": "Bookmark588885347015ad03a05a",
+      "displayName": "Allocation Plan",
+      "children": [
+        "Bookmarkdede6c8c4e609690b9ed",
+        "Bookmark0a83f347a649018b4525"
+      ]
+    },
+    {
+      "name": "262d7a809e5109c129b0"
+    },
+    {
+      "name": "daee9d64190800097976"
+    },
+    {
+      "name": "Bookmark3d7b7db8349b14d11364",
+      "displayName": "Quantity-Comp Count",
+      "children": [
+        "Bookmark6fd2f24bea11002cf05d",
+        "Bookmark1fc684fe015ac33d5847",
+        "Bookmark0e956e17112bca921711",
+        "Bookmarkc653e6cdfa3f0c375d54"
+      ]
+    },
+    {
+      "name": "Bookmark5d4778ef896a2034d6e6",
+      "displayName": "Workface",
+      "children": [
+        "Bookmark33da6b1ebba540a60c11",
+        "Bookmark73a3be4eec747c03e006"
+      ]
+    },
+    {
+      "name": "a10e9f0c352182a7eda4",
+      "displayName": "Workface - Comparison",
+      "children": [
+        "9d1282fa824c2238b4da",
+        "55695c927ad93475ea6d"
+      ]
+    },
+    {
+      "name": "474fe154cbe945b458d9"
+    },
+    {
+      "name": "5aa348650463c4d2b0b2"
+    },
+    {
+      "name": "b0d2ae4a5ca32810280f",
+      "displayName": "WP Sum PrevCurr",
+      "children": [
+        "202e86bbad410ba60ff5",
+        "7f040e49d1e33c7c9ae2"
+      ]
+    },
+    {
+      "name": "Bookmark00ecde85097e17df6f6e",
+      "displayName": "WP Sum Prev",
+      "children": [
+        "Bookmarkfafd1a8dafbd3e149169",
+        "Bookmarkb9cc236e9fc14f006b3d",
+        "Bookmarkd27993c8beaee3f89129",
+        "Bookmark495bb7ac56e5ddc076ef",
+        "Bookmark7ce8de85b6fbd85788a7"
+      ]
+    },
+    {
+      "name": "829def6d9d159f0b431d",
+      "displayName": "WP Sum Curr",
+      "children": [
+        "ea76fbeecc0adf3ce810",
+        "1c0756b62062f45be99c",
+        "3ffe378920ec09ecb221",
+        "090325cd752c727035cf",
+        "2353a86f85cf35d29e99"
+      ]
+    },
+    {
+      "name": "Bookmarkae8f1599b8d70239d1d0",
+      "displayName": "WPStatusCount - Graph",
+      "children": [
+        "Bookmarkdcd10a471402e2d64ad2",
+        "Bookmarkbef328e61a9d551050d8"
+      ]
+    },
+    {
+      "name": "Bookmarkcf88456ed6e0c573b052",
+      "displayName": "WPStatusHrs - Graph",
+      "children": [
+        "Bookmarkaed9382ed97c9e417ccb",
+        "Bookmark121ae440aa1324e25723"
+      ]
+    },
+    {
+      "name": "7fe060401d9a9c267b88",
+      "displayName": "3D Views",
+      "children": [
+        "38a84972c0b0f03778db",
+        "ffdbf2f19ce587ca5111"
+      ]
+    },
+    {
+      "name": "bce4f6b762a4805332ba",
+      "displayName": "KPI",
+      "children": [
+        "ef9a790e41a0eba96593",
+        "3e12674cde65590d9831"
+      ]
+    },
+    {
+      "name": "c38f3f7706171622b905",
+      "displayName": "KPI Weeks",
+      "children": [
+        "a4cb79da4c288e25c091",
+        "674d41ef1b4c4cc0c846"
+      ]
+    },
+    {
+      "name": "3579a4c8c894a17334bc",
+      "displayName": "Skyline",
+      "children": [
+        "a64532f29de33e098204",
+        "b7cadb8fd10917c36945"
+      ]
+    },
+    {
+      "name": "93ddaaab8a3902713d0d",
+      "displayName": "Skyline Weeks",
+      "children": [
+        "3034dc42900637300704",
+        "b6377fa07d7d53a0ca01"
+      ]
+    },
+    {
+      "name": "59300f3118c080604abb"
+    },
+    {
+      "name": "9d7d64b4500ded7aa0a5",
+      "displayName": "HideShow Exp Foreman",
+      "children": [
+        "2d499ed587322e5d2871",
+        "837a759f5d740c13a1e1"
+      ]
+    },
+    {
+      "name": "5856f870b71d8b121b02",
+      "displayName": "HideShow Exp Supervisor",
+      "children": [
+        "3b288adcac82c7d0c19f",
+        "a9052a4d8d7a87d33f0c"
+      ]
+    },
+    {
+      "name": "c989043d41c446dcdb81",
+      "displayName": "Constraints",
+      "children": [
+        "10d0d2ff9112afb052e6",
+        "1ae1511b455132f05976",
+        "41f30832be0039fcdba8"
+      ]
+    },
+    {
+      "name": "Bookmark7266720a58beb26e3782"
+    },
+    {
+      "name": "6577791110aee8ba24eb"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+table 'Excel_Kronos Weekly'
+	lineageTag: eabbd45f-db09-42d5-bef1-3ef7efdb4682
+
+	column FX_JobNo-ActCode = 'Excel_Kronos Weekly'[JOB NUMBER]&"_"&'Excel_Kronos Weekly'[Activity Code]
+		lineageTag: 7e2bd276-2562-44ad-b8c7-5f0d69a57e70
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dept
+		dataType: string
+		lineageTag: ce1a7ad8-6f6c-4fdc-b7a6-d4a7afae62b6
+		summarizeBy: none
+		sourceColumn: Dept
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Project = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[PROJECT],'Qry_IWP Detail'[JOB NO],'Excel_Kronos Weekly'[JOB NUMBER]), BLANK())
+		lineageTag: cd42318c-956e-4b9e-860e-2bbe7391428d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_KronosDaily_CurrentWeekEnding = (if(WEEKDAY([Date]) < 6,([Date]+5) - WEEKDAY([Date]),(([Date]+5) - WEEKDAY([Date]))+7))
+		formatString: dd-mmm-yy
+		lineageTag: fef216c5-a382-4db9-9f86-84da78b040a9
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 2d4c76c8-070e-4216-a383-3aa7a9f0e65c
+			defaultHierarchy: LocalDateTable_6e2fc92e-a33f-4053-a087-e9b2e01cc825.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column DATE
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 547bebd1-e6bd-49f5-ba1e-48541de8bf8b
+		summarizeBy: none
+		sourceColumn: DATE
+
+		variation Variation
+			isDefault
+			relationship: bc8d422a-94de-4891-be88-3919a0124944
+			defaultHierarchy: LocalDateTable_f296862e-5e4b-4271-9c15-a22a3dd2fd06.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'EMPL. NAME'
+		dataType: string
+		lineageTag: 56576e79-a157-4d02-86ec-d7de72232b97
+		summarizeBy: none
+		sourceColumn: EMPL. NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIFT
+		dataType: string
+		lineageTag: c7865fb5-bf9e-4f6c-b730-ac7028c867d2
+		summarizeBy: none
+		sourceColumn: SHIFT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENTITY
+		dataType: string
+		lineageTag: 7fc8a834-8f55-4d56-bbfa-6176c907738a
+		summarizeBy: none
+		sourceColumn: ENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JOB NUMBER'
+		dataType: string
+		lineageTag: 28c99509-d6cc-4b03-8dcd-2bc1ced64ecd
+		summarizeBy: none
+		sourceColumn: JOB NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SUPT. NAME'
+		dataType: string
+		lineageTag: cf232b0a-8c36-44d7-a70e-60b8963dce30
+		summarizeBy: none
+		sourceColumn: SUPT. NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SUPV. NAME'
+		dataType: string
+		lineageTag: c9fe8640-74db-4ffc-86db-aa7070a9be99
+		summarizeBy: none
+		sourceColumn: SUPV. NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FOREMAN NO'
+		dataType: string
+		lineageTag: 73e1e9ca-2f99-43ac-8f13-3846fa22643a
+		summarizeBy: none
+		sourceColumn: FOREMAN NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FOREMAN NAME'
+		dataType: string
+		lineageTag: a8c87d20-8d58-43e3-9ec7-28975933b8e8
+		summarizeBy: none
+		sourceColumn: FOREMAN NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Craft'
+		dataType: string
+		lineageTag: 1e060ffc-c1e2-4a7c-a263-3be88134a325
+		summarizeBy: none
+		sourceColumn: Standard Craft
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ACTIVITY CODE'
+		dataType: string
+		lineageTag: 59556b8f-3447-4fab-84b9-09c213d2c3d7
+		summarizeBy: none
+		sourceColumn: ACTIVITY CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column HOURS
+		dataType: double
+		lineageTag: 0b5c709d-c522-4ec1-a5e6-f1c518b95ccd
+		summarizeBy: sum
+		sourceColumn: HOURS
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CREWSHEET NO.'
+		dataType: string
+		lineageTag: b2d05fd4-7820-4716-a3f2-fa69e696db6a
+		summarizeBy: none
+		sourceColumn: CREWSHEET NO.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HCM NO.'
+		dataType: string
+		lineageTag: 27789891-e869-4ab0-9f43-7062abc769b7
+		summarizeBy: none
+		sourceColumn: HCM NO.
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Excel_Kronos Weekly-c5e5e7e4-f5e1-43dd-ba48-28e306c50030' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Weekly Booking\Kronos Daily.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Export",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Filtered Rows" = Table.SelectRows(#"Promoted Headers", each ([ACTIVITY CODE] <> null))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,480 @@
+relationship e97800cb-85ac-4ed0-a381-afaa0e73fa6b
+	fromColumn: 'Qry_IWP Detail'.AREA
+	toColumn: StaticTbl_Area_Names.Areacode
+
+relationship 9732b2d3-7bcb-4960-9692-c8aa4a179d4e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: xrefdate_KronosDailyDate.'Date accessed'
+	toColumn: LocalDateTable_b96f41c7-2045-47f9-bd42-22661c091238.Date
+
+relationship 845d8894-3c22-4486-9e1c-601cc437950f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: xrefdate_KronosDailyDate.'Date modified'
+	toColumn: LocalDateTable_841deb0a-789d-4c14-b2d7-4078528d8884.Date
+
+relationship 4c3a1794-33cb-471c-ae87-191090ac4d0f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: xrefdate_KronosDailyDate.'Date created'
+	toColumn: LocalDateTable_4ac3e0ad-316f-4084-b1c7-6f9ee5904b41.Date
+
+relationship fe34b3b5-61bf-4a23-98be-25479a0b8699
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.'WP Planned Finish Date'
+	toColumn: LocalDateTable_5ad8ee89-1d7c-450a-8df6-86b3a27b9c8e.Date
+
+relationship 2d4a0482-a47a-45bb-afae-6da8e7ee98b5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.'WP Actual Finish Date'
+	toColumn: LocalDateTable_a6f1725b-5213-4bca-a40b-6fde60638b75.Date
+
+relationship 25045054-0b30-4b7c-bd25-1e2629f0ab12
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.'L3 Forecast Start Date'
+	toColumn: LocalDateTable_02716f34-640a-4102-af50-042396d73db6.Date
+
+relationship dd775419-4fcc-41a4-9a0c-9c23487a19c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.'L3 Forecast Finish Date'
+	toColumn: LocalDateTable_acf7517d-0821-43e0-bf83-a738bc90562a.Date
+
+relationship edba85c9-f9e3-41f9-afd3-f396be641b22
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.'L3 Baseline Start Date'
+	toColumn: LocalDateTable_22d202db-fc7a-465a-aa9d-eae3af3228eb.Date
+
+relationship af148eb6-e264-47cc-bf82-7d779feb9c9d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.'L3 Baseline Finish Date'
+	toColumn: LocalDateTable_f28a3278-bba5-4e9d-860f-22988a824e7a.Date
+
+relationship 363311d5-2917-4f3a-bdbe-689a939ac3e7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'xrefdate_Last Refreshed Date'.'Refresh Date'
+	toColumn: LocalDateTable_51a12202-9dc0-4b9b-af39-5d93a8cc263a.Date
+
+relationship 29bf6aa7-500e-4737-9860-1f14278ef563
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.'WP Receive Date'
+	toColumn: LocalDateTable_ca5544f6-8907-4c26-ad20-32edf3df811f.Date
+
+relationship 2cd60a22-2084-4f1d-9a0a-4b2d326125ad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.'WP Revision Date'
+	toColumn: LocalDateTable_baaa1ece-cee2-472c-b8bd-284d5e9676b1.Date
+
+relationship 7bfec771-b9c9-4a5d-a6bb-0fb81aad5439
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'xrefdate_Last Refreshed Date'.FX_UTC_Adjust
+	toColumn: LocalDateTable_e8dd3ba0-7da2-455b-9f5d-b31c27e9c7f4.Date
+
+relationship d8abd569-e790-4eba-b27a-8bb8f21d7ef6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _FX_Date.FX_WeekEnding
+	toColumn: LocalDateTable_e6dc2717-7c34-43ec-be8f-4037174de699.Date
+
+relationship 233ea024-244d-4d87-b4f5-4f762ead4c7e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.'WP Last Progress Date'
+	toColumn: LocalDateTable_a4c5fd99-c260-4969-9279-89c6096a46f3.Date
+
+relationship 2dcf3388-f8ea-4897-a6ff-990ebf0c03f7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.FX_Comp_Plan_WkEnd
+	toColumn: LocalDateTable_02c6f9cd-9e7e-438c-8502-c67d6d803a54.Date
+
+relationship 42f4e54f-15ae-4f40-87fa-1774f6f5d1b6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.FX_Comp_Actual_WkEnd
+	toColumn: LocalDateTable_1ee98c90-bfd2-4eeb-8673-37db4b387124.Date
+
+relationship 828e9e41-201e-4bb8-86ba-b72d013d0289
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.FX_Issued_Plan_WkEnd
+	toColumn: LocalDateTable_53321a0a-0b31-431b-9c45-92d239c0b721.Date
+
+relationship ba7819c9-2436-4d54-b16b-a026b45781e8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.FX_Issued_Actual_WkEnd
+	toColumn: LocalDateTable_a9f4d98e-58d9-429c-863b-7e328dcd2314.Date
+
+relationship 40fd8105-543b-4984-974f-9585b31332c3
+	fromColumn: 'Qry_IWP Detail'.'JOB NO'
+	toColumn: StaticTbl_Plant_Names.JobNo
+
+relationship 2a37d2e8-89fe-4aba-a0eb-332ad64d07c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Distrib-Alloc-ToGo.'PLAN START'
+	toColumn: LocalDateTable_dc3d0bda-a944-4d8b-a8cb-a82aeda6e3b0.Date
+
+relationship 4c7a27c4-2f86-47a9-8cc9-c23e5dab1e52
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Distrib-Alloc-ToGo.'DISTRIBUTION START'
+	toColumn: LocalDateTable_ba7e7e4b-72ff-4f82-a634-c6db385d7e0d.Date
+
+relationship 4cc64798-0efe-44b1-bbd2-56efc74c33c3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Distrib-Alloc-ToGo.'DISTRIBUTION FINISH'
+	toColumn: LocalDateTable_b76446a4-cff2-4f55-a3d2-98ec29901e5b.Date
+
+relationship 73c9c076-0c78-496c-a411-d70fb702d61b
+	toCardinality: many
+	fromColumn: Excel_Distrib-Alloc-ToGo.NAME
+	toColumn: 'Qry_IWP Detail'.WPNO
+
+relationship 754744c9-e91c-45c9-80e5-8a0b35cedce4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Distrib-Alloc-Plan.'PLAN START'
+	toColumn: LocalDateTable_c5c1d9cc-44c3-4d9f-ab42-682a85ad72d7.Date
+
+relationship cdb663ed-b7e9-404d-aac2-6f85d31ef72f
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Qry_IWP Detail'.WPNO
+	toColumn: _FX_Xmatch_ActCode.WPNO
+
+relationship 87e19c81-2109-4393-b27a-6e98d57b2ce5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _FX_Date.Date
+	toColumn: LocalDateTable_5ebfd1ff-8823-42e2-bffe-33d3b073cf4b.Date
+
+relationship 2516f9fb-08b9-4625-a451-34ec76028aba
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_AFC_Distrib.DATE
+	toColumn: LocalDateTable_f7ca9c7a-a5d8-4f5c-b72d-b47493c71fbf.Date
+
+relationship d1dd1b86-c539-44b2-94b8-01a58a17d9cc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dataflow_ProgressReportHistory.Date
+	toColumn: LocalDateTable_4d9c8295-2781-40c8-8597-e4cfd57b3b57.Date
+
+relationship afa12355-7611-4158-83e4-8b7f16db93b5
+	fromColumn: 'Qry_IWP Detail'.FX_DeckLvl
+	toColumn: StaticTbl_DeckLvl.Code
+
+relationship 67aaf717-fdbe-483b-91ab-d06a7981c674
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'xrefdate_Distribution File'.'Date accessed'
+	toColumn: LocalDateTable_c94ed8ff-882d-42f7-b940-7c002b3e7960.Date
+
+relationship c97b51ee-792d-4c7f-af95-24d9d27b50b1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'xrefdate_Distribution File'.'Date modified'
+	toColumn: LocalDateTable_1852654f-11af-49a3-9bd8-68f00140f4d1.Date
+
+relationship 9a8249d9-fcaf-41bc-b51e-3195e7ad3a46
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'xrefdate_Distribution File'.'Date created'
+	toColumn: LocalDateTable_1314f1b3-9572-4848-aa2d-711c6a5a279c.Date
+
+relationship 2d4c76c8-070e-4216-a383-3aa7a9f0e65c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Excel_Kronos Weekly'.FX_KronosDaily_CurrentWeekEnding
+	toColumn: LocalDateTable_6e2fc92e-a33f-4053-a087-e9b2e01cc825.Date
+
+relationship 6570084d-6428-4900-afd7-b74e5a5d2b44
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Excel_D7650 MLF'.'Week Ending'
+	toColumn: LocalDateTable_dccf5e91-bbd3-48da-bd0d-1dfd0f7cda09.Date
+
+relationship 6d10fa59-71cc-4c46-8555-6b2b93588a89
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.FX_FisrtIssuanceDate
+	toColumn: LocalDateTable_370649d9-1685-4224-a72c-ebcc38ec4b3b.Date
+
+relationship de0f03f3-baa3-4c31-97ea-ee8f60f0a59b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dataflow_ProgressReportHistory.FX_FisrtIssuanceDate
+	toColumn: LocalDateTable_ee931ea4-6a0c-4b55-aa2a-d2ff7d919d93.Date
+
+relationship 9341a056-ab88-4460-830c-fd4c28e5660d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Excel_D7650 MLF'.'Date Update'
+	toColumn: LocalDateTable_a5bb931b-51f8-4e8c-8ba3-b3e981acdbfc.Date
+
+relationship 67c34bff-6107-4720-b305-6b0df001deeb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_IRE_PLN_PRG.'Effective Date'
+	toColumn: LocalDateTable_15c2dcfa-697e-43d3-b63d-207531ec9f52.Date
+
+relationship 2c36e892-295f-4eaa-be28-b9be49542236
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_IRE_PLN_PRG.FX_Date
+	toColumn: LocalDateTable_84772921-7daf-435e-a6f7-b543cb2ce0ac.Date
+
+relationship bbc26c5d-e0b3-490c-b7b8-fe08d9ec2312
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_IFE_PLN_PRG.FX_Date
+	toColumn: LocalDateTable_da20f1a6-21b8-44c9-a583-46483261b8ef.Date
+
+relationship 8358ddcf-cb38-4b66-bfd4-8cf47fc8380f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_IOE_PLN_PRG.FX_Date
+	toColumn: LocalDateTable_6476895b-1186-4e50-9bc2-33480047a196.Date
+
+relationship abbf17eb-1160-48bc-be94-ffa25a502fd1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _FX_Distribution_Hrs.FX_Date2
+	toColumn: LocalDateTable_1d1ceaf5-f477-4337-8fd3-595ba21916d0.Date
+
+relationship b8a1b810-fe23-0dca-c55d-fee2b28bf4d1
+	fromColumn: 'Qry_IWP Detail'.DISCIPLINE
+	toColumn: 'StaticTbl_Discipline Code'.Description
+
+relationship 0e56d6d4-1b02-4bac-a919-f20df616fa2f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_IFE_PLN_PRG.'Effective Date'
+	toColumn: LocalDateTable_b1f957ad-a584-46da-8987-4779e1ae03cf.Date
+
+relationship c38d75bc-88e8-44be-8a82-d0597785586d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Kronos_2024.FX_LastWeek
+	toColumn: LocalDateTable_b8b88855-1a62-48a3-89fa-80e778610f51.Date
+
+relationship e5bb01a0-89ce-4d5d-b5fa-8ca85eabf078
+	fromColumn: 'Qry_IWP Detail'.AREA
+	toColumn: StaticTbl_Phase.Areacode
+
+relationship 3df6456a-421d-0df5-48f2-4c5b655089b5
+	fromColumn: 'Qry_IWP Detail'.WPNO
+	toColumn: 'Excel MDM'.WPNO
+
+relationship 99c10dd0-cee4-97cf-6d34-fc12e621b3e4
+	isActive: false
+	fromColumn: 'Qry_IWP Detail'.'AFC Hrs BIN050'
+	toColumn: 'BIN Table'.No
+
+relationship 9495fc6c-4e92-5eb0-2157-9a68d2ae2729
+	isActive: false
+	fromColumn: 'Qry_IWP Detail'.'AFC Hrs BIN100'
+	toColumn: 'BIN Table'.No
+
+relationship cf5786bf-b8f5-5997-61be-b4dd1dc949df
+	isActive: false
+	fromColumn: 'Qry_IWP Detail'.'WP Hrs BIN050'
+	toColumn: 'BIN Table'.No
+
+relationship 8f0302ee-41ce-9d7c-9615-f01e054e57db
+	isActive: false
+	fromColumn: 'Qry_IWP Detail'.'WP Hrs BIN100'
+	toColumn: 'BIN Table'.No
+
+relationship d47930f0-e0f3-4262-5fa3-86fc074d3b9c
+	isActive: false
+	fromColumn: 'Qry_IWP Detail'.'AFC Hrs BIN200'
+	toColumn: 'BIN Table'.No
+
+relationship 87286ef7-050b-acd6-7e59-6bd6fb5b184a
+	isActive: false
+	fromColumn: 'Qry_IWP Detail'.'AFC Hrs BIN400'
+	toColumn: 'BIN Table'.No
+
+relationship a0bd908c-4af1-0ade-4766-cea540f2107c
+	isActive: false
+	fromColumn: 'Qry_IWP Detail'.'WP Hrs BIN200'
+	toColumn: 'BIN Table'.No
+
+relationship f54decaf-0fb2-05f0-cd05-77110d0dd105
+	isActive: false
+	fromColumn: 'Qry_IWP Detail'.'WP Hrs BIN400'
+	toColumn: 'BIN Table'.No
+
+relationship beb86e17-0887-4e08-ba9d-8513821bba36
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Distrib-Alloc-Plan.DATE
+	toColumn: LocalDateTable_8162341a-6299-4857-8171-5bbd2d9d6167.Date
+
+relationship c553ab19-f744-415d-99cb-29e3c3d304a6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Distrib-Alloc-ToGo.DATE
+	toColumn: LocalDateTable_8e0cc351-42e6-487d-ab53-0a9a8fd2762c.Date
+
+relationship bc8d422a-94de-4891-be88-3919a0124944
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Excel_Kronos Weekly'.DATE
+	toColumn: LocalDateTable_f296862e-5e4b-4271-9c15-a22a3dd2fd06.Date
+
+relationship 51193929-2889-4a7d-9a9a-24dff1d6874c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Distrib-Alloc-ToGo.'PLAN FINISH'
+	toColumn: LocalDateTable_88212af9-e6c6-43c8-9fa7-65ea0677b81d.Date
+
+relationship ef42cbe7-c641-02f5-20be-9aac48415f29
+	toCardinality: many
+	fromColumn: _FX_Craft_Allocation_Distribution.FX_Plant_Phase_Disc
+	toColumn: 'Excel MDM'.fx_phase_disc
+
+relationship f7fc29e0-b953-4c44-abdd-1bca64033bc7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dataflow_ProgressReportHistory.'WP Revision Date'
+	toColumn: LocalDateTable_aa430eef-0707-41be-996f-237b86dcc620.Date
+
+relationship 922dd9c0-6d67-4a58-a925-3214bf43d2af
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FX_Distribution_Allocation_Count.DATE
+	toColumn: LocalDateTable_a85baf3f-6d72-46a2-b637-2516cb10c6d0.Date
+
+relationship 9e8cf0e6-85bd-425b-9354-a293503f8b53
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FX_Distribution_Allocation_Count.'PLAN START'
+	toColumn: LocalDateTable_9eb77177-fcb5-46bb-8d5c-985658d8531b.Date
+
+relationship a21cdf9e-b141-4a0e-b3e3-8c51b4ff23af
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FX_Distribution_Allocation_Count.'PLAN FINISH'
+	toColumn: LocalDateTable_7c9b10e7-5989-487b-ae6b-32ee257bf8ab.Date
+
+relationship be30f7d0-118c-44e9-9b8c-c8d48fc5ff2e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _FX_WPPlan_Final_Issued.WeekEnding
+	toColumn: LocalDateTable_46f1959a-72f9-4eae-8dd7-52b6180aa4e3.Date
+
+relationship 75b9a25f-3892-4c26-acce-a319a6f05437
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _FX_WPPlan_Final_Comp.WeekEnding
+	toColumn: LocalDateTable_319035f4-36b2-4d44-87fb-77cbf20bc1d4.Date
+
+relationship 1f7d3408-a3de-b1bc-0606-a11f4090a9ca
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Qry_IWP Detail'.FIWPOBID
+	toColumn: _FX_WPPlan_Final_Issued.FIWPOBID
+
+relationship 45eafde8-3aed-0784-3bcf-b3c16c8169c6
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Qry_IWP Detail'.FIWPOBID
+	toColumn: _FX_WPPlan_Final_Comp.FIWPOBID
+
+relationship e54c0b56-7542-4167-bf10-c4eab68fbe98
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dataflow_ProgressReportHistory.'WP Planned Start Date'
+	toColumn: LocalDateTable_b5fb8881-ad51-4d0e-b08c-36ed4753d9c9.Date
+
+relationship cd67f74a-b668-4e97-87a0-32be84469a4c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dataflow_ProgressReportHistory.'WP Planned Finish Date'
+	toColumn: LocalDateTable_db40cefa-0891-4351-9eb5-e89f172a2a9b.Date
+
+relationship 9e836558-8a4f-ff71-c3ac-d9df4ba0ea0c
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: _FX_Distribution_Hrs.Status
+	toColumn: Static_Workface_Slicer.Item
+
+relationship a687d93c-c512-cc7b-39ec-a71c27363946
+	fromColumn: _FX_Distribution_Hrs.WPNO
+	toColumn: 'Excel MDM'.WPNO
+
+relationship 2e8a98ea-4473-4914-b307-f59257531c2c
+	fromColumn: _FX_Distribution_Hrs.Date
+	toColumn: _FX_Date.Date
+
+relationship 8b5c4326-fe86-dd50-c7e1-8e4229e541e2
+	fromColumn: _FX_Distribution_Hrs.'JOB NO'
+	toColumn: StaticTbl_Plant_Names.JobNo
+
+relationship f2d4bbd6-4325-c192-bf46-dce3e4d7078f
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Qry_IWP Detail'.'WP Actual Start Date'
+	toColumn: _FX_Date.Date
+
+relationship 063b0706-2bda-23e1-fb1f-463570ff0e0d
+	isActive: false
+	toCardinality: many
+	fromColumn: 'Qry_IWP Detail'.'WP Planned Start Date'
+	toColumn: _FX_Date.Date
+
+relationship 0e9866d8-595f-4e1c-9500-e25f94fd9c9a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.FX_Start_Actual_WkEnd
+	toColumn: LocalDateTable_e8d4c31d-3cdb-437e-853b-6930fd4f0894.Date
+
+relationship 845d9e2b-81d9-4f52-9b94-31fd0664b82a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_IOE_PLN_PRG.'Effective Date'
+	toColumn: LocalDateTable_fd6849df-38ef-4b99-a0ff-b450ef992f42.Date
+
+relationship 5e5dc50a-7e54-4a63-95dd-9b30d25a7616
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.fx_planned_issued_date
+	toColumn: LocalDateTable_2d47ab4f-5566-4b67-b56a-168c9e92c0d4.Date
+
+relationship 4bb4b6e5-14b5-4178-b352-a32e0e7eb37d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Kronos_2024.Timesheet_Date
+	toColumn: LocalDateTable_44625829-e6c5-4904-b01b-0186d94ce61f.Date
+
+relationship d974ef36-4645-5619-8bc4-e477ee21b66a
+	toCardinality: many
+	fromColumn: Qry_IWP_Constraints.JOB_WPNO
+	toColumn: Qry_IWP_Assignments.JOB_WPNO
+
+relationship 64951cc9-c0ac-4e38-b869-4ef66c3be1cb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Qry_IWP Detail'.FX_Start_Plan_WkEnd
+	toColumn: LocalDateTable_857e19e8-779e-4093-9da9-056258f35662.Date
+
+relationship 91872591-cce2-9e43-e0c6-258f614aefc6
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Statictbl_ConstraintWeekfilter.'Filter Type'
+	toColumn: Qry_IWP_Constraints.fx_constraint_week_status
+
+relationship df664341-a3d1-463b-97e3-58276c749fe6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _FX_Distribution_Qty_Count.DATE
+	toColumn: LocalDateTable_42f7efbf-0d6b-4149-a31c-46ca29f35f12.Date
+
+relationship fd83e2f0-673f-d4a4-1b77-cd6c984b06d2
+	toCardinality: many
+	fromColumn: _FX_Distribution_Qty_Count.NAME
+	toColumn: 'Qry_IWP Detail'.WPNO
+
+relationship 2aa8dad3-6bd4-7ba2-760c-0e9097ae6f9d
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: FX_Distribution_Allocation_Count.NAME
+	toColumn: _FX_Distribution_Qty_Count.NAME
+
+relationship 0d0f08b1-fbbb-f144-2e08-1d9d08c4a93c
+	toCardinality: many
+	fromColumn: _FX_Prod_ActivityCode.qpry_JOBNO_WPNO
+	toColumn: 'Qry_IWP Detail'.qpry_JOBNO_WPNO
+
+relationship 7d88b2ee-84fc-cf5c-7004-024b6a9e2d2c
+	crossFilteringBehavior: bothDirections
+	fromColumn: fx_fitter_welder.Job_WPNO
+	toColumn: _FX_Prod_ActivityCode.qpry_JOBNO_WPNO
+
+relationship 002afe9d-793e-66b5-885e-662706484418
+	crossFilteringBehavior: bothDirections
+	fromColumn: Qry_IWP_Constraints.JOB_WPNO
+	toColumn: _FX_Prod_ActivityCode.qpry_JOBNO_WPNO
+
+relationship 49e9f9aa-668f-4272-a9c3-87058b70ad67
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Distrib-Alloc-AFC_To-go.'PLAN START'
+	toColumn: LocalDateTable_d9234841-64fc-4c54-866d-618dec32c8a9.Date
+
+relationship 0643987d-e2b7-41f4-8155-e19ef7d569c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Excel_Distrib-Alloc-AFC_To-go.DATE
+	toColumn: LocalDateTable_fb69e720-acd9-4c2f-bc07-9ba1ce787247.Date
+
+relationship 342ed976-099e-4121-9772-2e7182d1bad9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _FX_Craft_Allocation_Distribution.FX_LastWeek
+	toColumn: LocalDateTable_97eb81ee-947a-4c3d-bb43-953d12a5f6de.Date
+
+relationship dc9ccd07-7d4f-5a70-975b-148d05ecaad7
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: StaticTbl_Phase.Phase
+	toColumn: _FX_Craft_Allocation_Distribution.FX_Phase
+
+relationship ae74859d-3ac7-5d8d-427e-a5df17e7d7de
+	fromColumn: _FX_Craft_Allocation_Distribution.'JOB Number'
+	toColumn: StaticTbl_Plant_Names.JobNo
+

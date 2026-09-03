@@ -1,0 +1,199 @@
+table 'Excel MDM'
+	lineageTag: 00caaad2-e514-4839-983d-5b4673973147
+
+	column WPNO
+		dataType: string
+		lineageTag: ab9e1682-466d-490d-8ae5-85b707598923
+		summarizeBy: none
+		sourceColumn: WPNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Code Description'
+		dataType: string
+		lineageTag: d2b6b156-303f-4dc5-bfd6-5105676734d0
+		summarizeBy: none
+		sourceColumn: Activity Code Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Structure
+		dataType: string
+		lineageTag: 49f3638b-1e0b-484d-a25a-240418767c5e
+		summarizeBy: none
+		sourceColumn: Structure
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Code Description_1'
+		dataType: string
+		lineageTag: cb26994b-7094-47a8-97c8-8c5de6ef7529
+		summarizeBy: none
+		sourceColumn: Activity Code Description_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Code'
+		dataType: string
+		lineageTag: d0aa0ef1-5163-46b6-b885-b6ed1bb2d4ea
+		summarizeBy: none
+		sourceColumn: Area Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: 0bf4e9e4-d4f9-430d-b058-9a528a68f723
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discipline Code'
+		dataType: string
+		lineageTag: 8d27096a-123e-4d82-9e44-9e9f0f6a6df8
+		summarizeBy: none
+		sourceColumn: Discipline Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discipline
+		dataType: string
+		lineageTag: f0e64332-03fb-4913-b4dd-003b18094e9e
+		summarizeBy: none
+		sourceColumn: Discipline
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phase Grouping Code'
+		dataType: string
+		lineageTag: 8fb16f09-3b6a-42bc-8648-ffaba2c570f1
+		summarizeBy: none
+		sourceColumn: Phase Grouping Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phase Grouping'
+		dataType: string
+		lineageTag: 733926fa-ae35-497a-9b2b-882d4a2aca22
+		summarizeBy: none
+		sourceColumn: Phase Grouping
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Progress Grouping Code'
+		dataType: string
+		lineageTag: 0911b6dc-e240-4170-ab6e-d7ccc9f678f9
+		summarizeBy: none
+		sourceColumn: Progress Grouping Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Progress Grouping'
+		dataType: string
+		lineageTag: ffbe801c-51b5-4ca1-858d-8ac0f8621594
+		summarizeBy: none
+		sourceColumn: Progress Grouping
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Progress Grouping.3'
+		dataType: string
+		lineageTag: 6c1b9387-023e-471a-8bf8-6e9b65268061
+		summarizeBy: none
+		sourceColumn: Progress Grouping.3
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WPNO = LOOKUPVALUE(dataflow_ProgressReportHistory[WPNO],dataflow_ProgressReportHistory[WPNO],'Excel MDM'[WPNO])
+		lineageTag: 0c23463e-395f-4561-ab7b-a3bcf4dabd32
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code-Area
+		dataType: string
+		lineageTag: aebb488b-09fe-43a8-a2c9-9dcb3189e46d
+		summarizeBy: none
+		sourceColumn: Code-Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Code-Progress Grouping'
+		dataType: string
+		lineageTag: 6b0c57f1-99d4-4efe-87cc-ec380755a45f
+		summarizeBy: none
+		sourceColumn: Code-Progress Grouping
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Code-Phase Grouping'
+		dataType: string
+		lineageTag: ee683cdc-a4eb-4336-8135-d3e068fba132
+		summarizeBy: none
+		sourceColumn: Code-Phase Grouping
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_phase_disc = [Phase Grouping]&"-"&[Discipline]
+		lineageTag: 37f3dede-69ba-4552-b235-7615805e098d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_activity_code_fittercode = [WPNO]&"F"
+		lineageTag: 1971cd3e-2aba-412f-973f-6221887dd323
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Component
+		dataType: string
+		lineageTag: 9334e74a-f37d-4759-827e-d0fbc58c1310
+		summarizeBy: none
+		sourceColumn: Component
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comments
+		dataType: string
+		lineageTag: ec8334d7-78ed-4771-859f-99356429a314
+		summarizeBy: none
+		sourceColumn: Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Excel MDM' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Depts\Planning\Tableau\Planning\1. EMEA\03. Fabrication\02. Projects\07. MDM\Activity Code Attributes From MDM.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Promoted Headers", "Area", "Area - Copy"),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Duplicated Column", "Phase Grouping", "Phase Grouping - Copy"),
+				    #"Duplicated Column2" = Table.DuplicateColumn(#"Duplicated Column1", "Progress Grouping", "Progress Grouping - Copy"),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Duplicated Column2",{{"Area - Copy", "Code-Area"}, {"Phase Grouping - Copy", "Code-Phase Grouping"}, {"Progress Grouping - Copy", "Code-Progress Grouping"}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Renamed Columns1", "Area", Splitter.SplitTextByDelimiter(" - ", QuoteStyle.Csv), {"Area.1", "Area.2"}),
+				    #"Split Column by Delimiter1" = Table.SplitColumn(#"Split Column by Delimiter", "Discipline", Splitter.SplitTextByDelimiter(" - ", QuoteStyle.Csv), {"Discipline.1", "Discipline.2"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Split Column by Delimiter1","ME-91 - ","",Replacer.ReplaceText,{"Phase Grouping"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","ME-92 - ","",Replacer.ReplaceText,{"Phase Grouping"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","ME-93 - ","",Replacer.ReplaceText,{"Phase Grouping"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","ME-94 - ","",Replacer.ReplaceText,{"Phase Grouping"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","ME-95 - ","",Replacer.ReplaceText,{"Phase Grouping"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","ME-","",Replacer.ReplaceText,{"Phase Grouping"}),
+				    #"Split Column by Delimiter2" = Table.SplitColumn(#"Replaced Value5", "Phase Grouping", Splitter.SplitTextByEachDelimiter({" - "}, QuoteStyle.Csv, false), {"Phase Grouping.1", "Phase Grouping.2"}),
+				    #"Split Column by Delimiter3" = Table.SplitColumn(#"Split Column by Delimiter2", "Progress Grouping", Splitter.SplitTextByDelimiter(" - ", QuoteStyle.Csv), {"Progress Grouping.1", "Progress Grouping.2", "Progress Grouping.3"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Split Column by Delimiter3",{{"Area.1", "Area Code"}, {"Area.2", "Area"}, {"Discipline.1", "Discipline Code"}, {"Discipline.2", "Discipline"}, {"Phase Grouping.1", "Phase Grouping Code"}, {"Phase Grouping.2", "Phase Grouping"}, {"Progress Grouping.1", "Progress Grouping Code"}, {"Progress Grouping.2", "Progress Grouping"}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Renamed Columns", "Custom", each if Text.Contains([#"Code-Phase Grouping"], "VO") then "VO" else [#"Code-Phase Grouping"]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Conditional Column",{"Code-Phase Grouping"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Removed Columns",{{"Custom", "Code-Phase Grouping"}, {"Activity Code", "WPNO"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns2",{{"WPNO", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [WPNO] <> null and [WPNO] <> "")
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

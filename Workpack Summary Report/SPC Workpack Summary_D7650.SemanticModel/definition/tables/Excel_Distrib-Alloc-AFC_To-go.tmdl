@@ -1,0 +1,169 @@
+table Excel_Distrib-Alloc-AFC_To-go
+	lineageTag: e50a56d8-8fee-48d4-8ae8-acb3f6a5fc49
+
+	column FIWPOBID
+		dataType: string
+		lineageTag: ad0410b9-6061-46df-9ea9-23e3d8696cce
+		summarizeBy: none
+		sourceColumn: FIWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPUID
+		dataType: string
+		lineageTag: 2ef46008-c82b-4177-97dc-ca2713cae303
+		summarizeBy: none
+		sourceColumn: FIWPUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROJECT
+		dataType: string
+		lineageTag: edb71416-3ad9-4846-8670-92540a781009
+		summarizeBy: none
+		sourceColumn: PROJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		dataType: string
+		lineageTag: f9a1ba5e-5946-4bea-a6d0-7f8caeb6229d
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CWPOBID
+		dataType: string
+		lineageTag: ff5d67a3-eb9c-44b7-8911-7a02ae331fc8
+		summarizeBy: none
+		sourceColumn: CWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPTION
+		dataType: string
+		lineageTag: fb9a9379-ad3c-45ac-8645-f22a5602e4db
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		dataType: string
+		lineageTag: e8f686bd-ffea-40b9-8d17-742476832052
+		summarizeBy: none
+		sourceColumn: DISCIPLINE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNEDMANHRS
+		dataType: double
+		lineageTag: b35b3fc0-48e3-4a84-ad7f-ded6abc3c0da
+		summarizeBy: sum
+		sourceColumn: PLANNEDMANHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PURPOSE
+		dataType: string
+		lineageTag: 7a16df9a-9b94-41f2-be84-79af01760670
+		summarizeBy: none
+		sourceColumn: PURPOSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACTOR
+		dataType: int64
+		formatString: 0
+		lineageTag: 436db538-3a47-4f80-a79d-b6c332c1a4cb
+		summarizeBy: sum
+		sourceColumn: CONTRACTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESIGNAREA
+		dataType: string
+		lineageTag: 5c2f8edb-798f-4117-acf6-89c2b95bc33e
+		summarizeBy: none
+		sourceColumn: DESIGNAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PLAN START'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0aad7f2d-1366-4545-adc0-d9e8e1ddd5ee
+		summarizeBy: none
+		sourceColumn: PLAN START
+
+		variation Variation
+			isDefault
+			relationship: 49e9f9aa-668f-4272-a9c3-87058b70ad67
+			defaultHierarchy: LocalDateTable_d9234841-64fc-4c54-866d-618dec32c8a9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'PLAN FINISH'
+		dataType: string
+		lineageTag: bd449066-35d4-408f-88ac-e723939c8f3c
+		summarizeBy: none
+		sourceColumn: PLAN FINISH
+
+		annotation SummarizationSetBy = Automatic
+
+	column HRS
+		dataType: string
+		lineageTag: 3aae8057-2fc2-4c43-853e-8df3ddf9d2df
+		summarizeBy: none
+		sourceColumn: HRS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: af12b6b8-7431-4295-b959-37fbbc5c27cd
+		summarizeBy: none
+		sourceColumn: DATE
+
+		variation Variation
+			isDefault
+			relationship: 0643987d-e2b7-41f4-8155-e19ef7d569c7
+			defaultHierarchy: LocalDateTable_fb69e720-acd9-4c2f-bc07-9ba1ce787247.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column pqry_TYPE
+		dataType: string
+		lineageTag: 2e513319-53f7-438c-ad3d-a0ee3929185c
+		summarizeBy: none
+		sourceColumn: pqry_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Excel_Distrib-Alloc-AFC_To-go = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\WP Hour Distribution\D7650\AFC\D7650 AFC Hrs - Togo Distribution.xlsx"), null, true),
+				    DISTRIBUTION_Sheet = Source{[Item="DISTRIBUTION",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(DISTRIBUTION_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"FIWPOBID", type text}, {"FIWPUID", type text}, {"PROJECT", type text}, {"NAME", type text}, {"CWPOBID", type text}, {"DESCRIPTION", type text}, {"DISCIPLINE", type text}, {"PLANNEDMANHRS", type number}, {"PURPOSE", type text}, {"CONTRACTOR", Int64.Type}, {"DESIGNAREA", type text}, {"PLAN START", type date}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"FIWPOBID", "FIWPUID", "PROJECT", "NAME", "CWPOBID", "DESCRIPTION", "DISCIPLINE", "PLANNEDMANHRS", "PURPOSE", "CONTRACTOR", "DESIGNAREA", "PLAN START", "PLAN FINISH", "HRS", "DATE"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([PLANNEDMANHRS] <> 0)),
+				    #"Added Custom" = Table.AddColumn(#"Filtered Rows", "pqry_TYPE", each "AFCHRS"),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"DATE", type date}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

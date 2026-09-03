@@ -1,0 +1,496 @@
+table _MX_Productivity
+	lineageTag: 131c14db-eda2-473a-a01a-80c1d6c958d2
+
+	measure MX_AFC_Prog% = sum('_FX_Prod_ActivityCode'[FX_AFC_Hrs_CumEarn])/sum('_FX_Prod_ActivityCode'[FX_AFC_Hrs])
+		formatString: 0%;-0%;0%
+		lineageTag: 91d92222-ae62-4935-817a-93bc15da3669
+
+		changedProperty = FormatString
+
+	measure MX_Sum_AFCHrs_Cum = sum('_FX_Prod_ActivityCode'[FX_AFC_Hrs_CumEarn])
+		formatString: #,0
+		lineageTag: fd07988d-e6fc-44b2-80f4-64ed59871626
+
+		changedProperty = FormatString
+
+	measure MX_Sum_AFCHrs_Tot = sum('_FX_Prod_ActivityCode'[FX_AFC_Hrs])
+		formatString: #,0
+		lineageTag: 737abe65-6e6c-44c1-83e9-87c00c8cf25f
+
+		changedProperty = FormatString
+
+	measure MX_Sum_AFCHrs_Wkly = sum('_FX_Prod_ActivityCode'[FX_WPHrs_WklyEarn])
+		formatString: #,0
+		lineageTag: 6806dac6-ad17-47bf-b804-cfa6d22d5157
+
+		changedProperty = FormatString
+
+	measure MX_Sum_WPHrs_Cum = sum('_FX_Prod_ActivityCode'[FX_WPHrs_CumEarn])
+		formatString: #,0
+		lineageTag: 8642541f-5dab-471e-b82b-49dcd79f7b47
+
+		changedProperty = FormatString
+
+	measure MX_Sum_WPHrs_Tot = sum('_FX_Prod_ActivityCode'[FX_WPHrs])
+		formatString: #,0
+		lineageTag: e756dfd8-ba74-4830-a821-a73c199a2c1a
+
+		changedProperty = FormatString
+
+	measure MX_Sum_WPHrs_Wkly = sum('_FX_Prod_ActivityCode'[FX_WPHrs_WklyEarn])
+		formatString: #,0
+		lineageTag: 492b6d53-8eb2-4abd-8d9a-4672fca8e027
+
+		changedProperty = FormatString
+
+	measure MX_WP_Prog% = sum('_FX_Prod_ActivityCode'[FX_WPHrs_CumEarn])/sum('_FX_Prod_ActivityCode'[FX_WPHrs])
+		formatString: 0%;-0%;0%
+		lineageTag: a3f1b24c-2db0-4a9b-873c-9bec358e8236
+
+		changedProperty = FormatString
+
+	measure MXD_DLT_AFC-WP_Cum = [MX_Sum_AFCHrs_Cum]-[MX_Sum_WPHrs_Cum]
+		formatString: #,0
+		lineageTag: bc6900b5-381a-4519-8b7b-94a52ca7b35f
+
+		changedProperty = FormatString
+
+	measure MXD_DLT_AFC-WP_Tot = [MX_Sum_AFCHrs_Tot]-[MX_Sum_WPHrs_Tot]
+		formatString: #,0
+		lineageTag: 4b56e2c6-f9a1-4eb4-afce-325b1ca2271f
+
+		changedProperty = FormatString
+
+	measure MXD_DLT_AFC-WP_Wkly = [MX_Sum_AFCHrs_Wkly]-[MX_Sum_WPHrs_Wkly]
+		formatString: #,0
+		lineageTag: 581b7d99-6c0c-477c-a045-19e1fde34481
+
+		changedProperty = FormatString
+
+	measure MXD_Prod_AFC_Cum = ROUNDUP(iferror(([MX_Sum_AFCHrs_Cum]/[MXD_Sum_KronosHrs_Cum_ATCPTD]),BLANK()),2)
+		formatString: 0.00
+		lineageTag: 2d5160de-182a-4c8a-a1fd-3d52879ad788
+
+		changedProperty = FormatString
+
+	measure MXD_Prod_AFC_Wkly = ROUNDUP(iferror(([MX_Sum_AFCHrs_Wkly]/[MXD_Sum_KronosHrs_Wkly_ATCPTD]),BLANK()),2)
+		formatString: 0.00
+		lineageTag: 3e39639f-cba7-49d1-87b9-39f544314f58
+
+		changedProperty = FormatString
+
+	measure MXD_Prod_WP_Cum = ROUNDUP(IFERROR(([MX_Sum_WPHrs_Cum]/[MXD_Sum_KronosHrs_Cum_ATCPTD]),BLANK()),2)
+		formatString: 0.00
+		lineageTag: 5b1188c6-7791-4778-9eb1-6d530bd3d2b7
+
+		changedProperty = FormatString
+
+	measure MXD_Prod_WP_Wkly_ATCPTD = ROUNDUP(IFERROR(([MX_Sum_WPHrs_Wkly]/[MXD_Sum_KronosHrs_Wkly_ATCPTD]),BLANK()),2)
+		formatString: 0.00
+		lineageTag: d8d36ab1-6ded-4c98-aa91-e1f60613a584
+
+		changedProperty = FormatString
+
+	measure MXD_Sum_KronosHrs_Cum = sum('_FX_Prod_ActivityCode'[FX_KRONOS_HRS_PREVWK])+[MXD_Sum_KronosHrs_Wkly_Act]
+		formatString: #,0
+		lineageTag: 8aa4c352-909b-44be-9816-4519945c484f
+
+		changedProperty = FormatString
+
+	measure MXD_Sum_KronosHrs_Wkly_Act = sum('_FX_Prod_ActivityCode'[FX_Kronos_Hrs_Wk])
+		formatString: #,0
+		lineageTag: 7136f6d1-4f4d-4e47-89ef-6e9e4f3b1f93
+
+		changedProperty = FormatString
+
+	measure MXD_Sum_KronosHrs_Wkly_ATCPTD = sum('_FX_Prod_ActivityCode'[FX_Kronos_Hrs_Wk])*1.2
+		formatString: #,0
+		lineageTag: 2fe32f23-653a-4b25-934b-01f511494d45
+
+		changedProperty = FormatString
+
+	measure MXD_DLT_WP_Tot-Cum = [MX_Sum_WPHrs_Tot]-[MX_Sum_WPHrs_Cum]
+		formatString: #,0
+		lineageTag: b2bd276d-f01a-4c52-9af8-ef8ccdff6fe0
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_WP_Comp =
+			if(COUNTAX(
+			FILTER('Qry_IWP Detail','Qry_IWP Detail'[WP Progress]>=1),'Qry_IWP Detail'[WPNO])>0,COUNTAX(
+			FILTER('Qry_IWP Detail','Qry_IWP Detail'[WP Progress]>=1),'Qry_IWP Detail'[WPNO]),0)
+		formatString: #,0
+		lineageTag: 07baed01-3702-4007-8503-cb65e6bbefe0
+
+		changedProperty = FormatString
+
+	measure MXD_Sum_KronosHrs_Cum_ATCPTD = sum('_FX_Prod_ActivityCode'[FX_KRONOS_HRS_PREVWK])+[MXD_Sum_KronosHrs_Wkly_ATCPTD]
+		formatString: #,0
+		lineageTag: b4445b8b-6c3d-4a6a-aa0e-95cce240c7cc
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_CurrentWeekEnding = (if(WEEKDAY(today()) < 6,(today()+5) - WEEKDAY(today()),((today()+5) - WEEKDAY(today()))+7))
+		formatString: dd-mmm-yy
+		lineageTag: be563532-234d-4664-8f40-ae00bf71dba6
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure MX_Prod_Fitter =
+			var _prod = sum(_FX_Prod_ActivityCode[_FX_SPC_Fitter_WPHrs_WklyEarn])/sum(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Fitter])
+			return
+			IF(ISERROR(_prod),0,_prod)
+		lineageTag: bd588258-e650-4dc4-aedb-3538eab60259
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Welder =
+			var _prod = [MX_Prod_Welder_WPHrs_Wkly]/[MX_Prod_Welder_Kronos_Wkly_ATCPTD]
+			return
+			IF(ISERROR(_prod),0,_prod)
+		lineageTag: c1400d92-a3e2-4746-8d75-ebde4f40945a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Fitter_WPHrs_Wkly = ```
+			
+			var output = SUMX(VALUES(Qry_IWP_Constraints[Type01]),
+			IF(Qry_IWP_Constraints[Type01] = "Welder", SUM(_FX_Prod_ActivityCode[_FX_SPC_Welder_WPHrs_WklyEarn]), 
+			IF(Qry_IWP_Constraints[Type01] = "Fitter",CALCULATE(SUM(_FX_Prod_ActivityCode[_FX_SPC_Fitter_WPHrs_WklyEarn]),_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			IF(Qry_IWP_Constraints[Type01] = "Painting",CALCULATE(SUM(_FX_Prod_ActivityCode[_FX_SPC_Fitter_WPHrs_WklyEarn]),_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK()))))
+			RETURN
+			output
+			
+			```
+		formatString: #,0
+		lineageTag: 369d71c1-a86c-4a83-917b-c20a59fce456
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Welder_WPHrs_Wkly = SUM(_FX_Prod_ActivityCode[_FX_SPC_Welder_WPHrs_WklyEarn])
+		formatString: #,0
+		lineageTag: 34c6d2f1-4926-4068-bea4-94e7e559be9e
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Fitter_Kronos_Wkly = ```
+			
+			
+			var output = SUMX(VALUES(Qry_IWP_Constraints[Type01]),
+			IF(Qry_IWP_Constraints[Type01] = "Welder", SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Welder]), 
+			IF(Qry_IWP_Constraints[Type01] = "Fitter",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Fitter]),_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			IF(Qry_IWP_Constraints[Type01] = "Painting",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Fitter]),_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK()))))
+			RETURN
+			output
+			```
+		formatString: #,0
+		lineageTag: 8c5b26b6-9533-4675-8531-a8d6be64ee7d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Welder_Kronos_Wkly = SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Welder])
+		formatString: #,0
+		lineageTag: a12d01f2-7c11-498e-9e54-72e0aea5eab1
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Fitter_Kronos_Wkly_ATCPTD = [MX_Prod_Fitter_Kronos_Wkly]*1.2
+		formatString: #,0
+		lineageTag: 3caf3e5d-bfc2-4506-a1ba-d905571bc260
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Welder_Kronos_Wkly_ATCPTD = SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Wk_Welder])*1.2
+		formatString: #,0
+		lineageTag: 4f492f04-aa93-41b8-af71-0a82f40bae8c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_IWP_count = COUNTA('Qry_IWP Detail'[FIWPOBID])
+		formatString: #,0
+		lineageTag: 255901bb-3896-4ecb-a5e0-310962fdc0f9
+
+	measure MX_MaxDateCaptured =
+			CALCULATE(
+			    MAX('Excel_Kronos Weekly'[Date]),
+			    FILTER('Excel_Kronos Weekly','Excel_Kronos Weekly'[FX_Project]<>BLANK())) & FIRSTNONBLANK('Excel_Kronos Weekly'[Shift],1)
+		lineageTag: ed7c195f-f72b-4c54-87ad-3f81e8739ebd
+
+	measure MX_Prod_Fitter_Kronos_Cum_ATCPTD = ```
+			--SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Fitter])+[MX_Prod_Fitter_Kronos_Wkly_ATCPTD]
+			
+			var output = SUMX(VALUES(Qry_IWP_Constraints[Type01]),
+			IF(Qry_IWP_Constraints[Type01] = "Welder", SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Welder])+[MX_Prod_Fitter_Kronos_Wkly_ATCPTD], 
+			IF(Qry_IWP_Constraints[Type01] = "Fitter",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Fitter])+[MX_Prod_Fitter_Kronos_Wkly_ATCPTD],_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			IF(Qry_IWP_Constraints[Type01] = "Painting",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Fitter])+[MX_Prod_Fitter_Kronos_Wkly_ATCPTD],_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK()))))
+			RETURN
+			output
+			```
+		formatString: #,0
+		lineageTag: 6086c759-70d9-4168-8420-aaaa325cf021
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Welder_Kronos_Cum_ATCPTD = SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Welder])+[MX_Prod_Welder_Kronos_Wkly_ATCPTD]
+		formatString: #,0
+		lineageTag: 4d6ed0d8-9f38-483b-8788-07356a065449
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 00_del_fit+weld = [MX_Prod_Fitter_Kronos_Cum_ATCPTD]+[MX_Prod_Welder_Kronos_Cum_ATCPTD]
+		lineageTag: adc4faa4-6e97-43ac-8c8e-c83e629b67b3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 00_del_fit+weld_diff = [MXD_Sum_KronosHrs_Cum]-([00_del_fit+weld])
+		lineageTag: 1dd6c1e8-e589-4c8f-927c-2bfd6d43b02d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Fitter_Kronos_PrevWkly = ```
+			-- SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Prev_Wk_Fitter])
+			var output = SUMX(VALUES(Qry_IWP_Constraints[Type01]),
+			IF(Qry_IWP_Constraints[Type01] = "Welder", SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Prev_Wk_Welder]), 
+			IF(Qry_IWP_Constraints[Type01] = "Fitter",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Prev_Wk_Fitter]),_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			IF(Qry_IWP_Constraints[Type01] = "Painting",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Prev_Wk_Fitter]),_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK()))))
+			RETURN
+			output
+			
+			```
+		formatString: #,0
+		lineageTag: 28500bef-2d3d-4610-950c-03c9b922e970
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Welder_Kronos_PrevWkly = SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Prev_Wk_Welder])
+		formatString: #,0
+		lineageTag: 37e95173-5df7-41e4-82c7-4bac1553dc52
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Fitter_Prod_PrevWeek = IF([MX_Prod_Fitter_Kronos_PrevWkly]=BLANK(),BLANK(),[MX_Prod_Fitter_WPHrs_PrevWkly]/[MX_Prod_Fitter_Kronos_PrevWkly])
+		formatString: #,0.00
+		lineageTag: 444e3513-f058-4539-9862-f6ce50e5959f
+
+	measure MX_Prod_Welder_PrevWeek =
+			var _prod = sum(_FX_Prod_ActivityCode[_FX_SPC_Welder_WPHrs_PrevWklyEarn])/sum(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Prev_Wk_Welder])
+			return
+			IF(ISERROR(_prod),0,_prod)
+		lineageTag: a2537665-9096-4b3e-a5c5-026d85ef91db
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Fitter_WPHrs_PrevWkly = ```
+			--var fit = SUM(_FX_Prod_ActivityCode[_FX_SPC_Fitter_WPHrs_PrevWklyEarn])
+			var output = SUMX(VALUES(Qry_IWP_Constraints[Type01]),
+			IF(Qry_IWP_Constraints[Type01] = "Welder", SUM(_FX_Prod_ActivityCode[_FX_SPC_Welder_WPHrs_PrevWklyEarn]), 
+			IF(Qry_IWP_Constraints[Type01] = "Fitter",CALCULATE(SUM(_FX_Prod_ActivityCode[_FX_SPC_Fitter_WPHrs_PrevWklyEarn]),_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			IF(Qry_IWP_Constraints[Type01] = "Painting",CALCULATE(SUM(_FX_Prod_ActivityCode[_FX_SPC_Fitter_WPHrs_PrevWklyEarn]),_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK()))))
+			RETURN
+			output
+			```
+		formatString: #,0
+		lineageTag: c651cb48-c8dc-4b76-a43f-7be200890a6d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Welder_WPHrs_PrevWkly =
+			var weld = SUM(_FX_Prod_ActivityCode[_FX_SPC_Welder_WPHrs_PrevWklyEarn])
+			return
+			if(weld=0,BLANK(),weld)
+		formatString: #,0
+		lineageTag: d92f54c5-34e8-44cf-b8bb-332c86d0c31c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Fitter_WPHrs_Cum_Earned = ```
+			
+			var output = SUMX(VALUES(Qry_IWP_Constraints[Type01]),
+			IF(Qry_IWP_Constraints[Type01] = "Welder", SUM(_FX_Prod_ActivityCode[FX_SPC_Welder_WPHrsEarned]), 
+			IF(Qry_IWP_Constraints[Type01] = "Fitter",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_SPC_Fitter_WPHrsEarned]),_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			IF(Qry_IWP_Constraints[Type01] = "Painting",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_SPC_Fitter_WPHrsEarned]),_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK()))))
+			RETURN
+			if(output=0,BLANK(),output)
+			```
+		formatString: #,0
+		lineageTag: 0cb619a9-5385-4d94-9c20-ec7b1c70b2d9
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Welder_WPHrs_Cum_Earned =
+			var weld = SUM(_FX_Prod_ActivityCode[FX_SPC_Welder_WPHrsEarned])
+			return
+			if(weld=0,BLANK(),weld)
+		formatString: #,0
+		lineageTag: 2898ab5d-b01d-47a3-861a-5e2d3bb9e8cd
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MXD_Prod_WP_PrevWk = ROUNDUP(IFERROR(([MX_Sum_WPHrs_PrevWk]/[MXD_Sum_KronosHrs_PrevWk_Act]),BLANK()),2)
+		lineageTag: a5f97002-23f0-430c-8b4d-67d7c9e93cfc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Sum_WPHrs_PrevWk = sum('_FX_Prod_ActivityCode'[FX_WPHrs_PrevWklyEarn])
+		formatString: #,0
+		lineageTag: 3f532302-29e7-4dad-9be4-44d690ed3556
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MXD_Sum_KronosHrs_PrevWk_Act = sum('_FX_Prod_ActivityCode'[FX_Kronos_Hrs_Prev_Wk])
+		formatString: #,0
+		lineageTag: 1bfb930e-09b7-4e76-b42b-48502501a375
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_KronosDaily_WeekEnding =
+			
+			VAR A = CALCULATE(MAXX('Excel_Kronos Weekly','Excel_Kronos Weekly'[Date]))
+			RETURN
+			(if(WEEKDAY(A) < 6,(A+5) - WEEKDAY(A),((A+5) - WEEKDAY(A))+7))
+		formatString: General Date
+		lineageTag: a069b422-fe22-4815-bab5-277baf6761cf
+
+	measure MX_Prod_Fitter_Prod_Cum_ATCPTD = IF([MX_Prod_Fitter_Kronos_Cum_ATCPTD]=0 || [MX_Prod_Fitter_Kronos_Cum_ATCPTD]=BLANK(),BLANK(),[MX_Prod_Fitter_WPHrs_Cum_Earned]/[MX_Prod_Fitter_Kronos_Cum_ATCPTD])
+		lineageTag: e6016537-7c87-491b-b563-c4dc8508b1a5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Fitter_Prod_Cum = IF([MX_Prod_Fitter_Kronos_Cum]=0 || [MX_Prod_Fitter_Kronos_Cum]=BLANK(),BLANK(),[MX_Prod_Fitter_WPHrs_Cum_Earned]/[MX_Prod_Fitter_Kronos_Cum])
+		lineageTag: 00b2902e-581c-466b-9a8f-82ac4881426c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Fitter_Kronos_Cum = ```
+			-- SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Fitter])+[MX_Prod_Fitter_Kronos_Wkly]
+			
+			var output = SUMX(VALUES(Qry_IWP_Constraints[Type01]),
+			IF(Qry_IWP_Constraints[Type01] = "Welder", SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Welder])+[MX_Prod_Fitter_Kronos_Wkly], 
+			IF(Qry_IWP_Constraints[Type01] = "Fitter",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Fitter])+[MX_Prod_Fitter_Kronos_Wkly],_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			IF(Qry_IWP_Constraints[Type01] = "Painting",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Fitter])+[MX_Prod_Fitter_Kronos_Wkly],_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK()))))
+			RETURN
+			output
+			```
+		formatString: #,0
+		lineageTag: a2063ca2-a5d4-4a98-89f6-db3588ef67a4
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure mx_job_wpno_count = DISTINCTCOUNT('Qry_IWP_Constraints'[JOB_WPNO])
+		formatString: 0
+		lineageTag: 5e78d023-342c-4e04-9517-4ceb1d948c72
+
+	measure MX_Prod_Fitter_Prod_Wkly = IF([MX_Prod_Fitter_Kronos_Wkly]=0 || [MX_Prod_Fitter_Kronos_Wkly]=BLANK(),BLANK(),[MX_Prod_Fitter_WPHrs_Wkly]/[MX_Prod_Fitter_Kronos_Wkly])
+		lineageTag: 9cbb31d0-cf96-43ef-b657-64d39bf42650
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Fitter_Prod_Wkly_ATCPTD = IF([MX_Prod_Fitter_Kronos_Wkly_ATCPTD]=0 || [MX_Prod_Fitter_Kronos_Wkly_ATCPTD]=BLANK(),BLANK(),[MX_Prod_Fitter_WPHrs_Wkly]/[MX_Prod_Fitter_Kronos_Wkly_ATCPTD])
+		lineageTag: 0400a215-87d2-4e07-841d-7540b7ab834f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Welder_Kronos_Cum = SUM(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Cum_Welder])+[MX_Prod_Welder_Kronos_Wkly]
+		formatString: #,0
+		lineageTag: 23de1a26-e761-455d-bec9-9694ec9e4763
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MX_Prod_Welder_Prod_Wkly = IF([MX_Prod_Welder_Kronos_Wkly]=0 || [MX_Prod_Welder_Kronos_Wkly]=BLANK(),BLANK(),[MX_Prod_Welder_WPHrs_Wkly]/[MX_Prod_Welder_Kronos_Wkly])
+		lineageTag: 6803b7a2-733d-43e0-992d-6034f66391d5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Welder_Prod_Wkly_ATCPTD = IF([MX_Prod_Welder_Kronos_Wkly_ATCPTD]=0 || [MX_Prod_Welder_Kronos_Wkly_ATCPTD]=BLANK(),BLANK(),[MX_Prod_Welder_WPHrs_Wkly]/[MX_Prod_Welder_Kronos_Wkly_ATCPTD])
+		lineageTag: 7f40258b-6500-4dd2-86db-021902b397bb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Welder_Prod_Cum = IF([MX_Prod_Welder_Kronos_Cum]=0 || [MX_Prod_Welder_Kronos_Cum]=BLANK(),0,[MX_Prod_Welder_WPHrs_Cum_Earned]/[MX_Prod_Welder_Kronos_Cum])
+		lineageTag: 9feb0473-227a-4769-a10d-620002b42e0a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Welder_Prod_Cum_ATCPTD = IF([MX_Prod_Welder_Kronos_Cum_ATCPTD]=0 || [MX_Prod_Welder_Kronos_Cum_ATCPTD]=BLANK(),0,[MX_Prod_Welder_WPHrs_Cum_Earned]/[MX_Prod_Welder_Kronos_Cum_ATCPTD])
+		lineageTag: 67772476-3f1b-4d8f-8db3-237310f533d0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Welder_Prod_PrevWeek =
+			var _prod = sum(_FX_Prod_ActivityCode[_FX_SPC_Welder_WPHrs_PrevWklyEarn])/sum(_FX_Prod_ActivityCode[FX_Kronos_Hrs_Prev_Wk_Welder])
+			return
+			IF(ISERROR(_prod),0,_prod)
+		lineageTag: d9043197-0797-4388-a0c7-e0b694eb8c61
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_Fitter_WPHrs_Prog = [MX_Prod_Fitter_WPHrs_Cum_Earned]/[MX_Prod_Fitter_WPHrs_Plan]
+		formatString: 0%;-0%;0%
+		lineageTag: 0f403baf-5fe5-4611-b7d2-80e04d0d6a57
+
+	measure MX_Prod_Welder_WPHrs_Prog =
+			
+			var earn = SUM(_FX_Prod_ActivityCode[FX_SPC_Welder_WPHrsEarned])
+			var cum = SUM(_FX_Prod_ActivityCode[FX_SPC_Welder_WPHrs])
+			return
+			if(earn=0,BLANK(),earn/cum)
+		formatString: 0%;-0%;0%
+		lineageTag: f882782a-1e28-4c03-a781-35423ccb5544
+
+	measure MX_Prod_Fitter_WPHrs_Plan = ```
+			
+			var a =
+			IF(SELECTEDVALUE(Qry_IWP_Constraints[Type01])="Welder",
+			    SUM(_FX_Prod_ActivityCode[_FX_SPC_Welder_WPHrs_WklyEarn]),
+			IF(SELECTEDVALUE(Qry_IWP_Constraints[Type01])="Fitter",
+			    CALCULATE(SUM(_FX_Prod_ActivityCode[_FX_SPC_Fitter_WPHrs_WklyEarn]),_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			        IF(SELECTEDVALUE(Qry_IWP_Constraints[Type01])="Painting",
+			            CALCULATE(SUM(_FX_Prod_ActivityCode[_FX_SPC_Fitter_WPHrs_WklyEarn]),_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK())))
+			var output = SUMX(VALUES(Qry_IWP_Constraints[Type01]),
+			IF(Qry_IWP_Constraints[Type01] = "Welder", SUM(_FX_Prod_ActivityCode[FX_SPC_Welder_WPHrs]), 
+			IF(Qry_IWP_Constraints[Type01] = "Fitter",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_SPC_Fitter_WPHrs]),_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			IF(Qry_IWP_Constraints[Type01] = "Painting",CALCULATE(SUM(_FX_Prod_ActivityCode[FX_SPC_Fitter_WPHrs]),_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK()))))
+			RETURN
+			output
+			
+			```
+		lineageTag: fca3ed69-97af-4acb-8595-e33fff00f329
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MX_Prod_constraint_count = ```
+			
+			
+			var output = SUMX(VALUES(Qry_IWP_Assignments[Craft]),
+			IF(Qry_IWP_Assignments[Craft] = "Welder", CALCULATE(DISTINCTCOUNT(_FX_Prod_ActivityCode[qpry_JOBNO_WPNO]),_FX_Prod_ActivityCode[fx_constraint]=1), 
+			IF(Qry_IWP_Assignments[Craft] = "Fitter", CALCULATE(DISTINCTCOUNT(_FX_Prod_ActivityCode[qpry_JOBNO_WPNO]),_FX_Prod_ActivityCode[fx_constraint]=1,_FX_Prod_ActivityCode[DISCIPLINE]<>"Coating"),
+			IF(Qry_IWP_Assignments[Craft] = "Painting", CALCULATE(DISTINCTCOUNT(_FX_Prod_ActivityCode[qpry_JOBNO_WPNO]),_FX_Prod_ActivityCode[fx_constraint]=1,_FX_Prod_ActivityCode[DISCIPLINE]="Coating"),BLANK()))))
+			RETURN
+			output
+			```
+		formatString: 0
+		lineageTag: 06a2c0c7-e291-4f7b-8648-fd80ba493676
+
+	measure MX_CurrentWeekEnding_dynamic =
+			
+			var curr = (if(WEEKDAY(today()) < 6,(today()+5) - WEEKDAY(today()),((today()+5) - WEEKDAY(today()))+7))
+			var prev = (if(WEEKDAY(today()) < 6,(today()+5) - WEEKDAY(today()),((today()+5) - WEEKDAY(today()))+7))-7
+			RETURN
+			IF(SELECTEDVALUE(StaticTbl_CurrentPrevWeek[Week Type])="Current",curr,prev)
+		formatString: General Date
+		lineageTag: ba1eb5ed-4b43-448d-8f75-616e575ac16e
+
+	partition _MX_Productivity-42b548f0-6aea-4f89-a70c-53e2a0d5ad83 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WKkktLlGKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

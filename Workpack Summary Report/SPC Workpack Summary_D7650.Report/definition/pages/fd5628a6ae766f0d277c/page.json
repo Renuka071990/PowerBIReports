@@ -1,0 +1,403 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "fd5628a6ae766f0d277c",
+  "displayName": "Duplicate of Anomalies",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter74f5b1064ce90b1e2b8c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "STATUS"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "i",
+              "Entity": "Qry_IWP Detail",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "i"
+                          }
+                        },
+                        "Property": "STATUS"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Issued For Construction'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtera9998615315a5ee8a08c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Anomaly_Exists"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "i",
+              "Entity": "Qry_IWP Detail",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "i"
+                          }
+                        },
+                        "Property": "FX_Anomaly_Exists"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Anomaly'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filtera31950a8f4871175db88",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "ACTIVITY ID DESCRIPTION"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "q",
+              "Entity": "Qry_IWP Detail",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Contains": {
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "q"
+                            }
+                          },
+                          "Property": "ACTIVITY ID DESCRIPTION"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "'Variation Order'"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ]
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "254L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Anomaly.jpg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Anomaly9145586089800082.jpg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "71e2c2fe17e983c9f9d8",
+      "target": "d4afefea0097f227f139",
+      "type": "DataFilter"
+    },
+    {
+      "source": "71e2c2fe17e983c9f9d8",
+      "target": "385277028fc03a5ef7d2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "71e2c2fe17e983c9f9d8",
+      "target": "5205795752a8c3bca555",
+      "type": "DataFilter"
+    },
+    {
+      "source": "71e2c2fe17e983c9f9d8",
+      "target": "0048e2f40d5f07344300",
+      "type": "DataFilter"
+    },
+    {
+      "source": "385277028fc03a5ef7d2",
+      "target": "5205795752a8c3bca555",
+      "type": "DataFilter"
+    },
+    {
+      "source": "385277028fc03a5ef7d2",
+      "target": "0048e2f40d5f07344300",
+      "type": "DataFilter"
+    },
+    {
+      "source": "385277028fc03a5ef7d2",
+      "target": "71e2c2fe17e983c9f9d8",
+      "type": "DataFilter"
+    },
+    {
+      "source": "385277028fc03a5ef7d2",
+      "target": "d4afefea0097f227f139",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5205795752a8c3bca555",
+      "target": "385277028fc03a5ef7d2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5205795752a8c3bca555",
+      "target": "71e2c2fe17e983c9f9d8",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5205795752a8c3bca555",
+      "target": "0048e2f40d5f07344300",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5205795752a8c3bca555",
+      "target": "d4afefea0097f227f139",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0048e2f40d5f07344300",
+      "target": "5205795752a8c3bca555",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0048e2f40d5f07344300",
+      "target": "385277028fc03a5ef7d2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0048e2f40d5f07344300",
+      "target": "71e2c2fe17e983c9f9d8",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0048e2f40d5f07344300",
+      "target": "d4afefea0097f227f139",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d4afefea0097f227f139",
+      "target": "71e2c2fe17e983c9f9d8",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d4afefea0097f227f139",
+      "target": "385277028fc03a5ef7d2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d4afefea0097f227f139",
+      "target": "c923b24f3751e757b338",
+      "type": "DataFilter"
+    },
+    {
+      "source": "71e2c2fe17e983c9f9d8",
+      "target": "c923b24f3751e757b338",
+      "type": "DataFilter"
+    },
+    {
+      "source": "385277028fc03a5ef7d2",
+      "target": "c923b24f3751e757b338",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c923b24f3751e757b338",
+      "target": "385277028fc03a5ef7d2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c923b24f3751e757b338",
+      "target": "71e2c2fe17e983c9f9d8",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d4afefea0097f227f139",
+      "target": "0048e2f40d5f07344300",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d4afefea0097f227f139",
+      "target": "5205795752a8c3bca555",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d4afefea0097f227f139",
+      "target": "cfb9f744fb541d799fa3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "71e2c2fe17e983c9f9d8",
+      "target": "cfb9f744fb541d799fa3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "385277028fc03a5ef7d2",
+      "target": "cfb9f744fb541d799fa3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c923b24f3751e757b338",
+      "target": "0048e2f40d5f07344300",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cfb9f744fb541d799fa3",
+      "target": "c923b24f3751e757b338",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cfb9f744fb541d799fa3",
+      "target": "385277028fc03a5ef7d2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cfb9f744fb541d799fa3",
+      "target": "71e2c2fe17e983c9f9d8",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5205795752a8c3bca555",
+      "target": "c923b24f3751e757b338",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0048e2f40d5f07344300",
+      "target": "c923b24f3751e757b338",
+      "type": "DataFilter"
+    }
+  ]
+}

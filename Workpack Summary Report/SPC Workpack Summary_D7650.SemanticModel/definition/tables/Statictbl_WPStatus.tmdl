@@ -1,0 +1,23 @@
+table Statictbl_WPStatus
+	lineageTag: 0b5161e0-3a48-46c0-9da0-1cea06bbc6a9
+
+	column Status
+		dataType: string
+		lineageTag: 65cf1080-7ecb-4052-95e9-2aca22811f43
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Statictbl_WPStatus = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8sgvLSpWitWJVnLOL80rUYqNBQA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Status = _t])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

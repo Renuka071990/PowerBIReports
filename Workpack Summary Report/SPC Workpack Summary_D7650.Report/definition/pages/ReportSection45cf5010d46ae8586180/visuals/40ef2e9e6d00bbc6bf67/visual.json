@@ -1,0 +1,138 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "40ef2e9e6d00bbc6bf67",
+  "position": {
+    "x": 0,
+    "y": 413,
+    "z": 5000,
+    "height": 278,
+    "width": 297,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StaticTbl_ComboChart_Workface"
+                    }
+                  },
+                  "Property": "New Axis"
+                }
+              },
+              "queryRef": "FX_NewChart.New Axis",
+              "nativeQueryRef": "New Axis"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StaticTbl_ComboChart_Workface"
+                    }
+                  },
+                  "Property": "MS_WPHrs"
+                }
+              },
+              "queryRef": "FX_NewChart.MS_WPHrs",
+              "nativeQueryRef": "MS_WPHrs"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StaticTbl_ComboChart_Workface"
+                    }
+                  },
+                  "Property": "MS_Kronos"
+                }
+              },
+              "queryRef": "FX_NewChart.MS_Kronos",
+              "nativeQueryRef": "MS_Kronos"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StaticTbl_ComboChart_Workface"
+                    }
+                  },
+                  "Property": "MS_PROD"
+                }
+              },
+              "queryRef": "FX_NewChart.MS_PROD",
+              "nativeQueryRef": "MS_PROD"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filterccc7a89eebe935db83d6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_Distribution_Hrs"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_FX_Distribution_Hrs",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "_"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'01. Planned'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

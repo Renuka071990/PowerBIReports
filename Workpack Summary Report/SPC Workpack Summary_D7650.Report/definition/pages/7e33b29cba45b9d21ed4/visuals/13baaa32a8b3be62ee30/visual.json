@@ -1,0 +1,142 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "13baaa32a8b3be62ee30",
+  "position": {
+    "x": 14.797687861271678,
+    "y": 94.0710156895128,
+    "z": 0,
+    "height": 569.71098265895955,
+    "width": 416.44921552436006,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FX_Distribution_Hrs"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "_FX_Distribution_Hrs.Status",
+              "nativeQueryRef": "Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FX_Distribution_Hrs"
+                    }
+                  },
+                  "Property": "WPNO"
+                }
+              },
+              "queryRef": "_FX_Distribution_Hrs.WPNO",
+              "nativeQueryRef": "WPNO"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_FX_Distribution_Hrs"
+                        }
+                      },
+                      "Property": "Hours"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(_FX_Distribution_Hrs.Hours)",
+              "nativeQueryRef": "Hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FX_Distribution_Hrs"
+                    }
+                  },
+                  "Property": "JOB NO"
+                }
+              },
+              "queryRef": "_FX_Distribution_Hrs.JOB NO",
+              "nativeQueryRef": "JOB NO"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "81ed9074078e0ddd1910",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_Distribution_Hrs"
+              }
+            },
+            "Property": "JOB NO"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_FX_Distribution_Hrs",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "_"
+                          }
+                        },
+                        "Property": "JOB NO"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'75145'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

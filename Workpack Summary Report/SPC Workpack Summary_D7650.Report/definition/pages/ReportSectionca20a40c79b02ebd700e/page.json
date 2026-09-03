@@ -1,0 +1,441 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSectionca20a40c79b02ebd700e",
+  "displayName": "03. WP Plan-Hours",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b0e0f04fbe783efbbaf6",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "FX_Type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_FX_WPPlan_Final_Issued",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "_"
+                              }
+                            },
+                            "Property": "FX_Type"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Weekly Progress'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "d1e3b9dc06da41a12d53",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Statictbl_WPStatus"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "Statictbl_WPStatus",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Hours'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "078a448fd90a370426fd",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_UniqWP_Identifier"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "q",
+              "Entity": "Qry_IWP Detail",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "q"
+                          }
+                        },
+                        "Property": "FX_UniqWP_Identifier"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "1L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "pageBinding": {
+    "name": "Pod17",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "183L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [
+      {
+        "properties": {
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Workpack Summary 2.svg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Workpack_Summary_25049185756896069.svg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "13b9dd1a12cab00378b2",
+      "target": "28dcb15134eb14ccabed",
+      "type": "DataFilter"
+    },
+    {
+      "source": "13b9dd1a12cab00378b2",
+      "target": "fe927c69eaf84661d7c0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "28dcb15134eb14ccabed",
+      "target": "df903493966d13f721a3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fe927c69eaf84661d7c0",
+      "target": "df903493966d13f721a3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "13b9dd1a12cab00378b2",
+      "target": "df903493966d13f721a3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8f47b172fa41d136731",
+      "target": "df903493966d13f721a3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fe927c69eaf84661d7c0",
+      "target": "28dcb15134eb14ccabed",
+      "type": "DataFilter"
+    },
+    {
+      "source": "28dcb15134eb14ccabed",
+      "target": "13b9dd1a12cab00378b2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "28dcb15134eb14ccabed",
+      "target": "fe927c69eaf84661d7c0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "fe927c69eaf84661d7c0",
+      "target": "13b9dd1a12cab00378b2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "13b9dd1a12cab00378b2",
+      "target": "c83f83b130b6fe5e94b2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "13b9dd1a12cab00378b2",
+      "target": "a2be25557fd313795e3f",
+      "type": "DataFilter"
+    },
+    {
+      "source": "fe927c69eaf84661d7c0",
+      "target": "c83f83b130b6fe5e94b2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fe927c69eaf84661d7c0",
+      "target": "a2be25557fd313795e3f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "09151d37b2c76c46cddb",
+      "target": "c25e5fa2442641974f9a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "09151d37b2c76c46cddb",
+      "target": "5e62c71fe1ae2e8c95a2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5e62c71fe1ae2e8c95a2",
+      "target": "09151d37b2c76c46cddb",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5e62c71fe1ae2e8c95a2",
+      "target": "c25e5fa2442641974f9a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "451a7cbde350de51db40",
+      "target": "c25e5fa2442641974f9a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "451a7cbde350de51db40",
+      "target": "5e62c71fe1ae2e8c95a2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "451a7cbde350de51db40",
+      "target": "09151d37b2c76c46cddb",
+      "type": "DataFilter"
+    },
+    {
+      "source": "df903493966d13f721a3",
+      "target": "28dcb15134eb14ccabed",
+      "type": "DataFilter"
+    },
+    {
+      "source": "df903493966d13f721a3",
+      "target": "13b9dd1a12cab00378b2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "df903493966d13f721a3",
+      "target": "fe927c69eaf84661d7c0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ec773c0ebb0dba79ab5d",
+      "target": "c25e5fa2442641974f9a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ec773c0ebb0dba79ab5d",
+      "target": "09151d37b2c76c46cddb",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ec773c0ebb0dba79ab5d",
+      "target": "5e62c71fe1ae2e8c95a2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3fcedf100edd26b8f7cc",
+      "target": "81bba377a60451dd9dee",
+      "type": "NoFilter"
+    },
+    {
+      "source": "665b839d64957b74dc57",
+      "target": "81bba377a60451dd9dee",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5818a683d7a53a845535",
+      "target": "81bba377a60451dd9dee",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0815a4c015c0e70b4b39",
+      "target": "81bba377a60451dd9dee",
+      "type": "NoFilter"
+    }
+  ]
+}

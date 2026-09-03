@@ -1,0 +1,152 @@
+table Excel_IOE_PLN_PRG
+	lineageTag: ead55272-f00c-447b-aa66-523303fd72e7
+
+	column FX_Discipline = LOOKUPVALUE('Qry_IWP Detail'[DISCIPLINE],'Qry_IWP Detail'[WPNO],Excel_IOE_PLN_PRG[Activity Code])
+		lineageTag: 9fb108c8-fa63-48ea-a5d9-3acd228adc64
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Area = LOOKUPVALUE('Qry_IWP Detail'[AREA],'Qry_IWP Detail'[WPNO],Excel_IOE_PLN_PRG[Activity Code])
+		lineageTag: 4a06f30c-52a3-44b9-a615-8ff368dc44de
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Date = [Effective Date]
+		formatString: dd-mmm-yy
+		lineageTag: 1ae3a30a-3c8c-43f7-b1a4-a560d4e98c55
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 8358ddcf-cb38-4b66-bfd4-8cf47fc8380f
+			defaultHierarchy: LocalDateTable_6476895b-1186-4e50-9bc2-33480047a196.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column FX_Weekly_Earning =
+			
+			var prev_earn = SUMX(FILTER(Excel_IOE_PLN_PRG,[Activity Code]=EARLIER([Activity Code]) && [Job Number]=EARLIER([Job Number]) &&[Effective Date]=EARLIER([Effective Date])-7),[Man Hours])
+			var weeklyearn = [Man Hours]-prev_earn
+			
+			return
+			weeklyearn
+		lineageTag: 2c1593c5-b828-4824-b51a-79e896369601
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Disc = LOOKUPVALUE(StaticTbl_WPNO_PhaseGrouping[Discipline_SPC],StaticTbl_WPNO_PhaseGrouping[Activity Code],Excel_IOE_PLN_PRG[Activity Code])
+		lineageTag: 765b85e1-4625-4830-bd6d-e8faf9c9cb04
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data[Job Description]'
+		dataType: string
+		lineageTag: cb2b6b9d-db0b-433a-b6e4-f90c1e3d95ce
+		summarizeBy: none
+		sourceColumn: Data[Job Description]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		dataType: string
+		lineageTag: 386df9ec-c11e-433e-b71e-2bf52a755021
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Type'
+		dataType: string
+		lineageTag: fb8ce6af-4ec4-4abb-9a22-8f4bf47e6cf2
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: fc9410d5-9881-47da-b89d-3a74235b437a
+		summarizeBy: sum
+		sourceColumn: Job Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Code'
+		dataType: string
+		lineageTag: fdce1608-73aa-4903-8108-a53e1fac2ff7
+		summarizeBy: none
+		sourceColumn: Activity Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract
+		dataType: string
+		lineageTag: ea9be098-7459-4262-b542-7070b222164b
+		summarizeBy: none
+		sourceColumn: Contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Man Hours'
+		dataType: double
+		lineageTag: 12a195ef-b1c7-4e0e-8d55-d08f3852ee0c
+		summarizeBy: sum
+		sourceColumn: Man Hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Effective Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a1b425e1-687d-42c3-a363-3eaf02f930b3
+		summarizeBy: none
+		sourceColumn: Effective Date
+
+		variation Variation
+			isDefault
+			relationship: 845d9e2b-81d9-4f52-9b94-31fd0664b82a
+			defaultHierarchy: LocalDateTable_fd6849df-38ef-4b99-a0ff-b450ef992f42.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Metrics
+		dataType: string
+		lineageTag: c1d2fe78-d177-4ac0-82fa-44e7151bfd38
+		summarizeBy: none
+		sourceColumn: Metrics
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line No'
+		dataType: int64
+		formatString: 0
+		lineageTag: b745a5c9-a33f-4c7b-af83-e6197a911a70
+		summarizeBy: sum
+		sourceColumn: Line No
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Excel_IOE_PLN_PRG = m
+		mode: import
+		source =
+				let
+				    Source = #"D7650 Excel_IOE_PLN_PRG",
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Man Hours] <> "Data[Man Hours]"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

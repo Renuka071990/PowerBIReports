@@ -1,0 +1,48 @@
+table delete
+	lineageTag: f0b2b598-7294-4da0-a73c-ab5bd4479019
+
+	column delete
+		lineageTag: a80589ed-8651-46e5-8228-1d34aab3fccb
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'delete Order'
+
+		relatedColumnDetails
+			groupByColumn: 'delete Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'delete Fields'
+		isHidden
+		lineageTag: becbf44d-4c74-4ea6-827d-1b9eeeb4deb7
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'delete Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'delete Order'
+		isHidden
+		formatString: 0
+		lineageTag: 71b5e313-3eb2-417d-b7a5-9cfd3dcd335d
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition delete = calculated
+		mode: import
+		source =
+				{
+				    ("fx_constraint_wkly_earning", NAMEOF('Qry_IWP_Assignments'[fx_constraint_wkly_earning]), 0),
+				    ("mx_constraint_total", NAMEOF('Qry_IWP_Assignments'[mx_constraint_total]), 1)
+				}
+
+	annotation PBI_Id = b61ba6828a1347c88c996997fba84475
+

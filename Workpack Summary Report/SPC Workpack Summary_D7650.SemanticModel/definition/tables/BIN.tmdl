@@ -1,0 +1,105 @@
+table BIN
+	lineageTag: 1a1c32ff-86b3-4cf2-ab50-cd6e78ffe617
+
+	measure mx_afcbin050 = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),USERELATIONSHIP('Qry_IWP Detail'[AFC Hrs BIN050],'BIN Table'[No]))
+		formatString: 0
+		lineageTag: 6299a066-639e-4dbf-baab-e1360a6d41f3
+
+	measure mx_afcbin100 = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),USERELATIONSHIP('Qry_IWP Detail'[AFC Hrs BIN100],'BIN Table'[No]))
+		formatString: 0
+		lineageTag: ea17fe99-f86e-4699-b74d-0ccf68816bb9
+
+	measure mx_afcbin200 = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),USERELATIONSHIP('Qry_IWP Detail'[AFC Hrs BIN200],'BIN Table'[No]))
+		formatString: 0
+		lineageTag: 7019a3df-223a-47f2-a62c-a01eb4356539
+
+	measure mx_afcbin400 = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),USERELATIONSHIP('Qry_IWP Detail'[AFC Hrs BIN400],'BIN Table'[No]))
+		formatString: 0
+		lineageTag: d660a5b9-bef3-4ec1-a1ca-1fb6fd975378
+
+	measure mx_wphrsbin050 = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),USERELATIONSHIP('Qry_IWP Detail'[WP Hrs BIN050],'BIN Table'[No]))
+		formatString: 0
+		lineageTag: f2af44b7-5a86-4a79-a049-2a4450e3a6e7
+
+	measure mx_wphrsbin100 = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),USERELATIONSHIP('Qry_IWP Detail'[WP Hrs BIN100],'BIN Table'[No]))
+		formatString: 0
+		lineageTag: 621ad736-74de-450f-87b2-5cc3e51984b6
+
+	measure mx_wphrsbin200 = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),USERELATIONSHIP('Qry_IWP Detail'[WP Hrs BIN200],'BIN Table'[No]))
+		formatString: 0
+		lineageTag: 0a5fe678-d708-46c5-9a9e-c1188098bc96
+
+	measure mx_wphrsbin400 = CALCULATE(DISTINCTCOUNT('Qry_IWP Detail'[FIWPUID]),USERELATIONSHIP('Qry_IWP Detail'[WP Hrs BIN400],'BIN Table'[No]))
+		formatString: 0
+		lineageTag: 90f33718-4bc7-44fe-a20c-0e71c3388767
+
+	measure mx_fltr = ```
+			IF(
+			((BIN[mx_afcbin050]>0 || BIN[mx_wphrsbin050]>0) && (SELECTEDVALUE(BIN[fx_type])="BIN-050")) || 
+			((BIN[mx_afcbin100]>0 || BIN[mx_wphrsbin100]>0) && (SELECTEDVALUE(BIN[fx_type])="BIN-100")) || 
+			 ((BIN[mx_afcbin200]>0 || BIN[mx_wphrsbin200]>0) && (SELECTEDVALUE(BIN[fx_type])="BIN-200")) ||
+			 ((BIN[mx_afcbin400]>0 || BIN[mx_wphrsbin400]>0) && (SELECTEDVALUE(BIN[fx_type])="BIN-400")) ,1,0)
+			```
+		formatString: 0
+		lineageTag: bbb043ee-d1be-485f-9d9c-ed1c871155d5
+
+	column BIN
+		lineageTag: e8765a93-da55-4989-a767-b42b07f493aa
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'BIN Order'
+
+		relatedColumnDetails
+			groupByColumn: 'BIN Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BIN Fields'
+		isHidden
+		lineageTag: e9fde1d7-5459-4bb6-99fc-5b1127b5637c
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'BIN Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BIN Order'
+		formatString: 0
+		lineageTag: c81f6e76-8c11-44ad-8697-5cc118d3cadd
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_type =
+			IF(([BIN]="WP Hrs_BIN-050" || [BIN]="AFC Hrs_BIN-050"),"BIN-050",
+			IF(([BIN]="WP Hrs_BIN-100" || [BIN]="AFC Hrs_BIN-100"),"BIN-100",
+			IF(([BIN]="WP Hrs_BIN-200" || [BIN]="AFC Hrs_BIN-200"),"BIN-200",
+			IF(([BIN]="WP Hrs_BIN-400" || [BIN]="AFC Hrs_BIN-400"),"BIN-400",""))))
+		lineageTag: d5cd61b7-148a-4e02-ba47-94a1335055c9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BIN = calculated
+		mode: import
+		source =
+				{
+				    ("AFC Hrs_BIN-050", NAMEOF('BIN'[mx_afcbin050]), 0),
+				    ("AFC Hrs_BIN-100", NAMEOF('BIN'[mx_afcbin100]), 1),
+				    ("AFC Hrs_BIN-200", NAMEOF('BIN'[mx_afcbin200]), 2),
+				    ("AFC Hrs_BIN-400", NAMEOF('BIN'[mx_afcbin400]), 3),
+				    ("WP Hrs_BIN-050", NAMEOF('BIN'[mx_wphrsbin050]), 4),
+				    ("WP Hrs_BIN-100", NAMEOF('BIN'[mx_wphrsbin100]), 5),
+				    ("WP Hrs_BIN-200", NAMEOF('BIN'[mx_wphrsbin200]), 6),
+				    ("WP Hrs_BIN-400", NAMEOF('BIN'[mx_wphrsbin400]), 7)
+				}
+
+	annotation PBI_Id = 45973092877c42e1ad64e746bb213b10
+

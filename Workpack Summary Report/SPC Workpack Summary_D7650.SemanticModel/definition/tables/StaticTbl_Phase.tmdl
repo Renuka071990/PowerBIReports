@@ -1,0 +1,55 @@
+table StaticTbl_Phase
+	lineageTag: 94b87013-7923-4249-b425-4195098c4ff7
+
+	column Areacode
+		dataType: string
+		lineageTag: 682058bd-b5b5-406f-9b3e-53745090e543
+		summarizeBy: none
+		sourceColumn: Areacode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Areaname
+		dataType: string
+		lineageTag: 6b0aac32-a344-4058-9e4f-3d2d9bc34258
+		summarizeBy: none
+		sourceColumn: Areaname
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phase
+		dataType: string
+		lineageTag: ce2f2a9a-6879-44f8-9d0a-e4907e49c1a9
+		summarizeBy: none
+		sourceColumn: Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phase Prefab Erection'
+		dataType: string
+		lineageTag: 8b7d5008-703f-4e1a-9858-2a841503b0a5
+		summarizeBy: none
+		sourceColumn: Phase Prefab Erection
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phase Code'
+		dataType: string
+		lineageTag: 7accfcef-7493-4c7d-be78-b4f3058c6e57
+		summarizeBy: none
+		sourceColumn: Phase Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StaticTbl_Phase-76c87173-f305-4578-b6cc-3864ebe2ea88 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("nZRBb+IwEIX/isW53Y0dAuUYAtIeQKVQCa26PZhkCFZNjByHXf79eobCQsmCwgnb6H2x572Zt7dWwFsPLRZw9simRmtV5GystC796cTCUi6sSqVTpqg7iOPW+4NnCGIIzxhBzn5VQSA6bKI0sKlMP1hclrBe6F0jZkjM0DP7VqZ7UiNAmwBtBIBcs5EqoJE+In3k9RMtHbCkcg7LM1uZTSNQh0AdD0q0zJrru6Tvev3M2Sp1lZXaPydfOTYH/GlC4wHSeHBO+wFyu7uHRunhmJ6J2gC9jQ3/GKfSRgnilCAuzjiJtAtT+GsC6EYwig4PP2E+03DI5FiV6bdGLEoRxxRNpCooANIdPfw8ugagGPHoC2BoIT18+h/kpFH6fZILskugXYc/vx/FbCR3mfldnCtrIOSS4PWQYZFqU0J2k0IeCfTop7QZ8y9+TMx6fagtrrG2z0W5MhZwv9GAnyj/ezoY7NHkmEDHxr7VrMJIyiKjcXRSquv3I6tEuxZy6tRt0wSZJqJaVNP+FdT/olMLm0sLK1OVcPN1NAUEToGX+CU5FH2Q3BQ+kfAJGz6Vy6XR2UXYLlUh5S7E3A18wtirWuMVce0ulvO9iyEFJMSATGHLnm0GFk0+br6sk2QvI99C9C226Uo52A+lW1eMqK4R1tWXvgS7pcLjvK/0x31BjKjKUfeS+SrznHrkDmpIcQoxTrNqkXre3Fi84bUdKXs9VPZ6mB0cXbEFebUu738B", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Areacode = _t, Areaname = _t, Column1 = _t, Column1.1 = _t, #"Phase Code" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Areacode", type text}, {"Areaname", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Phase"}, {"Column1.1", "Phase Prefab Erection"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Exception
+

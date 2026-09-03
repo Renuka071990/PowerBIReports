@@ -1,0 +1,72 @@
+table fx_fitter_welder
+	lineageTag: 22d5d13a-b2af-4004-8c56-5e7a177424ce
+
+	column 'JOB NO'
+		lineageTag: 2f36a75e-c0bc-4620-8d7c-75fc2ce8ec6f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: _FX_Prod_ActivityCode[JOB NO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column WPNO
+		lineageTag: ea0f2ca4-d949-498f-b73f-aafa8b841617
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: _FX_Prod_ActivityCode[WPNO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		lineageTag: 33229dba-59fc-414d-9385-681cf95a7851
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Job_WPNO
+		lineageTag: 1726eb99-c61c-4fe4-9b29-ef685361e847
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Job_WPNO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plant
+		lineageTag: 6487951a-6f07-41e1-ab91-b7b5360e161e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP_Constraints[Plant]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_SPC_Fitter_ActCode
+		lineageTag: e53fd52f-54db-4cb8-94b4-0f30bc9b44ed
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: _FX_Prod_ActivityCode[FX_SPC_Fitter_ActCode]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fitup Foreman'
+		lineageTag: b67d2c53-14da-4bd1-a373-975ed80bb212
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP_Constraints[Fitup Foreman]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fx_fitter_welder = calculated
+		mode: import
+		source =
+				
+				UNION(
+				    SUMMARIZE('Qry_IWP_Constraints',[Plant],[JOB NO],[Fitup Foreman],[WPNO],[FX_SPC_Fitter_ActCode],"Type","Fitup Foreman","Job_WPNO",[JOB NO]&"_"&[WPNO]),
+				    SUMMARIZE('Qry_IWP_Constraints',[Plant],[JOB NO],[Fitup Supervisor],[WPNO],[FX_SPC_Fitter_ActCode],"Type","Fitup Supervisor","Job_WPNO",[JOB NO]&"_"&[WPNO]),
+				    SUMMARIZE('Qry_IWP_Constraints',[Plant],[JOB NO],[Weld Foreman],[WPNO],[FX_SPC_Welder_ActCode],"Type","Weld Foreman","Job_WPNO",[JOB NO]&"_"&[WPNO]),
+				    SUMMARIZE('Qry_IWP_Constraints',[Plant],[JOB NO],[Weld Supervisor],[WPNO],[FX_SPC_Welder_ActCode],"Type","Weld Supervisor","Job_WPNO",[JOB NO]&"_"&[WPNO])
+				    )
+
+	annotation PBI_Id = 6dcd9198c2f6481da697c00602c2bfd3
+

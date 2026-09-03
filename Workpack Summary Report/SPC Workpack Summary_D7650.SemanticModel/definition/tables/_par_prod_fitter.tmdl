@@ -1,0 +1,82 @@
+table _par_prod_fitter
+	lineageTag: a799c13a-91b7-4acb-872b-942473d58161
+
+	column _par_fitterwelder
+		lineageTag: db430694-d254-4c8b-9daa-a5ca43fd0322
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '_par_fitterwelder Order'
+
+		relatedColumnDetails
+			groupByColumn: '_par_fitterwelder Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_par_fitterwelder Fields'
+		isHidden
+		lineageTag: 1e78725b-6360-4fae-9a96-2c5fc7c43067
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '_par_fitterwelder Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_par_fitterwelder Order'
+		isHidden
+		formatString: 0
+		lineageTag: b6fdff04-22e7-4b77-a8c4-7b8c1c8f4359
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_exc = IF(CONTAINSSTRING(_par_prod_fitter[_par_fitterwelder],"EXP"),"EXP",BLANK())
+		lineageTag: 5943e342-bb77-4ca3-b487-7b57da01211d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_par_fitter = [_par_fitterwelder]
+		lineageTag: 51b52196-e21c-43fb-a41b-274095c61b74
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _par_prod_fitter = calculated
+		mode: import
+		source = ```
+				{
+				
+				    ("Prev Week Earned Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_WPHrs_PrevWkly]), 1.1),
+				    ("Prev Week Actual Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Kronos_PrevWkly]), 1.2),
+				    ("Prev Week Prod", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Prod_PrevWeek]), 1.3),
+				   ("Prev Week Constraint WPs", NAMEOF(Qry_IWP_Constraints[mx_constraint_prevwkly_cons]), 1.4),
+				
+				    ("Cum. Earned Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_WPHrs_Cum_Earned]), 2.1),
+				    ("Cum. Actual Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Kronos_Cum]), 2.2),
+				    ("Cum. Actual Hrs [EXP]", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Kronos_Cum_ATCPTD]), 2.3),
+				    ("Cum. Prod", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Prod_Cum]), 2.4),
+				    ("Cum. Prod [EXP]", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Prod_Cum_ATCPTD]), 2.5),
+				    ("Prog", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_WPHrs_Prog]), 2.6),   
+				   ("Cum. Constraint WPs", NAMEOF(Qry_IWP_Constraints[mx_constraint_total]), 2.7),      
+				
+				    ("Wkly Earned Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_WPHrs_Wkly]), 3.1),
+				    ("Wkly Actual Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Kronos_Wkly]), 3.2),
+				    ("Wkly Actual Hrs [EXP]", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Kronos_Wkly_ATCPTD]), 3.3),
+				    ("Wkly Prod", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Prod_Wkly]), 3.4),
+				    ("Wkly Prod [EXP]", NAMEOF('_MX_Productivity'[MX_Prod_Fitter_Prod_Wkly_ATCPTD]), 3.5),
+				    ("Wkly Constraint WPs", NAMEOF(Qry_IWP_Constraints[mx_constraint_wkly_cons]), 3.6)
+				
+				
+				}
+				
+				```
+
+	annotation PBI_Id = 292ee6ab2f904c8ca666cf58f37e1ba3
+

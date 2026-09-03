@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "79fd84b002c285942a25",
+  "position": {
+    "x": 4.9494848879814626,
+    "y": 0,
+    "z": 5000,
+    "height": 709.681742043551,
+    "width": 1263.9195979899496,
+    "tabOrder": 5000
+  },
+  "visualGroup": {
+    "displayName": "Summary - Supervisor",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

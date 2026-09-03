@@ -1,0 +1,176 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection895f6f86e73d905eb251",
+  "displayName": "11. To-go Distribution Plan - Quantity/Component",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter3e65b981813140578770",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_Distribution_Qty_Count"
+              }
+            },
+            "Property": "FX_WeekSummary"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_FX_Distribution_Qty_Count",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "_"
+                          }
+                        },
+                        "Property": "FX_WeekSummary"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Week Summary'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Workpack Summary.svg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Workpack_Summary6153859073059659.svg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "70aa2aaa344d1e44afcc",
+      "target": "7fa6d161df4686c9b327",
+      "type": "DataFilter"
+    },
+    {
+      "source": "2172f05ca510b040f695",
+      "target": "70aa2aaa344d1e44afcc",
+      "type": "DataFilter"
+    },
+    {
+      "source": "62baa6b9078481191043",
+      "target": "91a31fe4690572091c48",
+      "type": "DataFilter"
+    },
+    {
+      "source": "2172f05ca510b040f695",
+      "target": "62baa6b9078481191043",
+      "type": "DataFilter"
+    },
+    {
+      "source": "2172f05ca510b040f695",
+      "target": "91a31fe4690572091c48",
+      "type": "DataFilter"
+    },
+    {
+      "source": "91a31fe4690572091c48",
+      "target": "62baa6b9078481191043",
+      "type": "DataFilter"
+    },
+    {
+      "source": "62baa6b9078481191043",
+      "target": "7354719cf6cda3deb8aa",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0fbab946bcec1a433252",
+      "target": "62baa6b9078481191043",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0fbab946bcec1a433252",
+      "target": "91a31fe4690572091c48",
+      "type": "DataFilter"
+    },
+    {
+      "source": "7354719cf6cda3deb8aa",
+      "target": "62baa6b9078481191043",
+      "type": "DataFilter"
+    },
+    {
+      "source": "7354719cf6cda3deb8aa",
+      "target": "91a31fe4690572091c48",
+      "type": "DataFilter"
+    },
+    {
+      "source": "959d192ba55ac89c6154",
+      "target": "62baa6b9078481191043",
+      "type": "DataFilter"
+    },
+    {
+      "source": "959d192ba55ac89c6154",
+      "target": "91a31fe4690572091c48",
+      "type": "DataFilter"
+    }
+  ]
+}

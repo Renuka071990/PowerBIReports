@@ -1,0 +1,102 @@
+table xrefdate_KronosDailyDate
+	lineageTag: f21697a2-7953-4bb7-833c-c4e2bb0ba5af
+
+	column Name
+		dataType: string
+		lineageTag: ae4f1367-f665-453d-9ea7-48bba8032d2e
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Extension
+		dataType: string
+		lineageTag: d6e595fc-c046-451e-88eb-b62d16fb8a58
+		summarizeBy: none
+		sourceColumn: Extension
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date accessed'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ba1264e2-0462-472b-88e6-8183a9f40ea6
+		summarizeBy: none
+		sourceColumn: Date accessed
+
+		variation Variation
+			isDefault
+			relationship: 9732b2d3-7bcb-4960-9692-c8aa4a179d4e
+			defaultHierarchy: LocalDateTable_b96f41c7-2045-47f9-bd42-22661c091238.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date modified'
+		dataType: dateTime
+		formatString: dd-mmm-yy h:nn AM/PM
+		lineageTag: 106657f8-1b32-4c62-a653-5f4bd6f574c7
+		summarizeBy: none
+		sourceColumn: Date modified
+
+		variation Variation
+			isDefault
+			relationship: 845d8894-3c22-4486-9e1c-601cc437950f
+			defaultHierarchy: LocalDateTable_841deb0a-789d-4c14-b2d7-4078528d8884.'Date Hierarchy'
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Date created'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 734a439f-959b-49bb-a2a9-69e3d50dd403
+		summarizeBy: none
+		sourceColumn: Date created
+
+		variation Variation
+			isDefault
+			relationship: 4c3a1794-33cb-471c-ae87-191090ac4d0f
+			defaultHierarchy: LocalDateTable_4ac3e0ad-316f-4084-b1c7-6f9ee5904b41.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Folder Path'
+		dataType: string
+		lineageTag: fea40c54-ca92-40b4-ae76-e5c31fa7b47c
+		summarizeBy: none
+		sourceColumn: Folder Path
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_FileStatus = if(xrefdate_KronosDailyDate[Date modified]<TODAY(),2,1)
+		formatString: 0
+		lineageTag: 49d7493b-44b4-45e2-8bd9-28149bc22394
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_DaysDue = -(DATEDIFF(TODAY(),xrefdate_KronosDailyDate[Date modified],DAY))
+		dataType: int64
+		formatString: 0
+		lineageTag: 73e4d99a-e63d-46ff-935c-ad419e77bcc9
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition xrefdate_KronosDailyDate-5f726fab-f306-4f95-bdb7-d28b76d3684e = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Weekly Booking"),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Name] = "Kronos Daily.xlsx")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"Content"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,29 @@
+table Statictbl_ConstraintWeekfilter
+	lineageTag: 1917a26e-0e3a-48c2-93d1-c83bc8da9aae
+
+	column 'Filter Type'
+		dataType: string
+		lineageTag: 505da542-8f3a-4b2a-a04f-c3f7ba7f3ad6
+		summarizeBy: none
+		sourceColumn: Filter Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filter
+		dataType: string
+		lineageTag: 068a8b76-9497-490b-9553-45fa28dbb9e9
+		summarizeBy: none
+		sourceColumn: Filter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Statictbl_ConstraintWeekfilter = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8stXSM7PKy4pSszMK1HSAfGdEfxYnWglx5wcoDiQRJdwyi/JwC4TUJRalplfWoxd1rm0qCgVbBluQ+EmoBmHIg5VCzMP1Wy4aCwA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Filter Type" = _t, Filter = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

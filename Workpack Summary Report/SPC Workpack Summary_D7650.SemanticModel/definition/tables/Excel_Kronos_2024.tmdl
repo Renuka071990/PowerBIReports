@@ -1,0 +1,238 @@
+table Excel_Kronos_2024
+	lineageTag: 8e68863c-c394-4833-b871-7f71032ffedb
+
+	column Timesheet_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a74ff51f-8c02-417a-bfc3-45fb03294678
+		summarizeBy: none
+		sourceColumn: Timesheet_Date
+
+		variation Variation
+			isDefault
+			relationship: 4bb4b6e5-14b5-4178-b352-a32e0e7eb37d
+			defaultHierarchy: LocalDateTable_44625829-e6c5-4904-b01b-0186d94ce61f.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'SAP No'
+		dataType: int64
+		formatString: 0
+		lineageTag: 28be7792-73a6-4b81-81b4-bb2815df3b8d
+		summarizeBy: sum
+		sourceColumn: SAP No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Legacy No.'
+		dataType: string
+		lineageTag: 3e10a675-18e5-42f6-8355-d3b6d99e845d
+		summarizeBy: none
+		sourceColumn: Legacy No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emplyoyee Name'
+		dataType: string
+		lineageTag: bb5c254c-b42e-40b2-b520-c54d09e4b46e
+		summarizeBy: none
+		sourceColumn: Emplyoyee Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column JOB_DISCIPLINE_NAME
+		dataType: string
+		lineageTag: 01dca38a-caa6-4a23-ad2d-b0da7c6737e5
+		summarizeBy: none
+		sourceColumn: JOB_DISCIPLINE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Craft.1.Standard Craft'
+		dataType: string
+		lineageTag: 3eaecc21-9984-4027-ad36-8c0aae0f5fff
+		summarizeBy: none
+		sourceColumn: Craft.1.Standard Craft
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'JOB Number'
+		dataType: string
+		lineageTag: 414c4c53-bca3-4a44-aa4d-66d44a3298c3
+		summarizeBy: none
+		sourceColumn: JOB Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Code'
+		dataType: string
+		lineageTag: 734b5c2e-c7ea-462c-a93e-19d8ede138ab
+		summarizeBy: none
+		sourceColumn: Activity Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kronos Hrs'
+		dataType: double
+		lineageTag: 40ba0f9f-3163-444e-ba82-38abd2044096
+		summarizeBy: sum
+		sourceColumn: Kronos Hrs
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Manpower Factor'
+		dataType: string
+		lineageTag: 20ec4924-0e07-4f5a-8cf8-65676f8823f0
+		summarizeBy: none
+		sourceColumn: Manpower Factor
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_WPNO =
+			var wpno = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[WPNO],'Qry_IWP Detail'[WPNO],Excel_Kronos_2024[Activity Code]),BLANK())
+			var wpno_fitter = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[WPNO],'Qry_IWP Detail'[FX_SPC_Fitter_ActCode],Excel_Kronos_2024[Activity Code]),BLANK())
+			var wpno_welder = IFERROR(LOOKUPVALUE('Qry_IWP Detail'[WPNO],'Qry_IWP Detail'[FX_SPC_Welder_ActCode],Excel_Kronos_2024[Activity Code]),BLANK())
+			var output = if(wpno<>BLANK(),wpno,
+			if(wpno_fitter<>BLANK(),wpno_fitter,
+			if(wpno_welder<>BLANK(),wpno_welder,BLANK())))
+			return
+			IF(output=BLANK(),[Activity Code],output)
+		lineageTag: 93320a43-db20-4263-9035-af2012f0bb31
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_LastWeek = if(WEEKDAY(Excel_Kronos_2024[Timesheet_Date]) < 6,(Excel_Kronos_2024[Timesheet_Date]+5) - WEEKDAY(Excel_Kronos_2024[Timesheet_Date]),((Excel_Kronos_2024[Timesheet_Date]+5) - WEEKDAY(Excel_Kronos_2024[Timesheet_Date]))+7)
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 1f5088e1-b2bf-4ddf-88aa-51ae9f2a3838
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: c38d75bc-88e8-44be-8a82-d0597785586d
+			defaultHierarchy: LocalDateTable_b8b88855-1a62-48a3-89fa-80e778610f51.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'StaticTbl_Exc_Craft.Craft Standard'
+		dataType: string
+		lineageTag: c39c5333-c986-4f10-abe8-a72917b043a3
+		summarizeBy: none
+		sourceColumn: StaticTbl_Exc_Craft.Craft Standard
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Plant = LOOKUPVALUE(StaticTbl_Plant_Names[SPC_Plants],StaticTbl_Plant_Names[JobNo],[JOB Number])
+		lineageTag: 1c380eea-89bf-49ec-ad00-238998b2dfad
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Contractor = LOOKUPVALUE('Qry_IWP Detail'[AREA],'Qry_IWP Detail'[WPNO],[FX_WPNO])
+		lineageTag: a3d00d02-b255-4f01-b472-28863198c13e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Phase = LOOKUPVALUE('Excel MDM'[Phase Grouping],'Excel MDM'[WPNO],Excel_Kronos_2024[fx_lookup_mdm])
+		lineageTag: b4aca0f7-5e2d-4511-8e10-3e17c1a23ac5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_Discipline = LOOKUPVALUE('Excel MDM'[Discipline],'Excel MDM'[WPNO],Excel_Kronos_2024[fx_lookup_mdm])
+		lineageTag: ec488744-b8d9-4fa2-a4b8-88e2fc5d84f3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_ProgressGrouping = LOOKUPVALUE('Qry_IWP Detail'[PROGRESSGROUPING],'Qry_IWP Detail'[WPNO],Excel_Kronos_2024[FX_WPNO])
+		lineageTag: 9d40ed7c-b5a3-4efa-9ae1-2f3176809d5e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Foreman Name'
+		dataType: string
+		lineageTag: 66c09cca-77a9-4c47-a5fe-048227423cb5
+		summarizeBy: none
+		sourceColumn: Foreman Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: a91f4b97-1ee5-4906-91f5-420c5d2622a7
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phase Grouping'
+		dataType: string
+		lineageTag: 5fcdc947-8c94-4ace-bf76-dd082afad77c
+		summarizeBy: none
+		sourceColumn: Phase Grouping
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_jobno_actcode = [JOB Number]&"_"&[fx_lookup_mdm]
+		lineageTag: e45148d9-b38b-42a0-b52f-ec005d3239b8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_lookup_mdm = ```
+			
+			var a = LOOKUPVALUE('Excel MDM'[WPNO],'Excel MDM'[WPNO],[Activity Code])
+			var b = IF([Activity Code]<>BLANK()|| [Activity Code]<>"",LEFT([Activity Code],LEN([Activity Code])-1),[Activity Code])
+			var c = LOOKUPVALUE('Excel MDM'[WPNO],'Excel MDM'[WPNO],b)
+			var d = IF(a<>BLANK(),a,c)
+			RETURN
+			d
+			
+			
+			```
+		lineageTag: b3cdd6f2-a249-4ab5-b985-6fcab35f1876
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_jobno_actcode_fitter_welder = [JOB Number]&"_"&[Activity Code]
+		lineageTag: d4884cba-4f9c-413d-a688-af3952187549
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Excel_Kronos_2024 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Weekly Booking\Last Week\D7650_Craft\D7650 Kronos 2025_Craft.xlsx"), null, true),
+				    Export_Sheet = Source{[Item="Export",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Export_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SAP No", Int64.Type}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"Craft.1.Standard Craft"}, StaticTbl_Exc_Craft, {"Craft"}, "StaticTbl_Exc_Craft", JoinKind.LeftOuter),
+				    #"Expanded StaticTbl_Exc_Craft" = Table.ExpandTableColumn(#"Merged Queries", "StaticTbl_Exc_Craft", {"Craft Standard"}, {"StaticTbl_Exc_Craft.Craft Standard"})
+				in
+				    #"Expanded StaticTbl_Exc_Craft"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

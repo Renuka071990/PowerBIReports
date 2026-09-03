@@ -1,0 +1,157 @@
+table StaticTbl_ComboChart_Craft
+	lineageTag: 06157697-99f4-4385-94d7-c9790e76e08f
+
+	measure MS_MLF =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Craft[New Axis]),
+			    "MLF",
+			    CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "2. MLF"
+			    )
+			)
+		lineageTag: 5f99850e-38c4-41e3-9f3d-3849a4938e87
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_Actual =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Craft[New Axis]),
+			    "Actual",
+			    CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "3. Actual"
+			    )
+			)
+		lineageTag: 556d1c6f-95bc-4be9-9b27-fc9126655469
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_TogoWP =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Craft[New Axis]),
+			    "Hrs",
+			    CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "1. To-Go WPhrs"
+			    )
+			)
+		lineageTag: a8149fdf-c962-4224-9130-f60fd49303d3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_TogoAFC =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Craft[New Axis]),
+			    "Hrs",
+			    CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "1. To-Go AFCHrs Prelim"
+			    )
+			)
+		lineageTag: 7e372ef6-6c05-40cc-87bd-c8b2a9daafd9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_diff_afc = ```
+			
+			
+			 var b =     CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "4. To-Go AFCHrs")
+			var c =     CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "1. To-Go WPhrs")
+			var a = IF(b-c<0,0,b-c)
+			 RETURN
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Craft[New Axis]),
+			    "Hrs",
+			a
+			)
+			
+			
+			```
+		lineageTag: 2d230b75-e48b-4617-9879-4af3c3e7a1ce
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_diff_wphrs = ```
+			
+			
+			 var b =     CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "4. To-Go AFCHrs")
+			var c =     CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "1. To-Go WPhrs")
+			var a = IF(c-b<0,0,c-b)
+			 RETURN
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Craft[New Axis]),
+			    "Hrs",
+			a
+			)
+			
+			
+			```
+		lineageTag: 4bee3715-d361-462e-9c47-87628a4c57c7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_afc_wphrs = ```
+			
+			
+			 var afc =     CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "4. To-Go AFCHrs")
+			var wp =     CALCULATE(SUM(_FX_Craft_Allocation_Distribution[FX_Manpower]),
+			    _FX_Craft_Allocation_Distribution[Status] = "1. To-Go WPhrs")
+			var more_afc = IF(afc-wp<0,0,afc-wp)
+			var more_wp = IF(wp-afc<0,0,wp-afc)
+			var output = IF(wp>afc,wp,afc)
+			
+			 RETURN
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Craft[New Axis]),
+			    "Hrs",
+			output
+			)
+			
+			
+			```
+		lineageTag: f4d56425-e181-4acd-94d0-c9e729a4aef0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'New Axis'
+		dataType: string
+		lineageTag: 54b5b493-f7d4-4e96-828a-d985680d4c2f
+		summarizeBy: none
+		sourceColumn: New Axis
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: string
+		lineageTag: 0da1e3eb-8aa9-43f3-b810-4d731c2aa696
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 0891446b-e898-43ff-ba69-c005276c72b8
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StaticTbl_ComboChart_Craft = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8vVxU9JRMgJiJ6VYnWglx+SS0sQcINcYiJ3BQh5FxUC2IRA7gvlAhgkQK8XGAgA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"New Axis" = _t, Order = _t, Description = _t])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

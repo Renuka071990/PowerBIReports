@@ -1,0 +1,587 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection71c30859ca020ad9eb15",
+  "displayName": "05. WP Summary (L4)",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bcfa1dbd8277e5e745e2",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WPNO"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "4f2a198d661d9de1fcea",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "fx_late_category"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "Filterd1442e526521410ef516",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "FX_Type"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterdba1457a1b55d45b7c87",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Issuance_Current_Plan"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "Filter837d851ea41bed2cf461",
+        "displayName": "FX_Issuance_Current_Actual",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Issuance_Current_Actual"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter0d057b4cd3bd96ac7a31",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Completion_Current_Plan"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "f3d40f9729960eb954b5",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "StaticTbl_CurrentPrevWeek"
+              }
+            },
+            "Property": "Week Type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "StaticTbl_CurrentPrevWeek",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "Week Type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Current'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter16efcc4e71108338b7a3",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Completion_Current_Actual"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "Filter4a7ddf42b4836e471036",
+        "displayName": "Issuance Status",
+        "ordinal": 8,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Issued_Status"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter5bb1ea1634084bda66d1",
+        "displayName": "Completion Status",
+        "ordinal": 9,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Completion_Status"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter3468c764a920917a6822",
+        "ordinal": 10,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Issued_Status"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter575e079507b732670723",
+        "ordinal": 11,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Completion_Status"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterb4b6105d0e403ab68a73",
+        "ordinal": 12,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Comp"
+              }
+            },
+            "Property": "WeekEnding"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter623da9a8dae9c2a040d6",
+        "ordinal": 13,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Comp"
+              }
+            },
+            "Property": "WP PURPOSE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filterac392190d4647e3bab22",
+        "ordinal": 14,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Comp"
+              }
+            },
+            "Property": "DISCIPLINE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter688a1da4cb2ecb662a0b",
+        "ordinal": 15,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "WeekEnding"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter47c16f520854e557aea5",
+        "ordinal": 16,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "WP PURPOSE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "Filter47927ac0b81a70cc487a",
+        "ordinal": 17,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "DISCIPLINE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "pageBinding": {
+    "name": "Pod1",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "Param_Filter47927ac0b81a70cc487a",
+        "boundFilter": "Filter47927ac0b81a70cc487a",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "DISCIPLINE"
+          }
+        }
+      },
+      {
+        "name": "Param_Filter47c16f520854e557aea5",
+        "boundFilter": "Filter47c16f520854e557aea5",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "WP PURPOSE"
+          }
+        }
+      },
+      {
+        "name": "Param_Filter688a1da4cb2ecb662a0b",
+        "boundFilter": "Filter688a1da4cb2ecb662a0b",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "WeekEnding"
+          }
+        }
+      },
+      {
+        "name": "Param_Filterac392190d4647e3bab22",
+        "boundFilter": "Filterac392190d4647e3bab22",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Comp"
+              }
+            },
+            "Property": "DISCIPLINE"
+          }
+        }
+      },
+      {
+        "name": "Param_Filter623da9a8dae9c2a040d6",
+        "boundFilter": "Filter623da9a8dae9c2a040d6",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Comp"
+              }
+            },
+            "Property": "WP PURPOSE"
+          }
+        }
+      },
+      {
+        "name": "Param_Filterb4b6105d0e403ab68a73",
+        "boundFilter": "Filterb4b6105d0e403ab68a73",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Comp"
+              }
+            },
+            "Property": "WeekEnding"
+          }
+        }
+      },
+      {
+        "name": "Param_Filter575e079507b732670723",
+        "boundFilter": "Filter575e079507b732670723",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Completion_Status"
+          }
+        }
+      },
+      {
+        "name": "Param_Filter3468c764a920917a6822",
+        "boundFilter": "Filter3468c764a920917a6822",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "FX_Issued_Status"
+          }
+        }
+      },
+      {
+        "name": "Param_Filterd1442e526521410ef516",
+        "boundFilter": "Filterd1442e526521410ef516",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_FX_WPPlan_Final_Issued"
+              }
+            },
+            "Property": "FX_Type"
+          }
+        }
+      },
+      {
+        "name": "e606e9649c55521fce7e",
+        "boundFilter": "bcfa1dbd8277e5e745e2",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "WPNO"
+          }
+        }
+      },
+      {
+        "name": "86997e9b61e8ca4dd15e",
+        "boundFilter": "4f2a198d661d9de1fcea",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Qry_IWP Detail"
+              }
+            },
+            "Property": "fx_late_category"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport"
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "233L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Workpack Summary plain.svg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Workpack_Summary_plain19206545605344783.svg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

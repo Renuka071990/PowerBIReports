@@ -1,0 +1,183 @@
+table Excel_AFC_Distrib
+	lineageTag: 6e6711d4-62b3-40e9-90ee-a8be314a4436
+
+	column FIWPOBID
+		dataType: string
+		lineageTag: 7f9da57b-2eb6-48b1-aeab-ec015bed06e3
+		summarizeBy: none
+		sourceColumn: FIWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPUID
+		dataType: string
+		lineageTag: 6fa84595-87d8-4df4-946d-2316945bf29b
+		summarizeBy: none
+		sourceColumn: FIWPUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROJECT
+		dataType: string
+		lineageTag: df9b5303-5960-4135-a524-592fc6ba0d98
+		summarizeBy: none
+		sourceColumn: PROJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		dataType: string
+		lineageTag: 0ea64413-82b1-4d78-8faa-e20c4f56f10c
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CWPOBID
+		dataType: string
+		lineageTag: 966794be-6f9d-4628-b708-b1a09e80a652
+		summarizeBy: none
+		sourceColumn: CWPOBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPTION
+		dataType: string
+		lineageTag: a51526f5-7442-42df-b6d1-946735a9a573
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCIPLINE
+		dataType: string
+		lineageTag: 68aaf154-719e-4798-85f1-e4c5de30994a
+		summarizeBy: none
+		sourceColumn: DISCIPLINE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNEDMANHRS
+		dataType: string
+		lineageTag: a7dd9767-aabc-4728-8e28-8483a3a18c81
+		summarizeBy: none
+		sourceColumn: PLANNEDMANHRS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PURPOSE
+		dataType: string
+		lineageTag: 5cf4fdee-eef3-4674-aba7-2ca04cd381ba
+		summarizeBy: none
+		sourceColumn: PURPOSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACTOR
+		dataType: string
+		lineageTag: 49fd5a23-c3da-4d4b-b66e-d6458570e0ea
+		summarizeBy: none
+		sourceColumn: CONTRACTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESIGNAREA
+		dataType: string
+		lineageTag: d464f070-3711-4285-a14a-44792b72a57a
+		summarizeBy: none
+		sourceColumn: DESIGNAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PLAN START'
+		dataType: string
+		lineageTag: 5fe6c8a3-33ff-419b-836b-01756996c11f
+		summarizeBy: none
+		sourceColumn: PLAN START
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PLAN FINISH'
+		dataType: string
+		lineageTag: c8eae8da-bd52-4cd6-b5e2-9018a6a3b022
+		summarizeBy: none
+		sourceColumn: PLAN FINISH
+
+		annotation SummarizationSetBy = Automatic
+
+	column HRS
+		dataType: double
+		lineageTag: 17a03a8f-cc79-425b-8dfe-b11527339598
+		summarizeBy: sum
+		sourceColumn: HRS
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATE
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: f78ddf6b-ec6e-4914-a4db-132c7c35fad3
+		summarizeBy: none
+		sourceColumn: DATE
+
+		variation Variation
+			isDefault
+			relationship: 2516f9fb-08b9-4625-a451-34ec76028aba
+			defaultHierarchy: LocalDateTable_f7ca9c7a-a5d8-4f5c-b72d-b47493c71fbf.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Column16
+		dataType: string
+		lineageTag: 7e01008e-fb22-44c6-a936-433c7c3f774a
+		summarizeBy: none
+		sourceColumn: Column16
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column17
+		dataType: string
+		lineageTag: d6993a5e-a155-4ca3-8135-84d87d54385f
+		summarizeBy: none
+		sourceColumn: Column17
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column18
+		dataType: string
+		lineageTag: f79b60c9-e471-479a-a3d4-30e513db2424
+		summarizeBy: none
+		sourceColumn: Column18
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_IFE_WP = LOOKUPVALUE(Excel_IFE_PLN_PRG[Contract],Excel_IFE_PLN_PRG[Activity Code],Excel_AFC_Distrib[NAME])
+		lineageTag: 5a23dd6b-8b9b-42b5-84e2-3c6864278889
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Excel_AFC_Distrib = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\WP Hour Distribution\D7650\AFC\D7650 AFC Hrs - Plan Distribution.xlsx"), null, true),
+				    #"PLAN DISTRIBUTION_Sheet" = Source{[Item="PLAN DISTRIBUTION",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"PLAN DISTRIBUTION_Sheet", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

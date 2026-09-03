@@ -1,0 +1,154 @@
+table _MX_WP_Hrs
+	lineageTag: 5d21f09e-52e2-4691-98b8-e3d35af25934
+
+	measure MS_Actual_Cumm_Hrs = sumx(FILTER('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Actual_WkEnd]<='Qry_IWP Detail'[FX_Issued_Plan_WkEnd]),'Qry_IWP Detail'[WP Earned Hrs])
+		lineageTag: aa0e460f-6aa8-4d02-a488-69aadf46d335
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_WP_Issued_WPHrs = if(isblank(SUMX(filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="01-Issued"),'Qry_IWP Detail'[WP Hrs])),0,SUMX(filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="01-Issued"),'Qry_IWP Detail'[WP Hrs]))
+		formatString: #,0
+		lineageTag: 3dd2d961-8d1c-4004-91e7-27d1538edb19
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MS_WP_Issued_Late_AFCHrs = if(isblank(CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Issued_Status]="03-Late")),0,CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Issued_Status]="03-Late"))
+		formatString: #,0.0
+		lineageTag: 58a5a968-7256-4c2c-8bb0-30ea296fece8
+
+		changedProperty = FormatString
+
+	measure MS_WP_AFC_Hrs = SUMX(DISTINCT('Qry_IWP Detail'[FIWPOBID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0))
+		formatString: #,0
+		lineageTag: 3520f8e1-68f7-44c7-8296-693ff25353ac
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure MS_WP_Issued_OnSched_AFCHrs = if(isblank(CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Issued_Status]="02-On Sched")),0,CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Issued_Status]="02-On Sched"))
+		formatString: #,0.0
+		lineageTag: e432111c-a5f5-4884-9b99-55fc7ea7eef8
+
+		changedProperty = FormatString
+
+	measure MS_WP_Issued_NoDate_AFCHrs = if(isblank(CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Issued_Status]="04-No Date")),0,CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Issued_Status]="04-No Date"))
+		lineageTag: 44e4ebfe-d8f4-467f-988d-6071f56f8ea0
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_WP_Hrs = SUMX(DISTINCT('Qry_IWP Detail'[FIWPOBID]),FIRSTNONBLANK('Qry_IWP Detail'[WP Hrs],0))
+		lineageTag: 58e9c037-21b3-464b-899b-728e6738a45a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_WP_Cum_Hrs = Sum('Qry_IWP Detail'[WP Earned Hrs])
+		lineageTag: caea1def-a809-4d5b-8af9-1fdd2c786e16
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_WP_Comp_Late_AFCHrs = if(isblank(CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Completion_Status]="03-Late - Incomplete")),0,CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Completion_Status]="03-Late - Incomplete"))
+		formatString: #,0.0
+		lineageTag: b1177315-feb3-416f-9e52-29b373dc357e
+
+		changedProperty = FormatString
+
+	measure MS_WP_Comp_NoDate_AFCHrs = if(isblank(CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Completion_Status]="04-No Date")),0,CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Completion_Status]="04-No Date"))
+		formatString: #,0.0
+		lineageTag: 787351ea-180b-472e-9697-a2290b1063ac
+
+		changedProperty = FormatString
+
+	measure MS_WP_Comp_OnSched_AFCHrs = if(isblank(CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Completion_Status]="02-On Sched - Incomplete")),0,CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Completion_Status]="02-On Sched - Incomplete"))
+		formatString: #,0.0
+		lineageTag: a308a7fa-cf64-4afe-a1ce-1dd4c39b685f
+
+		changedProperty = FormatString
+
+	measure MS_WP_Comp_WPHrs = if(isblank(SUMX(filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="01-IWP Completed"),'Qry_IWP Detail'[WP Hrs])),0,SUMX(filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Completion_Status]="01-IWP Completed"),'Qry_IWP Detail'[WP Earned Hrs]))
+		formatString: #,0.0
+		lineageTag: 5694dd73-1d6d-4afa-b857-6510df28eaaa
+
+		changedProperty = FormatString
+
+	measure MS_WP_Issued_WPHrs_IssuedNoDate = if(isblank(SUMX(filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="01-Issued" && 'Qry_IWP Detail'[WP Revision Date]=BLANK()),'Qry_IWP Detail'[WP Hrs])),0,SUMX(filter('Qry_IWP Detail','Qry_IWP Detail'[FX_Issued_Status]="01-Issued" && 'Qry_IWP Detail'[WP Revision Date]=BLANK()),'Qry_IWP Detail'[WP Hrs]))
+		formatString: #,0
+		lineageTag: 99b802f3-8acd-4346-9ec9-9cdbc6144824
+
+		changedProperty = FormatString
+
+	measure MS_Note_WP_Hrs_Issued_NoDate = [MS_WP_Issued_WPHrs]-[MX_WPHrs_Issued_Cum_Actual-Card]
+		lineageTag: 94fda278-2c25-45e2-9afb-8d115b85038d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_WP_Issued_WPHrs_IssuedNoPlanDate =
+			if(
+			   isblank(CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Issued_Status]="01-Issued" && 'Qry_IWP Detail'[WP Planned Start Date]=0)),
+			   0,
+			   CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPUID]),FIRSTNONBLANK('Qry_IWP Detail'[AFC Hrs],0)),'Qry_IWP Detail'[FX_Issued_Status]="01-Issued" && 'Qry_IWP Detail'[WP Planned Start Date]=0))
+		lineageTag: 92ea9d50-ad93-4931-81eb-20c8e21675ec
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_WP_Earned_Hrs = SUMX(DISTINCT('Qry_IWP Detail'[FIWPOBID]),FIRSTNONBLANK('Qry_IWP Detail'[WP Earned Hrs],0))
+		lineageTag: 37941e73-5233-4ddc-a503-02ddd9969918
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_WP_Earned_Hrs_Wkly = SUMX(DISTINCT('Qry_IWP Detail'[FIWPOBID]),FIRSTNONBLANK('Qry_IWP Detail'[WP Weekly Earned],0))
+		formatString: #,0
+		lineageTag: 5aeb5f3b-9b0b-4c1d-89d6-4f6f057693f0
+
+	measure MS_WP_Balance = [MS_WP_Hrs]-[MS_WP_Earned_Hrs]
+		lineageTag: 307bc0a9-7dc3-484d-99e2-5fd3c2180ccb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Progress =
+			
+			var a = [MS_WP_Earned_Hrs]
+			var b = [MS_WP_Hrs]
+			return
+			a/b
+		formatString: 0%;-0%;0%
+		lineageTag: 1f1086e8-aee4-493c-b4fb-c43e35950393
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+	measure MS_Count_Completed = CALCULATE(SUMX(DISTINCT('Qry_IWP Detail'[FIWPOBID]),FIRSTNONBLANK('Qry_IWP Detail'[WP Components Count Complete_],0)),'Qry_IWP Detail'[WP Hrs]>0)
+		formatString: #,0
+		lineageTag: d8821ec3-0a66-4539-9a19-e4df8529b899
+
+	measure MS_Count_Planned = SUMX(DISTINCT('Qry_IWP Detail'[FIWPOBID]),FIRSTNONBLANK('Qry_IWP Detail'[WP Components Count Planned_],0))
+		formatString: #,0
+		lineageTag: 6133d8b0-b6f1-434c-a6fb-89e6d12ddc73
+
+	measure MS_Qty_Completed = SUMX(DISTINCT('Qry_IWP Detail'[FIWPOBID]),FIRSTNONBLANK('Qry_IWP Detail'[COMPLETED_UNITS],0))
+		lineageTag: 2297d8aa-e01b-475e-a3d3-9162a68ed2cf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_Qty_Planned = SUMX(DISTINCT('Qry_IWP Detail'[FIWPOBID]),FIRSTNONBLANK('Qry_IWP Detail'[PLAN_UNITS],0))
+		lineageTag: 58eb515c-c63d-44a6-9d58-3956019cb60d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition _MX_WP_Hrs-1bdf48b5-0f10-4769-a9ea-642fd596bc29 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Test = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Test", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Test"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

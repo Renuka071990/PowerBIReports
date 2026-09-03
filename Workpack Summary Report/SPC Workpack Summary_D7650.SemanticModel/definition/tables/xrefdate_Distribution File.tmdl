@@ -1,0 +1,96 @@
+table 'xrefdate_Distribution File'
+	lineageTag: 1a016789-7dc5-40ae-b5d5-ecbe59ba1434
+
+	measure 'xrefdate_Distribution File' =
+			CALCULATE(FIRSTNONBLANK('xrefdate_Distribution File'[Date modified],0),
+			FILTER('xrefdate_Distribution File', CONTAINSSTRING('xrefdate_Distribution File'[Name],"E0703 WP To-Go Hrs - Distribution")))
+		formatString: dd-mmm-yy
+		lineageTag: 20773e84-dac9-44d2-9d32-917b13957856
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Name
+		dataType: string
+		lineageTag: eac89417-15d4-4376-8515-9bc1a97e2144
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Extension
+		dataType: string
+		lineageTag: 9aadff84-9156-405b-b14d-e53bf51a58dd
+		summarizeBy: none
+		sourceColumn: Extension
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date accessed'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d1cebc97-16a7-4172-8a98-a9547e163048
+		summarizeBy: none
+		sourceColumn: Date accessed
+
+		variation Variation
+			isDefault
+			relationship: 67aaf717-fdbe-483b-91ab-d06a7981c674
+			defaultHierarchy: LocalDateTable_c94ed8ff-882d-42f7-b940-7c002b3e7960.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date modified'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b76d380a-4985-4b6a-a638-a40d4a03db52
+		summarizeBy: none
+		sourceColumn: Date modified
+
+		variation Variation
+			isDefault
+			relationship: c97b51ee-792d-4c7f-af95-24d9d27b50b1
+			defaultHierarchy: LocalDateTable_1852654f-11af-49a3-9bd8-68f00140f4d1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Date created'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5b5247ee-b57c-4a24-adcb-4347a6ae7296
+		summarizeBy: none
+		sourceColumn: Date created
+
+		variation Variation
+			isDefault
+			relationship: 9a8249d9-fcaf-41bc-b51e-3195e7ad3a46
+			defaultHierarchy: LocalDateTable_1314f1b3-9572-4848-aa2d-711c6a5a279c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Folder Path'
+		dataType: string
+		lineageTag: 7e0eda55-a153-43d4-af0c-96b25347c413
+		summarizeBy: none
+		sourceColumn: Folder Path
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'xrefdate_Distribution File' = m
+		mode: import
+		source =
+				let
+				  Source = Folder.Files("\\mcdcorp\share\Dubai\Group\DEPT\FAB\Smart Construction\Reports\Power Bi\WP Hour Distribution\E0703"),
+				  #"Sorted rows" = Table.Sort(Source, {{"Date modified", Order.Descending}}),
+				  #"Filtered rows 1" = Table.SelectRows(#"Sorted rows", each ([Extension] = ".xlsx") and ([Name] = "E0703 WP To-Go Hrs - Distribution.xlsx")),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Filtered rows 1", {{"Date modified", type date}}),
+				  #"Filtered rows" = Table.SelectRows(#"Changed column type", let latest = List.Max(#"Changed column type"[Date modified]) in each [Date modified] = latest),
+				  #"Remove columns" = Table.RemoveColumns(#"Filtered rows", Table.ColumnsOfType(#"Filtered rows", {type table, type record, type list, type nullable binary, type binary, type function}))
+				in
+				  #"Remove columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

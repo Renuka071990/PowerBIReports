@@ -1,0 +1,255 @@
+table StaticTbl_ComboChart_Workface
+	lineageTag: dd2b4b92-d486-48a0-a135-5394b9ad5672
+
+	measure MS_ToGo_Late =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "To-go",
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "F. Spill Over"
+			    )
+			)
+		lineageTag: fd953b25-6586-46af-af21-30093d2e5021
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_ToGo_OnSched =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "To-go",
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "F. Workfront"
+			    )
+			)
+		lineageTag: eac18d6d-90e0-4621-bf7b-1df310b2e305
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_Kronos =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "Kronos",
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "E. Actual"
+			    )
+			)
+		lineageTag: 32c4d263-561d-4b9e-ba6f-073ddb0fe5e3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_AFC =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "AFC",
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "A. AFC Plan"
+			    )
+			)
+		lineageTag: 4d7ff2f4-e39e-4d81-a1d6-ab046ea95ee5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_Blank =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "",0.00000
+			)
+		lineageTag: 02ee1977-2758-48ec-b644-855145ac871d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_WPHrs =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "WPHrs",
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "D. WP Earned"
+			    )
+			)
+		lineageTag: 75fdaaa2-bb65-4f86-af76-b594c6ca494a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_PROD = ```
+			
+			    DIVIDE(CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "B. WP Earned"
+			    ),
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "C. WP Actual"
+			    ))
+			
+			```
+		formatString: 0.00
+		lineageTag: ee8133bf-7ee0-49bd-8ccd-99ee83fe7bde
+
+	measure MS_MaxProd = [MS_PROD]+.5
+		lineageTag: 2c7e4d63-c197-4398-9229-5a9f94cbb51a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_ToGo_Prelim =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "To-go",
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "F. Provisional Workfront"
+			    )
+			)
+		lineageTag: 2b63f33f-6d73-4f48-a2a4-a61f2fe5c17c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_Prod_y-axis_limit = [MS_PROD]+.3
+		lineageTag: d668d0ec-7bf3-4659-b956-7f4f28c08ade
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_IRE =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "IRE",
+			    CALCULATE(SUM(_FX_Distribution_Hrs[FX_Weekly_Earning]),
+			    _FX_Distribution_Hrs[Status] = "B. Plan IRE"
+			    )
+			)
+		lineageTag: 4dcd4dec-e350-42e3-afc0-b88a0f24810a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_IRE-Cum = ```
+			
+			
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "B. Plan IRE"
+			    )
+			
+			```
+		lineageTag: 8b1995fb-7449-4f08-bca3-2ca9b9d9a2ef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_IFE =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "IFE",
+			    CALCULATE(SUM(_FX_Distribution_Hrs[FX_Weekly_Earning]),
+			    _FX_Distribution_Hrs[Status] = "C. Plan IFE"
+			    )
+			)
+		lineageTag: 6cc8932a-c2b5-475b-a15a-e9d5cad418d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_IOE =
+			
+			SWITCH(
+			    SELECTEDVALUE(StaticTbl_ComboChart_Workface[New Axis]),
+			    "IOE",
+			    CALCULATE(SUM(_FX_Distribution_Hrs[FX_Weekly_Earning]),
+			    _FX_Distribution_Hrs[Status] = "A. Plan IOE"
+			    )
+			)
+		lineageTag: 5d29deb8-038a-48fa-aa0c-7f1227458ac0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_IOE-Cum = ```
+			
+			
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "A. Plan IOE"
+			    )
+			
+			```
+		lineageTag: ba8d13e2-d5a1-4592-bce1-272af893a093
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_IFE-Cum = ```
+			
+			
+			    CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "C. Plan IFE"
+			    )
+			
+			```
+		lineageTag: eb7e57d9-f180-48fa-9be4-16b1e260c21c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_Kronos-Cum = ```
+			
+			
+			var  earned_final =   CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "E. WP Actual Cum"
+			    )
+			
+			RETURN
+			earned_final
+			
+			```
+		lineageTag: f3d5efbc-1f4f-456a-9413-b29c7989bd5f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MS_WPHrs-Cum = ```
+			
+			
+			var  earned_final =   CALCULATE(SUM(_FX_Distribution_Hrs[Hours]),
+			    _FX_Distribution_Hrs[Status] = "D. WP Earned Cum"
+			    )
+			
+			RETURN
+			earned_final
+			
+			```
+		lineageTag: 2df001b5-db3b-47de-9002-d9f366f318a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'New Axis'
+		dataType: string
+		lineageTag: b8ade406-443d-4bb7-8636-b2da26c8728e
+		summarizeBy: none
+		sourceColumn: New Axis
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: string
+		lineageTag: a87fc9a9-7e70-415b-b2de-ab8416054d8e
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 8c322e9d-3994-46c7-b112-66cefa30b2f2
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StaticTbl_ComboChart_Workface = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCsnXTc9X0lEyB2I3pVidaKXwAI+iYiDPFIhdwCLeRfl5+SAhMyB2BQs5ujkD2YZA7GgAFvAMcgVyjIHYCcJ3A/FNgNgZwvcH8Y1AGsB8IMMCiJViYwE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"New Axis" = _t, Order = _t, Description = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

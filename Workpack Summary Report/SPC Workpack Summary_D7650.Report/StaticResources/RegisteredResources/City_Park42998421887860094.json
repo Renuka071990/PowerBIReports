@@ -1,0 +1,76 @@
+{
+  "name": "City Park",
+  "dataColors": [
+    "#73B761",
+    "#4A588A",
+    "#ECC846",
+    "#CD4C46",
+    "#71AFE2",
+    "#8D6FD1",
+    "#EE9E64",
+    "#827E5A"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#070f25",
+  "tableAccent": "#0F1934",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ],
+        "border": [
+          {
+            "show": true
+          }
+        ],
+        "visualTooltip": [
+          {
+            "titleFontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "valueFontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  },
+  "foregroundNeutralSecondary": "#666666",
+  "backgroundLight": "#A6A6A6"
+}

@@ -1,0 +1,33 @@
+table _FX_Xmatch_ActCode
+	lineageTag: e49e8076-ae0c-472c-9e34-8b86f246446c
+
+	column WPNO
+		lineageTag: 4466980b-7e31-4a15-920a-a8b62b325c93
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[WPNO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_anomaly_actcode
+		lineageTag: 1bd49052-016b-474b-9791-ac0b962ee2b2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[fx_anomaly_actcode]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIWPUID
+		lineageTag: b5914c90-e1dc-46e1-a1e3-30e669ea98f4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Qry_IWP Detail[FIWPUID]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FX_Xmatch_ActCode-d6f8ab64-5fa4-43b7-92a9-b041d9915b3f = calculated
+		mode: import
+		source = SUMMARIZE(FILTER('Qry_IWP Detail','Qry_IWP Detail'[fx_anomaly_actcode]<>"Matched"),'Qry_IWP Detail'[FIWPUID],'Qry_IWP Detail'[WPNO],'Qry_IWP Detail'[fx_anomaly_actcode])
+
+	annotation PBI_Id = 66f58fbac70d434281b94969d95b3056
+

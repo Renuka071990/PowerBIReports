@@ -1,0 +1,12 @@
+createOrReplace
+
+	ref table Qry_IWP_Constraints
+
+		measure _mx_hours =
+				SUMX(VALUES('Qry_IWP_Constraints'[JOB_WPNO]),
+				CALCULATE(MAX('Qry_IWP_Constraints'[Hours])))
+			formatString: 0
+			lineageTag: 5d2efc8a-1868-4c7b-aa5a-745f170bcd36
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+

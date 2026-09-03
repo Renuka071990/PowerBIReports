@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "5c7e87a6ae8371c444a8",
+  "position": {
+    "x": 0.97264437689969607,
+    "y": 0,
+    "z": 2000,
+    "height": 37.959737992073244,
+    "width": 1278.0547112462004,
+    "tabOrder": 0
+  },
+  "visualGroup": {
+    "displayName": "Static Time Refreshed",
+    "groupMode": "ScaleMode"
+  }
+}

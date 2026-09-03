@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "2e07d39969240d08ac94",
+  "position": {
+    "x": 441,
+    "y": 94,
+    "z": 1000,
+    "height": 570,
+    "width": 416,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Excel_Distrib-Alloc-ToGo"
+                    }
+                  },
+                  "Property": "PROJECT"
+                }
+              },
+              "queryRef": "Excel_Distrib-Alloc-ToGo.PROJECT",
+              "nativeQueryRef": "PROJECT"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Excel_Distrib-Alloc-ToGo"
+                    }
+                  },
+                  "Property": "pqry_TYPE"
+                }
+              },
+              "queryRef": "Excel_Distrib-Alloc-ToGo.pqry_TYPE",
+              "nativeQueryRef": "pqry_TYPE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Excel_Distrib-Alloc-ToGo"
+                    }
+                  },
+                  "Property": "NAME"
+                }
+              },
+              "queryRef": "Excel_Distrib-Alloc-ToGo.NAME",
+              "nativeQueryRef": "NAME"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Excel_Distrib-Alloc-ToGo"
+                        }
+                      },
+                      "Property": "FX_Distribution_Hrs"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Excel_Distrib-Alloc-ToGo.FX_Distribution_Hrs)",
+              "nativeQueryRef": "FX_Distribution_Hrs"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

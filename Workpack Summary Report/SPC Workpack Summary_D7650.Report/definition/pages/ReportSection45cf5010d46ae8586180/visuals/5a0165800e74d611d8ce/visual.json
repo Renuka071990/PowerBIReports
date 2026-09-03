@@ -1,0 +1,119 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "5a0165800e74d611d8ce",
+  "position": {
+    "x": 0,
+    "y": 47.708168120539256,
+    "z": 3000,
+    "height": 365.4242664551943,
+    "width": 297.41475019825538,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "wishyoulizationbarchartrace",
+    "query": {
+      "queryState": {
+        "value": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Excel_Distrib-Alloc-ToGo"
+                        }
+                      },
+                      "Property": "FX_Distribution_Hrs"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(DISTRIBUTION.FX_Distribution_Hrs)",
+              "nativeQueryRef": "FX_Distribution_Hrs"
+            }
+          ]
+        },
+        "name": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Excel_Distrib-Alloc-ToGo"
+                    }
+                  },
+                  "Property": "Craft"
+                }
+              },
+              "queryRef": "DISTRIBUTION.Craft",
+              "nativeQueryRef": "Craft"
+            }
+          ]
+        },
+        "year": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Excel_Distrib-Alloc-ToGo"
+                    }
+                  },
+                  "Property": "DATE"
+                }
+              },
+              "queryRef": "DISTRIBUTION.DATE.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "DATE Day"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Excel_Distrib-Alloc-ToGo"
+                  }
+                },
+                "Property": "DATE"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "displaySettings": [
+        {
+          "properties": {
+            "autoPlay": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "periodSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "52L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

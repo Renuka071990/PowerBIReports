@@ -1,0 +1,61 @@
+table _par_prod_welder
+	lineageTag: d420f21d-04eb-434b-8e7e-285715efd68a
+
+	column _par_prod_welder
+		lineageTag: fea6fd2b-500f-4972-bc25-5f624c1682c7
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '_par_prod_welder Order'
+
+		relatedColumnDetails
+			groupByColumn: '_par_prod_welder Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_par_prod_welder Fields'
+		isHidden
+		lineageTag: 75b72774-020f-467c-a6f3-e7aee8720ed8
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '_par_prod_welder Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_par_prod_welder Order'
+		isHidden
+		formatString: 0
+		lineageTag: abf5889c-4395-4cc8-ab1a-08fcb0f1cd82
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _par_prod_welder = calculated
+		mode: import
+		source = ```
+				{
+				   ("Wkly Earned Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Welder_WPHrs_Wkly]), 0),
+				    ("Wkly Actual Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Kronos_Wkly]), 1),
+				    ("Wkly Actual Hrs [EXP]", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Kronos_Wkly_ATCPTD]), 2),
+				    ("Wkly Prod", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Prod_Wkly]), 3),
+				    ("Wkly Prod [EXP]", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Prod_Wkly_ATCPTD]), 4),
+				    ("Cum. Earned Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Welder_WPHrs_Cum_Earned]), 5),
+				    ("Cum. Actual Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Kronos_Cum]), 6),
+				    ("Cum. Actual Hrs [EXP]", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Kronos_Cum_ATCPTD]), 7),
+				    ("Cum. Prod", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Prod_Cum]), 8),
+				    ("Cum. Prod [EXP]", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Prod_Cum_ATCPTD]), 9),
+				    ("Prog", NAMEOF('_MX_Productivity'[MX_Prod_Welder_WPHrs_Prog]), 10),   
+				    ("Prev Week Earned Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Welder_WPHrs_PrevWkly]), 11),
+				    ("Prev Week Actual Hrs", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Kronos_PrevWkly]), 12),
+				    ("Prev Prod", NAMEOF('_MX_Productivity'[MX_Prod_Welder_Prod_PrevWeek]), 13)
+				}
+				```
+
+	annotation PBI_Id = d7638837e67f4e18956ed73ffd6ffc25
+

@@ -1,0 +1,49 @@
+table _par_distrib
+	lineageTag: 218339c5-a906-4ccd-82e0-d32f0836f7b7
+
+	column _par_distrib
+		lineageTag: 2eb1af0b-97ee-4021-ba62-e7930e2ecba3
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '_par_distrib Order'
+
+		relatedColumnDetails
+			groupByColumn: '_par_distrib Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_par_distrib Fields'
+		isHidden
+		lineageTag: 919d2417-bd3e-476f-a75e-cb2ef902a2b7
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '_par_distrib Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_par_distrib Order'
+		isHidden
+		formatString: 0
+		lineageTag: 0516aa5c-92a9-4de2-81fb-2013ea93f5bd
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _par_distrib = calculated
+		mode: import
+		source =
+				{
+				    ("Count", NAMEOF('_MX_Distribution'[mx_count_bal]), 0),
+				    ("Hours", NAMEOF('_MX_Distribution'[mx_hrs_bal]), 2),
+				    ("Quantity", NAMEOF('_MX_Distribution'[mx_qty_bal]), 1)
+				}
+
+	annotation PBI_Id = 22d3ef3adffe43b995370b45a01603fb
+

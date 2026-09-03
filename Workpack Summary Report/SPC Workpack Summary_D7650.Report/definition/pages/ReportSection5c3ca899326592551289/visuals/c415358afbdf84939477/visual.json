@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "c415358afbdf84939477",
+  "position": {
+    "x": 127.88116204086259,
+    "y": 0,
+    "z": 10000,
+    "height": 709.72357723577227,
+    "width": 1132.2276422764228,
+    "tabOrder": 7000
+  },
+  "visualGroup": {
+    "displayName": "Summary - Discipline",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection64d8e19018fe6d33fa68",
+  "displayName": "Duplicate of Weekly Allocation Plan",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter7b575b02d094660163a7",
+        "displayName": "Week Ending Date",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Excel_Distrib-Alloc-ToGo"
+              }
+            },
+            "Property": "DATE"
+          }
+        },
+        "type": "RelativeDate",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'allocation plan.svg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "allocation_plan6555048233032559.svg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "818fd79e38086f30dcbc",
+      "target": "d11622819339394e5958",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e556ab77d92858f6c6c5",
+      "target": "d11622819339394e5958",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e556ab77d92858f6c6c5",
+      "target": "8ebc331c898cf34929dc",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d11622819339394e5958",
+      "target": "e556ab77d92858f6c6c5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6eaf8df4c94e717e8ce6",
+      "target": "23dcd7827a76a9916ff2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6eaf8df4c94e717e8ce6",
+      "target": "d11622819339394e5958",
+      "type": "DataFilter"
+    },
+    {
+      "source": "7ec13a9a5b376495bd86",
+      "target": "d11622819339394e5958",
+      "type": "DataFilter"
+    }
+  ]
+}
